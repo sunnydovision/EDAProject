@@ -1,0 +1,90 @@
+#!/usr/bin/env python3
+"""
+Run QUGEN pipeline: input = schema (or CSV path), output = list of Insight Cards (JSON).
+Usage:
+  python run_qugen.py --csv data/transactions.csv --output insight_cards.json
+  python run_qugen.py --schema data/transactions_schema.json --output insight_cards.json
+
+Requires: OPENAI_API_KEY (or OPENAI_API_BASE) for LLM; sentence-transformers for filters.
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import os
+import sys
+
+# Add project root
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+# Load .env (OPENAI_API_KEY, OPENAI_API_BASE, QUGEN_LLM_MODEL) nếu có
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
+import pandas as pd
+
+from quis.qugen.pipeline import QUGENPipeline, QUGENConfig
+from quis.qugen.models import schema_from_dataframe, TableSchema, InsightCard
+from quis.qugen.llm_client import get_default_llm_client
+
+
+def load_schema_from_json(path_or_json: str) -> TableSchema:
+    if path_or_json.strip().startswith("{"):
+        d = json.loads(path_or_json)
+    else:
+        with open(path_or_json, "r", encoding="utf-8") as f:
+            d = json.load(f)
+    return TableSchema(
+        table_name=d.get("table_name", "Table"),
+        columns=d.get("columns", []),
+    )
+
+
+def main():
+    parser = argparse.ArgumentParser(description="QUGEN: Question Generation for QUIS")
+    parser.add_argument("--csv", type=str, help="Path to CSV file (schema inferred from dataframe)")
+    parser.add_argument("--schema", type=str, help="Path to JSON schema file or inline JSON object")
+    parser.add_argument("--output", type=str, default="insight_cards.json", help="Output JSON path")
+    parser.add_argument("--iterations", type=int, default=10, help="Number of QUGEN iterations")
+    parser.add_argument("--samples", type=int, default=3, help="Samples per iteration")
+    parser.add_argument("--temperature", type=float, default=1.1, help="LLM temperature")
+    parser.add_argument("--in-context", type=int, default=6, help="Number of in-context example cards")
+    parser.add_argument("--dry-run", action="store_true", help="Chạy với mock LLM (không cần API key), tạo output mẫu")
+    args = parser.parse_args()
+
+    if not args.csv and not args.schema:
+        parser.error("Provide either --csv or --schema")
+
+    if args.csv:
+        df = pd.read_csv(args.csv)
+        table_schema = schema_from_dataframe(df, table_name=os.path.splitext(os.path.basename(args.csv))[0])
+    else:
+        table_schema = load_schema_from_json(args.schema)
+        df = None
+
+    config = QUGENConfig(
+        temperature=args.temperature,
+        num_samples_per_iteration=args.samples,
+        num_iterations=args.iterations,
+        num_in_context_examples=args.in_context,
+    )
+
+    llm_client = get_default_llm_client(use_mock=args.dry_run)
+    if args.dry_run:
+        print("Chạy chế độ dry-run (mock LLM), không cần OPENAI_API_KEY.")
+    pipeline = QUGENPipeline(config=config, llm_client=llm_client)
+    cards = pipeline.run(table_schema=table_schema, df=df)
+
+    out_data = [c.to_dict() for c in cards]
+    with open(args.output, "w", encoding="utf-8") as f:
+        json.dump(out_data, f, indent=2, ensure_ascii=False)
+
+    print(f"Wrote {len(out_data)} Insight Cards to {args.output}")
+
+
+if __name__ == "__main__":
+    main()

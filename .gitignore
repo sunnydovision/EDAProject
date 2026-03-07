@@ -1,0 +1,13 @@
+# API key, secrets
+.env
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+
+# Output
+insight_cards.json
