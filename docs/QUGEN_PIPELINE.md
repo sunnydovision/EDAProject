@@ -1,103 +1,130 @@
-# QUGEN Pipeline – Các bước theo bài báo QUIS
+# QUGEN Pipeline – Theo code thực thi trong project
 
-Tài liệu này liệt kê các bước của **Question Generation (QUGEN)** theo bài báo *QUIS: Question-guided Insights Generation for Automated Exploratory Data Analysis* (Figure 1, Section 3.1).
+Tài liệu này mô tả **đúng luồng và chi tiết** của QUGEN theo code trong `quis/qugen/` (tham chiếu bài báo QUIS, Figure 1 & Section 3.1).
 
 ---
 
-## 1. Định nghĩa Insight Card (đầu ra của QUGEN)
+## 1. Định nghĩa Insight Card (đầu ra)
 
-Mỗi **Insight Card** gồm 4 thành phần (Figure 2):
+Mỗi **Insight Card** có 4 trường (`quis/qugen/models.py` – `InsightCard`):
 
 | Thành phần | Mô tả |
 |------------|--------|
-| **REASON** | Lý do / rationale đằng sau câu hỏi, giúp phân tích sâu hơn. |
-| **QUESTION** | Câu hỏi tự nhiên hướng dẫn phân tích dữ liệu. |
-| **BREAKDOWN** | Thuộc tính breakdown B – chiều so sánh (ví dụ: Year, Department). |
-| **MEASURE** | Đại lượng đo M – dạng agg(C), ví dụ MEAN(Performance), COUNT(*). |
+| **question** | Câu hỏi tự nhiên hướng dẫn phân tích. |
+| **reason** | Lý do / rationale. |
+| **breakdown** | Chiều breakdown B (tên cột). |
+| **measure** | Đại lượng M, dạng agg(C), ví dụ MEAN(C), SUM(C), COUNT(*). |
 
-*Reason* được QUGEN dùng để mở rộng coverage; *Question*, *Breakdown*, *Measure* dùng cho cả QUGEN và ISGEN.
-
----
-
-## 2. Input của QUGEN
-
-- **Schema bảng**: tên cột, kiểu dữ liệu (và mô tả nếu có).
-- **Basic statistics (thống kê cơ bản)**: mô tả ngắn bằng ngôn ngữ tự nhiên, sinh bởi:
-  - Prompt LLM (Figure 7) để sinh các câu hỏi thống kê cơ bản;
-  - Chuyển sang SQL, chạy trên dataset, rồi chuyển kết quả sang mô tả ngôn ngữ tự nhiên.
-- **Few-shot examples**: schema của bảng mẫu + Insight Cards mẫu (trong prompt).
-- (Tùy chọn) **Insight Cards từ các iteration trước** dùng làm in-context examples cho iteration tiếp theo.
+Schema bảng: **TableSchema** (`table_name` + `columns`: list dict `name`, `dtype`, optional `description`).
 
 ---
 
-## 3. Các bước pipeline QUGEN (Section 3.1.2)
+## 2. Input thực tế
 
-### Bước 1: Tạo prompt
-
-- Mô tả nhiệm vụ phân tích (high-level).
-- Hướng dẫn chi tiết để sinh Insight Card (xem schema + basic statistics).
-- Few-shot: bảng schema mẫu + Insight Cards mẫu.
-- Schema bảng cần phân tích + **natural language stats** (thống kê cơ bản đã mô tả bằng ngôn ngữ tự nhiên).
-- (Từ iteration 2 trở đi) Thêm một **tập con Insight Cards** đã sinh ở các iteration trước làm in-context examples.
-
-### Bước 2: Gọi LLM và lấy mẫu
-
-- Prompt LLM (theo template Figure 6) để sinh **nhiều Insight Cards**.
-- **Sampling**: lấy **s** mẫu (samples) với **temperature t** (trong bài: s=3, t=1.1).
-- Mỗi mẫu chứa **n** Insight Cards (số lượng có thể dao động do giới hạn token).
-
-### Bước 3: Parse output
-
-- Parse câu trả lời của LLM để trích ra từng Insight Card (REASON, QUESTION, BREAKDOWN, MEASURE).
-
-### Bước 4: Lọc (filtering)
-
-1. **Schema relevance**: Loại Insight Card có **question** không liên quan ngữ nghĩa đến schema bảng.  
-   - Dùng **semantic similarity** với mô hình **all-MiniLM-L6-v2** (Sentence Transformers).
-
-2. **Deduplication**: Loại **trùng lặp** dựa trên độ tương đồng ngữ nghĩa giữa các cặp question.
-
-3. **Simple-question filter**: Loại câu hỏi **đơn giản / hời hợt**.  
-   - Chuyển question sang SQL, chạy trên dataset;  
-   - Nếu truy vấn **chỉ trả về 1 dòng** thì loại câu hỏi đó (chỉ giữ câu hỏi đủ “sâu” để phân tích).
-
-### Bước 5: Cập nhật pool và lặp
-
-- Thêm các Insight Card còn lại sau lọc vào **pool** (Insight Cards DB trong Figure 1).
-- Chọn **subset** (ví dụ 6 thẻ) từ pool làm **in-context examples** cho iteration tiếp theo.
-- Lặp lại từ **Bước 1** cho đến đủ số **iterations** (ví dụ 10).
-
-### Bước 6: Output
-
-- **Output** của QUGEN: **tập Insight Cards** tích lũy qua tất cả các iteration (ví dụ sau 10 iterations).
-- Tập này được dùng làm đầu vào cho **ISGEN** (Insight Generation).
+- **TableSchema**: từ CSV (hàm `schema_from_dataframe()` trong `models.py`) hoặc từ file JSON schema.
+- **DataFrame (tùy chọn)**: nếu có, dùng cho (1) basic stats đơn giản theo cột, (2) `run_query_fn` (hiện tại placeholder trả về 2).
+- **Natural language stats**: do **BasicStatsGenerator** (`stats.py`) tạo **một lần** trước vòng lặp:
+  - Gọi LLM với prompt Figure 7 → parse câu hỏi trong `[STAT]...[/STAT]`.
+  - Nếu có DataFrame: `_compute_simple_stats()` tính theo từng cột (số: min/max/mean; khác: số giá trị duy nhất), tối đa 25 dòng.
+  - Nếu không có DataFrame hoặc lỗi: liệt kê tối đa 20 câu hỏi stat dạng bullet.
+- **Few-shot**: mặc định từ `examples.py` – 2 cặp (Employee schema + 1 card, Sales schema + 1 card). Từ iteration 2 trở đi thêm **một block** (cùng table_schema + tối đa n card từ pool) **đặt trước** few-shot mặc định (`pipeline.py` – `_select_in_context_examples`).
 
 ---
 
-## 4. Mô hình sử dụng (theo bài báo)
+## 3. Luồng pipeline (theo code)
 
-| Thành phần | Mô hình / Công cụ |
-|------------|--------------------|
-| Sinh Insight Cards & basic stats questions | **LLM**: Llama-3-70b-instruct |
-| Semantic similarity (relevance + dedup) | **all-MiniLM-L6-v2** (Sentence Transformers) |
+### 3.1 Khởi tạo và chuẩn bị (`pipeline.run()`)
+
+1. **Natural language stats** (một lần):
+   - `BasicStatsGenerator.generate(table_schema, df)` → chuỗi NL stats dùng cho mọi iteration.
+2. **run_query_fn** (cho simple-question filter):
+   - Nếu config không set: dùng `_make_simple_row_count_fn(df)` khi có `df`, hiện tại **luôn trả về 2** (placeholder, không text2sql).
+   - Nếu không có `df`: `run_query_fn` là `None` → dùng lọc heuristic.
+
+### 3.2 Mỗi iteration (`run_one_iteration()`)
+
+**Bước 1 – Tạo prompt** (`prompts.build_qugen_prompt()`)
+
+- Nội dung: Task description + Instructions (Figure 6) + "Examples :" + từng block `[EXAMPLE TABLE SCHEMA]` / `[OUTPUT]` (Insight Card) / `[/OUTPUT]` + "Test Dataset :" + schema bảng + "NATURAL LANGUAGE STATS:" + chuỗi NL stats + yêu cầu sinh `num_questions` câu, format REASON/QUESTION/BREAKDOWN/MEASURE trong `[INSIGHT]...[/INSIGHT]`.
+- `example_schemas_and_cards`: iteration 1 = few-shot mặc định; từ iteration 2 = **[(table_schema, selected_cards)] + few_shot** (selected_cards = shuffle pool, lấy tối đa `num_in_context_examples`).
+
+**Bước 2 – Gọi LLM**
+
+- `llm.complete_multi(prompt, num_samples=..., temperature=..., max_tokens=2048)`.
+- Trong project:
+  - **OpenAI Responses API** (mặc định): `client.responses.create(model=..., input=prompt, store=False, max_output_tokens=max(2048, 8192))`; không gửi `temperature` (một số model không hỗ trợ); lấy text từ `response.output_text` hoặc fallback duyệt `response.output` (message + content type `output_text`).
+  - **Chat Completions** (khi tắt Responses API): `client.chat.completions.create(messages=..., temperature=..., max_tokens=...)`.
+- Số lần gọi = `num_samples_per_iteration`; mỗi lần trả về một chuỗi text.
+
+**Bước 3 – Parse** (`parser.parse_insight_cards_from_text()`)
+
+- Tìm các khối `[INSIGHT]...[/INSIGHT]` (regex, không phân biệt hoa thường).
+- Trong mỗi khối: tìm dòng bắt đầu `REASON:`, `QUESTION:`, `BREAKDOWN:`, `MEASURE:` (hoặc chữ thường) → tách giá trị sau dấu `:`.
+- Chỉ giữ card có `question` và `measure` khác rỗng.
+- Nếu không có tag `[INSIGHT]`: fallback tách theo "Insight Card N" hoặc parse toàn bộ text như một block.
+
+**Bước 4 – Debug (khi parse ra 0 card)**
+
+- Nếu sau parse không có card nào nhưng có `raw_outputs`: ghi `raw_outputs[0]` vào `debug_llm_response.txt` ở thư mục project.
+
+**Bước 5 – Lọc (theo thứ tự trong code)**
+
+1. **Schema relevance** (`filters.filter_by_schema_relevance`):
+   - Embedding: **sentence-transformers** `all-MiniLM-L6-v2` (lazy load).
+   - Schema text = table_name + tên cột (+ description nếu có). So cosine similarity giữa embedding câu hỏi và schema; giữ card khi similarity ≥ `schema_relevance_threshold` (mặc định 0.25). Nếu không load được model thì bỏ qua bước này.
+
+2. **Deduplication** (`filters.filter_duplicates`):
+   - Embedding câu hỏi (cùng model). Với mỗi card, so với các card đã giữ; nếu có similarity ≥ `dedup_similarity_threshold` (mặc định 0.85) thì coi là trùng, bỏ. Giữ card đầu tiên trong mỗi “cụm” trùng.
+
+3. **Simple-question filter** (`filters.filter_simple_questions`):
+   - Nếu `run_query_fn` là `None`: dùng **heuristic** (`_filter_simple_heuristic`): loại câu có độ dài < 15 ký tự; loại câu bắt đầu "what is the (total )?(number of|count of) " và độ dài < 60.
+   - Nếu có `run_query_fn`: giữ card khi `run_query_fn(question)` > 1 (hoặc None/exception thì vẫn giữ). Trong code hiện tại, `_make_simple_row_count_fn` luôn trả 2 nên mọi card đều được giữ khi dùng df.
+
+**Bước 6 – Cập nhật pool và in-context cho iteration sau**
+
+- `pool.extend(new_cards)`.
+- Deduplicate toàn bộ pool với cùng `dedup_similarity_threshold`.
+- `in_context = _select_in_context_examples(pool, num_in_context_examples, table_schema)`:
+  - Nếu pool rỗng hoặc n ≤ 0: trả về few-shot mặc định.
+  - Ngược lại: shuffle pool, lấy tối đa n card → `[(table_schema, selected)] + few_shot`.
+
+### 3.3 Kết thúc
+
+- Sau đủ `num_iterations` vòng: trả về **pool** (danh sách InsightCard). CLI ghi ra file JSON (mỗi phần tử là dict `question`, `reason`, `breakdown`, `measure`).
 
 ---
 
-## 5. Tham số thí nghiệm (Appendix D.2 – QUGEN)
+## 4. Tham số và file liên quan (theo code)
 
-- **LLM**: Llama-3-70b-instruct  
-- **Temperature** t = 1.1  
-- **Số samples mỗi iteration** s = 3  
-- **Số iterations** n = 10  
-- **Số in-context examples** = 6  
+| Tham số / hành vi | Vị trí | Giá trị / ghi chú |
+|-------------------|--------|--------------------|
+| temperature | QUGENConfig, run_qugen --temperature | Mặc định 1.1; với Responses API không gửi lên API. |
+| num_samples_per_iteration | QUGENConfig, --samples | Mặc định 3. |
+| num_iterations | QUGENConfig, --iterations | Mặc định 10. |
+| num_in_context_examples | QUGENConfig, --in-context | Mặc định 6. |
+| num_questions_per_prompt | QUGENConfig | Mặc định 10 (số câu yêu cầu trong prompt). |
+| schema_relevance_threshold | QUGENConfig, filters | 0.25. |
+| dedup_similarity_threshold | QUGENConfig, filters | 0.85. |
+| max_tokens (gửi từ pipeline) | run_one_iteration | 2048; client Responses API dùng max_output_tokens = max(2048, 8192). |
+| LLM | llm_client.py | Mặc định: OpenAI Responses API, model `gpt-5-nano`; hoặc Chat Completions `gpt-4o-mini`. Điều khiển bởi env OPENAI_USE_RESPONSES_API, QUGEN_LLM_MODEL, OPENAI_API_KEY, OPENAI_API_BASE. |
+| Semantic similarity | filters.py | all-MiniLM-L6-v2 (Sentence Transformers). |
 
 ---
 
-## 6. Input / Output tóm tắt
+## 5. Input / Output tóm tắt (theo code)
 
 | | Mô tả |
 |--|--------|
-| **Input** | Dataset (hoặc schema + bảng dữ liệu), cấu hình (s, t, n, số in-context examples). |
-| **Output** | Danh sách **Insight Cards**, mỗi card gồm: REASON, QUESTION, BREAKDOWN, MEASURE. |
+| **Input** | **TableSchema** (từ CSV qua `schema_from_dataframe()` hoặc từ JSON) + **DataFrame tùy chọn** (cho basic stats và run_query_fn). Cấu hình: QUGENConfig (s, iterations, in-context, threshold, …). |
+| **Output** | Danh sách **InsightCard** (question, reason, breakdown, measure). CLI xuất JSON; module trả về list để ISGEN dùng sau. |
 
-Các Insight Cards này sau đó được đưa vào **ISGEN** để sinh insight (pattern, subspace, visualization) tương ứng.
+---
+
+## 6. Khác biệt so với mô tả “lý tưởng” trong bài báo
+
+- **Basic stats**: Không có bước “chuyển câu hỏi stat sang SQL, chạy trên dataset, rồi dịch kết quả sang NL”. Code chỉ: LLM sinh câu hỏi [STAT]; NL stats = thống kê đơn giản theo cột (khi có df) hoặc danh sách câu hỏi.
+- **Simple-question filter**: Không có text2sql thật. Có `run_query_fn` nhưng `_make_simple_row_count_fn` chỉ trả 2; thực tế đang dùng **heuristic** (độ dài câu, mẫu "what is the number of/count of").
+- **LLM**: Project dùng **OpenAI** (Responses API hoặc Chat Completions), không dùng Llama-3-70b trực tiếp; có thể dùng endpoint khác qua OPENAI_API_BASE.
+- **Debug**: Khi parse ra 0 card, ghi phản hồi thô vào `debug_llm_response.txt`.
+
+Document này phản ánh đúng code trong `quis/qugen/` và `run_qugen.py` tại thời điểm review.

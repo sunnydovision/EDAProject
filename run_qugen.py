@@ -25,6 +25,10 @@ try:
 except ImportError:
     pass
 
+# Ẩn cảnh báo urllib3/LibreSSL trên macOS (không ảnh hưởng kết nối API)
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning, module="urllib3")
+
 import pandas as pd
 
 from quis.qugen.pipeline import QUGENPipeline, QUGENConfig
@@ -60,7 +64,11 @@ def main():
         parser.error("Provide either --csv or --schema")
 
     if args.csv:
-        df = pd.read_csv(args.csv)
+        # CSV có thể dùng ; (châu Âu) hoặc , làm delimiter
+        with open(args.csv, "r", encoding="utf-8") as f:
+            first_line = f.readline()
+        sep = ";" if first_line.count(";") > first_line.count(",") else ","
+        df = pd.read_csv(args.csv, sep=sep, decimal="," if sep == ";" else ".")
         table_schema = schema_from_dataframe(df, table_name=os.path.splitext(os.path.basename(args.csv))[0])
     else:
         table_schema = load_schema_from_json(args.schema)
@@ -78,6 +86,19 @@ def main():
         print("Chạy chế độ dry-run (mock LLM), không cần OPENAI_API_KEY.")
     pipeline = QUGENPipeline(config=config, llm_client=llm_client)
     cards = pipeline.run(table_schema=table_schema, df=df)
+
+    # Loại card trùng question (QUGEN đôi khi sinh cùng câu hỏi nhiều lần)
+    seen_questions: set[str] = set()
+    unique_cards = []
+    for c in cards:
+        q = (c.question or "").strip()
+        q_norm = " ".join(q.lower().split())
+        if q_norm and q_norm not in seen_questions:
+            seen_questions.add(q_norm)
+            unique_cards.append(c)
+        elif not q_norm:
+            unique_cards.append(c)
+    cards = unique_cards
 
     out_data = [c.to_dict() for c in cards]
     with open(args.output, "w", encoding="utf-8") as f:

@@ -142,4 +142,11 @@ EDAProj/
 └── README.md
 ```
 
-Phần 2 (ISGEN – Insight Generation) sẽ dùng danh sách Insight Cards này để sinh insight thống kê và visualization.
+---
+
+## Phần 2: ISGEN (Insight Generation)
+
+Module ISGEN nhận **Insight Cards** từ QUGEN và **dataset (CSV)**, tính view (B, M), áp dụng scoring (Trend, Outstanding Value, Attribution, Distribution Difference), chạy **basic insight** + **subspace search** (Algorithm 1), rồi **NL explanation** và **rule-based plotting** → **Insight Summary**.
+
+- Chi tiết: [docs/ISGEN_PIPELINE.md](docs/ISGEN_PIPELINE.md), [docs/ISGEN_INPUT_OUTPUT.md](docs/ISGEN_INPUT_OUTPUT.md).
+- **Chạy:** `python run_isgen.py --csv data/transactions.csv --insight-cards insight_cards.json --output insights_summary.json` (thêm `--plot-dir plots` để lưu đồ thị; `--no-subspace` để chỉ chạy basic insights).
