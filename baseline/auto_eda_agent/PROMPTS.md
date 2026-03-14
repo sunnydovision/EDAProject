@@ -504,6 +504,12 @@ Based on ALL previous analysis steps, extract valuable insights focused on: temp
 
 Insight types to find: TREND
 
+IMPORTANT - Available columns in dataset:
+Numerical columns: {list of actual numerical columns}
+Categorical columns: {list of actual categorical columns}
+
+You MUST use ONLY these actual column names in the "variables" field. Do NOT make up column names.
+
 Available context:
 - Data profile from step 1
 - Quality issues from step 2
@@ -515,6 +521,7 @@ Extract AS MANY valuable insights as possible for these types. Each insight shou
 - Supported by evidence from previous steps
 - Actionable or decision-relevant
 - Visualizable with the available data
+- Use ONLY actual column names from the list above
 
 Return JSON:
 {
@@ -523,7 +530,7 @@ Return JSON:
       "title": "Specific insight title",
       "description": "Detailed description with numbers and evidence",
       "type": "TREND",
-      "variables": ["var1", "var2"],
+      "variables": ["actual_column_name1", "actual_column_name2"],
       "evidence": {
         "source_step": "step3_statistics",
         "key_statistics": "Specific numbers",
@@ -554,6 +561,12 @@ Based on ALL previous analysis steps, extract valuable insights focused on: unus
 
 Insight types to find: OUTLIER, ANOMALY
 
+IMPORTANT - Available columns in dataset:
+Numerical columns: {list of actual numerical columns}
+Categorical columns: {list of actual categorical columns}
+
+You MUST use ONLY these actual column names in the "variables" field. Do NOT make up column names.
+
 Available context:
 - Data profile from step 1
 - Quality issues from step 2
@@ -565,6 +578,7 @@ Extract AS MANY valuable insights as possible for these types. Each insight shou
 - Supported by evidence from previous steps
 - Actionable or decision-relevant
 - Visualizable with the available data
+- Use ONLY actual column names from the list above
 
 Return JSON:
 {
@@ -573,7 +587,7 @@ Return JSON:
       "title": "Specific insight title",
       "description": "Detailed description with numbers and evidence",
       "type": "OUTLIER or ANOMALY",
-      "variables": ["var1", "var2"],
+      "variables": ["actual_column_name1", "actual_column_name2"],
       "evidence": {
         "source_step": "step2_quality",
         "key_statistics": "Specific numbers",
@@ -600,6 +614,12 @@ Based on ALL previous analysis steps, extract valuable insights focused on: rela
 
 Insight types to find: CORRELATION
 
+IMPORTANT - Available columns in dataset:
+Numerical columns: {list of actual numerical columns}
+Categorical columns: {list of actual categorical columns}
+
+You MUST use ONLY these actual column names in the "variables" field. Do NOT make up column names.
+
 Available context:
 - Data profile from step 1
 - Quality issues from step 2
@@ -611,6 +631,7 @@ Extract AS MANY valuable insights as possible for these types. Each insight shou
 - Supported by evidence from previous steps
 - Actionable or decision-relevant
 - Visualizable with the available data
+- Use ONLY actual column names from the list above
 
 Return JSON:
 {
@@ -619,7 +640,7 @@ Return JSON:
       "title": "Specific insight title",
       "description": "Detailed description with numbers and evidence",
       "type": "CORRELATION",
-      "variables": ["var1", "var2"],
+      "variables": ["actual_column_name1", "actual_column_name2"],
       "evidence": {
         "source_step": "step3_statistics",
         "key_statistics": "Specific numbers",
@@ -646,6 +667,12 @@ Based on ALL previous analysis steps, extract valuable insights focused on: dist
 
 Insight types to find: DISTRIBUTION, COMPARISON
 
+IMPORTANT - Available columns in dataset:
+Numerical columns: {list of actual numerical columns}
+Categorical columns: {list of actual categorical columns}
+
+You MUST use ONLY these actual column names in the "variables" field. Do NOT make up column names.
+
 Available context:
 - Data profile from step 1
 - Quality issues from step 2
@@ -657,6 +684,7 @@ Extract AS MANY valuable insights as possible for these types. Each insight shou
 - Supported by evidence from previous steps
 - Actionable or decision-relevant
 - Visualizable with the available data
+- Use ONLY actual column names from the list above
 
 Return JSON:
 {
@@ -665,7 +693,7 @@ Return JSON:
       "title": "Specific insight title",
       "description": "Detailed description with numbers and evidence",
       "type": "DISTRIBUTION or COMPARISON",
-      "variables": ["var1", "var2"],
+      "variables": ["actual_column_name1", "actual_column_name2"],
       "evidence": {
         "source_step": "step1_profiling",
         "key_statistics": "Specific numbers",
@@ -692,6 +720,12 @@ Based on ALL previous analysis steps, extract valuable insights focused on: recu
 
 Insight types to find: PATTERN
 
+IMPORTANT - Available columns in dataset:
+Numerical columns: {list of actual numerical columns}
+Categorical columns: {list of actual categorical columns}
+
+You MUST use ONLY these actual column names in the "variables" field. Do NOT make up column names.
+
 Available context:
 - Data profile from step 1
 - Quality issues from step 2
@@ -703,6 +737,7 @@ Extract AS MANY valuable insights as possible for these types. Each insight shou
 - Supported by evidence from previous steps
 - Actionable or decision-relevant
 - Visualizable with the available data
+- Use ONLY actual column names from the list above
 
 Return JSON:
 {
@@ -711,7 +746,7 @@ Return JSON:
       "title": "Specific insight title",
       "description": "Detailed description with numbers and evidence",
       "type": "PATTERN",
-      "variables": ["var1", "var2"],
+      "variables": ["actual_column_name1", "actual_column_name2"],
       "evidence": {
         "source_step": "step4_patterns",
         "key_statistics": "Specific numbers",
