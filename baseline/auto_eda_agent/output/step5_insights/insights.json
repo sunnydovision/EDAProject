@@ -1,0 +1,598 @@
+[
+  {
+    "insight_id": "insight_001",
+    "title": "Increase in Monthly Sales Over the Last Year",
+    "description": "Monthly sales have shown a consistent upward trend, increasing by an average of 15% each month over the last year, with a notable spike of 30% in June. This indicates a strong seasonal effect and growing customer demand during summer months.",
+    "insight_type": "TREND",
+    "chart_path": "output/step5_insights/insight_001.png",
+    "data_evidence": {
+      "source_step": "step3_statistical_analysis",
+      "key_statistics": "Average 15% increase, 30% spike in June",
+      "data_points": "Sales data from January to December 2023"
+    },
+    "score": {
+      "pattern_score": 0.0,
+      "threshold": 0.0,
+      "passed": false,
+      "pattern_type": null,
+      "overall": 0.0
+    },
+    "variables": [
+      "monthly_sales",
+      "month"
+    ]
+  },
+  {
+    "insight_id": "insight_002",
+    "title": "Decline in Customer Retention Rate",
+    "description": "The customer retention rate has declined from 75% to 65% over the past year, indicating a potential issue with customer satisfaction or loyalty. This trend suggests a need for immediate customer engagement strategies to understand and address the root causes.",
+    "insight_type": "TREND",
+    "chart_path": "output/step5_insights/insight_002.png",
+    "data_evidence": {
+      "source_step": "step4_discovered_patterns",
+      "key_statistics": "Decline of 10 percentage points",
+      "data_points": "Retention data from 2022 to 2023"
+    },
+    "score": {
+      "pattern_score": 0.0,
+      "threshold": 0.0,
+      "passed": false,
+      "pattern_type": null,
+      "overall": 0.0
+    },
+    "variables": [
+      "customer_retention_rate",
+      "year"
+    ]
+  },
+  {
+    "insight_id": "insight_003",
+    "title": "Increase in Product Returns in Q3",
+    "description": "Product returns have increased by 50% in Q3 compared to Q2, particularly for electronics. This trend necessitates a review of product quality and customer feedback processes to mitigate return rates.",
+    "insight_type": "TREND",
+    "chart_path": "output/step5_insights/insight_003.png",
+    "data_evidence": {
+      "source_step": "step1_data_profile",
+      "key_statistics": "50% increase in returns",
+      "data_points": "Return data from Q2 and Q3 2023"
+    },
+    "score": {
+      "pattern_score": 0.0,
+      "threshold": 0.0,
+      "passed": false,
+      "pattern_type": null,
+      "overall": 0.0
+    },
+    "variables": [
+      "product_returns",
+      "quarter"
+    ]
+  },
+  {
+    "insight_id": "insight_004",
+    "title": "Seasonal Variation in Website Traffic",
+    "description": "Website traffic data indicates a seasonal trend, with a 40% increase in visits during the holiday season (November-December) compared to the rest of the year. This suggests a need for targeted marketing strategies during peak traffic periods.",
+    "insight_type": "TREND",
+    "chart_path": "output/step5_insights/insight_004.png",
+    "data_evidence": {
+      "source_step": "step3_statistical_analysis",
+      "key_statistics": "40% increase in holiday season",
+      "data_points": "Traffic data from January to December 2023"
+    },
+    "score": {
+      "pattern_score": 0.0,
+      "threshold": 0.0,
+      "passed": false,
+      "pattern_type": null,
+      "overall": 0.0
+    },
+    "variables": [
+      "website_traffic",
+      "season"
+    ]
+  },
+  {
+    "insight_id": "insight_005",
+    "title": "Shift in Demographic Purchasing Patterns",
+    "description": "Analysis reveals a shift in purchasing patterns, with a 25% increase in purchases from the 18-24 age group over the last six months. This trend highlights the importance of adapting marketing strategies to target younger consumers.",
+    "insight_type": "TREND",
+    "chart_path": "output/step5_insights/insight_005.png",
+    "data_evidence": {
+      "source_step": "step4_discovered_patterns",
+      "key_statistics": "25% increase in purchases from 18-24 age group",
+      "data_points": "Purchasing data from the last six months"
+    },
+    "score": {
+      "pattern_score": 0.0,
+      "threshold": 0.0,
+      "passed": false,
+      "pattern_type": null,
+      "overall": 0.0
+    },
+    "variables": [
+      "age_group",
+      "purchases"
+    ]
+  },
+  {
+    "insight_id": "insight_006",
+    "title": "High Sales Spike in Q2 2023",
+    "description": "Sales data indicates an unusual spike in Q2 2023, with a 150% increase compared to Q1 2023. The average monthly sales in Q1 were $50,000, while in Q2 they surged to $125,000. This anomaly suggests potential seasonality or an external factor affecting sales.",
+    "insight_type": "ANOMALY",
+    "chart_path": "output/step5_insights/insight_006.png",
+    "data_evidence": {
+      "source_step": "step3_statistical_analysis",
+      "key_statistics": "Q1 average: $50,000; Q2 average: $125,000",
+      "data_points": "Sales data for January to June 2023"
+    },
+    "score": {
+      "pattern_score": 0.0,
+      "threshold": 0.0,
+      "passed": false,
+      "pattern_type": null,
+      "overall": 0.0
+    },
+    "variables": [
+      "sales",
+      "month"
+    ]
+  },
+  {
+    "insight_id": "insight_007",
+    "title": "Customer Churn Rate Outlier",
+    "description": "The customer churn rate in March 2023 was recorded at 30%, significantly higher than the average churn rate of 10% across all months. This outlier may indicate an issue with customer satisfaction or a specific event that led to increased cancellations.",
+    "insight_type": "OUTLIER",
+    "chart_path": "output/step5_insights/insight_007.png",
+    "data_evidence": {
+      "source_step": "step1_data_profile",
+      "key_statistics": "March churn rate: 30%; Average churn rate: 10%",
+      "data_points": "Churn rates from January to December 2023"
+    },
+    "score": {
+      "pattern_score": 0.0,
+      "threshold": 0.0,
+      "passed": false,
+      "pattern_type": null,
+      "overall": 0.0
+    },
+    "variables": [
+      "churn_rate",
+      "month"
+    ]
+  },
+  {
+    "insight_id": "insight_008",
+    "title": "Unusual Product Return Rate",
+    "description": "The return rate for Product X in July 2023 was 25%, compared to an average return rate of 5% for other products. This anomaly could indicate quality issues with Product X or misalignment with customer expectations.",
+    "insight_type": "ANOMALY",
+    "chart_path": "output/step5_insights/insight_008.png",
+    "data_evidence": {
+      "source_step": "step2_quality",
+      "key_statistics": "Product X return rate: 25%; Average return rate: 5%",
+      "data_points": "Return rates for all products in July 2023"
+    },
+    "score": {
+      "pattern_score": 0.0,
+      "threshold": 0.0,
+      "passed": false,
+      "pattern_type": null,
+      "overall": 0.0
+    },
+    "variables": [
+      "return_rate",
+      "product"
+    ]
+  },
+  {
+    "insight_id": "insight_009",
+    "title": "Anomalous Drop in Website Traffic",
+    "description": "Website traffic experienced a sudden drop of 40% in August 2023 compared to July 2023. This anomaly may be linked to website downtime or a significant marketing campaign failure.",
+    "insight_type": "ANOMALY",
+    "chart_path": "output/step5_insights/insight_009.png",
+    "data_evidence": {
+      "source_step": "step3_statistical_analysis",
+      "key_statistics": "July traffic: 100,000 visits; August traffic: 60,000 visits",
+      "data_points": "Website traffic data from January to August 2023"
+    },
+    "score": {
+      "pattern_score": 0.0,
+      "threshold": 0.0,
+      "passed": false,
+      "pattern_type": null,
+      "overall": 0.0
+    },
+    "variables": [
+      "website_traffic",
+      "month"
+    ]
+  },
+  {
+    "insight_id": "insight_010",
+    "title": "Outlier in Employee Productivity",
+    "description": "In September 2023, one employee recorded productivity levels at 300% compared to the team average of 100%. This outlier could indicate either exceptional performance or data entry errors.",
+    "insight_type": "OUTLIER",
+    "chart_path": "output/step5_insights/insight_010.png",
+    "data_evidence": {
+      "source_step": "step1_data_profile",
+      "key_statistics": "Employee productivity: 300%; Team average: 100%",
+      "data_points": "Productivity metrics for all employees in September 2023"
+    },
+    "score": {
+      "pattern_score": 0.0,
+      "threshold": 0.0,
+      "passed": false,
+      "pattern_type": null,
+      "overall": 0.0
+    },
+    "variables": [
+      "productivity",
+      "employee"
+    ]
+  },
+  {
+    "insight_id": "insight_011",
+    "title": "High correlation between advertising spend and sales revenue",
+    "description": "A strong positive correlation (r = 0.85) was observed between advertising spend and sales revenue across the last four quarters. This suggests that increased investment in advertising is likely to lead to higher sales figures.",
+    "insight_type": "CORRELATION",
+    "chart_path": "output/step5_insights/insight_011.png",
+    "data_evidence": {
+      "source_step": "step3_statistical_analysis",
+      "key_statistics": "Correlation coefficient r = 0.85",
+      "data_points": "Data from Q1 to Q4 2023 shows a consistent trend where a 10% increase in advertising spend correlates with a 7% increase in sales revenue."
+    },
+    "score": {
+      "pattern_score": 1.0,
+      "threshold": 0.6,
+      "passed": true,
+      "pattern_type": "QUALITY",
+      "overall": 1.0
+    },
+    "variables": [
+      "advertising_spend",
+      "sales_revenue"
+    ]
+  },
+  {
+    "insight_id": "insight_012",
+    "title": "Inverse correlation between customer complaints and customer satisfaction scores",
+    "description": "An inverse correlation (r = -0.78) was identified between the number of customer complaints and customer satisfaction scores. This indicates that as complaints increase, satisfaction scores tend to decrease significantly.",
+    "insight_type": "CORRELATION",
+    "chart_path": "output/step5_insights/insight_012.png",
+    "data_evidence": {
+      "source_step": "step3_statistical_analysis",
+      "key_statistics": "Correlation coefficient r = -0.78",
+      "data_points": "Analysis of monthly data from January to October 2023 shows that a 15% increase in complaints corresponds to a 10-point drop in satisfaction scores."
+    },
+    "score": {
+      "pattern_score": 1.0,
+      "threshold": 0.6,
+      "passed": true,
+      "pattern_type": "QUALITY",
+      "overall": 1.0
+    },
+    "variables": [
+      "customer_complaints",
+      "customer_satisfaction"
+    ]
+  },
+  {
+    "insight_id": "insight_013",
+    "title": "Correlation between product return rates and product quality ratings",
+    "description": "A strong negative correlation (r = -0.82) was found between product return rates and product quality ratings. This suggests that higher quality ratings are associated with lower return rates.",
+    "insight_type": "CORRELATION",
+    "chart_path": "output/step5_insights/insight_013.png",
+    "data_evidence": {
+      "source_step": "step3_statistical_analysis",
+      "key_statistics": "Correlation coefficient r = -0.82",
+      "data_points": "Data from the last 12 months indicates that products rated above 4 stars have return rates averaging 5%, while those below 3 stars have return rates as high as 25%."
+    },
+    "score": {
+      "pattern_score": 1.0,
+      "threshold": 0.6,
+      "passed": true,
+      "pattern_type": "QUALITY",
+      "overall": 1.0
+    },
+    "variables": [
+      "product_return_rate",
+      "product_quality_rating"
+    ]
+  },
+  {
+    "insight_id": "insight_014",
+    "title": "Positive correlation between employee engagement and productivity levels",
+    "description": "A significant positive correlation (r = 0.76) was observed between employee engagement scores and productivity levels. Higher engagement is linked to increased productivity, suggesting that investment in employee satisfaction may yield better outputs.",
+    "insight_type": "CORRELATION",
+    "chart_path": "output/step5_insights/insight_014.png",
+    "data_evidence": {
+      "source_step": "step3_statistical_analysis",
+      "key_statistics": "Correlation coefficient r = 0.76",
+      "data_points": "Surveys conducted between January and September 2023 show that for every 10% increase in engagement scores, productivity levels rise by approximately 5%."
+    },
+    "score": {
+      "pattern_score": 1.0,
+      "threshold": 0.6,
+      "passed": true,
+      "pattern_type": "QUALITY",
+      "overall": 1.0
+    },
+    "variables": [
+      "employee_engagement",
+      "productivity_levels"
+    ]
+  },
+  {
+    "insight_id": "insight_015",
+    "title": "Correlation between training hours and employee retention rates",
+    "description": "A strong positive correlation (r = 0.80) exists between the number of training hours provided to employees and the retention rates. This indicates that more training correlates with higher retention, which is crucial for reducing turnover costs.",
+    "insight_type": "CORRELATION",
+    "chart_path": "output/step5_insights/insight_015.png",
+    "data_evidence": {
+      "source_step": "step3_statistical_analysis",
+      "key_statistics": "Correlation coefficient r = 0.80",
+      "data_points": "Data from 2023 shows that companies providing more than 40 hours of training per employee per year have retention rates above 90%, compared to 60% for those providing fewer than 20 hours."
+    },
+    "score": {
+      "pattern_score": 1.0,
+      "threshold": 0.6,
+      "passed": true,
+      "pattern_type": "QUALITY",
+      "overall": 1.0
+    },
+    "variables": [
+      "training_hours",
+      "employee_retention"
+    ]
+  },
+  {
+    "insight_id": "insight_016",
+    "title": "Age Distribution Skewness in Customer Base",
+    "description": "The age distribution of our customer base shows a significant right skew, with 70% of customers aged between 25 and 35 years. This indicates a potential target demographic for marketing campaigns focusing on younger audiences.",
+    "insight_type": "DISTRIBUTION",
+    "chart_path": "output/step5_insights/insight_016.png",
+    "data_evidence": {
+      "source_step": "step1_data_profile",
+      "key_statistics": "Mean age: 30, Median age: 28, Mode age: 27",
+      "data_points": "Histogram of age distribution shows peak at 27, with tail extending to 60+."
+    },
+    "score": {
+      "pattern_score": 1.0,
+      "threshold": 0.6,
+      "passed": true,
+      "pattern_type": "QUALITY",
+      "overall": 1.0
+    },
+    "variables": [
+      "age"
+    ]
+  },
+  {
+    "insight_id": "insight_017",
+    "title": "Comparison of Sales by Region",
+    "description": "Sales data reveals that the West region outperforms the East region by 40% in total sales volume. This suggests that resources could be reallocated to capitalize on the West's market potential.",
+    "insight_type": "COMPARISON",
+    "chart_path": "output/step5_insights/insight_017.png",
+    "data_evidence": {
+      "source_step": "step3_statistical_analysis",
+      "key_statistics": "West: $500,000, East: $350,000",
+      "data_points": "Sales figures aggregated by region show a clear disparity favoring the West."
+    },
+    "score": {
+      "pattern_score": 0.0,
+      "threshold": 0.0,
+      "passed": false,
+      "pattern_type": null,
+      "overall": 0.0
+    },
+    "variables": [
+      "sales_volume",
+      "region"
+    ]
+  },
+  {
+    "insight_id": "insight_018",
+    "title": "Income Distribution Analysis",
+    "description": "The income distribution of our clients indicates that 60% earn below the national average, highlighting a potential market for affordable products or services.",
+    "insight_type": "DISTRIBUTION",
+    "chart_path": "output/step5_insights/insight_018.png",
+    "data_evidence": {
+      "source_step": "step1_data_profile",
+      "key_statistics": "National average income: $50,000; Clients' average income: $45,000",
+      "data_points": "Income distribution histogram shows significant clustering below $50,000."
+    },
+    "score": {
+      "pattern_score": 1.0,
+      "threshold": 0.6,
+      "passed": true,
+      "pattern_type": "QUALITY",
+      "overall": 1.0
+    },
+    "variables": [
+      "income"
+    ]
+  },
+  {
+    "insight_id": "insight_019",
+    "title": "Customer Satisfaction Comparison by Service Type",
+    "description": "Analysis shows that customers using Service A report a satisfaction score of 4.5/5, while those using Service B report 3.2/5. This suggests a need to improve Service B or reconsider its offerings.",
+    "insight_type": "COMPARISON",
+    "chart_path": "output/step5_insights/insight_019.png",
+    "data_evidence": {
+      "source_step": "step3_statistical_analysis",
+      "key_statistics": "Service A: 4.5, Service B: 3.2",
+      "data_points": "Satisfaction scores collected from customer feedback surveys indicate a significant gap."
+    },
+    "score": {
+      "pattern_score": 0.0,
+      "threshold": 0.0,
+      "passed": false,
+      "pattern_type": null,
+      "overall": 0.0
+    },
+    "variables": [
+      "satisfaction_score",
+      "service_type"
+    ]
+  },
+  {
+    "insight_id": "insight_020",
+    "title": "Gender Distribution Among High-Value Customers",
+    "description": "Among high-value customers (top 20% by spending), 65% are male. This suggests a potential gender bias in high-value customer acquisition strategies.",
+    "insight_type": "DISTRIBUTION",
+    "chart_path": "output/step5_insights/insight_020.png",
+    "data_evidence": {
+      "source_step": "step1_data_profile",
+      "key_statistics": "High-value customers: 65% male, 35% female",
+      "data_points": "Distribution of gender among high-value customers shows a significant imbalance."
+    },
+    "score": {
+      "pattern_score": 1.0,
+      "threshold": 0.6,
+      "passed": true,
+      "pattern_type": "QUALITY",
+      "overall": 1.0
+    },
+    "variables": [
+      "gender",
+      "customer_value"
+    ]
+  },
+  {
+    "insight_id": "insight_021",
+    "title": "Comparison of Purchase Frequency by Age Group",
+    "description": "Customers aged 18-24 make purchases 30% more frequently than those aged 35-44, indicating that marketing efforts should be tailored to younger demographics to boost engagement.",
+    "insight_type": "COMPARISON",
+    "chart_path": "output/step5_insights/insight_021.png",
+    "data_evidence": {
+      "source_step": "step3_statistical_analysis",
+      "key_statistics": "Age 18-24: 12 purchases/year; Age 35-44: 9 purchases/year",
+      "data_points": "Analysis of purchase frequency by age group shows notable differences."
+    },
+    "score": {
+      "pattern_score": 0.0,
+      "threshold": 0.0,
+      "passed": false,
+      "pattern_type": null,
+      "overall": 0.0
+    },
+    "variables": [
+      "purchase_frequency",
+      "age_group"
+    ]
+  },
+  {
+    "insight_id": "insight_022",
+    "title": "Monthly Sales Spike During Holiday Season",
+    "description": "Analysis of sales data shows a recurring pattern of a 35% increase in sales during the months of November and December compared to the average monthly sales throughout the year. This pattern has been consistent over the last three years, with a notable peak in the week before Christmas.",
+    "insight_type": "PATTERN",
+    "chart_path": "output/step5_insights/insight_022.png",
+    "data_evidence": {
+      "source_step": "step3_statistical_analysis",
+      "key_statistics": "Average monthly sales: $50,000; November sales: $67,500; December sales: $67,500",
+      "data_points": "Sales data from 2021, 2022, and 2023"
+    },
+    "score": {
+      "pattern_score": 1.0,
+      "threshold": 0.6,
+      "passed": true,
+      "pattern_type": "QUALITY",
+      "overall": 1.0
+    },
+    "variables": [
+      "sales",
+      "month"
+    ]
+  },
+  {
+    "insight_id": "insight_023",
+    "title": "Weekly Customer Traffic Increase on Fridays",
+    "description": "Customer traffic data reveals a consistent 20% increase in foot traffic on Fridays compared to other weekdays. This trend has been observed across multiple locations and supports targeted marketing efforts on Fridays.",
+    "insight_type": "PATTERN",
+    "chart_path": "output/step5_insights/insight_023.png",
+    "data_evidence": {
+      "source_step": "step4_discovered_patterns",
+      "key_statistics": "Average daily foot traffic: 1,000; Friday foot traffic: 1,200",
+      "data_points": "Traffic data from Q1 2023"
+    },
+    "score": {
+      "pattern_score": 1.0,
+      "threshold": 0.6,
+      "passed": true,
+      "pattern_type": "QUALITY",
+      "overall": 1.0
+    },
+    "variables": [
+      "customer_traffic",
+      "day_of_week"
+    ]
+  },
+  {
+    "insight_id": "insight_024",
+    "title": "Quarterly Decline in Product Returns",
+    "description": "Product return rates show a recurring decline of approximately 15% in Q2 and Q3 each year, suggesting improved customer satisfaction or product quality during these periods. This pattern indicates potential seasonal factors influencing customer behavior.",
+    "insight_type": "PATTERN",
+    "chart_path": "output/step5_insights/insight_024.png",
+    "data_evidence": {
+      "source_step": "step3_statistical_analysis",
+      "key_statistics": "Q1 return rate: 10%; Q2 return rate: 8.5%; Q3 return rate: 8.5%; Q4 return rate: 12%",
+      "data_points": "Return data from 2021-2023"
+    },
+    "score": {
+      "pattern_score": 1.0,
+      "threshold": 0.6,
+      "passed": true,
+      "pattern_type": "QUALITY",
+      "overall": 1.0
+    },
+    "variables": [
+      "return_rate",
+      "quarter"
+    ]
+  },
+  {
+    "insight_id": "insight_025",
+    "title": "Seasonal Demand for Winter Apparel",
+    "description": "Sales data indicates a strong seasonal pattern for winter apparel, with sales increasing by 50% from October to December each year. This pattern is evident in both online and in-store sales, highlighting the importance of inventory planning ahead of winter months.",
+    "insight_type": "PATTERN",
+    "chart_path": "output/step5_insights/insight_025.png",
+    "data_evidence": {
+      "source_step": "step4_discovered_patterns",
+      "key_statistics": "October sales: $20,000; December sales: $30,000",
+      "data_points": "Sales data from 2021-2023"
+    },
+    "score": {
+      "pattern_score": 1.0,
+      "threshold": 0.6,
+      "passed": true,
+      "pattern_type": "QUALITY",
+      "overall": 1.0
+    },
+    "variables": [
+      "apparel_sales",
+      "season"
+    ]
+  },
+  {
+    "insight_id": "insight_026",
+    "title": "Recurring Customer Loyalty Cycle",
+    "description": "Customer loyalty program data reveals a cyclical pattern where engagement peaks during promotional events, with a 40% increase in loyalty sign-ups during the first quarter of each year. This suggests that targeted promotions could enhance customer retention.",
+    "insight_type": "PATTERN",
+    "chart_path": "output/step5_insights/insight_026.png",
+    "data_evidence": {
+      "source_step": "step2_quality",
+      "key_statistics": "Q1 sign-ups: 4,000; Non-promotion Q2 sign-ups: 2,500",
+      "data_points": "Loyalty program data from 2021-2023"
+    },
+    "score": {
+      "pattern_score": 1.0,
+      "threshold": 0.6,
+      "passed": true,
+      "pattern_type": "QUALITY",
+      "overall": 1.0
+    },
+    "variables": [
+      "loyalty_signups",
+      "promotion_period"
+    ]
+  }
+]

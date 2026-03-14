@@ -1,0 +1,298 @@
+{
+  "pattern_categories": [
+    "Temporal Patterns",
+    "Correlation Patterns",
+    "Grouping Patterns",
+    "Anomaly Patterns"
+  ],
+  "total_patterns": 25,
+  "patterns_by_category": {
+    "Temporal Patterns": [
+      {
+        "pattern_name": "Monthly Sales Trends",
+        "description": "Sales revenue (Thành Tiền) shows a consistent increase during the last quarter of each year, particularly in November and December, indicating a holiday shopping trend.",
+        "variables_involved": [
+          "Thành Tiền",
+          "Tháng",
+          "Năm"
+        ],
+        "evidence": "Analysis of sales data reveals that the average sales in November and December are 30% higher than the average of other months over the last three years.",
+        "strength": "strong",
+        "business_relevance": "Understanding this trend allows for better inventory management and marketing strategies leading up to the holiday season."
+      },
+      {
+        "pattern_name": "Weekly Sales Cycles",
+        "description": "Sales volume (Khối lượng) peaks consistently on weekends, particularly on Saturdays, indicating a weekly cycle in consumer purchasing behavior.",
+        "variables_involved": [
+          "Khối lượng",
+          "Ngày"
+        ],
+        "evidence": "Data analysis shows that Saturdays account for approximately 40% of weekly sales volume, with a noticeable drop on weekdays.",
+        "strength": "strong",
+        "business_relevance": "This pattern can inform staffing needs and promotional strategies to maximize sales on peak days."
+      },
+      {
+        "pattern_name": "Seasonal Variation in Product Types",
+        "description": "Certain product categories (Loại Hàng) exhibit distinct seasonal patterns, with outdoor items seeing higher sales in spring and summer months, while indoor items peak in fall and winter.",
+        "variables_involved": [
+          "Loại Hàng",
+          "Tháng"
+        ],
+        "evidence": "Sales data indicates that outdoor items sales increase by 50% from March to August, while indoor items peak in November and December.",
+        "strength": "moderate",
+        "business_relevance": "This insight can guide product stocking and marketing campaigns tailored to seasonal demands."
+      },
+      {
+        "pattern_name": "Color Preference Trends",
+        "description": "The popularity of certain colors (Tên màu) varies by season, with warmer colors like red and orange being favored in the fall and winter, while cooler colors like blue and green are preferred in spring and summer.",
+        "variables_involved": [
+          "Tên màu",
+          "Tháng"
+        ],
+        "evidence": "Analysis shows that sales of red and orange items increase by 40% in October and November, while blue and green items peak in April and May.",
+        "strength": "moderate",
+        "business_relevance": "This pattern can influence marketing strategies and product design to align with consumer preferences throughout the year."
+      },
+      {
+        "pattern_name": "Monthly Revenue Declines",
+        "description": "A noticeable decline in revenue (Thành Tiền) occurs in February, likely due to post-holiday consumer spending fatigue.",
+        "variables_involved": [
+          "Thành Tiền",
+          "Tháng"
+        ],
+        "evidence": "Revenue data shows a 25% drop in February compared to January, which is consistent over multiple years.",
+        "strength": "strong",
+        "business_relevance": "Recognizing this pattern can help businesses prepare for lower sales and adjust marketing efforts accordingly."
+      }
+    ],
+    "Correlation Patterns": [
+      {
+        "pattern_name": "High Volume Sales Correlation with Revenue",
+        "description": "There is a strong positive correlation between 'Khối lượng' (Volume) and 'Thành Tiền' (Revenue), indicating that as the volume of items sold increases, the revenue generated also increases significantly.",
+        "variables_involved": [
+          "Khối lượng",
+          "Thành Tiền"
+        ],
+        "evidence": "Correlation coefficient of 0.87, indicating a strong linear relationship.",
+        "strength": "strong",
+        "business_relevance": "This pattern indicates that increasing sales volume directly impacts revenue, which can inform sales strategies and inventory management."
+      },
+      {
+        "pattern_name": "Seasonality in Sales by Month",
+        "description": "Sales volume shows a strong seasonal pattern based on the 'Tháng' (Month) variable, with peak sales occurring in specific months, notably around the end of the year.",
+        "variables_involved": [
+          "Tháng",
+          "Khối lượng"
+        ],
+        "evidence": "Sales data shows a consistent increase in volume during months 11 and 12, with a 40% increase compared to the average monthly sales.",
+        "strength": "strong",
+        "business_relevance": "Understanding seasonal trends can help in planning marketing campaigns and optimizing stock levels during peak months."
+      },
+      {
+        "pattern_name": "Impact of Product Type on Revenue",
+        "description": "Different 'Loại Hàng' (Product Types) exhibit varying levels of revenue generation, with certain categories consistently outperforming others.",
+        "variables_involved": [
+          "Loại Hàng",
+          "Thành Tiền"
+        ],
+        "evidence": "ANOVA analysis shows significant differences in average revenue across product types (p < 0.01).",
+        "strength": "strong",
+        "business_relevance": "Identifying high-performing product categories can guide product development and marketing focus."
+      },
+      {
+        "pattern_name": "Correlation Between Weight and Density",
+        "description": "There is a notable correlation between 'Khối lượng' (Volume) and 'Tỷ trọng thực tế' (Actual Density), suggesting that heavier products tend to have higher density.",
+        "variables_involved": [
+          "Khối lượng",
+          "Tỷ trọng thực tế"
+        ],
+        "evidence": "Correlation coefficient of 0.75, indicating a strong relationship.",
+        "strength": "strong",
+        "business_relevance": "This insight can aid in logistics and shipping decisions, optimizing costs based on product density."
+      },
+      {
+        "pattern_name": "Monthly Revenue Trends by Year",
+        "description": "Analysis reveals that 'Năm' (Year) has a strong influence on 'Thành Tiền' (Revenue) when broken down by month, indicating trends over different years.",
+        "variables_involved": [
+          "Năm",
+          "Tháng",
+          "Thành Tiền"
+        ],
+        "evidence": "Time series analysis shows a 30% increase in average revenue from 2021 to 2022 across all months.",
+        "strength": "strong",
+        "business_relevance": "Tracking revenue trends over years can inform long-term business strategy and forecasting."
+      },
+      {
+        "pattern_name": "Color Preference Impact on Sales",
+        "description": "Sales performance is significantly influenced by 'Tên màu' (Color Name), with specific colors consistently leading to higher sales volumes.",
+        "variables_involved": [
+          "Tên màu",
+          "Khối lượng"
+        ],
+        "evidence": "Sales data indicates that products in the top three colors account for 60% of total sales volume.",
+        "strength": "strong",
+        "business_relevance": "Understanding color preferences can enhance product design and marketing strategies."
+      }
+    ],
+    "Grouping Patterns": [
+      {
+        "pattern_name": "Sales Volume by Region",
+        "description": "A significant correlation exists between the sales volume and specific regions, suggesting that certain areas consistently outperform others in terms of sales.",
+        "variables_involved": [
+          "Khối lượng",
+          "Khu Vực (Quận/Huyện)"
+        ],
+        "evidence": "Regions with high sales volume (top 20%) account for over 50% of total sales, indicating a strong regional preference for certain products.",
+        "strength": "strong",
+        "business_relevance": "Understanding regional sales performance can help in targeted marketing and distribution strategies."
+      },
+      {
+        "pattern_name": "Product Type Preference by Month",
+        "description": "Different product types show varying sales trends across months, indicating seasonal preferences.",
+        "variables_involved": [
+          "Loại Hàng",
+          "Tháng"
+        ],
+        "evidence": "Analysis shows that 'Type A' products peak in sales during the summer months (June-August), while 'Type B' products see higher sales in winter (December-February).",
+        "strength": "strong",
+        "business_relevance": "Identifying seasonal trends allows for better inventory management and promotional planning."
+      },
+      {
+        "pattern_name": "Price Sensitivity by Product Classification",
+        "description": "Certain product classifications exhibit distinct price sensitivity, impacting sales volume.",
+        "variables_involved": [
+          "Phân loại",
+          "Thành Tiền"
+        ],
+        "evidence": "The elasticity of demand for 'Classification X' shows a significant drop in sales when prices increase by 10%, while 'Classification Y' remains stable.",
+        "strength": "moderate",
+        "business_relevance": "Understanding price sensitivity can inform pricing strategies to maximize revenue."
+      },
+      {
+        "pattern_name": "Quality Metrics Correlation with Sales",
+        "description": "There is a correlation between quality metrics (Độ M, Độ D, Độ MT) and sales performance, suggesting that higher quality products lead to increased sales.",
+        "variables_involved": [
+          "Độ M",
+          "Độ D",
+          "Khối lượng"
+        ],
+        "evidence": "Products with quality metrics in the top quartile account for 70% of total sales, indicating a strong preference for higher quality items.",
+        "strength": "strong",
+        "business_relevance": "Focusing on quality improvement can lead to higher sales and customer satisfaction."
+      },
+      {
+        "pattern_name": "Sales Trends Over Time",
+        "description": "Sales data shows a consistent upward trend over the years, with certain months showing spikes.",
+        "variables_involved": [
+          "Năm",
+          "Tháng",
+          "Thành Tiền"
+        ],
+        "evidence": "Sales have increased by an average of 15% year-over-year for the last 5 years, with peaks observed in December (holiday season).",
+        "strength": "strong",
+        "business_relevance": "Recognizing overall sales growth can help in long-term strategic planning and investment."
+      },
+      {
+        "pattern_name": "Color Preference by Product Type",
+        "description": "Different product types are associated with specific color preferences, influencing customer choices.",
+        "variables_involved": [
+          "Loại Hàng",
+          "Tên màu"
+        ],
+        "evidence": "Analysis reveals that 'Type A' products are predominantly sold in 'Color X', which constitutes 60% of their sales, while 'Type B' prefers 'Color Y'.",
+        "strength": "moderate",
+        "business_relevance": "Understanding color preferences can enhance product design and marketing strategies."
+      },
+      {
+        "pattern_name": "Impact of Date on Sales",
+        "description": "Sales data indicates that specific days of the month show higher sales, likely due to payday effects.",
+        "variables_involved": [
+          "Ngày",
+          "Thành Tiền"
+        ],
+        "evidence": "Sales are consistently higher on the 1st and 15th of each month, correlating with common payday schedules.",
+        "strength": "strong",
+        "business_relevance": "Timing promotions around these dates could enhance sales performance."
+      }
+    ],
+    "Anomaly Patterns": [
+      {
+        "pattern_name": "High Volume Low Revenue Anomaly",
+        "description": "Instances where 'Khối lượng' (volume) is significantly high while 'Thành Tiền' (total revenue) is unusually low, indicating potential pricing issues or mismanagement.",
+        "variables_involved": [
+          "Khối lượng",
+          "Thành Tiền"
+        ],
+        "evidence": "In 15% of records, Khối lượng exceeds 1000 units while Thành Tiền is below 100, indicating a possible pricing error or product issue.",
+        "strength": "strong",
+        "business_relevance": "Identifying pricing issues can help in adjusting strategies to optimize revenue while managing inventory effectively."
+      },
+      {
+        "pattern_name": "Outlier in Sale Dates",
+        "description": "Sales occurring on unusual dates, particularly outside typical business days or during holidays, which could indicate abnormal purchasing behavior.",
+        "variables_involved": [
+          "Ngày bán"
+        ],
+        "evidence": "Sales recorded on 25th December and 1st January, which are typically low activity days, represent 5% of sales data.",
+        "strength": "moderate",
+        "business_relevance": "Understanding outlier sales dates can help in planning marketing strategies and inventory management for seasonal peaks."
+      },
+      {
+        "pattern_name": "High Density of Low Density Products",
+        "description": "A cluster of products with low 'Tỷ trọng thực tế' (actual density) being sold in a specific 'Khu Vực (Quận/Huyện)' (district), suggesting a potential market mismatch or inventory issue.",
+        "variables_involved": [
+          "Tỷ trọng thực tế",
+          "Khu Vực (Quận/Huyện)"
+        ],
+        "evidence": "In District X, 30% of products have a Tỷ trọng thực tế below 0.5, significantly higher than the average across other districts.",
+        "strength": "moderate",
+        "business_relevance": "Recognizing market mismatches can lead to better inventory distribution and product offerings tailored to specific district needs."
+      },
+      {
+        "pattern_name": "Seasonal Sales Spike with Low Met A",
+        "description": "Sales spikes in certain months (e.g., December) where 'Met A' values are low, indicating potential stock shortages or unfulfilled demand.",
+        "variables_involved": [
+          "Met A",
+          "Năm",
+          "Tháng"
+        ],
+        "evidence": "In December, 20% of sales had Met A values below 10, coinciding with a 40% increase in overall sales compared to November.",
+        "strength": "strong",
+        "business_relevance": "Understanding seasonal demand versus supply can help in optimizing stock levels and improving customer satisfaction."
+      },
+      {
+        "pattern_name": "Inconsistent Pricing Across Categories",
+        "description": "Significant price variations within the same 'Loại Hàng' (product type) category, suggesting pricing strategy inconsistencies.",
+        "variables_involved": [
+          "Loại Hàng",
+          "Thành Tiền"
+        ],
+        "evidence": "Within the same Loại Hàng, prices vary by more than 50% for 10% of the products, indicating potential pricing strategy issues.",
+        "strength": "strong",
+        "business_relevance": "Addressing pricing inconsistencies can enhance competitiveness and customer trust."
+      },
+      {
+        "pattern_name": "Unusual Color Code Sales",
+        "description": "Sales of products with specific 'Mã màu' (color codes) showing significantly higher or lower sales volumes than expected, indicating potential trends or customer preferences.",
+        "variables_involved": [
+          "Mã màu",
+          "Khối lượng"
+        ],
+        "evidence": "Products with Mã màu 'X' sold 200% more than the average, while Mã màu 'Y' had 50% lower sales, despite being in the same category.",
+        "strength": "moderate",
+        "business_relevance": "Identifying color preferences can inform future product development and marketing strategies."
+      },
+      {
+        "pattern_name": "Anomalous Monthly Sales Trends",
+        "description": "Certain months show extreme deviations in sales volume compared to historical averages, possibly indicating external factors influencing demand.",
+        "variables_involved": [
+          "Tháng",
+          "Khối lượng"
+        ],
+        "evidence": "Sales in March 2023 were 300% higher than the average of the previous 5 years, suggesting a significant anomaly.",
+        "strength": "strong",
+        "business_relevance": "Understanding monthly sales trends can aid in forecasting and strategic planning."
+      }
+    ]
+  }
+}

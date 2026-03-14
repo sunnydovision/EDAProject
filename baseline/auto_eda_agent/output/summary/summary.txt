@@ -1,0 +1,44 @@
+======================================================================
+AGENTIC AUTOEDA BASELINE - SUMMARY
+======================================================================
+
+Total Insights: 26
+Passed ISGEN Threshold: 13/26 (50.0%)
+Average Pattern Score: 0.500
+
+Insights by Type:
+  • TREND: 5
+  • CORRELATION: 5
+  • PATTERN: 5
+  • ANOMALY: 3
+  • DISTRIBUTION: 3
+  • COMPARISON: 3
+  • OUTLIER: 2
+
+Insights by ISGEN Pattern:
+  • None: 13
+  • QUALITY: 13
+
+Top 10 Insights:
+  1. ✓ insight_011: High correlation between advertising spend and sales revenue
+     Pattern: QUALITY, Score: 1.000
+  2. ✓ insight_012: Inverse correlation between customer complaints and customer satisfaction scores
+     Pattern: QUALITY, Score: 1.000
+  3. ✓ insight_013: Correlation between product return rates and product quality ratings
+     Pattern: QUALITY, Score: 1.000
+  4. ✓ insight_014: Positive correlation between employee engagement and productivity levels
+     Pattern: QUALITY, Score: 1.000
+  5. ✓ insight_015: Correlation between training hours and employee retention rates
+     Pattern: QUALITY, Score: 1.000
+  6. ✓ insight_016: Age Distribution Skewness in Customer Base
+     Pattern: QUALITY, Score: 1.000
+  7. ✓ insight_018: Income Distribution Analysis
+     Pattern: QUALITY, Score: 1.000
+  8. ✓ insight_020: Gender Distribution Among High-Value Customers
+     Pattern: QUALITY, Score: 1.000
+  9. ✓ insight_022: Monthly Sales Spike During Holiday Season
+     Pattern: QUALITY, Score: 1.000
+  10. ✓ insight_023: Weekly Customer Traffic Increase on Fridays
+     Pattern: QUALITY, Score: 1.000
+
+======================================================================
