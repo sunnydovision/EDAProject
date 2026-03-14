@@ -9,135 +9,135 @@
 
 Found 5 patterns:
 
-### Monthly Sales Trends
-- **Description**: Sales revenue (Thành Tiền) shows a consistent increase during the last quarter of each year, particularly in November and December, indicating a holiday shopping trend.
-- **Strength**: strong
-- **Variables**: Thành Tiền, Tháng, Năm
-- **Relevance**: Understanding this trend allows for better inventory management and marketing strategies leading up to the holiday season.
-
-### Weekly Sales Cycles
-- **Description**: Sales volume (Khối lượng) peaks consistently on weekends, particularly on Saturdays, indicating a weekly cycle in consumer purchasing behavior.
-- **Strength**: strong
-- **Variables**: Khối lượng, Ngày
-- **Relevance**: This pattern can inform staffing needs and promotional strategies to maximize sales on peak days.
-
-### Seasonal Variation in Product Types
-- **Description**: Certain product categories (Loại Hàng) exhibit distinct seasonal patterns, with outdoor items seeing higher sales in spring and summer months, while indoor items peak in fall and winter.
-- **Strength**: moderate
-- **Variables**: Loại Hàng, Tháng
-- **Relevance**: This insight can guide product stocking and marketing campaigns tailored to seasonal demands.
-
-### Color Preference Trends
-- **Description**: The popularity of certain colors (Tên màu) varies by season, with warmer colors like red and orange being favored in the fall and winter, while cooler colors like blue and green are preferred in spring and summer.
-- **Strength**: moderate
-- **Variables**: Tên màu, Tháng
-- **Relevance**: This pattern can influence marketing strategies and product design to align with consumer preferences throughout the year.
-
-### Monthly Revenue Declines
-- **Description**: A noticeable decline in revenue (Thành Tiền) occurs in February, likely due to post-holiday consumer spending fatigue.
+### Monthly Sales Trend
+- **Description**: Sales tend to increase during specific months of the year, indicating a strong monthly trend.
 - **Strength**: strong
 - **Variables**: Thành Tiền, Tháng
-- **Relevance**: Recognizing this pattern can help businesses prepare for lower sales and adjust marketing efforts accordingly.
+- **Relevance**: Understanding this pattern can help in inventory management and marketing strategies to maximize sales during peak months.
+
+### Weekly Sales Cycle
+- **Description**: Sales exhibit a weekly cycle, with peaks occurring on specific days of the week.
+- **Strength**: strong
+- **Variables**: Thành Tiền, Ngày bán
+- **Relevance**: This information can inform staffing and promotional efforts, ensuring resources are allocated effectively on high-sales days.
+
+### Seasonal Variation in Product Types
+- **Description**: Different product categories show seasonal sales patterns, with some categories performing better in specific seasons.
+- **Strength**: moderate
+- **Variables**: Loại Hàng, Tháng
+- **Relevance**: Identifying seasonal preferences can aid in targeted marketing campaigns and inventory planning for different product lines.
+
+### Yearly Growth Trend
+- **Description**: Overall sales revenue shows a positive growth trend year over year, indicating business growth.
+- **Strength**: strong
+- **Variables**: Thành Tiền, Năm
+- **Relevance**: This trend suggests a successful business strategy and can influence future investment and expansion decisions.
+
+### Impact of Region on Sales
+- **Description**: Sales performance varies significantly by region, with certain districts consistently outperforming others.
+- **Strength**: moderate
+- **Variables**: Thành Tiền, Khu Vực (Quận/Huyện)
+- **Relevance**: Understanding regional performance can guide localized marketing strategies and resource allocation.
 
 ## Correlation Patterns
 
 Found 6 patterns:
 
-### High Volume Sales Correlation with Revenue
-- **Description**: There is a strong positive correlation between 'Khối lượng' (Volume) and 'Thành Tiền' (Revenue), indicating that as the volume of items sold increases, the revenue generated also increases significantly.
+### Volume and Revenue Correlation
+- **Description**: There is a strong positive correlation between 'Khối lượng' (Volume) and 'Thành Tiền' (Revenue). As the volume of goods sold increases, the revenue generated also tends to increase.
 - **Strength**: strong
 - **Variables**: Khối lượng, Thành Tiền
-- **Relevance**: This pattern indicates that increasing sales volume directly impacts revenue, which can inform sales strategies and inventory management.
+- **Relevance**: Understanding this correlation helps in forecasting revenue based on expected sales volume, aiding in inventory and financial planning.
 
-### Seasonality in Sales by Month
-- **Description**: Sales volume shows a strong seasonal pattern based on the 'Tháng' (Month) variable, with peak sales occurring in specific months, notably around the end of the year.
+### Monthly Trends in Sales
+- **Description**: Sales revenue ('Thành Tiền') shows a strong seasonal pattern correlating with 'Tháng' (Month). Specific months have consistently higher sales.
 - **Strength**: strong
-- **Variables**: Tháng, Khối lượng
-- **Relevance**: Understanding seasonal trends can help in planning marketing campaigns and optimizing stock levels during peak months.
+- **Variables**: Thành Tiền, Tháng
+- **Relevance**: Identifying peak sales months allows businesses to optimize marketing strategies and inventory management.
 
-### Impact of Product Type on Revenue
-- **Description**: Different 'Loại Hàng' (Product Types) exhibit varying levels of revenue generation, with certain categories consistently outperforming others.
+### Material Type and Density Relationship
+- **Description**: There is a significant correlation between 'Loại Hàng' (Type of Goods) and 'Tỷ trọng thực tế' (Actual Density). Certain types of goods consistently exhibit higher density values.
 - **Strength**: strong
-- **Variables**: Loại Hàng, Thành Tiền
-- **Relevance**: Identifying high-performing product categories can guide product development and marketing focus.
+- **Variables**: Loại Hàng, Tỷ trọng thực tế
+- **Relevance**: This pattern assists in quality control and material selection for products, ensuring suitable material properties for intended applications.
 
-### Correlation Between Weight and Density
-- **Description**: There is a notable correlation between 'Khối lượng' (Volume) and 'Tỷ trọng thực tế' (Actual Density), suggesting that heavier products tend to have higher density.
+### Color Preference by Region
+- **Description**: There is a strong relationship between 'Mã màu' (Color Code) and 'Khu Vực (Quận/Huyện)' (Region). Certain colors are preferred in specific regions.
 - **Strength**: strong
-- **Variables**: Khối lượng, Tỷ trọng thực tế
-- **Relevance**: This insight can aid in logistics and shipping decisions, optimizing costs based on product density.
+- **Variables**: Mã màu, Khu Vực (Quận/Huyện)
+- **Relevance**: Understanding regional color preferences can guide marketing strategies and product offerings tailored to local tastes.
 
-### Monthly Revenue Trends by Year
-- **Description**: Analysis reveals that 'Năm' (Year) has a strong influence on 'Thành Tiền' (Revenue) when broken down by month, indicating trends over different years.
+### Daily Sales Fluctuations
+- **Description**: Sales ('Thành Tiền') exhibit a strong correlation with 'Ngày' (Day of the Month), showing peaks and troughs based on specific days.
 - **Strength**: strong
-- **Variables**: Năm, Tháng, Thành Tiền
-- **Relevance**: Tracking revenue trends over years can inform long-term business strategy and forecasting.
+- **Variables**: Thành Tiền, Ngày
+- **Relevance**: Recognizing these daily fluctuations allows for targeted promotions and sales strategies on high-traffic days.
 
 ## Grouping Patterns
 
-Found 7 patterns:
+Found 8 patterns:
 
-### Sales Volume by Region
-- **Description**: A significant correlation exists between the sales volume and specific regions, suggesting that certain areas consistently outperform others in terms of sales.
+### Seasonal Sales Variation
+- **Description**: Sales tend to peak during certain months, indicating seasonal demand trends.
 - **Strength**: strong
-- **Variables**: Khối lượng, Khu Vực (Quận/Huyện)
-- **Relevance**: Understanding regional sales performance can help in targeted marketing and distribution strategies.
+- **Variables**: Tháng, Thành Tiền, Khu Vực (Quận/Huyện)
+- **Relevance**: Understanding seasonal trends can help in inventory management and marketing strategies.
 
-### Product Type Preference by Month
-- **Description**: Different product types show varying sales trends across months, indicating seasonal preferences.
+### Product Type Preference by Region
+- **Description**: Different regions show distinct preferences for certain types of products.
 - **Strength**: strong
-- **Variables**: Loại Hàng, Tháng
-- **Relevance**: Identifying seasonal trends allows for better inventory management and promotional planning.
+- **Variables**: Loại Hàng, Khu Vực (Quận/Huyện)
+- **Relevance**: Tailoring product offerings to regional preferences can enhance customer satisfaction and increase sales.
 
-### Price Sensitivity by Product Classification
-- **Description**: Certain product classifications exhibit distinct price sensitivity, impacting sales volume.
+### High-Volume Sales Days
+- **Description**: Certain days of the month consistently see higher sales volumes.
 - **Strength**: moderate
-- **Variables**: Phân loại, Thành Tiền
-- **Relevance**: Understanding price sensitivity can inform pricing strategies to maximize revenue.
+- **Variables**: Ngày, Khối lượng
+- **Relevance**: Identifying high-volume days allows for better staffing and promotional strategies.
 
-### Quality Metrics Correlation with Sales
-- **Description**: There is a correlation between quality metrics (Độ M, Độ D, Độ MT) and sales performance, suggesting that higher quality products lead to increased sales.
+### Color Popularity Trends
+- **Description**: Certain colors of products are consistently more popular over time.
 - **Strength**: strong
-- **Variables**: Độ M, Độ D, Khối lượng
-- **Relevance**: Focusing on quality improvement can lead to higher sales and customer satisfaction.
+- **Variables**: Tên màu, Thành Tiền, Năm
+- **Relevance**: Focusing on popular colors can improve product selection and marketing efforts.
 
-### Sales Trends Over Time
-- **Description**: Sales data shows a consistent upward trend over the years, with certain months showing spikes.
+### Weight and Price Correlation
+- **Description**: There is a strong correlation between product weight and its price.
 - **Strength**: strong
-- **Variables**: Năm, Tháng, Thành Tiền
-- **Relevance**: Recognizing overall sales growth can help in long-term strategic planning and investment.
+- **Variables**: Khối lượng, Thành Tiền
+- **Relevance**: Understanding this relationship can assist in pricing strategies and product positioning.
 
 ## Anomaly Patterns
 
-Found 7 patterns:
+Found 6 patterns:
 
-### High Volume Low Revenue Anomaly
-- **Description**: Instances where 'Khối lượng' (volume) is significantly high while 'Thành Tiền' (total revenue) is unusually low, indicating potential pricing issues or mismanagement.
+### High Volume with Low Revenue
+- **Description**: Instances where the 'Khối lượng' (volume) is significantly high, but the 'Thành Tiền' (revenue) is unusually low, indicating potential pricing issues or inventory mismanagement.
 - **Strength**: strong
 - **Variables**: Khối lượng, Thành Tiền
-- **Relevance**: Identifying pricing issues can help in adjusting strategies to optimize revenue while managing inventory effectively.
+- **Relevance**: Identifying pricing issues can help optimize pricing strategy and reduce losses.
 
-### Outlier in Sale Dates
-- **Description**: Sales occurring on unusual dates, particularly outside typical business days or during holidays, which could indicate abnormal purchasing behavior.
+### Seasonal Sales Anomaly
+- **Description**: Sales data shows unusual spikes or drops in 'Thành Tiền' across specific months, particularly in July and December, which are typically high sales months.
 - **Strength**: moderate
-- **Variables**: Ngày bán
-- **Relevance**: Understanding outlier sales dates can help in planning marketing strategies and inventory management for seasonal peaks.
+- **Variables**: Thành Tiền, Tháng
+- **Relevance**: Understanding seasonal trends can help in inventory planning and marketing strategies.
 
-### High Density of Low Density Products
-- **Description**: A cluster of products with low 'Tỷ trọng thực tế' (actual density) being sold in a specific 'Khu Vực (Quận/Huyện)' (district), suggesting a potential market mismatch or inventory issue.
+### Outlier in 'Khổ (mm)' for Specific 'Loại Hàng'
+- **Description**: Certain 'Loại Hàng' (item types) have 'Khổ (mm)' values that are outliers compared to the average for that category, indicating potential production or specification errors.
+- **Strength**: strong
+- **Variables**: Khổ (mm), Loại Hàng
+- **Relevance**: Identifying these discrepancies can prevent production errors and ensure quality control.
+
+### Unusual 'Mã màu' Distribution
+- **Description**: Certain 'Mã màu' (color codes) are associated with significantly higher or lower sales than expected, suggesting consumer preference anomalies or marketing effectiveness.
 - **Strength**: moderate
-- **Variables**: Tỷ trọng thực tế, Khu Vực (Quận/Huyện)
-- **Relevance**: Recognizing market mismatches can lead to better inventory distribution and product offerings tailored to specific district needs.
+- **Variables**: Mã màu, Thành Tiền
+- **Relevance**: Understanding color preferences can help in inventory decisions and targeted marketing.
 
-### Seasonal Sales Spike with Low Met A
-- **Description**: Sales spikes in certain months (e.g., December) where 'Met A' values are low, indicating potential stock shortages or unfulfilled demand.
+### Discrepancy in 'Tỷ trọng thực tế'
+- **Description**: Entries with 'Tỷ trọng thực tế' (actual weight) that are significantly different from expected values based on 'Khối lượng' show potential data entry errors or fraud.
 - **Strength**: strong
-- **Variables**: Met A, Năm, Tháng
-- **Relevance**: Understanding seasonal demand versus supply can help in optimizing stock levels and improving customer satisfaction.
-
-### Inconsistent Pricing Across Categories
-- **Description**: Significant price variations within the same 'Loại Hàng' (product type) category, suggesting pricing strategy inconsistencies.
-- **Strength**: strong
-- **Variables**: Loại Hàng, Thành Tiền
-- **Relevance**: Addressing pricing inconsistencies can enhance competitiveness and customer trust.
+- **Variables**: Tỷ trọng thực tế, Khối lượng
+- **Relevance**: Addressing these discrepancies can enhance data integrity and prevent financial losses.
 

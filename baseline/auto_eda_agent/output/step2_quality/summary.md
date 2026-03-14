@@ -30,16 +30,16 @@
 
 ### High percentage of missing values in 'Mã màu' and 'Tên màu'
 - **Severity**: high
-- **Impact**: The high percentage of missing values (32.05%) in key attributes can lead to biased analysis and incomplete datasets, affecting decision-making processes.
-- **Recommendation**: Implement data collection improvements and validation checks to reduce missing values. Consider using imputation techniques where appropriate.
+- **Impact**: The high percentage of missing values (32%) in these critical fields can lead to incomplete analyses and misinterpretations, affecting decision-making processes.
+- **Recommendation**: Implement data collection improvements to ensure that these fields are filled out during data entry. Consider using validation rules to enforce mandatory fields.
 
-### Significant outlier counts in 'Thành Tiền' and 'Năm'
+### Significant outliers in 'Thành Tiền' and 'Năm'
 - **Severity**: high
-- **Impact**: Outliers can skew results and lead to incorrect conclusions, particularly in financial metrics like 'Thành Tiền'.
-- **Recommendation**: Conduct a thorough review of outlier data points to determine if they are valid or erroneous. Consider applying data transformation techniques to mitigate their impact.
+- **Impact**: Outliers can skew results and lead to incorrect conclusions about trends and averages, especially in financial metrics like 'Thành Tiền'.
+- **Recommendation**: Conduct a thorough investigation to understand the cause of these outliers and determine if they should be corrected or removed from the dataset.
 
 ### Outliers in 'Khối lượng' and 'Doanh_thu_trên_mm'
 - **Severity**: medium
-- **Impact**: Outliers in these metrics may indicate data entry errors or unusual transactions that could mislead analysis.
-- **Recommendation**: Investigate the source of these outliers and apply appropriate data cleansing methods to ensure accuracy.
+- **Impact**: While not as severe as the previous issues, these outliers can still affect the reliability of the dataset, leading to potential miscalculations in analyses.
+- **Recommendation**: Analyze the context of these outliers and apply appropriate statistical methods to handle them, such as winsorizing or transformation.
 

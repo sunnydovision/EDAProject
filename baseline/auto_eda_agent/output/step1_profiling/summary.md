@@ -12,8 +12,18 @@
 ### High Importance Columns
 
 **Khối lượng**
-- Meaning: Weight of the product
+- Meaning: Weight of the item
 - Type: Numerical
+- Missing: 0.0%
+
+**Met A**
+- Meaning: Measurement A related to the item
+- Type: Numerical
+- Missing: 0.0%
+
+**Tỷ trọng thực tế**
+- Meaning: Actual density of the item
+- Type: Categorical
 - Missing: 0.0%
 
 **Ngày bán**
@@ -22,17 +32,17 @@
 - Missing: 0.0%
 
 **Thành Tiền**
-- Meaning: Total amount of money for the transaction
+- Meaning: Total amount of the sale
 - Type: Numerical
 - Missing: 0.0%
 
 **Giá_trên_kg**
-- Meaning: Price per kilogram of the product
+- Meaning: Price per kilogram of the item
 - Type: Numerical
 - Missing: 0.0%
 
 **Doanh_thu_trên_mm**
-- Meaning: Revenue per millimeter of product sold
+- Meaning: Revenue per millimeter of the item
 - Type: Numerical
 - Missing: 0.0%
 

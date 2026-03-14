@@ -605,46 +605,57 @@
     }
   },
   "interpretation": {
-    "distribution_patterns": "The distributions of the numerical variables show varying degrees of skewness and kurtosis. For example, 'Khối lượng' has a significant negative skewness (-1.81), indicating that the distribution is left-tailed, meaning most values are concentrated on the higher end with a few lower values. The kurtosis (3.11) suggests a distribution that is more peaked than a normal distribution. 'Met B' and 'Met C' exhibit extreme positive skewness (13.49 and 13.47, respectively) and very high kurtosis (201.96 and 212.63), indicating that these variables have a large number of zeros and a few very high values, leading to a highly concentrated distribution with heavy tails. This suggests that these variables may be better modeled using a distribution that accounts for zero-inflation or outliers.",
+    "distribution_patterns": "The distributions exhibit varying characteristics. For instance, 'Khối lượng' shows significant negative skewness (-1.81), indicating that the majority of the data points are concentrated on the higher end, with a long tail on the left. This suggests that most observations are above the mean. The kurtosis of 3.11 indicates a leptokurtic distribution, meaning there are more outliers than in a normal distribution. In contrast, 'Met B' and 'Met C' have extremely high skewness (13.49 and 13.47 respectively) and kurtosis values (201.96 and 212.63), indicating a highly concentrated distribution with many zero values and a few extreme outliers. This suggests that these variables may have a significant number of observations at the lower end with a few very high values, which could skew the analysis.",
     "strong_correlations": [
       {
         "variables": "Khối lượng and Thành Tiền",
-        "interpretation": "This strong positive correlation (0.95) indicates that as the 'Khối lượng' increases, 'Thành Tiền' also increases significantly, suggesting that higher volumes lead to higher revenue.",
+        "interpretation": "This strong positive correlation (0.95) indicates that as the volume increases, the total revenue also increases significantly, suggesting a direct relationship between the quantity sold and revenue generated.",
         "strength": "strong"
       },
       {
         "variables": "Thành Tiền and Doanh_thu_trên_mm",
-        "interpretation": "The correlation of nearly 1 (0.9999) implies that 'Thành Tiền' and 'Doanh_thu_trên_mm' are almost perfectly linearly related, indicating that they may be measuring the same underlying concept.",
+        "interpretation": "The perfect correlation (1.0) implies that these two variables are essentially measuring the same underlying phenomenon, indicating that total revenue and revenue per square meter are directly related.",
         "strength": "strong"
       },
       {
         "variables": "Năm and Tháng",
-        "interpretation": "The negative correlation (-0.95) suggests an inverse relationship, where as the year increases, the month decreases, which is expected since months are cyclical within a year.",
+        "interpretation": "The strong negative correlation (-0.95) suggests that as the year increases, the month decreases, which is expected in a time series context.",
+        "strength": "strong"
+      },
+      {
+        "variables": "Số_lần_bán_sản_phẩm and Tần_suất_bán",
+        "interpretation": "The strong positive correlation (0.89) indicates that the frequency of product sales is closely related to the number of times a product is sold, suggesting that higher sales frequency leads to more sales.",
+        "strength": "strong"
+      },
+      {
+        "variables": "Cờ_khiếu_nại_lặp_lại and Điểm_hài_lòng_khách_hàng",
+        "interpretation": "The strong negative correlation (-0.81) indicates that an increase in repeated complaints is associated with a decrease in customer satisfaction, suggesting that customer dissatisfaction leads to more complaints.",
         "strength": "strong"
       }
     ],
     "key_findings": [
-      "The variable 'Khối lượng' has a high mean (3740.80) and a significant range (from 210 to 5180), indicating variability in the data.",
-      "The variable 'Met B' has a mean of 12.15 but a median of 0, suggesting that most observations are zero, with a few high outliers.",
-      "The correlation between 'Cờ_khiếu_nại_lặp_lại' and 'Điểm_hài_lòng_khách_hàng' is strongly negative (-0.81), indicating that repeated complaints are associated with lower customer satisfaction."
+      "The variable 'Khối lượng' has a significant impact on revenue generation, indicating that sales volume is a critical factor for business performance.",
+      "The perfect correlation between 'Thành Tiền' and 'Doanh_thu_trên_mm' suggests redundancy in these metrics, which may warrant further investigation or consolidation.",
+      "The presence of extreme outliers in 'Met B' and 'Met C' indicates potential issues with data quality or the need for further analysis to understand these distributions."
     ],
     "statistical_anomalies": [
-      "The extremely high skewness and kurtosis of 'Met B' and 'Met C' suggest potential issues with zero-inflation or outliers that may need further investigation.",
-      "The perfect correlation between 'Thành Tiền' and 'Doanh_thu_trên_mm' may indicate redundancy in the data, suggesting that one of these variables could be removed to simplify the analysis."
+      "The extremely high skewness and kurtosis values for 'Met B' and 'Met C' suggest that these variables may not follow a normal distribution, which could affect statistical analyses that assume normality.",
+      "The perfect correlation between 'Thành Tiền' and 'Doanh_thu_trên_mm' raises questions about data integrity or redundancy in the dataset."
     ],
     "recommendations": [
-      "Conduct a regression analysis to explore the relationships between 'Khối lượng', 'Thành Tiền', and other financial metrics to quantify their impact on revenue.",
-      "Perform a zero-inflated model analysis on 'Met B' and 'Met C' to better understand the distribution and account for the high number of zeros."
+      "Conduct further analysis on 'Met B' and 'Met C' to understand the nature of the extreme values and consider transformations or robust statistical methods to handle skewed data.",
+      "Perform a multicollinearity analysis to assess the redundancy between 'Thành Tiền' and 'Doanh_thu_trên_mm' and consider consolidating these variables in future analyses.",
+      "Explore potential causal relationships through regression analysis, particularly focusing on the impact of 'Khối lượng' on revenue and customer satisfaction metrics."
     ]
   },
   "summary": {
     "numerical_columns": 23,
     "categorical_columns": 20,
-    "strong_correlations": 3,
+    "strong_correlations": 5,
     "key_findings": [
-      "The variable 'Khối lượng' has a high mean (3740.80) and a significant range (from 210 to 5180), indicating variability in the data.",
-      "The variable 'Met B' has a mean of 12.15 but a median of 0, suggesting that most observations are zero, with a few high outliers.",
-      "The correlation between 'Cờ_khiếu_nại_lặp_lại' and 'Điểm_hài_lòng_khách_hàng' is strongly negative (-0.81), indicating that repeated complaints are associated with lower customer satisfaction."
+      "The variable 'Khối lượng' has a significant impact on revenue generation, indicating that sales volume is a critical factor for business performance.",
+      "The perfect correlation between 'Thành Tiền' and 'Doanh_thu_trên_mm' suggests redundancy in these metrics, which may warrant further investigation or consolidation.",
+      "The presence of extreme outliers in 'Met B' and 'Met C' indicates potential issues with data quality or the need for further analysis to understand these distributions."
     ]
   }
 }
