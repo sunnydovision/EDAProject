@@ -990,9 +990,19 @@ Find as many valuable patterns as possible."""
             'step4': self.step_outputs.get('step4', {})
         }
         
+        # Get actual column names from dataset
+        numerical_cols = self.df.select_dtypes(include=[np.number]).columns.tolist()[:20]
+        categorical_cols = self.df.select_dtypes(include=['object']).columns.tolist()[:20]
+        
         prompt = f"""Based on ALL previous analysis steps, extract valuable insights focused on: {category['focus']}
 
 Insight types to find: {', '.join(category['types'])}
+
+IMPORTANT - Available columns in dataset:
+Numerical columns: {', '.join(numerical_cols)}
+Categorical columns: {', '.join(categorical_cols)}
+
+You MUST use ONLY these actual column names in the "variables" field. Do NOT make up column names.
 
 Available context:
 - Data profile from step 1
@@ -1005,6 +1015,7 @@ Extract AS MANY valuable insights as possible for these types. Each insight shou
 - Supported by evidence from previous steps
 - Actionable or decision-relevant
 - Visualizable with the available data
+- Use ONLY actual column names from the list above
 
 Return JSON:
 {{
@@ -1013,7 +1024,7 @@ Return JSON:
       "title": "Specific insight title",
       "description": "Detailed description with numbers and evidence",
       "type": "One of: {', '.join(category['types'])}",
-      "variables": ["var1", "var2"],
+      "variables": ["actual_column_name1", "actual_column_name2"],
       "evidence": {{
         "source_step": "step2_quality",
         "key_statistics": "Specific numbers",
@@ -1242,54 +1253,106 @@ Return ONLY executable Python code."""
             insight_type = insight_data.get('type', '')
             variables = insight_data.get('variables', [])
             
-            fig, ax = plt.subplots(figsize=(10, 6))
+            # Validate variables exist in dataset
+            valid_vars = [v for v in variables if v in self.df.columns]
+            if not valid_vars:
+                # No valid variables, create placeholder
+                raise ValueError(f"No valid columns found in {variables}")
             
-            if insight_type == 'TREND' and len(variables) >= 1:
-                var = variables[0]
-                if var in self.df.columns and self.df[var].dtype in [np.float64, np.int64]:
+            fig, ax = plt.subplots(figsize=(10, 6))
+            chart_created = False
+            
+            if insight_type == 'TREND' and len(valid_vars) >= 2:
+                # Plot relationship: x-axis = first var, y-axis = second var
+                var_x, var_y = valid_vars[0], valid_vars[1]
+                if self.df[var_y].dtype in [np.float64, np.int64]:
+                    # Group by x and plot mean of y
+                    if self.df[var_x].dtype in [np.float64, np.int64]:
+                        self.df.plot.scatter(x=var_x, y=var_y, ax=ax, alpha=0.6)
+                    else:
+                        self.df.groupby(var_x)[var_y].mean().plot(kind='line', ax=ax, marker='o', linewidth=2)
+                    ax.set_xlabel(var_x)
+                    ax.set_ylabel(var_y)
+                    chart_created = True
+            elif insight_type == 'TREND' and len(valid_vars) == 1:
+                # Single variable trend - plot over index
+                var = valid_vars[0]
+                if self.df[var].dtype in [np.float64, np.int64]:
                     self.df[var].plot(ax=ax, linewidth=2)
                     ax.set_ylabel(var)
-            elif insight_type in ['OUTLIER', 'ANOMALY'] and len(variables) >= 1:
-                var = variables[0]
-                if var in self.df.columns and self.df[var].dtype in [np.float64, np.int64]:
+                    chart_created = True
+            elif insight_type in ['OUTLIER', 'ANOMALY'] and len(valid_vars) >= 1:
+                var = valid_vars[0]
+                if self.df[var].dtype in [np.float64, np.int64]:
                     self.df.boxplot(column=var, ax=ax)
-            elif insight_type == 'CORRELATION' and len(variables) >= 2:
-                var1, var2 = variables[0], variables[1]
-                if var1 in self.df.columns and var2 in self.df.columns:
+                    chart_created = True
+            elif insight_type == 'CORRELATION' and len(valid_vars) >= 2:
+                var1, var2 = valid_vars[0], valid_vars[1]
+                if (self.df[var1].dtype in [np.float64, np.int64] and 
+                    self.df[var2].dtype in [np.float64, np.int64]):
                     self.df.plot.scatter(x=var1, y=var2, ax=ax, alpha=0.5)
-            elif insight_type == 'DISTRIBUTION' and len(variables) >= 1:
-                var = variables[0]
-                if var in self.df.columns and self.df[var].dtype in [np.float64, np.int64]:
+                    ax.set_xlabel(var1)
+                    ax.set_ylabel(var2)
+                    chart_created = True
+            elif insight_type == 'DISTRIBUTION' and len(valid_vars) >= 1:
+                var = valid_vars[0]
+                if self.df[var].dtype in [np.float64, np.int64]:
                     self.df[var].hist(bins=30, ax=ax, edgecolor='black')
                     ax.set_xlabel(var)
                     ax.set_ylabel('Frequency')
-            elif insight_type == 'COMPARISON' and len(variables) >= 1:
-                var = variables[0]
-                if var in self.df.columns:
+                    chart_created = True
+            elif insight_type == 'COMPARISON' and len(valid_vars) >= 1:
+                var = valid_vars[0]
+                value_counts = self.df[var].value_counts().head(10)
+                value_counts.plot(kind='bar', ax=ax)
+                ax.set_xlabel(var)
+                ax.set_ylabel('Count')
+                plt.xticks(rotation=45, ha='right')
+                chart_created = True
+            elif insight_type == 'PATTERN' and len(valid_vars) >= 1:
+                var = valid_vars[0]
+                if self.df[var].dtype in [np.float64, np.int64]:
+                    self.df[var].plot(ax=ax, linewidth=2)
+                    ax.set_ylabel(var)
+                else:
                     self.df[var].value_counts().head(10).plot(kind='bar', ax=ax)
                     ax.set_xlabel(var)
                     ax.set_ylabel('Count')
                     plt.xticks(rotation=45, ha='right')
-            else:
-                if variables and variables[0] in self.df.columns:
-                    var = variables[0]
-                    if self.df[var].dtype in [np.float64, np.int64]:
-                        self.df[var].hist(bins=30, ax=ax, edgecolor='black')
-                    else:
-                        self.df[var].value_counts().head(10).plot(kind='bar', ax=ax)
+                chart_created = True
             
-            ax.set_title(insight_data.get('title', ''), fontsize=14, fontweight='bold')
+            # Fallback: try to plot first valid variable
+            if not chart_created and valid_vars:
+                var = valid_vars[0]
+                if self.df[var].dtype in [np.float64, np.int64]:
+                    self.df[var].hist(bins=30, ax=ax, edgecolor='black')
+                    ax.set_xlabel(var)
+                    ax.set_ylabel('Frequency')
+                else:
+                    self.df[var].value_counts().head(10).plot(kind='bar', ax=ax)
+                    ax.set_xlabel(var)
+                    ax.set_ylabel('Count')
+                    plt.xticks(rotation=45, ha='right')
+            
+            ax.set_title(insight_data.get('title', ''), fontsize=14, fontweight='bold', wrap=True)
             plt.tight_layout()
             plt.savefig(output_path, dpi=150, bbox_inches='tight')
             plt.close()
             return output_path
-        except:
+        except Exception as e:
+            # Create placeholder chart with error message
             fig, ax = plt.subplots(figsize=(10, 6))
-            ax.text(0.5, 0.5, 'Chart not available', ha='center', va='center')
-            ax.set_title(insight_data.get('title', ''), fontsize=14, fontweight='bold')
+            variables = insight_data.get('variables', [])
+            error_msg = f'Chart not available\n(Variables: {variables})'
+            ax.text(0.5, 0.5, error_msg, ha='center', va='center', fontsize=12)
+            ax.set_xlim(0, 1)
+            ax.set_ylim(0, 1)
+            ax.axis('off')
+            ax.set_title(insight_data.get('title', ''), fontsize=14, fontweight='bold', wrap=True)
             plt.tight_layout()
             plt.savefig(output_path, dpi=150, bbox_inches='tight')
             plt.close()
+            print(f"  ⚠️  Chart generation failed: {e}")
             return output_path
     
     def _extract_values_for_scoring(self, insight_data: Dict, variables: List[str]) -> List[float]:

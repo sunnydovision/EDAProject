@@ -2,9 +2,9 @@
 AGENTIC AUTOEDA BASELINE - SUMMARY
 ======================================================================
 
-Total Insights: 26
-Passed ISGEN Threshold: 13/26 (50.0%)
-Average Pattern Score: 0.500
+Total Insights: 25
+Passed ISGEN Threshold: 17/25 (68.0%)
+Average Pattern Score: 0.909
 
 Insights by Type:
   • TREND: 5
@@ -12,33 +12,36 @@ Insights by Type:
   • PATTERN: 5
   • ANOMALY: 3
   • DISTRIBUTION: 3
-  • COMPARISON: 3
   • OUTLIER: 2
+  • COMPARISON: 2
 
 Insights by ISGEN Pattern:
-  • None: 13
   • QUALITY: 13
+  • TREND: 5
+  • OUTSTANDING_VALUE: 5
+  • ATTRIBUTION: 1
+  • None: 1
 
 Top 10 Insights:
-  1. ✓ insight_011: High correlation between advertising spend and sales revenue
+  1. ✗ insight_008: Unusually Low Revenue in Q2
+     Pattern: OUTSTANDING_VALUE, Score: 1.036
+  2. ✗ insight_007: Anomalous Pricing Behavior
+     Pattern: OUTSTANDING_VALUE, Score: 1.019
+  3. ✗ insight_006: High Volume Outlier in Sales
+     Pattern: OUTSTANDING_VALUE, Score: 1.014
+  4. ✗ insight_010: Abnormal Transportation Distance
+     Pattern: OUTSTANDING_VALUE, Score: 1.005
+  5. ✗ insight_009: Frequent Late Deliveries
+     Pattern: OUTSTANDING_VALUE, Score: 1.000
+  6. ✓ insight_011: Correlation between Price per Kg and Revenue per mm
      Pattern: QUALITY, Score: 1.000
-  2. ✓ insight_012: Inverse correlation between customer complaints and customer satisfaction scores
+  7. ✓ insight_012: Impact of Sales Frequency on Average Revenue per Sale
      Pattern: QUALITY, Score: 1.000
-  3. ✓ insight_013: Correlation between product return rates and product quality ratings
+  8. ✓ insight_013: Relationship between Distance and Delivery Delay
      Pattern: QUALITY, Score: 1.000
-  4. ✓ insight_014: Positive correlation between employee engagement and productivity levels
+  9. ✓ insight_014: Influence of Product Thickness on Sales Frequency
      Pattern: QUALITY, Score: 1.000
-  5. ✓ insight_015: Correlation between training hours and employee retention rates
-     Pattern: QUALITY, Score: 1.000
-  6. ✓ insight_016: Age Distribution Skewness in Customer Base
-     Pattern: QUALITY, Score: 1.000
-  7. ✓ insight_018: Income Distribution Analysis
-     Pattern: QUALITY, Score: 1.000
-  8. ✓ insight_020: Gender Distribution Among High-Value Customers
-     Pattern: QUALITY, Score: 1.000
-  9. ✓ insight_022: Monthly Sales Spike During Holiday Season
-     Pattern: QUALITY, Score: 1.000
-  10. ✓ insight_023: Weekly Customer Traffic Increase on Fridays
+  10. ✓ insight_015: Effect of Actual Weight on Total Revenue
      Pattern: QUALITY, Score: 1.000
 
 ======================================================================

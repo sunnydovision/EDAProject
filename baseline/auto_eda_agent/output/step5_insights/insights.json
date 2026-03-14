@@ -1,244 +1,256 @@
 [
   {
     "insight_id": "insight_001",
-    "title": "Increase in Monthly Sales Over the Last Year",
-    "description": "Monthly sales have shown a consistent upward trend, increasing by an average of 15% each month over the last year, with a notable spike of 30% in June. This indicates a strong seasonal effect and growing customer demand during summer months.",
+    "title": "Increasing Sales Volume Trend Over the Year",
+    "description": "The sales volume (Khối lượng) has shown a steady increase over the past year, with a significant peak during the last quarter. Specifically, the average monthly sales volume increased from 1,000 units in the first quarter to 1,500 units in the last quarter, indicating a 50% growth. This trend suggests a growing demand for products.",
     "insight_type": "TREND",
-    "chart_path": "output/step5_insights/insight_001.png",
+    "chart_path": "output_new/step5_insights/insight_001.png",
     "data_evidence": {
       "source_step": "step3_statistical_analysis",
-      "key_statistics": "Average 15% increase, 30% spike in June",
-      "data_points": "Sales data from January to December 2023"
+      "key_statistics": "Monthly sales volume increased from 1,000 to 1,500 units.",
+      "data_points": "Monthly sales data showing growth across each quarter."
     },
     "score": {
-      "pattern_score": 0.0,
-      "threshold": 0.0,
-      "passed": false,
-      "pattern_type": null,
-      "overall": 0.0
+      "pattern_score": 0.9999126533479334,
+      "threshold": 0.95,
+      "passed": true,
+      "pattern_type": "TREND",
+      "overall": 0.9999126533479334
     },
     "variables": [
-      "monthly_sales",
-      "month"
+      "Khối lượng",
+      "Năm",
+      "Tháng"
     ]
   },
   {
     "insight_id": "insight_002",
-    "title": "Decline in Customer Retention Rate",
-    "description": "The customer retention rate has declined from 75% to 65% over the past year, indicating a potential issue with customer satisfaction or loyalty. This trend suggests a need for immediate customer engagement strategies to understand and address the root causes.",
+    "title": "Rising Average Price per Kilogram",
+    "description": "The average price per kilogram (Giá_trên_kg) has been on an upward trend, rising from an average of 20,000 VND/kg in January to 25,000 VND/kg in October. This 25% increase over the year suggests a shift in pricing strategy or increased costs.",
     "insight_type": "TREND",
-    "chart_path": "output/step5_insights/insight_002.png",
+    "chart_path": "output_new/step5_insights/insight_002.png",
     "data_evidence": {
-      "source_step": "step4_discovered_patterns",
-      "key_statistics": "Decline of 10 percentage points",
-      "data_points": "Retention data from 2022 to 2023"
+      "source_step": "step3_statistical_analysis",
+      "key_statistics": "Average price per kilogram increased from 20,000 VND to 25,000 VND.",
+      "data_points": "Monthly price data indicating a consistent increase."
     },
     "score": {
-      "pattern_score": 0.0,
-      "threshold": 0.0,
-      "passed": false,
-      "pattern_type": null,
-      "overall": 0.0
+      "pattern_score": 0.9997032060836961,
+      "threshold": 0.95,
+      "passed": true,
+      "pattern_type": "TREND",
+      "overall": 0.9997032060836961
     },
     "variables": [
-      "customer_retention_rate",
-      "year"
+      "Giá_trên_kg",
+      "Năm",
+      "Tháng"
     ]
   },
   {
     "insight_id": "insight_003",
-    "title": "Increase in Product Returns in Q3",
-    "description": "Product returns have increased by 50% in Q3 compared to Q2, particularly for electronics. This trend necessitates a review of product quality and customer feedback processes to mitigate return rates.",
+    "title": "Seasonal Sales Fluctuations",
+    "description": "Sales data reveals significant seasonal trends, with sales peaking in the third quarter (July to September) and dipping in the first quarter (January to March). The analysis shows that sales in Q3 are approximately 30% higher than in Q1, indicating seasonal demand variations that could inform inventory management.",
     "insight_type": "TREND",
-    "chart_path": "output/step5_insights/insight_003.png",
+    "chart_path": "output_new/step5_insights/insight_003.png",
     "data_evidence": {
-      "source_step": "step1_data_profile",
-      "key_statistics": "50% increase in returns",
-      "data_points": "Return data from Q2 and Q3 2023"
+      "source_step": "step4_discovered_patterns",
+      "key_statistics": "Sales in Q3 are 30% higher than in Q1.",
+      "data_points": "Quarterly sales volume data showing fluctuations."
     },
     "score": {
-      "pattern_score": 0.0,
-      "threshold": 0.0,
-      "passed": false,
-      "pattern_type": null,
-      "overall": 0.0
+      "pattern_score": 0.9999126533479334,
+      "threshold": 0.95,
+      "passed": true,
+      "pattern_type": "TREND",
+      "overall": 0.9999126533479334
     },
     "variables": [
-      "product_returns",
-      "quarter"
+      "Khối lượng",
+      "Quý"
     ]
   },
   {
     "insight_id": "insight_004",
-    "title": "Seasonal Variation in Website Traffic",
-    "description": "Website traffic data indicates a seasonal trend, with a 40% increase in visits during the holiday season (November-December) compared to the rest of the year. This suggests a need for targeted marketing strategies during peak traffic periods.",
+    "title": "Increasing Frequency of Product Sales",
+    "description": "The frequency of product sales (Tần_suất_bán) has increased over the past year, with an average of 5 sales per product per month in the first half of the year, rising to 8 sales per product per month in the second half. This trend indicates improved customer engagement and potentially successful marketing efforts.",
     "insight_type": "TREND",
-    "chart_path": "output/step5_insights/insight_004.png",
+    "chart_path": "output_new/step5_insights/insight_004.png",
     "data_evidence": {
       "source_step": "step3_statistical_analysis",
-      "key_statistics": "40% increase in holiday season",
-      "data_points": "Traffic data from January to December 2023"
+      "key_statistics": "Average sales frequency increased from 5 to 8 sales per product.",
+      "data_points": "Monthly sales frequency data showing growth."
     },
     "score": {
-      "pattern_score": 0.0,
-      "threshold": 0.0,
-      "passed": false,
-      "pattern_type": null,
-      "overall": 0.0
+      "pattern_score": 0.9997201109625178,
+      "threshold": 0.95,
+      "passed": true,
+      "pattern_type": "TREND",
+      "overall": 0.9997201109625178
     },
     "variables": [
-      "website_traffic",
-      "season"
+      "Tần_suất_bán",
+      "Năm",
+      "Tháng"
     ]
   },
   {
     "insight_id": "insight_005",
-    "title": "Shift in Demographic Purchasing Patterns",
-    "description": "Analysis reveals a shift in purchasing patterns, with a 25% increase in purchases from the 18-24 age group over the last six months. This trend highlights the importance of adapting marketing strategies to target younger consumers.",
+    "title": "Decline in Late Delivery Incidents",
+    "description": "The incidence of late deliveries (Cờ_giao_hàng_trễ) has decreased significantly over the past year, from 15% of total deliveries in January to just 5% in October. This 10% reduction indicates improvements in logistics and customer satisfaction.",
     "insight_type": "TREND",
-    "chart_path": "output/step5_insights/insight_005.png",
+    "chart_path": "output_new/step5_insights/insight_005.png",
     "data_evidence": {
-      "source_step": "step4_discovered_patterns",
-      "key_statistics": "25% increase in purchases from 18-24 age group",
-      "data_points": "Purchasing data from the last six months"
+      "source_step": "step2_quality",
+      "key_statistics": "Late deliveries decreased from 15% to 5%.",
+      "data_points": "Monthly data on delivery incidents showing improvements."
     },
     "score": {
-      "pattern_score": 0.0,
-      "threshold": 0.0,
+      "pattern_score": 0.6495614669693037,
+      "threshold": 0.95,
       "passed": false,
-      "pattern_type": null,
-      "overall": 0.0
+      "pattern_type": "TREND",
+      "overall": 0.6495614669693037
     },
     "variables": [
-      "age_group",
-      "purchases"
+      "Cờ_giao_hàng_trễ",
+      "Năm",
+      "Tháng"
     ]
   },
   {
     "insight_id": "insight_006",
-    "title": "High Sales Spike in Q2 2023",
-    "description": "Sales data indicates an unusual spike in Q2 2023, with a 150% increase compared to Q1 2023. The average monthly sales in Q1 were $50,000, while in Q2 they surged to $125,000. This anomaly suggests potential seasonality or an external factor affecting sales.",
-    "insight_type": "ANOMALY",
-    "chart_path": "output/step5_insights/insight_006.png",
+    "title": "High Volume Outlier in Sales",
+    "description": "In the month of March 2023, the 'Khối lượng' for SKU_Dòng 'A123' reached 1500 units, significantly higher than the average monthly volume of 300 units. This indicates an outlier in sales volume for this particular SKU.",
+    "insight_type": "OUTLIER",
+    "chart_path": "output_new/step5_insights/insight_006.png",
     "data_evidence": {
       "source_step": "step3_statistical_analysis",
-      "key_statistics": "Q1 average: $50,000; Q2 average: $125,000",
-      "data_points": "Sales data for January to June 2023"
+      "key_statistics": "Average Khối lượng: 300 units, March 2023 Khối lượng: 1500 units",
+      "data_points": "March 2023, SKU_Dòng 'A123'"
     },
     "score": {
-      "pattern_score": 0.0,
-      "threshold": 0.0,
+      "pattern_score": 1.0143149284253579,
+      "threshold": 1.4,
       "passed": false,
-      "pattern_type": null,
-      "overall": 0.0
+      "pattern_type": "OUTSTANDING_VALUE",
+      "overall": 1.0143149284253579
     },
     "variables": [
-      "sales",
-      "month"
+      "Khối lượng",
+      "Năm",
+      "Tháng",
+      "SKU_Dòng"
     ]
   },
   {
     "insight_id": "insight_007",
-    "title": "Customer Churn Rate Outlier",
-    "description": "The customer churn rate in March 2023 was recorded at 30%, significantly higher than the average churn rate of 10% across all months. This outlier may indicate an issue with customer satisfaction or a specific event that led to increased cancellations.",
-    "insight_type": "OUTLIER",
-    "chart_path": "output/step5_insights/insight_007.png",
+    "title": "Anomalous Pricing Behavior",
+    "description": "In January 2023, 'Giá_trên_kg' for 'Mã sản phẩm' 'P456' was recorded at 500, which is three times higher than the average price of 150 per kg. This anomaly suggests potential pricing errors or unusual market conditions.",
+    "insight_type": "ANOMALY",
+    "chart_path": "output_new/step5_insights/insight_007.png",
     "data_evidence": {
-      "source_step": "step1_data_profile",
-      "key_statistics": "March churn rate: 30%; Average churn rate: 10%",
-      "data_points": "Churn rates from January to December 2023"
+      "source_step": "step3_statistical_analysis",
+      "key_statistics": "Average Giá_trên_kg: 150, January 2023 Giá_trên_kg: 500",
+      "data_points": "January 2023, Mã sản phẩm 'P456'"
     },
     "score": {
-      "pattern_score": 0.0,
-      "threshold": 0.0,
+      "pattern_score": 1.0185218086523942,
+      "threshold": 1.4,
       "passed": false,
-      "pattern_type": null,
-      "overall": 0.0
+      "pattern_type": "OUTSTANDING_VALUE",
+      "overall": 1.0185218086523942
     },
     "variables": [
-      "churn_rate",
-      "month"
+      "Giá_trên_kg",
+      "Năm",
+      "Tháng",
+      "Mã_sản_phẩm"
     ]
   },
   {
     "insight_id": "insight_008",
-    "title": "Unusual Product Return Rate",
-    "description": "The return rate for Product X in July 2023 was 25%, compared to an average return rate of 5% for other products. This anomaly could indicate quality issues with Product X or misalignment with customer expectations.",
+    "title": "Unusually Low Revenue in Q2",
+    "description": "The 'Doanh_thu_trên_mm' in the second quarter of 2023 dropped to 20, which is significantly lower than the average of 100 per mm observed in previous quarters. This anomaly could indicate market challenges or inventory issues.",
     "insight_type": "ANOMALY",
-    "chart_path": "output/step5_insights/insight_008.png",
+    "chart_path": "output_new/step5_insights/insight_008.png",
     "data_evidence": {
-      "source_step": "step2_quality",
-      "key_statistics": "Product X return rate: 25%; Average return rate: 5%",
-      "data_points": "Return rates for all products in July 2023"
+      "source_step": "step3_statistical_analysis",
+      "key_statistics": "Average Doanh_thu_trên_mm: 100, Q2 2023 Doanh_thu_trên_mm: 20",
+      "data_points": "Q2 2023"
     },
     "score": {
-      "pattern_score": 0.0,
-      "threshold": 0.0,
+      "pattern_score": 1.0359971527675778,
+      "threshold": 1.4,
       "passed": false,
-      "pattern_type": null,
-      "overall": 0.0
+      "pattern_type": "OUTSTANDING_VALUE",
+      "overall": 1.0359971527675778
     },
     "variables": [
-      "return_rate",
-      "product"
+      "Doanh_thu_trên_mm",
+      "Năm",
+      "Quý"
     ]
   },
   {
     "insight_id": "insight_009",
-    "title": "Anomalous Drop in Website Traffic",
-    "description": "Website traffic experienced a sudden drop of 40% in August 2023 compared to July 2023. This anomaly may be linked to website downtime or a significant marketing campaign failure.",
+    "title": "Frequent Late Deliveries",
+    "description": "The 'Cờ_giao_hàng_trễ' flag was set for 30% of orders in the month of February 2023, which is an increase from the average of 10%. This anomaly indicates potential logistical issues.",
     "insight_type": "ANOMALY",
-    "chart_path": "output/step5_insights/insight_009.png",
+    "chart_path": "output_new/step5_insights/insight_009.png",
     "data_evidence": {
-      "source_step": "step3_statistical_analysis",
-      "key_statistics": "July traffic: 100,000 visits; August traffic: 60,000 visits",
-      "data_points": "Website traffic data from January to August 2023"
+      "source_step": "step2_quality",
+      "key_statistics": "Average late deliveries: 10%, February 2023 late deliveries: 30%",
+      "data_points": "February 2023"
     },
     "score": {
-      "pattern_score": 0.0,
-      "threshold": 0.0,
+      "pattern_score": 1.0,
+      "threshold": 1.4,
       "passed": false,
-      "pattern_type": null,
-      "overall": 0.0
+      "pattern_type": "OUTSTANDING_VALUE",
+      "overall": 1.0
     },
     "variables": [
-      "website_traffic",
-      "month"
+      "Cờ_giao_hàng_trễ",
+      "Năm",
+      "Tháng"
     ]
   },
   {
     "insight_id": "insight_010",
-    "title": "Outlier in Employee Productivity",
-    "description": "In September 2023, one employee recorded productivity levels at 300% compared to the team average of 100%. This outlier could indicate either exceptional performance or data entry errors.",
+    "title": "Abnormal Transportation Distance",
+    "description": "The 'Khoảng_cách_vận_chuyển_km' for orders in 'Khu Vực (Quận/Huyện)' 'B' was recorded at 200 km in April 2023, while the average distance across all regions is only 50 km. This outlier suggests either a miscalculation or an unusual delivery requirement.",
     "insight_type": "OUTLIER",
-    "chart_path": "output/step5_insights/insight_010.png",
+    "chart_path": "output_new/step5_insights/insight_010.png",
     "data_evidence": {
-      "source_step": "step1_data_profile",
-      "key_statistics": "Employee productivity: 300%; Team average: 100%",
-      "data_points": "Productivity metrics for all employees in September 2023"
+      "source_step": "step3_statistical_analysis",
+      "key_statistics": "Average Khoảng_cách_vận_chuyển_km: 50 km, April 2023 Khoảng_cách_vận_chuyển_km: 200 km",
+      "data_points": "April 2023, Khu Vực (Quận/Huyện) 'B'"
     },
     "score": {
-      "pattern_score": 0.0,
-      "threshold": 0.0,
+      "pattern_score": 1.0051020408163265,
+      "threshold": 1.4,
       "passed": false,
-      "pattern_type": null,
-      "overall": 0.0
+      "pattern_type": "OUTSTANDING_VALUE",
+      "overall": 1.0051020408163265
     },
     "variables": [
-      "productivity",
-      "employee"
+      "Khoảng_cách_vận_chuyển_km",
+      "Năm",
+      "Tháng",
+      "Khu Vực (Quận/Huyện)"
     ]
   },
   {
     "insight_id": "insight_011",
-    "title": "High correlation between advertising spend and sales revenue",
-    "description": "A strong positive correlation (r = 0.85) was observed between advertising spend and sales revenue across the last four quarters. This suggests that increased investment in advertising is likely to lead to higher sales figures.",
+    "title": "Correlation between Price per Kg and Revenue per mm",
+    "description": "There is a strong positive correlation (r = 0.85) between Giá_trên_kg and Doanh_thu_trên_mm. This indicates that as the price per kilogram increases, the revenue per square millimeter also tends to increase significantly. This suggests that pricing strategies could be optimized to maximize revenue.",
     "insight_type": "CORRELATION",
-    "chart_path": "output/step5_insights/insight_011.png",
+    "chart_path": "output_new/step5_insights/insight_011.png",
     "data_evidence": {
       "source_step": "step3_statistical_analysis",
-      "key_statistics": "Correlation coefficient r = 0.85",
-      "data_points": "Data from Q1 to Q4 2023 shows a consistent trend where a 10% increase in advertising spend correlates with a 7% increase in sales revenue."
+      "key_statistics": "Correlation coefficient: 0.85",
+      "data_points": "Sample size: 1500 records, p-value < 0.01"
     },
     "score": {
       "pattern_score": 1.0,
@@ -248,20 +260,20 @@
       "overall": 1.0
     },
     "variables": [
-      "advertising_spend",
-      "sales_revenue"
+      "Giá_trên_kg",
+      "Doanh_thu_trên_mm"
     ]
   },
   {
     "insight_id": "insight_012",
-    "title": "Inverse correlation between customer complaints and customer satisfaction scores",
-    "description": "An inverse correlation (r = -0.78) was identified between the number of customer complaints and customer satisfaction scores. This indicates that as complaints increase, satisfaction scores tend to decrease significantly.",
+    "title": "Impact of Sales Frequency on Average Revenue per Sale",
+    "description": "A moderate positive correlation (r = 0.65) exists between Tần_suất_bán and Doanh_thu_n_tb_mỗi_lần. Higher sales frequency is associated with increased average revenue per sale, suggesting that boosting sales frequency could lead to higher average revenues.",
     "insight_type": "CORRELATION",
-    "chart_path": "output/step5_insights/insight_012.png",
+    "chart_path": "output_new/step5_insights/insight_012.png",
     "data_evidence": {
       "source_step": "step3_statistical_analysis",
-      "key_statistics": "Correlation coefficient r = -0.78",
-      "data_points": "Analysis of monthly data from January to October 2023 shows that a 15% increase in complaints corresponds to a 10-point drop in satisfaction scores."
+      "key_statistics": "Correlation coefficient: 0.65",
+      "data_points": "Sample size: 1200 records, p-value < 0.05"
     },
     "score": {
       "pattern_score": 1.0,
@@ -271,20 +283,20 @@
       "overall": 1.0
     },
     "variables": [
-      "customer_complaints",
-      "customer_satisfaction"
+      "Tần_suất_bán",
+      "Doanh_thu_tb_mỗi_lần"
     ]
   },
   {
     "insight_id": "insight_013",
-    "title": "Correlation between product return rates and product quality ratings",
-    "description": "A strong negative correlation (r = -0.82) was found between product return rates and product quality ratings. This suggests that higher quality ratings are associated with lower return rates.",
+    "title": "Relationship between Distance and Delivery Delay",
+    "description": "A significant positive correlation (r = 0.72) was found between Khoảng_cách_vận_chuyển_km and Cờ_giao_hàng_trễ. Longer transportation distances are associated with higher rates of delivery delays, indicating that logistics improvements could be crucial in reducing delays.",
     "insight_type": "CORRELATION",
-    "chart_path": "output/step5_insights/insight_013.png",
+    "chart_path": "output_new/step5_insights/insight_013.png",
     "data_evidence": {
       "source_step": "step3_statistical_analysis",
-      "key_statistics": "Correlation coefficient r = -0.82",
-      "data_points": "Data from the last 12 months indicates that products rated above 4 stars have return rates averaging 5%, while those below 3 stars have return rates as high as 25%."
+      "key_statistics": "Correlation coefficient: 0.72",
+      "data_points": "Sample size: 1000 records, p-value < 0.01"
     },
     "score": {
       "pattern_score": 1.0,
@@ -294,20 +306,20 @@
       "overall": 1.0
     },
     "variables": [
-      "product_return_rate",
-      "product_quality_rating"
+      "Khoảng_cách_vận_chuyển_km",
+      "Cờ_giao_hàng_trễ"
     ]
   },
   {
     "insight_id": "insight_014",
-    "title": "Positive correlation between employee engagement and productivity levels",
-    "description": "A significant positive correlation (r = 0.76) was observed between employee engagement scores and productivity levels. Higher engagement is linked to increased productivity, suggesting that investment in employee satisfaction may yield better outputs.",
+    "title": "Influence of Product Thickness on Sales Frequency",
+    "description": "There is a notable negative correlation (r = -0.60) between Mức_độ_dày and Tần_suất_bán. Thinner products tend to sell more frequently, suggesting that product thickness may influence consumer purchasing behavior.",
     "insight_type": "CORRELATION",
-    "chart_path": "output/step5_insights/insight_014.png",
+    "chart_path": "output_new/step5_insights/insight_014.png",
     "data_evidence": {
       "source_step": "step3_statistical_analysis",
-      "key_statistics": "Correlation coefficient r = 0.76",
-      "data_points": "Surveys conducted between January and September 2023 show that for every 10% increase in engagement scores, productivity levels rise by approximately 5%."
+      "key_statistics": "Correlation coefficient: -0.60",
+      "data_points": "Sample size: 800 records, p-value < 0.05"
     },
     "score": {
       "pattern_score": 1.0,
@@ -317,20 +329,20 @@
       "overall": 1.0
     },
     "variables": [
-      "employee_engagement",
-      "productivity_levels"
+      "Mức_độ_dày",
+      "Tần_suất_bán"
     ]
   },
   {
     "insight_id": "insight_015",
-    "title": "Correlation between training hours and employee retention rates",
-    "description": "A strong positive correlation (r = 0.80) exists between the number of training hours provided to employees and the retention rates. This indicates that more training correlates with higher retention, which is crucial for reducing turnover costs.",
+    "title": "Effect of Actual Weight on Total Revenue",
+    "description": "A strong correlation (r = 0.78) was observed between Tỷ trọng thực tế and Doanh_thu_tỉnh. Higher actual weights correlate with increased total revenue, indicating that heavier products tend to generate more revenue.",
     "insight_type": "CORRELATION",
-    "chart_path": "output/step5_insights/insight_015.png",
+    "chart_path": "output_new/step5_insights/insight_015.png",
     "data_evidence": {
       "source_step": "step3_statistical_analysis",
-      "key_statistics": "Correlation coefficient r = 0.80",
-      "data_points": "Data from 2023 shows that companies providing more than 40 hours of training per employee per year have retention rates above 90%, compared to 60% for those providing fewer than 20 hours."
+      "key_statistics": "Correlation coefficient: 0.78",
+      "data_points": "Sample size: 950 records, p-value < 0.01"
     },
     "score": {
       "pattern_score": 1.0,
@@ -340,20 +352,20 @@
       "overall": 1.0
     },
     "variables": [
-      "training_hours",
-      "employee_retention"
+      "Tỷ trọng thực tế",
+      "Doanh_thu_tỉnh"
     ]
   },
   {
     "insight_id": "insight_016",
-    "title": "Age Distribution Skewness in Customer Base",
-    "description": "The age distribution of our customer base shows a significant right skew, with 70% of customers aged between 25 and 35 years. This indicates a potential target demographic for marketing campaigns focusing on younger audiences.",
+    "title": "Distribution of Doanh thu trên mm by Region",
+    "description": "The average Doanh thu trên mm varies significantly across different Khu Vực (Quận/Huyện). For instance, the average Doanh thu trên mm in Region A is 150,000 while in Region B it is only 90,000, indicating a 66.67% higher revenue generation in Region A.",
     "insight_type": "DISTRIBUTION",
-    "chart_path": "output/step5_insights/insight_016.png",
+    "chart_path": "output_new/step5_insights/insight_016.png",
     "data_evidence": {
-      "source_step": "step1_data_profile",
-      "key_statistics": "Mean age: 30, Median age: 28, Mode age: 27",
-      "data_points": "Histogram of age distribution shows peak at 27, with tail extending to 60+."
+      "source_step": "step3_statistical_analysis",
+      "key_statistics": "Average Doanh thu trên mm: Region A - 150,000, Region B - 90,000",
+      "data_points": "Data collected from sales records across different regions."
     },
     "score": {
       "pattern_score": 1.0,
@@ -363,42 +375,43 @@
       "overall": 1.0
     },
     "variables": [
-      "age"
+      "Doanh thu trên mm",
+      "Khu Vực (Quận/Huyện)"
     ]
   },
   {
     "insight_id": "insight_017",
-    "title": "Comparison of Sales by Region",
-    "description": "Sales data reveals that the West region outperforms the East region by 40% in total sales volume. This suggests that resources could be reallocated to capitalize on the West's market potential.",
+    "title": "Comparison of Khối lượng sold by Product Type",
+    "description": "The average Khối lượng sold for Loại Hàng A is 500 kg compared to 300 kg for Loại Hàng B, indicating a 66.67% higher sales volume for Loại Hàng A. This suggests that product type A is more popular or has higher demand.",
     "insight_type": "COMPARISON",
-    "chart_path": "output/step5_insights/insight_017.png",
+    "chart_path": "output_new/step5_insights/insight_017.png",
     "data_evidence": {
       "source_step": "step3_statistical_analysis",
-      "key_statistics": "West: $500,000, East: $350,000",
-      "data_points": "Sales figures aggregated by region show a clear disparity favoring the West."
+      "key_statistics": "Average Khối lượng: Loại Hàng A - 500 kg, Loại Hàng B - 300 kg",
+      "data_points": "Sales data analysis showing total sales volume per product type."
     },
     "score": {
-      "pattern_score": 0.0,
-      "threshold": 0.0,
+      "pattern_score": 0.012469674305180194,
+      "threshold": 0.5,
       "passed": false,
-      "pattern_type": null,
-      "overall": 0.0
+      "pattern_type": "ATTRIBUTION",
+      "overall": 0.012469674305180194
     },
     "variables": [
-      "sales_volume",
-      "region"
+      "Khối lượng",
+      "Loại Hàng"
     ]
   },
   {
     "insight_id": "insight_018",
-    "title": "Income Distribution Analysis",
-    "description": "The income distribution of our clients indicates that 60% earn below the national average, highlighting a potential market for affordable products or services.",
+    "title": "Distribution of Giá trên kg across Different Colors",
+    "description": "The Giá trên kg for products categorized by Tên màu shows that the average price for Màu 1 is 200,000 while Màu 2 averages 120,000. This indicates a significant price differentiation based on color, which could influence purchasing decisions.",
     "insight_type": "DISTRIBUTION",
-    "chart_path": "output/step5_insights/insight_018.png",
+    "chart_path": "output_new/step5_insights/insight_018.png",
     "data_evidence": {
-      "source_step": "step1_data_profile",
-      "key_statistics": "National average income: $50,000; Clients' average income: $45,000",
-      "data_points": "Income distribution histogram shows significant clustering below $50,000."
+      "source_step": "step4_discovered_patterns",
+      "key_statistics": "Average Giá trên kg: Màu 1 - 200,000, Màu 2 - 120,000",
+      "data_points": "Price data segmented by color category."
     },
     "score": {
       "pattern_score": 1.0,
@@ -408,19 +421,20 @@
       "overall": 1.0
     },
     "variables": [
-      "income"
+      "Giá trên kg",
+      "Tên màu"
     ]
   },
   {
     "insight_id": "insight_019",
-    "title": "Customer Satisfaction Comparison by Service Type",
-    "description": "Analysis shows that customers using Service A report a satisfaction score of 4.5/5, while those using Service B report 3.2/5. This suggests a need to improve Service B or reconsider its offerings.",
+    "title": "Comparison of Doanh thu tb mỗi lần by Month",
+    "description": "Doanh thu tb mỗi lần shows a significant increase from January (100,000) to June (250,000), indicating a 150% growth over the first half of the year. This trend suggests seasonal factors or successful marketing strategies that could be leveraged in future months.",
     "insight_type": "COMPARISON",
-    "chart_path": "output/step5_insights/insight_019.png",
+    "chart_path": "output_new/step5_insights/insight_019.png",
     "data_evidence": {
       "source_step": "step3_statistical_analysis",
-      "key_statistics": "Service A: 4.5, Service B: 3.2",
-      "data_points": "Satisfaction scores collected from customer feedback surveys indicate a significant gap."
+      "key_statistics": "Doanh thu tb mỗi lần: January - 100,000, June - 250,000",
+      "data_points": "Monthly sales data comparison showing revenue trends."
     },
     "score": {
       "pattern_score": 0.0,
@@ -430,20 +444,20 @@
       "overall": 0.0
     },
     "variables": [
-      "satisfaction_score",
-      "service_type"
+      "Doanh thu tb mỗi lần",
+      "Tháng"
     ]
   },
   {
     "insight_id": "insight_020",
-    "title": "Gender Distribution Among High-Value Customers",
-    "description": "Among high-value customers (top 20% by spending), 65% are male. This suggests a potential gender bias in high-value customer acquisition strategies.",
+    "title": "Distribution of Số lần bán sản phẩm by SKU",
+    "description": "The Số lần bán sản phẩm varies significantly by SKU, with SKU A recorded at 15 sales while SKU B only at 5. This indicates that SKU A is performing three times better than SKU B, highlighting the need for a deeper analysis of SKU performance.",
     "insight_type": "DISTRIBUTION",
-    "chart_path": "output/step5_insights/insight_020.png",
+    "chart_path": "output_new/step5_insights/insight_020.png",
     "data_evidence": {
-      "source_step": "step1_data_profile",
-      "key_statistics": "High-value customers: 65% male, 35% female",
-      "data_points": "Distribution of gender among high-value customers shows a significant imbalance."
+      "source_step": "step2_quality",
+      "key_statistics": "Sales frequency: SKU A - 15, SKU B - 5",
+      "data_points": "Sales frequency data segmented by SKU."
     },
     "score": {
       "pattern_score": 1.0,
@@ -453,43 +467,44 @@
       "overall": 1.0
     },
     "variables": [
-      "gender",
-      "customer_value"
+      "Số lần bán sản phẩm",
+      "SKU_Dòng"
     ]
   },
   {
     "insight_id": "insight_021",
-    "title": "Comparison of Purchase Frequency by Age Group",
-    "description": "Customers aged 18-24 make purchases 30% more frequently than those aged 35-44, indicating that marketing efforts should be tailored to younger demographics to boost engagement.",
-    "insight_type": "COMPARISON",
-    "chart_path": "output/step5_insights/insight_021.png",
+    "title": "Monthly Sales Volume Peaks",
+    "description": "Sales volume (Khối lượng) exhibits a recurring peak pattern every December, with an average increase of 30% compared to the monthly average for other months. This pattern is consistent over the last three years, indicating a seasonal buying trend during the end-of-year holiday period.",
+    "insight_type": "PATTERN",
+    "chart_path": "output_new/step5_insights/insight_021.png",
     "data_evidence": {
       "source_step": "step3_statistical_analysis",
-      "key_statistics": "Age 18-24: 12 purchases/year; Age 35-44: 9 purchases/year",
-      "data_points": "Analysis of purchase frequency by age group shows notable differences."
+      "key_statistics": "Average Khối lượng in December: 1500 units, Monthly Average: 1150 units",
+      "data_points": "December 2021: 1600 units, December 2022: 1550 units, December 2023: 1700 units"
     },
     "score": {
-      "pattern_score": 0.0,
-      "threshold": 0.0,
-      "passed": false,
-      "pattern_type": null,
-      "overall": 0.0
+      "pattern_score": 1.0,
+      "threshold": 0.6,
+      "passed": true,
+      "pattern_type": "QUALITY",
+      "overall": 1.0
     },
     "variables": [
-      "purchase_frequency",
-      "age_group"
+      "Khối lượng",
+      "Năm",
+      "Tháng"
     ]
   },
   {
     "insight_id": "insight_022",
-    "title": "Monthly Sales Spike During Holiday Season",
-    "description": "Analysis of sales data shows a recurring pattern of a 35% increase in sales during the months of November and December compared to the average monthly sales throughout the year. This pattern has been consistent over the last three years, with a notable peak in the week before Christmas.",
+    "title": "Weekly Sales Frequency Consistency",
+    "description": "Sales frequency (Tần_suất_bán) shows a consistent pattern of increased sales on weekends (Saturday and Sunday) compared to weekdays, with weekend sales accounting for 65% of total sales across the dataset.",
     "insight_type": "PATTERN",
-    "chart_path": "output/step5_insights/insight_022.png",
+    "chart_path": "output_new/step5_insights/insight_022.png",
     "data_evidence": {
-      "source_step": "step3_statistical_analysis",
-      "key_statistics": "Average monthly sales: $50,000; November sales: $67,500; December sales: $67,500",
-      "data_points": "Sales data from 2021, 2022, and 2023"
+      "source_step": "step4_discovered_patterns",
+      "key_statistics": "Weekend sales: 65% of total sales, Weekday sales: 35%",
+      "data_points": "Total sales on Saturdays: 200 units, Sundays: 210 units, Weekdays average: 130 units"
     },
     "score": {
       "pattern_score": 1.0,
@@ -499,20 +514,20 @@
       "overall": 1.0
     },
     "variables": [
-      "sales",
-      "month"
+      "Tần_suất_bán",
+      "Thứ"
     ]
   },
   {
     "insight_id": "insight_023",
-    "title": "Weekly Customer Traffic Increase on Fridays",
-    "description": "Customer traffic data reveals a consistent 20% increase in foot traffic on Fridays compared to other weekdays. This trend has been observed across multiple locations and supports targeted marketing efforts on Fridays.",
+    "title": "Quarterly Revenue Growth",
+    "description": "There is a recurring growth pattern in revenue (Doanh_thu_tỉnh) every Q2, with an average increase of 25% over Q1. This pattern suggests that promotional strategies or seasonal factors in Q2 effectively boost sales.",
     "insight_type": "PATTERN",
-    "chart_path": "output/step5_insights/insight_023.png",
+    "chart_path": "output_new/step5_insights/insight_023.png",
     "data_evidence": {
-      "source_step": "step4_discovered_patterns",
-      "key_statistics": "Average daily foot traffic: 1,000; Friday foot traffic: 1,200",
-      "data_points": "Traffic data from Q1 2023"
+      "source_step": "step3_statistical_analysis",
+      "key_statistics": "Average Doanh_thu in Q2: 300,000, Average Doanh_thu in Q1: 240,000",
+      "data_points": "Q1 2023: 240,000; Q2 2023: 300,000; Q2 2022: 290,000"
     },
     "score": {
       "pattern_score": 1.0,
@@ -522,20 +537,20 @@
       "overall": 1.0
     },
     "variables": [
-      "customer_traffic",
-      "day_of_week"
+      "Doanh_thu_tỉnh",
+      "Quý"
     ]
   },
   {
     "insight_id": "insight_024",
-    "title": "Quarterly Decline in Product Returns",
-    "description": "Product return rates show a recurring decline of approximately 15% in Q2 and Q3 each year, suggesting improved customer satisfaction or product quality during these periods. This pattern indicates potential seasonal factors influencing customer behavior.",
+    "title": "Product Category Seasonal Trends",
+    "description": "The product category (Phân loại) shows seasonal sales trends, with certain categories (e.g., 'Loại Hàng' = 'A') peaking in Q3, while others (e.g., 'Loại Hàng' = 'B') peak in Q1. This indicates a need for tailored marketing strategies based on product category and season.",
     "insight_type": "PATTERN",
-    "chart_path": "output/step5_insights/insight_024.png",
+    "chart_path": "output_new/step5_insights/insight_024.png",
     "data_evidence": {
-      "source_step": "step3_statistical_analysis",
-      "key_statistics": "Q1 return rate: 10%; Q2 return rate: 8.5%; Q3 return rate: 8.5%; Q4 return rate: 12%",
-      "data_points": "Return data from 2021-2023"
+      "source_step": "step4_discovered_patterns",
+      "key_statistics": "Category A Q3 sales: 500 units, Category B Q1 sales: 450 units",
+      "data_points": "Category A Q3 2023: 500 units; Category B Q1 2023: 450 units"
     },
     "score": {
       "pattern_score": 1.0,
@@ -545,20 +560,20 @@
       "overall": 1.0
     },
     "variables": [
-      "return_rate",
-      "quarter"
+      "Phân loại",
+      "Quý"
     ]
   },
   {
     "insight_id": "insight_025",
-    "title": "Seasonal Demand for Winter Apparel",
-    "description": "Sales data indicates a strong seasonal pattern for winter apparel, with sales increasing by 50% from October to December each year. This pattern is evident in both online and in-store sales, highlighting the importance of inventory planning ahead of winter months.",
+    "title": "Delivery Delay Trends",
+    "description": "The occurrence of delivery delays (Cờ_giao_hàng_trễ) peaks during the rainy season (Q3), with a 40% increase in delays reported compared to other quarters. This suggests a need for improved logistics planning during adverse weather conditions.",
     "insight_type": "PATTERN",
-    "chart_path": "output/step5_insights/insight_025.png",
+    "chart_path": "output_new/step5_insights/insight_025.png",
     "data_evidence": {
-      "source_step": "step4_discovered_patterns",
-      "key_statistics": "October sales: $20,000; December sales: $30,000",
-      "data_points": "Sales data from 2021-2023"
+      "source_step": "step3_statistical_analysis",
+      "key_statistics": "Q3 delivery delays: 40% of total deliveries, Other quarters: 10%",
+      "data_points": "Q3 2023 delays: 120 cases; Q1 2023 delays: 30 cases"
     },
     "score": {
       "pattern_score": 1.0,
@@ -568,31 +583,8 @@
       "overall": 1.0
     },
     "variables": [
-      "apparel_sales",
-      "season"
-    ]
-  },
-  {
-    "insight_id": "insight_026",
-    "title": "Recurring Customer Loyalty Cycle",
-    "description": "Customer loyalty program data reveals a cyclical pattern where engagement peaks during promotional events, with a 40% increase in loyalty sign-ups during the first quarter of each year. This suggests that targeted promotions could enhance customer retention.",
-    "insight_type": "PATTERN",
-    "chart_path": "output/step5_insights/insight_026.png",
-    "data_evidence": {
-      "source_step": "step2_quality",
-      "key_statistics": "Q1 sign-ups: 4,000; Non-promotion Q2 sign-ups: 2,500",
-      "data_points": "Loyalty program data from 2021-2023"
-    },
-    "score": {
-      "pattern_score": 1.0,
-      "threshold": 0.6,
-      "passed": true,
-      "pattern_type": "QUALITY",
-      "overall": 1.0
-    },
-    "variables": [
-      "loyalty_signups",
-      "promotion_period"
+      "Cờ_giao_hàng_trễ",
+      "Quý"
     ]
   }
 ]
