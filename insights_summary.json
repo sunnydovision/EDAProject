@@ -1,240 +1,216 @@
 [
   {
-    "question": "Which Mã màu chuẩn hóa (standardized color code) accounts for the highest total revenue?",
-    "explanation": "Outstanding value: for Ngày bán=31/10/25, one category in Mã màu has a value much larger (or smaller) than the others when measuring SUM(Tổng_doanh_thu_sản_phẩm).",
+    "question": "What is the total revenue by Năm?",
+    "explanation": "Outstanding value: for Doanh_thu_tỉnh=7589710139, one category in Năm has a value much larger (or smaller) than the others when measuring SUM(Tổng_doanh_thu_sản_phẩm).",
     "plot_path": "plots/insight_0_Outstanding_Value.png",
     "insight": {
-      "breakdown": "Mã màu",
+      "breakdown": "Năm",
       "measure": "SUM(Tổng_doanh_thu_sản_phẩm)",
       "subspace": [
         [
-          "Ngày bán",
-          "31/10/25"
+          "Doanh_thu_tỉnh",
+          7589710139
         ]
       ],
       "pattern": "Outstanding Value",
-      "score": 11.219058269962106,
-      "question": "Which Mã màu chuẩn hóa (standardized color code) accounts for the highest total revenue?",
-      "reason": "Explore the impact of color attributes on revenue to support merchandising and color-focused strategies.",
+      "score": 39.07830984696139,
+      "question": "What is the total revenue by Năm?",
+      "reason": "To understand how revenue evolves over time and identify growth or contraction trends year over year.",
       "view_labels": [
-        "PBLU02",
-        "PGRA01",
-        "PGRE01",
-        "PGRE09",
-        "PRED01",
-        "PRED09",
-        "WGRE01"
+        "2025",
+        "2026"
       ],
       "view_values": [
-        362281623.0,
-        1873538255.0,
-        122398490258.0,
-        10909872051.0,
-        843610784.5,
-        6738642009.0,
-        556738055.5
+        866605838786.0,
+        22176134080.0
       ]
     }
   },
   {
-    "question": "Do Cuối tuần (weekend) sales generate higher revenue than weekdays?",
-    "explanation": "Outstanding value: for Tên màu=ND, one category in Cuối_tuần has a value much larger (or smaller) than the others when measuring SUM(Tổng_doanh_thu_sản_phẩm).",
+    "question": "Which Dòng sản phẩm has the highest total revenue?",
+    "explanation": "Outstanding value: for Độ D=0.35, one category in Mã_sản_phẩm has a value much larger (or smaller) than the others when measuring SUM(Tổng_doanh_thu_sản_phẩm).",
     "plot_path": "plots/insight_1_Outstanding_Value.png",
     "insight": {
-      "breakdown": "Cuối_tuần",
-      "measure": "SUM(Tổng_doanh_thu_sản_phẩm)",
-      "subspace": [
-        [
-          "Tên màu",
-          "ND"
-        ]
-      ],
-      "pattern": "Outstanding Value",
-      "score": 10.619904015863687,
-      "question": "Do Cuối tuần (weekend) sales generate higher revenue than weekdays?",
-      "reason": "To evaluate whether weekend sales perform differently from weekdays, informing staffing and promotions.",
-      "view_labels": [
-        "False",
-        "True"
-      ],
-      "view_values": [
-        95416152667.0,
-        8984653018.0
-      ]
-    }
-  },
-  {
-    "question": "Which Dòng sản phẩm has the highest total revenue?",
-    "explanation": "Outstanding value: for SKU_Màu=WBLU01, one category in Mã_sản_phẩm has a value much larger (or smaller) than the others when measuring SUM(Tổng_doanh_thu_sản_phẩm).",
-    "plot_path": "plots/insight_2_Outstanding_Value.png",
-    "insight": {
       "breakdown": "Mã_sản_phẩm",
       "measure": "SUM(Tổng_doanh_thu_sản_phẩm)",
       "subspace": [
         [
-          "SKU_Màu",
-          "WBLU01"
+          "Độ D",
+          0.35
         ]
       ],
       "pattern": "Outstanding Value",
-      "score": 9.771697333660548,
-      "question": "Which Dòng sản phẩm has the highest total revenue?",
-      "reason": "To determine which product line drives revenue, informing product prioritization and inventory decisions.",
-      "view_labels": [
-        "Tôn Màu_Mỏng_G550_WBLU01",
-        "Tôn Màu_Trung bình_G550_WBLU01"
-      ],
-      "view_values": [
-        5269010736.0,
-        51487178160.0
-      ]
-    }
-  },
-  {
-    "question": "What is the total revenue by Năm?",
-    "explanation": "Outstanding value: for Tỷ trọng thực tế=3.056426332, one category in Năm has a value much larger (or smaller) than the others when measuring SUM(Tổng_doanh_thu_sản_phẩm).",
-    "plot_path": "plots/insight_3_Outstanding_Value.png",
-    "insight": {
-      "breakdown": "Năm",
-      "measure": "SUM(Tổng_doanh_thu_sản_phẩm)",
-      "subspace": [
-        [
-          "Tỷ trọng thực tế",
-          3.056426332
-        ]
-      ],
-      "pattern": "Outstanding Value",
-      "score": 6.986246636309257,
-      "question": "What is the total revenue by Năm?",
-      "reason": "To understand how revenue evolves over time and identify growth or contraction trends year over year.",
-      "view_labels": [
-        "2025",
-        "2026"
-      ],
-      "view_values": [
-        15628940014.0,
-        2237101097.0
-      ]
-    }
-  },
-  {
-    "question": "What is the total revenue by Năm?",
-    "explanation": "Outstanding value: for Cờ_giao_dịch_bất_thường=1, one category in Năm has a value much larger (or smaller) than the others when measuring SUM(Tổng_doanh_thu_sản_phẩm).",
-    "plot_path": "plots/insight_4_Outstanding_Value.png",
-    "insight": {
-      "breakdown": "Năm",
-      "measure": "SUM(Tổng_doanh_thu_sản_phẩm)",
-      "subspace": [
-        [
-          "Cờ_giao_dịch_bất_thường",
-          1
-        ]
-      ],
-      "pattern": "Outstanding Value",
-      "score": 6.786610492934336,
-      "question": "What is the total revenue by Năm?",
-      "reason": "To understand how revenue evolves over time and identify growth or contraction trends year over year.",
-      "view_labels": [
-        "2025",
-        "2026"
-      ],
-      "view_values": [
-        271440954299.0,
-        39996542395.0
-      ]
-    }
-  },
-  {
-    "question": "Do Cuối tuần (weekend) sales generate higher revenue than weekdays?",
-    "explanation": "Outstanding value: for Mã màu=PWHI19, one category in Cuối_tuần has a value much larger (or smaller) than the others when measuring SUM(Tổng_doanh_thu_sản_phẩm).",
-    "plot_path": "plots/insight_5_Outstanding_Value.png",
-    "insight": {
-      "breakdown": "Cuối_tuần",
-      "measure": "SUM(Tổng_doanh_thu_sản_phẩm)",
-      "subspace": [
-        [
-          "Mã màu",
-          "PWHI19"
-        ]
-      ],
-      "pattern": "Outstanding Value",
-      "score": 5.0,
-      "question": "Do Cuối tuần (weekend) sales generate higher revenue than weekdays?",
-      "reason": "To evaluate whether weekend sales perform differently from weekdays, informing staffing and promotions.",
-      "view_labels": [
-        "False",
-        "True"
-      ],
-      "view_values": [
-        2889075860.0,
-        577815172.0
-      ]
-    }
-  },
-  {
-    "question": "Which Dòng sản phẩm has the highest total revenue?",
-    "explanation": "Outstanding value: for Điểm_hài_lòng_khách_hàng=45, one category in Mã_sản_phẩm has a value much larger (or smaller) than the others when measuring SUM(Tổng_doanh_thu_sản_phẩm).",
-    "plot_path": "plots/insight_6_Outstanding_Value.png",
-    "insight": {
-      "breakdown": "Mã_sản_phẩm",
-      "measure": "SUM(Tổng_doanh_thu_sản_phẩm)",
-      "subspace": [
-        [
-          "Điểm_hài_lòng_khách_hàng",
-          45
-        ]
-      ],
-      "pattern": "Outstanding Value",
-      "score": 4.3229145561486835,
+      "score": 15.462434046644264,
       "question": "Which Dòng sản phẩm has the highest total revenue?",
       "reason": "To determine which product line drives revenue, informing product prioritization and inventory decisions.",
       "view_labels": [
         "Tôn Kẽm_Mỏng_G550_KHÔNGMÀU",
-        "Tôn Kẽm_Trung bình_G550_KHÔNGMÀU",
+        "Tôn Màu_Mỏng_G550_PBLU02",
         "Tôn Màu_Mỏng_G550_PBLU09",
         "Tôn Màu_Mỏng_G550_PGRA01",
         "Tôn Màu_Mỏng_G550_PGRA02",
+        "Tôn Màu_Mỏng_G550_PGRE01",
+        "Tôn Màu_Mỏng_G550_PGRE02",
         "Tôn Màu_Mỏng_G550_PGRE03",
+        "Tôn Màu_Mỏng_G550_PGRE09",
+        "Tôn Màu_Mỏng_G550_PRED09",
+        "Tôn Màu_Mỏng_G550_PRED10",
+        "Tôn Màu_Mỏng_G550_PRED24",
+        "Tôn Màu_Mỏng_G550_PWHI01",
+        "Tôn Màu_Mỏng_G550_WBLU01",
         "Tôn Màu_Mỏng_G550_WGRA01",
+        "Tôn Màu_Mỏng_G550_WGRE01",
         "Tôn Màu_Mỏng_G550_WRED02",
-        "Tôn Màu_Trung bình_G550_PGRE01",
-        "Tôn Màu_Trung bình_G550_PGRE09",
-        "Tôn Màu_Trung bình_G550_WBLU01",
-        "Tôn Màu_Trung bình_G550_WGRA01",
-        "Tôn Màu_Trung bình_G550_WRED02"
+        "Tôn Màu_Mỏng_G550_WRED03"
       ],
       "view_values": [
-        11121469464.0,
-        93773640084.0,
-        944115007.0,
-        1025031535.0,
-        375866161.0,
-        992659657.0,
-        2237101097.0,
-        2363274177.0,
-        21692226128.0,
-        12223296514.0,
-        2145299090.0,
-        4051902756.0,
-        12560263965.0
+        1023175190688.0,
+        93108246.0,
+        9441150070.0,
+        14350441490.0,
+        1503464644.0,
+        15456232770.0,
+        1574145320.0,
+        6948617599.0,
+        57578685528.0,
+        11438050261.0,
+        4153101876.0,
+        7781840.0,
+        372840864.0,
+        5269010736.0,
+        58164628522.0,
+        80743047.0,
+        66171676956.0,
+        94394289.0
+      ]
+    }
+  },
+  {
+    "question": "Do Cuối tuần (weekend) sales generate higher revenue than weekdays?",
+    "explanation": "Outstanding value: for Quý=2025Q4, one category in Cuối_tuần has a value much larger (or smaller) than the others when measuring SUM(Tổng_doanh_thu_sản_phẩm).",
+    "plot_path": "plots/insight_2_Outstanding_Value.png",
+    "insight": {
+      "breakdown": "Cuối_tuần",
+      "measure": "SUM(Tổng_doanh_thu_sản_phẩm)",
+      "subspace": [
+        [
+          "Quý",
+          "2025Q4"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 14.74788719141186,
+      "question": "Do Cuối tuần (weekend) sales generate higher revenue than weekdays?",
+      "reason": "To evaluate whether weekend sales perform differently from weekdays, informing staffing and promotions.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        3637899740912.0,
+        246672604265.0
+      ]
+    }
+  },
+  {
+    "question": "Do Cuối tuần (weekend) sales generate higher revenue than weekdays?",
+    "explanation": "Outstanding value: for Năm=2025, one category in Cuối_tuần has a value much larger (or smaller) than the others when measuring SUM(Tổng_doanh_thu_sản_phẩm).",
+    "plot_path": "plots/insight_3_Outstanding_Value.png",
+    "insight": {
+      "breakdown": "Cuối_tuần",
+      "measure": "SUM(Tổng_doanh_thu_sản_phẩm)",
+      "subspace": [
+        [
+          "Năm",
+          2025
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 7.5897025524647885,
+      "question": "Do Cuối tuần (weekend) sales generate higher revenue than weekdays?",
+      "reason": "To evaluate whether weekend sales perform differently from weekdays, informing staffing and promotions.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        5200914792473.5,
+        685259370380.0
       ]
     }
   },
   {
     "question": "Which Mã màu chuẩn hóa (standardized color code) accounts for the highest total revenue?",
-    "explanation": "Outstanding value: for Loại_khách_hàng=Đối tác, one category in Mã màu has a value much larger (or smaller) than the others when measuring SUM(Tổng_doanh_thu_sản_phẩm).",
-    "plot_path": "plots/insight_7_Outstanding_Value.png",
+    "explanation": "Outstanding value: for Tháng=12, one category in Mã màu has a value much larger (or smaller) than the others when measuring SUM(Tổng_doanh_thu_sản_phẩm).",
+    "plot_path": "plots/insight_4_Outstanding_Value.png",
     "insight": {
       "breakdown": "Mã màu",
       "measure": "SUM(Tổng_doanh_thu_sản_phẩm)",
       "subspace": [
         [
-          "Loại_khách_hàng",
-          "Đối tác"
+          "Tháng",
+          12
         ]
       ],
       "pattern": "Outstanding Value",
-      "score": 3.0576730018541,
+      "score": 6.45303339536997,
+      "question": "Which Mã màu chuẩn hóa (standardized color code) accounts for the highest total revenue?",
+      "reason": "Explore the impact of color attributes on revenue to support merchandising and color-focused strategies.",
+      "view_labels": [
+        "PBLU02",
+        "PBLU09",
+        "PGRA01",
+        "PGRA02",
+        "PGRE01",
+        "PGRE02",
+        "PGRE03",
+        "PGRE09",
+        "PRED01",
+        "PRED09",
+        "PRED10",
+        "PRED24",
+        "PWHI01",
+        "PWHI19",
+        "WBLU01",
+        "WGRA01",
+        "WRED02"
+      ],
+      "view_values": [
+        455389869.0,
+        49602073037.0,
+        15164830855.0,
+        1205341225.0,
+        334657131582.0,
+        3979030506.0,
+        4971402117.0,
+        46266337130.0,
+        843610784.5,
+        31343505919.0,
+        2056018448.0,
+        106882710.0,
+        62210445.0,
+        1155630344.0,
+        12871794540.0,
+        30600420389.0,
+        51860436957.0
+      ]
+    }
+  },
+  {
+    "question": "Which Mã màu chuẩn hóa (standardized color code) accounts for the highest total revenue?",
+    "explanation": "Outstanding value: for Phân loại=2, one category in Mã màu has a value much larger (or smaller) than the others when measuring SUM(Tổng_doanh_thu_sản_phẩm).",
+    "plot_path": "plots/insight_5_Outstanding_Value.png",
+    "insight": {
+      "breakdown": "Mã màu",
+      "measure": "SUM(Tổng_doanh_thu_sản_phẩm)",
+      "subspace": [
+        [
+          "Phân loại",
+          "2"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 4.475035797854794,
       "question": "Which Mã màu chuẩn hóa (standardized color code) accounts for the highest total revenue?",
       "reason": "Explore the impact of color attributes on revenue to support merchandising and color-focused strategies.",
       "view_labels": [
@@ -248,122 +224,204 @@
         "PGRE09",
         "PRED09",
         "PRED10",
-        "PWHI01",
-        "PWHI11",
         "PWHI19",
         "WBLU01",
         "WGRA01",
-        "WGRE01",
-        "WRED02",
-        "WRED03"
+        "WRED02"
       ],
       "view_values": [
-        362281623.0,
-        40814596438.0,
-        5620614765.0,
-        375866161.0,
-        264943583367.0,
-        830739866.0,
-        1985319314.0,
-        86648763032.0,
-        17096457774.0,
-        1206188258.0,
-        186420432.0,
-        568626916.0,
+        724563246.0,
+        25273094022.0,
+        13467817415.0,
+        1205341225.0,
+        113098000471.0,
+        2492219598.0,
+        992659657.0,
+        24218855999.0,
+        2849409629.0,
+        3618564774.0,
         577815172.0,
-        12871794540.0,
-        21104112656.0,
-        80743047.0,
-        36936898815.0,
-        220497106.5
+        658626342.0,
+        2237101097.0,
+        10736783487.0
+      ]
+    }
+  },
+  {
+    "question": "What is the total revenue by Năm?",
+    "explanation": "Outstanding value: for overall data, one category in Năm has a value much larger (or smaller) than the others when measuring SUM(Tổng_doanh_thu_sản_phẩm).",
+    "plot_path": "plots/insight_6_Outstanding_Value.png",
+    "insight": {
+      "breakdown": "Năm",
+      "measure": "SUM(Tổng_doanh_thu_sản_phẩm)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 3.4067618197451397,
+      "question": "What is the total revenue by Năm?",
+      "reason": "To understand how revenue evolves over time and identify growth or contraction trends year over year.",
+      "view_labels": [
+        "2025",
+        "2026"
+      ],
+      "view_values": [
+        5886174162853.5,
+        1727791514140.5
       ]
     }
   },
   {
     "question": "How does the average revenue per kilogram (Doanh thu trên mỗi kg sản phẩm) relate to product weight (Khối lượng)?",
-    "explanation": "Outstanding value: for Tên_khách_hàng=Đại lý VLXD Long - Long An, one category in Khối lượng has a value much larger (or smaller) than the others when measuring MEAN(Tổng_doanh_thu_sản_phẩm).",
+    "explanation": "Outstanding value: for Met B=8, one category in Khối lượng has a value much larger (or smaller) than the others when measuring MEAN(Tổng_doanh_thu_sản_phẩm).",
+    "plot_path": "plots/insight_7_Outstanding_Value.png",
+    "insight": {
+      "breakdown": "Khối lượng",
+      "measure": "MEAN(Tổng_doanh_thu_sản_phẩm)",
+      "subspace": [
+        [
+          "Met B",
+          8
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 3.2120008004372065,
+      "question": "How does the average revenue per kilogram (Doanh thu trên mỗi kg sản phẩm) relate to product weight (Khối lượng)?",
+      "reason": "To examine how revenue per kilogram varies with weight, revealing if heavier items command different per-kg value.",
+      "view_labels": [
+        "2040",
+        "3420",
+        "3710",
+        "3840",
+        "4270",
+        "5030"
+      ],
+      "view_values": [
+        4865795803.0,
+        4051902756.0,
+        2363274177.0,
+        4186754655.0,
+        15628940014.0,
+        2399111897.0
+      ]
+    }
+  },
+  {
+    "question": "Which Dòng sản phẩm has the highest total revenue?",
+    "explanation": "Outstanding value: for Loại Hàng=PPGL, one category in Mã_sản_phẩm has a value much larger (or smaller) than the others when measuring SUM(Tổng_doanh_thu_sản_phẩm).",
     "plot_path": "plots/insight_8_Outstanding_Value.png",
     "insight": {
-      "breakdown": "Khối lượng",
-      "measure": "MEAN(Tổng_doanh_thu_sản_phẩm)",
+      "breakdown": "Mã_sản_phẩm",
+      "measure": "SUM(Tổng_doanh_thu_sản_phẩm)",
       "subspace": [
         [
-          "Tên_khách_hàng",
-          "Đại lý VLXD Long - Long An"
+          "Loại Hàng",
+          "PPGL"
         ]
       ],
       "pattern": "Outstanding Value",
-      "score": 1.4597579176752595,
-      "question": "How does the average revenue per kilogram (Doanh thu trên mỗi kg sản phẩm) relate to product weight (Khối lượng)?",
-      "reason": "To examine how revenue per kilogram varies with weight, revealing if heavier items command different per-kg value.",
+      "score": 3.1494010822135285,
+      "question": "Which Dòng sản phẩm has the highest total revenue?",
+      "reason": "To determine which product line drives revenue, informing product prioritization and inventory decisions.",
       "view_labels": [
-        "3260",
-        "3520",
-        "3860",
-        "4020",
-        "4870"
+        "Tôn Màu_Mỏng_G550_PBLU02",
+        "Tôn Màu_Mỏng_G550_PBLU09",
+        "Tôn Màu_Mỏng_G550_PGRA01",
+        "Tôn Màu_Mỏng_G550_PGRA02",
+        "Tôn Màu_Mỏng_G550_PGRE01",
+        "Tôn Màu_Mỏng_G550_PGRE02",
+        "Tôn Màu_Mỏng_G550_PGRE03",
+        "Tôn Màu_Mỏng_G550_PGRE09",
+        "Tôn Màu_Mỏng_G550_PRED09",
+        "Tôn Màu_Mỏng_G550_PRED10",
+        "Tôn Màu_Mỏng_G550_PRED24",
+        "Tôn Màu_Mỏng_G550_PWHI01",
+        "Tôn Màu_Mỏng_G550_PWHI11",
+        "Tôn Màu_Mỏng_G550_PWHI19",
+        "Tôn Màu_Mỏng_G550_WBLU01",
+        "Tôn Màu_Mỏng_G550_WGRA01",
+        "Tôn Màu_Mỏng_G550_WGRE01",
+        "Tôn Màu_Mỏng_G550_WHI19",
+        "Tôn Màu_Mỏng_G550_WRED02",
+        "Tôn Màu_Mỏng_G550_WRED03",
+        "Tôn Màu_Trung bình_G350_PWHI11",
+        "Tôn Màu_Trung bình_G550_PBLU02",
+        "Tôn Màu_Trung bình_G550_PBLU09",
+        "Tôn Màu_Trung bình_G550_PGRA01",
+        "Tôn Màu_Trung bình_G550_PGRA02",
+        "Tôn Màu_Trung bình_G550_PGRE01",
+        "Tôn Màu_Trung bình_G550_PGRE02",
+        "Tôn Màu_Trung bình_G550_PGRE03",
+        "Tôn Màu_Trung bình_G550_PGRE09",
+        "Tôn Màu_Trung bình_G550_PRED01",
+        "Tôn Màu_Trung bình_G550_PRED09",
+        "Tôn Màu_Trung bình_G550_PRED10",
+        "Tôn Màu_Trung bình_G550_PRED24",
+        "Tôn Màu_Trung bình_G550_PWHI01",
+        "Tôn Màu_Trung bình_G550_PWHI11",
+        "Tôn Màu_Trung bình_G550_WBLU01",
+        "Tôn Màu_Trung bình_G550_WGRA01",
+        "Tôn Màu_Trung bình_G550_WGRE01",
+        "Tôn Màu_Trung bình_G550_WRED02",
+        "Tôn Màu_Trung bình_G550_WRED03"
       ],
       "view_values": [
-        2849409629.0,
-        4186754655.0,
-        658626342.0,
-        4051902756.0,
-        6111648257.0
+        93108246.0,
+        9441150070.0,
+        14350441490.0,
+        1503464644.0,
+        29366842263.0,
+        8657799260.0,
+        11911915884.0,
+        67175133116.0,
+        11438050261.0,
+        6229652814.0,
+        7781840.0,
+        372840864.0,
+        261928590.0,
+        3466891032.0,
+        5269010736.0,
+        58164628522.0,
+        80743047.0,
+        102368079.0,
+        66171676956.0,
+        94394289.0,
+        15914041.0,
+        2173689738.0,
+        277350360771.0,
+        43091379865.0,
+        2903162724.0,
+        1366610246064.0,
+        9968878392.0,
+        4651320674.0,
+        433927026247.0,
+        8436107845.0,
+        94030517757.0,
+        5140046120.0,
+        213765420.0,
+        62210445.0,
+        1934495062.5,
+        51487178160.0,
+        202595137800.0,
+        3340428333.0,
+        221897996715.0,
+        661491319.5
       ]
     }
   },
   {
     "question": "How does the average revenue per kilogram (Doanh thu trên mỗi kg sản phẩm) relate to product weight (Khối lượng)?",
-    "explanation": "Outstanding value: for Met A=1130, one category in Khối lượng has a value much larger (or smaller) than the others when measuring MEAN(Tổng_doanh_thu_sản_phẩm).",
-    "plot_path": "plots/insight_9_Outstanding_Value.png",
+    "explanation": "There is a notable trend in MEAN(Tổng_doanh_thu_sản_phẩm) across Khối lượng. For the segment Năm=2025, the values show a monotonic trend.",
+    "plot_path": "plots/insight_9_Trend.png",
     "insight": {
       "breakdown": "Khối lượng",
       "measure": "MEAN(Tổng_doanh_thu_sản_phẩm)",
       "subspace": [
         [
-          "Met A",
-          1130
-        ]
-      ],
-      "pattern": "Outstanding Value",
-      "score": 1.440971518716228,
-      "question": "How does the average revenue per kilogram (Doanh thu trên mỗi kg sản phẩm) relate to product weight (Khối lượng)?",
-      "reason": "To examine how revenue per kilogram varies with weight, revealing if heavier items command different per-kg value.",
-      "view_labels": [
-        "3685",
-        "3720",
-        "4100",
-        "4130",
-        "4180",
-        "4760",
-        "4800"
-      ],
-      "view_values": [
-        2145299090.0,
-        4186754655.0,
-        2849409629.0,
-        6111648257.0,
-        15628940014.0,
-        10846113064.0,
-        10846113064.0
-      ]
-    }
-  },
-  {
-    "question": "How does the average revenue per kilogram (Doanh thu trên mỗi kg sản phẩm) relate to product weight (Khối lượng)?",
-    "explanation": "There is a notable trend in MEAN(Tổng_doanh_thu_sản_phẩm) across Khối lượng. For the segment Cuối_tuần=False, the values show a monotonic trend.",
-    "plot_path": "plots/insight_10_Trend.png",
-    "insight": {
-      "breakdown": "Khối lượng",
-      "measure": "MEAN(Tổng_doanh_thu_sản_phẩm)",
-      "subspace": [
-        [
-          "Cuối_tuần",
-          false
+          "Năm",
+          2025
         ]
       ],
       "pattern": "Trend",
-      "score": 0.9999999999936002,
+      "score": 0.9999999999959814,
       "question": "How does the average revenue per kilogram (Doanh thu trên mỗi kg sản phẩm) relate to product weight (Khối lượng)?",
       "reason": "To examine how revenue per kilogram varies with weight, revealing if heavier items command different per-kg value.",
       "view_labels": [
@@ -377,18 +435,12 @@
         "475",
         "500",
         "550",
-        "560",
-        "650",
         "710",
         "715",
         "720",
-        "730",
         "750",
-        "760",
-        "780",
         "810",
         "820",
-        "840",
         "870",
         "890",
         "910",
@@ -406,19 +458,19 @@
         "1210",
         "1220",
         "1230",
+        "1255",
         "1260",
         "1270",
         "1310",
         "1320",
-        "1340",
         "1350",
         "1440",
         "1470",
-        "1480",
         "1510",
         "1525",
         "1540",
         "1545",
+        "1630",
         "1640",
         "1655",
         "1660",
@@ -428,10 +480,7 @@
         "1770",
         "1800",
         "1840",
-        "1880",
         "1900",
-        "1910",
-        "1920",
         "1930",
         "1950",
         "1960",
@@ -439,13 +488,10 @@
         "2000",
         "2040",
         "2050",
-        "2070",
         "2125",
         "2130",
         "2140",
         "2190",
-        "2210",
-        "2350",
         "2390",
         "2415",
         "2450",
@@ -456,13 +502,12 @@
         "2590",
         "2610",
         "2630",
-        "2650",
         "2670",
-        "2675",
         "2700",
         "2735",
         "2780",
         "2800",
+        "2810",
         "2820",
         "2850",
         "2860",
@@ -471,13 +516,12 @@
         "2930",
         "2950",
         "2960",
-        "2965",
-        "3000",
         "3010",
         "3030",
         "3050",
         "3060",
         "3090",
+        "3100",
         "3110",
         "3120",
         "3165",
@@ -497,10 +541,8 @@
         "3320",
         "3330",
         "3340",
-        "3350",
         "3360",
         "3370",
-        "3380",
         "3390",
         "3395",
         "3400",
@@ -508,6 +550,7 @@
         "3420",
         "3430",
         "3440",
+        "3445",
         "3450",
         "3470",
         "3480",
@@ -559,6 +602,7 @@
         "3860",
         "3870",
         "3875",
+        "3880",
         "3890",
         "3900",
         "3910",
@@ -603,7 +647,6 @@
         "4215",
         "4220",
         "4230",
-        "4235",
         "4240",
         "4250",
         "4260",
@@ -671,11 +714,13 @@
         "4920",
         "4940",
         "4960",
-        "4970",
         "5000",
+        "5010",
         "5030",
         "5080",
         "5110",
+        "5120",
+        "5160",
         "5180"
       ],
       "view_values": [
@@ -689,18 +734,12 @@
         4186754655.0,
         362281623.0,
         15628940014.0,
-        4865795803.0,
-        1025031535.0,
         2361473942.0,
         15914041.0,
         4865795803.0,
-        2399111897.0,
         830739866.0,
-        1025031535.0,
-        1545623277.0,
         15628940014.0,
-        3908191957.0,
-        1545623277.0,
+        4411218643.666667,
         362281623.0,
         830739866.0,
         6111648257.0,
@@ -717,20 +756,20 @@
         4865795803.0,
         15628940014.0,
         699445384.0,
-        2136325076.0,
+        1873538255.0,
+        130964295.0,
         11121469464.0,
         15628940014.0,
         692183646.0,
         514004612.0,
-        10846113064.0,
         2849409629.0,
         10846113064.0,
         992659657.0,
-        4865795803.0,
         414737532.0,
         276356437.5,
-        8326985774.5,
+        15628940014.0,
         276356437.5,
+        15628940014.0,
         514004612.0,
         276356437.5,
         944115007.0,
@@ -741,9 +780,6 @@
         4186754655.0,
         6111648257.0,
         787072660.0,
-        787072660.0,
-        10846113064.0,
-        2399111897.0,
         4865795803.0,
         4186754655.0,
         10846113064.0,
@@ -751,13 +787,10 @@
         15628940014.0,
         4865795803.0,
         10870294135.5,
-        10846113064.0,
         220497106.5,
         843610784.5,
         10846113064.0,
         10983791264.0,
-        10846113064.0,
-        2237101097.0,
         787072660.0,
         658626342.0,
         4051902756.0,
@@ -769,12 +802,11 @@
         1545623277.0,
         11121469464.0,
         15628940014.0,
-        15628940014.0,
-        15628940014.0,
         1025031535.0,
         658626342.0,
         1545623277.0,
         4865795803.0,
+        10846113064.0,
         2399111897.0,
         6111648257.0,
         992659657.0,
@@ -783,13 +815,12 @@
         11121469464.0,
         15628940014.0,
         11121469464.0,
-        4051902756.0,
-        692183646.0,
         968387332.0,
         2124482550.0,
         15628940014.0,
         787072660.0,
         2118406216.0,
+        992659657.0,
         362281623.0,
         9179160712.666666,
         4051902756.0,
@@ -801,46 +832,45 @@
         5013077630.25,
         4186754655.0,
         2849409629.0,
-        7449007910.0,
-        9907847334.5,
-        6742371820.5,
+        10846113064.0,
+        4186754655.0,
+        11121469464.0,
         658626342.0,
-        10870294135.5,
+        6111648257.0,
         11121469464.0,
         6316639525.333333,
         4051902756.0,
-        2399111897.0,
         3505547446.5,
-        3292933276.0,
-        7955865808.333333,
-        3090511120.6666665,
+        2399111897.0,
+        2576102328.25,
         4051902756.0,
-        7449007910.0,
-        6010037547.5,
+        6316639525.333333,
+        4385192639.4,
         4096853389.0,
-        6382902747.4,
+        8232488989.2,
         2145299090.0,
+        4186754655.0,
         7449007910.0,
         4186754655.0,
-        2608503569.5,
+        2924153786.6,
         5546922150.2,
         3714004565.5,
-        3499094484.6666665,
+        3388532830.4,
         4186754655.0,
         4051902756.0,
         3416368200.6666665,
         80743047.0,
-        2664963908.8333335,
-        3760324245.3333335,
-        3067431752.2,
+        3491919502.6666665,
+        3866931847.75,
+        3275014416.0,
         4943436873.5,
         15628940014.0,
-        1833744308.0,
-        3690981571.75,
+        2853492007.6666665,
+        4205917947.0,
         1873538255.0,
         2237101097.0,
         186420432.0,
-        4186754655.0,
+        6111648257.0,
         11121469464.0,
         556738055.5,
         2849409629.0,
@@ -848,124 +878,124 @@
         6730520276.666667,
         2145299090.0,
         9586549419.25,
-        8426030764.5,
+        10446949627.0,
         220497106.5,
         2924897752.3333335,
-        6453375625.0,
+        7654112059.5,
         5798713965.333333,
-        8597497009.0,
+        7461098445.75,
         4175608396.6666665,
         4051902756.0,
         8616558860.5,
-        4119328705.5,
+        4783435222.666667,
         4051902756.0,
-        1488019478.0,
-        3828635767.0,
+        6201659656.666667,
+        4589639930.333333,
         7516433859.5,
-        6021354544.25,
-        4190413318.4,
+        6406540791.333333,
+        4678741373.75,
         4186754655.0,
-        9563787221.0,
+        6192876990.0,
         1545623277.0,
         4051902756.0,
         7633855090.0,
-        8690995600.4,
+        8083377134.5,
         2399111897.0,
+        8208006337.0,
         11121469464.0,
-        13037944820.5,
-        4174374677.0,
+        12519745781.8,
+        8478880660.5,
         220497106.5,
         5919183803.75,
-        5505048917.0625,
+        3767142251.071429,
         10846113064.0,
-        8737493878.0,
+        7419054920.4,
         658626342.0,
-        5306564419.333333,
-        5810659872.0,
+        5196372265.25,
+        4894319676.5,
         4186754655.0,
-        8212971984.5,
+        7989826905.733334,
         8430391729.25,
         94394289.0,
-        5733332854.181818,
-        3529103890.4,
+        5692760208.153846,
+        5537882728.666667,
         2145299090.0,
-        8713105052.75,
-        7963831690.142858,
-        7596360258.625,
-        9106582850.166666,
-        8664654804.0,
-        13122721865.444445,
-        14341091285.428572,
+        7983348834.666667,
+        9859161435.6,
+        8724593514.7,
+        10786495965.7,
+        9548350642.5,
+        12278387100.90909,
+        14276698849.0,
         11467058794.666666,
-        13340785189.0,
-        8828046289.272728,
-        9289850429.384615,
+        12422875978.1,
+        10716794818.363636,
+        10117784599.461538,
         2237101097.0,
-        10908838047.666666,
-        7964581547.9,
-        9055198981.285715,
-        7119980582.25,
-        8346040055.625,
+        12623959647.333334,
+        8715317790.821428,
+        11270045717.0,
+        8821772468.6,
+        8830182073.875,
         8639804165.6,
         13770880514.0,
         556738055.5,
-        8965949666.428572,
-        10856811358.90909,
+        7575154510.875,
+        10379598493.4,
         5033688472.333333,
         416547246.5,
-        9756792595.285715,
-        8695247882.5,
-        556738055.5,
+        9575239183.833334,
+        9925149105.7,
         6534104510.75,
-        4912948740.555555,
-        5920984927.25,
-        8286473487.3,
-        2942932432.1666665,
+        5566859591.285714,
+        6692264295.111111,
+        8953970444.272728,
+        2243268032.7,
         8547719760.5,
-        8210007931.555555,
+        7576360963.9,
         9244601646.857143,
         7646314052.0,
         4502657394.25,
-        12532174180.666666,
-        6968987693.5,
+        9572176547.0,
+        9166694871.0,
         7797097747.333333,
-        7587373560.5,
-        1771024387.0,
-        7572419221.0,
+        7732195298.0,
+        739433915.0,
+        5935572299.5,
         10247367908.5,
         7694104085.0,
-        9644155598.375,
-        5659974974.666667,
+        9609736048.375,
+        8152216234.5,
         843610784.5,
         12532174180.666666,
         4065302764.8,
         4699465511.0,
-        1873538255.0,
-        12623959647.333334,
-        8053619615.0,
+        6497503859.5,
+        13375204739.0,
+        11043806094.333334,
         10540053883.666666,
         5817737038.0,
         8737493878.0,
         5892971923.0,
-        9055049003.333334,
+        10557539186.666666,
         577815172.0,
-        8194952551.75,
-        4423082458.0,
+        4756102112.0,
+        5272930525.666667,
         11121469464.0,
-        13375204739.0,
-        13237526539.0,
         15628940014.0,
-        8122231475.0,
+        9171625276.333334,
+        15628940014.0,
+        10983791264.0,
         12532174180.666666,
-        12440388714.0,
+        12041819801.5,
         11121469464.0,
-        8478880660.5,
-        6622612480.5,
         10846113064.0,
+        6622612480.5,
+        10983791264.0,
         1039822751.0,
         11121469464.0,
         12110658901.5,
-        15628940014.0,
+        1039822751.0,
         11121469464.0,
         10846113064.0,
         7855954433.5,
@@ -976,7 +1006,7 @@
         11121469464.0,
         7511945637.5,
         10733998345.0,
-        10247367908.5,
+        15628940014.0,
         6887624770.25,
         7924793533.5,
         10846113064.0,
@@ -984,110 +1014,58 @@
         4865795803.0,
         11121469464.0,
         10846113064.0,
-        10846113064.0,
+        6111648257.0,
         2399111897.0,
         944115007.0,
         944115007.0,
+        6111648257.0,
+        6111648257.0,
         6111648257.0
       ]
     }
   },
   {
-    "question": "What is the total revenue by Năm?",
-    "explanation": "Attribution: for Khối lượng=4230, a single category in Năm accounts for a large share of total SUM(Tổng_doanh_thu_sản_phẩm).",
-    "plot_path": "plots/insight_11_Attribution.png",
+    "question": "How does the average revenue per kilogram (Doanh thu trên mỗi kg sản phẩm) relate to product weight (Khối lượng)?",
+    "explanation": "Attribution: for Met A=210, a single category in Khối lượng accounts for a large share of total MEAN(Tổng_doanh_thu_sản_phẩm).",
+    "plot_path": "plots/insight_10_Attribution.png",
     "insight": {
-      "breakdown": "Năm",
-      "measure": "SUM(Tổng_doanh_thu_sản_phẩm)",
+      "breakdown": "Khối lượng",
+      "measure": "MEAN(Tổng_doanh_thu_sản_phẩm)",
       "subspace": [
         [
-          "Khối lượng",
-          4230
+          "Met A",
+          210
         ]
       ],
       "pattern": "Attribution",
-      "score": 0.976398448929165,
-      "question": "What is the total revenue by Năm?",
-      "reason": "To understand how revenue evolves over time and identify growth or contraction trends year over year.",
+      "score": 0.9944459883654261,
+      "question": "How does the average revenue per kilogram (Doanh thu trên mỗi kg sản phẩm) relate to product weight (Khối lượng)?",
+      "reason": "To examine how revenue per kilogram varies with weight, revealing if heavier items command different per-kg value.",
       "view_labels": [
-        "2025",
-        "2026"
+        "710",
+        "715"
       ],
       "view_values": [
-        99251491057.0,
-        2399111897.0
-      ]
-    }
-  },
-  {
-    "question": "Which Mã màu chuẩn hóa (standardized color code) accounts for the highest total revenue?",
-    "explanation": "Attribution: for Tên màu=XR, a single category in Mã màu accounts for a large share of total SUM(Tổng_doanh_thu_sản_phẩm).",
-    "plot_path": "plots/insight_12_Attribution.png",
-    "insight": {
-      "breakdown": "Mã màu",
-      "measure": "SUM(Tổng_doanh_thu_sản_phẩm)",
-      "subspace": [
-        [
-          "Tên màu",
-          "XR"
-        ]
-      ],
-      "pattern": "Attribution",
-      "score": 0.9689444172208465,
-      "question": "Which Mã màu chuẩn hóa (standardized color code) accounts for the highest total revenue?",
-      "reason": "Explore the impact of color attributes on revenue to support merchandising and color-focused strategies.",
-      "view_labels": [
-        "PGRE03",
-        "PGRE09"
-      ],
-      "view_values": [
-        14577917244.0,
-        454835822233.0
-      ]
-    }
-  },
-  {
-    "question": "Which Dòng sản phẩm has the highest total revenue?",
-    "explanation": "Attribution: for Met B=474, a single category in Mã_sản_phẩm accounts for a large share of total SUM(Tổng_doanh_thu_sản_phẩm).",
-    "plot_path": "plots/insight_13_Attribution.png",
-    "insight": {
-      "breakdown": "Mã_sản_phẩm",
-      "measure": "SUM(Tổng_doanh_thu_sản_phẩm)",
-      "subspace": [
-        [
-          "Met B",
-          474
-        ]
-      ],
-      "pattern": "Attribution",
-      "score": 0.964049055972747,
-      "question": "Which Dòng sản phẩm has the highest total revenue?",
-      "reason": "To determine which product line drives revenue, informing product prioritization and inventory decisions.",
-      "view_labels": [
-        "Tôn Kẽm_Mỏng_G550_KHÔNGMÀU",
-        "Tôn Màu_Trung bình_G550_PGRA02"
-      ],
-      "view_values": [
-        11121469464.0,
-        414737532.0
+        2849409629.0,
+        15914041.0
       ]
     }
   },
   {
     "question": "Do Cuối tuần (weekend) sales generate higher revenue than weekdays?",
-    "explanation": "Attribution: for Số_lần_bán_sản_phẩm=28, a single category in Cuối_tuần accounts for a large share of total SUM(Tổng_doanh_thu_sản_phẩm).",
-    "plot_path": "plots/insight_14_Attribution.png",
+    "explanation": "Attribution: for Quý=2025Q4, a single category in Cuối_tuần accounts for a large share of total SUM(Tổng_doanh_thu_sản_phẩm).",
+    "plot_path": "plots/insight_11_Attribution.png",
     "insight": {
       "breakdown": "Cuối_tuần",
       "measure": "SUM(Tổng_doanh_thu_sản_phẩm)",
       "subspace": [
         [
-          "Số_lần_bán_sản_phẩm",
-          28
+          "Quý",
+          "2025Q4"
         ]
       ],
       "pattern": "Attribution",
-      "score": 0.9111174193173391,
+      "score": 0.9364994181222385,
       "question": "Do Cuối tuần (weekend) sales generate higher revenue than weekdays?",
       "reason": "To evaluate whether weekend sales perform differently from weekdays, informing staffing and promotions.",
       "view_labels": [
@@ -1095,80 +1073,165 @@
         "True"
       ],
       "view_values": [
-        121494601467.0,
-        11852208605.0
+        3637899740912.0,
+        246672604265.0
+      ]
+    }
+  },
+  {
+    "question": "Which Mã màu chuẩn hóa (standardized color code) accounts for the highest total revenue?",
+    "explanation": "Attribution: for Tên màu=XLC, a single category in Mã màu accounts for a large share of total SUM(Tổng_doanh_thu_sản_phẩm).",
+    "plot_path": "plots/insight_12_Attribution.png",
+    "insight": {
+      "breakdown": "Mã màu",
+      "measure": "SUM(Tổng_doanh_thu_sản_phẩm)",
+      "subspace": [
+        [
+          "Tên màu",
+          "XLC"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.9173694323979783,
+      "question": "Which Mã màu chuẩn hóa (standardized color code) accounts for the highest total revenue?",
+      "reason": "Explore the impact of color attributes on revenue to support merchandising and color-focused strategies.",
+      "view_labels": [
+        "PGRA01",
+        "PGRA02"
+      ],
+      "view_values": [
+        48922636800.0,
+        4406627368.0
+      ]
+    }
+  },
+  {
+    "question": "What is the total revenue by Năm?",
+    "explanation": "Attribution: for SKU_Màu=PGRA02, a single category in Năm accounts for a large share of total SUM(Tổng_doanh_thu_sản_phẩm).",
+    "plot_path": "plots/insight_13_Attribution.png",
+    "insight": {
+      "breakdown": "Năm",
+      "measure": "SUM(Tổng_doanh_thu_sản_phẩm)",
+      "subspace": [
+        [
+          "SKU_Màu",
+          "PGRA02"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.9147043465191859,
+      "question": "What is the total revenue by Năm?",
+      "reason": "To understand how revenue evolves over time and identify growth or contraction trends year over year.",
+      "view_labels": [
+        "2025",
+        "2026"
+      ],
+      "view_values": [
+        4030761207.0,
+        375866161.0
+      ]
+    }
+  },
+  {
+    "question": "Which Dòng sản phẩm has the highest total revenue?",
+    "explanation": "Attribution: for Khoảng_cách_đơn_trước=20.0, a single category in Mã_sản_phẩm accounts for a large share of total SUM(Tổng_doanh_thu_sản_phẩm).",
+    "plot_path": "plots/insight_14_Attribution.png",
+    "insight": {
+      "breakdown": "Mã_sản_phẩm",
+      "measure": "SUM(Tổng_doanh_thu_sản_phẩm)",
+      "subspace": [
+        [
+          "Khoảng_cách_đơn_trước",
+          20.0
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.7745245124272739,
+      "question": "Which Dòng sản phẩm has the highest total revenue?",
+      "reason": "To determine which product line drives revenue, informing product prioritization and inventory decisions.",
+      "view_labels": [
+        "Tôn Màu_Mỏng_G550_PGRE03",
+        "Tôn Màu_Mỏng_G550_PRED10",
+        "Tôn Màu_Trung bình_G550_PGRA01",
+        "Tôn Màu_Trung bình_G550_PGRE09"
+      ],
+      "view_values": [
+        992659657.0,
+        692183646.0,
+        1873538255.0,
+        12223296514.0
       ]
     }
   },
   {
     "question": "How does the estimated profit margin (Biên lợi nhuận ước tính) vary by Mức rủi ro giao dịch?",
-    "explanation": "Attribution: for Met A=1158, a single category in Mức_rủi_ro_giao_dịch accounts for a large share of total MEAN(Ước_tính_biên_lợi_nhuận).",
+    "explanation": "Attribution: for Met C=6, a single category in Mức_rủi_ro_giao_dịch accounts for a large share of total MEAN(Ước_tính_biên_lợi_nhuận).",
     "plot_path": "plots/insight_15_Attribution.png",
     "insight": {
       "breakdown": "Mức_rủi_ro_giao_dịch",
       "measure": "MEAN(Ước_tính_biên_lợi_nhuận)",
       "subspace": [
         [
-          "Met A",
-          1158
+          "Met C",
+          6
         ]
       ],
       "pattern": "Attribution",
-      "score": 0.6284975546404116,
+      "score": 0.5555732160784833,
       "question": "How does the estimated profit margin (Biên lợi nhuận ước tính) vary by Mức rủi ro giao dịch?",
       "reason": "To explore how profitability relates to transaction risk, identifying risk-adjusted opportunities and controls.",
       "view_labels": [
-        "Cao",
-        "Thấp"
+        "Thấp",
+        "Trung bình"
       ],
       "view_values": [
-        0.44306729933333333,
-        0.261895347
+        0.248020494,
+        0.310047793
       ]
     }
   },
   {
-    "question": "What is the average order value (Doanh thu trung bình mỗi lần bán) by Loại khách?",
-    "explanation": "Attribution: for Phân loại=3, a single category in Loại_khách_hàng accounts for a large share of total MEAN(Doanh_thu_tb_mỗi_lần).",
+    "question": "How does the estimated profit margin (Biên lợi nhuận ước tính) vary by Mức rủi ro giao dịch?",
+    "explanation": "Attribution: for Mã_khách_hàng=CUST_0086, a single category in Mức_rủi_ro_giao_dịch accounts for a large share of total MEAN(Ước_tính_biên_lợi_nhuận).",
     "plot_path": "plots/insight_16_Attribution.png",
     "insight": {
-      "breakdown": "Loại_khách_hàng",
-      "measure": "MEAN(Doanh_thu_tb_mỗi_lần)",
+      "breakdown": "Mức_rủi_ro_giao_dịch",
+      "measure": "MEAN(Ước_tính_biên_lợi_nhuận)",
       "subspace": [
         [
-          "Phân loại",
-          "3"
+          "Mã_khách_hàng",
+          "CUST_0086"
         ]
       ],
       "pattern": "Attribution",
-      "score": 0.537503695834228,
-      "question": "What is the average order value (Doanh thu trung bình mỗi lần bán) by Loại khách?",
-      "reason": "To understand how customer type influences average order value, enabling targeted marketing and pricing strategies.",
+      "score": 0.5377909941274006,
+      "question": "How does the estimated profit margin (Biên lợi nhuận ước tính) vary by Mức rủi ro giao dịch?",
+      "reason": "To explore how profitability relates to transaction risk, identifying risk-adjusted opportunities and controls.",
       "view_labels": [
-        "Bán lẻ",
-        "Bán sỉ"
+        "Thấp",
+        "Trung bình"
       ],
       "view_values": [
-        62524114.6,
-        72664240.5
+        0.23463258233333337,
+        0.2730005
       ]
     }
   },
   {
     "question": "What is the average order value (Doanh thu trung bình mỗi lần bán) by Loại khách?",
-    "explanation": "Attribution: for Ngày bán=15/1/26, a single category in Loại_khách_hàng accounts for a large share of total MEAN(Doanh_thu_tb_mỗi_lần).",
+    "explanation": "Attribution: for Phân loại=1B, a single category in Loại_khách_hàng accounts for a large share of total MEAN(Doanh_thu_tb_mỗi_lần).",
     "plot_path": "plots/insight_17_Attribution.png",
     "insight": {
       "breakdown": "Loại_khách_hàng",
       "measure": "MEAN(Doanh_thu_tb_mỗi_lần)",
       "subspace": [
         [
-          "Ngày bán",
-          "15/1/26"
+          "Phân loại",
+          "1B"
         ]
       ],
       "pattern": "Attribution",
-      "score": 0.5194082810118439,
+      "score": 0.5149156037311032,
       "question": "What is the average order value (Doanh thu trung bình mỗi lần bán) by Loại khách?",
       "reason": "To understand how customer type influences average order value, enabling targeted marketing and pricing strategies.",
       "view_labels": [
@@ -1176,35 +1239,8 @@
         "Bán sỉ"
       ],
       "view_values": [
-        85855292.5,
-        92789676.0
-      ]
-    }
-  },
-  {
-    "question": "How does the estimated profit margin (Biên lợi nhuận ước tính) vary by Mức rủi ro giao dịch?",
-    "explanation": "Attribution: for Điểm_hài_lòng_khách_hàng=55, a single category in Mức_rủi_ro_giao_dịch accounts for a large share of total MEAN(Ước_tính_biên_lợi_nhuận).",
-    "plot_path": "plots/insight_18_Attribution.png",
-    "insight": {
-      "breakdown": "Mức_rủi_ro_giao_dịch",
-      "measure": "MEAN(Ước_tính_biên_lợi_nhuận)",
-      "subspace": [
-        [
-          "Điểm_hài_lòng_khách_hàng",
-          55
-        ]
-      ],
-      "pattern": "Attribution",
-      "score": 0.5079438459818914,
-      "question": "How does the estimated profit margin (Biên lợi nhuận ước tính) vary by Mức rủi ro giao dịch?",
-      "reason": "To explore how profitability relates to transaction risk, identifying risk-adjusted opportunities and controls.",
-      "view_labels": [
-        "Cao",
-        "Trung bình"
-      ],
-      "view_values": [
-        0.41139516629166667,
-        0.4246784463076923
+        80441141.14285715,
+        75780850.5
       ]
     }
   }

@@ -27,17 +27,16 @@ def plot_insight(insight: Insight, save_path: str | None = None) -> str | None:
     P = insight.pattern
     fig, ax = plt.subplots()
     if P == TREND:
-        x = list(range(len(values)))
-        ax.scatter(x, values)
-        if len(values) >= 2:
-            z = np.polyfit(x, values, 1)
-            p = np.poly1d(z)
-            ax.plot(x, p(x), "r--", alpha=0.8, label="Trend")
+        sorted_pairs = sorted(zip(values, labels))
+        sorted_values = [v for v, _ in sorted_pairs]
+        sorted_labels = [l for _, l in sorted_pairs]
+        x = list(range(len(sorted_values)))
+        ax.plot(x, sorted_values, "o-", color="steelblue", linewidth=2, markersize=5)
         ax.set_xticks(x)
-        ax.set_xticklabels(labels, rotation=45, ha="right")
+        ax.set_xticklabels(sorted_labels, rotation=45, ha="right")
         ax.set_ylabel(insight.measure)
         ax.set_xlabel(insight.breakdown)
-        ax.set_title(f"{insight.measure} by {insight.breakdown}")
+        ax.set_title(f"Trend: {insight.measure} by {insight.breakdown}")
     elif P == ATTRIBUTION and sum(values) > 0:
         pcts = [v / sum(values) * 100 for v in values[:20]]
         ax.bar(labels[:20], pcts)
