@@ -7,22 +7,30 @@ from __future__ import annotations
 
 from .models import TREND, OUTSTANDING_VALUE, ATTRIBUTION, DISTRIBUTION_DIFFERENCE
 
-# Thresholds (Appendix A)
-T_TREND = 0.95
+# Thresholds (Appendix A). T_TREND 0.90 = p < 0.10 để Trend dễ xuất hiện hơn
+T_TREND = 0.90
 T_OV = 1.4
 T_ATTR = 0.5
 T_DD = 0.2
 
 
 def score_trend(values: list[float]) -> float:
-    """SCOREFUNC_Trend(v) = 1 - p_value(Mann-Kendall). Only views with p < 0.05 pass T_Trend."""
+    """SCOREFUNC_Trend(v) = 1 - p_value(Mann-Kendall). Dùng original_test (pymannkendall >= 1.4)."""
     if len(values) < 3:
         return 0.0
     try:
         import pymannkendall as mk
-        result = mk.test(values)
+        result = mk.original_test(values)
         p = result.p
-        return 1.0 - p if p is not None else 0.0
+        return 1.0 - float(p) if p is not None else 0.0
+    except ImportError:
+        # Fallback: Spearman rank correlation nếu không có pymannkendall
+        try:
+            from scipy.stats import spearmanr
+            rho, p = spearmanr(range(len(values)), values)
+            return 1.0 - float(p) if p is not None else 0.0
+        except Exception:
+            return 0.0
     except Exception:
         return 0.0
 
@@ -99,3 +107,23 @@ def score_view(pattern: str, values: list[float], values_initial: list[float] | 
     if pattern == DISTRIBUTION_DIFFERENCE and values_initial is not None:
         return score_distribution_difference(values_initial, values)
     return 0.0
+
+
+def score_dd_for_subspace(df, breakdown: str, measure: str, subspace) -> float:
+    """
+    JSD giữa view(D, B, M) và view(D_S, B, M). Dùng cho subspace search khi pattern = Distribution Difference.
+    Cần align theo label (union) rồi gọi score_distribution_difference.
+    """
+    from .views import compute_view
+    from .models import Subspace
+    S_empty = Subspace.empty()
+    labels_full, values_full = compute_view(df, breakdown, measure, S_empty)
+    labels_S, values_S = compute_view(df, breakdown, measure, subspace)
+    if len(values_full) < 2 or len(values_S) < 2:
+        return 0.0
+    d_full = dict(zip(labels_full, values_full))
+    d_S = dict(zip(labels_S, values_S))
+    all_labels = sorted(set(d_full) | set(d_S))
+    v_initial = [float(d_full.get(l, 0)) for l in all_labels]
+    v_final = [float(d_S.get(l, 0)) for l in all_labels]
+    return score_distribution_difference(v_initial, v_final)

@@ -26,6 +26,7 @@ def extract_basic_insights(df, card: dict, max_per_card: int = 2) -> list[Insigh
     """
     For one Insight Card (breakdown, measure), compute view(D, B, M), score each applicable pattern,
     return list of Insight(B, M, φ, P) with score above threshold.
+    Thu thập tối đa 1 insight per pattern (để Trend/DD không bị OV–Attr chèn), rồi lấy top max_per_card theo score.
     """
     breakdown = card.get("breakdown", "").strip()
     measure = card.get("measure", "").strip()
@@ -36,13 +37,13 @@ def extract_basic_insights(df, card: dict, max_per_card: int = 2) -> list[Insigh
         return []
 
     patterns = _applicable_patterns(breakdown, measure, df)
-    out = []
+    best_per_pattern: dict[str, Insight] = {}
     for p in patterns:
         if p == DISTRIBUTION_DIFFERENCE:
-            continue  # DD needs two views (initial vs final); skip in basic
+            continue  # DD cần hai view (full vs subspace), xử lý ở subspace
         score = score_view(p, values)
         if score >= get_threshold(p):
-            out.append(Insight(
+            ins = Insight(
                 breakdown=breakdown,
                 measure=measure,
                 subspace=Subspace.empty(),
@@ -52,7 +53,8 @@ def extract_basic_insights(df, card: dict, max_per_card: int = 2) -> list[Insigh
                 view_labels=labels,
                 question=card.get("question", ""),
                 reason=card.get("reason", ""),
-            ))
-            if len(out) >= max_per_card:
-                break
-    return out
+            )
+            if p not in best_per_pattern or ins.score > best_per_pattern[p].score:
+                best_per_pattern[p] = ins
+    out = sorted(best_per_pattern.values(), key=lambda i: -i.score)
+    return out[:max_per_card]

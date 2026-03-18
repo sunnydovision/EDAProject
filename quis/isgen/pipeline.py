@@ -9,8 +9,9 @@ from dataclasses import dataclass
 from typing import Any
 
 from .models import Insight, Subspace
-from .views import compute_view, resolve_card_columns
-from .scoring import score_view, get_threshold
+from .models import TREND, DISTRIBUTION_DIFFERENCE
+from .views import compute_view, resolve_card_columns, parse_measure
+from .scoring import score_view, get_threshold, score_dd_for_subspace
 from .basic_insight import extract_basic_insights
 from .subspace_search import subspace_search
 from .nl_explanation import explain_insight
@@ -70,21 +71,38 @@ def _limit_per_question(
     max_per_question: int,
 ) -> list[tuple[Any, str]]:
     """
-    Mỗi question chỉ giữ tối đa max_per_question insight (chọn theo score cao).
-    Tránh cùng một câu hỏi lặp nhiều lần (vd. Outstanding Value + Attribution + subspace...).
+    Mỗi question chỉ giữ tối đa max_per_question insight. Ưu tiên **đa dạng pattern**:
+    chọn tối đa 1 insight (score cao nhất) cho mỗi pattern trước, rồi fill phần còn lại theo score.
     """
     from collections import defaultdict
-    by_question: dict[str, list[tuple[float, tuple]]] = defaultdict(list)
+    by_question: dict[str, list[tuple[float, str, tuple]]] = defaultdict(list)
     for ins_d, q in candidates:
         ins = ins_d if isinstance(ins_d, dict) else {}
         score = float(ins.get("score", 0)) if isinstance(ins, dict) else float(getattr(ins_d, "score", 0))
-        by_question[q].append((score, (ins_d, q)))
+        pattern = (ins.get("pattern", "") if isinstance(ins, dict) else getattr(ins_d, "pattern", ""))
+        by_question[q].append((score, pattern, (ins_d, q)))
     out: list[tuple[Any, str]] = []
     for q in by_question:
-        by_question[q].sort(key=lambda x: -x[0])
-        for _, item in by_question[q][:max_per_question]:
-            out.append(item)
-    out.sort(key=lambda item: -(float((item[0].get("score") or 0) if isinstance(item[0], dict) else getattr(item[0], "score", 0))))
+        items = by_question[q]
+        items.sort(key=lambda x: -x[0])
+        selected: list[tuple[Any, str]] = []
+        used_patterns: set[str] = set()
+        # Round 1: best per pattern (diversity)
+        for sc, pat, item in items:
+            if pat not in used_patterns and len(selected) < max_per_question:
+                selected.append(item)
+                used_patterns.add(pat)
+        # Round 2: fill remaining slots by score
+        for sc, pat, item in items:
+            if len(selected) >= max_per_question:
+                break
+            if item not in selected:
+                selected.append(item)
+        out.extend(selected)
+    def _score(it):
+        i = it[0]
+        return float(i.get("score", 0) if isinstance(i, dict) else getattr(i, "score", 0))
+    out.sort(key=lambda item: -_score(item))
     return out
 
 
@@ -101,8 +119,8 @@ class ISGENConfig:
     # Giới hạn trùng: mỗi (question, breakdown, measure, pattern) giữ tối đa 1 overall + 2 subspace
     max_overall_per_key: int = 1
     max_subspace_per_key: int = 2
-    # Mỗi question chỉ xuất tối đa N insight (tránh cùng câu hỏi lặp nhiều lần)
-    max_insights_per_question: int = 2
+    # Mỗi question chỉ xuất tối đa N insight (ưu tiên đa dạng pattern: 1 OV + 1 Attr + 1 Trend...)
+    max_insights_per_question: int = 3
 
 
 class ISGENPipeline:
@@ -151,30 +169,46 @@ class ISGENPipeline:
                 candidates.append((ins.to_dict(), card_resolved.get("question", "")))
                 if len(candidates) >= 200:
                     break
-            # Subspace search (one pattern per card for speed)
+            # Subspace search: OV, Attribution, Trend, và (nếu measure = COUNT) Distribution Difference
             if self.config.run_subspace_search and len(candidates) < 150:
-                for pattern in ("Outstanding Value", "Attribution"):
+                agg_name, _ = parse_measure(measure)
+                patterns_subspace = ["Outstanding Value", "Attribution", TREND]
+                if agg_name == "count":
+                    patterns_subspace.append(DISTRIBUTION_DIFFERENCE)
+                for pattern in patterns_subspace:
                     th = get_threshold(pattern)
-                    def _scf(p, v):
-                        return score_view(p, v)
-                    def scf(v):
-                        return _scf(pattern, v)
-                    def cand_fn(cols):
-                        return self._llm_candidates(breakdown, measure, cols)
-                    subs = subspace_search(
-                        df, breakdown, measure, scf, th,
-                        beam_width=self.config.beam_width,
-                        exp_factor=self.config.exp_factor,
-                        max_depth=self.config.max_depth,
-                        llm_candidates_fn=cand_fn,
-                        w_llm=self.config.w_llm,
-                    )
+                    cand_fn = lambda cols: self._llm_candidates(breakdown, measure, cols)
+                    if pattern == DISTRIBUTION_DIFFERENCE:
+                        dd_scorer = lambda S: score_dd_for_subspace(df, breakdown, measure, S)
+                        subs = subspace_search(
+                            df, breakdown, measure, lambda v: 0.0, th,
+                            beam_width=self.config.beam_width,
+                            exp_factor=self.config.exp_factor,
+                            max_depth=self.config.max_depth,
+                            llm_candidates_fn=cand_fn,
+                            w_llm=self.config.w_llm,
+                            score_func_subspace=dd_scorer,
+                        )
+                    else:
+                        def _make_scf(p):
+                            return lambda v: score_view(p, v)
+                        scf = _make_scf(pattern)
+                        subs = subspace_search(
+                            df, breakdown, measure, scf, th,
+                            beam_width=self.config.beam_width,
+                            exp_factor=self.config.exp_factor,
+                            max_depth=self.config.max_depth,
+                            llm_candidates_fn=cand_fn,
+                            w_llm=self.config.w_llm,
+                        )
                     for S, sc in subs[:2]:
                         key = (breakdown, measure, S.filters, pattern)
                         if key in seen:
                             continue
                         labels, values = compute_view(df, breakdown, measure, S)
                         if len(values) < 2:
+                            continue
+                        if pattern == TREND and len(values) < 3:
                             continue
                         seen.add(key)
                         ins = Insight(breakdown=breakdown, measure=measure, subspace=S, pattern=pattern, score=sc, view_labels=labels, view_values=values, question=card_resolved.get("question", ""), reason=card_resolved.get("reason", ""))

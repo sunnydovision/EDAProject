@@ -33,16 +33,20 @@ def subspace_search(
     max_depth: int = 1,
     llm_candidates_fn: Callable[[list[str]], list[str]] | None = None,
     w_llm: float = 0.5,
+    score_func_subspace: Callable[["Subspace"], float] | None = None,
 ) -> list[tuple[Subspace, float]]:
     """
     Algorithm 1: start with S0=empty, expand with (X,y), score view(D_S, B, M), keep top beam_width.
     llm_candidates_fn(available_cols) returns preferred columns for filtering (get higher probability w_llm).
+    Nếu score_func_subspace được truyền (vd. cho Distribution Difference), dùng nó thay vì score_func(values).
     """
     all_cols = [c for c in df.columns if c != breakdown and str(c) != "nan"]
     if not all_cols:
         return []
 
     def score_subspace(S: Subspace) -> float:
+        if score_func_subspace is not None:
+            return score_func_subspace(S)
         labels, values = compute_view(df, breakdown, measure, S)
         if len(values) < 2:
             return 0.0
