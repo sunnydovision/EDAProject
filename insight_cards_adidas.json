@@ -1,0 +1,536 @@
+[
+  {
+    "question": "How does the average operating profit change over different invoice dates (or time periods)?",
+    "reason": "We can detect seasonal/temporal patterns in profitability by comparing Operating Profit across time. Since “Invoice Date” is available with many unique values, aggregating profit over time can reveal spikes, slow periods, or strategic sale events that affect margins and outcomes.",
+    "breakdown": "Invoice Date",
+    "measure": "MEAN(Operating Profit)"
+  },
+  {
+    "question": "Which region has the highest operating margin on average?",
+    "reason": "Comparing Operating Margin across regions helps identify where Adidas is converting sales into profit most efficiently. This can reveal regional performance differences even if sales volumes are similar, highlighting potential pricing, mix, or cost-control advantages/disadvantages.",
+    "breakdown": "Region",
+    "measure": "MEAN(Operating Margin)"
+  },
+  {
+    "question": "Which product generates the highest total sales?",
+    "reason": "Sales performance varies by product category. By comparing total sales across products, we can identify which products are driving revenue and whether certain products underperform—useful for assortment and promotional strategy decisions.",
+    "breakdown": "Product",
+    "measure": "SUM(Total Sales)"
+  },
+  {
+    "question": "Which sales method results in the highest average units sold?",
+    "reason": "Sales method can influence how products sell (e.g., discounts, channels, distribution strategy). Comparing average units sold by Sales Method can expose which methods move volume most effectively, even if pricing or profitability differs.",
+    "breakdown": "Sales Method",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "How do retailers differ in average total sales?",
+    "reason": "Retailer-level differences may reflect varying customer segments or contract terms. By comparing average total sales across retailers, we can uncover which retailers contribute more revenue and whether performance is uneven among top partners.",
+    "breakdown": "Retailer",
+    "measure": "MEAN(Total Sales)"
+  },
+  {
+    "question": "How does average units sold vary with price per unit?",
+    "reason": "Price per unit often relates to both demand and profitability. Comparing average units sold by price levels can reveal price sensitivity and potential sweet spots (e.g., units decline beyond certain price points).",
+    "breakdown": "Price per Unit",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "Which cities have the highest average operating profit?",
+    "reason": "City can capture localized market differences (competition, demographics, demand). Comparing operating profit across cities can highlight outliers—cities performing exceptionally well or poorly relative to others.",
+    "breakdown": "City",
+    "measure": "MEAN(Operating Profit)"
+  },
+  {
+    "question": "Are there states where operating margin is consistently higher than the rest?",
+    "reason": "Profitability and margin might be affected by geography and pricing strategy. Comparing operating margin across states can reveal whether some states consistently outperform others, indicating where operational or marketing advantages exist.",
+    "breakdown": "State",
+    "measure": "MEAN(Operating Margin)"
+  },
+  {
+    "question": "For each region, which sales method yields the highest total sales?",
+    "reason": "Region-level differences in sales efficiency can be further examined by looking at how price per unit translates into profits. Comparing total sales by region at different sales methods can reveal whether certain regions respond better to specific selling approaches.",
+    "breakdown": "Sales Method",
+    "measure": "SUM(Total Sales)"
+  },
+  {
+    "question": "Which price-per-unit levels are associated with unusually high or low operating profit?",
+    "reason": "Outliers/anomalies may occur where unusually high prices or unusual demand lead to atypical profitability behavior. Comparing operating profit across price per unit helps flag price points associated with disproportionately high/low profit.",
+    "breakdown": "Price per Unit",
+    "measure": "MEAN(Operating Profit)"
+  },
+  {
+    "question": "Which Sales Method generates the highest operating profit?",
+    "reason": "Different sales methods may drive different commercial outcomes. Comparing total profitability across sales methods can reveal whether certain methods are systematically more effective (e.g., higher margins despite similar volumes).",
+    "breakdown": "Sales Method",
+    "measure": "MEAN(Operating Profit)"
+  },
+  {
+    "question": "How does operating margin vary by region?",
+    "reason": "Operating margin indicates efficiency of turning sales into profit. By comparing margin across regions, we can identify geographic underperformance or pockets of strong profitability that may warrant operational changes.",
+    "breakdown": "Region",
+    "measure": "AVG(Operating Margin)"
+  },
+  {
+    "question": "Which product sells the most units on average?",
+    "reason": "Price sensitivity and product mix effects often show up when analyzing how units sold differ between products and places. Comparing average units sold by product can reveal which products are dominant or lagging.",
+    "breakdown": "Product",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "What trend patterns exist in total sales over time?",
+    "reason": "Total sales is the core demand signal. Examining how total sales change over time (using invoice date as a time key) can reveal seasonality, growth/decline phases, and potential anomalies.",
+    "breakdown": "Invoice Date",
+    "measure": "SUM(Total Sales)"
+  },
+  {
+    "question": "Where is the average price per unit highest?",
+    "reason": "Even within the same city, pricing strategy may differ. If price per unit is consistently higher (or lower) in certain cities, it may correlate with demand strength or profitability (pricing power vs. discounting).",
+    "breakdown": "City",
+    "measure": "AVG(Price per Unit)"
+  },
+  {
+    "question": "Which retailer has the highest total sales?",
+    "reason": "Retailer-level comparisons can uncover which distributors perform better in generating revenue. This helps identify key accounts and potential performance outliers.",
+    "breakdown": "Retailer",
+    "measure": "SUM(Total Sales)"
+  },
+  {
+    "question": "Are there states with unusually high or low operating profit?",
+    "reason": "Identifying outlier locations is critical in EDA. Comparing operating profit across states can highlight unusually strong/weak states, prompting further investigation into local factors (market conditions, execution, or mix).",
+    "breakdown": "State",
+    "measure": "SUM(Operating Profit)"
+  },
+  {
+    "question": "Which state has the highest average number of units sold?",
+    "reason": "Sales effectiveness can vary by state due to distribution and regional demand. Comparing average units sold across states can expose demand hotspots and underperforming areas.",
+    "breakdown": "State",
+    "measure": "AVG(Units Sold)"
+  },
+  {
+    "question": "Do some retailers consistently achieve higher operating margins than others?",
+    "reason": "Supplier/partner performance might also reflect in how efficiently sales translate into profit. Comparing mean operating margin by retailer can flag retailers with better profitability even at similar revenue levels.",
+    "breakdown": "Retailer",
+    "measure": "MEAN(Operating Margin)"
+  },
+  {
+    "question": "Do different sales methods have different average prices per unit?",
+    "reason": "Pricing strategy can vary by sales method, which may impact profitability and customer behavior. Comparing average price per unit across sales methods helps determine whether certain methods rely on premium pricing or discounting.",
+    "breakdown": "Sales Method",
+    "measure": "MEAN(Price per Unit)"
+  },
+  {
+    "question": "Which city contributes the most total sales?",
+    "reason": "Not all geographies perform equally. Total sales by city can surface unexpected hotspots (cities with unusually high revenue) that may be masked in broader regional views.",
+    "breakdown": "City",
+    "measure": "SUM(Total Sales)"
+  },
+  {
+    "question": "How does total sales change over time for each sales method?",
+    "reason": "Sales method effectiveness may change over time due to seasonality or promotions. Using invoice date as a time axis helps detect whether certain sales methods are growing or declining.",
+    "breakdown": "Invoice Date",
+    "measure": "SUM(Total Sales) filtered/segmented by Sales Method"
+  },
+  {
+    "question": "For each retailer, which region delivers the highest operating profit?",
+    "reason": "Retailers might specialize in certain regions or perform inconsistently across them. Comparing operating profit across regions within each retailer can identify retailer-region mismatches and performance gaps.",
+    "breakdown": "Region",
+    "measure": "SUM(Operating Profit)"
+  },
+  {
+    "question": "Are there product-region combinations that generate unusually high total sales?",
+    "reason": "Pricing and volume together shape revenue. By comparing total sales across product and region, we can find whether strong sales are driven by a specific product-region pairing or by broad popularity.",
+    "breakdown": "Product",
+    "measure": "SUM(Total Sales) by Region (segmented comparison)"
+  },
+  {
+    "question": "Which region produces the highest average operating profit?",
+    "reason": "Sales efficiency may differ by market position (region). Comparing operating profit levels across regions can reveal where Adidas is generating stronger returns before considering margin.",
+    "breakdown": "Region",
+    "measure": "AVG(Operating Profit)"
+  },
+  {
+    "question": "How does average price per unit vary across cities?",
+    "reason": "Pricing strategy can vary by city and may impact outcomes. If certain cities consistently sell units at different prices, this can indicate pricing power or discounting differences.",
+    "breakdown": "City",
+    "measure": "AVG(Price per Unit)"
+  },
+  {
+    "question": "Which sales method has the highest average operating margin?",
+    "reason": "Operating margin reflects profitability relative to sales and can fluctuate by sales method (e.g., discounting vs. full-price channels). Comparing margin across sales methods helps isolate which method is truly more efficient.",
+    "breakdown": "Sales Method",
+    "measure": "AVG(Operating Margin)"
+  },
+  {
+    "question": "Which City sells the most Units on average?",
+    "reason": "Units sold reflects demand and sales volume. Segmenting by city can highlight local demand hotspots or underperforming locations, which may require targeted marketing, inventory adjustments, or pricing changes.",
+    "breakdown": "City",
+    "measure": "AVG(Units Sold)"
+  },
+  {
+    "question": "At which Price per Unit levels do customers buy the most Units Sold (highest average demand)?",
+    "reason": "Price per unit might relate to demand and quantity sold. Comparing average Units Sold by price level (bucketed by the underlying Price per Unit values) can identify price sensitivity and potential optimal pricing zones.",
+    "breakdown": "Price per Unit",
+    "measure": "AVG(Units Sold)"
+  },
+  {
+    "question": "Which City has the highest average Operating Margin?",
+    "reason": "Profit efficiency could vary by location even when prices and quantities look similar. By comparing Operating Margin across cities, we can detect anomalies such as unexpectedly low margins (possible high costs/discounting) or unusually high margins (strong mix/pricing power).",
+    "breakdown": "City",
+    "measure": "AVG(Operating Margin)"
+  },
+  {
+    "question": "How does Units Sold trend over time for each Region?",
+    "reason": "Temporal patterns are often critical in retail/ecommerce (seasonality, promotions). By analyzing how Units Sold changes over time for each Region, we can identify region-specific trends (e.g., seasonal spikes or sustained declines).",
+    "breakdown": "Invoice Date",
+    "measure": "SUM(Units Sold)"
+  },
+  {
+    "question": "How does average operating profit change as price per unit increases?",
+    "reason": "Profitability efficiency may change with scale. By comparing operating profit across price levels, we can detect “sweet spots” where revenue converts to profit best or identify price bands associated with weaker earnings.",
+    "breakdown": "Price per Unit",
+    "measure": "AVG(Operating Profit)"
+  },
+  {
+    "question": "For which unit-sold levels is operating margin highest on average?",
+    "reason": "Units sold often indicate demand intensity while operating margin reflects efficiency. Comparing operating margin by units-sold levels helps uncover whether higher volume also corresponds to better (or worse) efficiency.",
+    "breakdown": "Units Sold",
+    "measure": "AVG(Operating Margin)"
+  },
+  {
+    "question": "Which city performs best in terms of total sales within each region?",
+    "reason": "Cities can have distinct competitive dynamics and customer behavior. Measuring total sales across cities within each region helps identify local hotspots or underperforming locations that may be masked at the region level.",
+    "breakdown": "Region, then City",
+    "measure": "SUM(Total Sales)"
+  },
+  {
+    "question": "Which state has the highest total operating profit?",
+    "reason": "Operational performance may vary by state even if cities overlap in customer behavior. Examining operating profit by state can surface geographic anomalies (states that generate unusually high or low profit).",
+    "breakdown": "State",
+    "measure": "SUM(Operating Profit)"
+  },
+  {
+    "question": "On which invoice dates are total sales highest?",
+    "reason": "Time patterns can reveal seasonality and promotional cycles. Tracking total sales by invoice date helps identify dates with unusually strong performance and whether demand shifts over time.",
+    "breakdown": "Invoice Date",
+    "measure": "SUM(Total Sales)"
+  },
+  {
+    "question": "How do units sold differ across sales methods for each product?",
+    "reason": "Different products may be sold through different channels. By comparing units sold across sales methods, we can detect where certain sales methods are driving distribution volume versus underperforming.",
+    "breakdown": "Product, then Sales Method",
+    "measure": "SUM(Units Sold)"
+  },
+  {
+    "question": "Which retailer has the highest average operating margin?",
+    "reason": "Retailers may have different pricing strategies and customer reach. Comparing average operating margin across retailers helps determine whether some retailers consistently achieve better efficiency or suffer from cost/discount pressures.",
+    "breakdown": "Retailer",
+    "measure": "AVG(Operating Margin)"
+  },
+  {
+    "question": "Do certain cities consistently deliver higher operating margins than others?",
+    "reason": "Price sensitivity and profitability can vary by geography. If operating margin systematically changes by city while holding product mix constant, it may indicate local pricing, fulfillment costs, or competitive intensity differences.",
+    "breakdown": "City",
+    "measure": "AVG(Operating Margin)"
+  },
+  {
+    "question": "Which product contributes the most to total sales in the dataset?",
+    "reason": "Total sales reflect overall demand and channel reach. Examining total sales by product helps identify which products drive revenue and whether the product mix differs by where they are sold.",
+    "breakdown": "Product",
+    "measure": "SUM(Total Sales)"
+  },
+  {
+    "question": "For each region, how does average price per unit compare, and which region pairs higher pricing with higher profitability?",
+    "reason": "Price and margin together indicate pricing power versus cost pressure. If the same region shows consistently higher prices but lower margins, it may suggest heavy discounting or cost disadvantages; if both are high, it suggests efficient, premium demand.",
+    "breakdown": "Region",
+    "measure": "AVG(Price per Unit)"
+  },
+  {
+    "question": "How does average operating profit vary across sales methods?",
+    "reason": "Operating performance can differ by sales channel because each sales method may follow a different pricing and inventory strategy. Comparing profitability outcomes across sales methods helps identify channel effectiveness and potential underperformers.",
+    "breakdown": "Sales Method",
+    "measure": "AVG(Operating Profit)"
+  },
+  {
+    "question": "Within each region, which product has the highest average price per unit?",
+    "reason": "Price discipline and demand do not always move together. Examining how price per unit changes by product category within each region can reveal regional pricing strategies (e.g., premium vs. discount regions) and potential mismatch between pricing and market.",
+    "breakdown": "Region, then Product",
+    "measure": "AVG(Price per Unit)"
+  },
+  {
+    "question": "For each city, how does average operating margin compare (to find cities with unusually high/low efficiency)?",
+    "reason": "Units sold indicate how well a product actually converts into demand. If some cities sell higher quantities but at lower margins (or vice versa), it can reveal efficiency problems or pricing power differences by geography.",
+    "breakdown": "City",
+    "measure": "AVG(Operating Margin)"
+  },
+  {
+    "question": "Do higher-unit-sold transactions also correspond to higher average operating profit?",
+    "reason": "Outliers/anomalies often appear as unusually high profitability relative to units sold. Comparing operating profit by units-sold bands can reveal whether certain high-profit transactions are tied to specific demand volumes.",
+    "breakdown": "Units Sold",
+    "measure": "AVG(Operating Profit)"
+  },
+  {
+    "question": "How does average operating margin vary across different price-per-unit levels for each product?",
+    "reason": "If operating margins meaningfully depend on how the product is priced, it suggests pricing strategy or discounting effects by product category. Comparing margin by price level can reveal whether higher-priced items consistently convert better into profit or if margin peaks at certain price bands.",
+    "breakdown": "Product",
+    "measure": "AVG(Operating Margin)"
+  },
+  {
+    "question": "How does total sales change over time (daily trend)?",
+    "reason": "Invoice date enables time-based EDA such as seasonality, trend shifts, and demand spikes. Aggregating total sales by date helps identify whether there are recurring surges (e.g., promotions) or structural changes over time.",
+    "breakdown": "Invoice Date",
+    "measure": "SUM(Total Sales)"
+  },
+  {
+    "question": "Which product contributes the most to total operating profit?",
+    "reason": "The dataset includes both operating profit and operating margin. Analyzing operating profit by product can reveal which products drive profitability most strongly, even if some products have lower margins but high volume.",
+    "breakdown": "Product",
+    "measure": "SUM(Operating Profit)"
+  },
+  {
+    "question": "How does average operating profit vary across states?",
+    "reason": "States often represent distinct markets with different customer behavior. Comparing average operating profit by state can reveal geographic areas where profit generation is systematically stronger or weaker.",
+    "breakdown": "State",
+    "measure": "AVG(Operating Profit)"
+  },
+  {
+    "question": "How do average units sold change over time?",
+    "reason": "Units sold represent demand intensity. Examining demand patterns over time can reveal seasonality or promo effects that are not obvious when looking at overall totals.",
+    "breakdown": "Invoice Date",
+    "measure": "AVG(Units Sold)"
+  },
+  {
+    "question": "For each product, do regions differ in average price per unit?",
+    "reason": "Price per unit is a proxy for pricing power and assortment strategy. If price differences are strongly tied to product within each region, it suggests region-specific merchandising (premiumization or discounting).",
+    "breakdown": "Region",
+    "measure": "MEAN(Price per Unit)"
+  },
+  {
+    "question": "Which State has the highest total Sales overall?",
+    "reason": "Total Sales represent overall commercial impact. If certain states/cities consistently drive higher revenue, it can indicate better market fit, stronger distribution, or more effective local execution. This also helps target expansion or inventory planning.",
+    "breakdown": "State",
+    "measure": "SUM(Total Sales)"
+  },
+  {
+    "question": "Across Regions, which one shows the widest spread in Operating Margin (from lowest to highest)?",
+    "reason": "Profitability efficiency (margin) can differ strongly across regions even if revenue is similar. Using a range metric (min vs. max) highlights regions with volatile performance that may require investigation into promotions, supply costs, or execution quality.",
+    "breakdown": "Region",
+    "measure": "MAX(Operating Margin) - MIN(Operating Margin)"
+  },
+  {
+    "question": "How does Total Sales vary over time (invoice date) and where do the major spikes occur?",
+    "reason": "Total sales across time can reveal seasonality or campaign effects even when overall averages look stable. Comparing total sales by invoice date can detect spikes that correspond to promotions or supply/demand shocks.",
+    "breakdown": "Invoice Date",
+    "measure": "SUM(Total Sales)"
+  },
+  {
+    "question": "Which State shows the lowest average Operating Margin?",
+    "reason": "Operating margin is a ratio and can mask whether issues come from revenue levels, costs, or product mix. Checking average operating margin across states can uncover regional anomalies and management priority areas.",
+    "breakdown": "State",
+    "measure": "AVG(Operating Margin)"
+  },
+  {
+    "question": "On which Invoice Date does average Operating Margin peak?",
+    "reason": "Product-level performance over time is critical for detecting shifts (e.g., promotions, discontinuations, seasonality). By examining average Operating Margin across Invoice Dates, we can detect periods where profitability materially changes.",
+    "breakdown": "Invoice Date",
+    "measure": "AVG(Operating Margin)"
+  },
+  {
+    "question": "How does average Units Sold change across Price per Unit levels within each region?",
+    "reason": "Price per Unit and Units Sold together suggest pricing effectiveness. If higher prices correspond to lower units sold in certain regions, it indicates price sensitivity; if not, it suggests pricing power. This measure combination helps reveal regional demand elasticity.",
+    "breakdown": "Region, then Price per Unit",
+    "measure": "AVG(Units Sold)"
+  },
+  {
+    "question": "Which retailers show the largest differences in average Operating Margin across regions?",
+    "reason": "Retailer strategies (assortment, pricing, execution) may differ, leading to varying discounting patterns. If Operating Margin differs strongly by Retailer, it signals efficiency/strategy differences worth investigating.",
+    "breakdown": "Retailer, then Region",
+    "measure": "AVG(Operating Margin)"
+  },
+  {
+    "question": "How does Total Sales change as Price per Unit increases?",
+    "reason": "When you compare price points with resulting revenue, you can detect pricing sensitivity and profitable pricing bands. Measuring average Total Sales by Price per Unit helps identify whether higher prices correspond to higher revenue or whether volume drops reduce total impact.",
+    "breakdown": "Price per Unit",
+    "measure": "AVG(Total Sales)"
+  },
+  {
+    "question": "How does operating margin differ across sales methods?",
+    "reason": "If discounts are being applied differently by Sales Method (e.g., more aggressive discounting in one channel), then Operating Margin should vary systematically by Sales Method. Comparing profitability efficiency across methods helps identify which channel is producing better profit per unit of sales.",
+    "breakdown": "Sales Method",
+    "measure": "AVG(Operating Margin)"
+  },
+  {
+    "question": "How does the average Price per Unit change across invoice dates?",
+    "reason": "If pricing changes over time (e.g., list price increases or promo effects), it can alter both volume sold and profitability. Comparing mean price per unit by invoice date helps detect temporal price shifts that may drive downstream sales changes.",
+    "breakdown": "Invoice Date",
+    "measure": "AVG(Price per Unit)"
+  },
+  {
+    "question": "Which Region has the highest average Total Sales?",
+    "reason": "Region can capture demand and competitive differences. If certain regions have systematically higher total sales, that indicates meaningful geographic concentration of performance and potential market opportunities.",
+    "breakdown": "Region",
+    "measure": "AVG(Total Sales)"
+  },
+  {
+    "question": "How does Total Sales differ across Products?",
+    "reason": "Price per unit may vary by product, but the key insight is whether higher-priced products still sell well and contribute strongly to revenue. Comparing average Total Sales across products can reveal products that are high-revenue versus potentially overpriced (high price but lower sales).",
+    "breakdown": "Product",
+    "measure": "SUM(Total Sales)"
+  },
+  {
+    "question": "Are there invoice dates with unusually high or low Units Sold?",
+    "reason": "Invoice-date seasonality can be detected by looking at average units sold within each date. If some dates consistently have spikes/dips, that suggests promo cycles or demand seasonality worth modeling.",
+    "breakdown": "Invoice Date",
+    "measure": "SUM(Units Sold)"
+  },
+  {
+    "question": "Do certain sales methods generate unusually high total sales relative to their units sold?",
+    "reason": "Units sold and total sales move together, but their relationship can differ by sales execution approach. If certain sales methods sell more units but generate disproportionately lower total sales, it can signal discounting or weaker deal quality.",
+    "breakdown": "Sales Method",
+    "measure": "SUM(Total Sales)"
+  },
+  {
+    "question": "Are there any cities with unusually high or low total operating profit compared to other cities within the same state?",
+    "reason": "Cities can have distinct consumer behavior, competitive intensity, and distribution effectiveness. Large deviations in operating profit across cities can indicate anomalies worth investigating (e.g., localized promotions or data issues).",
+    "breakdown": "State, then City",
+    "measure": "SUM(Operating Profit)"
+  },
+  {
+    "question": "Which states show the strongest association between higher average price per unit and higher average total sales?",
+    "reason": "Price and volume together determine revenue outcomes. If higher average prices coincide with materially higher total sales in some states, it suggests stronger product demand or pricing power in those states.",
+    "breakdown": "State",
+    "measure": "AVG(Total Sales)"
+  },
+  {
+    "question": "Within each region, which product contributes the most operating profit?",
+    "reason": "Product mix differences by region can drive profitability outcomes. Comparing operating profit across product within each region helps detect products that disproportionately boost (or hurt) regional performance.",
+    "breakdown": "Region, then Product",
+    "measure": "SUM(Operating Profit)"
+  },
+  {
+    "question": "Are there specific invoice dates with unusually high operating margin compared to other dates?",
+    "reason": "Invoice dates have high cardinality, so the goal is not just “trend lines” but identifying which days/periods have unusually profitable performance. Comparing average margin by invoice date can highlight anomalous promotional windows or reporting artifacts.",
+    "breakdown": "Invoice Date",
+    "measure": "AVG(Operating Margin)"
+  },
+  {
+    "question": "How does total sales performance trend across invoice dates?",
+    "reason": "Temporal effects can indicate seasonality or campaign-driven performance. If average total sales shift across invoice dates, it suggests demand changes or promotional periods.",
+    "breakdown": "Invoice Date",
+    "measure": "AVG(Total Sales)"
+  },
+  {
+    "question": "Which cities have unusually high or low average total sales?",
+    "reason": "City-level performance can expose localized anomalies (e.g., certain cities selling unusually well or underperforming). Comparing average total sales by city highlights where the business is winning or struggling.",
+    "breakdown": "City",
+    "measure": "AVG(Total Sales)"
+  },
+  {
+    "question": "Are there any region–product combinations with unusually high or low average operating margin?",
+    "reason": "Outliers at the intersection of geography and product can reveal mix effects or localized demand spikes. Comparing average operating margin by product within regions can identify where profitability is unusually strong/weak.",
+    "breakdown": "Region, then Product",
+    "measure": "AVG(Operating Margin)"
+  },
+  {
+    "question": "Within each sales method, which city has the highest average price per unit?",
+    "reason": "If pricing and sales method interact, some methods may consistently command higher prices for certain cities. Comparing average Price per Unit across cities within each Sales Method highlights pricing strategy effectiveness and local anomalies.",
+    "breakdown": "Sales Method, then City",
+    "measure": "AVG(Price per Unit)"
+  },
+  {
+    "question": "Which city-region combination has the highest total units sold?",
+    "reason": "Units Sold is a demand/volume signal. If demand is disproportionately concentrated in certain cities, that can indicate localized hotspots or dependence on a few locations. Comparing total units by city across regions can reveal where volume is actually coming from.",
+    "breakdown": "Region, then City",
+    "measure": "SUM(Units Sold)"
+  },
+  {
+    "question": "Are there sales methods that generate unusually high operating profit in specific regions?",
+    "reason": "Sales method may change both pricing and profitability outcomes. Looking at operating profit by sales method and region can reveal whether certain sales methods produce systematically higher profit in specific regions (interaction effect).",
+    "breakdown": "Sales Method, then Region",
+    "measure": "AVG(Operating Profit)"
+  },
+  {
+    "question": "For which unit-sold levels is average total sales unusually high or low?",
+    "reason": "Total sales and units sold jointly indicate whether revenue is driven by price increases or by volume. By checking total sales versus units sold relationship via average total sales across unit-sold levels, we can detect demand outliers (high sales with unusually low units or vice versa).",
+    "breakdown": "Units Sold",
+    "measure": "AVG(Total Sales)"
+  },
+  {
+    "question": "For each Region, how does average Total Sales change as Units Sold increases (i.e., which regions generate more revenue per unit of demand)?",
+    "reason": "Units Sold reflects demand/volume, while Total Sales reflects the revenue outcome of that demand. If some regions have similar units sold but very different Total Sales, it suggests pricing differences or revenue capture issues. Comparing Total Sales rate by Units Sold across regions helps uncover regions that monetize demand more effectively.",
+    "breakdown": "Region",
+    "measure": "AVG(Total Sales / NULLIF(Units Sold, 0))"
+  },
+  {
+    "question": "Which City has the lowest average operating margin, indicating potential underperformance or unfavorable pricing/cost conditions?",
+    "reason": "Profitability efficiency (Operating Margin) may be impacted by the geographic footprint. Cities within the same state can have different demand quality, competition, or discounting patterns. Comparing operating margin at the city level helps identify local anomalies (exceptionally profitable or underperforming cities).",
+    "breakdown": "City",
+    "measure": "AVG(Operating Margin)"
+  },
+  {
+    "question": "On which Invoice Dates is average Operating Profit unusually high or low?",
+    "reason": "Invoice Date likely contains temporal patterns (seasonality/promotions). If operating profit changes disproportionately over time versus operating margin, it may indicate changing cost structures or promotional intensity. Looking at Operating Profit by date (aggregated) can reveal unusual periods.",
+    "breakdown": "Invoice Date",
+    "measure": "AVG(Operating Profit)"
+  },
+  {
+    "question": "Which Product categories have the highest average operating margin?",
+    "reason": "Different products may show distinct profitability profiles. Comparing Operating Margin by Product helps identify which products are true margin drivers versus products that scale volume but underperform on efficiency (potential strategic candidates for pricing/cost review).",
+    "breakdown": "Product",
+    "measure": "AVG(Operating Margin)"
+  },
+  {
+    "question": "Which State has the lowest average ratio of Operating Profit to Total Sales (indicating poor profitability conversion from revenue)?",
+    "reason": "A key anomaly detector is whether Total Sales and Operating Profit diverge: a city/state/region with high Total Sales but relatively low Operating Profit suggests heavy discounting or higher costs. Comparing Operating Profit-to-Total-Sales ratio across State highlights underperforming locations.",
+    "breakdown": "State",
+    "measure": "AVG(Operating Profit / NULLIF(Total Sales, 0))"
+  },
+  {
+    "question": "For which Units Sold levels is average Operating Profit highest?",
+    "reason": "High volume does not always imply high profitability. By comparing Operating Profit across Units Sold levels, we can detect whether the most sold quantities correspond to higher profits or if there are diminishing returns (margin erosion) at high volume.",
+    "breakdown": "Units Sold",
+    "measure": "AVG(Operating Profit)"
+  },
+  {
+    "question": "Which Retailer achieves the highest average Operating Profit as a share of Total Sales?",
+    "reason": "Price per Unit often interacts with profitability—regions or retailers that sustain higher prices while still converting to strong demand may indicate pricing power. Looking at the relationship via profit-over-sales can highlight whether higher price leads to better returns.",
+    "breakdown": "Retailer",
+    "measure": "AVG(Operating Profit / NULLIF(Total Sales, 0))"
+  },
+  {
+    "question": "For each Product, in which Region does Adidas achieve the highest average Operating Profit?",
+    "reason": "Product performance is rarely uniform across geographies. Comparing total profitability by product across regions helps identify “star” products that work broadly versus products that only perform well in specific regions.",
+    "breakdown": "Product",
+    "measure": "AVG(Operating Profit)"
+  },
+  {
+    "question": "Across States, where is operating profit highest per unit sold (Operating Profit per Units Sold)?",
+    "reason": "The same product can sell differently depending on geography and channel. Comparing average Operating Profit normalized by Units Sold across states helps reveal cost/efficiency differences that are not visible from revenue or volume alone.",
+    "breakdown": "State",
+    "measure": "AVG(Operating Profit / NULLIF(Units Sold, 0))"
+  },
+  {
+    "question": "How does average Total Sales vary over time using Invoice Date (at the date period level)?",
+    "reason": "Inventory and fulfillment can affect effectiveness of revenue generation over time. By examining how average Total Sales changes by month/period (using Invoice Date as the time key), we can detect seasonality or timing anomalies in demand.",
+    "breakdown": "Invoice Date",
+    "measure": "AVG(Total Sales)"
+  },
+  {
+    "question": "How does average operating profit change over time (by month), and are there months where growth in sales does not translate to higher profitability?",
+    "reason": "Sales can grow over time, but profitability may not keep pace. Comparing profit changes by time period helps detect periods where Adidas sold more yet earned less (often due to discounting or mix shifts).",
+    "breakdown": "Month(Invoice Date)",
+    "measure": "AVG(Operating Profit)"
+  },
+  {
+    "question": "How does average revenue per unit (Total Sales / Units Sold) vary across states, and which states are priced unusually high or low?",
+    "reason": "Total sales alone may hide whether customers are buying expensive vs. cheap items. Comparing average revenue per item (Total Sales divided by Units Sold) across states can highlight outlier states with unusually high/low purchase pricing.",
+    "breakdown": "State",
+    "measure": "AVG(Total Sales / NULLIF(Units Sold, 0))"
+  },
+  {
+    "question": "Across states, which state shows the widest spread in price per unit (largest max-min), indicating pricing inconsistency or outliers?",
+    "reason": "Price per unit variability can indicate inconsistent discounting or supply issues. Measuring the spread of price across states can uncover anomalies such as extreme discounting in particular areas.",
+    "breakdown": "State",
+    "measure": "MAX(Price per Unit) - MIN(Price per Unit)"
+  }
+]

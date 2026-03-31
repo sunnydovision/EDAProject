@@ -1,6 +1,3 @@
-"""
-QUGEN prompts per paper: Figure 6 (main Insight Card generation), Figure 7 (basic stats).
-"""
 
 from .models import InsightCard, TableSchema
 
@@ -49,6 +46,12 @@ If the breakdown or measure dimension is absent in the question, generate releva
 6) Use [INSIGHT] Tags: Format each question using the [INSIGHT] and [/INSIGHT] tags."""
 
 
+MEASURE_DIVERSITY_INSTRUCTION = """CRITICAL — Measure Diversity Rule:
+Each Insight Card MUST use a DIFFERENT measure column. Do NOT repeat the same measure column across multiple cards.
+Spread your questions across as many different numerical columns as possible (e.g. revenue, cost, weight, frequency, distance, satisfaction score, profit margin, etc.).
+If you have N questions, aim for at least N different measure columns."""
+
+
 def _format_example(schema_str: str, cards: list[InsightCard]) -> str:
     parts = [f"[EXAMPLE TABLE SCHEMA]\n{schema_str}\n[OUTPUT]"]
     for i, c in enumerate(cards, 1):
@@ -62,10 +65,12 @@ def build_qugen_prompt(
     natural_language_stats: str,
     example_schemas_and_cards: list[tuple[TableSchema, list[InsightCard]]],
     num_questions: int = 10,
+    used_measures: list[str] | None = None,
 ) -> str:
     """
     Build the full QUGEN prompt (Figure 6).
     example_schemas_and_cards: few-shot examples (schema + list of Insight Cards).
+    used_measures: measure columns already used in previous iterations (for diversity).
     """
     parts = [
         TASK_DESCRIPTION,
@@ -81,6 +86,14 @@ def build_qugen_prompt(
     parts.append(f"[Test Table SCHEMA]\n{table_schema.to_prompt_string()}")
     parts.append("NATURAL LANGUAGE STATS:")
     parts.append(natural_language_stats)
+    parts.append("")
+
+    diversity_hint = MEASURE_DIVERSITY_INSTRUCTION
+    if used_measures:
+        avoid_list = ", ".join(sorted(set(used_measures)))
+        diversity_hint += f"\nMeasure columns already covered: [{avoid_list}]. Strongly prefer OTHER numerical columns not in this list."
+
+    parts.append(diversity_hint)
     parts.append("")
     parts.append(f"Please proceed to generate {num_questions} unique and insightful questions based on the provided schema and instructions.")
     parts.append("Format each Insight Card with REASON:, QUESTION:, BREAKDOWN:, MEASURE: and wrap each card in [INSIGHT] and [/INSIGHT] tags.")

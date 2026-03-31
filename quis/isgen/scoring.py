@@ -96,6 +96,17 @@ def get_threshold(pattern: str) -> float:
     return 0.0
 
 
+def get_threshold_scaled(pattern: str, threshold_scale: float = 1.0) -> float:
+    """
+    Scale thresholds down to make insight generation less strict.
+    Use for UI/interactive demos where we want at least some insights.
+    """
+    scale = float(threshold_scale or 1.0)
+    if scale <= 0:
+        scale = 1.0
+    return get_threshold(pattern) * scale
+
+
 def score_view(pattern: str, values: list[float], values_initial: list[float] | None = None) -> float:
     """Return score for a view given pattern. For DD, pass both initial and final view values."""
     if pattern == TREND:

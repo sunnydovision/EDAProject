@@ -1,0 +1,98 @@
+[
+  {
+    "question": "Giá trị trung bình của Thành Tiền theo tháng có biến động như thế nào?",
+    "reason": "To understand seasonal patterns in average transaction value, which helps with pricing, promotions, and inventory planning.",
+    "breakdown": "Tháng",
+    "measure": "MEAN(Thành Tiền)"
+  },
+  {
+    "question": "Tỉnh/ Thành phố nào có tổng doanh thu cao nhất?",
+    "reason": "To identify regional revenue concentration and inform regional sales strategies or allocations.",
+    "breakdown": "Tỉnh / Thành Phố",
+    "measure": "SUM(Doanh_thu_tỉnh)"
+  },
+  {
+    "question": "Met A biến động như thế nào giữa các Phân_khúc_sản phẩm?",
+    "reason": "To explore how material A usage varies across different product segments, which can indicate production focus or resource allocation patterns.",
+    "breakdown": "Phân_khúc_sản phẩm",
+    "measure": "MEAN(Met A)"
+  },
+  {
+    "question": "Màu sắc (Tên màu) nào có Tỷ trọng thực tế cao nhất?",
+    "reason": "To identify which color category has the highest weight-density, potentially guiding material/color decisions and inventory.",
+    "breakdown": "Tên màu",
+    "measure": "MAX(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "Dòng SKU (SKU_Dòng) nào đóng góp tổng doanh thu sản phẩm nhiều nhất?",
+    "reason": "To determine which product line drives the most revenue, aiding product portfolio and prioritization decisions.",
+    "breakdown": "SKU_Dòng",
+    "measure": "SUM(Tổng_doanh_thu_sản_phẩm)"
+  },
+  {
+    "question": "Trung bình Số_lần_bán_sản_phẩm (số lần bán sản phẩm) khác nhau như thế nào giữa các loại khách hàng?",
+    "reason": "To compare purchasing intensity across customer segments and tailor marketing or service levels.",
+    "breakdown": "Loại_khách_hàng",
+    "measure": "MEAN(Số_lần_bán_sản_phẩm)"
+  },
+  {
+    "question": "SKU_Màu nào có Tần_suất_bán cao nhất?",
+    "reason": "To reveal color popularity in terms of sales frequency, supporting stocking and merchandising decisions.",
+    "breakdown": "SKU_Màu",
+    "measure": "MAX(Tần_suất_bán)"
+  },
+  {
+    "question": "Khoảng_cách_vận_chuyển_km có sự biến thiên trung bình theo tháng như thế nào?",
+    "reason": "To assess how shipping distance varies across time, highlighting logistic efficiency or seasonal distribution changes.",
+    "breakdown": "Tháng",
+    "measure": "MEAN(Khoảng_cách_vận_chuyển_km)"
+  },
+  {
+    "question": "Doanh_thu_theo_tuan_trong_thang có xu hướng biến động theo tháng như thế nào?",
+    "reason": "Để nắm bắt biến động doanh thu theo tuần trong từng tháng và xem có xu hướng biến động theo tháng hay không, từ đó nhận diện mùa vụ hoặc ảnh hưởng của chiến dịch khuyến mãi theo thời gian.",
+    "breakdown": "Tháng",
+    "measure": "MEAN(Doanh_thu_theo_tuan_trong_thang)"
+  },
+  {
+    "question": "Doanh_thu_trên_mm có sự khác biệt giữa các SKU_Dòng?",
+    "reason": "So sánh hiệu quả doanh thu trên mỗi mm giữa các SKU_Dòng để đánh giá hiệu quả đóng gói/phân bổ sản phẩm và tối ưu hoá thiết kế hoặc kích thước đóng gói.",
+    "breakdown": "SKU_Dòng",
+    "measure": "MEAN(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "Doanh_thu_tb_mỗi_lần khác nhau giữa các Loại_khách_hàng?",
+    "reason": "Xem xét xem doanh thu trung bình mỗi lần (Doanh_thu_tb_mỗi_lần) có khác biệt như thế nào giữa các loại khách hàng, từ đó điều chỉnh chiến lược chăm sóc và giá cả.",
+    "breakdown": "Loại_khách_hàng",
+    "measure": "MEAN(Doanh_thu_tb_mỗi_lần)"
+  },
+  {
+    "question": "Giá_trên_kg có sự khác biệt giữa các Phân_khúc_sản phẩm?",
+    "reason": "So sánh mức giá trên kg giữa các Phân_khúc_sản phẩm để nhận diện những phân khúc mang lại giá trị cao và định hướng chiến lược giá.",
+    "breakdown": "Phân_khúc_sản phẩm",
+    "measure": "MEAN(Giá_trên_kg)"
+  },
+  {
+    "question": "Tỷ_trọng_doanh_thu_% phân bổ theo Tỉnh / Thành Phố như thế nào?",
+    "reason": "Tỷ trọng doanh thu (Tỷ_trọng_doanh_thu_%) phân bổ theo Tỉnh / Thành Phố sẽ cho thấy sự đóng góp của từng khu vực, giúp ưu tiên khu vực chiến lược.",
+    "breakdown": "Tỉnh / Thành Phố",
+    "measure": "MEAN(Tỷ_trọng_doanh_thu_%)"
+  },
+  {
+    "question": "Tỷ_lệ_chi_phí có khác nhau giữa các Quý?",
+    "reason": "Hiểu được mức độ chi phí trên mỗi đơn vị doanh thu theo từng Quý, từ đó đánh giá hiệu quả chi phí theo thời gian và mùa vụ.",
+    "breakdown": "Quý",
+    "measure": "MEAN(Tỷ_lệ_chi_phí)"
+  },
+  {
+    "question": "Ước_tính_biên_lợi_nhuận theo Phân_khúc_sản phẩm có sự khác biệt không?",
+    "reason": "Nhận diện mức độ sinh lời ước tính theo từng Phân_khúc_sản phẩm, giúp tập trung vào những phân khúc có biên lợi nhuận cao hoặc cần tối ưu hóa.",
+    "breakdown": "Phân_khúc_sản phẩm",
+    "measure": "MEAN(Ước_tính_biên_lợi_nhuận)"
+  },
+  {
+    "question": "Điểm_hài_lòng_khách_hàng khác nhau giữa các Loại_khách_hàng?",
+    "reason": "Đánh giá mức độ hài lòng của khách hàng theo từng loại khách hàng để xác định dịch vụ chăm sóc và cải thiện trải nghiệm cho từng segment.",
+    "breakdown": "Loại_khách_hàng",
+    "measure": "MEAN(Điểm_hài_lòng_khách_hàng)"
+  }
+]

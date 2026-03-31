@@ -6,23 +6,43 @@ from __future__ import annotations
 
 from .models import Insight, Subspace, TREND, OUTSTANDING_VALUE, ATTRIBUTION, DISTRIBUTION_DIFFERENCE
 from .views import compute_view, parse_measure
-from .scoring import score_view, get_threshold
+from .scoring import score_view, get_threshold_scaled
+
+
+_TEMPORAL_KEYWORDS = {
+    "tháng", "thang", "quý", "quy", "tuần", "tuan", "năm", "nam",
+    "ngày", "ngay", "month", "quarter", "week", "year", "date",
+    "period", "time", "day", "tuần_trong_tháng",
+}
+
+
+def _is_temporal_column(col_name: str, ser) -> bool:
+    """Check if a column represents a temporal/ordinal dimension suitable for Trend."""
+    import pandas as pd
+
+    if pd.api.types.is_datetime64_any_dtype(ser):
+        return True
+    name_lower = col_name.lower().replace(" ", "_")
+    tokens = set(name_lower.split("_"))
+    if tokens & _TEMPORAL_KEYWORDS:
+        return True
+    if any(kw in name_lower for kw in _TEMPORAL_KEYWORDS):
+        return True
+    return False
 
 
 def _applicable_patterns(breakdown: str, measure_str: str, df) -> list[str]:
-    """Determine which patterns apply: Trend for ordinal/numeric B; OV, Attr for any; DD only for COUNT."""
-    agg_name, measure_col = parse_measure(measure_str)
+    """Determine which patterns apply: Trend only for temporal B; OV, Attr, DD for any."""
     patterns = [OUTSTANDING_VALUE, ATTRIBUTION]
     if breakdown in df.columns:
         ser = df[breakdown]
-        if ser.dtype.kind in ("i", "u", "f") or (ser.nunique() > 2 and ser.dtype.name == "object"):
+        if _is_temporal_column(breakdown, ser):
             patterns.append(TREND)
-    if agg_name == "count":
-        patterns.append(DISTRIBUTION_DIFFERENCE)
+    patterns.append(DISTRIBUTION_DIFFERENCE)
     return patterns
 
 
-def extract_basic_insights(df, card: dict, max_per_card: int = 2) -> list[Insight]:
+def extract_basic_insights(df, card: dict, max_per_card: int = 2, threshold_scale: float = 1.0) -> list[Insight]:
     """
     For one Insight Card (breakdown, measure), compute view(D, B, M), score each applicable pattern,
     return list of Insight(B, M, φ, P) with score above threshold.
@@ -42,7 +62,7 @@ def extract_basic_insights(df, card: dict, max_per_card: int = 2) -> list[Insigh
         if p == DISTRIBUTION_DIFFERENCE:
             continue  # DD cần hai view (full vs subspace), xử lý ở subspace
         score = score_view(p, values)
-        if score >= get_threshold(p):
+        if score >= get_threshold_scaled(p, threshold_scale=threshold_scale):
             ins = Insight(
                 breakdown=breakdown,
                 measure=measure,

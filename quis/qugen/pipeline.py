@@ -65,19 +65,37 @@ class QUGENPipeline:
         except Exception:
             return "Basic statistics could not be generated."
 
+    @staticmethod
+    def _extract_measure_col(measure: str) -> str:
+        import re
+        m = re.match(r"(?:SUM|MEAN|COUNT|MIN|MAX)\s*\(\s*([^)]+)\s*\)", measure, re.IGNORECASE)
+        return m.group(1).strip() if m else measure.strip()
+
     def _select_in_context_examples(
         self,
         pool: list[InsightCard],
         n: int,
         table_schema: TableSchema,
     ) -> list[tuple[TableSchema, list[InsightCard]]]:
-        """Select up to n Insight Cards from pool as in-context examples (paper: subset from previous iterations)."""
+        """Select up to n Insight Cards from pool, prioritising measure diversity."""
         if not pool or n <= 0:
             return self.few_shot
-        selected = list(pool)
-        random.shuffle(selected)
-        selected = selected[:n]
-        # Prepend one block: same table with previously generated cards (paper: in-context from earlier iterations)
+
+        seen_measures: set[str] = set()
+        diverse: list[InsightCard] = []
+        rest: list[InsightCard] = []
+
+        shuffled = list(pool)
+        random.shuffle(shuffled)
+        for card in shuffled:
+            mcol = self._extract_measure_col(card.measure)
+            if mcol not in seen_measures:
+                diverse.append(card)
+                seen_measures.add(mcol)
+            else:
+                rest.append(card)
+
+        selected = (diverse + rest)[:n]
         return [(table_schema, selected)] + self.few_shot
 
     def run_one_iteration(
@@ -86,6 +104,7 @@ class QUGENPipeline:
         natural_language_stats: str,
         in_context_examples: list[tuple[TableSchema, list[InsightCard]]],
         run_query_fn: Callable[[str], int] | None = None,
+        used_measures: list[str] | None = None,
     ) -> list[InsightCard]:
         """
         One QUGEN iteration: prompt LLM s times, parse, filter, return new cards.
@@ -95,6 +114,7 @@ class QUGENPipeline:
             natural_language_stats=natural_language_stats,
             example_schemas_and_cards=in_context_examples,
             num_questions=self.config.num_questions_per_prompt,
+            used_measures=used_measures,
         )
 
         raw_outputs = self.llm.complete_multi(
@@ -136,8 +156,8 @@ class QUGENPipeline:
     ) -> list[InsightCard]:
         """
         Full QUGEN pipeline: multiple iterations, accumulating Insight Cards.
-        Input: table_schema, optional df for basic stats and simple-question filter.
-        Output: accumulated list of InsightCard (paper: collection over e.g. 10 iterations).
+        After normal iterations, if measure diversity is low (>50% same column),
+        run an extra diversity iteration explicitly avoiding overused measures.
         """
         nl_stats = self._get_natural_language_stats(table_schema, df)
 
@@ -150,11 +170,13 @@ class QUGENPipeline:
         in_context = self.few_shot
 
         for _ in range(config.num_iterations):
+            used_measures = [self._extract_measure_col(c.measure) for c in pool]
             new_cards = self.run_one_iteration(
                 table_schema=table_schema,
                 natural_language_stats=nl_stats,
                 in_context_examples=in_context,
                 run_query_fn=run_query_fn,
+                used_measures=used_measures if pool else None,
             )
             pool.extend(new_cards)
             pool = filter_duplicates(pool, threshold=config.dedup_similarity_threshold)
@@ -164,6 +186,40 @@ class QUGENPipeline:
                 table_schema,
             )
 
+        pool = self._enforce_measure_diversity(
+            pool, table_schema, nl_stats, run_query_fn,
+        )
+        return pool
+
+    def _enforce_measure_diversity(
+        self,
+        pool: list[InsightCard],
+        table_schema: TableSchema,
+        nl_stats: str,
+        run_query_fn,
+    ) -> list[InsightCard]:
+        """If >50% of cards share the same measure column, run one extra iteration avoiding it."""
+        if len(pool) < 4:
+            return pool
+        from collections import Counter
+        measure_counts = Counter(self._extract_measure_col(c.measure) for c in pool)
+        top_measure, top_count = measure_counts.most_common(1)[0]
+        if top_count / len(pool) <= 0.5:
+            return pool
+
+        overused = [m for m, cnt in measure_counts.items() if cnt / len(pool) > 0.25]
+        in_context = self._select_in_context_examples(
+            pool, self.config.num_in_context_examples, table_schema,
+        )
+        extra = self.run_one_iteration(
+            table_schema=table_schema,
+            natural_language_stats=nl_stats,
+            in_context_examples=in_context,
+            run_query_fn=run_query_fn,
+            used_measures=overused,
+        )
+        pool.extend(extra)
+        pool = filter_duplicates(pool, threshold=self.config.dedup_similarity_threshold)
         return pool
 
 

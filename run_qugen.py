@@ -69,6 +69,18 @@ def main():
             first_line = f.readline()
         sep = ";" if first_line.count(";") > first_line.count(",") else ","
         df = pd.read_csv(args.csv, sep=sep, decimal="," if sep == ";" else ".")
+        # Clean currency ($), percentage (%), and European number formatting so columns become numeric
+        for col in df.columns:
+            if df[col].dtype == object:
+                sample = df[col].dropna().head(20).astype(str).str.strip()
+                numeric_like = sample.str.match(r"^\$?\s*[\d.,]+\s*%?$")
+                if numeric_like.sum() >= len(sample) * 0.8:
+                    cleaned = df[col].astype(str).str.replace(r"[$%]", "", regex=True).str.strip()
+                    if sep == ";":
+                        cleaned = cleaned.str.replace(".", "", regex=False).str.replace(",", ".", regex=False)
+                    converted = pd.to_numeric(cleaned, errors="coerce")
+                    if converted.notna().sum() >= len(df) * 0.5:
+                        df[col] = converted
         table_schema = schema_from_dataframe(df, table_name=os.path.splitext(os.path.basename(args.csv))[0])
     else:
         table_schema = load_schema_from_json(args.schema)

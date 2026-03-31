@@ -21,10 +21,15 @@ DEFAULT_SCHEMA_RELEVANCE_THRESHOLD = 0.25
 DEFAULT_DEDUP_SIMILARITY_THRESHOLD = 0.85
 
 
+_ENCODER_CACHE = None
+
 def _get_encoder():
-    """Lazy load sentence-transformers all-MiniLM-L6-v2 (paper)."""
-    from sentence_transformers import SentenceTransformer
-    return SentenceTransformer("all-MiniLM-L6-v2")
+    """Lazy load and cache sentence-transformers all-MiniLM-L6-v2 (paper)."""
+    global _ENCODER_CACHE
+    if _ENCODER_CACHE is None:
+        from sentence_transformers import SentenceTransformer
+        _ENCODER_CACHE = SentenceTransformer("all-MiniLM-L6-v2")
+    return _ENCODER_CACHE
 
 
 def filter_by_schema_relevance(

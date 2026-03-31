@@ -67,6 +67,20 @@ def main():
     sep = ";" if first_line.count(";") > first_line.count(",") else ","
     df = pd.read_csv(args.csv, sep=sep, decimal="," if sep == ";" else ".")
 
+    # Clean currency ($), percentage (%), and European number formatting so columns become numeric
+    for col in df.columns:
+        if df[col].dtype == object:
+            sample = df[col].dropna().head(20).astype(str).str.strip()
+            # Detect columns that look numeric: digits with optional $, %, dots, commas
+            numeric_like = sample.str.match(r"^\$?\s*[\d.,]+\s*%?$")
+            if numeric_like.sum() >= len(sample) * 0.8:
+                cleaned = df[col].astype(str).str.replace(r"[$%]", "", regex=True).str.strip()
+                if sep == ";":
+                    cleaned = cleaned.str.replace(".", "", regex=False).str.replace(",", ".", regex=False)
+                converted = pd.to_numeric(cleaned, errors="coerce")
+                if converted.notna().sum() >= len(df) * 0.5:
+                    df[col] = converted
+
     cards = load_cards(args.insight_cards)
     config = ISGENConfig(
         beam_width=args.beam_width,

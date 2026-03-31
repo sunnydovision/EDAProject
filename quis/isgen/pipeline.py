@@ -11,8 +11,8 @@ from typing import Any
 from .models import Insight, Subspace
 from .models import TREND, DISTRIBUTION_DIFFERENCE
 from .views import compute_view, resolve_card_columns, parse_measure
-from .scoring import score_view, get_threshold, score_dd_for_subspace
-from .basic_insight import extract_basic_insights
+from .scoring import score_view, get_threshold_scaled, score_dd_for_subspace
+from .basic_insight import extract_basic_insights, _is_temporal_column
 from .subspace_search import subspace_search
 from .nl_explanation import explain_insight
 from .plotting import plot_insight
@@ -121,6 +121,8 @@ class ISGENConfig:
     max_subspace_per_key: int = 2
     # Mỗi question chỉ xuất tối đa N insight (ưu tiên đa dạng pattern: 1 OV + 1 Attr + 1 Trend...)
     max_insights_per_question: int = 3
+    # UI demo: relax thresholds to avoid returning empty insights
+    threshold_scale: float = 0.7
 
 
 class ISGENPipeline:
@@ -160,7 +162,12 @@ class ISGENPipeline:
             if breakdown not in df.columns:
                 continue
             # Basic insights (use resolved column names)
-            basic = extract_basic_insights(df, card_resolved, max_per_card=self.config.max_insights_per_card)
+            basic = extract_basic_insights(
+                df,
+                card_resolved,
+                max_per_card=self.config.max_insights_per_card,
+                threshold_scale=self.config.threshold_scale,
+            )
             for ins in basic:
                 key = (ins.breakdown, ins.measure, tuple(ins.subspace.filters), ins.pattern)
                 if key in seen:
@@ -172,11 +179,12 @@ class ISGENPipeline:
             # Subspace search: OV, Attribution, Trend, và (nếu measure = COUNT) Distribution Difference
             if self.config.run_subspace_search and len(candidates) < 150:
                 agg_name, _ = parse_measure(measure)
-                patterns_subspace = ["Outstanding Value", "Attribution", TREND]
-                if agg_name == "count":
-                    patterns_subspace.append(DISTRIBUTION_DIFFERENCE)
+                patterns_subspace = ["Outstanding Value", "Attribution"]
+                if breakdown in df.columns and _is_temporal_column(breakdown, df[breakdown]):
+                    patterns_subspace.append(TREND)
+                patterns_subspace.append(DISTRIBUTION_DIFFERENCE)
                 for pattern in patterns_subspace:
-                    th = get_threshold(pattern)
+                    th = get_threshold_scaled(pattern, self.config.threshold_scale)
                     cand_fn = lambda cols: self._llm_candidates(breakdown, measure, cols)
                     if pattern == DISTRIBUTION_DIFFERENCE:
                         dd_scorer = lambda S: score_dd_for_subspace(df, breakdown, measure, S)
@@ -212,6 +220,10 @@ class ISGENPipeline:
                             continue
                         seen.add(key)
                         ins = Insight(breakdown=breakdown, measure=measure, subspace=S, pattern=pattern, score=sc, view_labels=labels, view_values=values, question=card_resolved.get("question", ""), reason=card_resolved.get("reason", ""))
+                        if pattern == DISTRIBUTION_DIFFERENCE:
+                            labels_base, values_base = compute_view(df, breakdown, measure, Subspace.empty())
+                            ins.view_labels_baseline = labels_base
+                            ins.view_values_baseline = values_base
                         candidates.append((ins.to_dict(), card_resolved.get("question", "")))
                         if len(candidates) >= 200:
                             break
@@ -242,6 +254,8 @@ class ISGENPipeline:
                 score=float(ins_d.get("score") or 0),
                 view_labels=ins_d.get("view_labels") or [],
                 view_values=ins_d.get("view_values") or [],
+                view_values_baseline=ins_d.get("view_values_baseline"),
+                view_labels_baseline=ins_d.get("view_labels_baseline"),
                 question=question,
                 reason=ins_d.get("reason", ""),
             )

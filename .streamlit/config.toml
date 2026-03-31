@@ -1,0 +1,10 @@
+# EDA Insight Explorer — refined dashboard theme
+[theme]
+primaryColor = "#4C6FFF"
+backgroundColor = "#EEF2F6"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#0F172A"
+font = "sans serif"
+
+[browser]
+gatherUsageStats = false

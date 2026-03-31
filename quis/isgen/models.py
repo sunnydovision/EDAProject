@@ -42,12 +42,15 @@ class Insight:
     score: float = 0.0
     view_values: list[float] | None = None  # values of view for plotting
     view_labels: list[str] | None = None   # breakdown values (labels)
+    # For Distribution Difference: baseline (overall) distribution to compare against
+    view_values_baseline: list[float] | None = None
+    view_labels_baseline: list[str] | None = None
     # Optional: link back to card
     question: str = ""
     reason: str = ""
 
     def to_dict(self) -> dict:
-        return {
+        d = {
             "breakdown": self.breakdown,
             "measure": self.measure,
             "subspace": list(self.subspace.filters),
@@ -58,3 +61,7 @@ class Insight:
             "view_labels": self.view_labels or [],
             "view_values": self.view_values or [],
         }
+        if self.view_values_baseline is not None:
+            d["view_labels_baseline"] = self.view_labels_baseline or []
+            d["view_values_baseline"] = self.view_values_baseline or []
+        return d

@@ -11,9 +11,9 @@ from typing import Any
 # Optional: use OPENAI_API_BASE for local/vendor Llama endpoints
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 OPENAI_API_BASE = os.getenv("OPENAI_API_BASE", None)  # e.g. "https://.../v1"
-# Default: gpt-5-nano khi dùng Responses API; hoặc gpt-4o-mini cho Chat Completions
+# Default: gpt-5.4-nano khi dùng Responses API; hoặc gpt-4o-mini cho Chat Completions
 USE_RESPONSES_API = os.getenv("OPENAI_USE_RESPONSES_API", "1").strip().lower() in ("1", "true", "yes")
-MODEL_NAME = os.getenv("QUGEN_LLM_MODEL", "gpt-5-nano" if USE_RESPONSES_API else "gpt-4o-mini")
+MODEL_NAME = os.getenv("QUGEN_LLM_MODEL", "gpt-5.4-nano" if USE_RESPONSES_API else "gpt-4o-mini")
 
 
 class BaseLLMClient(ABC):
