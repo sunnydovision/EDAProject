@@ -1,9 +1,9 @@
-# EDA Insight Explorer — refined dashboard theme
+# Sun Smart Report — dark agentic theme
 [theme]
-primaryColor = "#4C6FFF"
-backgroundColor = "#EEF2F6"
-secondaryBackgroundColor = "#FFFFFF"
-textColor = "#0F172A"
+primaryColor = "#a3a6ff"
+backgroundColor = "#060e20"
+secondaryBackgroundColor = "#091328"
+textColor = "#dee5ff"
 font = "sans serif"
 
 [browser]
