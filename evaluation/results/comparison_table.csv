@@ -1,0 +1,13 @@
+Metric,QUIS,Baseline,Winner,Category
+Insight Yield,1.000,1.000,Baseline,Core
+Average Score,2.721,0.996,QUIS,Core
+Top-10 Score,15.560,1.000,QUIS,Core
+Redundancy,0.0%,32.3%,QUIS,Core
+Schema Coverage,100.0%,76.9%,QUIS,Coverage
+Pattern Coverage,100.0%,75.0%,QUIS,Coverage
+⭐ Subspace Rate,47.2%,0.0%,QUIS,Coverage
+⭐ Avg Subspace Depth,0.472,0.000,QUIS,Coverage
+Question Diversity,0.49715263,0.47576863,QUIS,Quality
+Avg Z-Score,2.758,3.111,Baseline,Quality
+Significant Rate,37.1%,61.3%,Baseline,Quality
+⭐ Faithfulness,96.6%,100.0%,Baseline,Quality
