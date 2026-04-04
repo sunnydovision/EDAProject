@@ -1073,17 +1073,71 @@ def _make_chart(insight: dict):
     if "trend" in pattern:
         labels, values = _downsample_trend_series(list(labels), list(values), measure)
     df_chart = pd.DataFrame({breakdown or "Category": labels, measure or "Value": values})
+    cat_col = breakdown or "Category"
+    val_col = measure or "Value"
+
     if "trend" in pattern:
-        fig = px.line(df_chart, x=breakdown or "Category", y=measure or "Value", markers=True, template="plotly_dark")
+        fig = px.line(df_chart, x=cat_col, y=val_col, markers=True, template="plotly_dark")
+    elif "attribution" in pattern:
+        n_pie = len(labels)
+        abs_vals = [abs(v) for v in values]
+        sorted_idx = sorted(range(n_pie), key=lambda i: -abs_vals[i])
+        pie_colors = [_DARK_PALETTE[i % len(_DARK_PALETTE)] for i in range(n_pie)]
+        if n_pie >= 1:
+            pie_colors[sorted_idx[0]] = _TERTIARY
+        if n_pie >= 2:
+            pie_colors[sorted_idx[1]] = _PRIMARY
+        fig = px.pie(
+            df_chart,
+            names=cat_col,
+            values=val_col,
+            template="plotly_dark",
+            hole=0,
+            color_discrete_sequence=pie_colors,
+        )
     else:
-        fig = px.bar(df_chart, x=breakdown or "Category", y=measure or "Value", template="plotly_dark")
+        fig = px.bar(df_chart, x=cat_col, y=val_col, template="plotly_dark")
+
     y_tickformat = None
-    if values:
+    if values and "attribution" not in pattern:
         vmax = max(abs(float(v)) for v in values)
         if vmax >= 1_000_000:
             y_tickformat = ".2s"
         elif vmax >= 10_000:
             y_tickformat = ",.0f"
+
+    if "attribution" in pattern:
+        fig.update_traces(
+            marker=dict(line=dict(color=_SURFACE_MID, width=1)),
+            textinfo="label+percent",
+            textposition="inside",
+            insidetextorientation="auto",
+        )
+        fig.update_layout(
+            height=380,
+            margin=dict(l=16, r=120, t=44, b=16),
+            paper_bgcolor=_SURFACE_MID,
+            plot_bgcolor=_SURFACE_MID,
+            font=dict(family="Inter, system-ui, sans-serif", size=15, color=_ON_SURFACE_VAR),
+            title=dict(
+                text="Attribution",
+                font=dict(size=16, color=_ON_SURFACE, family="Manrope, sans-serif"),
+                x=0.02,
+                xanchor="left",
+            ),
+            dragmode=False,
+            showlegend=True,
+            legend=dict(
+                font=dict(size=13),
+                orientation="v",
+                yanchor="middle",
+                y=0.5,
+                x=1.02,
+                xanchor="left",
+            ),
+        )
+        return fig
+
     fig.update_layout(
         height=380, margin=dict(l=16, r=16, t=44, b=16),
         plot_bgcolor=_SURFACE_MID, paper_bgcolor=_SURFACE_MID,

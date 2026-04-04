@@ -60,7 +60,7 @@ Code: `quis/isgen/scoring.py`.
 |---------|-------------|
 | Trend | Scatter + đường xu hướng |
 | Outstanding Value | Bar chart |
-| Attribution | Bar chart (% đóng góp) |
+| Attribution | Pie chart (% đóng góp) |
 | Distribution Difference | Pie charts (trước / sau điều kiện) |
 
 Code: `quis/isgen/plotting.py`.

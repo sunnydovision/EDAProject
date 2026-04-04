@@ -119,24 +119,43 @@ def plot_insight(insight: Insight, save_path: str | None = None) -> str | None:
 
     elif P == ATTRIBUTION and sum(values) > 0:
         show_labels = [_truncate_label(l) for l in labels[:n_bars]]
-        pcts = [v / sum(values) * 100 for v in values[:n_bars]]
+        show_vals = values[:n_bars]
+        s = sum(show_vals)
+        if s <= 0:
+            return None
+        pcts = [v / s * 100 for v in show_vals]
         colors = _bar_colors(pcts, len(pcts))
 
-        x_pos = range(len(show_labels))
-        bars = ax.bar(x_pos, pcts, color=colors, edgecolor="#FFFFFF", linewidth=0.8,
-                       width=0.65, zorder=3)
-        for bar, pct in zip(bars, pcts):
-            if pct > 5:
-                ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.8,
-                        f"{pct:.1f}%", ha="center", va="bottom",
-                        fontsize=8, fontweight="bold", color=_TITLE_COLOR)
+        ax.clear()
+        fig.patch.set_facecolor("#FFFFFF")
+        ax.set_facecolor(_BG_COLOR)
+        ax.grid(False)
+        for spine in ax.spines.values():
+            spine.set_visible(False)
+        ax.set_xticks([])
+        ax.set_yticks([])
 
-        ax.set_xticks(list(x_pos))
-        ax.set_xticklabels(show_labels, rotation=40, ha="right", fontsize=8)
-        ax.set_ylabel("% of total", fontsize=10, color=_LABEL_COLOR)
-        ax.set_xlabel(insight.breakdown, fontsize=10, color=_LABEL_COLOR)
-        ax.set_title(f"Attribution: {insight.measure}\nby {insight.breakdown}",
-                     fontsize=13, fontweight="bold", color=_TITLE_COLOR, pad=14)
+        def _autopct(pct):
+            return f"{pct:.1f}%" if pct > 5 else ""
+
+        ax.pie(
+            show_vals,
+            labels=show_labels,
+            colors=colors,
+            autopct=_autopct,
+            startangle=90,
+            counterclock=False,
+            wedgeprops=dict(edgecolor="#FFFFFF", linewidth=0.8),
+            textprops=dict(color=_LABEL_COLOR, fontsize=9),
+        )
+        ax.axis("equal")
+        ax.set_title(
+            f"Attribution: {insight.measure}\nby {insight.breakdown}",
+            fontsize=13,
+            fontweight="bold",
+            color=_TITLE_COLOR,
+            pad=14,
+        )
 
     elif P == OUTSTANDING_VALUE:
         show_labels = [_truncate_label(l) for l in labels[:n_bars]]
