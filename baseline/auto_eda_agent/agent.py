@@ -22,9 +22,52 @@ import os
 from dotenv import load_dotenv
 import warnings
 import scorer
+import re
+import time
 
 warnings.filterwarnings('ignore')
 load_dotenv()
+
+
+def _clean_dataframe_like_quis(df: pd.DataFrame, csv_path: str = None) -> pd.DataFrame:
+    """
+    Clean dataframe using same logic as QUIS (from run_isgen.py lines 71-82).
+    This ensures fair comparison between QUIS and Baseline.
+    """
+    df = df.copy()
+    
+    # Detect separator from CSV file (same as QUIS)
+    sep = ","
+    if csv_path:
+        try:
+            with open(csv_path, "r", encoding="utf-8") as f:
+                first_line = f.readline()
+            sep = ";" if first_line.count(";") > first_line.count(",") else ","
+        except:
+            pass
+    
+    # Clean currency ($), percentage (%), and European number formatting so columns become numeric
+    for col in df.columns:
+        # Check for object, str, or StringDtype
+        dtype_str = str(df[col].dtype).lower()
+        is_string_col = df[col].dtype == object or dtype_str in ['str', 'string'] or 'string' in dtype_str
+        if is_string_col:
+            sample = df[col].dropna().head(20).astype(str).str.strip()
+            # Detect columns that look numeric: digits with optional $, %, dots, commas
+            numeric_like = sample.str.match(r"^\$?\s*[\d.,]+\s*%?$")
+            if numeric_like.sum() >= len(sample) * 0.8:
+                cleaned = df[col].astype(str).str.replace(r"[$%]", "", regex=True).str.strip()
+                if sep == ";":
+                    # EU format: dot=thousands, comma=decimal
+                    cleaned = cleaned.str.replace(".", "", regex=False).str.replace(",", ".", regex=False)
+                else:
+                    # US format: comma=thousands, dot=decimal
+                    cleaned = cleaned.str.replace(",", "", regex=False)
+                converted = pd.to_numeric(cleaned, errors="coerce")
+                if converted.notna().sum() >= len(df) * 0.5:
+                    df[col] = converted
+    
+    return df
 
 
 class AgenticAutoEDA:
@@ -44,7 +87,17 @@ class AgenticAutoEDA:
         # Load data once
         print("📂 Loading dataset...")
         self.df = pd.read_csv(data_path, sep=None, engine='python')
-        print(f"✓ Loaded: {self.df.shape[0]} rows × {self.df.shape[1]} columns\n")
+        print(f"✓ Loaded raw: {self.df.shape[0]} rows × {self.df.shape[1]} columns")
+        
+        # Apply QUIS-style cleaning for fair comparison
+        print("🧹 Applying QUIS-style data cleaning...")
+        self.df = _clean_dataframe_like_quis(self.df, data_path)
+        print(f"✓ Cleaned: {self.df.shape[0]} rows × {self.df.shape[1]} columns")
+        
+        # Show column changes
+        numeric_cols = self.df.select_dtypes(include=[np.number]).columns
+        print(f"📊 Numeric columns after cleaning: {len(numeric_cols)}")
+        print(f"   Sample: {list(numeric_cols)[:5]}...\n")
         
         # Step outputs
         self.step_outputs = {}
@@ -59,47 +112,67 @@ class AgenticAutoEDA:
         
         Each step runs as autonomous agent with iterative refinement.
         """
+        # Start timing
+        start_time = time.time()
+        print(f"⏱️  Starting AutoEDA workflow at {time.strftime('%H:%M:%S')}")
+        
         os.makedirs(output_dir, exist_ok=True)
         
         # Step 1: Data Profiling Agent
         print("\n" + "="*70)
         print("🤖 STEP 1: DATA PROFILING AGENT")
         print("="*70)
+        step1_start = time.time()
         step1_dir = f"{output_dir}/step1_profiling"
         os.makedirs(step1_dir, exist_ok=True)
         self.step_outputs['step1'] = self._run_profiling_agent(step1_dir, max_iterations)
+        step1_time = time.time() - step1_start
+        print(f"⏱️  Step 1 completed in {step1_time:.1f}s")
         
         # Step 2: Quality Analysis Agent
         print("\n" + "="*70)
         print("🤖 STEP 2: QUALITY ANALYSIS AGENT")
         print("="*70)
+        step2_start = time.time()
         step2_dir = f"{output_dir}/step2_quality"
         os.makedirs(step2_dir, exist_ok=True)
         self.step_outputs['step2'] = self._run_quality_agent(step2_dir, max_iterations)
+        step2_time = time.time() - step2_start
+        print(f"⏱️  Step 2 completed in {step2_time:.1f}s")
         
         # Step 3: Statistical Analysis Agent
         print("\n" + "="*70)
         print("🤖 STEP 3: STATISTICAL ANALYSIS AGENT")
         print("="*70)
+        step3_start = time.time()
         step3_dir = f"{output_dir}/step3_statistics"
         os.makedirs(step3_dir, exist_ok=True)
         self.step_outputs['step3'] = self._run_statistics_agent(step3_dir, max_iterations)
+        step3_time = time.time() - step3_start
+        print(f"⏱️  Step 3 completed in {step3_time:.1f}s")
         
         # Step 4: Pattern Discovery Agent
         print("\n" + "="*70)
         print("🤖 STEP 4: PATTERN DISCOVERY AGENT")
         print("="*70)
+        step4_start = time.time()
         step4_dir = f"{output_dir}/step4_patterns"
         os.makedirs(step4_dir, exist_ok=True)
         self.step_outputs['step4'] = self._run_pattern_agent(step4_dir, max_iterations)
+        step4_time = time.time() - step4_start
+        print(f"⏱️  Step 4 completed in {step4_time:.1f}s")
         
         # Step 5: Insight Extraction Agent
         print("\n" + "="*70)
         print("🤖 STEP 5: INSIGHT EXTRACTION AGENT")
         print("="*70)
+        step5_start = time.time()
         step5_dir = f"{output_dir}/step5_insights"
         os.makedirs(step5_dir, exist_ok=True)
         self.step_outputs['step5'] = self._run_insight_agent(step5_dir)
+        self.step_outputs['step5_dir'] = step5_dir  # Store for converter
+        step5_time = time.time() - step5_start
+        print(f"⏱️  Step 5 completed in {step5_time:.1f}s")
         
         # Generate summary
         print("\n" + "="*70)
@@ -108,6 +181,31 @@ class AgenticAutoEDA:
         summary_dir = f"{output_dir}/summary"
         os.makedirs(summary_dir, exist_ok=True)
         self._generate_summary(summary_dir)
+        
+        # Total time and final stats
+        total_time = time.time() - start_time
+        print(f"\n⏱️  Total AutoEDA workflow completed in {total_time:.1f}s")
+        
+        # Save timing info
+        timing_info = {
+            'total_time': total_time,
+            'step_times': {
+                'profiling': step1_time,
+                'quality': step2_time,
+                'statistics': step3_time,
+                'patterns': step4_time,
+                'insights': step5_time
+            },
+            'insights_generated': len(self.step_outputs.get('step5', [])),
+            'throughput': len(self.step_outputs.get('step5', [])) / total_time if total_time > 0 else 0
+        }
+        
+        with open(f"{output_dir}/timing.json", 'w') as f:
+            json.dump(timing_info, f, indent=2)
+        
+        print(f"📊 Generated {len(self.step_outputs.get('step5', []))} insights")
+        print(f"⚡ Throughput: {timing_info['throughput']:.2f} insights/second")
+        print(f"💾 Timing info saved to {output_dir}/timing.json")
         
         return self.step_outputs
     
@@ -892,72 +990,146 @@ Find as many valuable patterns as possible."""
                     f.write(f"- **Variables**: {', '.join(pattern.get('variables_involved', []))}\n")
                     f.write(f"- **Relevance**: {pattern.get('business_relevance', '')}\n\n")
     
-    def _run_insight_agent(self, output_dir: str) -> List[Dict[str, Any]]:
+    def _run_insight_agent(self, output_dir: str, min_insights: int = 15, max_iterations: int = 3) -> List[Dict[str, Any]]:
         """
-        Insight Extraction Agent - Extracts maximum insights using multi-prompt strategy.
+        Insight Extraction Agent - Iteratively extracts insights until threshold is met.
+        
+        Like QUIS, filters insights by score threshold and generates more if needed.
+        
+        Args:
+            output_dir: Output directory for insights
+            min_insights: Minimum number of insights passing threshold (default: 15)
+            max_iterations: Max iterations to avoid infinite loop (default: 3)
         """
-        print("\n🧠 Agent thinking: I need to extract MAXIMUM valuable insights...")
-        print("📝 Strategy: Multi-prompt approach - extract insights by type separately\n")
+        print("\n🧠 Agent thinking: I need to extract valuable insights passing ISGEN threshold...")
+        print(f"📝 Strategy: Iterative generation until {min_insights}+ insights pass threshold\n")
         
-        # Insight categories
-        insight_categories = [
-            {'types': ['TREND'], 'focus': 'temporal trends and directional changes'},
-            {'types': ['OUTLIER', 'ANOMALY'], 'focus': 'unusual values and anomalies'},
-            {'types': ['CORRELATION'], 'focus': 'relationships between variables'},
-            {'types': ['DISTRIBUTION', 'COMPARISON'], 'focus': 'distributions and group comparisons'},
-            {'types': ['PATTERN'], 'focus': 'recurring patterns and cycles'}
-        ]
+        all_processed_insights = []
+        used_titles = set()  # Track titles to avoid duplicates
+        iteration = 0
         
-        all_insights = []
+        while iteration < max_iterations:
+            iteration += 1
+            
+            # Count current passing insights
+            passing_count = sum(1 for i in all_processed_insights if i['score']['passed'])
+            
+            if passing_count >= min_insights and iteration > 1:
+                print(f"\n✅ Target reached: {passing_count} insights pass threshold!")
+                break
+            
+            if iteration > 1:
+                print(f"\n🔄 Iteration {iteration}: Need {min_insights - passing_count} more passing insights...")
+            
+            # Insight categories
+            insight_categories = [
+                {'types': ['TREND'], 'focus': 'temporal trends and directional changes'},
+                {'types': ['OUTLIER', 'ANOMALY'], 'focus': 'unusual values and anomalies'},
+                {'types': ['CORRELATION'], 'focus': 'relationships between variables'},
+                {'types': ['DISTRIBUTION', 'COMPARISON'], 'focus': 'distributions and group comparisons'},
+                {'types': ['PATTERN'], 'focus': 'recurring patterns and cycles'}
+            ]
+            
+            all_insights = []
+            
+            for idx, category in enumerate(insight_categories, 1):
+                print(f"\n📊 Insight Batch {idx}/{len(insight_categories)}: {', '.join(category['types'])}")
+                print(f"  ├─ 🎯 Focus: {category['focus']}")
+                
+                print(f"  ├─ 💭 Analyzing previous step outputs...")
+                print(f"  ├─ ✍️  Generating insight extraction prompt...")
+                
+                # Pass used titles to avoid duplicates
+                insights = self._extract_insights_by_category(category, output_dir, used_titles)
+                
+                if insights:
+                    print(f"  ├─ ✅ Extracted {len(insights)} insights")
+                    all_insights.extend(insights)
+                    print(f"  └─ 📈 Total insights so far: {len(all_insights)}\n")
+                else:
+                    print(f"  └─ ⚠️  No insights extracted for this category\n")
+            
+            print(f"✓ Total insights extracted this iteration: {len(all_insights)}\n")
+            
+            # Process insights: generate charts + ISGEN scoring + filter by threshold
+            print("🎨 Generating visualizations and computing ISGEN scores...")
+            
+            for insight_data in all_insights:
+                title = insight_data.get('title', '')
+                
+                # Skip duplicates
+                if title in used_titles:
+                    continue
+                used_titles.add(title)
+                
+                idx = len(all_processed_insights)
+                insight_id = f"insight_{idx:03d}"
+                
+                print(f"  📊 {idx+1}: {title[:60]}...")
+                
+                # Extract values for scoring first (needed for pattern type)
+                values = self._extract_values_for_scoring(insight_data, insight_data.get('variables', []))
+                
+                # ISGEN scoring
+                insight_score = scorer.score_insight(insight_data, values)
+                
+                # Get pattern type for chart naming (QUIS format)
+                pattern_type = insight_score.get('pattern_type', insight_data.get('type', 'UNKNOWN'))
+                pattern_name = pattern_type.replace(' ', '_')
+                
+                # Generate chart with QUIS-style naming
+                chart_filename = f"insight_{idx}_{pattern_name}.png"
+                chart_path = self._generate_chart(insight_data, f"{output_dir}/{chart_filename}")
+                
+                processed_insight = {
+                    'insight_id': insight_id,
+                    'title': title,
+                    'description': insight_data.get('description', ''),
+                    'insight_type': insight_data.get('type', ''),
+                    'chart_path': chart_path,
+                    'data_evidence': insight_data.get('evidence', {}),
+                    'score': insight_score,
+                    'variables': insight_data.get('variables', [])
+                }
+                
+                all_processed_insights.append(processed_insight)
+                
+                # Show pass/fail status
+                status = "✓ PASS" if insight_score['passed'] else "✗ FAIL"
+                print(f"    {status} (score: {insight_score['pattern_score']:.3f}, threshold: {insight_score['threshold']})")
         
-        for idx, category in enumerate(insight_categories, 1):
-            print(f"\n📊 Insight Batch {idx}/{len(insight_categories)}: {', '.join(category['types'])}")
-            print(f"  ├─ 🎯 Focus: {category['focus']}")
-            
-            print(f"  ├─ 💭 Analyzing previous step outputs...")
-            print(f"  ├─ ✍️  Generating insight extraction prompt...")
-            
-            insights = self._extract_insights_by_category(category, output_dir)
-            
-            if insights:
-                print(f"  ├─ ✅ Extracted {len(insights)} insights")
-                all_insights.extend(insights)
-                print(f"  └─ 📈 Total insights so far: {len(all_insights)}\n")
-            else:
-                print(f"  └─ ⚠️  No insights extracted for this category\n")
+        # Filter: Keep only insights passing threshold (like QUIS)
+        passing_insights = [i for i in all_processed_insights if i['score']['passed']]
+        failing_insights = [i for i in all_processed_insights if not i['score']['passed']]
         
-        print(f"✓ Total insights extracted: {len(all_insights)}\n")
+        print(f"\n📊 ISGEN Filtering Results:")
+        print(f"  ✓ Passed threshold: {len(passing_insights)}/{len(all_processed_insights)}")
+        print(f"  ✗ Failed threshold: {len(failing_insights)}/{len(all_processed_insights)}")
         
-        # Process insights: generate charts + ISGEN scoring
-        print("🎨 Generating visualizations and computing ISGEN scores...")
-        processed_insights = []
+        # Renumber and rename charts for passing insights only
+        print(f"\n🔄 Renumbering passing insights...")
+        final_insights = []
+        for new_idx, insight in enumerate(passing_insights):
+            old_chart = insight['chart_path']
+            pattern_name = insight['score'].get('pattern_type', 'UNKNOWN').replace(' ', '_')
+            new_chart_filename = f"insight_{new_idx}_{pattern_name}.png"
+            new_chart_path = f"{output_dir}/{new_chart_filename}"
+            
+            # Rename chart file
+            if os.path.exists(old_chart):
+                os.rename(old_chart, new_chart_path)
+            
+            insight['insight_id'] = f"insight_{new_idx:03d}"
+            insight['chart_path'] = new_chart_path
+            final_insights.append(insight)
         
-        for idx, insight_data in enumerate(all_insights, 1):
-            insight_id = f"insight_{idx:03d}"
-            
-            print(f"  📊 {idx}/{len(all_insights)}: {insight_data.get('title', 'Untitled')[:60]}...")
-            
-            # Generate chart
-            chart_path = self._generate_chart(insight_data, f"{output_dir}/{insight_id}.png")
-            
-            # Extract values for scoring
-            values = self._extract_values_for_scoring(insight_data, insight_data.get('variables', []))
-            
-            # ISGEN scoring
-            insight_score = scorer.score_insight(insight_data, values)
-            
-            processed_insights.append({
-                'insight_id': insight_id,
-                'title': insight_data.get('title', ''),
-                'description': insight_data.get('description', ''),
-                'insight_type': insight_data.get('type', ''),
-                'chart_path': chart_path,
-                'data_evidence': insight_data.get('evidence', {}),
-                'score': insight_score,
-                'variables': insight_data.get('variables', [])
-            })
+        # Delete charts for failing insights
+        for insight in failing_insights:
+            chart_path = insight['chart_path']
+            if os.path.exists(chart_path):
+                os.remove(chart_path)
         
-        # Save insights
+        # Save only passing insights
         def convert_to_native(obj):
             if isinstance(obj, np.bool_):
                 return bool(obj)
@@ -969,18 +1141,21 @@ Find as many valuable patterns as possible."""
                 return [convert_to_native(item) for item in obj]
             return obj
         
-        insights_native = convert_to_native(processed_insights)
+        insights_native = convert_to_native(final_insights)
         
         with open(f"{output_dir}/insights.json", 'w', encoding='utf-8') as f:
             json.dump(insights_native, f, indent=2, ensure_ascii=False)
         
-        print(f"\n✓ Processed {len(processed_insights)} insights with charts and ISGEN scores")
+        print(f"\n✅ Final: {len(final_insights)} insights passing threshold")
         print(f"✓ Insights saved: {output_dir}/insights.json\n")
         
-        return processed_insights
+        return final_insights
     
-    def _extract_insights_by_category(self, category: Dict, output_dir: str) -> List[Dict[str, Any]]:
+    def _extract_insights_by_category(self, category: Dict, output_dir: str, used_titles: set = None) -> List[Dict[str, Any]]:
         """Extract insights for a specific category using LLM"""
+        
+        if used_titles is None:
+            used_titles = set()
         
         # Collect context from previous steps
         context = {
@@ -994,9 +1169,14 @@ Find as many valuable patterns as possible."""
         numerical_cols = self.df.select_dtypes(include=[np.number]).columns.tolist()[:20]
         categorical_cols = self.df.select_dtypes(include=['object']).columns.tolist()[:20]
         
+        # Build exclusion text if there are used titles
+        exclusion_text = ""
+        if used_titles:
+            exclusion_text = f"\n\nIMPORTANT: Avoid these already-extracted insights:\n{chr(10).join(['- ' + t for t in list(used_titles)[:10]])}\n\nGenerate DIFFERENT insights with different angles and variables."
+        
         prompt = f"""Based on ALL previous analysis steps, extract valuable insights focused on: {category['focus']}
 
-Insight types to find: {', '.join(category['types'])}
+Insight types to find: {', '.join(category['types'])}{exclusion_text}
 
 IMPORTANT - Available columns in dataset:
 Numerical columns: {', '.join(numerical_cols)}
@@ -1371,7 +1551,7 @@ Return ONLY executable Python code."""
         return values
     
     def _generate_summary(self, output_dir: str):
-        """Generate final summary"""
+        """Generate final summary and QUIS-compatible output"""
         insights = self.step_outputs.get('step5', [])
         
         total = len(insights)
@@ -1418,6 +1598,25 @@ Return ONLY executable Python code."""
             f.write("\n" + "="*70 + "\n")
         
         print(f"✓ Summary saved: {output_dir}/summary.txt")
+        
+        # Convert to QUIS-compatible format
+        print("\n🔄 Converting to QUIS-compatible format...")
+        try:
+            from output_converter import OutputConverter
+            converter = OutputConverter(self.df)
+            
+            # Get insights path from step5 output
+            insights_path = f"{self.step_outputs.get('step5_dir', 'output/step5_insights')}/insights.json"
+            quis_output_dir = f"{output_dir.replace('/summary', '')}/quis_format"
+            
+            result = converter.convert_insights(insights_path, quis_output_dir)
+            
+            print(f"✓ QUIS-compatible output saved:")
+            print(f"  📄 InsightCards: {quis_output_dir}/insight_cards.json")
+            print(f"  📄 Insights: {quis_output_dir}/insights.json")
+        except Exception as e:
+            print(f"⚠️  QUIS conversion failed: {e}")
+            print(f"   You can manually convert using: python output_converter.py")
     
     # Fallback methods
     def _create_basic_profile(self, output_dir: str):

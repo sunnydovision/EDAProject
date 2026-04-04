@@ -1,0 +1,91 @@
+{
+  "metrics": {
+    "missing_values": {},
+    "outliers": {
+      "Retailer ID": {
+        "count": 4383,
+        "percentage": 45.42910447761194,
+        "lower_bound": 1185732.0,
+        "upper_bound": 1185732.0
+      },
+      "Price per Unit": {
+        "count": 81,
+        "percentage": 0.8395522388059702,
+        "lower_bound": 5.0,
+        "upper_bound": 85.0
+      },
+      "Units Sold": {
+        "count": 627,
+        "percentage": 6.498756218905473,
+        "lower_bound": -225.0,
+        "upper_bound": 655.0
+      },
+      "Total Sales": {
+        "count": 653,
+        "percentage": 6.768242122719735,
+        "lower_bound": -214363.75,
+        "upper_bound": 368618.25
+      },
+      "Operating Profit": {
+        "count": 706,
+        "percentage": 7.317578772802653,
+        "lower_bound": -73289.5,
+        "upper_bound": 127274.5
+      },
+      "Operating Margin": {
+        "count": 44,
+        "percentage": 0.45605306799336653,
+        "lower_bound": 14.0,
+        "upper_bound": 70.0
+      }
+    },
+    "duplicates": 0,
+    "total_issues": 6
+  },
+  "assessment": {
+    "critical_issues": [
+      {
+        "issue": "Outliers in Retailer ID",
+        "severity": "high",
+        "impact": "The presence of a significant number of outliers (45.43%) in Retailer ID suggests potential data entry errors or inconsistencies, which can lead to incorrect retailer identification and affect sales analysis.",
+        "recommendation": "Investigate the source of these outliers and correct or remove erroneous entries to ensure accurate retailer identification."
+      },
+      {
+        "issue": "Outliers in Units Sold",
+        "severity": "medium",
+        "impact": "With 6.50% of Units Sold data being outliers, this can skew sales performance metrics and mislead inventory and sales forecasting.",
+        "recommendation": "Review the outlier entries for Units Sold and determine if they are valid. Consider applying transformations or removing extreme values if they are erroneous."
+      },
+      {
+        "issue": "Outliers in Total Sales",
+        "severity": "medium",
+        "impact": "The 6.77% outlier rate in Total Sales can distort revenue analysis and financial reporting, leading to incorrect business decisions.",
+        "recommendation": "Analyze the outlier transactions for Total Sales to ascertain their validity and either correct or exclude them from analysis."
+      },
+      {
+        "issue": "Outliers in Operating Profit",
+        "severity": "medium",
+        "impact": "Outliers in Operating Profit (7.32%) can misrepresent the financial health of the business, affecting strategic planning and investment decisions.",
+        "recommendation": "Investigate the outliers in Operating Profit to determine their accuracy and make necessary adjustments to ensure reliable financial reporting."
+      },
+      {
+        "issue": "Outliers in Operating Margin",
+        "severity": "low",
+        "impact": "While the percentage of outliers in Operating Margin is relatively low (0.46%), they can still affect performance metrics and comparisons across periods.",
+        "recommendation": "Review the outlier entries in Operating Margin for potential corrections or exclusions to maintain consistent performance metrics."
+      }
+    ],
+    "overall_quality_score": 70,
+    "priority_actions": [
+      "Conduct a thorough audit of the Retailer ID data to identify and rectify inconsistencies.",
+      "Implement data validation rules to prevent entry of outlier values for Units Sold, Total Sales, and Operating Profit.",
+      "Establish a regular data quality monitoring process to identify and address outliers and other quality issues proactively."
+    ],
+    "detailed_analysis": "The data quality assessment reveals several critical issues primarily related to outliers in key financial metrics and identifiers. The high percentage of outliers in Retailer ID indicates a potential systemic issue in data entry or collection processes. Other metrics, while having lower percentages of outliers, still pose risks to accurate analysis and decision-making. The absence of duplicates is a positive aspect, but the overall quality score reflects the need for immediate attention to outlier management and data validation practices."
+  },
+  "summary": {
+    "total_issues": 6,
+    "critical_issues": 5,
+    "data_quality_score": 70
+  }
+}

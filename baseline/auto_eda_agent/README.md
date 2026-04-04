@@ -61,19 +61,25 @@ output/
 ├── step5_insights/
 │   ├── insights.json          # All insights with ISGEN scores
 │   └── insight_*.png          # Visualizations (26+ charts)
+├── quis_format/               # ⭐ QUIS-compatible output (auto-generated)
+│   ├── insight_cards.json     # InsightCards with (Question, Reason, Breakdown, Measure)
+│   └── insights.json          # Insights with (B, M, S, P, score, view_labels, view_values)
 └── summary/
     └── summary.txt            # Overall summary with ISGEN metrics
 ```
+
+**Note**: The `quis_format/` directory is automatically generated at the end of the pipeline, converting baseline insights to QUIS-compatible format for fair comparison.
 
 ## 📁 File Structure
 
 ```
 baseline/
-├── __init__.py       # Package initialization
-├── agent.py          # Core insight extraction logic
-├── scorer.py         # ISGEN scoring functions
-├── run.py            # Main entry point
-└── README.md         # This file
+├── __init__.py          # Package initialization
+├── agent.py             # Core 5-step agentic workflow
+├── scorer.py            # ISGEN scoring functions
+├── output_converter.py  # Converts output to QUIS-compatible format
+├── run.py               # Main entry point
+└── README.md            # This file
 ```
 
 ## 🔍 Architecture: Expert-Driven Agentic Workflow
@@ -169,21 +175,26 @@ For each category:
 
 #### **Step 5: Insight Extraction Agent** 💡
 
-**Multi-Prompt Strategy** - 5 insight batches:
+**Iterative Generation Strategy** (like QUIS):
 
-1. **TREND** - temporal trends and directional changes
-2. **OUTLIER, ANOMALY** - unusual values
-3. **CORRELATION** - relationships between variables
-4. **DISTRIBUTION, COMPARISON** - distributions and group comparisons
-5. **PATTERN** - recurring patterns and cycles
+1. **Multi-Prompt Extraction** - 5 insight batches:
+   - **TREND** - temporal trends and directional changes
+   - **OUTLIER, ANOMALY** - unusual values
+   - **CORRELATION** - relationships between variables
+   - **DISTRIBUTION, COMPARISON** - distributions and group comparisons
+   - **PATTERN** - recurring patterns and cycles
 
-For each batch:
-- LLM extracts insights from previous steps
-- Generates visualizations
-- Applies ISGEN scoring
-- Filters by quality threshold
+2. **ISGEN Scoring & Filtering**:
+   - Each insight scored using ISGEN patterns
+   - Only insights **passing threshold** are kept
+   - Failed insights are discarded (charts deleted)
 
-**Output:** `insights.json` with 26+ insights + charts + ISGEN scores
+3. **Iterative Refinement** (if needed):
+   - If < 15 insights pass threshold → generate more
+   - LLM generates **different** insights (avoids duplicates)
+   - Max 3 iterations to prevent infinite loops
+
+**Output:** `insights.json` with 15+ high-quality insights passing ISGEN threshold
 
 ---
 
@@ -354,6 +365,17 @@ Edit `scorer.py`:
 score['threshold'] = 0.98  # Instead of 0.95
 ```
 
+### Adjust Insight Generation Parameters
+
+Edit `agent.py`, `_run_insight_agent()`:
+
+```python
+# Change minimum insights passing threshold
+def _run_insight_agent(self, output_dir: str, min_insights: int = 20, max_iterations: int = 5):
+    # min_insights: Target number of passing insights (default: 15)
+    # max_iterations: Max iterations to avoid infinite loop (default: 3)
+```
+
 ### Change Insight Extraction Strategy
 
 Edit `agent.py`, `_run_insight_agent()`:
@@ -366,23 +388,93 @@ insight_categories = [
 ]
 ```
 
-## 📊 Comparison with Other Methods
+## 🔄 QUIS-Compatible Output
 
-To compare this baseline with other EDA methods:
+The baseline automatically generates QUIS-compatible output for fair comparison:
+
+### Automatic Conversion
+
+After the 5-step pipeline completes, the baseline automatically converts its output to QUIS format:
+
+```
+output/quis_format/
+├── insight_cards.json    # InsightCards: (Question, Reason, Breakdown, Measure)
+└── insights.json         # Insights: (B, M, S, P, score, view_labels, view_values)
+```
+
+### Output Format
+
+**InsightCards** (backward-mapped from insights):
+```json
+{
+  "question": "How does X change over Y?",
+  "reason": "Understanding this helps...",
+  "breakdown": "CategoryColumn",
+  "measure": "MEAN(NumericColumn)"
+}
+```
+
+**Insights** (QUIS-compatible):
+```json
+{
+  "breakdown": "CategoryColumn",
+  "measure": "MEAN(NumericColumn)",
+  "subspace": [],
+  "pattern": "Trend",
+  "score": 0.85,
+  "question": "How does X change over Y?",
+  "reason": "Explanation...",
+  "view_labels": ["A", "B", "C"],
+  "view_values": [10.5, 20.3, 15.7]
+}
+```
+
+### Manual Conversion
+
+If you need to convert existing baseline output:
+
+```bash
+python output_converter.py \
+  --data ../../data/your_data.csv \
+  --insights output/step5_insights/insights.json \
+  --output output/quis_format
+```
+
+### Key Differences from QUIS
+
+| Aspect | QUIS | Baseline |
+|--------|------|----------|
+| **Methodology** | Statistical search (QUGEN + ISGEN) | Expert-driven LLM analysis |
+| **Questions** | Generated first (QUGEN) | Backward-mapped from insights |
+| **Subspace (S)** | Beam search exploration | Empty (no subspace) |
+| **Patterns** | 4 types (Trend, Outstanding, Attribution, Distribution) | Same 4 types |
+| **Scoring** | ISGEN scoring | Same ISGEN scoring |
+| **Output Format** | (B, M, S, P) | Converted to (B, M, S, P) |
+
+**Note**: Baseline doesn't explore subspaces (S = ∅), which is expected - this is a key differentiator showing QUIS's advantage in conditional pattern discovery.
+
+## 📊 Comparison with QUIS
+
+To compare this baseline with QUIS:
 
 1. **Run baseline:**
    ```bash
-   python run.py ../data/your_data.csv baseline_output
+   python run.py ../../data/your_data.csv output
    ```
 
-2. **Run your method** and save results in similar format
+2. **Run QUIS** on same dataset
 
-3. **Compare metrics:**
-   - Number of insights
-   - Pass rate (% passing threshold)
-   - Average pattern scores
-   - Diversity (distribution across insight types)
-   - Quality of visualizations
+3. **Compare using evaluation metrics:**
+   - Insight Yield: `|I| / |Q|`
+   - Average Score: Mean ISGEN scores
+   - Redundancy: Unique (B, M, S, P) tuples
+   - Schema Coverage: Columns explored
+   - Pattern Coverage: Pattern types found
+   - **Subspace Exploration**: Baseline = 0, QUIS > 0 ⭐
+   - Question Diversity: Semantic similarity
+   - Downstream ML: Feature engineering performance
+
+See `../../EVALUATION_METRICS.md` for detailed metric definitions.
 
 ## 🐛 Troubleshooting
 

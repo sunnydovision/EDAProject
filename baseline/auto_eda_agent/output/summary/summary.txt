@@ -2,46 +2,42 @@
 AGENTIC AUTOEDA BASELINE - SUMMARY
 ======================================================================
 
-Total Insights: 25
-Passed ISGEN Threshold: 17/25 (68.0%)
-Average Pattern Score: 0.909
+Total Insights: 17
+Passed ISGEN Threshold: 17/17 (100.0%)
+Average Pattern Score: 1.036
 
 Insights by Type:
-  • TREND: 5
   • CORRELATION: 5
   • PATTERN: 5
-  • ANOMALY: 3
-  • DISTRIBUTION: 3
-  • OUTLIER: 2
-  • COMPARISON: 2
+  • TREND: 4
+  • DISTRIBUTION: 2
+  • ANOMALY: 1
 
 Insights by ISGEN Pattern:
-  • QUALITY: 13
-  • TREND: 5
-  • OUTSTANDING_VALUE: 5
-  • ATTRIBUTION: 1
-  • None: 1
+  • QUALITY: 12
+  • TREND: 4
+  • OUTSTANDING_VALUE: 1
 
 Top 10 Insights:
-  1. ✗ insight_008: Unusually Low Revenue in Q2
-     Pattern: OUTSTANDING_VALUE, Score: 1.036
-  2. ✗ insight_007: Anomalous Pricing Behavior
-     Pattern: OUTSTANDING_VALUE, Score: 1.019
-  3. ✗ insight_006: High Volume Outlier in Sales
-     Pattern: OUTSTANDING_VALUE, Score: 1.014
-  4. ✗ insight_010: Abnormal Transportation Distance
-     Pattern: OUTSTANDING_VALUE, Score: 1.005
-  5. ✗ insight_009: Frequent Late Deliveries
-     Pattern: OUTSTANDING_VALUE, Score: 1.000
-  6. ✓ insight_011: Correlation between Price per Kg and Revenue per mm
+  1. ✓ insight_004: Anomaly in Sales Method for High Volume Transactions
+     Pattern: OUTSTANDING_VALUE, Score: 1.619
+  2. ✓ insight_000: Seasonal Sales Fluctuations
+     Pattern: TREND, Score: 1.000
+  3. ✓ insight_001: Decline in Operating Margin
+     Pattern: TREND, Score: 1.000
+  4. ✓ insight_002: Regional Sales Growth Disparities
+     Pattern: TREND, Score: 1.000
+  5. ✓ insight_003: Increase in Price per Unit Correlating with Sales
+     Pattern: TREND, Score: 1.000
+  6. ✓ insight_005: Correlation between Price per Unit and Total Sales
      Pattern: QUALITY, Score: 1.000
-  7. ✓ insight_012: Impact of Sales Frequency on Average Revenue per Sale
+  7. ✓ insight_006: Units Sold and Operating Profit Relationship
      Pattern: QUALITY, Score: 1.000
-  8. ✓ insight_013: Relationship between Distance and Delivery Delay
+  8. ✓ insight_007: Impact of Operating Margin on Total Sales
      Pattern: QUALITY, Score: 1.000
-  9. ✓ insight_014: Influence of Product Thickness on Sales Frequency
+  9. ✓ insight_008: Relationship between Region and Units Sold
      Pattern: QUALITY, Score: 1.000
-  10. ✓ insight_015: Effect of Actual Weight on Total Revenue
+  10. ✓ insight_009: Sales Method Influence on Total Sales
      Pattern: QUALITY, Score: 1.000
 
 ======================================================================
