@@ -1,5 +1,6 @@
 import base64
 import glob
+import hashlib
 import html
 import json
 import os
@@ -28,6 +29,61 @@ st.set_page_config(
 )
 
 load_dotenv()
+
+# ---------------------------------------------------------------------------
+# Cached I/O (History / large CSV) — reduces reload latency on tab switch & pager
+# ---------------------------------------------------------------------------
+@st.cache_data(show_spinner="Loading dataset…", ttl=300)
+def _cached_load_csv(path: str) -> pd.DataFrame | None:
+    if not path or not os.path.isfile(path):
+        return None
+    with open(path, "r", encoding="utf-8") as f:
+        first_line = f.readline()
+    sep = ";" if first_line.count(";") > first_line.count(",") else ","
+    df = pd.read_csv(path, sep=sep, decimal="," if sep == ";" else ".")
+    return _clean_dataframe(df, sep=sep)
+
+
+@st.cache_data(show_spinner="Loading report…", ttl=120)
+def _cached_load_insights_json(path: str) -> list | None:
+    if not path or not os.path.isfile(path):
+        return None
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    return data if isinstance(data, list) else [data]
+
+
+@st.cache_data(show_spinner=False, ttl=45)
+def _cached_discover_history(_project_root: str) -> tuple:
+    """Tuple of dicts so cache key can include root; refresh every ~45s for new JSON files."""
+    root = _project_root
+    results = []
+    for path in sorted(glob.glob(os.path.join(root, "insights_summary*.json"))):
+        fname = os.path.basename(path)
+        name = fname.replace("insights_summary_", "").replace("insights_summary", "").replace(".json", "")
+        if not name:
+            name = "default"
+        cards_path = path.replace("insights_summary", "insight_cards")
+        csv_candidates = [
+            os.path.join(root, "data", f"{name}.csv"),
+            os.path.join(root, "data", f"{name.title()}.csv"),
+            os.path.join(root, "data", f"{name.upper()}.csv"),
+            os.path.join(root, "data", f"{name.capitalize()}.csv"),
+            os.path.join(root, f"{name}.csv"),
+        ]
+        if not any(os.path.isfile(p) for p in csv_candidates):
+            for p in glob.glob(os.path.join(root, "data", "*.csv")):
+                if os.path.basename(p).lower() == f"{name.lower()}.csv":
+                    csv_candidates.insert(0, p)
+        csv_path = next((p for p in csv_candidates if os.path.isfile(p)), None)
+        results.append({
+            "label": name.replace("_", " ").title(),
+            "insights_path": path,
+            "cards_path": cards_path if os.path.isfile(cards_path) else None,
+            "csv_path": csv_path,
+        })
+    return tuple(results)
+
 
 # ---------------------------------------------------------------------------
 # Asset helpers
@@ -939,6 +995,39 @@ Rewrite clearly and concisely in 3-4 bullets:
         return base_explanation
 
 
+def _insight_expl_cache_key(ins: dict, use_llm: bool) -> str:
+    """Stable key for Rich LLM explanation cache (pagination / fragment reruns)."""
+    mock = bool(st.session_state.get("use_mock_llm", False))
+    parts = [
+        "1" if use_llm else "0",
+        "1" if mock else "0",
+        str(ins.get("pattern", "")),
+        str(ins.get("question", "")),
+        str(ins.get("breakdown", "")),
+        str(ins.get("measure", "")),
+        str(ins.get("subspace", "")),
+        str(ins.get("view_labels", "")),
+        str(ins.get("view_values", "")),
+    ]
+    return hashlib.sha256("|".join(parts).encode("utf-8", errors="replace")).hexdigest()[:48]
+
+
+def _get_llm_description_cached(
+    llm: BaseLLMClient, ins: dict, base_expl: str, use_llm: bool,
+) -> str:
+    if not use_llm:
+        return base_expl
+    if "insight_expl_cache" not in st.session_state:
+        st.session_state.insight_expl_cache = {}
+    ck = _insight_expl_cache_key(ins, use_llm)
+    cache: dict = st.session_state.insight_expl_cache
+    if ck in cache:
+        return cache[ck]
+    text = _generate_llm_description(llm, ins, base_expl)
+    cache[ck] = text
+    return text
+
+
 def _normalize_text(value: str) -> str:
     return re.sub(r"\s+", " ", (value or "").strip().lower())
 
@@ -1189,13 +1278,11 @@ def _pager(key: str, total: int, per_page: int):
     with col_prev:
         if st.button("Previous", key=f"{key}_prev", disabled=page == 0, use_container_width=True):
             st.session_state[key] = page - 1
-            st.rerun()
     with col_info:
         st.markdown(f'<p class="cl-pager-info">Page {page + 1} of {total_pages} &middot; {total} total</p>', unsafe_allow_html=True)
     with col_next:
         if st.button("Next", key=f"{key}_next", disabled=page >= total_pages - 1, use_container_width=True):
             st.session_state[key] = page + 1
-            st.rerun()
     return start, end
 
 
@@ -1257,7 +1344,7 @@ def _render_one_insight_card(
     base_expl = item.get("explanation", "")
     pattern = ins.get("pattern", "")
     question = item.get("question", "")
-    description = _generate_llm_description(llm_client, ins, base_expl) if use_llm_explanations else base_expl
+    description = _get_llm_description_cached(llm_client, ins, base_expl, use_llm_explanations)
     recommendation = _build_recommendation(ins)
     chart = _make_chart(ins)
     accent = _accents[accent_idx % len(_accents)]
@@ -1289,7 +1376,7 @@ def _render_one_insight_card(
     st.markdown("<br/>", unsafe_allow_html=True)
 
 
-def _render_insights_section(
+def _render_insights_section_core(
     insight_summaries: list[dict],
     llm_client,
     use_llm_explanations: bool,
@@ -1298,40 +1385,62 @@ def _render_insights_section(
 ):
     from quis.isgen.models import PATTERNS
 
-    buckets, other = _group_insights_by_pattern(insight_summaries)
-    tabs = st.tabs(list(PATTERNS))
-    for tab, pat in zip(tabs, PATTERNS):
-        with tab:
-            bucket = buckets[pat]
-            if not bucket:
-                st.caption("No insights of this type.")
-                continue
-            pk = f"{pager_base}_{pat.replace(' ', '_')}"
-            i_start, i_end = _pager(pk, len(bucket), _INSIGHTS_PER_PAGE)
-            for local_i in range(i_start, i_end):
-                orig_idx, item = bucket[local_i]
-                _render_one_insight_card(
-                    item,
-                    orig_idx,
-                    llm_client,
-                    use_llm_explanations,
-                    plot_key_prefix,
-                    accent_idx=local_i,
-                )
-    if other:
-        with st.expander(f"Uncategorized patterns ({len(other)})", expanded=False):
-            pk = f"{pager_base}_Other"
-            o_start, o_end = _pager(pk, len(other), _INSIGHTS_PER_PAGE)
-            for local_i in range(o_start, o_end):
-                orig_idx, item = other[local_i]
-                _render_one_insight_card(
-                    item,
-                    orig_idx,
-                    llm_client,
-                    use_llm_explanations,
-                    plot_key_prefix,
-                    accent_idx=local_i,
-                )
+    with st.spinner("Loading charts and summaries…"):
+        buckets, other = _group_insights_by_pattern(insight_summaries)
+        tabs = st.tabs(list(PATTERNS))
+        for tab, pat in zip(tabs, PATTERNS):
+            with tab:
+                bucket = buckets[pat]
+                if not bucket:
+                    st.caption("No insights of this type.")
+                    continue
+                pk = f"{pager_base}_{pat.replace(' ', '_')}"
+                i_start, i_end = _pager(pk, len(bucket), _INSIGHTS_PER_PAGE)
+                for local_i in range(i_start, i_end):
+                    orig_idx, item = bucket[local_i]
+                    _render_one_insight_card(
+                        item,
+                        orig_idx,
+                        llm_client,
+                        use_llm_explanations,
+                        plot_key_prefix,
+                        accent_idx=local_i,
+                    )
+        if other:
+            with st.expander(f"Uncategorized patterns ({len(other)})", expanded=False):
+                pk = f"{pager_base}_Other"
+                o_start, o_end = _pager(pk, len(other), _INSIGHTS_PER_PAGE)
+                for local_i in range(o_start, o_end):
+                    orig_idx, item = other[local_i]
+                    _render_one_insight_card(
+                        item,
+                        orig_idx,
+                        llm_client,
+                        use_llm_explanations,
+                        plot_key_prefix,
+                        accent_idx=local_i,
+                    )
+
+
+_fragment_fn = getattr(st, "fragment", None) or getattr(st, "experimental_fragment", None)
+if _fragment_fn is not None:
+    _render_insights_section_core = _fragment_fn(_render_insights_section_core)
+
+
+def _render_insights_section(
+    insight_summaries: list[dict],
+    llm_client,
+    use_llm_explanations: bool,
+    pager_base: str,
+    plot_key_prefix: str,
+):
+    _render_insights_section_core(
+        insight_summaries,
+        llm_client,
+        use_llm_explanations,
+        pager_base,
+        plot_key_prefix,
+    )
 
 
 def _render_overview_metrics(df: pd.DataFrame, n_insights: int):
@@ -1368,9 +1477,10 @@ def _render_results(df, cards, insight_summaries, llm_client, use_llm_explanatio
 
     _section("Generated Questions", f"{len(cards)} candidate questions from the AI agent.", icon="quiz", img_icon="icon_question.png")
     q_start, q_end = _pager("q_page", len(cards), _QUESTIONS_PER_PAGE)
+    _em = "\u2014"
     for card in cards[q_start:q_end]:
         with st.expander(card.question, expanded=False):
-            st.markdown(f"**Why** \u00b7 {card.reason or '\u2014'}")
+            st.markdown(f"**Why** \u00b7 {card.reason or _em}")
             st.caption(f"Breakdown `{card.breakdown}` \u00b7 Measure `{card.measure}`")
 
     _section("Insights", "Visualizations, narrative, and recommended actions.", icon="insights", img_icon="icon_insight.png")
@@ -1390,43 +1500,13 @@ def _render_results(df, cards, insight_summaries, llm_client, use_llm_explanatio
 # History helpers
 # ───────────────────────────────────────────────────────────────────────────
 def _load_csv_file(path: str) -> pd.DataFrame | None:
-    if not os.path.isfile(path):
-        return None
-    with open(path, "r", encoding="utf-8") as f:
-        first_line = f.readline()
-    sep = ";" if first_line.count(";") > first_line.count(",") else ","
-    df = pd.read_csv(path, sep=sep, decimal="," if sep == ";" else ".")
-    return _clean_dataframe(df, sep=sep)
+    """Prefer cached reader for large files / History tab."""
+    return _cached_load_csv(path)
 
 
 def _discover_history() -> list[dict]:
     root = os.path.dirname(os.path.abspath(__file__))
-    results = []
-    for path in sorted(glob.glob(os.path.join(root, "insights_summary*.json"))):
-        fname = os.path.basename(path)
-        name = fname.replace("insights_summary_", "").replace("insights_summary", "").replace(".json", "")
-        if not name:
-            name = "default"
-        cards_path = path.replace("insights_summary", "insight_cards")
-        csv_candidates = [
-            os.path.join(root, "data", f"{name}.csv"),
-            os.path.join(root, "data", f"{name.title()}.csv"),
-            os.path.join(root, "data", f"{name.upper()}.csv"),
-            os.path.join(root, "data", f"{name.capitalize()}.csv"),
-            os.path.join(root, f"{name}.csv"),
-        ]
-        if not any(os.path.isfile(p) for p in csv_candidates):
-            for p in glob.glob(os.path.join(root, "data", "*.csv")):
-                if os.path.basename(p).lower() == f"{name.lower()}.csv":
-                    csv_candidates.insert(0, p)
-        csv_path = next((p for p in csv_candidates if os.path.isfile(p)), None)
-        results.append({
-            "label": name.replace("_", " ").title(),
-            "insights_path": path,
-            "cards_path": cards_path if os.path.isfile(cards_path) else None,
-            "csv_path": csv_path,
-        })
-    return results
+    return list(_cached_discover_history(root))
 
 
 def _render_history_insights(
@@ -1468,6 +1548,8 @@ def run_app():
     for k, v in _defaults.items():
         if k not in st.session_state:
             st.session_state[k] = v
+    if "insight_expl_cache" not in st.session_state:
+        st.session_state.insight_expl_cache = {}
 
     llm_client = _init_llm_client()
 
@@ -1633,14 +1715,11 @@ def run_app():
             )
 
             entry = history[selected_idx]
-            with open(entry["insights_path"], "r", encoding="utf-8") as f:
-                insight_data = json.load(f)
-            if not isinstance(insight_data, list):
-                insight_data = [insight_data]
+            insight_data = _cached_load_insights_json(entry["insights_path"]) or []
 
             hist_df: pd.DataFrame | None = None
             if entry["csv_path"]:
-                hist_df = _load_csv_file(entry["csv_path"])
+                hist_df = _cached_load_csv(entry["csv_path"])
                 if hist_df is not None and hist_df.empty:
                     hist_df = None
 
@@ -1695,14 +1774,14 @@ def run_app():
                 st.caption("No CSV found for this analysis — metrics above show insight counts only.")
 
             if entry["cards_path"]:
-                with open(entry["cards_path"], "r", encoding="utf-8") as f:
-                    cards_data = json.load(f)
+                cards_data = _cached_load_insights_json(entry["cards_path"]) or []
                 if cards_data:
                     _section("Generated Questions", f"{len(cards_data)} questions", icon="quiz", img_icon="icon_question.png")
                     hq_start, hq_end = _pager(f"hist_q_{selected_idx}", len(cards_data), _QUESTIONS_PER_PAGE)
+                    _emh = "\u2014"
                     for cd in cards_data[hq_start:hq_end]:
-                        with st.expander(cd.get("question", "\u2014"), expanded=False):
-                            st.markdown(f"**Why** \u00b7 {cd.get('reason', '\u2014')}")
+                        with st.expander(cd.get("question", _emh), expanded=False):
+                            st.markdown(f"**Why** \u00b7 {cd.get('reason', _emh)}")
                             st.caption(f"Breakdown `{cd.get('breakdown', '')}` \u00b7 Measure `{cd.get('measure', '')}`")
 
             _section("Insights", f"{len(insight_data)} insights from this analysis.", icon="insights", img_icon="icon_insight.png")

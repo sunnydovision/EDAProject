@@ -104,8 +104,14 @@ def compute_view(df, breakdown: str, measure_str: str, subspace: Subspace | None
         ser = df.groupby(breakdown_resolved)[measure_resolved].agg(agg_name)
 
     ser = ser.dropna()
-    labels = [str(x) for x in ser.index.tolist()]
-    values = [float(x) for x in ser.tolist()]
+    # Aggregates may be non-numeric if measure targeted date/text (e.g. MEAN on Invoice Date as string).
+    v = pd.to_numeric(ser, errors="coerce")
+    valid = v.notna()
+    if not valid.any():
+        return [], []
+    v = v[valid]
+    labels = [str(x) for x in v.index.tolist()]
+    values = v.astype(float).tolist()
     return labels, values
 
 
