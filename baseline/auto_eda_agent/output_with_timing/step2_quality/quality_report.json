@@ -1,0 +1,85 @@
+{
+  "metrics": {
+    "missing_values": {},
+    "outliers": {
+      "Retailer ID": {
+        "count": 4383,
+        "percentage": 45.42910447761194,
+        "lower_bound": 1185732.0,
+        "upper_bound": 1185732.0
+      },
+      "Price per Unit": {
+        "count": 81,
+        "percentage": 0.8395522388059702,
+        "lower_bound": 5.0,
+        "upper_bound": 85.0
+      },
+      "Units Sold": {
+        "count": 627,
+        "percentage": 6.498756218905473,
+        "lower_bound": -225.0,
+        "upper_bound": 655.0
+      },
+      "Total Sales": {
+        "count": 653,
+        "percentage": 6.768242122719735,
+        "lower_bound": -214363.75,
+        "upper_bound": 368618.25
+      },
+      "Operating Profit": {
+        "count": 706,
+        "percentage": 7.317578772802653,
+        "lower_bound": -73289.5,
+        "upper_bound": 127274.5
+      },
+      "Operating Margin": {
+        "count": 44,
+        "percentage": 0.45605306799336653,
+        "lower_bound": 14.0,
+        "upper_bound": 70.0
+      }
+    },
+    "duplicates": 0,
+    "total_issues": 6
+  },
+  "assessment": {
+    "critical_issues": [
+      {
+        "issue": "High percentage of outliers in Retailer ID",
+        "severity": "high",
+        "impact": "The presence of a large number of outliers (45.43%) in Retailer ID suggests potential data entry errors or inconsistencies, which can lead to misinterpretation of retailer performance and skewed analysis.",
+        "recommendation": "Investigate the source of these outliers to determine if they are valid entries or errors. Implement data validation rules to prevent incorrect Retailer IDs from being entered."
+      },
+      {
+        "issue": "Outliers in Units Sold",
+        "severity": "medium",
+        "impact": "A significant number of outliers (6.50%) in Units Sold may indicate erroneous sales data, which can distort sales performance analysis and forecasting.",
+        "recommendation": "Review the data collection process for Units Sold and apply statistical methods to identify and handle outliers appropriately, such as capping or transforming the data."
+      },
+      {
+        "issue": "Negative values in Total Sales and Operating Profit",
+        "severity": "medium",
+        "impact": "Negative values in Total Sales (-214363.75) and Operating Profit (-73289.5) can indicate serious issues with data accuracy and may mislead financial analysis.",
+        "recommendation": "Conduct a thorough review of the calculations and data sources for Total Sales and Operating Profit to ensure accuracy. Implement checks to flag negative values where they are not expected."
+      },
+      {
+        "issue": "Outliers in Operating Margin",
+        "severity": "medium",
+        "impact": "The presence of outliers (0.46%) in Operating Margin can affect profitability analysis and decision-making.",
+        "recommendation": "Analyze the data for Operating Margin to identify the cause of these outliers and consider adjusting the calculation methodology to better reflect true performance."
+      }
+    ],
+    "overall_quality_score": 70,
+    "priority_actions": [
+      "Investigate and rectify outliers in Retailer ID and other key metrics.",
+      "Implement data validation rules to prevent future data entry errors.",
+      "Review and adjust data collection processes for accuracy in financial metrics."
+    ],
+    "detailed_analysis": "The dataset shows a concerning number of outliers, particularly in Retailer ID, which raises questions about data integrity. The presence of negative values in Total Sales and Operating Profit is particularly alarming and indicates potential data entry or calculation errors. While there are no duplicates, the overall quality is compromised by the significant outlier percentages, especially in critical financial metrics. Addressing these issues is essential for reliable analysis and decision-making."
+  },
+  "summary": {
+    "total_issues": 6,
+    "critical_issues": 4,
+    "data_quality_score": 70
+  }
+}

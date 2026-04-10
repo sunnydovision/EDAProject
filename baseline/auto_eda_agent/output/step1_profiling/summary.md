@@ -2,55 +2,55 @@
 
 ## Dataset Overview
 
-- **Rows**: 1,036
-- **Columns**: 56
-  - Numerical: 23
-  - Categorical: 32
+- **Rows**: 9,648
+- **Columns**: 13
+  - Numerical: 2
+  - Categorical: 11
 
 ## Key Columns
 
 ### High Importance Columns
 
-**Khối lượng**
-- Meaning: Weight of the item
-- Type: Numerical
-- Missing: 0.0%
-
-**Met A**
-- Meaning: Measurement A related to the item
-- Type: Numerical
-- Missing: 0.0%
-
-**Tỷ trọng thực tế**
-- Meaning: Actual density of the item
+**Retailer**
+- Meaning: Retail store or brand selling products
 - Type: Categorical
 - Missing: 0.0%
 
-**Ngày bán**
-- Meaning: Date of sale
+**Retailer ID**
+- Meaning: Unique identifier for each retailer
+- Type: ID
+- Missing: 0.0%
+
+**Invoice Date**
+- Meaning: Date of the transaction or sale
 - Type: Temporal
 - Missing: 0.0%
 
-**Thành Tiền**
-- Meaning: Total amount of the sale
+**Product**
+- Meaning: Type of product sold
+- Type: Categorical
+- Missing: 0.0%
+
+**Price per Unit**
+- Meaning: Cost of a single unit of the product
 - Type: Numerical
 - Missing: 0.0%
 
-**Giá_trên_kg**
-- Meaning: Price per kilogram of the item
+**Units Sold**
+- Meaning: Number of units sold in the transaction
 - Type: Numerical
 - Missing: 0.0%
 
-**Doanh_thu_trên_mm**
-- Meaning: Revenue per millimeter of the item
+**Total Sales**
+- Meaning: Total revenue generated from the transaction
+- Type: Numerical
+- Missing: 0.0%
+
+**Operating Profit**
+- Meaning: Profit earned from the transaction after costs
 - Type: Numerical
 - Missing: 0.0%
 
 ## Data Quality
 
-Columns with missing values:
-
-- **Mã màu**: 32.0%
-- **Tên màu**: 32.0%
-- **Khu Vực (Quận/Huyện)**: 4.7%
-- **Khoảng_cách_đơn_trước**: 4.1%
+No missing values detected.

@@ -1,0 +1,241 @@
+{
+  "statistics": {
+    "numerical_stats": {
+      "Retailer ID": {
+        "count": 9648,
+        "mean": 1173849.7235696518,
+        "median": 1185732.0,
+        "std": 26360.377309331212,
+        "min": 1128299.0,
+        "max": 1197831.0,
+        "q25": 1185732.0,
+        "q75": 1185732.0,
+        "skewness": -1.0805174636022123,
+        "kurtosis": -0.6640960528608013
+      },
+      "Price per Unit": {
+        "count": 9648,
+        "mean": 45.21662520729685,
+        "median": 45.0,
+        "std": 14.705397125008334,
+        "min": 7.0,
+        "max": 110.0,
+        "q25": 35.0,
+        "q75": 55.0,
+        "skewness": 0.3624454995891895,
+        "kurtosis": 0.4301863009988871
+      },
+      "Units Sold": {
+        "count": 9648,
+        "mean": 250.9896735074627,
+        "median": 175.0,
+        "std": 206.02755355382004,
+        "min": 0.0,
+        "max": 975.0,
+        "q25": 105.0,
+        "q75": 325.0,
+        "skewness": 1.356242554453118,
+        "kurtosis": 1.1552121642361604
+      },
+      "Total Sales": {
+        "count": 9648,
+        "mean": 93273.4375,
+        "median": 9576.0,
+        "std": 141916.01672684302,
+        "min": 0.0,
+        "max": 825000.0,
+        "q25": 4254.5,
+        "q75": 150000.0,
+        "skewness": 1.8413591666120177,
+        "kurtosis": 3.143841925336787
+      },
+      "Operating Profit": {
+        "count": 9648,
+        "mean": 34425.282131011605,
+        "median": 4371.5,
+        "std": 54193.12414058952,
+        "min": 0.0,
+        "max": 390000.0,
+        "q25": 1922.0,
+        "q75": 52063.0,
+        "skewness": 2.233597293117571,
+        "kurtosis": 5.820362103934637
+      },
+      "Operating Margin": {
+        "count": 9648,
+        "mean": 42.29912935323383,
+        "median": 41.0,
+        "std": 9.719741850510681,
+        "min": 10.0,
+        "max": 80.0,
+        "q25": 35.0,
+        "q75": 49.0,
+        "skewness": 0.22748151428003213,
+        "kurtosis": 0.17529608277695052
+      }
+    },
+    "categorical_stats": {
+      "Retailer": {
+        "unique_count": 6,
+        "most_common": "Foot Locker",
+        "most_common_count": 2637,
+        "distribution": {
+          "Foot Locker": 2637,
+          "West Gear": 2374,
+          "Sports Direct": 2032,
+          "Kohl's": 1030,
+          "Amazon": 949,
+          "Walmart": 626
+        }
+      },
+      "Invoice Date": {
+        "unique_count": 724,
+        "most_common": "17/1/21",
+        "most_common_count": 77,
+        "distribution": {
+          "17/1/21": 77,
+          "16/3/21": 72,
+          "17/4/21": 72,
+          "17/8/21": 72,
+          "17/11/21": 71,
+          "16/7/21": 70,
+          "16/12/21": 69,
+          "10/1/21": 67,
+          "24/1/21": 67,
+          "17/2/21": 65
+        }
+      },
+      "Region": {
+        "unique_count": 5,
+        "most_common": "West",
+        "most_common_count": 2448,
+        "distribution": {
+          "West": 2448,
+          "Northeast": 2376,
+          "Midwest": 1872,
+          "South": 1728,
+          "Southeast": 1224
+        }
+      },
+      "State": {
+        "unique_count": 50,
+        "most_common": "Texas",
+        "most_common_count": 432,
+        "distribution": {
+          "Texas": 432,
+          "California": 432,
+          "New York": 360,
+          "Florida": 360,
+          "Pennsylvania": 216,
+          "Nevada": 216,
+          "Tennessee": 216,
+          "Alabama": 216,
+          "Virginia": 216,
+          "Utah": 216
+        }
+      },
+      "City": {
+        "unique_count": 52,
+        "most_common": "Portland",
+        "most_common_count": 360,
+        "distribution": {
+          "Portland": 360,
+          "Charleston": 288,
+          "New York": 216,
+          "Houston": 216,
+          "San Francisco": 216,
+          "Los Angeles": 216,
+          "Dallas": 216,
+          "Philadelphia": 216,
+          "Las Vegas": 216,
+          "Knoxville": 216
+        }
+      },
+      "Product": {
+        "unique_count": 6,
+        "most_common": "Men's Street Footwear",
+        "most_common_count": 1610,
+        "distribution": {
+          "Men's Street Footwear": 1610,
+          "Men's Athletic Footwear": 1610,
+          "Women's Street Footwear": 1608,
+          "Women's Apparel": 1608,
+          "Women's Athletic Footwear": 1606,
+          "Men's Apparel": 1606
+        }
+      },
+      "Sales Method": {
+        "unique_count": 3,
+        "most_common": "Online",
+        "most_common_count": 4889,
+        "distribution": {
+          "Online": 4889,
+          "Outlet": 3019,
+          "In-store": 1740
+        }
+      }
+    },
+    "correlations": {
+      "strong_correlations": [
+        {
+          "var1": "Units Sold",
+          "var2": "Total Sales",
+          "correlation": 0.844936119178483
+        },
+        {
+          "var1": "Units Sold",
+          "var2": "Operating Profit",
+          "correlation": 0.8138708043211902
+        },
+        {
+          "var1": "Total Sales",
+          "var2": "Operating Profit",
+          "correlation": 0.9563074748281619
+        }
+      ]
+    }
+  },
+  "interpretation": {
+    "distribution_patterns": "The distributions of the numerical columns exhibit varying degrees of skewness and kurtosis. 'Retailer ID' shows negative skewness (-1.08), indicating a longer tail on the left side, suggesting that most retailers have IDs clustered around the higher values. 'Price per Unit' has a slight positive skewness (0.36), indicating that there are some higher-priced units that are less common. 'Units Sold' has a significant positive skewness (1.36), indicating that most retailers sell fewer units, with a few selling a very high number. 'Total Sales' and 'Operating Profit' show strong positive skewness (1.84 and 2.23, respectively), indicating that while most sales and profits are low, there are a few instances of very high values, leading to a long right tail. The kurtosis values for 'Total Sales' (3.14) and 'Operating Profit' (5.82) suggest heavy tails and a higher peak than a normal distribution, indicating the presence of outliers.",
+    "strong_correlations": [
+      {
+        "variables": "Units Sold and Total Sales",
+        "interpretation": "This strong correlation (0.84) suggests that as the number of units sold increases, total sales also increase significantly. This is expected as higher sales volume typically leads to higher revenue.",
+        "strength": "strong"
+      },
+      {
+        "variables": "Units Sold and Operating Profit",
+        "interpretation": "The correlation of 0.81 indicates that higher units sold are associated with higher operating profit, reinforcing the idea that increased sales volume positively impacts profitability.",
+        "strength": "strong"
+      },
+      {
+        "variables": "Total Sales and Operating Profit",
+        "interpretation": "The very strong correlation (0.96) suggests that total sales are a major driver of operating profit, indicating that increases in sales directly translate to increases in profit.",
+        "strength": "strong"
+      }
+    ],
+    "key_findings": [
+      "The average number of units sold is 250.99, but the distribution is highly skewed, indicating a few retailers sell significantly more units than others.",
+      "Total sales have a high mean of 93273.44, but the presence of extreme values leads to a high standard deviation (141916.02), indicating variability in sales performance.",
+      "Operating profit shows a mean of 34425.28 with a significant positive skew, suggesting that while many retailers have low profits, a few achieve very high profits."
+    ],
+    "statistical_anomalies": [
+      "The maximum value for total sales is 825000, which is significantly higher than the 75th percentile value of 150000, indicating potential outliers.",
+      "The operating profit's maximum of 390000 is also much higher than the 75th percentile (52063), suggesting that a few retailers are performing exceptionally well compared to the majority."
+    ],
+    "recommendations": [
+      "Conduct outlier analysis to identify and understand the factors contributing to the extreme values in total sales and operating profit.",
+      "Perform regression analysis to quantify the relationships between units sold, total sales, and operating profit, providing insights into how changes in one variable affect the others."
+    ]
+  },
+  "summary": {
+    "numerical_columns": 6,
+    "categorical_columns": 7,
+    "strong_correlations": 3,
+    "key_findings": [
+      "The average number of units sold is 250.99, but the distribution is highly skewed, indicating a few retailers sell significantly more units than others.",
+      "Total sales have a high mean of 93273.44, but the presence of extreme values leads to a high standard deviation (141916.02), indicating variability in sales performance.",
+      "Operating profit shows a mean of 34425.28 with a significant positive skew, suggesting that while many retailers have low profits, a few achieve very high profits."
+    ]
+  }
+}

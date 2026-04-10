@@ -1,0 +1,91 @@
+{
+  "system": "Baseline",
+  "num_cards": 31,
+  "num_insights": 31,
+  "yield": 1.0,
+  "avg_score": {
+    "avg_score": 0.9961890036572262,
+    "top10_score": 1.0,
+    "min_score": 0.9656855743903814,
+    "max_score": 1.0,
+    "avg_score_normalized": 0.9961890036572262,
+    "top10_score_normalized": 1.0,
+    "min_score_normalized": 0.9656855743903814,
+    "max_score_normalized": 1.0
+  },
+  "redundancy": {
+    "redundancy": 0.32258064516129037,
+    "unique_count": 21,
+    "total_count": 31,
+    "duplicate_count": 10
+  },
+  "schema_coverage": {
+    "coverage": 0.7692307692307693,
+    "used_columns": [
+      "Invoice Date",
+      "Operating Margin",
+      "Operating Profit",
+      "Price per Unit",
+      "Product",
+      "Region",
+      "Retailer",
+      "Sales Method",
+      "Total Sales",
+      "Units Sold"
+    ],
+    "unused_columns": [
+      "City",
+      "Retailer ID",
+      "State"
+    ],
+    "used_count": 10,
+    "total_count": 13
+  },
+  "pattern_coverage": {
+    "coverage": 0.75,
+    "pattern_counts": {
+      "Trend": 17,
+      "Attribution": 9,
+      "Distribution Difference": 5
+    },
+    "patterns_found": [
+      "Attribution",
+      "Distribution Difference",
+      "Trend"
+    ],
+    "patterns_missing": [
+      "Outstanding Value"
+    ]
+  },
+  "subspace_metrics": {
+    "avg_depth": 0.0,
+    "max_depth": 0,
+    "subspace_rate": 0.0,
+    "unique_subspaces": 0,
+    "depth_distribution": {
+      "depth_0": 31,
+      "depth_1": 0,
+      "depth_2+": 0
+    }
+  },
+  "question_diversity": {
+    "diversity": "0.47576863",
+    "avg_similarity": "0.5242314",
+    "num_questions": 31
+  },
+  "insight_significance": {
+    "avg_zscore": 3.110546198136622,
+    "significant_count": 19,
+    "significant_rate": 0.6129032258064516,
+    "max_zscore": 5.696196017802034,
+    "total_evaluated": 31
+  },
+  "faithfulness": {
+    "faithfulness": 1.0,
+    "verified_count": 31,
+    "total_count": 31,
+    "hallucination_count": 0,
+    "hallucination_rate": 0.0
+  },
+  "time_to_insight": 9.595990896224976
+}

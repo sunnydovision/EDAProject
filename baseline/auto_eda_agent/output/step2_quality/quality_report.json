@@ -1,138 +1,49 @@
 {
   "metrics": {
-    "missing_values": {
-      "Mã màu": {
-        "count": 332,
-        "percentage": 32.04633204633205
-      },
-      "Tên màu": {
-        "count": 332,
-        "percentage": 32.04633204633205
-      },
-      "Khu Vực (Quận/Huyện)": {
-        "count": 49,
-        "percentage": 4.72972972972973
-      },
-      "Khoảng_cách_đơn_trước": {
-        "count": 42,
-        "percentage": 4.054054054054054
-      }
-    },
+    "missing_values": {},
     "outliers": {
-      "Khối lượng": {
-        "count": 99,
-        "percentage": 9.555984555984557,
-        "lower_bound": 2385.0,
-        "upper_bound": 5385.0
+      "Retailer ID": {
+        "count": 4383,
+        "percentage": 45.42910447761194,
+        "lower_bound": 1185732.0,
+        "upper_bound": 1185732.0
       },
-      "Met A": {
-        "count": 89,
-        "percentage": 8.59073359073359,
-        "lower_bound": 456.0,
-        "upper_bound": 1944.0
-      },
-      "Met B": {
-        "count": 40,
-        "percentage": 3.861003861003861,
-        "lower_bound": 0.0,
-        "upper_bound": 0.0
-      },
-      "Met C": {
-        "count": 44,
-        "percentage": 4.247104247104247,
-        "lower_bound": 2.0,
-        "upper_bound": 2.0
-      },
-      "Thành Tiền": {
-        "count": 110,
-        "percentage": 10.617760617760617,
-        "lower_bound": 55343468.125,
-        "upper_bound": 117681381.125
-      },
-      "Năm": {
-        "count": 225,
-        "percentage": 21.71814671814672,
-        "lower_bound": 2025.0,
-        "upper_bound": 2025.0
-      },
-      "Tháng": {
-        "count": 225,
-        "percentage": 21.71814671814672,
-        "lower_bound": 3.5,
-        "upper_bound": 15.5
-      },
-      "Giá_trên_kg": {
-        "count": 3,
-        "percentage": 0.28957528957528955,
-        "lower_bound": 17029.375,
-        "upper_bound": 26742.375
-      },
-      "Doanh_thu_trên_mm": {
-        "count": 110,
-        "percentage": 10.617760617760617,
-        "lower_bound": 46119.125,
-        "upper_bound": 98068.125
-      },
-      "Khoảng_cách_đơn_trước": {
-        "count": 84,
-        "percentage": 8.108108108108109,
-        "lower_bound": -9.0,
-        "upper_bound": 15.0
-      },
-      "Doanh_thu_tb_mỗi_lần": {
-        "count": 38,
-        "percentage": 3.667953667953668,
-        "lower_bound": 67224138.0,
-        "upper_bound": 97392802.0
-      },
-      "Cờ_giao_dịch_bất_thường": {
-        "count": 40,
-        "percentage": 3.861003861003861,
-        "lower_bound": 0.0,
-        "upper_bound": 0.0
-      },
-      "Điểm_hài_lòng_khách_hàng": {
-        "count": 22,
-        "percentage": 2.1235521235521233,
-        "lower_bound": 47.5,
-        "upper_bound": 107.5
+      "Units Sold": {
+        "count": 627,
+        "percentage": 6.498756218905473,
+        "lower_bound": -225.0,
+        "upper_bound": 655.0
       }
     },
     "duplicates": 0,
-    "total_issues": 17
+    "total_issues": 2
   },
   "assessment": {
     "critical_issues": [
       {
-        "issue": "High percentage of missing values in 'Mã màu' and 'Tên màu'",
+        "issue": "Outliers in Retailer ID",
         "severity": "high",
-        "impact": "The high percentage of missing values (32%) in these critical fields can lead to incomplete analyses and misinterpretations, affecting decision-making processes.",
-        "recommendation": "Implement data collection improvements to ensure that these fields are filled out during data entry. Consider using validation rules to enforce mandatory fields."
+        "impact": "The presence of a significant number of outliers (45.43%) in Retailer ID indicates potential data entry errors or inconsistencies. This can lead to misattribution of sales data to incorrect retailers, skewing analysis and reporting.",
+        "recommendation": "Investigate the source of these outliers. Validate the Retailer ID entries against a trusted reference dataset to ensure accuracy and consistency."
       },
       {
-        "issue": "Significant outliers in 'Thành Tiền' and 'Năm'",
-        "severity": "high",
-        "impact": "Outliers can skew results and lead to incorrect conclusions about trends and averages, especially in financial metrics like 'Thành Tiền'.",
-        "recommendation": "Conduct a thorough investigation to understand the cause of these outliers and determine if they should be corrected or removed from the dataset."
-      },
-      {
-        "issue": "Outliers in 'Khối lượng' and 'Doanh_thu_trên_mm'",
+        "issue": "Outliers in Units Sold",
         "severity": "medium",
-        "impact": "While not as severe as the previous issues, these outliers can still affect the reliability of the dataset, leading to potential miscalculations in analyses.",
-        "recommendation": "Analyze the context of these outliers and apply appropriate statistical methods to handle them, such as winsorizing or transformation."
+        "impact": "With 6.50% of Units Sold being classified as outliers, this could distort sales performance analysis and forecasting. Negative values, in particular, are concerning as they may indicate data entry errors.",
+        "recommendation": "Review the entries for Units Sold, especially those with negative values. Implement validation rules to prevent negative entries and consider using statistical methods to identify and handle outliers appropriately."
       }
     ],
-    "overall_quality_score": 65,
+    "overall_quality_score": 70,
     "priority_actions": [
-      "Enhance data entry processes to reduce missing values.",
-      "Investigate and address outliers in critical financial metrics.",
-      "Implement regular data quality audits to monitor and maintain data integrity."
+      "Conduct a thorough review of Retailer ID entries to identify and correct outliers.",
+      "Implement validation checks for Units Sold to prevent negative values and ensure data integrity.",
+      "Establish a regular data quality monitoring process to identify and address issues proactively."
     ],
-    "detailed_analysis": "The dataset exhibits significant quality issues, particularly with missing values and outliers. The high percentage of missing values in key fields like 'Mã màu' and 'Tên màu' poses a critical risk to data completeness and reliability. Additionally, the presence of numerous outliers in financial and measurement metrics suggests potential data entry errors or anomalies that could mislead analyses. Addressing these issues through improved data collection methods and regular audits will enhance overall data quality."
+    "detailed_analysis": "The dataset exhibits critical quality issues primarily related to outliers in key fields. The high percentage of outliers in Retailer ID suggests significant data integrity concerns, which could lead to erroneous insights and decisions. The outliers in Units Sold, while less severe, still pose a risk to accurate sales reporting. The absence of missing values and duplicates is a positive aspect, but the presence of these outliers necessitates immediate attention to enhance overall data reliability."
   },
   "summary": {
-    "total_issues": 17,
-    "critical_issues": 3,
-    "data_quality_score": 65
+    "total_issues": 2,
+    "critical_issues": 2,
+    "data_quality_score": 70
   }
 }

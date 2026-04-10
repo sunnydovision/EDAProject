@@ -52,7 +52,7 @@ def parse_measure(measure_str: str) -> tuple[str, str]:
     Returns (agg_lower, column_name).
     """
     s = measure_str.strip()
-    m = re.match(r"(SUM|MEAN|COUNT|MIN|MAX)\s*\(\s*([^)]+)\s*\)", s, re.IGNORECASE)
+    m = re.match(r"(SUM|MEAN|AVG|COUNT|MIN|MAX)\s*\(\s*([^)]+)\s*\)", s, re.IGNORECASE)
     if m:
         return m.group(1).lower(), m.group(2).strip()
     if re.match(r"COUNT\s*\(\s*\*\s*\)", s, re.IGNORECASE):

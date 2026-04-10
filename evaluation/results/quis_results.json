@@ -1,0 +1,90 @@
+{
+  "system": "QUIS",
+  "num_cards": 89,
+  "num_insights": 89,
+  "yield": 1.0,
+  "avg_score": {
+    "avg_score": 2.720833472516095,
+    "top10_score": 15.560450607651962,
+    "min_score": 0.3819715197516494,
+    "max_score": 55.24543544244688,
+    "avg_score_normalized": 0.413032204921504,
+    "top10_score_normalized": 0.9699531690272705,
+    "min_score_normalized": 0.0,
+    "max_score_normalized": 0.9993930162890636
+  },
+  "redundancy": {
+    "redundancy": 0.0,
+    "unique_count": 89,
+    "total_count": 89,
+    "duplicate_count": 0
+  },
+  "schema_coverage": {
+    "coverage": 1.0,
+    "used_columns": [
+      "City",
+      "Invoice Date",
+      "Operating Margin",
+      "Operating Profit",
+      "Price per Unit",
+      "Product",
+      "Region",
+      "Retailer",
+      "Retailer ID",
+      "Sales Method",
+      "State",
+      "Total Sales",
+      "Units Sold"
+    ],
+    "unused_columns": [],
+    "used_count": 13,
+    "total_count": 13
+  },
+  "pattern_coverage": {
+    "coverage": 1.0,
+    "pattern_counts": {
+      "Outstanding Value": 63,
+      "Trend": 5,
+      "Attribution": 12,
+      "Distribution Difference": 9
+    },
+    "patterns_found": [
+      "Attribution",
+      "Distribution Difference",
+      "Outstanding Value",
+      "Trend"
+    ],
+    "patterns_missing": []
+  },
+  "subspace_metrics": {
+    "avg_depth": 0.47191011235955055,
+    "max_depth": 1,
+    "subspace_rate": 0.47191011235955055,
+    "unique_subspaces": 41,
+    "depth_distribution": {
+      "depth_0": 47,
+      "depth_1": 42,
+      "depth_2+": 0
+    }
+  },
+  "question_diversity": {
+    "diversity": "0.49715263",
+    "avg_similarity": "0.5028474",
+    "num_questions": 89
+  },
+  "insight_significance": {
+    "avg_zscore": 2.7582844484588533,
+    "significant_count": 33,
+    "significant_rate": 0.3707865168539326,
+    "max_zscore": 7.400311411416934,
+    "total_evaluated": 61
+  },
+  "faithfulness": {
+    "faithfulness": 0.9662921348314607,
+    "verified_count": 86,
+    "total_count": 89,
+    "hallucination_count": 3,
+    "hallucination_rate": 0.033707865168539325
+  },
+  "time_to_insight": 12.972317934036255
+}
