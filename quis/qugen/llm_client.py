@@ -4,6 +4,8 @@ LLM client for QUGEN. Paper uses Llama-3-70b-instruct; we support OpenAI-compati
 
 from __future__ import annotations
 
+import atexit
+import json
 import os
 from abc import ABC, abstractmethod
 from typing import Any
@@ -11,9 +13,64 @@ from typing import Any
 # Optional: use OPENAI_API_BASE for local/vendor Llama endpoints
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 OPENAI_API_BASE = os.getenv("OPENAI_API_BASE", None)  # e.g. "https://.../v1"
-# Default: gpt-5.4-nano khi dùng Responses API; hoặc gpt-4o-mini cho Chat Completions
+# Default: gpt-5.4 khi dùng Responses API; hoặc gpt-4o-mini cho Chat Completions
 USE_RESPONSES_API = os.getenv("OPENAI_USE_RESPONSES_API", "1").strip().lower() in ("1", "true", "yes")
-MODEL_NAME = os.getenv("QUGEN_LLM_MODEL", "gpt-5.4-mini" if USE_RESPONSES_API else "gpt-4o-mini")
+MODEL_NAME = os.getenv("QUGEN_LLM_MODEL", "gpt-5.4" if USE_RESPONSES_API else "gpt-4o-mini")
+
+# Cumulative token usage per process (OpenAI-compatible usage on response objects).
+_SESSION_USAGE: dict[str, int] = {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "total_tokens": 0,
+    "requests": 0,
+}
+_LAST_MODEL_USED: str | None = None
+
+
+def _add_usage_from_response(resp: Any) -> None:
+    u = getattr(resp, "usage", None)
+    if u is None:
+        return
+    inp = getattr(u, "input_tokens", None)
+    if inp is None:
+        inp = getattr(u, "prompt_tokens", None)
+    out = getattr(u, "output_tokens", None)
+    if out is None:
+        out = getattr(u, "completion_tokens", None)
+    tot = getattr(u, "total_tokens", None)
+    inp_i = int(inp or 0)
+    out_i = int(out or 0)
+    if tot is None:
+        tot_i = inp_i + out_i
+    else:
+        tot_i = int(tot)
+    _SESSION_USAGE["input_tokens"] += inp_i
+    _SESSION_USAGE["output_tokens"] += out_i
+    _SESSION_USAGE["total_tokens"] += tot_i
+    _SESSION_USAGE["requests"] += 1
+
+
+def _flush_usage_file() -> None:
+    path = os.getenv("QUIS_USAGE_OUTPUT", "").strip()
+    if not path or _SESSION_USAGE["requests"] <= 0:
+        return
+    try:
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(
+                {**_SESSION_USAGE, "model": _LAST_MODEL_USED or MODEL_NAME},
+                f,
+                indent=2,
+            )
+    except OSError:
+        pass
+
+
+atexit.register(_flush_usage_file)
+
+
+def get_session_usage() -> dict[str, Any]:
+    """Copy of accumulated usage for this process (tokens + request count)."""
+    return {**_SESSION_USAGE}
 
 
 class BaseLLMClient(ABC):
@@ -79,6 +136,8 @@ class OpenAICompatibleClient(BaseLLMClient):
         max_tokens: int = 2048,
         stop: list[str] | None = None,
     ) -> str:
+        global _LAST_MODEL_USED
+        _LAST_MODEL_USED = self.model
         client = self._get_client()
 
         if self._use_responses_api and hasattr(client, "responses"):
@@ -92,6 +151,7 @@ class OpenAICompatibleClient(BaseLLMClient):
             # Model reasoning tốn token → cần đủ token cho cả reasoning + output (tối thiểu 8192)
             kwargs["max_output_tokens"] = max(max_tokens or 2048, 8192)
             resp = client.responses.create(**kwargs)
+            _add_usage_from_response(resp)
             text = getattr(resp, "output_text", None) or ""
             if not (text and text.strip()) and getattr(resp, "output", None):
                 # Fallback: gom text từ output (message items với content type output_text)
@@ -114,6 +174,7 @@ class OpenAICompatibleClient(BaseLLMClient):
             if stop:
                 kwargs["stop"] = stop
             resp = client.chat.completions.create(**kwargs)
+            _add_usage_from_response(resp)
             return (resp.choices[0].message.content or "").strip()
 
 

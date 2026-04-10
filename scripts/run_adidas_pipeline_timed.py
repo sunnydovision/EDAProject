@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 """
-Full Adidas pipeline: QUGEN (question/cards) → ISGEN (insights), with timing.
+Full Adidas pipeline: QUGEN (question/cards) → ISGEN (insights), with timing + LLM token usage.
 Usage: python scripts/run_adidas_pipeline_timed.py [--suffix 2]
-Outputs: insight_cards_adidas_{suffix}.json, insights_summary_adidas_{suffix}.json, adidas_pipeline_timing_{suffix}.txt
+Outputs: insight_cards_adidas_{suffix}.json, insights_summary_adidas_{suffix}.json,
+         adidas_pipeline_timing_{suffix}.txt, adidas_llm_usage_qugen_{suffix}.json, adidas_llm_usage_isgen_{suffix}.json
 """
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import subprocess
 import sys
@@ -14,6 +16,26 @@ import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def _load_usage(path: Path) -> dict:
+    if not path.is_file():
+        return {}
+    try:
+        with open(path, encoding="utf-8") as f:
+            return json.load(f)
+    except (json.JSONDecodeError, OSError):
+        return {}
+
+
+def _usage_tokens(d: dict) -> tuple[int, int, int, int]:
+    """input, output, total, requests"""
+    return (
+        int(d.get("input_tokens", 0)),
+        int(d.get("output_tokens", 0)),
+        int(d.get("total_tokens", 0)),
+        int(d.get("requests", 0)),
+    )
 
 
 def main() -> None:
@@ -40,15 +62,23 @@ def main() -> None:
         sys.exit(1)
 
     py = sys.executable
+    usage_qugen_path = ROOT / f"adidas_llm_usage_qugen_{suf}.json"
+    usage_isgen_path = ROOT / f"adidas_llm_usage_isgen_{suf}.json"
+
     t0 = time.perf_counter()
+    env_q = os.environ.copy()
+    env_q["QUIS_USAGE_OUTPUT"] = str(usage_qugen_path)
     r1 = subprocess.run(
         [py, str(ROOT / "run_qugen.py"), "--csv", str(csv_path), "--output", str(cards_path)],
         cwd=str(ROOT),
+        env=env_q,
     )
     t1 = time.perf_counter()
     if r1.returncode != 0:
         sys.exit(r1.returncode)
 
+    env_i = os.environ.copy()
+    env_i["QUIS_USAGE_OUTPUT"] = str(usage_isgen_path)
     r2 = subprocess.run(
         [
             py,
@@ -61,6 +91,7 @@ def main() -> None:
             str(summary_path),
         ],
         cwd=str(ROOT),
+        env=env_i,
     )
     t2 = time.perf_counter()
     if r2.returncode != 0:
@@ -69,6 +100,15 @@ def main() -> None:
     q_sec = t1 - t0
     i_sec = t2 - t1
     total_sec = t2 - t0
+
+    uq = _load_usage(usage_qugen_path)
+    ui = _load_usage(usage_isgen_path)
+    iq, oq, tq, rq = _usage_tokens(uq)
+    ii, oi, ti, ri = _usage_tokens(ui)
+    i_tot = iq + ii
+    o_tot = oq + oi
+    tok_tot = tq + ti
+    req_tot = rq + ri
 
     model = os.getenv("QUGEN_LLM_MODEL", "(default from llm_client)")
     lines = [
@@ -80,6 +120,12 @@ def main() -> None:
         f"  QUGEN (question/card generation): {q_sec:.3f}",
         f"  ISGEN (insight generation):       {i_sec:.3f}",
         f"  Total (start → insights complete): {total_sec:.3f}",
+        "",
+        "LLM token usage (from OpenAI API usage fields, per process):",
+        f"  QUGEN:  input={iq:,}  output={oq:,}  total={tq:,}  requests={rq:,}",
+        f"  ISGEN:  input={ii:,}  output={oi:,}  total={ti:,}  requests={ri:,}",
+        f"  Sum:    input={i_tot:,}  output={o_tot:,}  total={tok_tot:,}  requests={req_tot:,}",
+        f"  Detail files: {usage_qugen_path.name}, {usage_isgen_path.name}",
         "",
         f"Outputs: {cards_path.name}, {summary_path.name}",
     ]

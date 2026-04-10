@@ -71,6 +71,12 @@ def _cached_discover_history(_project_root: str) -> tuple:
             os.path.join(root, "data", f"{name.capitalize()}.csv"),
             os.path.join(root, f"{name}.csv"),
         ]
+        # Runs named e.g. insights_summary_adidas_2.json still use the Adidas retail CSV.
+        if "adidas" in name.lower():
+            for ad in (os.path.join(root, "data", "Adidas.csv"), os.path.join(root, "data", "adidas.csv")):
+                if os.path.isfile(ad):
+                    csv_candidates = [ad] + [p for p in csv_candidates if p != ad]
+                    break
         if not any(os.path.isfile(p) for p in csv_candidates):
             for p in glob.glob(os.path.join(root, "data", "*.csv")):
                 if os.path.basename(p).lower() == f"{name.lower()}.csv":
@@ -1707,10 +1713,25 @@ def run_app():
             )
         else:
             labels = [h["label"] for h in history]
+            preferred = (os.getenv("SUN_SMART_DEFAULT_HISTORY") or "").strip().lower()
+            default_idx = 0
+            if preferred:
+                for i, h in enumerate(history):
+                    base = os.path.basename(h["insights_path"]).lower()
+                    slug = base.replace("insights_summary_", "").replace(".json", "")
+                    if slug == preferred or preferred in slug:
+                        default_idx = i
+                        break
+            else:
+                for i, h in enumerate(history):
+                    if "insights_summary_adidas_2.json" in h["insights_path"].replace("\\", "/"):
+                        default_idx = i
+                        break
             selected_idx = st.selectbox(
                 "Saved analysis",
                 range(len(labels)),
                 format_func=lambda i: labels[i],
+                index=min(default_idx, max(len(labels) - 1, 0)),
                 key="history_dataset_select",
             )
 

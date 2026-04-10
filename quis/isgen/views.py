@@ -88,11 +88,24 @@ def compute_view(df, breakdown: str, measure_str: str, subspace: Subspace | None
     if breakdown_resolved not in df.columns:
         return [], []
 
+    def _agg_numeric_safe(frame, bcol: str, mcol: str, how: str):
+        """Coerce measure to numeric before mean/sum/min/max so object dates/strings don't break groupby."""
+        import pandas as pd
+
+        h = how
+        if h == "avg":
+            h = "mean"
+        if h in ("mean", "sum", "min", "max", "median", "std"):
+            work = frame[[bcol, mcol]].copy()
+            work[mcol] = pd.to_numeric(work[mcol], errors="coerce")
+            return work.groupby(bcol)[mcol].agg(h)
+        return frame.groupby(bcol)[mcol].agg(h)
+
     if measure_col == "*" or agg_name == "count":
         if measure_col != "*":
             measure_resolved = resolve_column(measure_col, list(df.columns)) or measure_col
             if measure_resolved in df.columns:
-                ser = df.groupby(breakdown_resolved)[measure_resolved].agg(agg_name)
+                ser = _agg_numeric_safe(df, breakdown_resolved, measure_resolved, agg_name)
             else:
                 ser = df.groupby(breakdown_resolved).size()
         else:
@@ -101,7 +114,7 @@ def compute_view(df, breakdown: str, measure_str: str, subspace: Subspace | None
         measure_resolved = resolve_column(measure_col, list(df.columns)) or measure_col
         if measure_resolved not in df.columns:
             return [], []
-        ser = df.groupby(breakdown_resolved)[measure_resolved].agg(agg_name)
+        ser = _agg_numeric_safe(df, breakdown_resolved, measure_resolved, agg_name)
 
     ser = ser.dropna()
     # Aggregates may be non-numeric if measure targeted date/text (e.g. MEAN on Invoice Date as string).
