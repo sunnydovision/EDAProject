@@ -1,0 +1,17 @@
+Adidas pipeline — QUGEN (questions/cards) → ISGEN (insights)
+CSV: /Users/ngocuit/Desktop/EDAProj/data/Adidas_cleaned.csv
+QUGEN_LLM_MODEL=gpt-5.4
+OPENAI_USE_RESPONSES_API=
+
+Wall-clock seconds:
+  QUGEN (question/card generation): 515.707
+  ISGEN (insight generation):       114.024
+  Total (start → insights complete): 629.731
+
+LLM token usage (from OpenAI API usage fields, per process):
+  QUGEN:  input=47,254  output=24,117  total=71,371  requests=31
+  ISGEN:  input=6,279  output=1,154  total=7,433  requests=70
+  Sum:    input=53,533  output=25,271  total=78,804  requests=101
+  Detail files: adidas_llm_usage_qugen_cleaned.json, adidas_llm_usage_isgen_cleaned.json
+
+Outputs: insight_cards_adidas_cleaned.json, insights_summary_adidas_cleaned.json

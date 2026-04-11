@@ -71,9 +71,13 @@ def _cached_discover_history(_project_root: str) -> tuple:
             os.path.join(root, "data", f"{name.capitalize()}.csv"),
             os.path.join(root, f"{name}.csv"),
         ]
-        # Runs named e.g. insights_summary_adidas_2.json still use the Adidas retail CSV.
-        if "adidas" in name.lower():
-            for ad in (os.path.join(root, "data", "Adidas.csv"), os.path.join(root, "data", "adidas.csv")):
+        # Adidas retail pipeline: insights_summary_adidas_cleaned.json → data/Adidas_cleaned.csv
+        nl = name.lower()
+        if nl == "adidas_cleaned":
+            for ad in (
+                os.path.join(root, "data", "Adidas_cleaned.csv"),
+                os.path.join(root, "data", "adidas_cleaned.csv"),
+            ):
                 if os.path.isfile(ad):
                     csv_candidates = [ad] + [p for p in csv_candidates if p != ad]
                     break
@@ -373,6 +377,8 @@ def _style_app():
             padding: 1.25rem 1.5rem;
             position: relative;
             overflow: hidden;
+            margin-bottom: 2rem;
+            isolation: isolate;
         }}
         .cl-preview::before {{
             content: "";
@@ -384,9 +390,19 @@ def _style_app():
         }}
         .cl-preview-header {{
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.65rem 1rem;
             margin-bottom: 1rem;
+        }}
+        .cl-preview-header-badges {{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 0.45rem;
+            max-width: 100%;
         }}
         .cl-preview-title {{
             font-size: 0.78rem;
@@ -432,10 +448,39 @@ def _style_app():
         .cl-preview-footer {{
             background: var(--surface-mid);
             border-radius: 14px;
-            padding: 1rem 1.15rem;
+            padding: 0.85rem 1rem;
             display: flex;
             align-items: center;
             gap: 0.75rem;
+            flex-wrap: nowrap;
+            margin-top: 0.75rem;
+            margin-bottom: 0;
+            position: relative;
+            z-index: 1;
+        }}
+        .cl-preview-footer--compact {{
+            padding: 0.65rem 0.95rem;
+        }}
+        .cl-preview-stat-line {{
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--on-surface);
+            margin: 0;
+            line-height: 1.35;
+        }}
+        .cl-preview-stat-num {{
+            font-family: "Manrope", sans-serif;
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--tertiary);
+            margin-right: 0.35rem;
+        }}
+        .cl-report-metrics-spacer {{
+            display: block;
+            min-height: 1px;
+            margin-top: 1.25rem;
+            margin-bottom: 0.25rem;
+            clear: both;
         }}
         .cl-preview-big {{
             font-family: "Manrope", sans-serif;
@@ -476,15 +521,23 @@ def _style_app():
             margin: 0.3rem 0 0;
         }}
 
-        /* ── Metric card (4-col) ── */
+        /* ── Metric cards (equal height; labels one line when space allows) ── */
         .cl-metric {{
             background: var(--surface-mid);
             border: 1px solid rgba(64, 72, 93, 0.15);
             border-radius: 14px;
-            padding: 1.1rem 1.25rem;
+            padding: 1rem 0.85rem;
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.75rem;
+            min-width: 0;
+            box-sizing: border-box;
+            min-height: 6.25rem;
+            height: 100%;
+        }}
+        .cl-metric-body {{
+            flex: 1;
+            min-width: 0;
         }}
         .cl-metric-icon {{
             width: 48px; height: 48px;
@@ -499,19 +552,22 @@ def _style_app():
         .cl-metric-icon--dim {{ background: rgba(163, 170, 196, 0.1); color: var(--on-surface-var); }}
         .cl-metric-icon--accent {{ background: rgba(255, 110, 132, 0.1); color: var(--error); }}
         .cl-metric-label {{
-            font-size: 0.82rem;
+            font-size: 0.72rem;
             font-weight: 700;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.07em;
             text-transform: uppercase;
             color: var(--on-surface-var);
             margin: 0 0 0.15rem;
+            white-space: nowrap;
+            line-height: 1.25;
         }}
         .cl-metric-value {{
             font-family: "Manrope", sans-serif;
-            font-size: 1.8rem;
+            font-size: 1.75rem;
             font-weight: 800;
             color: var(--on-surface);
             margin: 0;
+            line-height: 1.1;
         }}
 
         h1, h2, h3, h4 {{
@@ -536,6 +592,68 @@ def _style_app():
             color: var(--on-surface) !important;
             font-weight: 600 !important;
         }}
+
+        /* ── Generated question: insight body inside expander ── */
+        .cl-q-insight {{
+            padding: 0.1rem 0 0.2rem;
+        }}
+        .cl-q-insight-why {{
+            font-size: 1.05rem;
+            line-height: 1.65;
+            color: var(--on-surface);
+            margin: 0 0 1rem;
+        }}
+        .cl-q-insight-why-keyword {{
+            font-weight: 700;
+            color: var(--on-surface);
+        }}
+        .cl-q-insight-why-sep {{
+            color: var(--on-surface-var);
+            font-weight: 500;
+        }}
+        .cl-q-insight-why-text {{
+            font-weight: 400;
+        }}
+        .cl-q-insight-meta {{
+            font-size: 0.92rem;
+            line-height: 1.55;
+            padding-top: 0.75rem;
+            margin-top: 0.15rem;
+            border-top: 1px solid rgba(64, 72, 93, 0.28);
+        }}
+        .cl-q-insight-meta-k {{
+            color: var(--on-surface-var);
+            font-weight: 600;
+            margin-right: 0.35rem;
+        }}
+        .cl-q-insight-meta-mid {{
+            color: var(--on-surface-var);
+            margin: 0 0.4rem;
+        }}
+        .cl-q-insight-meta-v {{
+            color: var(--tertiary);
+            font-weight: 600;
+        }}
+
+        /* ── Insight card: header above chart (merged layout) ── */
+        .cl-insight-card-head {{
+            position: relative;
+            padding-top: 0.45rem;
+            margin: -0.15rem 0 0.35rem 0;
+        }}
+        .cl-insight-card-head--primary::before,
+        .cl-insight-card-head--tertiary::before,
+        .cl-insight-card-head--dim::before {{
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            border-radius: 8px 8px 0 0;
+        }}
+        .cl-insight-card-head--primary::before {{ background: linear-gradient(90deg, var(--primary), var(--primary-dim)); }}
+        .cl-insight-card-head--tertiary::before {{ background: linear-gradient(90deg, var(--tertiary), var(--tertiary-dim)); }}
+        .cl-insight-card-head--dim::before {{ background: linear-gradient(90deg, var(--on-surface-var), var(--surface-bright)); }}
+        .cl-insight-question--tight {{ margin-bottom: 0.35rem !important; }}
 
         div[data-testid="stFileUploader"] {{
             background: var(--surface-low);
@@ -804,7 +922,7 @@ def _metric_card(icon: str, icon_variant: str, label: str, value: str, img_icon:
             <div class="cl-metric-icon cl-metric-icon--{icon_variant}">
                 {icon_inner}
             </div>
-            <div>
+            <div class="cl-metric-body">
                 <p class="cl-metric-label">{label}</p>
                 <p class="cl-metric-value">{value}</p>
             </div>
@@ -854,19 +972,13 @@ def _insight_preview(df: pd.DataFrame | None, insight_summaries: list | None):
                     {_icon_img("icon_insight.png", height=22)}
                     Insights Overview
                 </p>
-                <span class="ai-chip--dim ai-chip" style="font-size:0.7rem;padding:0.25rem 0.6rem;">
-                    {n_rows} rows &middot; {n_cols} cols
-                </span>
+                <div class="cl-preview-header-badges">
+                    <span class="ai-chip--dim ai-chip" style="font-size:0.7rem;padding:0.25rem 0.6rem;">
+                        {n_rows} rows &middot; {n_cols} cols
+                    </span>
+                </div>
             </div>
             <div class="cl-preview-grid">{mini_cards}</div>
-            <div class="cl-preview-footer">
-                {_icon_img("icon_wand.png", height=36)}
-                <div>
-                    <p class="cl-preview-big-label" style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--on-surface-var);margin:0;">AI-GENERATED</p>
-                    <p class="cl-preview-big">{n_insights} <span style="font-size:1rem;font-weight:500;color:var(--on-surface-var);">Insights Found</span></p>
-                </div>
-                <span class="cl-pulse" style="margin-left:auto;"></span>
-            </div>
         </div>
         """,
         unsafe_allow_html=True,
@@ -928,34 +1040,18 @@ def _render_history_preview_charts(insight_data: list, key_suffix: str = "0"):
     else:
         st.caption("No patterns to chart.")
 
-    n = len(insight_data)
-    st.markdown(
-        f"""
-        <div class="cl-preview-footer" style="margin-top:0.75rem;">
-            {_icon_img("icon_chart.png", height=32)}
-            <div style="flex:1;">
-                <p class="cl-preview-big-label" style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--on-surface-var);margin:0;">AI-GENERATED</p>
-                <p class="cl-preview-big">{n} <span style="font-size:1rem;font-weight:500;color:var(--on-surface-var);">Insights Found</span></p>
-            </div>
-            <span class="cl-pulse" style="margin-left:auto;"></span>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
-
-
 def _render_overview_metrics_optional(df: pd.DataFrame | None, n_insights: int):
-    """4 metric cards; use placeholders when dataframe is missing."""
-    m1, m2, m3, m4 = st.columns(4)
+    """Four equal metric cards: AI Insight count, then dataset shape."""
+    m1, m2, m3, m4 = st.columns(4, gap="small")
     with m1:
-        _metric_card("grid_view", "primary", "Rows", f"{len(df):,}" if df is not None else "—", img_icon="icon_csv.png")
+        _metric_card("auto_awesome", "tertiary", "AI Insight", str(n_insights), img_icon="icon_insight.png")
     with m2:
-        _metric_card("view_column", "tertiary", "Columns", str(len(df.columns)) if df is not None else "—", img_icon="icon_database.png")
+        _metric_card("grid_view", "primary", "Rows", f"{len(df):,}" if df is not None else "—", img_icon="icon_csv.png")
     with m3:
+        _metric_card("view_column", "tertiary", "Columns", str(len(df.columns)) if df is not None else "—", img_icon="icon_database.png")
+    with m4:
         nc = len(df.select_dtypes(include="number").columns) if df is not None else 0
         _metric_card("functions", "dim", "Numeric Features", str(nc) if df is not None else "—", img_icon="icon_chart.png")
-    with m4:
-        _metric_card("auto_awesome", "accent", "AI Findings", str(n_insights), img_icon="icon_insight.png")
 
 
 # ───────────────────────────────────────────────────────────────────────────
@@ -1267,7 +1363,6 @@ def _make_chart(insight: dict):
 # ───────────────────────────────────────────────────────────────────────────
 # Pagination & results
 # ───────────────────────────────────────────────────────────────────────────
-_QUESTIONS_PER_PAGE = 20
 _INSIGHTS_PER_PAGE = 5
 _TABLE_ROWS_PER_PAGE = 20
 
@@ -1337,6 +1432,33 @@ def _group_insights_by_pattern(
     return buckets, other
 
 
+def _render_generated_question_insight_body(
+    reason: str,
+    breakdown: str,
+    measure: str,
+    em: str,
+) -> None:
+    """Expanded content under a candidate question: Why · narrative and Breakdown / Measure."""
+    rs = (reason or "").strip() or em
+    bd = (breakdown or "").strip() or em
+    ms = (measure or "").strip() or em
+    st.markdown(
+        f"""<div class="cl-q-insight">
+            <p class="cl-q-insight-why">
+                <span class="cl-q-insight-why-keyword">Why</span><span class="cl-q-insight-why-sep"> · </span><span class="cl-q-insight-why-text">{html.escape(rs)}</span>
+            </p>
+            <div class="cl-q-insight-meta">
+                <span class="cl-q-insight-meta-k">Breakdown</span>
+                <span class="cl-q-insight-meta-v">{html.escape(bd)}</span>
+                <span class="cl-q-insight-meta-mid"> · </span>
+                <span class="cl-q-insight-meta-k">Measure</span>
+                <span class="cl-q-insight-meta-v">{html.escape(ms)}</span>
+            </div>
+        </div>""",
+        unsafe_allow_html=True,
+    )
+
+
 def _render_one_insight_card(
     item: dict,
     orig_idx: int,
@@ -1350,35 +1472,47 @@ def _render_one_insight_card(
     base_expl = item.get("explanation", "")
     pattern = ins.get("pattern", "")
     question = item.get("question", "")
+    why_reason = ins.get("reason", "") or ""
+    breakdown = ins.get("breakdown", "") or ""
+    measure = ins.get("measure", "") or ""
     description = _get_llm_description_cached(llm_client, ins, base_expl, use_llm_explanations)
     recommendation = _build_recommendation(ins)
     chart = _make_chart(ins)
     accent = _accents[accent_idx % len(_accents)]
-    st.markdown(
-        f"""<div class="cl-insight-card cl-insight-card--{accent}">
-            <p class="cl-insight-pattern">{html.escape((pattern or "Insight").upper())}</p>
-            <p class="cl-insight-question">{html.escape(question or "Untitled insight")}</p>
-        </div>""",
-        unsafe_allow_html=True,
-    )
-    col_chart, col_text = st.columns([1.15, 1], gap="large")
     plot_key = f"{plot_key_prefix}_{orig_idx}"
-    with col_chart:
-        if chart is not None:
-            try:
-                st.plotly_chart(chart, use_container_width=True, config={"displayModeBar": False}, key=plot_key)
-            except TypeError:
-                st.plotly_chart(chart, config={"displayModeBar": False}, key=plot_key)
-        else:
-            st.caption("Chart not available for this insight.")
-    with col_text:
-        st.markdown('<p class="cl-label">Summary</p>', unsafe_allow_html=True)
-        if description:
-            st.markdown(description)
-        else:
-            st.caption("\u2014")
-        st.markdown('<p class="cl-label" style="margin-top:1rem;">Recommendation</p>', unsafe_allow_html=True)
-        st.markdown(f'<div class="cl-reco">{html.escape(recommendation)}</div>', unsafe_allow_html=True)
+    _em = "\u2014"
+
+    try:
+        insight_stack = st.container(border=True)
+    except TypeError:
+        insight_stack = st.container()
+    with insight_stack:
+        st.markdown(
+            f"""<div class="cl-insight-card-head cl-insight-card-head--{accent}">
+            <p class="cl-insight-pattern">{html.escape((pattern or "Insight").upper())}</p>
+        </div>""",
+            unsafe_allow_html=True,
+        )
+        with st.expander(question or "Untitled insight", expanded=False):
+            _render_generated_question_insight_body(why_reason, breakdown, measure, _em)
+
+        col_chart, col_text = st.columns([1.15, 1], gap="large")
+        with col_chart:
+            if chart is not None:
+                try:
+                    st.plotly_chart(chart, use_container_width=True, config={"displayModeBar": False}, key=plot_key)
+                except TypeError:
+                    st.plotly_chart(chart, config={"displayModeBar": False}, key=plot_key)
+            else:
+                st.caption("Chart not available for this insight.")
+        with col_text:
+            st.markdown('<p class="cl-label">Summary</p>', unsafe_allow_html=True)
+            if description:
+                st.markdown(description)
+            else:
+                st.caption(_em)
+            st.markdown('<p class="cl-label" style="margin-top:1rem;">Recommendation</p>', unsafe_allow_html=True)
+            st.markdown(f'<div class="cl-reco">{html.escape(recommendation)}</div>', unsafe_allow_html=True)
     st.markdown("<br/>", unsafe_allow_html=True)
 
 
@@ -1450,20 +1584,24 @@ def _render_insights_section(
 
 
 def _render_overview_metrics(df: pd.DataFrame, n_insights: int):
-    """4-column metric cards: Rows, Columns, Numeric Features, AI Findings."""
-    m1, m2, m3, m4 = st.columns(4)
+    """Four equal metric cards: AI Insight, Rows, Columns, Numeric Features."""
+    m1, m2, m3, m4 = st.columns(4, gap="small")
     with m1:
-        _metric_card("grid_view", "primary", "Rows", f"{len(df):,}", img_icon="icon_csv.png")
+        _metric_card("auto_awesome", "tertiary", "AI Insight", str(n_insights), img_icon="icon_insight.png")
     with m2:
-        _metric_card("view_column", "tertiary", "Columns", str(len(df.columns)), img_icon="icon_database.png")
+        _metric_card("grid_view", "primary", "Rows", f"{len(df):,}", img_icon="icon_csv.png")
     with m3:
+        _metric_card("view_column", "tertiary", "Columns", str(len(df.columns)), img_icon="icon_database.png")
+    with m4:
         num_cols = len(df.select_dtypes(include="number").columns)
         _metric_card("functions", "dim", "Numeric Features", str(num_cols), img_icon="icon_chart.png")
-    with m4:
-        _metric_card("auto_awesome", "accent", "AI Findings", str(n_insights), img_icon="icon_insight.png")
 
 
-def _render_results(df, cards, insight_summaries, llm_client, use_llm_explanations, threshold_scale):
+def _render_results(df, _cards, insight_summaries, llm_client, use_llm_explanations, threshold_scale):
+    st.markdown(
+        '<div class="cl-report-metrics-spacer" aria-hidden="true"></div>',
+        unsafe_allow_html=True,
+    )
     _render_overview_metrics(df, len(insight_summaries) if insight_summaries else 0)
 
     _section("Dataset Overview", icon="analytics", img_icon="icon_chart.png")
@@ -1480,14 +1618,6 @@ def _render_results(df, cards, insight_summaries, llm_client, use_llm_explanatio
                          use_container_width=True, hide_index=True)
         except TypeError:
             st.dataframe(pd.DataFrame({"Column": df.columns, "Dtype": df.dtypes.astype(str)}), hide_index=True)
-
-    _section("Generated Questions", f"{len(cards)} candidate questions from the AI agent.", icon="quiz", img_icon="icon_question.png")
-    q_start, q_end = _pager("q_page", len(cards), _QUESTIONS_PER_PAGE)
-    _em = "\u2014"
-    for card in cards[q_start:q_end]:
-        with st.expander(card.question, expanded=False):
-            st.markdown(f"**Why** \u00b7 {card.reason or _em}")
-            st.caption(f"Breakdown `{card.breakdown}` \u00b7 Measure `{card.measure}`")
 
     _section("Insights", "Visualizations, narrative, and recommended actions.", icon="insights", img_icon="icon_insight.png")
     if not insight_summaries:
@@ -1724,7 +1854,7 @@ def run_app():
                         break
             else:
                 for i, h in enumerate(history):
-                    if "insights_summary_adidas_2.json" in h["insights_path"].replace("\\", "/"):
+                    if "insights_summary_adidas_cleaned.json" in h["insights_path"].replace("\\", "/"):
                         default_idx = i
                         break
             selected_idx = st.selectbox(
@@ -1793,17 +1923,6 @@ def run_app():
                     st.dataframe(chunk, hide_index=True)
             else:
                 st.caption("No CSV found for this analysis — metrics above show insight counts only.")
-
-            if entry["cards_path"]:
-                cards_data = _cached_load_insights_json(entry["cards_path"]) or []
-                if cards_data:
-                    _section("Generated Questions", f"{len(cards_data)} questions", icon="quiz", img_icon="icon_question.png")
-                    hq_start, hq_end = _pager(f"hist_q_{selected_idx}", len(cards_data), _QUESTIONS_PER_PAGE)
-                    _emh = "\u2014"
-                    for cd in cards_data[hq_start:hq_end]:
-                        with st.expander(cd.get("question", _emh), expanded=False):
-                            st.markdown(f"**Why** \u00b7 {cd.get('reason', _emh)}")
-                            st.caption(f"Breakdown `{cd.get('breakdown', '')}` \u00b7 Measure `{cd.get('measure', '')}`")
 
             _section("Insights", f"{len(insight_data)} insights from this analysis.", icon="insights", img_icon="icon_insight.png")
             _render_history_insights(

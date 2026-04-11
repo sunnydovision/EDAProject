@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Full Adidas pipeline: QUGEN (question/cards) → ISGEN (insights), with timing + LLM token usage.
-Usage: python scripts/run_adidas_pipeline_timed.py [--suffix 2]
+Full Adidas (cleaned) pipeline: QUGEN (question/cards) → ISGEN (insights), with timing + LLM token usage.
+Usage: python scripts/run_adidas_pipeline_timed.py [--suffix cleaned] [--csv data/Adidas_cleaned.csv]
 Outputs: insight_cards_adidas_{suffix}.json, insights_summary_adidas_{suffix}.json,
          adidas_pipeline_timing_{suffix}.txt, adidas_llm_usage_qugen_{suffix}.json, adidas_llm_usage_isgen_{suffix}.json
 """
@@ -39,10 +39,19 @@ def _usage_tokens(d: dict) -> tuple[int, int, int, int]:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Run QUGEN + ISGEN on data/Adidas.csv with timing.")
-    parser.add_argument("--suffix", default="2", help="File suffix, e.g. 2 → *_adidas_2.json")
+    parser = argparse.ArgumentParser(description="Run QUGEN + ISGEN on an Adidas CSV with timing.")
+    parser.add_argument(
+        "--suffix",
+        default="cleaned",
+        help="Output file suffix, e.g. cleaned → insight_cards_adidas_cleaned.json",
+    )
+    parser.add_argument(
+        "--csv",
+        default="data/Adidas_cleaned.csv",
+        help="CSV path relative to project root (default: data/Adidas_cleaned.csv)",
+    )
     args = parser.parse_args()
-    suf = args.suffix.strip() or "2"
+    suf = args.suffix.strip() or "cleaned"
 
     os.chdir(ROOT)
     try:
@@ -56,7 +65,7 @@ def main() -> None:
     summary_path = ROOT / f"insights_summary_adidas_{suf}.json"
     timing_path = ROOT / f"adidas_pipeline_timing_{suf}.txt"
 
-    csv_path = ROOT / "data" / "Adidas.csv"
+    csv_path = (ROOT / args.csv).resolve() if not os.path.isabs(args.csv) else Path(args.csv).resolve()
     if not csv_path.is_file():
         print(f"Missing {csv_path}", file=sys.stderr)
         sys.exit(1)
@@ -113,6 +122,7 @@ def main() -> None:
     model = os.getenv("QUGEN_LLM_MODEL", "(default from llm_client)")
     lines = [
         "Adidas pipeline — QUGEN (questions/cards) → ISGEN (insights)",
+        f"CSV: {csv_path}",
         f"QUGEN_LLM_MODEL={model}",
         f"OPENAI_USE_RESPONSES_API={os.getenv('OPENAI_USE_RESPONSES_API', '')}",
         "",
