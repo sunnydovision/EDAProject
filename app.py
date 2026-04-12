@@ -17,8 +17,22 @@ from dotenv import load_dotenv
 from quis.qugen.models import schema_from_dataframe, InsightCard
 from quis.qugen.pipeline import QUGENPipeline, QUGENConfig
 from quis.qugen.llm_client import get_default_llm_client, BaseLLMClient
+from quis.isgen.models import (
+    ATTRIBUTION,
+    DISTRIBUTION_DIFFERENCE,
+    OUTSTANDING_VALUE,
+    TREND,
+)
 from quis.isgen.pipeline import ISGENPipeline, ISGENConfig
 from quis.isgen.views import parse_measure
+
+# Insight tabs: Outstanding Value first, Trend second (grouping still uses PATTERNS in isgen).
+INSIGHT_PATTERN_TAB_ORDER = (
+    OUTSTANDING_VALUE,
+    TREND,
+    ATTRIBUTION,
+    DISTRIBUTION_DIFFERENCE,
+)
 
 
 st.set_page_config(
@@ -1360,11 +1374,107 @@ def _make_chart(insight: dict):
     return fig
 
 
+def _insight_chart_cache_key(ins: dict) -> str:
+    """Stable key for Plotly figures so filter changes reuse cached charts."""
+    parts = [
+        str(ins.get("pattern", "")),
+        str(ins.get("question", "")),
+        str(ins.get("breakdown", "")),
+        str(ins.get("measure", "")),
+        str(ins.get("subspace", "")),
+        str(ins.get("view_labels", "")),
+        str(ins.get("view_values", "")),
+    ]
+    return hashlib.sha256("|".join(parts).encode("utf-8", errors="replace")).hexdigest()[:48]
+
+
+def _get_chart_cached(ins: dict):
+    """Session-cached chart; avoids rebuilding Plotly figures when the column filter changes."""
+    if "insight_chart_cache" not in st.session_state:
+        st.session_state.insight_chart_cache = {}
+    ck = _insight_chart_cache_key(ins)
+    cache: dict = st.session_state.insight_chart_cache
+    if ck in cache:
+        return cache[ck]
+    fig = _make_chart(ins)
+    cache[ck] = fig
+    return fig
+
+
 # ───────────────────────────────────────────────────────────────────────────
 # Pagination & results
 # ───────────────────────────────────────────────────────────────────────────
 _INSIGHTS_PER_PAGE = 5
 _TABLE_ROWS_PER_PAGE = 20
+_DATASET_FIELD_ALL = "All columns"
+_MEASURE_INNER_PARENS = re.compile(r"\(([^)]+)\)")
+
+
+def _fields_referenced_in_insight(item: dict) -> set[str]:
+    """Column names appearing in breakdown, subspace, or measure (for filter options)."""
+    out: set[str] = set()
+    ins = item.get("insight") or {}
+    b = (ins.get("breakdown") or "").strip()
+    if b:
+        out.add(b)
+    for pair in ins.get("subspace") or []:
+        if len(pair) >= 1:
+            c = str(pair[0]).strip()
+            if c:
+                out.add(c)
+    m = ins.get("measure") or ""
+    for mo in _MEASURE_INNER_PARENS.finditer(m):
+        inner = mo.group(1).strip()
+        if inner:
+            out.add(inner)
+    return out
+
+
+def _dataset_field_dropdown_options(
+    df: pd.DataFrame | None,
+    insight_summaries: list[dict],
+) -> list[str]:
+    names: set[str] = set()
+    if df is not None and len(df.columns):
+        names.update(str(c) for c in df.columns)
+    for item in insight_summaries:
+        names.update(_fields_referenced_in_insight(item))
+    rest = sorted(names, key=lambda s: s.lower())
+    return [_DATASET_FIELD_ALL] + rest
+
+
+def _insight_matches_dataset_field(item: dict, field: str | None) -> bool:
+    """True if the insight is tied to this dataset column (breakdown, segment, measure, or text)."""
+    if not field or field == _DATASET_FIELD_ALL:
+        return True
+    ins = item.get("insight") or {}
+    if (ins.get("breakdown") or "").strip() == field:
+        return True
+    for pair in ins.get("subspace") or []:
+        if len(pair) >= 1 and str(pair[0]).strip() == field:
+            return True
+    measure = ins.get("measure") or ""
+    if field in measure:
+        return True
+    blob = " ".join(
+        [
+            item.get("question") or "",
+            item.get("explanation") or "",
+            ins.get("reason") or "",
+        ]
+    )
+    if field.lower() in blob.lower():
+        return True
+    return False
+
+
+def _filter_insights_by_dataset_field(
+    summaries: list[dict],
+    field: str | None,
+) -> list[dict]:
+    if not field or field == _DATASET_FIELD_ALL:
+        return list(summaries)
+    return [s for s in summaries if _insight_matches_dataset_field(s, field)]
 
 
 def _pager(key: str, total: int, per_page: int):
@@ -1477,7 +1587,7 @@ def _render_one_insight_card(
     measure = ins.get("measure", "") or ""
     description = _get_llm_description_cached(llm_client, ins, base_expl, use_llm_explanations)
     recommendation = _build_recommendation(ins)
-    chart = _make_chart(ins)
+    chart = _get_chart_cached(ins)
     accent = _accents[accent_idx % len(_accents)]
     plot_key = f"{plot_key_prefix}_{orig_idx}"
     _em = "\u2014"
@@ -1516,6 +1626,50 @@ def _render_one_insight_card(
     st.markdown("<br/>", unsafe_allow_html=True)
 
 
+def _render_insights_with_dataset_field_filter(
+    df: pd.DataFrame | None,
+    insight_summaries: list[dict],
+    llm_client,
+    use_llm_explanations: bool,
+    pager_base: str,
+    plot_key_prefix: str,
+    field_filter_key: str,
+):
+    """Dropdown to limit insights to those referencing a chosen dataset column."""
+    options = _dataset_field_dropdown_options(df, insight_summaries)
+    c1, c2 = st.columns([1, 2])
+    with c1:
+        selected = st.selectbox(
+            "Filter by dataset column",
+            options=options,
+            index=0,
+            key=field_filter_key,
+            help=(
+                "Show insights whose breakdown, segment filter, measure, or question text "
+                "involves this column. Choose **All columns** to show everything."
+            ),
+        )
+    field = None if selected == _DATASET_FIELD_ALL else selected
+    filtered = _filter_insights_by_dataset_field(insight_summaries, field)
+    with c2:
+        if field:
+            st.caption(
+                f"Showing {len(filtered)} of {len(insight_summaries)} insights for column: {field}"
+            )
+        else:
+            st.caption(f"{len(insight_summaries)} insights (all columns).")
+    if not filtered:
+        st.info("No insights match this column. Choose **All columns** or another field.")
+        return
+    _render_insights_section(
+        filtered,
+        llm_client,
+        use_llm_explanations,
+        pager_base,
+        plot_key_prefix,
+    )
+
+
 def _render_insights_section_core(
     insight_summaries: list[dict],
     llm_client,
@@ -1523,48 +1677,47 @@ def _render_insights_section_core(
     pager_base: str,
     plot_key_prefix: str,
 ):
-    from quis.isgen.models import PATTERNS
-
-    with st.spinner("Loading charts and summaries…"):
-        buckets, other = _group_insights_by_pattern(insight_summaries)
-        tabs = st.tabs(list(PATTERNS))
-        for tab, pat in zip(tabs, PATTERNS):
-            with tab:
-                bucket = buckets[pat]
-                if not bucket:
-                    st.caption("No insights of this type.")
-                    continue
-                pk = f"{pager_base}_{pat.replace(' ', '_')}"
-                i_start, i_end = _pager(pk, len(bucket), _INSIGHTS_PER_PAGE)
-                for local_i in range(i_start, i_end):
-                    orig_idx, item = bucket[local_i]
-                    _render_one_insight_card(
-                        item,
-                        orig_idx,
-                        llm_client,
-                        use_llm_explanations,
-                        plot_key_prefix,
-                        accent_idx=local_i,
-                    )
-        if other:
-            with st.expander(f"Uncategorized patterns ({len(other)})", expanded=False):
-                pk = f"{pager_base}_Other"
-                o_start, o_end = _pager(pk, len(other), _INSIGHTS_PER_PAGE)
-                for local_i in range(o_start, o_end):
-                    orig_idx, item = other[local_i]
-                    _render_one_insight_card(
-                        item,
-                        orig_idx,
-                        llm_client,
-                        use_llm_explanations,
-                        plot_key_prefix,
-                        accent_idx=local_i,
-                    )
-
-
-_fragment_fn = getattr(st, "fragment", None) or getattr(st, "experimental_fragment", None)
-if _fragment_fn is not None:
-    _render_insights_section_core = _fragment_fn(_render_insights_section_core)
+    buckets, other = _group_insights_by_pattern(insight_summaries)
+    n_total = len(insight_summaries)
+    tab_labels = [f"{p} ({len(buckets[p])})" for p in INSIGHT_PATTERN_TAB_ORDER]
+    st.caption(
+        f"{n_total} insight(s) in this view"
+        + (f", {len(other)} uncategorized" if other else "")
+        + "."
+    )
+    tabs = st.tabs(tab_labels)
+    for tab, pat in zip(tabs, INSIGHT_PATTERN_TAB_ORDER):
+        with tab:
+            bucket = buckets[pat]
+            if not bucket:
+                st.caption("No insights of this type for the current filter.")
+                continue
+            pk = f"{pager_base}_{pat.replace(' ', '_')}"
+            i_start, i_end = _pager(pk, len(bucket), _INSIGHTS_PER_PAGE)
+            for local_i in range(i_start, i_end):
+                orig_idx, item = bucket[local_i]
+                _render_one_insight_card(
+                    item,
+                    orig_idx,
+                    llm_client,
+                    use_llm_explanations,
+                    plot_key_prefix,
+                    accent_idx=local_i,
+                )
+    if other:
+        with st.expander(f"Uncategorized patterns ({len(other)})", expanded=False):
+            pk = f"{pager_base}_Other"
+            o_start, o_end = _pager(pk, len(other), _INSIGHTS_PER_PAGE)
+            for local_i in range(o_start, o_end):
+                orig_idx, item = other[local_i]
+                _render_one_insight_card(
+                    item,
+                    orig_idx,
+                    llm_client,
+                    use_llm_explanations,
+                    plot_key_prefix,
+                    accent_idx=local_i,
+                )
 
 
 def _render_insights_section(
@@ -1623,12 +1776,14 @@ def _render_results(df, _cards, insight_summaries, llm_client, use_llm_explanati
     if not insight_summaries:
         st.info("No insights passed the current threshold. Lower **Insight strictness** in Settings.")
         return
-    _render_insights_section(
+    _render_insights_with_dataset_field_filter(
+        df,
         insight_summaries,
         llm_client,
         use_llm_explanations,
         pager_base="i_page",
         plot_key_prefix="insight_plot",
+        field_filter_key="insight_field_filter_home",
     )
 
 
@@ -1650,16 +1805,19 @@ def _render_history_insights(
     llm_client,
     use_llm_explanations: bool,
     pager_key: str = "hist_i_page",
+    hist_df: pd.DataFrame | None = None,
 ):
     if not insight_summaries:
         st.info("No insights in this analysis.")
         return
-    _render_insights_section(
+    _render_insights_with_dataset_field_filter(
+        hist_df,
         insight_summaries,
         llm_client,
         use_llm_explanations,
         pager_base=pager_key,
         plot_key_prefix=f"{pager_key}_plot",
+        field_filter_key=f"insight_field_filter_{pager_key}",
     )
 
 
@@ -1686,6 +1844,8 @@ def run_app():
             st.session_state[k] = v
     if "insight_expl_cache" not in st.session_state:
         st.session_state.insight_expl_cache = {}
+    if "insight_chart_cache" not in st.session_state:
+        st.session_state.insight_chart_cache = {}
 
     llm_client = _init_llm_client()
 
@@ -1930,6 +2090,7 @@ def run_app():
                 llm_client,
                 st.session_state.llm_explanations,
                 pager_key=f"hist_i_{selected_idx}",
+                hist_df=hist_df,
             )
 
     # ==================================================================
