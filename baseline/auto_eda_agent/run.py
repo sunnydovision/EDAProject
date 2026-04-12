@@ -17,7 +17,7 @@ import os
 from agent import AgenticAutoEDA
 
 
-def run_baseline(data_file: str, output_dir: str = 'output', max_iterations: int = 3):
+def run_baseline(data_file: str, output_dir: str = 'output', max_iterations: int = 3, skip_step5: bool = False):
     """
     Run complete Agentic AutoEDA baseline workflow.
     
@@ -30,6 +30,7 @@ def run_baseline(data_file: str, output_dir: str = 'output', max_iterations: int
         data_file: Path to dataset
         output_dir: Directory for output files
         max_iterations: Max iterations per step (default: 3)
+        skip_step5: Skip step 5 (insight extraction) if True (default: False)
     """
     os.makedirs(output_dir, exist_ok=True)
     
@@ -42,11 +43,14 @@ def run_baseline(data_file: str, output_dir: str = 'output', max_iterations: int
     print("  • Uses multi-prompt strategy")
     print("  • Verbose action logging\n")
     
+    if skip_step5:
+        print("⚠️  Running steps 1-4 only (skipping step 5)\n")
+    
     # Initialize Agentic AutoEDA
     agent = AgenticAutoEDA(data_file)
     
     # Run complete agentic workflow
-    step_outputs = agent.run_autoeda(output_dir, max_iterations)
+    step_outputs = agent.run_autoeda(output_dir, max_iterations, skip_step5)
     
     print("\n" + "=" * 70)
     print("✅ AGENTIC AUTOEDA COMPLETE")
@@ -78,11 +82,13 @@ def run_baseline(data_file: str, output_dir: str = 'output', max_iterations: int
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python run.py <data_file> [output_dir]")
+        print("Usage: python run.py <data_file> [output_dir] [--skip-step5]")
         print("Example: python run.py ../data/transactions.csv output")
+        print("         python run.py ../data/transactions.csv output --skip-step5")
         sys.exit(1)
     
     data_file = sys.argv[1]
     output_dir = sys.argv[2] if len(sys.argv) > 2 else 'output'
+    skip_step5 = '--skip-step5' in sys.argv
     
-    run_baseline(data_file, output_dir)
+    run_baseline(data_file, output_dir, skip_step5=skip_step5)

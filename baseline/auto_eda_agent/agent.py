@@ -28,6 +28,41 @@ import time
 warnings.filterwarnings('ignore')
 load_dotenv()
 
+# Token usage tracking (similar to QUIS)
+_SESSION_USAGE = {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "total_tokens": 0,
+    "requests": 0,
+}
+_LAST_MODEL_USED = None
+
+
+def _add_usage_from_response(resp) -> None:
+    """Extract and accumulate token usage from OpenAI response (similar to QUIS)"""
+    global _LAST_MODEL_USED
+    u = getattr(resp, "usage", None)
+    if u is None:
+        return
+    inp = getattr(u, "prompt_tokens", None)
+    out = getattr(u, "completion_tokens", None)
+    tot = getattr(u, "total_tokens", None)
+    inp_i = int(inp or 0)
+    out_i = int(out or 0)
+    if tot is None:
+        tot_i = inp_i + out_i
+    else:
+        tot_i = int(tot)
+    _SESSION_USAGE["input_tokens"] += inp_i
+    _SESSION_USAGE["output_tokens"] += out_i
+    _SESSION_USAGE["total_tokens"] += tot_i
+    _SESSION_USAGE["requests"] += 1
+
+
+def get_session_usage() -> Dict[str, Any]:
+    """Return copy of accumulated token usage for this process"""
+    return {**_SESSION_USAGE}
+
 
 def _clean_dataframe_like_quis(df: pd.DataFrame, csv_path: str = None) -> pd.DataFrame:
     """
@@ -106,11 +141,16 @@ class AgenticAutoEDA:
         plt.style.use('seaborn-v0_8-darkgrid')
         sns.set_palette("husl")
     
-    def run_autoeda(self, output_dir: str = 'output', max_iterations: int = 3) -> Dict[str, Any]:
+    def run_autoeda(self, output_dir: str = 'output', max_iterations: int = 3, skip_step5: bool = False) -> Dict[str, Any]:
         """
         Run complete agentic AutoEDA workflow.
         
         Each step runs as autonomous agent with iterative refinement.
+        
+        Args:
+            output_dir: Directory for output files
+            max_iterations: Max iterations per step (default: 3)
+            skip_step5: Skip step 5 (insight extraction) if True (default: False)
         """
         # Start timing
         start_time = time.time()
@@ -162,17 +202,23 @@ class AgenticAutoEDA:
         step4_time = time.time() - step4_start
         print(f"⏱️  Step 4 completed in {step4_time:.1f}s")
         
-        # Step 5: Insight Extraction Agent
-        print("\n" + "="*70)
-        print("🤖 STEP 5: INSIGHT EXTRACTION AGENT")
-        print("="*70)
-        step5_start = time.time()
-        step5_dir = f"{output_dir}/step5_insights"
-        os.makedirs(step5_dir, exist_ok=True)
-        self.step_outputs['step5'] = self._run_insight_agent(step5_dir)
-        self.step_outputs['step5_dir'] = step5_dir  # Store for converter
-        step5_time = time.time() - step5_start
-        print(f"⏱️  Step 5 completed in {step5_time:.1f}s")
+        # Step 5: Insight Extraction Agent (optional)
+        if not skip_step5:
+            print("\n" + "="*70)
+            print("🤖 STEP 5: INSIGHT EXTRACTION AGENT")
+            print("="*70)
+            step5_start = time.time()
+            step5_dir = f"{output_dir}/step5_insights"
+            os.makedirs(step5_dir, exist_ok=True)
+            self.step_outputs['step5'] = self._run_insight_agent(step5_dir)
+            self.step_outputs['step5_dir'] = step5_dir  # Store for converter
+            step5_time = time.time() - step5_start
+            print(f"⏱️  Step 5 completed in {step5_time:.1f}s")
+        else:
+            print("\n" + "="*70)
+            print("⏭️  SKIPPING STEP 5: INSIGHT EXTRACTION")
+            print("="*70)
+            step5_time = 0
         
         # Generate summary
         print("\n" + "="*70)
@@ -186,6 +232,9 @@ class AgenticAutoEDA:
         total_time = time.time() - start_time
         print(f"\n⏱️  Total AutoEDA workflow completed in {total_time:.1f}s")
         
+        # Get token usage
+        token_usage = get_session_usage()
+        
         # Save timing info
         timing_info = {
             'total_time': total_time,
@@ -197,15 +246,24 @@ class AgenticAutoEDA:
                 'insights': step5_time
             },
             'insights_generated': len(self.step_outputs.get('step5', [])),
-            'throughput': len(self.step_outputs.get('step5', [])) / total_time if total_time > 0 else 0
+            'throughput': len(self.step_outputs.get('step5', [])) / total_time if total_time > 0 else 0,
+            'token_usage': token_usage
         }
         
         with open(f"{output_dir}/timing.json", 'w') as f:
             json.dump(timing_info, f, indent=2)
         
+        # Save token usage to separate file (similar to QUIS)
+        usage_output_path = os.getenv('BASELINE_USAGE_OUTPUT', f"{output_dir}/usage.json")
+        with open(usage_output_path, 'w') as f:
+            json.dump({**token_usage, 'model': self.model}, f, indent=2)
+        
         print(f"📊 Generated {len(self.step_outputs.get('step5', []))} insights")
         print(f"⚡ Throughput: {timing_info['throughput']:.2f} insights/second")
+        print(f"🔢 Token Usage: {token_usage['total_tokens']:,} total ({token_usage['input_tokens']:,} input + {token_usage['output_tokens']:,} output)")
+        print(f"📝 API Requests: {token_usage['requests']}")
         print(f"💾 Timing info saved to {output_dir}/timing.json")
+        print(f"💾 Token usage saved to {usage_output_path}")
         
         return self.step_outputs
     
@@ -290,8 +348,9 @@ class AgenticAutoEDA:
         For each column:
         - Sample unique values
         - Infer semantic meaning
-        - Detect patterns
         - Classify data type
+        - Assess importance
+        - Identify potential issues
         """
         
         semantic_info = {}
@@ -317,32 +376,29 @@ class AgenticAutoEDA:
                 }
         
         # Ask LLM to analyze semantics
-        prompt = f"""You are an expert data analyst. Analyze these columns and infer their semantic meaning.
+        prompt = f"""You are an expert data analyst. Your job is to infer the semantic meaning and classification of dataset columns from their names and sample values.
 
-Dataset has {len(self.df)} rows, {len(self.df.columns)} columns.
+Analyze the following dataset columns and infer their semantic meaning.
 
-Column samples (showing unique values):
+Dataset: {len(self.df)} rows × {len(self.df.columns)} columns
+
+Column samples (name, dtype, and unique values):
 {json.dumps(column_samples, indent=2, ensure_ascii=False)}
 
-For EACH column, infer:
-1. **Semantic meaning**: What does this column represent? (e.g., "customer age", "product category", "transaction date")
-2. **Data type classification**: 
-   - ID/Code (unique identifiers)
-   - Categorical (limited distinct values)
-   - Numerical (measurements, counts, amounts)
-   - Temporal (dates, times)
-   - Text (free text)
-3. **Patterns detected**: Any patterns in the values?
-4. **Potential issues**: Missing values, inconsistencies, etc.
+For EACH column, return:
+- semantic_meaning: what this column represents in business terms (e.g., "gross revenue per transaction", "date of sale")
+- data_type_class: one of ID | Categorical | Numerical | Temporal | Text
+- importance: one of high | medium | low
+- potential_issues: any quality concerns visible from the sample values (e.g., mixed formats, suspicious values, likely nulls)
 
-Return JSON:
+Return a JSON object where each key is a column name:
+
 {{
   "column_name": {{
-    "semantic_meaning": "what this represents",
+    "semantic_meaning": "...",
     "data_type_class": "ID|Categorical|Numerical|Temporal|Text",
-    "patterns": "detected patterns",
-    "potential_issues": "any issues noticed",
-    "importance": "high|medium|low"
+    "importance": "high|medium|low",
+    "potential_issues": "..."
   }}
 }}"""
 
@@ -354,9 +410,10 @@ Return JSON:
                     {"role": "user", "content": prompt}
                 ],
                 temperature=0.3,
-                max_tokens=8000,
+                max_completion_tokens=8000,
                 response_format={"type": "json_object"}
             )
+            _add_usage_from_response(response)
             
             semantic_info = json.loads(response.choices[0].message.content)
         except Exception as e:
@@ -391,6 +448,7 @@ Return JSON:
                 col_profile['semantic_meaning'] = semantic[col].get('semantic_meaning', '')
                 col_profile['data_type_class'] = semantic[col].get('data_type_class', '')
                 col_profile['importance'] = semantic[col].get('importance', 'medium')
+                col_profile['potential_issues'] = semantic[col].get('potential_issues', '')
             
             # Add statistics based on type
             if col in initial['numerical_cols']:
@@ -463,20 +521,41 @@ Return JSON:
         
         Analyzes quality issues:
         - Missing values and patterns
-        - Outliers and anomalies
+        - Outliers and anomalies (excluding ID columns)
         - Inconsistencies and errors
         - Data integrity issues
         """
         print("\n🧠 Agent thinking: I need to thoroughly assess data quality like an expert...")
         print("📝 Strategy: Compute quality metrics → Analyze patterns → Identify issues\n")
         
+        # Load profile.json to get ID columns and importance levels
+        profile_path = f"{output_dir}/../step1_profiling/profile.json"
+        profile = {}
+        id_columns = []
+        importance_by_column = {}
+        
+        try:
+            with open(profile_path, 'r', encoding='utf-8') as f:
+                profile = json.load(f)
+            
+            # Extract ID columns and importance levels
+            for col_name, col_data in profile.get('columns', {}).items():
+                if col_data.get('data_type_class') == 'ID':
+                    id_columns.append(col_name)
+                importance_by_column[col_name] = col_data.get('importance', 'medium')
+            
+            print(f"  ├─ 📋 Loaded profile: {len(id_columns)} ID columns identified")
+            print(f"  ├─ 📋 Importance levels loaded for {len(importance_by_column)} columns\n")
+        except Exception as e:
+            print(f"  ⚠️  Could not load profile.json: {e}")
+        
         # Phase 1: Compute quality metrics
         print("📊 Phase 1: Computing Quality Metrics")
         print("  ├─ 🔍 Analyzing missing values...")
-        print("  ├─ 📊 Detecting outliers...")
+        print("  ├─ 📊 Detecting outliers (excluding ID columns)...")
         print("  ├─ 🔎 Checking duplicates...")
         
-        quality_metrics = self._compute_quality_metrics()
+        quality_metrics = self._compute_quality_metrics(id_columns)
         
         print(f"  ├─ ✅ Found {quality_metrics['total_issues']} quality issues")
         print(f"  └─ 💾 Saving metrics...\n")
@@ -487,7 +566,7 @@ Return JSON:
         print("  ├─ 🔍 Identifying critical issues...")
         print("  ├─ 📋 Prioritizing problems...")
         
-        quality_assessment = self._expert_quality_assessment(quality_metrics)
+        quality_assessment = self._expert_quality_assessment(quality_metrics, importance_by_column, id_columns)
         
         print(f"  ├─ ✅ Quality assessment complete")
         print(f"  └─ 💾 Saving assessment...\n")
@@ -515,8 +594,11 @@ Return JSON:
         
         return quality_report
     
-    def _compute_quality_metrics(self) -> Dict[str, Any]:
-        """Compute quality metrics directly"""
+    def _compute_quality_metrics(self, id_columns: List[str] = None) -> Dict[str, Any]:
+        """Compute quality metrics directly, excluding ID columns from outlier analysis"""
+        
+        if id_columns is None:
+            id_columns = []
         
         metrics = {
             'missing_values': {},
@@ -534,9 +616,13 @@ Return JSON:
                     'percentage': float(missing_count / len(self.df) * 100)
                 }
         
-        # Outliers (IQR method for numerical columns)
+        # Outliers (IQR method for numerical columns, excluding ID columns)
         numerical_cols = self.df.select_dtypes(include=[np.number]).columns
         for col in numerical_cols:
+            # Skip ID columns for outlier analysis
+            if col in id_columns:
+                continue
+                
             Q1 = self.df[col].quantile(0.25)
             Q3 = self.df[col].quantile(0.75)
             IQR = Q3 - Q1
@@ -555,34 +641,46 @@ Return JSON:
         
         return metrics
     
-    def _expert_quality_assessment(self, metrics: Dict) -> Dict[str, Any]:
-        """LLM acts as quality expert to assess issues"""
+    def _expert_quality_assessment(self, metrics: Dict, importance_by_column: Dict, id_columns: List[str]) -> Dict[str, Any]:
+        """LLM acts as quality expert to assess issues with column importance weighting"""
         
-        prompt = f"""You are a data quality expert. Analyze these quality metrics and provide expert assessment.
+        prompt = f"""You are a data quality expert. Your job is to assess data quality issues and prioritize them based on their business impact.
 
-Quality Metrics:
+Assess the data quality of the following dataset.
+
+Column importance levels (from profiling):
+{json.dumps(importance_by_column, indent=2, ensure_ascii=False)}
+
+Note: The following columns are identifier fields and have been excluded from outlier analysis:
+{id_columns}
+
+Computed quality metrics:
 {json.dumps(metrics, indent=2, ensure_ascii=False)}
 
-Provide expert assessment:
-1. **Critical Issues**: Which quality issues are most critical and why?
-2. **Impact Analysis**: How do these issues affect data reliability?
-3. **Recommendations**: What should be done to address each issue?
-4. **Overall Quality Score**: Rate data quality 0-100 based on severity of issues
-5. **Priority Actions**: Top 3 actions to improve quality
+For each issue found, provide:
+1. A description of the issue
+2. Severity: high | medium | low — weighted by the importance of the affected column
+3. Business impact: how this issue affects downstream analysis
+4. Recommended action
+
+Also provide:
+- overall_quality_score: integer 0–100 reflecting overall dataset reliability
+- priority_actions: top 3 actions to address the most critical issues
 
 Return JSON:
+
 {{
   "critical_issues": [
     {{
-      "issue": "description",
+      "issue": "...",
       "severity": "high|medium|low",
-      "impact": "how it affects analysis",
-      "recommendation": "what to do"
+      "impact": "...",
+      "recommendation": "..."
     }}
   ],
-  "overall_quality_score": 75,
-  "priority_actions": ["action1", "action2", "action3"],
-  "detailed_analysis": "comprehensive quality assessment"
+  "overall_quality_score": 0,
+  "priority_actions": ["...", "...", "..."],
+  "detailed_analysis": "..."
 }}"""
 
         try:
@@ -593,9 +691,10 @@ Return JSON:
                     {"role": "user", "content": prompt}
                 ],
                 temperature=0.3,
-                max_tokens=4000,
+                max_completion_tokens=4000,
                 response_format={"type": "json_object"}
             )
+            _add_usage_from_response(response)
             
             return json.loads(response.choices[0].message.content)
         except Exception as e:
@@ -656,6 +755,40 @@ Return JSON:
         print("\n🧠 Agent thinking: I need to analyze statistics like an expert statistician...")
         print("📝 Strategy: Compute stats → Analyze distributions → Find correlations → Interpret\n")
         
+        # Load profile.json and quality_report.json for context
+        profile_path = f"{output_dir}/../step1_profiling/profile.json"
+        quality_path = f"{output_dir}/../step2_quality/quality_report.json"
+        
+        semantic_meanings = {}
+        id_columns = []
+        quality_score = 0
+        outlier_columns = []
+        
+        try:
+            with open(profile_path, 'r', encoding='utf-8') as f:
+                profile = json.load(f)
+            
+            # Extract semantic meanings and ID columns
+            for col_name, col_data in profile.get('columns', {}).items():
+                semantic_meanings[col_name] = col_data.get('semantic_meaning', '')
+                if col_data.get('data_type_class') == 'ID':
+                    id_columns.append(col_name)
+            
+            print(f"  ├─ 📋 Loaded profile: {len(semantic_meanings)} semantic meanings, {len(id_columns)} ID columns\n")
+        except Exception as e:
+            print(f"  ⚠️  Could not load profile.json: {e}\n")
+        
+        try:
+            with open(quality_path, 'r', encoding='utf-8') as f:
+                quality_report = json.load(f)
+            
+            quality_score = quality_report.get('summary', {}).get('data_quality_score', 0)
+            outlier_columns = list(quality_report.get('metrics', {}).get('outliers', {}).keys())
+            
+            print(f"  ├─ 📋 Loaded quality report: score={quality_score}, {len(outlier_columns)} outlier columns\n")
+        except Exception as e:
+            print(f"  ⚠️  Could not load quality_report.json: {e}\n")
+        
         # Phase 1: Compute comprehensive statistics
         print("📊 Phase 1: Computing Comprehensive Statistics")
         print("  ├─ 📈 Descriptive statistics...")
@@ -673,7 +806,7 @@ Return JSON:
         print("  ├─ 🔍 Analyzing correlations...")
         print("  ├─ 📋 Identifying statistical patterns...")
         
-        interpretation = self._expert_statistical_interpretation(statistics)
+        interpretation = self._expert_statistical_interpretation(statistics, semantic_meanings, quality_score, outlier_columns, id_columns)
         
         print(f"  ├─ ✅ Statistical interpretation complete")
         print(f"  └─ 💾 Saving interpretation...\n")
@@ -756,42 +889,46 @@ Return JSON:
         
         return stats
     
-    def _expert_statistical_interpretation(self, statistics: Dict) -> Dict[str, Any]:
-        """LLM acts as statistician to interpret findings"""
+    def _expert_statistical_interpretation(self, statistics: Dict, semantic_meanings: Dict, quality_score: int, outlier_columns: List[str], id_columns: List[str]) -> Dict[str, Any]:
+        """LLM acts as statistician to interpret findings with context from prior steps"""
         
-        # Prepare summary for LLM
-        summary = {
-            'numerical_columns': len(statistics['numerical_stats']),
-            'categorical_columns': len(statistics['categorical_stats']),
-            'strong_correlations': statistics['correlations'].get('strong_correlations', []),
-            'sample_stats': {k: v for k, v in list(statistics['numerical_stats'].items())[:5]}
-        }
-        
-        prompt = f"""You are an expert statistician. Interpret these statistical findings.
+        prompt = f"""You are an expert statistician. Your job is to interpret statistical findings in the context of the dataset's business meaning and known data quality issues.
 
-Statistical Summary:
-{json.dumps(summary, indent=2, ensure_ascii=False)}
+Interpret the following statistical findings for this dataset.
 
-Provide expert interpretation:
-1. **Distribution Patterns**: What do the distributions tell us? (skewness, kurtosis)
-2. **Strong Correlations**: Interpret the strong correlations found
-3. **Key Statistical Findings**: Most important statistical insights
-4. **Anomalies**: Any unusual statistical patterns?
-5. **Recommendations**: Statistical tests or analyses to perform next
+Column semantic meanings (from Step 1):
+{json.dumps(semantic_meanings, indent=2, ensure_ascii=False)}
+
+Data quality context (from Step 2):
+- Overall quality score: {quality_score}
+- Columns with significant outliers: {outlier_columns}
+  When interpreting means and distributions for these columns, note that summary statistics may be influenced by outliers.
+- Columns flagged as identifiers (exclude from statistical interpretation): {id_columns}
+
+Computed statistics:
+{json.dumps(statistics, indent=2, ensure_ascii=False)}
+
+Provide:
+1. distribution_patterns: interpret the shape of each numerical distribution (skewness, kurtosis, mean vs median gaps) in business terms
+2. strong_correlations: for each pair with |r| > 0.7, explain what the relationship means and whether it is likely structural or behavioral
+3. key_findings: top 3 most important statistical observations
+4. statistical_anomalies: unusual patterns that warrant further investigation
+5. recommendations: suggested follow-up analyses
 
 Return JSON:
+
 {{
-  "distribution_patterns": "interpretation of distributions",
+  "distribution_patterns": "...",
   "strong_correlations": [
     {{
-      "variables": "var1 and var2",
-      "interpretation": "what this correlation means",
+      "variables": "...",
+      "interpretation": "...",
       "strength": "strong|moderate|weak"
     }}
   ],
-  "key_findings": ["finding1", "finding2", "finding3"],
-  "statistical_anomalies": ["anomaly1", "anomaly2"],
-  "recommendations": ["recommendation1", "recommendation2"]
+  "key_findings": ["...", "...", "..."],
+  "statistical_anomalies": ["...", "..."],
+  "recommendations": ["...", "..."]
 }}"""
 
         try:
@@ -802,9 +939,10 @@ Return JSON:
                     {"role": "user", "content": prompt}
                 ],
                 temperature=0.3,
-                max_tokens=4000,
+                max_completion_tokens=4000,
                 response_format={"type": "json_object"}
             )
+            _add_usage_from_response(response)
             
             return json.loads(response.choices[0].message.content)
         except Exception as e:
@@ -846,14 +984,68 @@ Return JSON:
         """
         Pattern Discovery Agent - Acts as pattern recognition expert.
         
-        Discovers patterns using multi-prompt strategy:
+        Discovers patterns using multi-prompt strategy with pre-computed aggregations:
         - Temporal patterns (trends, seasonality)
         - Correlation patterns (relationships)
         - Grouping patterns (clusters, segments)
         - Anomaly patterns (unusual behaviors)
         """
         print("\n🧠 Agent thinking: I need to discover ALL patterns like a pattern recognition expert...")
-        print("📝 Strategy: Multi-prompt approach - analyze each pattern type separately\n")
+        print("📝 Strategy: Pre-compute aggregations → Multi-prompt analysis\n")
+        
+        # Load prior outputs
+        profile_path = f"{output_dir}/../step1_profiling/profile.json"
+        quality_path = f"{output_dir}/../step2_quality/quality_report.json"
+        statistics_path = f"{output_dir}/../step3_statistics/statistics.json"
+        
+        profile = {}
+        quality_report = {}
+        statistics = {}
+        semantic_meanings = {}
+        temporal_columns = []
+        strong_correlations = []
+        outlier_flags = {}
+        distribution_stats = {}
+        
+        try:
+            with open(profile_path, 'r', encoding='utf-8') as f:
+                profile = json.load(f)
+            
+            # Extract semantic meanings and temporal columns
+            for col_name, col_data in profile.get('columns', {}).items():
+                semantic_meanings[col_name] = col_data.get('semantic_meaning', '')
+                if col_data.get('data_type_class') == 'Temporal':
+                    temporal_columns.append(col_name)
+            
+            print(f"  ├─ 📋 Loaded profile: {len(semantic_meanings)} semantic meanings, {len(temporal_columns)} temporal columns\n")
+        except Exception as e:
+            print(f"  ⚠️  Could not load profile.json: {e}\n")
+        
+        try:
+            with open(quality_path, 'r', encoding='utf-8') as f:
+                quality_report = json.load(f)
+            
+            outlier_flags = quality_report.get('metrics', {}).get('outliers', {})
+            
+            print(f"  ├─ 📋 Loaded quality report: {len(outlier_flags)} outlier columns\n")
+        except Exception as e:
+            print(f"  ⚠️  Could not load quality_report.json: {e}\n")
+        
+        try:
+            with open(statistics_path, 'r', encoding='utf-8') as f:
+                statistics = json.load(f)
+            
+            strong_correlations = statistics.get('statistics', {}).get('correlations', {}).get('strong_correlations', [])
+            distribution_stats = statistics.get('statistics', {}).get('numerical_stats', {})
+            
+            print(f"  ├─ 📋 Loaded statistics: {len(strong_correlations)} strong correlations, {len(distribution_stats)} distribution stats\n")
+        except Exception as e:
+            print(f"  ⚠️  Could not load statistics.json: {e}\n")
+        
+        # Pre-compute aggregations
+        print("📊 Pre-computing aggregations for pattern discovery...")
+        aggregations = self._compute_pattern_aggregations(temporal_columns, semantic_meanings)
+        print(f"  ├─ ✅ Computed aggregations: {len(aggregations.get('monthly_aggregations', {}))} monthly, {len(aggregations.get('group_aggregations', {}))} group\n")
         
         # Pattern categories to analyze
         pattern_categories = [
@@ -869,10 +1061,17 @@ Return JSON:
             print(f"\n📊 Pattern Category {idx}/{len(pattern_categories)}: {category['name']}")
             print(f"  ├─ 🎯 Focus: {category['focus']}")
             print(f"  ├─ 🧠 Analyzing data for {category['name'].lower()}...")
-            print(f"  ├─ 🔍 Using previous analysis results...")
+            print(f"  ├─ 🔍 Using pre-computed aggregations...")
             
             # LLM discovers patterns for this category
-            patterns = self._discover_patterns_by_category(category)
+            patterns = self._discover_patterns_by_category(
+                category, 
+                aggregations, 
+                semantic_meanings, 
+                strong_correlations, 
+                outlier_flags, 
+                distribution_stats
+            )
             
             if patterns:
                 all_patterns[category['name']] = patterns
@@ -900,68 +1099,196 @@ Return JSON:
         
         return consolidated
     
-    def _discover_patterns_by_category(self, category: Dict) -> List[Dict[str, Any]]:
-        """LLM discovers patterns for specific category"""
-        
-        # Prepare context from previous steps
-        context = {
-            'profile': self.step_outputs.get('step1', {}),
-            'quality': self.step_outputs.get('step2', {}),
-            'statistics': self.step_outputs.get('step3', {})
+    def _compute_pattern_aggregations(self, temporal_columns: List[str], semantic_meanings: Dict) -> Dict[str, Any]:
+        """Pre-compute aggregations for pattern discovery"""
+        aggregations = {
+            'monthly_aggregations': {},
+            'group_aggregations': {}
         }
         
-        # Prepare data summary for pattern discovery
-        data_info = {
-            'shape': {'rows': len(self.df), 'columns': len(self.df.columns)},
-            'numerical_columns': list(self.df.select_dtypes(include=[np.number]).columns[:10]),
-            'categorical_columns': list(self.df.select_dtypes(include=['object']).columns[:10])
-        }
+        # Monthly aggregations (if temporal column exists)
+        if temporal_columns:
+            temporal_col = temporal_columns[0]
+            try:
+                self.df[temporal_col] = pd.to_datetime(self.df[temporal_col], errors='coerce')
+                self.df['month'] = self.df[temporal_col].dt.to_period('M').astype(str)
+                
+                # Get key numerical columns for aggregation
+                numerical_cols = self.df.select_dtypes(include=[np.number]).columns.tolist()
+                
+                for col in numerical_cols[:5]:  # Limit to first 5 numerical columns
+                    monthly_agg = self.df.groupby('month')[col].agg(['sum', 'mean', 'count']).to_dict()
+                    aggregations['monthly_aggregations'][col] = monthly_agg
+            except Exception as e:
+                print(f"  ⚠️  Could not compute monthly aggregations: {e}")
         
-        prompt = f"""You are a pattern recognition expert. Discover {category['name']} in this dataset.
+        # Group aggregations for categorical columns
+        categorical_cols = self.df.select_dtypes(include=['object']).columns.tolist()
+        numerical_cols = self.df.select_dtypes(include=[np.number]).columns.tolist()
+        
+        for cat_col in categorical_cols[:5]:  # Limit to first 5 categorical columns
+            for num_col in numerical_cols[:3]:  # Limit to first 3 numerical columns
+                try:
+                    group_agg = self.df.groupby(cat_col)[num_col].agg(['sum', 'mean', 'count']).to_dict()
+                    if cat_col not in aggregations['group_aggregations']:
+                        aggregations['group_aggregations'][cat_col] = {}
+                    aggregations['group_aggregations'][cat_col][num_col] = group_agg
+                except Exception as e:
+                    continue
+        
+        return aggregations
+    
+    def _discover_patterns_by_category(self, category: Dict, aggregations: Dict, semantic_meanings: Dict, strong_correlations: List, outlier_flags: Dict, distribution_stats: Dict) -> List[Dict[str, Any]]:
+        """LLM discovers patterns for specific category with pre-computed aggregations"""
+        
+        # System prompt (same for all categories)
+        system_prompt = "You are a pattern recognition expert. Your job is to identify concrete, evidence-backed patterns in data. You must only report patterns that are directly supported by the numbers provided. Do not speculate or infer patterns beyond what the evidence shows."
+        
+        # Build category-specific prompt
+        if category['name'] == 'Temporal Patterns':
+            prompt = f"""Discover temporal patterns in this dataset.
 
-Focus: {category['focus']}
+Focus: time-based trends, seasonality, growth or decline over time, cyclical behavior.
 
-Dataset Info:
-{json.dumps(data_info, indent=2, ensure_ascii=False)}
+Computed monthly aggregations:
+{json.dumps(aggregations.get('monthly_aggregations', {}), indent=2, ensure_ascii=False)}
 
-Previous Analysis Available:
-- Data profile with semantic meanings
-- Quality metrics and issues
-- Statistical analysis and correlations
+Column semantic meanings:
+{json.dumps(semantic_meanings, indent=2, ensure_ascii=False)}
 
-Discover ALL {category['name']} by:
-1. Analyzing the data structure and available variables
-2. Looking for {category['focus']}
-3. Identifying specific, concrete patterns (not generic)
-4. Providing evidence for each pattern
+Data quality score: {aggregations.get('quality_score', 'N/A')}
+
+For each pattern found:
+- Cite specific numbers from the monthly aggregations above
+- State which months or periods show the pattern
+- Assess pattern strength: strong | moderate | weak
 
 Return JSON:
+
 {{
   "patterns": [
     {{
-      "pattern_name": "specific pattern name",
-      "description": "detailed description of the pattern",
-      "variables_involved": ["var1", "var2"],
-      "evidence": "concrete evidence from data",
+      "pattern_name": "...",
+      "description": "...",
+      "variables_involved": ["..."],
+      "evidence": "... (include specific numbers)",
       "strength": "strong|moderate|weak",
-      "business_relevance": "why this pattern matters"
+      "business_relevance": "..."
     }}
   ]
-}}
+}}"""
+        
+        elif category['name'] == 'Correlation Patterns':
+            prompt = f"""Discover correlation patterns in this dataset.
 
-Find as many valuable patterns as possible."""
+Focus: strong relationships between variables, co-movement, potential dependencies.
+
+Strong correlations computed from data (|r| > 0.7):
+{json.dumps(strong_correlations, indent=2, ensure_ascii=False)}
+
+Column semantic meanings:
+{json.dumps(semantic_meanings, indent=2, ensure_ascii=False)}
+
+Statistical interpretation from Step 3:
+{json.dumps(distribution_stats, indent=2, ensure_ascii=False)}
+
+For each pattern found:
+- Reference the specific r value
+- Explain the direction and likely business meaning of the relationship
+- Note whether the correlation may be structural (e.g., one variable derived from another) or behavioral
+
+Return JSON:
+
+{{
+  "patterns": [
+    {{
+      "pattern_name": "...",
+      "description": "...",
+      "variables_involved": ["..."],
+      "evidence": "... (include r value and direction)",
+      "strength": "strong|moderate|weak",
+      "business_relevance": "..."
+    }}
+  ]
+}}"""
+        
+        elif category['name'] == 'Grouping Patterns':
+            prompt = f"""Discover grouping patterns in this dataset.
+
+Focus: differences between segments, dominant groups, uneven distributions across categories.
+
+Computed group aggregations:
+{json.dumps(aggregations.get('group_aggregations', {}), indent=2, ensure_ascii=False)}
+
+Column semantic meanings:
+{json.dumps(semantic_meanings, indent=2, ensure_ascii=False)}
+
+For each pattern found:
+- Cite specific group values from the aggregations above
+- Compare groups directly where relevant (e.g., "Group A is 3× Group B")
+- Assess whether the difference is meaningful for business decisions
+
+Return JSON:
+
+{{
+  "patterns": [
+    {{
+      "pattern_name": "...",
+      "description": "...",
+      "variables_involved": ["..."],
+      "evidence": "... (include specific group values)",
+      "strength": "strong|moderate|weak",
+      "business_relevance": "..."
+    }}
+  ]
+}}"""
+        
+        elif category['name'] == 'Anomaly Patterns':
+            prompt = f"""Discover anomaly patterns in this dataset.
+
+Focus: unusual values, outliers, spikes, unexpected distributions, zero-inflation.
+
+Outlier flags from Step 2:
+{json.dumps(outlier_flags, indent=2, ensure_ascii=False)}
+
+Distribution statistics from Step 3:
+{json.dumps(distribution_stats, indent=2, ensure_ascii=False)}
+
+Column semantic meanings:
+{json.dumps(semantic_meanings, indent=2, ensure_ascii=False)}
+
+For each anomaly found:
+- Cite specific statistics (e.g., mean vs median gap, outlier count, min/max)
+- Assess whether the anomaly is likely a data quality issue or a real business event
+- Suggest how it should be handled in downstream analysis
+
+Return JSON:
+
+{{
+  "patterns": [
+    {{
+      "pattern_name": "...",
+      "description": "...",
+      "variables_involved": ["..."],
+      "evidence": "... (include specific statistics)",
+      "strength": "strong|moderate|weak",
+      "business_relevance": "..."
+    }}
+  ]
+}}"""
 
         try:
             response = self.client.chat.completions.create(
                 model=self.model,
                 messages=[
-                    {"role": "system", "content": f"You are a pattern recognition expert specializing in {category['name'].lower()}."},
+                    {"role": "system", "content": system_prompt},
                     {"role": "user", "content": prompt}
                 ],
                 temperature=0.5,
-                max_tokens=8000,
+                max_completion_tokens=8000,
                 response_format={"type": "json_object"}
             )
+            _add_usage_from_response(response)
             
             result = json.loads(response.choices[0].message.content)
             return result.get('patterns', [])
@@ -990,45 +1317,108 @@ Find as many valuable patterns as possible."""
                     f.write(f"- **Variables**: {', '.join(pattern.get('variables_involved', []))}\n")
                     f.write(f"- **Relevance**: {pattern.get('business_relevance', '')}\n\n")
     
-    def _run_insight_agent(self, output_dir: str, min_insights: int = 15, max_iterations: int = 3) -> List[Dict[str, Any]]:
+    def _run_insight_agent(self, output_dir: str, max_iterations: int = 3) -> List[Dict[str, Any]]:
         """
-        Insight Extraction Agent - Iteratively extracts insights until threshold is met.
+        Insight Extraction Agent - Extracts insights without ISGEN scoring.
         
-        Like QUIS, filters insights by score threshold and generates more if needed.
+        Extracts all insights without scoring or threshold filtering.
         
         Args:
             output_dir: Output directory for insights
-            min_insights: Minimum number of insights passing threshold (default: 15)
             max_iterations: Max iterations to avoid infinite loop (default: 3)
         """
-        print("\n🧠 Agent thinking: I need to extract valuable insights passing ISGEN threshold...")
-        print(f"📝 Strategy: Iterative generation until {min_insights}+ insights pass threshold\n")
+        print("\n🧠 Agent thinking: I need to extract all valuable insights without scoring...")
+        print(f"📝 Strategy: Extract all insights, no scoring or threshold filtering\n")
+        
+        # Load all prior outputs for unified context
+        print("📋 Loading all prior analysis outputs for unified context...")
+        profile_path = f"{output_dir}/../step1_profiling/profile.json"
+        quality_path = f"{output_dir}/../step2_quality/quality_report.json"
+        statistics_path = f"{output_dir}/../step3_statistics/statistics.json"
+        patterns_path = f"{output_dir}/../step4_patterns/patterns.json"
+        
+        profile = {}
+        quality_report = {}
+        statistics = {}
+        patterns = {}
+        semantic_meanings = {}
+        quality_score = 0
+        critical_issues = []
+        statistical_findings = []
+        strong_correlations = []
+        discovered_patterns = []
+        
+        try:
+            with open(profile_path, 'r', encoding='utf-8') as f:
+                profile = json.load(f)
+            
+            # Extract semantic meanings
+            for col_name, col_data in profile.get('columns', {}).items():
+                semantic_meanings[col_name] = col_data.get('semantic_meaning', '')
+            
+            print(f"  ├─ 📋 Loaded profile: {len(semantic_meanings)} semantic meanings\n")
+        except Exception as e:
+            print(f"  ⚠️  Could not load profile.json: {e}\n")
+        
+        try:
+            with open(quality_path, 'r', encoding='utf-8') as f:
+                quality_report = json.load(f)
+            
+            quality_score = quality_report.get('summary', {}).get('data_quality_score', 0)
+            critical_issues = quality_report.get('assessment', {}).get('critical_issues', [])
+            
+            print(f"  ├─ 📋 Loaded quality report: score={quality_score}, {len(critical_issues)} critical issues\n")
+        except Exception as e:
+            print(f"  ⚠️  Could not load quality_report.json: {e}\n")
+        
+        try:
+            with open(statistics_path, 'r', encoding='utf-8') as f:
+                statistics = json.load(f)
+            
+            statistical_findings = statistics.get('interpretation', {}).get('key_findings', [])
+            strong_correlations = statistics.get('statistics', {}).get('correlations', {}).get('strong_correlations', [])
+            
+            print(f"  ├─ 📋 Loaded statistics: {len(statistical_findings)} findings, {len(strong_correlations)} strong correlations\n")
+        except Exception as e:
+            print(f"  ⚠️  Could not load statistics.json: {e}\n")
+        
+        try:
+            with open(patterns_path, 'r', encoding='utf-8') as f:
+                patterns = json.load(f)
+            
+            # Flatten all patterns
+            for category, category_patterns in patterns.get('patterns_by_category', {}).items():
+                for pattern in category_patterns:
+                    discovered_patterns.append({
+                        'category': category,
+                        'name': pattern.get('pattern_name', ''),
+                        'description': pattern.get('description', ''),
+                        'variables': pattern.get('variables_involved', [])
+                    })
+            
+            print(f"  ├─ 📋 Loaded patterns: {len(discovered_patterns)} patterns across categories\n")
+        except Exception as e:
+            print(f"  ⚠️  Could not load patterns.json: {e}\n")
         
         all_processed_insights = []
         used_titles = set()  # Track titles to avoid duplicates
         iteration = 0
         
+        # Insight categories to extract
+        insight_categories = [
+            {'types': ['TREND'], 'focus': 'temporal trends and directional changes'},
+            {'types': ['OUTLIER', 'ANOMALY'], 'focus': 'unusual values and anomalies'},
+            {'types': ['CORRELATION'], 'focus': 'relationships between variables'},
+            {'types': ['DISTRIBUTION', 'COMPARISON'], 'focus': 'distributions and group comparisons'},
+            {'types': ['PATTERN'], 'focus': 'recurring patterns and cycles'}
+        ]
+        
         while iteration < max_iterations:
             iteration += 1
             
-            # Count current passing insights
-            passing_count = sum(1 for i in all_processed_insights if i['score']['passed'])
-            
-            if passing_count >= min_insights and iteration > 1:
-                print(f"\n✅ Target reached: {passing_count} insights pass threshold!")
-                break
-            
             if iteration > 1:
-                print(f"\n🔄 Iteration {iteration}: Need {min_insights - passing_count} more passing insights...")
-            
-            # Insight categories
-            insight_categories = [
-                {'types': ['TREND'], 'focus': 'temporal trends and directional changes'},
-                {'types': ['OUTLIER', 'ANOMALY'], 'focus': 'unusual values and anomalies'},
-                {'types': ['CORRELATION'], 'focus': 'relationships between variables'},
-                {'types': ['DISTRIBUTION', 'COMPARISON'], 'focus': 'distributions and group comparisons'},
-                {'types': ['PATTERN'], 'focus': 'recurring patterns and cycles'}
-            ]
+                print(f"\n🔄 Iteration {iteration}:")
+                print(f"   Total insights so far: {len(all_processed_insights)}")
             
             all_insights = []
             
@@ -1036,11 +1426,21 @@ Find as many valuable patterns as possible."""
                 print(f"\n📊 Insight Batch {idx}/{len(insight_categories)}: {', '.join(category['types'])}")
                 print(f"  ├─ 🎯 Focus: {category['focus']}")
                 
-                print(f"  ├─ 💭 Analyzing previous step outputs...")
+                print(f"  ├─ 💭 Using unified context from all prior steps...")
                 print(f"  ├─ ✍️  Generating insight extraction prompt...")
                 
-                # Pass used titles to avoid duplicates
-                insights = self._extract_insights_by_category(category, output_dir, used_titles)
+                # Pass unified context to avoid duplicates
+                insights = self._extract_insights_by_category(
+                    category, 
+                    output_dir, 
+                    used_titles,
+                    semantic_meanings,
+                    quality_score,
+                    critical_issues,
+                    statistical_findings,
+                    strong_correlations,
+                    discovered_patterns
+                )
                 
                 if insights:
                     print(f"  ├─ ✅ Extracted {len(insights)} insights")
@@ -1051,8 +1451,8 @@ Find as many valuable patterns as possible."""
             
             print(f"✓ Total insights extracted this iteration: {len(all_insights)}\n")
             
-            # Process insights: generate charts + ISGEN scoring + filter by threshold
-            print("🎨 Generating visualizations and computing ISGEN scores...")
+            # Process insights: generate charts without scoring
+            print("🎨 Generating visualizations for all insights...")
             
             for insight_data in all_insights:
                 title = insight_data.get('title', '')
@@ -1067,18 +1467,11 @@ Find as many valuable patterns as possible."""
                 
                 print(f"  📊 {idx+1}: {title[:60]}...")
                 
-                # Extract values for scoring first (needed for pattern type)
-                values = self._extract_values_for_scoring(insight_data, insight_data.get('variables', []))
+                # Get chart type from LLM response
+                chart_type = insight_data.get('chart_type', 'bar')
                 
-                # ISGEN scoring
-                insight_score = scorer.score_insight(insight_data, values)
-                
-                # Get pattern type for chart naming (QUIS format)
-                pattern_type = insight_score.get('pattern_type', insight_data.get('type', 'UNKNOWN'))
-                pattern_name = pattern_type.replace(' ', '_')
-                
-                # Generate chart with QUIS-style naming
-                chart_filename = f"insight_{idx}_{pattern_name}.png"
+                # Generate chart
+                chart_filename = f"insight_{idx:03d}.png"
                 chart_path = self._generate_chart(insight_data, f"{output_dir}/{chart_filename}")
                 
                 processed_insight = {
@@ -1088,48 +1481,18 @@ Find as many valuable patterns as possible."""
                     'insight_type': insight_data.get('type', ''),
                     'chart_path': chart_path,
                     'data_evidence': insight_data.get('evidence', {}),
-                    'score': insight_score,
-                    'variables': insight_data.get('variables', [])
+                    'variables': insight_data.get('variables', []),
+                    'chart_type': chart_type,
+                    'subspace': insight_data.get('subspace', []),  # Extract subspace from LLM response
+                    'view_labels': insight_data.get('view_labels', [])  # Extract view_labels from post-processing
                 }
                 
                 all_processed_insights.append(processed_insight)
-                
-                # Show pass/fail status
-                status = "✓ PASS" if insight_score['passed'] else "✗ FAIL"
-                print(f"    {status} (score: {insight_score['pattern_score']:.3f}, threshold: {insight_score['threshold']})")
+                print(f"    ✓ Chart generated")
         
-        # Filter: Keep only insights passing threshold (like QUIS)
-        passing_insights = [i for i in all_processed_insights if i['score']['passed']]
-        failing_insights = [i for i in all_processed_insights if not i['score']['passed']]
+        # Save all insights without filtering
+        print(f"\n💾 Saving all insights...")
         
-        print(f"\n📊 ISGEN Filtering Results:")
-        print(f"  ✓ Passed threshold: {len(passing_insights)}/{len(all_processed_insights)}")
-        print(f"  ✗ Failed threshold: {len(failing_insights)}/{len(all_processed_insights)}")
-        
-        # Renumber and rename charts for passing insights only
-        print(f"\n🔄 Renumbering passing insights...")
-        final_insights = []
-        for new_idx, insight in enumerate(passing_insights):
-            old_chart = insight['chart_path']
-            pattern_name = insight['score'].get('pattern_type', 'UNKNOWN').replace(' ', '_')
-            new_chart_filename = f"insight_{new_idx}_{pattern_name}.png"
-            new_chart_path = f"{output_dir}/{new_chart_filename}"
-            
-            # Rename chart file
-            if os.path.exists(old_chart):
-                os.rename(old_chart, new_chart_path)
-            
-            insight['insight_id'] = f"insight_{new_idx:03d}"
-            insight['chart_path'] = new_chart_path
-            final_insights.append(insight)
-        
-        # Delete charts for failing insights
-        for insight in failing_insights:
-            chart_path = insight['chart_path']
-            if os.path.exists(chart_path):
-                os.remove(chart_path)
-        
-        # Save only passing insights
         def convert_to_native(obj):
             if isinstance(obj, np.bool_):
                 return bool(obj)
@@ -1141,96 +1504,216 @@ Find as many valuable patterns as possible."""
                 return [convert_to_native(item) for item in obj]
             return obj
         
-        insights_native = convert_to_native(final_insights)
+        insights_native = convert_to_native(all_processed_insights)
         
         with open(f"{output_dir}/insights.json", 'w', encoding='utf-8') as f:
             json.dump(insights_native, f, indent=2, ensure_ascii=False)
         
-        print(f"\n✅ Final: {len(final_insights)} insights passing threshold")
+        print(f"\n✅ Final: {len(all_processed_insights)} insights extracted (no scoring)")
         print(f"✓ Insights saved: {output_dir}/insights.json\n")
         
-        return final_insights
+        return all_processed_insights
     
-    def _extract_insights_by_category(self, category: Dict, output_dir: str, used_titles: set = None) -> List[Dict[str, Any]]:
-        """Extract insights for a specific category using LLM"""
+    def _extract_insights_by_category(self, category: Dict, output_dir: str, used_titles: set = None, semantic_meanings: Dict = None, quality_score: int = 0, critical_issues: List = None, statistical_findings: List = None, strong_correlations: List = None, discovered_patterns: List = None) -> List[Dict[str, Any]]:
+        """Extract insights for a specific category using LLM with unified context from all prior steps"""
         
         if used_titles is None:
             used_titles = set()
-        
-        # Collect context from previous steps
-        context = {
-            'step1': self.step_outputs.get('step1', {}),
-            'step2': self.step_outputs.get('step2', {}),
-            'step3': self.step_outputs.get('step3', {}),
-            'step4': self.step_outputs.get('step4', {})
-        }
+        if semantic_meanings is None:
+            semantic_meanings = {}
+        if critical_issues is None:
+            critical_issues = []
+        if statistical_findings is None:
+            statistical_findings = []
+        if strong_correlations is None:
+            strong_correlations = []
+        if discovered_patterns is None:
+            discovered_patterns = []
         
         # Get actual column names from dataset
         numerical_cols = self.df.select_dtypes(include=[np.number]).columns.tolist()[:20]
         categorical_cols = self.df.select_dtypes(include=['object']).columns.tolist()[:20]
+        
+        # Get unique values for categorical columns (for subspace generation)
+        categorical_values = {}
+        for col in categorical_cols:
+            unique_vals = self.df[col].dropna().unique()
+            # Limit to top 10 values to avoid too much context
+            categorical_values[col] = unique_vals[:10].tolist()
         
         # Build exclusion text if there are used titles
         exclusion_text = ""
         if used_titles:
             exclusion_text = f"\n\nIMPORTANT: Avoid these already-extracted insights:\n{chr(10).join(['- ' + t for t in list(used_titles)[:10]])}\n\nGenerate DIFFERENT insights with different angles and variables."
         
-        prompt = f"""Based on ALL previous analysis steps, extract valuable insights focused on: {category['focus']}
+        # Build unified context according to PROMPTS.md
+        prompt = f"""Extract insights of the following type(s): {', '.join(category['types'])}
 
-Insight types to find: {', '.join(category['types'])}{exclusion_text}
+AVAILABLE COLUMNS — use ONLY these exact names in "variables" and "subspace":
+- Numerical: {', '.join(numerical_cols)}
+- Categorical: {', '.join(categorical_cols)}
 
-IMPORTANT - Available columns in dataset:
-Numerical columns: {', '.join(numerical_cols)}
-Categorical columns: {', '.join(categorical_cols)}
+CRITICAL: Do NOT use derived or computed column names (e.g., "month", "year", "quarter", "day").
+If a temporal insight is needed, use the original date column name (e.g., "Invoice Date").
+Even if a "month" column exists in the dataframe, DO NOT use it. Always use the original date column.
 
-You MUST use ONLY these actual column names in the "variables" field. Do NOT make up column names.
+VALID SUBSPACE VALUES — when using subspace, the value MUST be taken from this list exactly as written:
+{json.dumps(categorical_values, indent=2, ensure_ascii=False)}
 
-Available context:
-- Data profile from step 1
-- Quality issues from step 2
-- Statistical analysis from step 3
-- Discovered patterns from step 4
+Do NOT invent subspace values. Only use values that appear in the list above.
 
-Extract AS MANY valuable insights as possible for these types. Each insight should be:
-- Specific and concrete (not generic)
-- Supported by evidence from previous steps
-- Actionable or decision-relevant
-- Visualizable with the available data
-- Use ONLY actual column names from the list above
+Context from prior analysis steps:
+
+Step 1 — Column meanings:
+{json.dumps(semantic_meanings, indent=2, ensure_ascii=False)}
+
+Step 2 — Quality Assessment:
+- Overall quality score: {quality_score}
+- Critical issues: {json.dumps(critical_issues[:5], indent=2, ensure_ascii=False)}
+
+Step 3 — Statistical Analysis:
+- Key statistical findings: {json.dumps(statistical_findings, indent=2, ensure_ascii=False)}
+- Strong correlations: {json.dumps(strong_correlations, indent=2, ensure_ascii=False)}
+
+Step 4 — Discovered patterns (relevant to {', '.join(category['types'])}):
+{json.dumps(discovered_patterns[:10], indent=2, ensure_ascii=False)}{exclusion_text}
+
+Already extracted insights (do not repeat these):
+{used_titles}
+
+SUBSPACE RULES:
+- Use subspace only when the insight is specifically about a subset of data
+- Subspace must be a column that exists in the categorical columns list above
+- Subspace value must be an actual value that exists in that column
+- Each insight uses at most ONE subspace condition: [["column_name", "value"]]
+- For global insights (whole dataset): "subspace": []
+- Do NOT use numerical columns or derived columns as subspace
+
+For each insight:
+- Write a specific, concrete title
+- Include actual numbers in the description
+- Reference which step provided the evidence
+- List the columns involved (from available columns only)
+- Choose an appropriate chart type: line | bar | scatter | histogram | box
 
 Return JSON:
 {{
   "insights": [
     {{
-      "title": "Specific insight title",
-      "description": "Detailed description with numbers and evidence",
-      "type": "One of: {', '.join(category['types'])}",
-      "variables": ["actual_column_name1", "actual_column_name2"],
+      "title": "...",
+      "description": "... (include specific numbers)",
+      "type": "{', '.join(category['types'])}",
+      "variables": ["column_name_1", "column_name_2"],
       "evidence": {{
-        "source_step": "step2_quality",
-        "key_statistics": "Specific numbers",
-        "data_points": "Concrete evidence"
-      }}
+        "source_step": "step3_statistics|step4_patterns|step2_quality",
+        "key_statistics": "...",
+        "data_points": "..."
+      }},
+      "chart_type": "line|bar|scatter|histogram|box",
+      "subspace": []
     }}
   ]
-}}"""
+}}
+
+Extract as many valuable insights as possible."""
 
         try:
             response = self.client.chat.completions.create(
                 model=self.model,
                 messages=[
-                    {"role": "system", "content": "You are an expert data analyst extracting maximum insights. Find as many valuable insights as possible."},
+                    {"role": "system", "content": "You are an expert data analyst extracting insights for a business audience."},
                     {"role": "user", "content": prompt}
                 ],
                 temperature=0.5,
-                max_tokens=16000,
+                max_completion_tokens=16000,
                 response_format={"type": "json_object"}
             )
-            
+            _add_usage_from_response(response)
+
             result = json.loads(response.choices[0].message.content)
-            return result.get('insights', [])
+            insights = result.get('insights', [])
+
+            # Post-processing: compute view_labels for each insight
+            insights = self._compute_view_labels(insights)
+
+            return insights
         except Exception as e:
             print(f"    ⚠️  Error extracting insights: {e}")
             return []
+
+    def _compute_view_labels(self, insights):
+        """
+        Post-processing: compute view_labels for each insight based on subspace filter.
+        This ensures labels always match the subspace-filtered data and pass faithfulness checks.
+        """
+        processed_insights = []
+
+        for insight in insights:
+            try:
+                # Get subspace condition
+                subspace = insight.get('subspace', [])
+
+                # 1. Validate subspace (if not empty)
+                if subspace and subspace != []:
+                    # Validate subspace column exists in df.columns
+                    if len(subspace) == 1 and len(subspace[0]) == 2:
+                        col, val = subspace[0]
+                        if col not in self.df.columns:
+                            print(f"    ⚠️  Skipping insight: invalid subspace column '{col}'")
+                            continue
+                        # Validate subspace value exists in df[col].unique()
+                        unique_vals = self.df[col].dropna().unique().tolist()
+                        if val not in unique_vals:
+                            print(f"    ⚠️  Skipping insight: subspace value '{val}' not found in data for column '{col}'")
+                            continue
+                    else:
+                        # Invalid subspace format
+                        print(f"    ⚠️  Skipping insight: invalid subspace format {subspace}")
+                        continue
+
+                # 2. Apply subspace filter
+                if not subspace or subspace == []:
+                    # Global insight - use full dataframe
+                    filtered_df = self.df
+                else:
+                    # Subspace insight - apply filter
+                    # Format: [["column_name", "value"]]
+                    col, val = subspace[0]
+                    # Convert both to string for comparison
+                    filtered_df = self.df[self.df[col].astype(str) == str(val)].copy()
+
+                # 3. Validate breakdown column
+                variables = insight.get('variables', [])
+                if not variables:
+                    print(f"    ⚠️  Skipping insight: no variables specified")
+                    continue
+
+                # Use first variable as breakdown column
+                breakdown_col = variables[0]
+
+                # Check that breakdown column exists in filtered_df.columns
+                if breakdown_col not in filtered_df.columns:
+                    print(f"    ⚠️  Skipping insight: breakdown column '{breakdown_col}' not found")
+                    continue
+
+                # 4. Compute view_labels
+                view_labels = sorted(filtered_df[breakdown_col].dropna().unique().tolist())
+
+                # If view_labels is empty: drop insight
+                if not view_labels:
+                    print(f"    ⚠️  Skipping insight: filtered dataframe is empty")
+                    continue
+
+                # 5. Attach view_labels to insight
+                insight['view_labels'] = view_labels
+
+                processed_insights.append(insight)
+
+            except Exception as e:
+                print(f"    ⚠️  Error processing insight: {e}")
+                continue
+
+        return processed_insights
     
     # Code generation methods
     def _generate_profiling_code(self, output_dir: str, iteration: int) -> str:
@@ -1259,8 +1742,9 @@ Return ONLY executable Python code."""
                 {"role": "user", "content": prompt}
             ],
             temperature=0.3,
-            max_tokens=2000
+            max_completion_tokens=2000
         )
+        _add_usage_from_response(response)
         
         code = response.choices[0].message.content
         if "```python" in code:
@@ -1294,8 +1778,9 @@ Return ONLY executable Python code."""
                 {"role": "user", "content": prompt}
             ],
             temperature=0.3,
-            max_tokens=2000
+            max_completion_tokens=2000
         )
+        _add_usage_from_response(response)
         
         code = response.choices[0].message.content
         if "```python" in code:
@@ -1327,8 +1812,9 @@ Return ONLY executable Python code."""
                 {"role": "user", "content": prompt}
             ],
             temperature=0.3,
-            max_tokens=2000
+            max_completion_tokens=2000
         )
+        _add_usage_from_response(response)
         
         code = response.choices[0].message.content
         if "```python" in code:
@@ -1362,8 +1848,9 @@ Return ONLY executable Python code."""
                 {"role": "user", "content": prompt}
             ],
             temperature=0.3,
-            max_tokens=2000
+            max_completion_tokens=2000
         )
+        _add_usage_from_response(response)
         
         code = response.choices[0].message.content
         if "```python" in code:
@@ -1555,19 +2042,31 @@ Return ONLY executable Python code."""
         insights = self.step_outputs.get('step5', [])
         
         total = len(insights)
-        passed = sum(1 for i in insights if i['score']['passed'])
-        pass_rate = (passed / total * 100) if total > 0 else 0
+        
+        # Check if insights have scores (if not, skip score-related calculations)
+        has_scores = len(insights) > 0 and 'score' in insights[0]
+        
+        if has_scores:
+            passed = sum(1 for i in insights if i['score']['passed'])
+            pass_rate = (passed / total * 100) if total > 0 else 0
+            avg_score = sum(i['score']['pattern_score'] for i in insights) / total if total > 0 else 0
+            top_insights = sorted(insights, key=lambda x: x['score']['pattern_score'], reverse=True)[:10]
+        else:
+            passed = 0
+            pass_rate = 0
+            avg_score = 0
+            top_insights = insights[:10] if total > 0 else []
         
         type_counts = {}
         pattern_counts = {}
         for i in insights:
             itype = i['insight_type']
-            ptype = i['score'].get('pattern_type', 'UNKNOWN')
+            if has_scores:
+                ptype = i['score'].get('pattern_type', 'UNKNOWN')
+            else:
+                ptype = 'UNKNOWN'
             type_counts[itype] = type_counts.get(itype, 0) + 1
             pattern_counts[ptype] = pattern_counts.get(ptype, 0) + 1
-        
-        avg_score = sum(i['score']['pattern_score'] for i in insights) / total if total > 0 else 0
-        top_insights = sorted(insights, key=lambda x: x['score']['pattern_score'], reverse=True)[:10]
         
         with open(f"{output_dir}/summary.txt", 'w', encoding='utf-8') as f:
             f.write("="*70 + "\n")
@@ -1590,10 +2089,14 @@ Return ONLY executable Python code."""
             
             f.write("Top 10 Insights:\n")
             for i, insight in enumerate(top_insights, 1):
-                score_info = insight['score']
-                passed_mark = "✓" if score_info['passed'] else "✗"
-                f.write(f"  {i}. {passed_mark} {insight['insight_id']}: {insight['title']}\n")
-                f.write(f"     Pattern: {score_info['pattern_type']}, Score: {score_info['pattern_score']:.3f}\n")
+                if has_scores:
+                    score_info = insight['score']
+                    passed_mark = "✓" if score_info['passed'] else "✗"
+                    f.write(f"  {i}. {passed_mark} {insight['insight_id']}: {insight['title']}\n")
+                    f.write(f"     Pattern: {score_info['pattern_type']}, Score: {score_info['pattern_score']:.3f}\n")
+                else:
+                    f.write(f"  {i}. {insight['insight_id']}: {insight['title']}\n")
+                    f.write(f"     Type: {insight['insight_type']}\n")
             
             f.write("\n" + "="*70 + "\n")
         

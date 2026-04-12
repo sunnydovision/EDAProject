@@ -1,0 +1,18 @@
+{
+  "total_time": 628.2293219566345,
+  "step_times": {
+    "profiling": 19.46478271484375,
+    "quality": 20.04315185546875,
+    "statistics": 25.109739065170288,
+    "patterns": 121.61887621879578,
+    "insights": 441.42553520202637
+  },
+  "insights_generated": 114,
+  "throughput": 0.18146239918401835,
+  "token_usage": {
+    "input_tokens": 80965,
+    "output_tokens": 38690,
+    "total_tokens": 119655,
+    "requests": 22
+  }
+}

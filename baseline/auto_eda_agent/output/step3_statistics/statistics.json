@@ -1,0 +1,247 @@
+{
+  "statistics": {
+    "numerical_stats": {
+      "Retailer ID": {
+        "count": 9648,
+        "mean": 1173849.7235696518,
+        "median": 1185732.0,
+        "std": 26360.377309331212,
+        "min": 1128299.0,
+        "max": 1197831.0,
+        "q25": 1185732.0,
+        "q75": 1185732.0,
+        "skewness": -1.0805174636022123,
+        "kurtosis": -0.6640960528608013
+      },
+      "Price per Unit": {
+        "count": 9648,
+        "mean": 45.21662520729685,
+        "median": 45.0,
+        "std": 14.705397125008334,
+        "min": 7.0,
+        "max": 110.0,
+        "q25": 35.0,
+        "q75": 55.0,
+        "skewness": 0.3624454995891895,
+        "kurtosis": 0.4301863009988871
+      },
+      "Units Sold": {
+        "count": 9648,
+        "mean": 250.9896735074627,
+        "median": 175.0,
+        "std": 206.02755355382004,
+        "min": 0.0,
+        "max": 975.0,
+        "q25": 105.0,
+        "q75": 325.0,
+        "skewness": 1.356242554453118,
+        "kurtosis": 1.1552121642361604
+      },
+      "Total Sales": {
+        "count": 9648,
+        "mean": 93273.4375,
+        "median": 9576.0,
+        "std": 141916.01672684302,
+        "min": 0.0,
+        "max": 825000.0,
+        "q25": 4254.5,
+        "q75": 150000.0,
+        "skewness": 1.8413591666120177,
+        "kurtosis": 3.143841925336787
+      },
+      "Operating Profit": {
+        "count": 9648,
+        "mean": 34425.282131011605,
+        "median": 4371.5,
+        "std": 54193.12414058952,
+        "min": 0.0,
+        "max": 390000.0,
+        "q25": 1922.0,
+        "q75": 52063.0,
+        "skewness": 2.233597293117571,
+        "kurtosis": 5.820362103934637
+      },
+      "Operating Margin": {
+        "count": 9648,
+        "mean": 42.29912935323383,
+        "median": 41.0,
+        "std": 9.719741850510681,
+        "min": 10.0,
+        "max": 80.0,
+        "q25": 35.0,
+        "q75": 49.0,
+        "skewness": 0.22748151428003213,
+        "kurtosis": 0.17529608277695052
+      }
+    },
+    "categorical_stats": {
+      "Retailer": {
+        "unique_count": 6,
+        "most_common": "Foot Locker",
+        "most_common_count": 2637,
+        "distribution": {
+          "Foot Locker": 2637,
+          "West Gear": 2374,
+          "Sports Direct": 2032,
+          "Kohl's": 1030,
+          "Amazon": 949,
+          "Walmart": 626
+        }
+      },
+      "Invoice Date": {
+        "unique_count": 724,
+        "most_common": "2021-01-17",
+        "most_common_count": 77,
+        "distribution": {
+          "2021-01-17": 77,
+          "2021-03-16": 72,
+          "2021-04-17": 72,
+          "2021-08-17": 72,
+          "2021-11-17": 71,
+          "2021-07-16": 70,
+          "2021-12-16": 69,
+          "2021-01-10": 67,
+          "2021-01-24": 67,
+          "2021-02-17": 65
+        }
+      },
+      "Region": {
+        "unique_count": 5,
+        "most_common": "West",
+        "most_common_count": 2448,
+        "distribution": {
+          "West": 2448,
+          "Northeast": 2376,
+          "Midwest": 1872,
+          "South": 1728,
+          "Southeast": 1224
+        }
+      },
+      "State": {
+        "unique_count": 50,
+        "most_common": "Texas",
+        "most_common_count": 432,
+        "distribution": {
+          "Texas": 432,
+          "California": 432,
+          "New York": 360,
+          "Florida": 360,
+          "Pennsylvania": 216,
+          "Nevada": 216,
+          "Tennessee": 216,
+          "Alabama": 216,
+          "Virginia": 216,
+          "Utah": 216
+        }
+      },
+      "City": {
+        "unique_count": 52,
+        "most_common": "Portland",
+        "most_common_count": 360,
+        "distribution": {
+          "Portland": 360,
+          "Charleston": 288,
+          "New York": 216,
+          "Houston": 216,
+          "San Francisco": 216,
+          "Los Angeles": 216,
+          "Dallas": 216,
+          "Philadelphia": 216,
+          "Las Vegas": 216,
+          "Knoxville": 216
+        }
+      },
+      "Product": {
+        "unique_count": 6,
+        "most_common": "Men's Street Footwear",
+        "most_common_count": 1610,
+        "distribution": {
+          "Men's Street Footwear": 1610,
+          "Men's Athletic Footwear": 1610,
+          "Women's Street Footwear": 1608,
+          "Women's Apparel": 1608,
+          "Women's Athletic Footwear": 1606,
+          "Men's Apparel": 1606
+        }
+      },
+      "Sales Method": {
+        "unique_count": 3,
+        "most_common": "Online",
+        "most_common_count": 4889,
+        "distribution": {
+          "Online": 4889,
+          "Outlet": 3019,
+          "In-store": 1740
+        }
+      }
+    },
+    "correlations": {
+      "strong_correlations": [
+        {
+          "var1": "Units Sold",
+          "var2": "Total Sales",
+          "correlation": 0.844936119178483
+        },
+        {
+          "var1": "Units Sold",
+          "var2": "Operating Profit",
+          "correlation": 0.8138708043211902
+        },
+        {
+          "var1": "Total Sales",
+          "var2": "Operating Profit",
+          "correlation": 0.9563074748281619
+        }
+      ]
+    }
+  },
+  "interpretation": {
+    "distribution_patterns": "Retailer ID should not be interpreted statistically because it is an identifier, not a business measure. Price per Unit is centered around 45 (mean 45.2, median 45) with only mild right skew, suggesting pricing is fairly standardized across products and channels, though a small number of premium-priced transactions push the upper tail to 110. Because this column was flagged for outliers, the mean is still somewhat influenced by high-price records, but overall the distribution looks relatively stable compared with the volume and revenue fields. Units Sold is strongly right-skewed (mean 251 vs median 175) with elevated kurtosis, meaning most transactions are for modest quantities but a smaller number of very large orders materially raise the average. In business terms, this suggests a mix of routine sales and occasional bulk or unusually successful transactions; the minimum of 0 also indicates some records may represent cancellations, placeholders, or data-entry issues that should be reviewed. Total Sales is extremely right-skewed (mean 93,273 vs median 9,576) with high kurtosis, showing that a relatively small number of very large revenue records dominate the average. This is a major business signal: typical transactions are much smaller than the mean implies, so median and percentile-based reporting are more representative than averages. The very wide gap between the 75th percentile (150,000) and median also suggests a highly uneven transaction value structure, possibly reflecting different order types, channels, or aggregation levels. Operating Profit shows the same but even more extreme pattern (mean 34,425 vs median 4,371.5, skewness 2.23, kurtosis 5.82), indicating profit is concentrated in a limited number of high-profit transactions. This may reflect large-volume deals, high-margin product/channel combinations, or inconsistent record granularity. Operating Margin is much more stable than sales and profit dollars: mean 42.3, median 41, mild right skew, and moderate spread from 10 to 80. That suggests margin policy or pricing discipline is relatively consistent, even though absolute sales and profit vary widely. However, because Operating Margin is also flagged for outliers, the highest-margin records should be checked for unusual pricing, discounting, or allocation logic.",
+    "strong_correlations": [
+      {
+        "variables": "Units Sold and Total Sales",
+        "interpretation": "This strong positive relationship (r=0.845) means higher unit volume is closely associated with higher revenue, which is expected because sales dollars are mechanically driven by quantity times price. This is primarily a structural relationship rather than a behavioral one. The fact that the correlation is not even higher suggests price variation across products, channels, or retailers meaningfully affects revenue in addition to volume.",
+        "strength": "strong"
+      },
+      {
+        "variables": "Units Sold and Operating Profit",
+        "interpretation": "This strong positive relationship (r=0.814) indicates that larger-quantity transactions tend to generate more operating profit. This is partly structural, since more units usually create more gross contribution, but it may also reflect behavioral/business effects such as certain high-volume channels or retailers being more profitable. Because profit is also shaped by margin differences, the correlation being lower than sales-profit correlation suggests that not all volume converts equally well into profit.",
+        "strength": "strong"
+      },
+      {
+        "variables": "Total Sales and Operating Profit",
+        "interpretation": "This very strong positive relationship (r=0.956) shows that revenue and operating profit move almost in lockstep. This is largely structural because profit is derived from sales through margin assumptions. In business terms, this suggests that differences in profit are driven much more by transaction size than by large swings in margin percentage. It also means any analysis of profit drivers should control for sales size before concluding that a retailer, region, or product is inherently more profitable.",
+        "strength": "strong"
+      }
+    ],
+    "key_findings": [
+      "Revenue and profit distributions are highly concentrated in a relatively small number of very large transactions, so mean-based summaries materially overstate the typical transaction size and profitability.",
+      "Operating Margin is comparatively stable while Total Sales and Operating Profit are highly volatile, implying that transaction size and volume are the main drivers of financial variation rather than dramatic differences in margin rate.",
+      "The strongest relationships are structural: units drive sales, and sales drive profit. This means business comparisons across retailers, products, or channels should normalize for transaction size before interpreting performance differences."
+    ],
+    "statistical_anomalies": [
+      "Zero values in Units Sold, Total Sales, and Operating Profit are unusual for completed sale records and may indicate returns, cancellations, placeholder rows, or data quality issues.",
+      "The very large gaps between median and mean for Total Sales and Operating Profit, along with extreme upper tails, suggest either genuine bulk/high-value transactions or inconsistent record granularity where some rows may represent aggregated sales while others represent smaller transactions.",
+      "City count exceeds what might be expected relative to State count and includes repeated city names like Portland and Charleston that may refer to multiple states; geographic mappings should be validated before location-level conclusions are drawn.",
+      "Retailer distribution is imbalanced, with Foot Locker, West Gear, and Sports Direct contributing far more records than Walmart or Amazon, so raw comparisons by retailer may reflect record volume differences rather than true business performance."
+    ],
+    "recommendations": [
+      "Use robust summaries such as medians, IQRs, and percentile bands for Price per Unit, Units Sold, Total Sales, and Operating Profit instead of relying primarily on means.",
+      "Segment the analysis by Product, Sales Method, Retailer, and Region to determine whether the extreme upper-tail sales and profit records are concentrated in specific business segments.",
+      "Investigate zero-value and extreme-value records to distinguish valid business events (returns, bulk orders, promotions, channel-specific deals) from data-entry or aggregation issues.",
+      "Validate record granularity by checking whether each row represents a single transaction, a daily store-product summary, or another aggregation level; this is critical given the unusually large spread in sales and profit.",
+      "When comparing profitability across groups, analyze Operating Margin separately from absolute profit and use multivariate models or normalized metrics to control for transaction size.",
+      "Review geographic standardization for City-State-Region combinations to ensure location analyses are not distorted by ambiguous city names or mapping inconsistencies."
+    ]
+  },
+  "summary": {
+    "numerical_columns": 6,
+    "categorical_columns": 7,
+    "strong_correlations": 3,
+    "key_findings": [
+      "Revenue and profit distributions are highly concentrated in a relatively small number of very large transactions, so mean-based summaries materially overstate the typical transaction size and profitability.",
+      "Operating Margin is comparatively stable while Total Sales and Operating Profit are highly volatile, implying that transaction size and volume are the main drivers of financial variation rather than dramatic differences in margin rate.",
+      "The strongest relationships are structural: units drive sales, and sales drive profit. This means business comparisons across retailers, products, or channels should normalize for transaction size before interpreting performance differences."
+    ]
+  }
+}
