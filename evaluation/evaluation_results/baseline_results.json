@@ -1,0 +1,47 @@
+{
+  "system": "Baseline",
+  "num_cards": 114,
+  "num_insights": 114,
+  "faithfulness": {
+    "faithfulness": 1.0,
+    "verified_count": 114,
+    "total_count": 114,
+    "hallucination_count": 0,
+    "hallucination_rate": 0.0,
+    "_failed_insights": []
+  },
+  "insight_significance": {
+    "avg_zscore": Infinity,
+    "significant_count": 95,
+    "significant_rate": 1.0,
+    "max_zscore": Infinity,
+    "total_evaluated": 95
+  },
+  "question_diversity": {
+    "diversity": 0.23727482557296753,
+    "avg_similarity": 0.7627251744270325,
+    "num_questions": 114
+  },
+  "time_to_insight": {
+    "total_time_seconds": 628.2293219566345,
+    "insights_generated": 114,
+    "time_per_insight_seconds": 5.51078352593539,
+    "throughput_insights_per_second": 0.18146239918401835
+  },
+  "token_usage": {
+    "total_tokens": 119655,
+    "input_tokens": 80965,
+    "output_tokens": 38690,
+    "requests": 22,
+    "insights_generated": 114,
+    "tokens_per_insight": 1049.6052631578948,
+    "model": "gpt-5.4"
+  },
+  "insight_novelty": {
+    "novelty": 0.9385964912280702,
+    "novel_count": 107,
+    "total_count": 114,
+    "avg_max_similarity": 0.7355053424835205,
+    "tau": 0.85
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "baseline": {
+    "total_time_seconds": 628.2293219566345,
+    "step_times": {
+      "profiling": 19.46478271484375,
+      "quality": 20.04315185546875,
+      "statistics": 25.109739065170288,
+      "patterns": 121.61887621879578,
+      "insights": 441.42553520202637
+    },
+    "insights_generated": 114,
+    "throughput_insights_per_second": 0.18146239918401835
+  },
+  "ifq": {
+    "total_time_seconds": 629.731,
+    "step_times": {
+      "qugen": 515.707,
+      "isgen": 114.024
+    },
+    "insights_generated": 80
+  }
+}
