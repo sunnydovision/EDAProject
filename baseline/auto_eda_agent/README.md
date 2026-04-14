@@ -42,6 +42,30 @@ cd baseline/auto_eda_agent
 python run.py ../../data/transactions.csv output
 ```
 
+### Run Demo
+
+The demo app visualizes the baseline pipeline results interactively:
+
+```bash
+# Activate virtual environment
+source venv/bin/activate
+
+# Run Streamlit demo from root
+streamlit run baseline/auto_eda_agent/demo/app.py
+```
+
+**Demo Features:**
+- Interactive visualization of 5-step EDA pipeline
+- Sub-step breakdown with Input/Process/Output format
+- Modal dialogs to view LLM prompts (Template vs Actual)
+- Toggle between prompt modes with data-filled examples
+- Dark theme with configurable colors (see `.streamlit/config.toml`)
+
+**Demo Requirements:**
+- Baseline pipeline must be run first to generate output JSON files
+- Data file: `data/Adidas_cleaned.csv`
+- Output directory: `baseline/auto_eda_agent/output/` (contains results from pipeline)
+
 ### Output Structure
 
 ```

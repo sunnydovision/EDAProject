@@ -8,3 +8,6 @@ font = "sans serif"
 
 [browser]
 gatherUsageStats = false
+
+[prompt_colors]
+json_highlight = "#60a5fa"
