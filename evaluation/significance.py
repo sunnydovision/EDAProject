@@ -80,6 +80,7 @@ def compute_significance(
             
             # Resolve column names to match cleaned dataframe
             col_resolved = resolve_column(col, list(df_cleaned.columns)) or col
+            
             breakdown_resolved = resolve_column(breakdown, list(df_cleaned.columns)) or breakdown if breakdown else None
             
             # Check if required columns exist
@@ -239,12 +240,24 @@ def compute_p_value(pattern: str, df: pd.DataFrame, breakdown: str, col: str):
         if col not in df.columns:
             return None
         
-        # Check if this is a COUNT measure on categorical data
-        # If breakdown exists and we're doing COUNT, aggregate first
+        # Aggregate by breakdown using the correct aggregation function from measure
         if breakdown and breakdown in df.columns:
-            # Aggregate by breakdown
             try:
-                grouped = df.groupby(breakdown)[col].count()
+                agg_func = agg.lower()  # Get aggregation function from measure string
+                if agg_func == 'count':
+                    # For COUNT, use groupby().size() to count rows
+                    grouped = df.groupby(breakdown).size()
+                elif agg_func == 'min':
+                    grouped = df.groupby(breakdown)[col].min()
+                elif agg_func == 'max':
+                    grouped = df.groupby(breakdown)[col].max()
+                elif agg_func == 'sum':
+                    grouped = df.groupby(breakdown)[col].sum()
+                elif agg_func == 'mean' or agg_func == 'avg':
+                    grouped = df.groupby(breakdown)[col].mean()
+                else:
+                    # Fallback to count for unknown aggregation
+                    grouped = df.groupby(breakdown)[col].count()
                 values = grouped.values
             except:
                 # Fallback to direct column values

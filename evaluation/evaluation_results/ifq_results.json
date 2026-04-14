@@ -18,31 +18,18 @@
   },
   "insight_significance": {
     "avg_zscore": Infinity,
-    "significant_count": 41,
-    "significant_rate": 0.5125,
+    "significant_count": 67,
+    "significant_rate": 0.8701298701298701,
     "max_zscore": Infinity,
-    "total_evaluated": 80
+    "total_evaluated": 77
   },
   "question_diversity": {
     "diversity": 0.4913730025291443,
     "avg_similarity": 0.5086269974708557,
     "num_questions": 80
   },
-  "time_to_insight": {
-    "total_time_seconds": 629.731,
-    "insights_generated": 80,
-    "time_per_insight_seconds": 7.8716375,
-    "throughput_insights_per_second": 0.12703837035178514
-  },
-  "token_usage": {
-    "total_tokens": 78804,
-    "input_tokens": 53533,
-    "output_tokens": 25271,
-    "requests": 101,
-    "insights_generated": 80,
-    "tokens_per_insight": 985.05,
-    "model": "gpt-5.4"
-  },
+  "time_to_insight": null,
+  "token_usage": null,
   "insight_novelty": {
     "novelty": 0.975,
     "novel_count": 78,

@@ -22,21 +22,8 @@
     "avg_similarity": 0.7627251744270325,
     "num_questions": 114
   },
-  "time_to_insight": {
-    "total_time_seconds": 628.2293219566345,
-    "insights_generated": 114,
-    "time_per_insight_seconds": 5.51078352593539,
-    "throughput_insights_per_second": 0.18146239918401835
-  },
-  "token_usage": {
-    "total_tokens": 119655,
-    "input_tokens": 80965,
-    "output_tokens": 38690,
-    "requests": 22,
-    "insights_generated": 114,
-    "tokens_per_insight": 1049.6052631578948,
-    "model": "gpt-5.4"
-  },
+  "time_to_insight": null,
+  "token_usage": null,
   "insight_novelty": {
     "novelty": 0.9385964912280702,
     "novel_count": 107,

@@ -344,9 +344,21 @@ class OutputConverter:
         score_data = baseline_insight.get('score', {})
         score = float(score_data.get('overall', score_data.get('pattern_score', 0.0)))
         
-        # Compute view (labels and values)
+        # Extract and convert subspace from baseline format to QUIS Subspace format
+        # Baseline uses [["column", "value"]] (list of lists)
+        # QUIS uses Subspace(filters=((col, val), ...)) (tuple of tuples)
+        baseline_subspace = baseline_insight.get('subspace', [])
+        if baseline_subspace:
+            # Convert from [["col", "val"], ...] to ((col, val), ...)
+            subspace_filters = tuple(tuple(filter_pair) for filter_pair in baseline_subspace)
+            from quis.isgen.models import Subspace
+            quis_subspace = Subspace(filters=subspace_filters)
+        else:
+            quis_subspace = None
+        
+        # Compute view (labels and values) with actual subspace
         try:
-            labels, values = compute_view(self.df, breakdown, measure, [])
+            labels, values = compute_view(self.df, breakdown, measure, quis_subspace)
             # Convert string labels back to original data types to match cleaned data
             labels = self._fix_label_types(labels, breakdown)
             # Remove duplicates to avoid faithfulness errors
