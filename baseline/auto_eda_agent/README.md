@@ -50,8 +50,8 @@ The demo app visualizes the baseline pipeline results interactively:
 # Activate virtual environment
 source venv/bin/activate
 
-# Run Streamlit demo from root
-streamlit run baseline/auto_eda_agent/demo/app.py
+# Run Streamlit demo from root (port 8502 to avoid conflict with main app)
+streamlit run baseline/auto_eda_agent/demo/app.py --server.port 8502
 ```
 
 **Demo Features:**
