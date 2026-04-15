@@ -570,6 +570,11 @@ Provide expert assessment:
 4. **Overall Quality Score**: Rate data quality 0-100 based on severity of issues
 5. **Priority Actions**: Top 3 actions to improve quality
 
+IMPORTANT:
+- Write ALL natural-language text in Vietnamese.
+- The value of each "recommendation" must be in Vietnamese.
+- Keep JSON keys unchanged in English as specified below.
+
 Return JSON:
 {{
   "critical_issues": [
@@ -589,7 +594,7 @@ Return JSON:
             response = self.client.chat.completions.create(
                 model=self.model,
                 messages=[
-                    {"role": "system", "content": "You are a data quality expert providing professional assessment."},
+                    {"role": "system", "content": "You are a data quality expert providing professional assessment. Always write all natural-language output in Vietnamese."},
                     {"role": "user", "content": prompt}
                 ],
                 temperature=0.3,
@@ -612,11 +617,11 @@ Return JSON:
         with open(output_path, 'w', encoding='utf-8') as f:
             f.write("# Data Quality Report\n\n")
             
-            f.write("## Summary\n\n")
+            f.write("## Tóm tắt\n\n")
             summary = report['summary']
-            f.write(f"- **Total Issues**: {summary['total_issues']}\n")
-            f.write(f"- **Critical Issues**: {summary['critical_issues']}\n")
-            f.write(f"- **Quality Score**: {summary['data_quality_score']}/100\n\n")
+            f.write(f"- **Tổng số vấn đề**: {summary['total_issues']}\n")
+            f.write(f"- **Vấn đề nghiêm trọng**: {summary['critical_issues']}\n")
+            f.write(f"- **Điểm chất lượng**: {summary['data_quality_score']}/100\n\n")
             
             f.write("## Missing Values\n\n")
             missing = report['metrics']['missing_values']
@@ -634,14 +639,14 @@ Return JSON:
             else:
                 f.write("No significant outliers detected.\n")
             
-            f.write("\n## Critical Issues\n\n")
+            f.write("\n## Vấn đề nghiêm trọng\n\n")
             critical = report['assessment'].get('critical_issues', [])
             if critical:
                 for issue in critical[:5]:
                     f.write(f"### {issue.get('issue', 'Unknown')}\n")
-                    f.write(f"- **Severity**: {issue.get('severity', 'unknown')}\n")
-                    f.write(f"- **Impact**: {issue.get('impact', '')}\n")
-                    f.write(f"- **Recommendation**: {issue.get('recommendation', '')}\n\n")
+                    f.write(f"- **Mức độ**: {issue.get('severity', 'unknown')}\n")
+                    f.write(f"- **Tác động**: {issue.get('impact', '')}\n")
+                    f.write(f"- **Khuyến nghị**: {issue.get('recommendation', '')}\n\n")
     
     def _run_statistics_agent(self, output_dir: str, max_iterations: int) -> Dict[str, Any]:
         """
@@ -1074,8 +1079,8 @@ Find as many valuable patterns as possible."""
                 insight_score = scorer.score_insight(insight_data, values)
                 
                 # Get pattern type for chart naming (QUIS format)
-                pattern_type = insight_score.get('pattern_type', insight_data.get('type', 'UNKNOWN'))
-                pattern_name = pattern_type.replace(' ', '_')
+                pattern_type = insight_score.get('pattern_type') or insight_data.get('type') or 'UNKNOWN'
+                pattern_name = str(pattern_type).replace(' ', '_')
                 
                 # Generate chart with QUIS-style naming
                 chart_filename = f"insight_{idx}_{pattern_name}.png"
@@ -1111,7 +1116,7 @@ Find as many valuable patterns as possible."""
         final_insights = []
         for new_idx, insight in enumerate(passing_insights):
             old_chart = insight['chart_path']
-            pattern_name = insight['score'].get('pattern_type', 'UNKNOWN').replace(' ', '_')
+            pattern_name = str(insight['score'].get('pattern_type') or 'UNKNOWN').replace(' ', '_')
             new_chart_filename = f"insight_{new_idx}_{pattern_name}.png"
             new_chart_path = f"{output_dir}/{new_chart_filename}"
             

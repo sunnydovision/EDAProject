@@ -1,0 +1,41 @@
+======================================================================
+AGENTIC AUTOEDA BASELINE - SUMMARY
+======================================================================
+
+Total Insights: 16
+Passed ISGEN Threshold: 16/16 (100.0%)
+Average Pattern Score: 1.000
+
+Insights by Type:
+  • CORRELATION: 5
+  • PATTERN: 5
+  • TREND: 3
+  • DISTRIBUTION: 3
+
+Insights by ISGEN Pattern:
+  • QUALITY: 13
+  • TREND: 3
+
+Top 10 Insights:
+  1. ✓ insight_003: Correlation between Khối lượng and Doanh thu trên mm
+     Pattern: QUALITY, Score: 1.000
+  2. ✓ insight_004: Impact of Tỷ trọng thực tế on Thành Tiền
+     Pattern: QUALITY, Score: 1.000
+  3. ✓ insight_005: Relationship between Met A and Doanh thu tb mỗi lần
+     Pattern: QUALITY, Score: 1.000
+  4. ✓ insight_006: Influence of Tháng on Doanh thu theo tuần trong tháng
+     Pattern: QUALITY, Score: 1.000
+  5. ✓ insight_007: Correlation between Độ D and Số lần bán sản phẩm
+     Pattern: QUALITY, Score: 1.000
+  6. ✓ insight_008: Distribution of Sales by Region
+     Pattern: QUALITY, Score: 1.000
+  7. ✓ insight_009: Distribution of Product Thickness
+     Pattern: QUALITY, Score: 1.000
+  8. ✓ insight_010: Distribution of Actual Density of Products
+     Pattern: QUALITY, Score: 1.000
+  9. ✓ insight_011: Monthly Sales Peaks in Q4
+     Pattern: QUALITY, Score: 1.000
+  10. ✓ insight_012: Weekly Sales Cycles
+     Pattern: QUALITY, Score: 1.000
+
+======================================================================

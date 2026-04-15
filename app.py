@@ -69,43 +69,34 @@ def _cached_load_insights_json(path: str) -> list | None:
 
 @st.cache_data(show_spinner=False, ttl=45)
 def _cached_discover_history(_project_root: str) -> tuple:
-    """Tuple of dicts so cache key can include root; refresh every ~45s for new JSON files."""
+    """Return only curated datasets shown in History."""
     root = _project_root
     results = []
-    for path in sorted(glob.glob(os.path.join(root, "insights_summary*.json"))):
-        fname = os.path.basename(path)
-        name = fname.replace("insights_summary_", "").replace("insights_summary", "").replace(".json", "")
-        if not name:
-            name = "default"
-        cards_path = path.replace("insights_summary", "insight_cards")
-        csv_candidates = [
-            os.path.join(root, "data", f"{name}.csv"),
-            os.path.join(root, "data", f"{name.title()}.csv"),
-            os.path.join(root, "data", f"{name.upper()}.csv"),
-            os.path.join(root, "data", f"{name.capitalize()}.csv"),
-            os.path.join(root, f"{name}.csv"),
-        ]
-        # Adidas retail pipeline: insights_summary_adidas_cleaned.json → data/Adidas_cleaned.csv
-        nl = name.lower()
-        if nl == "adidas_cleaned":
-            for ad in (
-                os.path.join(root, "data", "Adidas_cleaned.csv"),
-                os.path.join(root, "data", "adidas_cleaned.csv"),
-            ):
-                if os.path.isfile(ad):
-                    csv_candidates = [ad] + [p for p in csv_candidates if p != ad]
-                    break
-        if not any(os.path.isfile(p) for p in csv_candidates):
-            for p in glob.glob(os.path.join(root, "data", "*.csv")):
-                if os.path.basename(p).lower() == f"{name.lower()}.csv":
-                    csv_candidates.insert(0, p)
-        csv_path = next((p for p in csv_candidates if os.path.isfile(p)), None)
+    curated_history = (
+        {
+            "label": "Steel metal company",
+            "insights_path": os.path.join(root, "insights_summary_v2.json"),
+            "cards_path": os.path.join(root, "insight_cards_v2.json"),
+            "csv_path": os.path.join(root, "data", "transactions_cleaned.csv"),
+        },
+        {
+            "label": "Adidas",
+            "insights_path": os.path.join(root, "insights_summary_adidas_cleaned.json"),
+            "cards_path": os.path.join(root, "insight_cards_adidas_cleaned.json"),
+            "csv_path": os.path.join(root, "data", "Adidas_cleaned.csv"),
+        },
+    )
+
+    for item in curated_history:
+        if not os.path.isfile(item["insights_path"]):
+            continue
         results.append({
-            "label": name.replace("_", " ").title(),
-            "insights_path": path,
-            "cards_path": cards_path if os.path.isfile(cards_path) else None,
-            "csv_path": csv_path,
+            "label": item["label"],
+            "insights_path": item["insights_path"],
+            "cards_path": item["cards_path"] if os.path.isfile(item["cards_path"]) else None,
+            "csv_path": item["csv_path"] if os.path.isfile(item["csv_path"]) else None,
         })
+
     return tuple(results)
 
 
@@ -1164,27 +1155,49 @@ def _deduplicate_cards(cards: List[InsightCard]) -> List[InsightCard]:
     return out
 
 
-def _build_recommendation(insight: dict) -> str:
+def _build_recommendation(insight: dict, language: str = "en") -> str:
     pattern = (insight.get("pattern") or "").lower()
     breakdown = insight.get("breakdown", "group")
     labels = insight.get("view_labels") or []
     values = insight.get("view_values") or []
+    use_vi = (language or "").lower().startswith("vi")
     if not labels or not values:
+        if use_vi:
+            return "Tiếp tục theo dõi dữ liệu để xác nhận insight này và ưu tiên các nhóm có tác động cao nhất."
         return "Continue monitoring data to confirm this insight and prioritize the highest-impact segments."
     pairs = list(zip(labels, values))
     top_label, top_value = max(pairs, key=lambda x: x[1])
     low_label, low_value = min(pairs, key=lambda x: x[1])
     if "trend" in pattern:
+        if use_vi:
+            return (f"Thiết lập cảnh báo theo thời gian cho {breakdown}. Nếu xu hướng giảm, hãy kiểm tra giai đoạn gần nhất "
+                    f"và chạy thử nghiệm mục tiêu trong 1-2 chu kỳ.")
         return (f"Set up time-based alerts for {breakdown}. If the trend declines, investigate the most recent period "
                 f"and run targeted experiments over 1-2 cycles.")
     if "attribution" in pattern:
+        if use_vi:
+            return (f"{top_label} là nhóm đóng góp cao nhất ({top_value:,.2f}). Hãy bảo vệ nhóm này (giữ chân, tồn kho), "
+                    f"đồng thời xây dựng kế hoạch tăng trưởng cho các nhóm còn lại.")
         return (f"{top_label} is the top contributor ({top_value:,.2f}). Protect this segment (retention, inventory), "
                 f"and build growth plans for the remaining groups.")
     if "outstanding" in pattern:
+        if use_vi:
+            return (f"{top_label} nổi bật rõ rệt. Hãy xác định đây là cơ hội tăng trưởng hay rủi ro phụ thuộc. "
+                    f"Đồng thời kiểm tra vì sao {low_label} đang thấp ({low_value:,.2f}).")
         return (f"{top_label} stands out significantly. Determine whether this is an opportunity or a dependency risk. "
                 f"Also investigate why {low_label} is low ({low_value:,.2f}).")
+    if use_vi:
+        return (f"Ưu tiên hành động cho {top_label} (giá trị cao nhất), sau đó lập kế hoạch cải thiện "
+                f"{low_label} để cân bằng hiệu quả giữa các nhóm {breakdown}.")
     return (f"Prioritize action on {top_label} (highest value), then plan improvements for "
             f"{low_label} to balance performance across {breakdown}.")
+
+
+def _recommendation_language_for_dataset(dataset_label: str | None) -> str:
+    low = (dataset_label or "").strip().lower()
+    if low == "steel metal company":
+        return "vi"
+    return "en"
 
 
 _DARK_PALETTE = [
@@ -1576,6 +1589,7 @@ def _render_one_insight_card(
     use_llm_explanations: bool,
     plot_key_prefix: str,
     accent_idx: int = 0,
+    recommendation_lang: str = "en",
 ):
     _accents = ["primary", "tertiary", "dim"]
     ins = item.get("insight") or {}
@@ -1586,7 +1600,7 @@ def _render_one_insight_card(
     breakdown = ins.get("breakdown", "") or ""
     measure = ins.get("measure", "") or ""
     description = _get_llm_description_cached(llm_client, ins, base_expl, use_llm_explanations)
-    recommendation = _build_recommendation(ins)
+    recommendation = _build_recommendation(ins, language=recommendation_lang)
     chart = _get_chart_cached(ins)
     accent = _accents[accent_idx % len(_accents)]
     plot_key = f"{plot_key_prefix}_{orig_idx}"
@@ -1634,6 +1648,7 @@ def _render_insights_with_dataset_field_filter(
     pager_base: str,
     plot_key_prefix: str,
     field_filter_key: str,
+    recommendation_lang: str = "en",
 ):
     """Dropdown to limit insights to those referencing a chosen dataset column."""
     options = _dataset_field_dropdown_options(df, insight_summaries)
@@ -1667,6 +1682,7 @@ def _render_insights_with_dataset_field_filter(
         use_llm_explanations,
         pager_base,
         plot_key_prefix,
+        recommendation_lang=recommendation_lang,
     )
 
 
@@ -1676,6 +1692,7 @@ def _render_insights_section_core(
     use_llm_explanations: bool,
     pager_base: str,
     plot_key_prefix: str,
+    recommendation_lang: str = "en",
 ):
     buckets, other = _group_insights_by_pattern(insight_summaries)
     n_total = len(insight_summaries)
@@ -1703,6 +1720,7 @@ def _render_insights_section_core(
                     use_llm_explanations,
                     plot_key_prefix,
                     accent_idx=local_i,
+                    recommendation_lang=recommendation_lang,
                 )
     if other:
         with st.expander(f"Uncategorized patterns ({len(other)})", expanded=False):
@@ -1717,6 +1735,7 @@ def _render_insights_section_core(
                     use_llm_explanations,
                     plot_key_prefix,
                     accent_idx=local_i,
+                    recommendation_lang=recommendation_lang,
                 )
 
 
@@ -1726,6 +1745,7 @@ def _render_insights_section(
     use_llm_explanations: bool,
     pager_base: str,
     plot_key_prefix: str,
+    recommendation_lang: str = "en",
 ):
     _render_insights_section_core(
         insight_summaries,
@@ -1733,6 +1753,7 @@ def _render_insights_section(
         use_llm_explanations,
         pager_base,
         plot_key_prefix,
+        recommendation_lang=recommendation_lang,
     )
 
 
@@ -1806,6 +1827,7 @@ def _render_history_insights(
     use_llm_explanations: bool,
     pager_key: str = "hist_i_page",
     hist_df: pd.DataFrame | None = None,
+    dataset_label: str | None = None,
 ):
     if not insight_summaries:
         st.info("No insights in this analysis.")
@@ -1818,6 +1840,7 @@ def _render_history_insights(
         pager_base=pager_key,
         plot_key_prefix=f"{pager_key}_plot",
         field_filter_key=f"insight_field_filter_{pager_key}",
+        recommendation_lang=_recommendation_language_for_dataset(dataset_label),
     )
 
 
@@ -2091,6 +2114,7 @@ def run_app():
                 st.session_state.llm_explanations,
                 pager_key=f"hist_i_{selected_idx}",
                 hist_df=hist_df,
+                dataset_label=entry["label"],
             )
 
     # ==================================================================

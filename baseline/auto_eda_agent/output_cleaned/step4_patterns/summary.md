@@ -2,142 +2,142 @@
 
 ## Summary
 
-- **Total Patterns**: 25
+- **Total Patterns**: 22
 - **Pattern Categories**: 4
 
 ## Temporal Patterns
 
-Found 6 patterns:
+Found 5 patterns:
 
 ### Seasonal Sales Peaks
-- **Description**: Sales exhibit a clear increase during specific months, particularly around the holiday season (November and December), indicating a seasonal trend in consumer purchasing behavior.
+- **Description**: Sales exhibit a clear seasonal pattern, with peaks occurring during specific months of the year, indicating high demand periods.
 - **Strength**: strong
-- **Variables**: Invoice Date, Total Sales
-- **Relevance**: Understanding this seasonal pattern allows retailers to optimize inventory and marketing strategies during peak months.
+- **Variables**: Thành Tiền, Ngày bán, Năm
+- **Relevance**: Understanding seasonal peaks can help in inventory management and marketing strategies, ensuring stock availability during high-demand periods.
 
 ### Weekly Sales Cycles
-- **Description**: Sales data reveals a consistent pattern where sales peak on weekends (Saturday and Sunday) and dip during weekdays, indicating a weekly cycle in consumer buying habits.
+- **Description**: Sales data shows a weekly cycle with consistent fluctuations, typically peaking on weekends and dipping during weekdays.
 - **Strength**: strong
-- **Variables**: Invoice Date, Total Sales
-- **Relevance**: Retailers can strategize promotions and staffing based on this weekly cycle to maximize sales.
+- **Variables**: Thành Tiền, Ngày bán, Thứ
+- **Relevance**: Identifying weekly patterns allows businesses to optimize staffing and promotions, maximizing sales during peak days.
 
-### Regional Sales Variability
-- **Description**: Sales trends vary significantly by region, with certain regions (e.g., Region A) showing higher sales during summer months, while others (e.g., Region B) peak in winter.
+### Monthly Growth Trends
+- **Description**: There is a noticeable trend of increasing sales month-over-month, particularly in specific product categories.
 - **Strength**: moderate
-- **Variables**: Region, Invoice Date, Total Sales
-- **Relevance**: This pattern helps in tailoring regional marketing campaigns and product availability based on seasonal preferences.
+- **Variables**: Thành Tiền, Khối lượng, Năm
+- **Relevance**: Understanding growth trends helps in forecasting and strategic planning for future investments and marketing efforts.
 
-### Price Sensitivity Over Time
-- **Description**: There is a noticeable trend where Total Sales increase with a decrease in Price per Unit, particularly evident during promotional periods.
-- **Strength**: strong
-- **Variables**: Price per Unit, Total Sales
-- **Relevance**: This insight can inform pricing strategies to boost sales during slow periods.
+### Geographical Sales Variations
+- **Description**: Sales patterns vary significantly across different regions, with certain provinces showing consistently higher sales than others.
+- **Strength**: moderate
+- **Variables**: Thành Tiền, Tỉnh / Thành Phố, Ngày bán
+- **Relevance**: This pattern can inform targeted marketing campaigns and distribution strategies tailored to regional demand.
 
-### Product Performance by Season
-- **Description**: Certain products show significant sales performance variations by season, with some products (e.g., summer apparel) peaking in summer months and others (e.g., winter gear) peaking in winter.
+### Impact of Product Type on Sales
+- **Description**: Different product categories exhibit distinct sales trends based on seasonality, with some categories performing better in specific months.
 - **Strength**: strong
-- **Variables**: Product, Invoice Date, Total Sales
-- **Relevance**: Identifying these patterns can aid in inventory management and promotional planning for specific products.
+- **Variables**: Loại Hàng, Thành Tiền, Ngày bán
+- **Relevance**: Recognizing the impact of product type on sales allows for better inventory allocation and promotional strategies aligned with seasonal demands.
 
 ## Correlation Patterns
 
 Found 6 patterns:
 
-### Price Sensitivity
-- **Description**: As the 'Price per Unit' increases, the 'Units Sold' tends to decrease significantly.
+### Weight vs. Actual Density
+- **Description**: As the 'Khối lượng' (Weight) increases, the 'Tỷ trọng thực tế' (Actual Density) shows a corresponding increase, indicating a strong positive correlation.
 - **Strength**: strong
-- **Variables**: Price per Unit, Units Sold
-- **Relevance**: Understanding price sensitivity can help retailers optimize pricing strategies to maximize sales.
+- **Variables**: Khối lượng, Tỷ trọng thực tế
+- **Relevance**: Understanding this relationship can help in optimizing material selection and inventory management.
 
-### Sales Volume Impact on Profit
-- **Description**: Higher 'Units Sold' leads to increased 'Total Sales' and 'Operating Profit'.
+### Sales Amount vs. Dimension
+- **Description**: The 'Thành Tiền' (Sales Amount) is significantly influenced by 'Khổ (mm)' (Dimension), where larger dimensions correlate with higher sales amounts.
 - **Strength**: strong
-- **Variables**: Units Sold, Total Sales, Operating Profit
-- **Relevance**: This pattern underscores the importance of sales volume in driving profits, guiding inventory and sales strategies.
+- **Variables**: Thành Tiền, Khổ (mm)
+- **Relevance**: This pattern can guide marketing strategies and product line expansions based on size categories.
 
-### Operating Margin Consistency
-- **Description**: The 'Operating Margin' remains consistent across different 'Retailers' when 'Total Sales' is above a certain threshold.
+### Year vs. Sales Amount
+- **Description**: There is a notable increase in 'Thành Tiền' (Sales Amount) over the years, suggesting a trend of growth in sales.
 - **Strength**: strong
-- **Variables**: Operating Margin, Total Sales, Retailer
-- **Relevance**: Identifying this threshold helps retailers set sales targets to maintain profitability.
+- **Variables**: Năm, Thành Tiền
+- **Relevance**: This trend can inform long-term business strategies and financial forecasting.
 
-### Regional Performance Variance
-- **Description**: Certain 'Regions' show significantly higher 'Total Sales' compared to others, influenced by 'Sales Method'.
+### Material Type vs. Actual Density
+- **Description**: Different 'Loại Hàng' (Material Type) exhibit distinct average 'Tỷ trọng thực tế' (Actual Density), indicating a strong categorical influence.
 - **Strength**: strong
-- **Variables**: Total Sales, Region, Sales Method
-- **Relevance**: Recognizing regional performance can inform targeted marketing strategies and resource allocation.
+- **Variables**: Loại Hàng, Tỷ trọng thực tế
+- **Relevance**: This understanding can aid in product development and quality assurance processes.
 
-### Product Popularity Dynamics
-- **Description**: Certain 'Products' consistently yield higher 'Units Sold' in specific 'States'.
+### Color Code vs. Sales Amount
+- **Description**: Certain 'Mã màu' (Color Codes) are associated with higher 'Thành Tiền' (Sales Amount), indicating consumer preferences for specific colors.
 - **Strength**: strong
-- **Variables**: Product, Units Sold, State
-- **Relevance**: Understanding product popularity can enhance inventory management and promotional efforts tailored to state-specific demands.
+- **Variables**: Mã màu, Thành Tiền
+- **Relevance**: Leveraging popular color trends can enhance marketing effectiveness and inventory decisions.
 
 ## Grouping Patterns
 
-Found 7 patterns:
+Found 6 patterns:
 
-### High Sales Regions
-- **Description**: Regions that consistently show high total sales, indicating a strong market presence and demand.
+### High Volume Sales by Region
+- **Description**: A significant cluster of high sales volume is observed in specific regions, particularly in urban areas.
 - **Strength**: strong
-- **Variables**: Region, Total Sales
-- **Relevance**: Identifying high-performing regions can help in allocating marketing resources and inventory management.
+- **Variables**: Khối lượng, Khu Vực (Quận/Huyện), Tỉnh / Thành Phố
+- **Relevance**: Understanding regional sales patterns can help in targeted marketing and inventory management.
 
-### Price Sensitivity by Product Type
-- **Description**: Certain product types exhibit higher sales volume at lower price points, indicating price sensitivity among consumers.
+### Color Preference by Product Type
+- **Description**: Certain colors are preferred for specific product types, indicating a trend in consumer preferences.
 - **Strength**: moderate
-- **Variables**: Product, Price per Unit, Units Sold
-- **Relevance**: Understanding price sensitivity can inform pricing strategies and promotional campaigns.
+- **Variables**: Tên màu, Loại Hàng
+- **Relevance**: This pattern can guide product design and marketing strategies to align with consumer preferences.
 
-### Sales Method Effectiveness
-- **Description**: Comparison of sales methods reveals significant differences in total sales and operating profit.
+### Sales Peaks on Specific Days
+- **Description**: Sales data indicates recurring peaks on specific weekdays, particularly on weekends.
 - **Strength**: strong
-- **Variables**: Sales Method, Total Sales, Operating Profit
-- **Relevance**: This insight can guide the company in optimizing its sales strategies and focusing on the most effective sales channels.
+- **Variables**: Thứ, Thành Tiền
+- **Relevance**: Identifying peak sales days can optimize staffing and promotional efforts.
 
-### Seasonal Sales Trends
-- **Description**: Certain months show spikes in sales, correlating with seasonal buying patterns.
-- **Strength**: strong
-- **Variables**: Invoice Date, Total Sales
-- **Relevance**: Recognizing seasonal trends can aid in inventory planning and marketing strategies to capitalize on peak buying times.
-
-### Operating Margin Variability by Region
-- **Description**: Operating margins vary significantly across different regions, indicating potential cost management issues.
+### Product Type and Density Relationship
+- **Description**: A correlation exists between product density (size) and sales performance across different categories.
 - **Strength**: moderate
-- **Variables**: Region, Operating Margin
-- **Relevance**: This pattern highlights the need for targeted strategies to improve profitability in lower-margin regions.
+- **Variables**: Độ D, Loại Hàng, Thành Tiền
+- **Relevance**: This insight can inform product development and selection strategies.
+
+### Seasonal Sales Variation
+- **Description**: Sales fluctuate significantly across different months, indicating seasonal buying behavior.
+- **Strength**: strong
+- **Variables**: Năm, Thành Tiền, Ngày bán
+- **Relevance**: Recognizing seasonal trends can enhance inventory planning and promotional strategies.
 
 ## Anomaly Patterns
 
-Found 6 patterns:
+Found 5 patterns:
 
-### High Price, Low Units Sold
-- **Description**: Certain products with a high price per unit are associated with significantly lower units sold compared to others within the same category.
+### High Volume, Low Price Outlier
+- **Description**: Instances where the 'Khối lượng' (volume) is significantly high, while the 'Thành Tiền' (total price) is low compared to the median price for that category.
 - **Strength**: strong
-- **Variables**: Price per Unit, Units Sold, Product
-- **Relevance**: Understanding the price elasticity of products can help in adjusting pricing strategies to boost sales.
+- **Variables**: Khối lượng, Thành Tiền, Phân loại
+- **Relevance**: This pattern may indicate potential pricing errors, bulk sales at a loss, or inventory issues that could affect profitability.
 
-### Outlier in Total Sales by Region
-- **Description**: One region shows a disproportionately high total sales figure compared to others, indicating possible anomalies in sales reporting or market conditions.
+### Seasonal Sales Drop
+- **Description**: Notable decrease in sales ('Thành Tiền') during specific months, particularly in the summer months (June-August) for certain product categories.
 - **Strength**: moderate
-- **Variables**: Total Sales, Region
-- **Relevance**: Identifying reasons for this anomaly can help in understanding market dynamics and potential fraud detection.
+- **Variables**: Thành Tiền, Ngày bán, Loại Hàng
+- **Relevance**: Understanding seasonal trends can help in inventory management and marketing strategies to boost sales during these periods.
 
-### Inconsistent Operating Margin
-- **Description**: Certain products exhibit a high operating profit but a low operating margin, suggesting inefficiencies in cost management.
+### High Density of Sales in Specific Regions
+- **Description**: Certain 'Khu Vực (Quận/Huyện)' exhibit disproportionately high sales volumes compared to others, indicating regional preferences or market saturation.
 - **Strength**: strong
-- **Variables**: Operating Profit, Operating Margin, Product
-- **Relevance**: This pattern can highlight areas for cost reduction and efficiency improvements in product management.
+- **Variables**: Khối lượng, Khu Vực (Quận/Huyện), Tỉnh / Thành Phố
+- **Relevance**: Identifying these regions can help in targeted marketing and resource allocation to maximize sales.
 
-### Seasonal Sales Anomaly
-- **Description**: Sales data shows significant spikes in certain months that do not correlate with typical seasonal trends, indicating potential anomalies or promotional impacts.
+### Anomalous Weight to Price Ratio
+- **Description**: Entries where the 'Tỷ trọng thực tế' (actual density) is significantly higher than expected based on the category, leading to unusually high 'Thành Tiền' for low 'Khối lượng'.
+- **Strength**: weak
+- **Variables**: Tỷ trọng thực tế, Khối lượng, Thành Tiền, Phân loại
+- **Relevance**: This anomaly could indicate misclassification of products or pricing strategies that need review.
+
+### Unusual Trend in 'Met' Measurements
+- **Description**: Fluctuations in 'Met A', 'Met B', and 'Met C' that do not align with expected trends based on historical data.
 - **Strength**: moderate
-- **Variables**: Invoice Date, Total Sales
-- **Relevance**: Understanding these anomalies can help in planning marketing strategies and inventory management.
-
-### Disparity in Sales Method Effectiveness
-- **Description**: Different sales methods yield vastly different results, with some methods showing significantly higher total sales than others, suggesting a need for method evaluation.
-- **Strength**: strong
-- **Variables**: Sales Method, Total Sales
-- **Relevance**: This pattern highlights the need to reassess sales strategies and possibly invest more in effective sales channels.
+- **Variables**: Met A, Met B, Met C, Năm
+- **Relevance**: Monitoring these metrics is crucial for quality control and ensuring product consistency.
 

@@ -2,60 +2,55 @@
 
 ## Dataset Overview
 
-- **Rows**: 9,648
-- **Columns**: 13
-  - Numerical: 6
-  - Categorical: 7
+- **Rows**: 1,036
+- **Columns**: 56
+  - Numerical: 30
+  - Categorical: 25
 
 ## Key Columns
 
 ### High Importance Columns
 
-**Retailer**
-- Meaning: Retail store or online platform where products are sold
-- Type: Categorical
+**Độ D**
+- Meaning: Thickness or density measurement
+- Type: Numerical
 - Missing: 0.0%
 
-**Retailer ID**
-- Meaning: Unique identifier for each retailer
-- Type: ID
+**Khối lượng**
+- Meaning: Weight of the product
+- Type: Numerical
 - Missing: 0.0%
 
-**Invoice Date**
-- Meaning: Date when the transaction occurred
+**Tỷ trọng thực tế**
+- Meaning: Actual density of the product
+- Type: Numerical
+- Missing: 0.0%
+
+**Ngày bán**
+- Meaning: Date of sale
 - Type: Temporal
 - Missing: 0.0%
 
-**Product**
-- Meaning: Type of product sold
-- Type: Categorical
-- Missing: 0.0%
-
-**Price per Unit**
-- Meaning: Cost of a single unit of the product
+**Thành Tiền**
+- Meaning: Total amount of money for the transaction
 - Type: Numerical
 - Missing: 0.0%
 
-**Units Sold**
-- Meaning: Number of product units sold in the transaction
+**Giá_trên_kg**
+- Meaning: Price per kilogram of the product
 - Type: Numerical
 - Missing: 0.0%
 
-**Total Sales**
-- Meaning: Total revenue generated from the transaction
-- Type: Numerical
-- Missing: 0.0%
-
-**Operating Profit**
-- Meaning: Profit earned from the transaction after expenses
-- Type: Numerical
-- Missing: 0.0%
-
-**Operating Margin**
-- Meaning: Percentage of revenue that is profit
+**Doanh_thu_trên_mm**
+- Meaning: Revenue generated per mm of product
 - Type: Numerical
 - Missing: 0.0%
 
 ## Data Quality
 
-No missing values detected.
+Columns with missing values:
+
+- **Mã màu**: 32.0%
+- **Tên màu**: 32.0%
+- **Khu Vực (Quận/Huyện)**: 4.7%
+- **Khoảng_cách_đơn_trước**: 4.1%

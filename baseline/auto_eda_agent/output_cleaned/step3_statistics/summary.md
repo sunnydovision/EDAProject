@@ -2,27 +2,27 @@
 
 ## Summary
 
-- **Numerical Columns**: 6
-- **Categorical Columns**: 7
+- **Numerical Columns**: 30
+- **Categorical Columns**: 20
 - **Strong Correlations**: 3
 
 ## Key Findings
 
-- The average number of units sold is 250.99, but the distribution is highly skewed, indicating a few retailers sell significantly more units than others.
-- Total sales have a high mean of 93273.44, but the presence of extreme values leads to a high standard deviation (141916.02), indicating variability in sales performance.
-- Operating profit shows a mean of 34425.28 with a significant positive skew, suggesting that while many retailers have low profits, a few achieve very high profits.
+- The correlation between 'Khối lượng' and 'Thành Tiền' is exceptionally high, indicating that volume is a key driver of revenue.
+- The negative correlation between 'Tỷ_lệ_chi_phí' and 'Ước_tính_biên_lợi_nhuận' suggests that cost management is crucial for maintaining profitability.
+- The distribution of 'Met B' shows extreme skewness, indicating potential issues with data quality or the need for further investigation into the factors influencing this variable.
 
 ## Strong Correlations
 
-### Units Sold and Total Sales
+### Khối lượng and Thành Tiền
 - **Strength**: strong
-- **Interpretation**: This strong correlation (0.84) suggests that as the number of units sold increases, total sales also increase significantly. This is expected as higher sales volume typically leads to higher revenue.
+- **Interpretation**: This strong positive correlation (0.9527) indicates that as the 'Khối lượng' increases, 'Thành Tiền' also increases significantly, suggesting a direct relationship between the volume of goods and revenue generated.
 
-### Units Sold and Operating Profit
+### Tỷ_lệ_chi_phí and Ước_tính_biên_lợi_nhuận
 - **Strength**: strong
-- **Interpretation**: The correlation of 0.81 indicates that higher units sold are associated with higher operating profit, reinforcing the idea that increased sales volume positively impacts profitability.
+- **Interpretation**: The strong negative correlation (-1.0) indicates that as the cost ratio increases, the estimated profit margin decreases, suggesting that higher costs are associated with lower profitability.
 
-### Total Sales and Operating Profit
+### Năm and Tháng
 - **Strength**: strong
-- **Interpretation**: The very strong correlation (0.96) suggests that total sales are a major driver of operating profit, indicating that increases in sales directly translate to increases in profit.
+- **Interpretation**: The strong negative correlation (-0.9517) indicates that as the year increases, the month decreases, which is expected as they are inversely related in a calendar context.
 

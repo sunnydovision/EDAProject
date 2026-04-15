@@ -1,91 +1,156 @@
 {
   "metrics": {
-    "missing_values": {},
+    "missing_values": {
+      "Mã màu": {
+        "count": 332,
+        "percentage": 32.04633204633205
+      },
+      "Tên màu": {
+        "count": 332,
+        "percentage": 32.04633204633205
+      },
+      "Khu Vực (Quận/Huyện)": {
+        "count": 49,
+        "percentage": 4.72972972972973
+      },
+      "Khoảng_cách_đơn_trước": {
+        "count": 42,
+        "percentage": 4.054054054054054
+      }
+    },
     "outliers": {
-      "Retailer ID": {
-        "count": 4383,
-        "percentage": 45.42910447761194,
-        "lower_bound": 1185732.0,
-        "upper_bound": 1185732.0
+      "Khối lượng": {
+        "count": 99,
+        "percentage": 9.555984555984557,
+        "lower_bound": 2385.0,
+        "upper_bound": 5385.0
       },
-      "Price per Unit": {
-        "count": 81,
-        "percentage": 0.8395522388059702,
-        "lower_bound": 5.0,
-        "upper_bound": 85.0
+      "Met A": {
+        "count": 89,
+        "percentage": 8.59073359073359,
+        "lower_bound": 456.0,
+        "upper_bound": 1944.0
       },
-      "Units Sold": {
-        "count": 627,
-        "percentage": 6.498756218905473,
-        "lower_bound": -225.0,
-        "upper_bound": 655.0
+      "Met B": {
+        "count": 40,
+        "percentage": 3.861003861003861,
+        "lower_bound": 0.0,
+        "upper_bound": 0.0
       },
-      "Total Sales": {
-        "count": 653,
-        "percentage": 6.768242122719735,
-        "lower_bound": -214363.75,
-        "upper_bound": 368618.25
-      },
-      "Operating Profit": {
-        "count": 706,
-        "percentage": 7.317578772802653,
-        "lower_bound": -73289.5,
-        "upper_bound": 127274.5
-      },
-      "Operating Margin": {
+      "Met C": {
         "count": 44,
-        "percentage": 0.45605306799336653,
-        "lower_bound": 14.0,
-        "upper_bound": 70.0
+        "percentage": 4.247104247104247,
+        "lower_bound": 2.0,
+        "upper_bound": 2.0
+      },
+      "Tỷ trọng thực tế": {
+        "count": 1,
+        "percentage": 0.09652509652509653,
+        "lower_bound": 1.5195555028750005,
+        "upper_bound": 4.954755747875
+      },
+      "Thành Tiền": {
+        "count": 110,
+        "percentage": 10.617760617760617,
+        "lower_bound": 55343468.125,
+        "upper_bound": 117681381.125
+      },
+      "Năm": {
+        "count": 225,
+        "percentage": 21.71814671814672,
+        "lower_bound": 2025.0,
+        "upper_bound": 2025.0
+      },
+      "Tháng": {
+        "count": 225,
+        "percentage": 21.71814671814672,
+        "lower_bound": 3.5,
+        "upper_bound": 15.5
+      },
+      "Giá_trên_kg": {
+        "count": 3,
+        "percentage": 0.28957528957528955,
+        "lower_bound": 17029.375,
+        "upper_bound": 26742.375
+      },
+      "Doanh_thu_trên_mm": {
+        "count": 110,
+        "percentage": 10.617760617760617,
+        "lower_bound": 46119.125,
+        "upper_bound": 98068.125
+      },
+      "Doanh_thu_theo_tuan_trong_thang": {
+        "count": 27,
+        "percentage": 2.606177606177606,
+        "lower_bound": -1014027822.5,
+        "upper_bound": 2092148525.5
+      },
+      "Khoảng_cách_đơn_trước": {
+        "count": 84,
+        "percentage": 8.108108108108109,
+        "lower_bound": -9.0,
+        "upper_bound": 15.0
+      },
+      "Doanh_thu_tb_mỗi_lần": {
+        "count": 38,
+        "percentage": 3.667953667953668,
+        "lower_bound": 67224138.0,
+        "upper_bound": 97392802.0
+      },
+      "Cờ_giao_dịch_bất_thường": {
+        "count": 40,
+        "percentage": 3.861003861003861,
+        "lower_bound": 0.0,
+        "upper_bound": 0.0
+      },
+      "Tỷ_trọng_doanh_thu_%": {
+        "count": 110,
+        "percentage": 10.617760617760617,
+        "lower_bound": 0.06519939949999999,
+        "upper_bound": 0.1386388595
+      },
+      "Điểm_hài_lòng_khách_hàng": {
+        "count": 22,
+        "percentage": 2.1235521235521233,
+        "lower_bound": 47.5,
+        "upper_bound": 107.5
       }
     },
     "duplicates": 0,
-    "total_issues": 6
+    "total_issues": 20
   },
   "assessment": {
     "critical_issues": [
       {
-        "issue": "Outliers in Retailer ID",
+        "issue": "Thiếu giá trị trong các trường Mã màu và Tên màu",
         "severity": "high",
-        "impact": "The presence of a significant number of outliers (45.43%) in Retailer ID suggests potential data entry errors or inconsistencies, which can lead to incorrect retailer identification and affect sales analysis.",
-        "recommendation": "Investigate the source of these outliers and correct or remove erroneous entries to ensure accurate retailer identification."
+        "impact": "Thiếu thông tin này có thể dẫn đến khó khăn trong việc phân tích và phân loại dữ liệu, ảnh hưởng đến khả năng ra quyết định.",
+        "recommendation": "Cần thu thập và bổ sung thông tin cho các trường Mã màu và Tên màu."
       },
       {
-        "issue": "Outliers in Units Sold",
+        "issue": "Số lượng ngoại lệ cao trong các trường Khối lượng và Thành Tiền",
+        "severity": "high",
+        "impact": "Các giá trị ngoại lệ có thể làm sai lệch kết quả phân tích và dẫn đến quyết định không chính xác.",
+        "recommendation": "Cần kiểm tra và làm sạch dữ liệu để loại bỏ hoặc điều chỉnh các giá trị ngoại lệ."
+      },
+      {
+        "issue": "Năm và Tháng có nhiều giá trị ngoại lệ",
         "severity": "medium",
-        "impact": "With 6.50% of Units Sold data being outliers, this can skew sales performance metrics and mislead inventory and sales forecasting.",
-        "recommendation": "Review the outlier entries for Units Sold and determine if they are valid. Consider applying transformations or removing extreme values if they are erroneous."
-      },
-      {
-        "issue": "Outliers in Total Sales",
-        "severity": "medium",
-        "impact": "The 6.77% outlier rate in Total Sales can distort revenue analysis and financial reporting, leading to incorrect business decisions.",
-        "recommendation": "Analyze the outlier transactions for Total Sales to ascertain their validity and either correct or exclude them from analysis."
-      },
-      {
-        "issue": "Outliers in Operating Profit",
-        "severity": "medium",
-        "impact": "Outliers in Operating Profit (7.32%) can misrepresent the financial health of the business, affecting strategic planning and investment decisions.",
-        "recommendation": "Investigate the outliers in Operating Profit to determine their accuracy and make necessary adjustments to ensure reliable financial reporting."
-      },
-      {
-        "issue": "Outliers in Operating Margin",
-        "severity": "low",
-        "impact": "While the percentage of outliers in Operating Margin is relatively low (0.46%), they can still affect performance metrics and comparisons across periods.",
-        "recommendation": "Review the outlier entries in Operating Margin for potential corrections or exclusions to maintain consistent performance metrics."
+        "impact": "Giá trị không hợp lệ trong các trường này có thể gây nhầm lẫn trong việc phân tích theo thời gian.",
+        "recommendation": "Cần xác minh và điều chỉnh các giá trị năm và tháng để đảm bảo tính chính xác."
       }
     ],
-    "overall_quality_score": 70,
+    "overall_quality_score": 75,
     "priority_actions": [
-      "Conduct a thorough audit of the Retailer ID data to identify and rectify inconsistencies.",
-      "Implement data validation rules to prevent entry of outlier values for Units Sold, Total Sales, and Operating Profit.",
-      "Establish a regular data quality monitoring process to identify and address outliers and other quality issues proactively."
+      "Bổ sung thông tin cho các trường thiếu giá trị",
+      "Làm sạch dữ liệu để loại bỏ giá trị ngoại lệ",
+      "Xác minh và điều chỉnh các giá trị năm và tháng"
     ],
-    "detailed_analysis": "The data quality assessment reveals several critical issues primarily related to outliers in key financial metrics and identifiers. The high percentage of outliers in Retailer ID indicates a potential systemic issue in data entry or collection processes. Other metrics, while having lower percentages of outliers, still pose risks to accurate analysis and decision-making. The absence of duplicates is a positive aspect, but the overall quality score reflects the need for immediate attention to outlier management and data validation practices."
+    "detailed_analysis": "Dữ liệu có một số vấn đề nghiêm trọng liên quan đến thiếu giá trị và ngoại lệ, đặc biệt là trong các trường Mã màu, Tên màu, Khối lượng và Thành Tiền. Những vấn đề này có thể ảnh hưởng lớn đến độ tin cậy của dữ liệu và khả năng phân tích. Việc thực hiện các hành động ưu tiên sẽ giúp cải thiện chất lượng dữ liệu một cách đáng kể."
   },
   "summary": {
-    "total_issues": 6,
-    "critical_issues": 5,
-    "data_quality_score": 70
+    "total_issues": 20,
+    "critical_issues": 3,
+    "data_quality_score": 75
   }
 }
