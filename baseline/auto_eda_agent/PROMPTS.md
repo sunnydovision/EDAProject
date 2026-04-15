@@ -1,92 +1,42 @@
-# Prompt Catalog
+# ED Agent — Prompt Templates
 
-**Complete list of all prompts used in the Expert-Driven AutoEDA system**
-
----
-
-## Overview
-
-The system uses **9 main prompts** across 5 steps:
-- Step 1: 1 prompt (Semantic Analysis)
-- Step 2: 1 prompt (Quality Assessment)
-- Step 3: 1 prompt (Statistical Interpretation)
-- Step 4: 4 prompts (Pattern Discovery - one per category)
-- Step 5: 5 prompts (Insight Extraction - one per batch)
+**Model:** gpt-5.4  
+**Date:** April 2026
 
 ---
 
 ## Step 1: Data Profiling Agent
 
-### Prompt 1.1: Semantic Analysis
+### System Prompt
 
-**Purpose:** Infer semantic meaning of columns from data samples
-
-**System Message:**
 ```
-You are an expert data analyst inferring semantic meaning from data samples.
+You are an expert data analyst. Your job is to infer the semantic meaning and classification of dataset columns from their names and sample values.
 ```
 
-**User Prompt:**
+### User Prompt
+
 ```
-You are an expert data analyst. Analyze these columns and infer their semantic meaning.
+Analyze the following dataset columns and infer their semantic meaning.
 
-Dataset has {n_rows} rows, {n_columns} columns.
+Dataset: {n_rows} rows × {n_columns} columns
 
-Column samples (showing unique values):
+Column samples (name, dtype, and unique values):
 {column_samples_json}
 
-For EACH column, infer:
-1. **Semantic meaning**: What does this column represent? (e.g., "customer age", "product category", "transaction date")
-2. **Data type classification**: 
-   - ID/Code (unique identifiers)
-   - Categorical (limited distinct values)
-   - Numerical (measurements, counts, amounts)
-   - Temporal (dates, times)
-   - Text (free text)
-3. **Patterns detected**: Any patterns in the values?
-4. **Potential issues**: Missing values, inconsistencies, etc.
+For EACH column, return:
+- semantic_meaning: what this column represents in business terms (e.g., "gross revenue per transaction", "date of sale")
+- data_type_class: one of ID | Categorical | Numerical | Temporal | Text
+- importance: one of high | medium | low
+- potential_issues: any quality concerns visible from the sample values (e.g., mixed formats, suspicious values, likely nulls)
 
-Return JSON:
+Return a JSON object where each key is a column name:
+
 {
   "column_name": {
-    "semantic_meaning": "what this represents",
+    "semantic_meaning": "...",
     "data_type_class": "ID|Categorical|Numerical|Temporal|Text",
-    "patterns": "detected patterns",
-    "potential_issues": "any issues noticed",
-    "importance": "high|medium|low"
-  }
-}
-```
-
-**Parameters:**
-- Model: `gpt-4o-mini`
-- Temperature: `0.3`
-- Max Tokens: `8000`
-- Response Format: `json_object`
-
-**Input Variables:**
-- `n_rows`: Number of rows in dataset
-- `n_columns`: Number of columns in dataset
-- `column_samples_json`: JSON with column samples
-  ```json
-  {
-    "column_name": {
-      "unique_count": 5,
-      "sample_values": ["value1", "value2", ...],
-      "dtype": "int64"
-    }
-  }
-  ```
-
-**Expected Output:**
-```json
-{
-  "Khối lượng": {
-    "semantic_meaning": "Weight of the item",
-    "data_type_class": "Numerical",
-    "patterns": "Continuous values, some clustering",
-    "potential_issues": "None detected",
-    "importance": "high"
+    "importance": "high|medium|low",
+    "potential_issues": "..."
   }
 }
 ```
@@ -95,84 +45,50 @@ Return JSON:
 
 ## Step 2: Quality Analysis Agent
 
-### Prompt 2.1: Expert Quality Assessment
+### System Prompt
 
-**Purpose:** Interpret quality metrics and provide expert assessment
-
-**System Message:**
 ```
-You are a data quality expert providing professional assessment.
+You are a data quality expert. Your job is to assess data quality issues and prioritize them based on their business impact.
 ```
 
-**User Prompt:**
-```
-You are a data quality expert. Analyze these quality metrics and provide expert assessment.
+### User Prompt
 
-Quality Metrics:
+```
+Assess the data quality of the following dataset.
+
+Column importance levels (from profiling):
+{importance_by_column_json}
+
+Note: The following columns are identifier fields and have been excluded from outlier analysis:
+{id_columns}
+
+Computed quality metrics:
 {quality_metrics_json}
 
-Provide expert assessment:
-1. **Critical Issues**: Which quality issues are most critical and why?
-2. **Impact Analysis**: How do these issues affect data reliability?
-3. **Recommendations**: What should be done to address each issue?
-4. **Overall Quality Score**: Rate data quality 0-100 based on severity of issues
-5. **Priority Actions**: Top 3 actions to improve quality
+For each issue found, provide:
+1. A description of the issue
+2. Severity: high | medium | low — weighted by the importance of the affected column
+3. Business impact: how this issue affects downstream analysis
+4. Recommended action
+
+Also provide:
+- overall_quality_score: integer 0–100 reflecting overall dataset reliability
+- priority_actions: top 3 actions to address the most critical issues
 
 Return JSON:
+
 {
   "critical_issues": [
     {
-      "issue": "description",
+      "issue": "...",
       "severity": "high|medium|low",
-      "impact": "how it affects analysis",
-      "recommendation": "what to do"
+      "impact": "...",
+      "recommendation": "..."
     }
   ],
-  "overall_quality_score": 75,
-  "priority_actions": ["action1", "action2", "action3"],
-  "detailed_analysis": "comprehensive quality assessment"
-}
-```
-
-**Parameters:**
-- Model: `gpt-4o-mini`
-- Temperature: `0.3`
-- Max Tokens: `4000`
-- Response Format: `json_object`
-
-**Input Variables:**
-- `quality_metrics_json`: JSON with computed metrics
-  ```json
-  {
-    "missing_values": {
-      "column_name": {"count": 10, "percentage": 5.0}
-    },
-    "outliers": {
-      "column_name": {"count": 5, "percentage": 2.5, "lower_bound": 0, "upper_bound": 100}
-    },
-    "duplicates": 3,
-    "total_issues": 15
-  }
-  ```
-
-**Expected Output:**
-```json
-{
-  "critical_issues": [
-    {
-      "issue": "High missing value rate in key columns",
-      "severity": "high",
-      "impact": "Reduces sample size and may bias analysis",
-      "recommendation": "Investigate missing data mechanism and consider imputation"
-    }
-  ],
-  "overall_quality_score": 75,
-  "priority_actions": [
-    "Address missing values in critical columns",
-    "Investigate outliers for data entry errors",
-    "Remove duplicate records"
-  ],
-  "detailed_analysis": "Overall data quality is good with some issues..."
+  "overall_quality_score": 0,
+  "priority_actions": ["...", "...", "..."],
+  "detailed_analysis": "..."
 }
 ```
 
@@ -180,92 +96,50 @@ Return JSON:
 
 ## Step 3: Statistical Analysis Agent
 
-### Prompt 3.1: Statistical Interpretation
+### System Prompt
 
-**Purpose:** Interpret statistical findings as expert statistician
-
-**System Message:**
 ```
-You are an expert statistician interpreting data.
+You are an expert statistician. Your job is to interpret statistical findings in the context of the dataset's business meaning and known data quality issues.
 ```
 
-**User Prompt:**
+### User Prompt
+
 ```
-You are an expert statistician. Interpret these statistical findings.
+Interpret the following statistical findings for this dataset.
 
-Statistical Summary:
-{statistics_summary_json}
+Column semantic meanings (from Step 1):
+{semantic_meanings_json}
 
-Provide expert interpretation:
-1. **Distribution Patterns**: What do the distributions tell us? (skewness, kurtosis)
-2. **Strong Correlations**: Interpret the strong correlations found
-3. **Key Statistical Findings**: Most important statistical insights
-4. **Anomalies**: Any unusual statistical patterns?
-5. **Recommendations**: Statistical tests or analyses to perform next
+Data quality context (from Step 2):
+- Overall quality score: {quality_score}
+- Columns with significant outliers: {outlier_columns}
+  When interpreting means and distributions for these columns, note that summary statistics may be influenced by outliers.
+- Columns flagged as identifiers (exclude from statistical interpretation): {id_columns}
+
+Computed statistics:
+{statistics_json}
+
+Provide:
+1. distribution_patterns: interpret the shape of each numerical distribution (skewness, kurtosis, mean vs median gaps) in business terms
+2. strong_correlations: for each pair with |r| > 0.7, explain what the relationship means and whether it is likely structural or behavioral
+3. key_findings: top 3 most important statistical observations
+4. statistical_anomalies: unusual patterns that warrant further investigation
+5. recommendations: suggested follow-up analyses
 
 Return JSON:
+
 {
-  "distribution_patterns": "interpretation of distributions",
+  "distribution_patterns": "...",
   "strong_correlations": [
     {
       "variables": "var1 and var2",
-      "interpretation": "what this correlation means",
+      "interpretation": "...",
       "strength": "strong|moderate|weak"
     }
   ],
-  "key_findings": ["finding1", "finding2", "finding3"],
-  "statistical_anomalies": ["anomaly1", "anomaly2"],
-  "recommendations": ["recommendation1", "recommendation2"]
-}
-```
-
-**Parameters:**
-- Model: `gpt-4o-mini`
-- Temperature: `0.3`
-- Max Tokens: `4000`
-- Response Format: `json_object`
-
-**Input Variables:**
-- `statistics_summary_json`: JSON with statistics summary
-  ```json
-  {
-    "numerical_columns": 23,
-    "categorical_columns": 32,
-    "strong_correlations": [
-      {"var1": "price", "var2": "quality", "correlation": 0.85}
-    ],
-    "sample_stats": {
-      "column_name": {
-        "mean": 100, "median": 95, "std": 20,
-        "skewness": 0.5, "kurtosis": 2.1
-      }
-    }
-  }
-  ```
-
-**Expected Output:**
-```json
-{
-  "distribution_patterns": "Most numerical variables show near-normal distributions with slight positive skew...",
-  "strong_correlations": [
-    {
-      "variables": "price and quality",
-      "interpretation": "Higher quality products command higher prices",
-      "strength": "strong"
-    }
-  ],
-  "key_findings": [
-    "Strong positive correlation between price and quality",
-    "Sales volume shows seasonal pattern",
-    "Customer age distribution is bimodal"
-  ],
-  "statistical_anomalies": [
-    "Unusually high kurtosis in transaction amounts"
-  ],
-  "recommendations": [
-    "Perform time series analysis on sales data",
-    "Investigate bimodal age distribution for customer segmentation"
-  ]
+  "key_findings": ["...", "...", "..."],
+  "statistical_anomalies": ["...", "..."],
+  "recommendations": ["...", "..."]
 }
 ```
 
@@ -273,609 +147,296 @@ Return JSON:
 
 ## Step 4: Pattern Discovery Agent
 
-### Prompt 4.1: Temporal Patterns
+Four separate prompts are used, one per pattern category. The same system prompt applies to all four.
 
-**Purpose:** Discover time-based trends, seasonality, and cycles
+### System Prompt
 
-**System Message:**
 ```
-You are a pattern recognition expert specializing in temporal patterns.
+You are a pattern recognition expert. Your job is to identify concrete, evidence-backed patterns in data. You must only report patterns that are directly supported by the numbers provided. Do not speculate or infer patterns beyond what the evidence shows.
 ```
 
-**User Prompt:**
+### User Prompt — Temporal Patterns
+
 ```
-You are a pattern recognition expert. Discover Temporal Patterns in this dataset.
+Discover temporal patterns in this dataset.
 
-Focus: time-based trends, seasonality, cycles
+Focus: time-based trends, seasonality, growth or decline over time, cyclical behavior.
 
-Dataset Info:
-{data_info_json}
+Computed monthly aggregations:
+{monthly_aggregations_json}
 
-Previous Analysis Available:
-- Data profile with semantic meanings
-- Quality metrics and issues
-- Statistical analysis and correlations
+Column semantic meanings:
+{semantic_meanings_json}
 
-Discover ALL Temporal Patterns by:
-1. Analyzing the data structure and available variables
-2. Looking for time-based trends, seasonality, cycles
-3. Identifying specific, concrete patterns (not generic)
-4. Providing evidence for each pattern
+Data quality score: {quality_score}
+
+For each pattern found:
+- Cite specific numbers from the monthly aggregations above
+- State which months or periods show the pattern
+- Assess pattern strength: strong | moderate | weak
 
 Return JSON:
+
 {
   "patterns": [
     {
-      "pattern_name": "specific pattern name",
-      "description": "detailed description of the pattern",
-      "variables_involved": ["var1", "var2"],
-      "evidence": "concrete evidence from data",
+      "pattern_name": "...",
+      "description": "...",
+      "variables_involved": ["..."],
+      "evidence": "... (include specific numbers)",
       "strength": "strong|moderate|weak",
-      "business_relevance": "why this pattern matters"
+      "business_relevance": "..."
     }
   ]
 }
-
-Find as many valuable patterns as possible.
 ```
 
-**Parameters:**
-- Model: `gpt-4o-mini`
-- Temperature: `0.5`
-- Max Tokens: `8000`
-- Response Format: `json_object`
+### User Prompt — Correlation Patterns
 
-**Input Variables:**
-- `data_info_json`: Dataset structure info
-  ```json
-  {
-    "shape": {"rows": 1036, "columns": 56},
-    "numerical_columns": ["price", "quantity", "revenue"],
-    "categorical_columns": ["category", "region", "status"]
-  }
-  ```
-
----
-
-### Prompt 4.2: Correlation Patterns
-
-**Purpose:** Discover strong relationships between variables
-
-**System Message:**
 ```
-You are a pattern recognition expert specializing in correlation patterns.
-```
+Discover correlation patterns in this dataset.
 
-**User Prompt:**
-```
-You are a pattern recognition expert. Discover Correlation Patterns in this dataset.
+Focus: strong relationships between variables, co-movement, potential dependencies.
 
-Focus: strong relationships between variables
+Strong correlations computed from data (|r| > 0.7):
+{strong_correlations_json}
 
-Dataset Info:
-{data_info_json}
+Column semantic meanings:
+{semantic_meanings_json}
 
-Previous Analysis Available:
-- Data profile with semantic meanings
-- Quality metrics and issues
-- Statistical analysis and correlations
+Statistical interpretation from Step 3:
+{correlation_interpretation}
 
-Discover ALL Correlation Patterns by:
-1. Analyzing the data structure and available variables
-2. Looking for strong relationships between variables
-3. Identifying specific, concrete patterns (not generic)
-4. Providing evidence for each pattern
+For each pattern found:
+- Reference the specific r value
+- Explain the direction and likely business meaning of the relationship
+- Note whether the correlation may be structural (e.g., one variable derived from another) or behavioral
 
 Return JSON:
+
 {
   "patterns": [
     {
-      "pattern_name": "specific pattern name",
-      "description": "detailed description of the pattern",
-      "variables_involved": ["var1", "var2"],
-      "evidence": "concrete evidence from data",
+      "pattern_name": "...",
+      "description": "...",
+      "variables_involved": ["..."],
+      "evidence": "... (include r value and direction)",
       "strength": "strong|moderate|weak",
-      "business_relevance": "why this pattern matters"
+      "business_relevance": "..."
     }
   ]
 }
-
-Find as many valuable patterns as possible.
 ```
 
-**Parameters:** Same as Prompt 4.1
+### User Prompt — Grouping Patterns
 
----
-
-### Prompt 4.3: Grouping Patterns
-
-**Purpose:** Discover natural clusters and segments
-
-**System Message:**
 ```
-You are a pattern recognition expert specializing in grouping patterns.
-```
+Discover grouping patterns in this dataset.
 
-**User Prompt:**
-```
-You are a pattern recognition expert. Discover Grouping Patterns in this dataset.
+Focus: differences between segments, dominant groups, uneven distributions across categories.
 
-Focus: natural clusters and segments
+Computed group aggregations:
+{group_aggregations_json}
 
-Dataset Info:
-{data_info_json}
+Column semantic meanings:
+{semantic_meanings_json}
 
-Previous Analysis Available:
-- Data profile with semantic meanings
-- Quality metrics and issues
-- Statistical analysis and correlations
-
-Discover ALL Grouping Patterns by:
-1. Analyzing the data structure and available variables
-2. Looking for natural clusters and segments
-3. Identifying specific, concrete patterns (not generic)
-4. Providing evidence for each pattern
+For each pattern found:
+- Cite specific group values from the aggregations above
+- Compare groups directly where relevant (e.g., "Group A is 3× Group B")
+- Assess whether the difference is meaningful for business decisions
 
 Return JSON:
+
 {
   "patterns": [
     {
-      "pattern_name": "specific pattern name",
-      "description": "detailed description of the pattern",
-      "variables_involved": ["var1", "var2"],
-      "evidence": "concrete evidence from data",
+      "pattern_name": "...",
+      "description": "...",
+      "variables_involved": ["..."],
+      "evidence": "... (include specific group values)",
       "strength": "strong|moderate|weak",
-      "business_relevance": "why this pattern matters"
+      "business_relevance": "..."
     }
   ]
 }
-
-Find as many valuable patterns as possible.
 ```
 
-**Parameters:** Same as Prompt 4.1
+### User Prompt — Anomaly Patterns
 
----
-
-### Prompt 4.4: Anomaly Patterns
-
-**Purpose:** Discover unusual behaviors and outliers
-
-**System Message:**
 ```
-You are a pattern recognition expert specializing in anomaly patterns.
-```
+Discover anomaly patterns in this dataset.
 
-**User Prompt:**
-```
-You are a pattern recognition expert. Discover Anomaly Patterns in this dataset.
+Focus: unusual values, outliers, spikes, unexpected distributions, zero-inflation.
 
-Focus: unusual behaviors and outliers
+Outlier flags from Step 2:
+{outlier_flags_json}
 
-Dataset Info:
-{data_info_json}
+Distribution statistics from Step 3:
+{distribution_stats_json}
 
-Previous Analysis Available:
-- Data profile with semantic meanings
-- Quality metrics and issues
-- Statistical analysis and correlations
+Column semantic meanings:
+{semantic_meanings_json}
 
-Discover ALL Anomaly Patterns by:
-1. Analyzing the data structure and available variables
-2. Looking for unusual behaviors and outliers
-3. Identifying specific, concrete patterns (not generic)
-4. Providing evidence for each pattern
+For each anomaly found:
+- Cite specific statistics (e.g., mean vs median gap, outlier count, min/max)
+- Assess whether the anomaly is likely a data quality issue or a real business event
+- Suggest how it should be handled in downstream analysis
 
 Return JSON:
+
 {
   "patterns": [
     {
-      "pattern_name": "specific pattern name",
-      "description": "detailed description of the pattern",
-      "variables_involved": ["var1", "var2"],
-      "evidence": "concrete evidence from data",
+      "pattern_name": "...",
+      "description": "...",
+      "variables_involved": ["..."],
+      "evidence": "... (include specific statistics)",
       "strength": "strong|moderate|weak",
-      "business_relevance": "why this pattern matters"
+      "business_relevance": "..."
     }
   ]
 }
-
-Find as many valuable patterns as possible.
 ```
-
-**Parameters:** Same as Prompt 4.1
 
 ---
 
 ## Step 5: Insight Extraction Agent
 
-### Prompt 5.1: TREND Insights
+Five batches, one prompt per batch. The same system prompt applies to all five.
 
-**Purpose:** Extract temporal trends and directional changes
+> **Pipeline note**: The LLM output from this step does NOT include `view_labels`.
+> Labels are computed by post-processing code after the LLM responds:
+> for each insight, apply its `subspace` filter to `df`, then extract
+> sorted unique values of the `breakdown` column from the filtered dataframe.
+> This ensures labels always match the subspace-filtered data and pass faithfulness checks.
 
-**System Message:**
+### System Prompt
+
 ```
-You are an expert data analyst extracting maximum insights. Find as many valuable insights as possible.
+You are an expert data analyst extracting insights for a business audience.
+Each insight must be specific, supported by evidence from the prior analysis, and expressed with concrete numbers.
+Do not generate generic observations.
+Use only the column names provided in the "Available columns" section — do not invent or derive new column names.
 ```
 
-**User Prompt:**
+### User Prompt Template (used for all 5 batches)
+
 ```
-Based on ALL previous analysis steps, extract valuable insights focused on: temporal trends and directional changes
+Extract insights of the following type(s): {insight_types}
 
-Insight types to find: TREND
+AVAILABLE COLUMNS — use ONLY these exact names in "variables" and "subspace":
+- Numerical: {numerical_columns}
+- Categorical: {categorical_columns}
 
-IMPORTANT - Available columns in dataset:
-Numerical columns: {list of actual numerical columns}
-Categorical columns: {list of actual categorical columns}
+Do NOT use derived or computed column names (e.g., "month", "year", "quarter").
+If a temporal insight is needed, use the original date column name (e.g., "Invoice Date").
 
-You MUST use ONLY these actual column names in the "variables" field. Do NOT make up column names.
+VALID SUBSPACE VALUES — when using subspace, the value MUST be taken from this list exactly as written:
+{categorical_values_json}
 
-Available context:
-- Data profile from step 1
-- Quality issues from step 2
-- Statistical analysis from step 3
-- Discovered patterns from step 4
+Do NOT invent subspace values. Only use values that appear in the list above.
 
-Extract AS MANY valuable insights as possible for these types. Each insight should be:
-- Specific and concrete (not generic)
-- Supported by evidence from previous steps
-- Actionable or decision-relevant
-- Visualizable with the available data
-- Use ONLY actual column names from the list above
+Context from prior analysis steps:
+
+Step 1 — Column meanings:
+{semantic_meanings_json}
+
+Step 2 — Data quality:
+- Quality score: {quality_score}
+- Critical issues: {critical_issues}
+
+Step 3 — Statistical findings:
+- Strong correlations: {strong_correlations_json}
+- Key findings: {key_findings}
+- Statistical anomalies: {statistical_anomalies}
+
+Step 4 — Discovered patterns (relevant to {insight_types}):
+{relevant_patterns}
+
+Already extracted insights (do not repeat these):
+{used_titles}
+
+SUBSPACE RULES:
+- Use subspace only when the insight is specifically about a subset of data
+- Subspace must be a column that exists in the categorical columns list above
+- Subspace value must be an actual value that exists in that column
+- Each insight uses at most ONE subspace condition: [["column_name", "value"]]
+- For global insights (whole dataset): "subspace": []
+- Do NOT use numerical columns or derived columns as subspace
+
+For each insight:
+- Write a specific, concrete title
+- Include actual numbers in the description
+- Reference which step provided the evidence
+- List the columns involved (from available columns only)
+- Choose an appropriate chart type: line | bar | scatter | histogram | box
 
 Return JSON:
+
 {
   "insights": [
     {
-      "title": "Specific insight title",
-      "description": "Detailed description with numbers and evidence",
-      "type": "TREND",
-      "variables": ["actual_column_name1", "actual_column_name2"],
+      "title": "...",
+      "description": "... (include specific numbers)",
+      "type": "{insight_types}",
+      "variables": ["column_name_1", "column_name_2"],
       "evidence": {
-        "source_step": "step3_statistics",
-        "key_statistics": "Specific numbers",
-        "data_points": "Concrete evidence"
-      }
+        "source_step": "step3_statistics|step4_patterns|step2_quality",
+        "key_statistics": "...",
+        "data_points": "..."
+      },
+      "chart_type": "line|bar|scatter|histogram|box",
+      "subspace": []
     }
   ]
 }
 ```
 
-**Parameters:**
-- Model: `gpt-4o-mini`
-- Temperature: `0.5`
-- Max Tokens: `16000`
-- Response Format: `json_object`
+### Batch Mapping
+
+| Batch | insight_types | relevant_patterns source |
+|---|---|---|
+| 1 | TREND | Temporal Patterns from Step 4 |
+| 2 | OUTLIER, ANOMALY | Anomaly Patterns from Step 4 |
+| 3 | CORRELATION | Correlation Patterns from Step 4 |
+| 4 | DISTRIBUTION, COMPARISON | Grouping Patterns from Step 4 |
+| 5 | PATTERN | All pattern categories from Step 4 |
 
 ---
 
-### Prompt 5.2: OUTLIER, ANOMALY Insights
+## Post-processing: view_labels Computation (Pipeline Code)
 
-**Purpose:** Extract unusual values and anomalies
+> This is not a prompt — it is the pipeline logic that runs after Step 5 LLM output.
+> Include this in the instructions to the AI Agent modifying the pipeline.
 
-**System Message:** Same as Prompt 5.1
-
-**User Prompt:**
 ```
-Based on ALL previous analysis steps, extract valuable insights focused on: unusual values and anomalies
+For each insight generated by Step 5:
 
-Insight types to find: OUTLIER, ANOMALY
+1. Read insight["subspace"] — e.g., [["Sales Method", "Online"]]
 
-IMPORTANT - Available columns in dataset:
-Numerical columns: {list of actual numerical columns}
-Categorical columns: {list of actual categorical columns}
+2. Validate subspace (if not empty):
+   - Check that subspace column exists in df.columns
+     → If not: drop insight, log "invalid subspace column"
+   - Check that subspace value exists in df[col].unique()
+     → If not: drop insight, log "subspace value not found in data"
+     → This catches cases where LLM invented a value (e.g., Region = "A")
 
-You MUST use ONLY these actual column names in the "variables" field. Do NOT make up column names.
+3. Apply subspace filter:
+   - If subspace is empty ([]):       filtered_df = df
+   - If subspace is [[col, val]]:     filtered_df = df[df[col] == val]
 
-Available context:
-- Data profile from step 1
-- Quality issues from step 2
-- Statistical analysis from step 3
-- Discovered patterns from step 4
+4. Validate breakdown column:
+   - Read breakdown column from insight["variables"][0]
+   - Check that it exists in filtered_df.columns
+     → If not: drop insight, log "breakdown column not found"
 
-Extract AS MANY valuable insights as possible for these types. Each insight should be:
-- Specific and concrete (not generic)
-- Supported by evidence from previous steps
-- Actionable or decision-relevant
-- Visualizable with the available data
-- Use ONLY actual column names from the list above
+5. Compute view_labels:
+   view_labels = sorted(filtered_df[breakdown_col].dropna().unique().tolist())
+   - If view_labels is empty: drop insight, log "filtered dataframe is empty"
 
-Return JSON:
-{
-  "insights": [
-    {
-      "title": "Specific insight title",
-      "description": "Detailed description with numbers and evidence",
-      "type": "OUTLIER or ANOMALY",
-      "variables": ["actual_column_name1", "actual_column_name2"],
-      "evidence": {
-        "source_step": "step2_quality",
-        "key_statistics": "Specific numbers",
-        "data_points": "Concrete evidence"
-      }
-    }
-  ]
-}
+6. Attach view_labels to the insight before passing to faithfulness check
+
+This guarantees view_labels are always derived from the same filtered data
+that the faithfulness verifier uses, eliminating the label mismatch issue.
 ```
-
-**Parameters:** Same as Prompt 5.1
-
----
-
-### Prompt 5.3: CORRELATION Insights
-
-**Purpose:** Extract relationships between variables
-
-**System Message:** Same as Prompt 5.1
-
-**User Prompt:**
-```
-Based on ALL previous analysis steps, extract valuable insights focused on: relationships between variables
-
-Insight types to find: CORRELATION
-
-IMPORTANT - Available columns in dataset:
-Numerical columns: {list of actual numerical columns}
-Categorical columns: {list of actual categorical columns}
-
-You MUST use ONLY these actual column names in the "variables" field. Do NOT make up column names.
-
-Available context:
-- Data profile from step 1
-- Quality issues from step 2
-- Statistical analysis from step 3
-- Discovered patterns from step 4
-
-Extract AS MANY valuable insights as possible for these types. Each insight should be:
-- Specific and concrete (not generic)
-- Supported by evidence from previous steps
-- Actionable or decision-relevant
-- Visualizable with the available data
-- Use ONLY actual column names from the list above
-
-Return JSON:
-{
-  "insights": [
-    {
-      "title": "Specific insight title",
-      "description": "Detailed description with numbers and evidence",
-      "type": "CORRELATION",
-      "variables": ["actual_column_name1", "actual_column_name2"],
-      "evidence": {
-        "source_step": "step3_statistics",
-        "key_statistics": "Specific numbers",
-        "data_points": "Concrete evidence"
-      }
-    }
-  ]
-}
-```
-
-**Parameters:** Same as Prompt 5.1
-
----
-
-### Prompt 5.4: DISTRIBUTION, COMPARISON Insights
-
-**Purpose:** Extract distributions and group comparisons
-
-**System Message:** Same as Prompt 5.1
-
-**User Prompt:**
-```
-Based on ALL previous analysis steps, extract valuable insights focused on: distributions and group comparisons
-
-Insight types to find: DISTRIBUTION, COMPARISON
-
-IMPORTANT - Available columns in dataset:
-Numerical columns: {list of actual numerical columns}
-Categorical columns: {list of actual categorical columns}
-
-You MUST use ONLY these actual column names in the "variables" field. Do NOT make up column names.
-
-Available context:
-- Data profile from step 1
-- Quality issues from step 2
-- Statistical analysis from step 3
-- Discovered patterns from step 4
-
-Extract AS MANY valuable insights as possible for these types. Each insight should be:
-- Specific and concrete (not generic)
-- Supported by evidence from previous steps
-- Actionable or decision-relevant
-- Visualizable with the available data
-- Use ONLY actual column names from the list above
-
-Return JSON:
-{
-  "insights": [
-    {
-      "title": "Specific insight title",
-      "description": "Detailed description with numbers and evidence",
-      "type": "DISTRIBUTION or COMPARISON",
-      "variables": ["actual_column_name1", "actual_column_name2"],
-      "evidence": {
-        "source_step": "step1_profiling",
-        "key_statistics": "Specific numbers",
-        "data_points": "Concrete evidence"
-      }
-    }
-  ]
-}
-```
-
-**Parameters:** Same as Prompt 5.1
-
----
-
-### Prompt 5.5: PATTERN Insights
-
-**Purpose:** Extract recurring patterns and cycles
-
-**System Message:** Same as Prompt 5.1
-
-**User Prompt:**
-```
-Based on ALL previous analysis steps, extract valuable insights focused on: recurring patterns and cycles
-
-Insight types to find: PATTERN
-
-IMPORTANT - Available columns in dataset:
-Numerical columns: {list of actual numerical columns}
-Categorical columns: {list of actual categorical columns}
-
-You MUST use ONLY these actual column names in the "variables" field. Do NOT make up column names.
-
-Available context:
-- Data profile from step 1
-- Quality issues from step 2
-- Statistical analysis from step 3
-- Discovered patterns from step 4
-
-Extract AS MANY valuable insights as possible for these types. Each insight should be:
-- Specific and concrete (not generic)
-- Supported by evidence from previous steps
-- Actionable or decision-relevant
-- Visualizable with the available data
-- Use ONLY actual column names from the list above
-
-Return JSON:
-{
-  "insights": [
-    {
-      "title": "Specific insight title",
-      "description": "Detailed description with numbers and evidence",
-      "type": "PATTERN",
-      "variables": ["actual_column_name1", "actual_column_name2"],
-      "evidence": {
-        "source_step": "step4_patterns",
-        "key_statistics": "Specific numbers",
-        "data_points": "Concrete evidence"
-      }
-    }
-  ]
-}
-```
-
-**Parameters:** Same as Prompt 5.1
-
----
-
-## Prompt Design Principles
-
-### 1. Clear Role Definition
-Each prompt starts with clear role definition:
-```
-You are an expert [domain] [doing specific task]
-```
-
-### 2. Explicit Instructions
-Prompts provide explicit numbered instructions:
-```
-1. Do X
-2. Do Y
-3. Do Z
-```
-
-### 3. Structured Output
-All prompts request JSON output with specific schema:
-```json
-{
-  "field1": "description",
-  "field2": ["list", "of", "items"]
-}
-```
-
-### 4. Context Provision
-Prompts include relevant context from previous steps:
-```
-Available context:
-- Data profile from step 1
-- Quality issues from step 2
-...
-```
-
-### 5. Quality Emphasis
-Prompts emphasize quality and specificity:
-```
-- Specific and concrete (not generic)
-- Supported by evidence
-- Actionable or decision-relevant
-```
-
----
-
-## Customization Guide
-
-### How to Modify Prompts
-
-1. **Change Focus Area**
-   ```python
-   # In agent.py, modify category focus
-   {'name': 'Your Pattern', 'focus': 'your specific focus'}
-   ```
-
-2. **Adjust Output Format**
-   ```python
-   # Modify JSON schema in prompt
-   Return JSON:
-   {
-     "your_field": "your_description"
-   }
-   ```
-
-3. **Add More Instructions**
-   ```python
-   # Add numbered instructions
-   5. **Your New Instruction**: Description
-   ```
-
-4. **Change Temperature**
-   ```python
-   # In API call
-   temperature=0.3  # More deterministic
-   temperature=0.7  # More creative
-   ```
-
-5. **Increase Max Tokens**
-   ```python
-   # In API call
-   max_tokens=16000  # For longer outputs
-   ```
-
----
-
-## Prompt Performance
-
-### Token Usage (Approximate)
-
-| Prompt | Input Tokens | Output Tokens | Total |
-|--------|--------------|---------------|-------|
-| Semantic Analysis | 2000-3000 | 1000-2000 | 3000-5000 |
-| Quality Assessment | 1000-1500 | 500-1000 | 1500-2500 |
-| Statistical Interpretation | 1000-1500 | 500-1000 | 1500-2500 |
-| Pattern Discovery (each) | 500-1000 | 1000-2000 | 1500-3000 |
-| Insight Extraction (each) | 1000-2000 | 2000-4000 | 3000-6000 |
-
-**Total per run:** ~30,000-50,000 tokens
-
-### Cost Estimate (GPT-4o-mini)
-
-- Input: $0.150 / 1M tokens
-- Output: $0.600 / 1M tokens
-
-**Per run:** $0.02-0.04 USD
-
----
-
-## Version History
-
-### v1.0 (March 2026)
-- Initial prompt catalog
-- 9 main prompts across 5 steps
-- Multi-prompt strategy for patterns and insights
-
----
-
-**Last Updated:** March 2026  
-**Maintained by:** EDAAgent Project

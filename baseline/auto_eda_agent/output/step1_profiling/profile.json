@@ -5,17 +5,18 @@
       "columns": 13
     },
     "total_columns": 13,
-    "numerical_columns": 2,
-    "categorical_columns": 11
+    "numerical_columns": 6,
+    "categorical_columns": 7
   },
   "columns": {
     "Retailer": {
       "dtype": "str",
       "missing_count": 0,
       "missing_percentage": 0.0,
-      "semantic_meaning": "Retail store or brand selling products",
+      "semantic_meaning": "Name of the retail chain or sales partner responsible for the sale record.",
       "data_type_class": "Categorical",
       "importance": "high",
+      "potential_issues": "Only 6 unique values, which is expected, but should be checked for naming inconsistencies, spelling variants, or punctuation differences such as 'Kohl's' vs alternate encodings.",
       "unique_count": 6,
       "top_values": {
         "Foot Locker": 2637,
@@ -30,9 +31,10 @@
       "dtype": "int64",
       "missing_count": 0,
       "missing_percentage": 0.0,
-      "semantic_meaning": "Unique identifier for each retailer",
+      "semantic_meaning": "Internal identifier assigned to a retailer or retail account.",
       "data_type_class": "ID",
       "importance": "high",
+      "potential_issues": "There are 6 retailer names but only 4 unique IDs shown, suggesting possible many-to-one mapping, missing IDs, reused IDs, or data inconsistency between retailer name and retailer ID. Also stored as int64, which may strip leading zeros if they exist in source systems.",
       "statistics": {
         "min": 1128299.0,
         "max": 1197831.0,
@@ -45,30 +47,32 @@
       "dtype": "str",
       "missing_count": 0,
       "missing_percentage": 0.0,
-      "semantic_meaning": "Date of the transaction or sale",
+      "semantic_meaning": "Date the invoice or sale transaction was recorded.",
       "data_type_class": "Temporal",
       "importance": "high",
+      "potential_issues": "Currently stored as string rather than a parsed date type. Should be validated for consistent YYYY-MM-DD formatting, missing dates, and whether it reflects invoice date versus shipment or order date.",
       "unique_count": 724,
       "top_values": {
-        "17/1/21": 77,
-        "16/3/21": 72,
-        "17/4/21": 72,
-        "17/8/21": 72,
-        "17/11/21": 71,
-        "16/7/21": 70,
-        "16/12/21": 69,
-        "10/1/21": 67,
-        "24/1/21": 67,
-        "17/2/21": 65
+        "2021-01-17": 77,
+        "2021-03-16": 72,
+        "2021-04-17": 72,
+        "2021-08-17": 72,
+        "2021-11-17": 71,
+        "2021-07-16": 70,
+        "2021-12-16": 69,
+        "2021-01-10": 67,
+        "2021-01-24": 67,
+        "2021-02-17": 65
       }
     },
     "Region": {
       "dtype": "str",
       "missing_count": 0,
       "missing_percentage": 0.0,
-      "semantic_meaning": "Geographical area where the retailer operates",
+      "semantic_meaning": "Broad geographic sales region associated with the transaction.",
       "data_type_class": "Categorical",
       "importance": "medium",
+      "potential_issues": "Region labels appear standardized, but should be checked for consistency with state assignments and whether 'South' and 'Southeast' overlap in business definitions.",
       "unique_count": 5,
       "top_values": {
         "West": 2448,
@@ -82,9 +86,10 @@
       "dtype": "str",
       "missing_count": 0,
       "missing_percentage": 0.0,
-      "semantic_meaning": "U.S. state where the transaction occurred",
+      "semantic_meaning": "U.S. state where the sale occurred or where the customer/store is located.",
       "data_type_class": "Categorical",
-      "importance": "medium",
+      "importance": "high",
+      "potential_issues": "Appears to contain full state names consistently, but should be validated against region and city fields for geographic consistency. Potential ambiguity about whether this is store location, billing location, or shipping location.",
       "unique_count": 50,
       "top_values": {
         "Texas": 432,
@@ -103,9 +108,10 @@
       "dtype": "str",
       "missing_count": 0,
       "missing_percentage": 0.0,
-      "semantic_meaning": "City where the transaction occurred",
+      "semantic_meaning": "City associated with the sale, likely store location or customer market.",
       "data_type_class": "Categorical",
       "importance": "medium",
+      "potential_issues": "52 unique cities across 50 states suggests likely one or a few cities per state, which may indicate a summarized dataset rather than full transaction granularity. Should be checked for duplicate city names across states and consistency with state values.",
       "unique_count": 52,
       "top_values": {
         "Portland": 360,
@@ -124,9 +130,10 @@
       "dtype": "str",
       "missing_count": 0,
       "missing_percentage": 0.0,
-      "semantic_meaning": "Type of product sold",
+      "semantic_meaning": "Product category or merchandise segment sold in the transaction.",
       "data_type_class": "Categorical",
       "importance": "high",
+      "potential_issues": "Only 6 product categories, which suggests aggregated category-level data rather than SKU-level detail. Should be checked for category naming consistency and whether categories are mutually exclusive.",
       "unique_count": 6,
       "top_values": {
         "Men's Street Footwear": 1610,
@@ -138,33 +145,29 @@
       }
     },
     "Price per Unit": {
-      "dtype": "str",
+      "dtype": "int64",
       "missing_count": 0,
       "missing_percentage": 0.0,
-      "semantic_meaning": "Cost of a single unit of the product",
+      "semantic_meaning": "Selling price charged per individual unit of product.",
       "data_type_class": "Numerical",
       "importance": "high",
-      "unique_count": 94,
-      "top_values": {
-        "$50,00 ": 675,
-        "$55,00 ": 589,
-        "$45,00 ": 588,
-        "$40,00 ": 534,
-        "$60,00 ": 457,
-        "$35,00 ": 414,
-        "$65,00 ": 301,
-        "$30,00 ": 284,
-        "$41,00 ": 235,
-        "$38,00 ": 201
+      "potential_issues": "Stored as int64, which may be acceptable, but prices often require decimals. Should be checked for currency units, discount effects, and whether this is list price, average selling price, or net realized price.",
+      "statistics": {
+        "min": 7.0,
+        "max": 110.0,
+        "mean": 45.21662520729685,
+        "median": 45.0,
+        "std": 14.705397125008334
       }
     },
     "Units Sold": {
       "dtype": "float64",
       "missing_count": 0,
       "missing_percentage": 0.0,
-      "semantic_meaning": "Number of units sold in the transaction",
+      "semantic_meaning": "Quantity of product units sold for the record.",
       "data_type_class": "Numerical",
       "importance": "high",
+      "potential_issues": "Float values such as 1.2, 1.25, and 1.22 are suspicious for unit counts unless the data is scaled (e.g., thousands of units) or averaged. This field should be checked for unit-of-measure ambiguity, rounding issues, and whether it represents actual units, thousands of units, or normalized quantities.",
       "statistics": {
         "min": 0.0,
         "max": 975.0,
@@ -174,75 +177,61 @@
       }
     },
     "Total Sales": {
-      "dtype": "str",
+      "dtype": "int64",
       "missing_count": 0,
       "missing_percentage": 0.0,
-      "semantic_meaning": "Total revenue generated from the transaction",
+      "semantic_meaning": "Gross sales revenue generated for the record, likely before operating costs.",
       "data_type_class": "Numerical",
       "importance": "high",
-      "unique_count": 3138,
-      "top_values": {
-        "$100.000 ": 67,
-        "$90.000 ": 57,
-        "$180.000 ": 57,
-        "$135.000 ": 56,
-        "$78.750 ": 53,
-        "$150.000 ": 53,
-        "$225.000 ": 51,
-        "$112.500 ": 51,
-        "$165.000 ": 51,
-        "$60.000 ": 49
+      "potential_issues": "Should be validated against Price per Unit × Units Sold, especially because Units Sold appears inconsistent as a float. Currency and aggregation level are not explicit. Large values suggest summarized rather than single-transaction records.",
+      "statistics": {
+        "min": 0.0,
+        "max": 825000.0,
+        "mean": 93273.4375,
+        "median": 9576.0,
+        "std": 141916.01672684302
       }
     },
     "Operating Profit": {
-      "dtype": "str",
+      "dtype": "int64",
       "missing_count": 0,
       "missing_percentage": 0.0,
-      "semantic_meaning": "Profit earned from the transaction after costs",
+      "semantic_meaning": "Profit from operations for the sale record after operating expenses or contribution assumptions.",
       "data_type_class": "Numerical",
       "importance": "high",
-      "unique_count": 4187,
-      "top_values": {
-        "$63.000 ": 39,
-        "$105.000 ": 39,
-        "$78.750 ": 38,
-        "$31.500 ": 38,
-        "$21.000 ": 38,
-        "$45.000 ": 38,
-        "$52.500 ": 37,
-        "$35.000 ": 34,
-        "$30.000 ": 34,
-        "$42.000 ": 31
+      "potential_issues": "Should be validated against Total Sales and Operating Margin. Need to confirm whether this is absolute profit in currency and whether negative values are possible but absent from samples.",
+      "statistics": {
+        "min": 0.0,
+        "max": 390000.0,
+        "mean": 34425.282131011605,
+        "median": 4371.5,
+        "std": 54193.12414058952
       }
     },
     "Operating Margin": {
-      "dtype": "str",
+      "dtype": "int64",
       "missing_count": 0,
       "missing_percentage": 0.0,
-      "semantic_meaning": "Percentage of revenue that is profit",
+      "semantic_meaning": "Operating profit margin for the record, likely expressed as a percentage of total sales.",
       "data_type_class": "Numerical",
-      "importance": "medium",
-      "unique_count": 66,
-      "top_values": {
-        "35%": 1309,
-        "40%": 1292,
-        "30%": 722,
-        "50%": 637,
-        "45%": 589,
-        "25%": 330,
-        "47%": 322,
-        "55%": 297,
-        "42%": 296,
-        "46%": 290
+      "importance": "high",
+      "potential_issues": "Stored as int64 with values like 50, 30, 35, suggesting whole-number percentages rather than decimal ratios. Should be checked for whether values represent percent points or fractions, and validated against Operating Profit / Total Sales.",
+      "statistics": {
+        "min": 10.0,
+        "max": 80.0,
+        "mean": 42.29912935323383,
+        "median": 41.0,
+        "std": 9.719741850510681
       }
     },
     "Sales Method": {
       "dtype": "str",
       "missing_count": 0,
       "missing_percentage": 0.0,
-      "semantic_meaning": "Method by which the sale was made (in-store, outlet, online)",
+      "semantic_meaning": "Sales channel through which the product was sold.",
       "data_type_class": "Categorical",
       "importance": "medium",
+      "potential_issues": "Values appear clean and standardized with 3 channels, but should be checked for overlap in business meaning between 'In-store' and 'Outlet' and for any missing or miscoded channel values.",
       "unique_count": 3,
       "top_values": {
         "Online": 4889,

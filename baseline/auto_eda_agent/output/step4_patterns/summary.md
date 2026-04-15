@@ -2,142 +2,130 @@
 
 ## Summary
 
-- **Total Patterns**: 25
+- **Total Patterns**: 38
 - **Pattern Categories**: 4
 
 ## Temporal Patterns
 
-Found 6 patterns:
+Found 10 patterns:
 
-### Monthly Sales Increase
-- **Description**: Sales tend to increase significantly during the holiday season, particularly in November and December, indicating a strong seasonal trend.
+### Broad step-change upward from 2020 to 2021 in transaction volume and totals
+- **Description**: Monthly counts and monthly sums are much higher in every month of 2021 than in the corresponding months of 2020, indicating a clear year-over-year level shift rather than a small gradual increase.
 - **Strength**: strong
-- **Variables**: Invoice Date, Total Sales
-- **Relevance**: Understanding this pattern can help retailers prepare inventory and marketing strategies for peak sales periods.
+- **Variables**: Total Sales, Operating Profit, Units Sold, count
+- **Relevance**: This indicates the business operated at a much larger monthly scale in 2021, affecting capacity planning, forecasting, and interpretation of year-over-year performance.
 
-### Weekly Sales Fluctuation
-- **Description**: Sales exhibit a cyclical pattern with higher units sold on weekends and lower sales during weekdays.
+### 2020 mid-year trough followed by partial rebound
+- **Description**: In 2020, several key metrics decline from early-year levels into June, then recover in July through September before weakening again late in the year.
 - **Strength**: strong
-- **Variables**: Invoice Date, Units Sold
-- **Relevance**: Retailers can optimize staffing and promotional efforts to align with peak sales days.
+- **Variables**: Total Sales, Operating Profit, Units Sold, count
+- **Relevance**: This shows a clear within-year disruption and rebound pattern in 2020, useful for identifying abnormal periods and avoiding misleading trend baselines.
 
-### Regional Sales Variation
-- **Description**: Sales performance varies significantly by region, with certain regions showing consistent growth during specific months.
+### 2021 sales and profit trough in March, then climb to summer peak
+- **Description**: In 2021, Total Sales and Operating Profit decline from January to March, then rise through spring and early summer, reaching their highest levels around July-August before easing in autumn.
+- **Strength**: strong
+- **Variables**: Total Sales, Operating Profit
+- **Relevance**: This seasonal-like rise into summer and decline into autumn can inform staffing, inventory, and promotional timing.
+
+### Units sold peak in late summer in both years
+- **Description**: The highest monthly Units Sold sums occur in August in both 2020 and 2021, indicating a repeated late-summer volume high.
 - **Strength**: moderate
-- **Variables**: Region, Invoice Date, Total Sales
-- **Relevance**: This insight can guide region-specific marketing and inventory strategies.
+- **Variables**: Units Sold
+- **Relevance**: A repeated August volume peak suggests planning for higher fulfillment and inventory needs in late summer.
 
-### Price Sensitivity Over Time
-- **Description**: There is a noticeable trend where sales volume increases when prices are reduced during promotional periods.
+### Late-year recovery in 2021 after autumn slowdown
+- **Description**: After declining from summer into October 2021, sales and profit recover in November and especially December.
 - **Strength**: strong
-- **Variables**: Price per Unit, Units Sold
-- **Relevance**: Retailers can leverage this pattern to maximize sales through strategic pricing during specific periods.
-
-### Quarterly Profit Growth
-- **Description**: Operating profit shows a consistent upward trend in Q4 of each year, likely due to increased holiday shopping.
-- **Strength**: strong
-- **Variables**: Invoice Date, Operating Profit
-- **Relevance**: This trend can inform financial forecasting and budget allocations for the holiday season.
+- **Variables**: Total Sales, Operating Profit, Units Sold, Price per Unit
+- **Relevance**: This suggests year-end strengthening in 2021, relevant for revenue targeting and end-of-year commercial planning.
 
 ## Correlation Patterns
 
-Found 5 patterns:
+Found 3 patterns:
 
-### Units Sold vs. Total Sales
-- **Description**: There is a strong positive correlation between the number of Units Sold and Total Sales, indicating that higher sales volume directly contributes to increased revenue.
+### Total Sales and Operating Profit move together very strongly
+- **Description**: Total Sales and Operating Profit have a very strong positive relationship: records with higher sales tend to also show higher operating profit. This is likely partly structural because profit is financially linked to sales, though the relationship is not perfect, indicating margins or cost structure vary across records.
+- **Strength**: strong
+- **Variables**: Total Sales, Operating Profit
+- **Relevance**: Revenue growth is closely associated with profit growth in this dataset. From a business perspective, higher-revenue transactions are also the main source of higher operating profit. Because Operating Profit is economically dependent on Total Sales, this relationship is likely substantially structural rather than purely behavioral.
+
+### Units Sold is strongly associated with Total Sales
+- **Description**: Units Sold and Total Sales show a strong positive relationship: transactions with more units sold generally produce higher total sales. This is consistent with the revenue structure of sales data, since selling more units typically increases revenue, although variation in Price per Unit prevents the relationship from being perfect.
 - **Strength**: strong
 - **Variables**: Units Sold, Total Sales
-- **Relevance**: Understanding this relationship helps in forecasting sales and inventory management, allowing retailers to optimize stock based on expected sales volume.
+- **Relevance**: Volume is a major driver of revenue in the dataset. This relationship is likely largely structural because Total Sales is directly influenced by quantity sold, but it also reflects business performance differences across transactions because price levels vary.
 
-### Price per Unit vs. Operating Profit
-- **Description**: There is a moderate positive correlation between Price per Unit and Operating Profit, suggesting that higher pricing strategies can lead to improved profit margins.
-- **Strength**: moderate
-- **Variables**: Price per Unit, Operating Profit
-- **Relevance**: This pattern is crucial for pricing strategies, as it suggests that increasing prices can enhance profitability, provided that it does not negatively impact sales volume.
-
-### Region vs. Total Sales
-- **Description**: Total Sales vary significantly across different regions, with certain regions consistently outperforming others in terms of sales volume.
+### Units Sold is strongly associated with Operating Profit
+- **Description**: Units Sold and Operating Profit have a strong positive relationship: higher-volume transactions tend to generate higher operating profit. This likely reflects a dependency chain where selling more units raises sales, which in turn raises profit, subject to margin differences.
 - **Strength**: strong
-- **Variables**: Region, Total Sales
-- **Relevance**: Identifying high-performing regions allows businesses to allocate resources more effectively and tailor marketing strategies to boost sales in underperforming areas.
-
-### Operating Margin vs. Total Sales
-- **Description**: There is a negative correlation between Operating Margin and Total Sales, indicating that as total sales increase, the operating margin tends to decrease.
-- **Strength**: moderate
-- **Variables**: Operating Margin, Total Sales
-- **Relevance**: Understanding this dynamic is essential for maintaining profitability, as businesses need to balance sales growth with margin preservation.
-
-### City vs. Units Sold
-- **Description**: Certain cities show significantly higher Units Sold compared to others, indicating localized demand for specific products.
-- **Strength**: strong
-- **Variables**: City, Units Sold
-- **Relevance**: This pattern can inform targeted marketing efforts and inventory distribution, ensuring that high-demand areas are adequately stocked.
+- **Variables**: Units Sold, Operating Profit
+- **Relevance**: Sales volume appears to be an important contributor to profitability. This relationship is partly structural rather than purely behavioral, because Operating Profit is financially downstream of sales volume through Total Sales, but the less-than-perfect correlation shows that profit per unit and operating margin vary.
 
 ## Grouping Patterns
 
-Found 8 patterns:
+Found 18 patterns:
 
-### High-Volume Retailers
-- **Description**: A cluster of retailers consistently selling high volumes of products, particularly in specific regions.
+### Retailer transaction volume is concentrated in three chains
+- **Description**: Record counts are uneven across retailers, with Foot Locker, West Gear, and Sports Direct accounting for most observations.
 - **Strength**: strong
-- **Variables**: Retailer, Units Sold, Region
-- **Relevance**: Identifying high-volume retailers can help in optimizing inventory and supply chain strategies.
+- **Variables**: Retailer, count
+- **Relevance**: High. Any retailer-level analysis will be dominated by Foot Locker, West Gear, and Sports Direct, so decisions based on aggregate retailer performance should account for this imbalance.
 
-### Seasonal Sales Peaks
-- **Description**: Certain products exhibit significant spikes in sales during specific months, indicating seasonal buying behavior.
+### Walmart has the highest average units sold per record despite the smallest retailer count
+- **Description**: Retailers differ meaningfully in average units sold, and Walmart leads on units per record even though it has the fewest records.
 - **Strength**: strong
-- **Variables**: Invoice Date, Product, Total Sales
-- **Relevance**: Understanding seasonal trends can aid in marketing strategies and inventory management.
+- **Variables**: Retailer, Units Sold, count
+- **Relevance**: High. Walmart appears to generate larger order quantities per record, which matters for fulfillment, inventory allocation, and channel strategy.
 
-### High Operating Margin Products
-- **Description**: Products that yield a high operating margin are predominantly sold by a select group of retailers.
+### Foot Locker and West Gear dominate total units sold among retailers
+- **Description**: Total units sold are concentrated in two retailers, driven by their larger record counts.
+- **Strength**: strong
+- **Variables**: Retailer, Units Sold, count
+- **Relevance**: High. Volume planning and retailer prioritization should focus heavily on West Gear and Foot Locker because they carry the largest total unit movement.
+
+### Amazon has the highest average price per unit among retailers
+- **Description**: Average selling price differs across retailers, with Amazon at the top and Sports Direct at the bottom.
 - **Strength**: moderate
-- **Variables**: Product, Operating Margin, Retailer
-- **Relevance**: Focusing on high-margin products can enhance profitability and inform pricing strategies.
+- **Variables**: Retailer, Price per Unit
+- **Relevance**: Moderate to high. Retailers appear to operate at different price points, which is relevant for pricing strategy, promotion planning, and margin comparisons.
 
-### Price Sensitivity by Region
-- **Description**: Regions show varying sensitivity to price changes, affecting sales volumes.
+### Regional record counts are concentrated in West and Northeast
+- **Description**: The number of records is uneven by region, with West and Northeast having the largest counts and Southeast the smallest.
 - **Strength**: strong
-- **Variables**: Region, Price per Unit, Units Sold
-- **Relevance**: Understanding regional price sensitivity can guide pricing strategies and promotional efforts.
-
-### Urban vs. Rural Sales Dynamics
-- **Description**: Sales patterns differ significantly between urban and rural areas, influencing product offerings.
-- **Strength**: moderate
-- **Variables**: City, Units Sold, Product
-- **Relevance**: Tailoring product offerings based on urban vs. rural dynamics can enhance market penetration.
+- **Variables**: Region, count
+- **Relevance**: High. Geographic analyses are balanced toward West and Northeast, so these regions will strongly influence overall results.
 
 ## Anomaly Patterns
 
-Found 6 patterns:
+Found 7 patterns:
 
-### High Units Sold with Low Operating Profit
-- **Description**: Certain retailers show a high number of units sold but report disproportionately low operating profits, indicating potential pricing or cost issues.
+### High-end outliers in Units Sold
+- **Description**: Units Sold shows a noticeable upper-tail anomaly pattern, with unusually large transaction quantities relative to the central distribution.
 - **Strength**: strong
-- **Variables**: Retailer ID, Units Sold, Operating Profit
-- **Relevance**: Identifying retailers with this pattern can help address pricing strategies or cost management, ensuring profitability aligns with sales volume.
+- **Variables**: Units Sold
+- **Relevance**: This is more consistent with real high-volume sales events than a clear data quality issue because values are nonnegative and the upper-tail pattern aligns with positive skew. In downstream analysis, use robust summaries (median, IQR), consider winsorizing or segmenting bulk-sale records, and test whether these records correspond to specific products, channels, or periods.
 
-### Seasonal Sales Peaks with Low Margin
-- **Description**: Sales peaks in specific months (e.g., December) are accompanied by low operating margins, suggesting discounting strategies that may not be sustainable.
+### Extreme right tail in Total Sales
+- **Description**: Total Sales has a strongly concentrated lower/middle range with a very large upper tail, indicating revenue spikes or very large orders.
+- **Strength**: strong
+- **Variables**: Total Sales
+- **Relevance**: This could reflect real large transactions, but the very large mean-median gap indicates that aggregate results will be dominated by a small subset of records. Downstream analysis should use log scaling or robust statistics, and analysts should separately profile these high-sales records before modeling or benchmarking.
+
+### Extreme right tail in Operating Profit
+- **Description**: Operating Profit contains a pronounced set of unusually high values, more extreme than the sales distribution, indicating profit spikes concentrated in a minority of records.
+- **Strength**: strong
+- **Variables**: Operating Profit
+- **Relevance**: This likely reflects real highly profitable transactions or combinations of high sales and high margin, rather than obvious data error, because values remain nonnegative. For downstream work, use robust estimators, inspect these records separately, and avoid relying only on averages when comparing profitability across groups.
+
+### Zero-inflation at the lower bound in sales and profit measures
+- **Description**: Both Total Sales and Operating Profit have exact zeros as their minimum values, creating a lower-bound mass that is unusual for continuous monetary measures and may indicate no-sale, canceled, or placeholder records.
 - **Strength**: moderate
-- **Variables**: Invoice Date, Total Sales, Operating Margin
-- **Relevance**: Understanding this pattern can inform future promotional strategies and margin management during peak seasons.
+- **Variables**: Total Sales, Operating Profit, Units Sold
+- **Relevance**: This could be either a real business state (no units sold / no revenue / no profit) or a data quality/process artifact. Downstream analysis should explicitly quantify zero counts, treat zero-valued records as a separate segment, and verify whether they represent valid transactions before including them in revenue or margin modeling.
 
-### Unusual Regional Sales Discrepancies
-- **Description**: Certain regions show extreme discrepancies in sales for similar products, indicating potential market saturation or unmet demand.
-- **Strength**: strong
-- **Variables**: Region, Product, Total Sales
-- **Relevance**: This pattern highlights the need for targeted marketing strategies or product adjustments to better meet regional demands.
-
-### Price Anomalies with High Returns
-- **Description**: Products priced significantly higher than competitors show an unusually high return rate, indicating potential customer dissatisfaction or mispricing.
-- **Strength**: strong
-- **Variables**: Product, Price per Unit, Units Sold
-- **Relevance**: Addressing pricing strategies could reduce return rates and improve customer satisfaction.
-
-### Outlier Retailers with Consistent Losses
-- **Description**: Certain retailers consistently report losses despite having a stable sales volume, indicating potential operational inefficiencies.
-- **Strength**: strong
-- **Variables**: Retailer ID, Total Sales, Operating Profit
-- **Relevance**: Identifying and analyzing these retailers can help uncover operational issues and improve overall profitability.
+### Mild upper-tail anomalies in Price per Unit
+- **Description**: Price per Unit has some unusually high values, but the anomaly rate is low and the distribution is much more stable than the volume and monetary measures.
+- **Strength**: moderate
+- **Variables**: Price per Unit
+- **Relevance**: These high prices may be legitimate premium-price transactions rather than data errors, since the lower bound is not violated and the central tendency is stable. In downstream analysis, keep these values but consider capping or separate segmentation if price-sensitive models are affected by the small number of high-price records.
 

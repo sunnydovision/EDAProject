@@ -131,14 +131,20 @@ def score_insight(insight_data: Dict[str, Any], values: List[float]) -> Dict[str
         score['threshold'] = 1.4
         score['passed'] = score['pattern_score'] >= 1.4
         
-    elif insight_type == 'COMPARISON' and len(values) >= 2:
+    elif insight_type in ['CORRELATION', 'COMPARISON'] and len(values) >= 2:
         score['pattern_type'] = 'ATTRIBUTION'
         score['pattern_score'] = score_attribution(values)
         score['threshold'] = 0.5
         score['passed'] = score['pattern_score'] >= 0.5
         
-    elif insight_type in ['DISTRIBUTION', 'PATTERN', 'CORRELATION']:
-        score['pattern_type'] = 'QUALITY'
+    elif insight_type == 'DISTRIBUTION':
+        score['pattern_type'] = 'DISTRIBUTION_DIFFERENCE'
+        score['pattern_score'] = score_quality(insight_data)
+        score['threshold'] = 0.6
+        score['passed'] = score['pattern_score'] >= 0.6
+        
+    elif insight_type == 'PATTERN':
+        score['pattern_type'] = 'TREND'  # Generic patterns mapped to trend
         score['pattern_score'] = score_quality(insight_data)
         score['threshold'] = 0.6
         score['passed'] = score['pattern_score'] >= 0.6

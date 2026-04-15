@@ -17,25 +17,32 @@ from typing import Dict, List, Any, Tuple
 import sys
 import os
 
-# Import QUIS models for compatibility
+# Import QUIS views for compatibility only (not models)
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
-from quis.isgen.models import Insight, Subspace, TREND, OUTSTANDING_VALUE, ATTRIBUTION, DISTRIBUTION_DIFFERENCE
 from quis.isgen.views import compute_view, parse_measure
 from agent import _clean_dataframe_like_quis
 
 
 class OutputConverter:
-    """Convert Agentic AutoEDA output to QUIS-compatible format"""
+    """Convert Agentic AutoEDA output to ISGEN-compatible format"""
     
-    # Pattern mapping from baseline to QUIS
+    # ISGEN pattern types (4 types from paper)
+    ISGEN_PATTERN_TYPES = [
+        'TREND',                    # Temporal trends
+        'OUTSTANDING_VALUE',        # Outliers and anomalies
+        'ATTRIBUTION',              # Correlation and attribution
+        'DISTRIBUTION_DIFFERENCE'   # Distribution differences
+    ]
+    
+    # Mapping from baseline insight_type to ISGEN pattern type
     PATTERN_MAP = {
-        'TREND': TREND,
-        'OUTLIER': OUTSTANDING_VALUE,
-        'ANOMALY': OUTSTANDING_VALUE,
-        'CORRELATION': ATTRIBUTION,  # Correlation shows attribution
-        'DISTRIBUTION': DISTRIBUTION_DIFFERENCE,
-        'COMPARISON': ATTRIBUTION,
-        'PATTERN': TREND  # Generic patterns mapped to trend
+        'TREND': 'TREND',
+        'ANOMALY': 'OUTSTANDING_VALUE',
+        'OUTLIER': 'OUTSTANDING_VALUE',
+        'CORRELATION': 'ATTRIBUTION',
+        'DISTRIBUTION': 'DISTRIBUTION_DIFFERENCE',
+        'COMPARISON': 'ATTRIBUTION',
+        'PATTERN': 'TREND'  # Generic patterns mapped to trend
     }
     
     def __init__(self, df: pd.DataFrame):
@@ -321,23 +328,49 @@ class OutputConverter:
 
     def _convert_to_quis_insight(self, baseline_insight: Dict, breakdown: str, measure: str, idx: int) -> Dict:
         """
-        Convert baseline insight to QUIS Insight format.
+        Convert baseline insight to ISGEN-compatible format.
         
-        Returns dict with nested 'insight' object matching QUIS structure
+        Returns dict with nested 'insight' object using ISGEN pattern types
         """
-        # Map pattern type
-        baseline_type = baseline_insight.get('insight_type', '')
-        pattern = self.PATTERN_MAP.get(baseline_type, TREND)
+        # Map baseline insight_type to ISGEN pattern type
+        baseline_type = baseline_insight.get('insight_type', 'PATTERN')
+        pattern_type = self.PATTERN_MAP.get(baseline_type, 'TREND')
+        
+        # Validate pattern type
+        if pattern_type not in self.ISGEN_PATTERN_TYPES:
+            pattern_type = 'TREND'  # Default to trend
         
         # Extract score
         score_data = baseline_insight.get('score', {})
         score = float(score_data.get('overall', score_data.get('pattern_score', 0.0)))
         
-        # Compute view (labels and values)
+        # Extract and convert subspace from baseline format to QUIS Subspace format
+        # Baseline uses [["column", "value"]] (list of lists)
+        # QUIS uses Subspace(filters=((col, val), ...)) (tuple of tuples)
+        baseline_subspace = baseline_insight.get('subspace', [])
+        if baseline_subspace:
+            # Convert from [["col", "val"], ...] to ((col, val), ...)
+            subspace_filters = tuple(tuple(filter_pair) for filter_pair in baseline_subspace)
+            from quis.isgen.models import Subspace
+            quis_subspace = Subspace(filters=subspace_filters)
+        else:
+            quis_subspace = None
+        
+        # Compute view (labels and values) with actual subspace
         try:
-            labels, values = compute_view(self.df, breakdown, measure, Subspace.empty())
+            labels, values = compute_view(self.df, breakdown, measure, quis_subspace)
             # Convert string labels back to original data types to match cleaned data
             labels = self._fix_label_types(labels, breakdown)
+            # Remove duplicates to avoid faithfulness errors
+            seen = set()
+            unique_labels = []
+            unique_values = []
+            for label, value in zip(labels, values):
+                if label not in seen:
+                    seen.add(label)
+                    unique_labels.append(label)
+                    unique_values.append(value)
+            labels, values = unique_labels, unique_values
         except:
             # Fallback: compute manually
             labels, values = self._compute_view_fallback(breakdown, measure)
@@ -350,8 +383,8 @@ class OutputConverter:
             'insight': {
                 'breakdown': breakdown,
                 'measure': measure,
-                'subspace': [],  # Baseline doesn't have subspace exploration
-                'pattern': pattern,
+                'subspace': baseline_insight.get('subspace', []),  # Extract from LLM response
+                'pattern': pattern_type,  # ISGEN pattern type
                 'score': score,
                 'question': question,
                 'reason': reason,
@@ -362,7 +395,7 @@ class OutputConverter:
     
     def _generate_explanation(self, insight: Dict) -> str:
         """
-        Generate explanation text in QUIS format.
+        Generate explanation text in ISGEN format.
         
         Format: "<pattern>: [subspace conditions], one category in <breakdown> has a value 
                 much larger (or smaller) than the others when measuring <measure>."
@@ -379,14 +412,14 @@ class OutputConverter:
         else:
             subspace_text = ""
         
-        # Pattern-specific explanations
-        if pattern == OUTSTANDING_VALUE or pattern == 'Outstanding Value':
+        # Pattern-specific explanations using ISGEN pattern types
+        if pattern == 'OUTSTANDING_VALUE':
             return f"{pattern}: {subspace_text}one category in {breakdown} has a value much larger (or smaller) than the others when measuring {measure}."
-        elif pattern == TREND or pattern == 'Trend':
+        elif pattern == 'TREND':
             return f"{pattern}: {subspace_text}{measure} shows a monotonic trend across {breakdown}."
-        elif pattern == ATTRIBUTION or pattern == 'Attribution':
+        elif pattern == 'ATTRIBUTION':
             return f"{pattern}: {subspace_text}one category in {breakdown} dominates the total {measure}."
-        elif pattern == DISTRIBUTION_DIFFERENCE or pattern == 'Distribution Difference':
+        elif pattern == 'DISTRIBUTION_DIFFERENCE':
             return f"{pattern}: {subspace_text}the distribution of {measure} differs significantly across {breakdown}."
         else:
             return f"{pattern}: {subspace_text}interesting pattern found in {measure} by {breakdown}."
@@ -398,7 +431,18 @@ class OutputConverter:
                 # Count by breakdown
                 counts = self.df[breakdown].value_counts()
                 # Return actual values (not strings) to match cleaned data
-                return counts.index.tolist(), counts.values.tolist()
+                labels = counts.index.tolist()
+                values = counts.values.tolist()
+                # Remove duplicates by using dict to preserve order
+                seen = set()
+                unique_labels = []
+                unique_values = []
+                for label, value in zip(labels, values):
+                    if label not in seen:
+                        seen.add(label)
+                        unique_labels.append(label)
+                        unique_values.append(value)
+                return unique_labels, unique_values
             
             # Parse measure
             if measure.startswith('MEAN('):
@@ -419,8 +463,18 @@ class OutputConverter:
             
             # Group and aggregate
             grouped = self.df.groupby(breakdown)[col].agg(agg_func)
-            # Return actual values (not strings) to match cleaned data
-            return grouped.index.tolist(), grouped.values.tolist()
+            labels = grouped.index.tolist()
+            values = grouped.values.tolist()
+            # Remove duplicates by using dict to preserve order
+            seen = set()
+            unique_labels = []
+            unique_values = []
+            for label, value in zip(labels, values):
+                if label not in seen:
+                    seen.add(label)
+                    unique_labels.append(label)
+                    unique_values.append(value)
+            return unique_labels, unique_values
         
         except Exception as e:
             print(f"      ⚠️  View computation failed: {e}")
