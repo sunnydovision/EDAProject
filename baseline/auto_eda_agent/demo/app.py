@@ -58,7 +58,7 @@ if page == "Tổng quan":
     1. **Data Profiling** - Phân tích ý nghĩa ngữ nghĩa của các cột dữ liệu
     2. **Quality Analysis** - Đánh giá chất lượng dữ liệu và các vấn đề
     3. **Statistical Analysis** - Phân tích thống kê và tương quan
-    4. **Pattern Discovery** - Khám phá các mẫu trong dữ liệu
+    4. **Pattern Discovery** - Khám phá các pattern trong dữ liệu
     5. **Insight Extraction** - Trích xuất các insight có giá trị kinh doanh
     """)
 
@@ -73,7 +73,7 @@ elif page == "Input Dataset":
     st.markdown("### 5 dòng đầu tiên:")
     st.dataframe(df.head(), use_container_width=True)
     
-    st.markdown("### Tổng quan các cột (Kaggle style):")
+    st.markdown("### Tổng quan các cột:")
     
     # Create Kaggle-style overview table
     overview_data = []
@@ -94,7 +94,7 @@ elif page == "Input Dataset":
             'Kiểu dữ liệu': col_dtype,
             'Giá trị thiếu': f'{missing_count} ({missing_pct:.2f}%)',
             'Giá trị duy nhất': unique_count,
-            'Sample values': sample_str
+            'Giá trị mẫu': sample_str
         })
     
     overview_df = pd.DataFrame(overview_data)
@@ -107,16 +107,16 @@ elif page == "5 Bước Phân Tích":
     with st.expander("Bước 1: Data Profiling Agent", expanded=False):
         st.markdown("### Quy trình")
         
-        st.markdown("**1.1 Initial Exploration**")
+        st.markdown("**1.1 Khám phá ban đầu**")
         st.markdown("- Input: `df` (DataFrame)")
         st.markdown("- Process: Code phân tích data structure, tính toán số lượng columns, rows, dtypes")
         st.markdown("- Output: `{numerical_cols, categorical_cols, dtypes, missing_counts}`")
         
-        st.markdown("**1.2 Semantic Analysis**")
+        st.markdown("**1.2 Phân tích ngữ nghĩa**")
         st.markdown("- Input: `column_samples` (sample values của từng cột)")
         st.markdown("- Process: Gọi LLM để phân tích ý nghĩa từng cột")
         
-        @st.dialog("Prompt - Semantic Analysis")
+        @st.dialog("Prompt - Phân tích ngữ nghĩa")
         def semantic_dialog():
             st.markdown("### System Prompt")
             st.markdown(f"""
@@ -182,12 +182,12 @@ For EACH column, return:
             semantic_dialog()
         st.markdown("- Output: `{semantic_meaning, data_type_class, importance, potential_issues}`")
         
-        st.markdown("**1.3 Comprehensive Profiling**")
+        st.markdown("**1.3 Phân tích chi tiết**")
         st.markdown("- Input: Kết quả 1.1 + 1.2")
         st.markdown("- Process: Code combine và compute detailed statistics")
         st.markdown("- Output: `profile.json` đầy đủ thông tin cột")
         
-        st.markdown("**1.4 Generate Summary Report**")
+        st.markdown("**1.4 Tạo báo cáo tóm tắt**")
         st.markdown("- Input: `profile.json`")
         st.markdown("- Process: Code generate markdown summary")
         st.markdown("- Output: `summary.md`")
@@ -200,16 +200,16 @@ For EACH column, return:
     with st.expander("Bước 2: Quality Analysis Agent", expanded=False):
         st.markdown("### Quy trình")
         
-        st.markdown("**2.1 Compute Quality Metrics**")
+        st.markdown("**2.1 Tính toán chỉ số chất lượng**")
         st.markdown("- Input: `df` + `id_columns` từ Step 1")
         st.markdown("- Process: Code tính toán missing values, outliers, duplicates")
         st.markdown("- Output: `{missing_values, outliers, duplicates, total_issues}`")
         
-        st.markdown("**2.2 Expert Quality Assessment**")
+        st.markdown("**2.2 Đánh giá chất lượng chuyên gia**")
         st.markdown("- Input: `quality_metrics` + `importance_by_column`")
         st.markdown("- Process: Gọi LLM để interpret và prioritize issues")
         
-        @st.dialog("Prompt - Expert Quality Assessment")
+        @st.dialog("Prompt - Đánh giá chất lượng chuyên gia")
         def quality_dialog():
             st.markdown("### System Prompt")
             st.markdown(f"""
@@ -273,7 +273,7 @@ For each issue found, provide:
             quality_dialog()
         st.markdown("- Output: `{critical_issues, overall_quality_score, priority_actions}`")
         
-        st.markdown("**2.3 Combine Metrics & Assessment**")
+        st.markdown("**2.3 Kết hợp chỉ số và đánh giá**")
         st.markdown("- Input: Kết quả 2.1 + 2.2")
         st.markdown("- Process: Code combine metrics và assessment")
         st.markdown("- Output: `quality_report.json` với metrics + assessment")
@@ -286,16 +286,16 @@ For each issue found, provide:
     with st.expander("Bước 3: Statistical Analysis Agent", expanded=False):
         st.markdown("### Quy trình")
         
-        st.markdown("**3.1 Compute Comprehensive Statistics**")
+        st.markdown("**3.1 Tính toán thống kê chi tiết**")
         st.markdown("- Input: `df` + `id_columns` từ Step 1")
-        st.markdown("- Process: Code tính toán descriptive stats, distributions, correlations")
+        st.markdown("- Process: Code tính toán thống kê mô tả (mean, median, std), phân phối dữ liệu (shape, skewness), và tương quan giữa các biến")
         st.markdown("- Output: `{numerical_stats, categorical_stats, correlations}`")
         
-        st.markdown("**3.2 Statistical Interpretation**")
+        st.markdown("**3.2 Diễn giải thống kê**")
         st.markdown("- Input: `statistics` + `semantic_meanings` + `quality_score`")
         st.markdown("- Process: Gọi LLM để interpret findings trong business context")
         
-        @st.dialog("Prompt - Statistical Interpretation")
+        @st.dialog("Prompt - Diễn giải thống kê")
         def stats_dialog():
             st.markdown("### System Prompt")
             st.markdown(f"""
@@ -372,7 +372,7 @@ Provide:
             stats_dialog()
         st.markdown("- Output: `{distribution_patterns, strong_correlations, key_findings, recommendations}`")
         
-        st.markdown("**3.3 Combine Statistics & Interpretation**")
+        st.markdown("**3.3 Kết hợp thống kê và diễn giải**")
         st.markdown("- Input: Kết quả 3.1 + 3.2")
         st.markdown("- Process: Code combine statistics và interpretation")
         st.markdown("- Output: `statistics.json` với statistics + interpretation")
@@ -385,7 +385,7 @@ Provide:
     with st.expander("Bước 4: Pattern Discovery Agent", expanded=False):
         st.markdown("### Quy trình")
         
-        st.markdown("**4.1 Pre-compute Aggregations**")
+        st.markdown("**4.1 Tính toán trước các phép tổng hợp**")
         st.markdown("- Input: `df` + `temporal_columns`")
         st.markdown("- Process: Code tính toán monthly, correlation, group aggregations")
         st.markdown("- Output: `{monthly_aggregations, group_aggregations, correlation_matrix}`")
@@ -408,15 +408,34 @@ You are a pattern recognition expert. Your job is to identify concrete, evidence
 <div style="background-color: {PROMPT_BG}; padding: 15px; border-radius: 10px; font-family: monospace; white-space: pre-wrap; font-size: 11px; max-height: 300px; overflow-y: auto; color: {PROMPT_TEXT};">
 Discover temporal patterns in this dataset.
 
-Focus: time-based trends, seasonality, growth or decline over time.
+Focus: time-based trends, seasonality, growth or decline over time, cyclical behavior.
 
 Computed monthly aggregations:
 <span style="color: {PROMPT_JSON}; font-weight: bold;">{{monthly_aggregations_json}}</span>
 
+Column semantic meanings:
+<span style="color: {PROMPT_JSON}; font-weight: bold;">{{semantic_meanings_json}}</span>
+
+Data quality score: <span style="color: {PROMPT_HIGHLIGHT}; font-weight: bold;">{{quality_score}}</span>
+
 For each pattern found:
-- Cite specific numbers from the monthly aggregations
+- Cite specific numbers from the monthly aggregations above
 - State which months or periods show the pattern
 - Assess pattern strength: strong | moderate | weak
+
+Return JSON:
+{{
+  "patterns": [
+    {{
+      "pattern_name": "...",
+      "description": "...",
+      "variables_involved": ["..."],
+      "evidence": "... (include specific numbers)",
+      "strength": "strong|moderate|weak",
+      "business_relevance": "..."
+    }}
+  ]
+}}
 </div>
 """
                 st.html(html_content)
@@ -462,8 +481,262 @@ For each pattern found:
 """
                 st.html(html_content)
         
-        if st.button("Xem Prompt (Temporal)", key="step4_2_prompt"):
+        @st.dialog("Prompt - Correlation Patterns")
+        def correlation_dialog():
+            st.markdown("### System Prompt")
+            st.markdown(f"""
+<div style="background-color: {PROMPT_BG}; padding: 15px; border-radius: 10px; font-family: monospace; white-space: pre-wrap; font-size: 11px; color: {PROMPT_TEXT};">
+You are a pattern recognition expert. Your job is to identify concrete, evidence-backed patterns in data.
+</div>
+""", unsafe_allow_html=True)
+            prompt_mode = st.radio("Chế độ hiển thị:", ["Template", "Actual (dữ liệu thực tế)"], key="step4_2_correlation_mode")
+            if prompt_mode == "Template":
+                html_content = f"""
+<div style="background-color: {PROMPT_BG}; padding: 15px; border-radius: 10px; font-family: monospace; white-space: pre-wrap; font-size: 11px; max-height: 300px; overflow-y: auto; color: {PROMPT_TEXT};">
+Discover correlation patterns in this dataset.
+
+Focus: strong relationships between variables, co-movement, potential dependencies.
+
+Strong correlations computed from data (|r| > 0.7):
+<span style="color: {PROMPT_JSON}; font-weight: bold;">{{strong_correlations_json}}</span>
+
+Column semantic meanings:
+<span style="color: {PROMPT_JSON}; font-weight: bold;">{{semantic_meanings_json}}</span>
+
+Statistical interpretation from Step 3:
+<span style="color: {PROMPT_JSON}; font-weight: bold;">{{correlation_interpretation}}</span>
+
+For each pattern found:
+- Reference the specific r value
+- Explain the direction and likely business meaning of the relationship
+- Note whether the correlation may be structural (e.g., one variable derived from another) or behavioral
+
+Return JSON:
+{{
+  "patterns": [
+    {{
+      "pattern_name": "...",
+      "description": "...",
+      "variables_involved": ["..."],
+      "evidence": "... (include r value and direction)",
+      "strength": "strong|moderate|weak",
+      "business_relevance": "..."
+    }}
+  ]
+}}
+</div>
+"""
+                st.html(html_content)
+            else:
+                profile = load_json(OUTPUT_DIR / "step1_profiling" / "profile.json")
+                quality = load_json(OUTPUT_DIR / "step2_quality" / "quality_report.json")
+                stats = load_json(OUTPUT_DIR / "step3_statistics" / "statistics.json")
+                
+                semantic_meanings = {}
+                for col, info in profile["columns"].items():
+                    semantic_meanings[col] = info["semantic_meaning"]
+                
+                correlation_matrix = stats["statistics"]["correlations"].get("correlation_matrix", {})
+                
+                html_content = f"""
+<div style="background-color: {PROMPT_BG}; padding: 15px; border-radius: 10px; font-family: monospace; white-space: pre-wrap; font-size: 11px; max-height: 300px; overflow-y: auto; color: {PROMPT_TEXT};">
+Discover correlation patterns in this dataset.
+
+Focus: relationships between variables, positive/negative correlations, strength of relationships.
+
+Column semantic meanings:
+<span style="color: {PROMPT_JSON}; font-weight: bold;">{json.dumps(semantic_meanings, indent=2, ensure_ascii=False)}</span>
+
+Data quality score: <span style="color: {PROMPT_HIGHLIGHT}; font-weight: bold;">{quality['assessment']['overall_quality_score']}</span>
+
+Computed correlation matrix:
+<span style="color: {PROMPT_JSON}; font-weight: bold;">{json.dumps(correlation_matrix, indent=2, ensure_ascii=False)}</span>
+
+For each correlation pattern found:
+- Identify the pair of variables
+- State the correlation coefficient (r value)
+- Explain the relationship direction (positive/negative)
+- Assess strength: strong | moderate | weak
+</div>
+"""
+                st.html(html_content)
+
+        @st.dialog("Prompt - Grouping Patterns")
+        def grouping_dialog():
+            st.markdown("### System Prompt")
+            st.markdown(f"""
+<div style="background-color: {PROMPT_BG}; padding: 15px; border-radius: 10px; font-family: monospace; white-space: pre-wrap; font-size: 11px; color: {PROMPT_TEXT};">
+You are a pattern recognition expert. Your job is to identify concrete, evidence-backed patterns in data.
+</div>
+""", unsafe_allow_html=True)
+            prompt_mode = st.radio("Chế độ hiển thị:", ["Template", "Actual (dữ liệu thực tế)"], key="step4_2_grouping_mode")
+            if prompt_mode == "Template":
+                html_content = f"""
+<div style="background-color: {PROMPT_BG}; padding: 15px; border-radius: 10px; font-family: monospace; white-space: pre-wrap; font-size: 11px; max-height: 300px; overflow-y: auto; color: {PROMPT_TEXT};">
+Discover grouping patterns in this dataset.
+
+Focus: differences between segments, dominant groups, uneven distributions across categories.
+
+Computed group aggregations:
+<span style="color: {PROMPT_JSON}; font-weight: bold;">{{group_aggregations_json}}</span>
+
+Column semantic meanings:
+<span style="color: {PROMPT_JSON}; font-weight: bold;">{{semantic_meanings_json}}</span>
+
+For each pattern found:
+- Cite specific group values from the aggregations above
+- Compare groups directly where relevant (e.g., "Group A is 3× Group B")
+- Assess whether the difference is meaningful for business decisions
+
+Return JSON:
+{{
+  "patterns": [
+    {{
+      "pattern_name": "...",
+      "description": "...",
+      "variables_involved": ["..."],
+      "evidence": "... (include specific group values)",
+      "strength": "strong|moderate|weak",
+      "business_relevance": "..."
+    }}
+  ]
+}}
+</div>
+"""
+                st.html(html_content)
+            else:
+                profile = load_json(OUTPUT_DIR / "step1_profiling" / "profile.json")
+                quality = load_json(OUTPUT_DIR / "step2_quality" / "quality_report.json")
+                
+                semantic_meanings = {}
+                for col, info in profile["columns"].items():
+                    semantic_meanings[col] = info["semantic_meaning"]
+                
+                df = load_data()
+                group_agg = {}
+                categorical_cols = [col for col in df.columns if df[col].dtype == 'object' or df[col].nunique() < 20]
+                for col in categorical_cols[:5]:  # Limit to first 5 categorical columns
+                    if col in df.columns:
+                        group_agg[col] = df.groupby(col).agg({
+                            'Total Sales': 'sum',
+                            'Units Sold': 'mean'
+                        }).head(10).to_dict('index')
+                
+                html_content = f"""
+<div style="background-color: {PROMPT_BG}; padding: 15px; border-radius: 10px; font-family: monospace; white-space: pre-wrap; font-size: 11px; max-height: 300px; overflow-y: auto; color: {PROMPT_TEXT};">
+Discover grouping patterns in this dataset.
+
+Focus: patterns within categorical groups, differences between groups, group-specific behaviors.
+
+Column semantic meanings:
+<span style="color: {PROMPT_JSON}; font-weight: bold;">{json.dumps(semantic_meanings, indent=2, ensure_ascii=False)}</span>
+
+Data quality score: <span style="color: {PROMPT_HIGHLIGHT}; font-weight: bold;">{quality['assessment']['overall_quality_score']}</span>
+
+Computed group aggregations (sample):
+<span style="color: {PROMPT_JSON}; font-weight: bold;">{json.dumps(group_agg, indent=2, ensure_ascii=False)}</span>
+
+For each grouping pattern found:
+- Identify the grouping variable and the groups involved
+- Describe the pattern specific to each group
+- Compare differences between groups
+- Assess pattern strength: strong | moderate | weak
+</div>
+"""
+                st.html(html_content)
+
+        @st.dialog("Prompt - Anomaly Patterns")
+        def anomaly_dialog():
+            st.markdown("### System Prompt")
+            st.markdown(f"""
+<div style="background-color: {PROMPT_BG}; padding: 15px; border-radius: 10px; font-family: monospace; white-space: pre-wrap; font-size: 11px; color: {PROMPT_TEXT};">
+You are a pattern recognition expert. Your job is to identify concrete, evidence-backed patterns in data.
+</div>
+""", unsafe_allow_html=True)
+            prompt_mode = st.radio("Chế độ hiển thị:", ["Template", "Actual (dữ liệu thực tế)"], key="step4_2_anomaly_mode")
+            if prompt_mode == "Template":
+                html_content = f"""
+<div style="background-color: {PROMPT_BG}; padding: 15px; border-radius: 10px; font-family: monospace; white-space: pre-wrap; font-size: 11px; max-height: 300px; overflow-y: auto; color: {PROMPT_TEXT};">
+Discover anomaly patterns in this dataset.
+
+Focus: unusual values, outliers, spikes, unexpected distributions, zero-inflation.
+
+Outlier flags from Step 2:
+<span style="color: {PROMPT_JSON}; font-weight: bold;">{{outlier_flags_json}}</span>
+
+Distribution statistics from Step 3:
+<span style="color: {PROMPT_JSON}; font-weight: bold;">{{distribution_stats_json}}</span>
+
+Column semantic meanings:
+<span style="color: {PROMPT_JSON}; font-weight: bold;">{{semantic_meanings_json}}</span>
+
+For each anomaly found:
+- Cite specific statistics (e.g., mean vs median gap, outlier count, min/max)
+- Assess whether the anomaly is likely a data quality issue or a real business event
+- Suggest how it should be handled in downstream analysis
+
+Return JSON:
+{{
+  "patterns": [
+    {{
+      "pattern_name": "...",
+      "description": "...",
+      "variables_involved": ["..."],
+      "evidence": "... (include specific statistics)",
+      "strength": "strong|moderate|weak",
+      "business_relevance": "..."
+    }}
+  ]
+}}
+</div>
+"""
+                st.html(html_content)
+            else:
+                profile = load_json(OUTPUT_DIR / "step1_profiling" / "profile.json")
+                quality = load_json(OUTPUT_DIR / "step2_quality" / "quality_report.json")
+                
+                semantic_meanings = {}
+                for col, info in profile["columns"].items():
+                    semantic_meanings[col] = info["semantic_meaning"]
+                
+                outliers = quality["metrics"].get("outliers", {})
+                
+                html_content = f"""
+<div style="background-color: {PROMPT_BG}; padding: 15px; border-radius: 10px; font-family: monospace; white-space: pre-wrap; font-size: 11px; max-height: 300px; overflow-y: auto; color: {PROMPT_TEXT};">
+Discover anomaly patterns in this dataset.
+
+Focus: outliers, unusual values, unexpected patterns, data quality issues.
+
+Column semantic meanings:
+<span style="color: {PROMPT_JSON}; font-weight: bold;">{json.dumps(semantic_meanings, indent=2, ensure_ascii=False)}</span>
+
+Data quality score: <span style="color: {PROMPT_HIGHLIGHT}; font-weight: bold;">{quality['assessment']['overall_quality_score']}</span>
+
+Outlier information:
+<span style="color: {PROMPT_JSON}; font-weight: bold;">{json.dumps(outliers, indent=2, ensure_ascii=False)}</span>
+
+For each anomaly pattern found:
+- Identify the variable(s) showing anomalies
+- Describe the nature of the anomaly (outlier, unexpected value, etc.)
+- Provide specific examples with values
+- Assess severity: high | medium | low
+</div>
+"""
+                st.html(html_content)
+
+        st.markdown("**Temporal**")
+        if st.button("Xem Prompt", key="step4_2_temporal_btn"):
             temporal_dialog()
+        st.markdown("**Correlation**")
+        if st.button("Xem Prompt", key="step4_2_correlation_btn"):
+            correlation_dialog()
+        st.markdown("**Grouping**")
+        if st.button("Xem Prompt", key="step4_2_grouping_btn"):
+            grouping_dialog()
+        st.markdown("**Anomaly**")
+        if st.button("Xem Prompt", key="step4_2_anomaly_btn"):
+            anomaly_dialog()
+        
         st.markdown("- Output: `{patterns}` cho từng category")
         
         st.markdown("**4.3 Consolidate Patterns**")
@@ -488,16 +761,16 @@ For each pattern found:
     with st.expander("Bước 5: Insight Extraction Agent", expanded=False):
         st.markdown("### Quy trình")
         
-        st.markdown("**5.1 Load Prior Analysis**")
+        st.markdown("**5.1 Tải phân tích trước đó**")
         st.markdown("- Input: `profile.json`, `quality_report.json`, `statistics.json`, `patterns.json` từ steps 1-4")
         st.markdown("- Process: Code load và extract context từ 4 files")
         st.markdown("- Output: `semantic_meanings`, `quality_score`, `correlations`, `patterns`")
         
-        st.markdown("**5.2 Multi-batch Extraction**")
+        st.markdown("**5.2 Trích xuất hàng loạt**")
         st.markdown("- Input: Context từ Step 1-4 + `available_columns`")
         st.markdown("- Process: 5 LLM calls cho 5 insight types (TREND, OUTLIER, CORRELATION, DISTRIBUTION, PATTERN)")
         
-        @st.dialog("Prompt - Insight Extraction")
+        @st.dialog("Prompt - Trích xuất insight")
         def insight_dialog():
             st.markdown("### System Prompt")
             st.markdown(f"""
@@ -583,7 +856,7 @@ For each insight:
             insight_dialog()
         st.markdown("- Output: `{insights}` với title, description, variables, chart_type, subspace")
         
-        st.markdown("**5.3 Post-processing**")
+        st.markdown("**5.3 Xử lý hậu kỳ**")
         st.markdown("- Input: `insights` từ LLM")
         st.markdown("- Process: Code compute view_labels từ data, validate insights")
         st.markdown("- Output: `insights.json` với view_labels được compute từ data")
