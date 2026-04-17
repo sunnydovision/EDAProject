@@ -49,7 +49,6 @@ def main():
     parser.add_argument("--exp-factor", type=int, default=20, help="Expansion factor per beam step")
     parser.add_argument("--max-depth", type=int, default=1, help="Max subspace depth")
     parser.add_argument("--no-subspace", action="store_true", help="Skip subspace search (only basic insights)")
-    parser.add_argument("--no-llm", action="store_true", help="Subspace search không gọi OpenAI (chạy ngay, không tốn API/tránh 429)")
     parser.add_argument("--max-overall-per-key", type=int, default=1, help="Mỗi (câu hỏi, breakdown, measure, pattern) giữ tối đa N insight overall (mặc định 1)")
     parser.add_argument("--max-subspace-per-key", type=int, default=2, help="Mỗi nhóm giữ tối đa N insight subspace (mặc định 2)")
     parser.add_argument("--max-insights-per-question", type=int, default=2, help="Mỗi question chỉ giữ tối đa N insight (mặc định 2, tránh trùng câu hỏi)")
@@ -104,7 +103,10 @@ def main():
         max_subspace_per_key=args.max_subspace_per_key,
         max_insights_per_question=args.max_insights_per_question,
     )
-    llm = None if args.no_llm else (_get_llm() if config.run_subspace_search else None)
+    if config.run_subspace_search and not os.getenv("OPENAI_API_KEY") and not os.getenv("OPENAI_API_BASE"):
+        parser.error("OPENAI_API_KEY (hoặc OPENAI_API_BASE) là bắt buộc khi chạy subspace search. Project chỉ chạy với API thật.")
+
+    llm = _get_llm() if config.run_subspace_search else None
     pipeline = ISGENPipeline(config=config, llm_client=llm)
     summary = pipeline.run(df, cards, output_dir=args.plot_dir)
 

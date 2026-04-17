@@ -18,7 +18,7 @@ Module **ISGEN** nhận **Insight Cards** (từ QUGEN) và **bảng dữ liệu 
 
 3. **Thu thập candidate (chưa vẽ plot):**
    - **Basic insight:** Với mỗi card, tính view(D, B, M), áp dụng pattern (Trend, Outstanding Value, Attribution); nếu score > ngưỡng → thêm vào danh sách candidate.
-   - **Subspace search (Algorithm 1):** Beam search mở rộng subspace (bộ lọc cột/giá trị). Cột có thể do LLM gợi ý (tùy chọn, `--no-llm` để không gọi API). Chỉ giữ subspace có score > ngưỡng. Pattern dùng: Outstanding Value, Attribution.
+   - **Subspace search (Algorithm 1):** Beam search mở rộng subspace (bộ lọc cột/giá trị). Cột có thể do LLM gợi ý qua API thật. Chỉ giữ subspace có score > ngưỡng. Pattern dùng: Outstanding Value, Attribution.
 
 4. **Deduplicate (trước khi vẽ plot):**
    - Theo **(question, breakdown, measure, pattern):** mỗi nhóm giữ tối đa 1 overall + 2 subspace (cấu hình được).
@@ -41,7 +41,7 @@ Module **ISGEN** nhận **Insight Cards** (từ QUGEN) và **bảng dữ liệu 
 
 - **Code:** `quis/isgen/` (models, views, scoring, basic_insight, subspace_search, llm_filter_columns, nl_explanation, plotting, pipeline).
 - **CLI:**  
-  `run_isgen.py --csv <CSV> --insight-cards insight_cards.json --output insights_summary.json [--plot-dir plots] [--no-subspace] [--no-llm] [--max-overall-per-key 1] [--max-subspace-per-key 2] [--max-insights-per-question 2]`
+  `run_isgen.py --csv <CSV> --insight-cards insight_cards.json --output insights_summary.json [--plot-dir plots] [--no-subspace] [--max-overall-per-key 1] [--max-subspace-per-key 2] [--max-insights-per-question 2]`
 - **Input:** CSV + file JSON Insight Cards (output của QUGEN).
 - **Output:** File JSON Insight Summary; tùy chọn thư mục đồ thị PNG.
 

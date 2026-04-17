@@ -5,7 +5,7 @@ Usage:
   python run_qugen.py --csv data/transactions.csv --output insight_cards.json
   python run_qugen.py --schema data/transactions_schema.json --output insight_cards.json
 
-Requires: OPENAI_API_KEY (or OPENAI_API_BASE) for LLM; sentence-transformers for filters.
+Requires: OPENAI_API_KEY (or OPENAI_API_BASE) for real LLM calls; sentence-transformers for filters.
 """
 
 from __future__ import annotations
@@ -57,7 +57,6 @@ def main():
     parser.add_argument("--samples", type=int, default=3, help="Samples per iteration")
     parser.add_argument("--temperature", type=float, default=1.1, help="LLM temperature")
     parser.add_argument("--in-context", type=int, default=6, help="Number of in-context example cards")
-    parser.add_argument("--dry-run", action="store_true", help="Chạy với mock LLM (không cần API key), tạo output mẫu")
     args = parser.parse_args()
 
     if not args.csv and not args.schema:
@@ -93,9 +92,10 @@ def main():
         num_in_context_examples=args.in_context,
     )
 
-    llm_client = get_default_llm_client(use_mock=args.dry_run)
-    if args.dry_run:
-        print("Chạy chế độ dry-run (mock LLM), không cần OPENAI_API_KEY.")
+    if not os.getenv("OPENAI_API_KEY") and not os.getenv("OPENAI_API_BASE"):
+        parser.error("OPENAI_API_KEY (hoặc OPENAI_API_BASE) là bắt buộc. Project chỉ chạy với API thật.")
+
+    llm_client = get_default_llm_client(use_mock=False)
     pipeline = QUGENPipeline(config=config, llm_client=llm_client)
     cards = pipeline.run(table_schema=table_schema, df=df)
 

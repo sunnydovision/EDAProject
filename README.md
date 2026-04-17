@@ -1,152 +1,197 @@
-# QUIS – Question-guided Insights Generation (EDA)
+# IFQ Project - Hướng dẫn chạy cho thành viên mới
 
-Hiện thực theo bài báo **QUIS: Question-guided Insights Generation for Automated Exploratory Data Analysis** (arXiv:2410.10270v3).
+README này dành cho thành viên mới clone project và cần chạy được ngay trên máy local.
 
-## Phần 1: QUGEN (Question Generation)
+## Chuẩn bị chung
 
-Module QUGEN sinh ra **Insight Cards** (Question, Reason, Breakdown, Measure) từ schema và thống kê cơ bản của bảng, lặp theo vòng để mở rộng coverage.
-
-### Các bước pipeline (theo bài báo)
-
-1. **Tạo prompt**: Mô tả nhiệm vụ + hướng dẫn + few-shot examples + schema bảng + natural language stats.
-2. **Gọi LLM**: Lấy `s` mẫu với temperature `t` (mặc định s=3, t=1.1).
-3. **Parse**: Trích các Insight Card từ output (REASON, QUESTION, BREAKDOWN, MEASURE).
-4. **Lọc**:
-   - Relevance: bỏ câu hỏi không liên quan schema (all-MiniLM-L6-v2).
-   - Dedup: bỏ trùng theo độ tương đồng câu hỏi.
-   - Simple: bỏ câu hỏi đơn giản (SQL trả về 1 dòng).
-5. **Lặp**: Thêm cards vào pool, chọn subset làm in-context cho iteration tiếp theo.
-6. **Output**: Tập Insight Cards sau N iterations (mặc định 10).
-
-Chi tiết: [docs/QUGEN_PIPELINE.md](docs/QUGEN_PIPELINE.md).
-
-### Input / Output
-
-| | Mô tả |
-|---|--------|
-| **Input** | Schema bảng (tên, cột, kiểu) + tùy chọn DataFrame (CSV) cho basic stats và simple-question filter. |
-| **Output** | Danh sách **InsightCard**: `question`, `reason`, `breakdown`, `measure`. |
-
-### Cài đặt
+### 1) Clone và vào project
 
 ```bash
-cd /Users/ngocuit/Desktop/EDAProj
+git clone <repo-url>
+cd EDAProj
+```
+
+### 2) Tạo môi trường Python và cài thư viện
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Cấu hình LLM (Llama-3-70b-instruct hoặc API tương thích OpenAI):
+### 3) Cấu hình biến môi trường
 
 ```bash
-export OPENAI_API_KEY="your-key"
-# Hoặc endpoint Llama
-export OPENAI_API_BASE="https://..."
-export QUGEN_LLM_MODEL="meta-llama/Llama-3-70b-instruct"
+cp .env.example .env
 ```
 
-### Dataset mặc định
+Mở file `.env` và điền:
 
-Dataset của project: **`data/transactions.csv`** (giao dịch bán hàng: sản phẩm, khu vực, doanh thu, khách hàng, …). Schema tương ứng: **`data/transactions_schema.json`**.
+```env
+OPENAI_API_KEY=your-real-key
+```
 
-### Input theo bài báo
 
-- **Bắt buộc:** 1 file **CSV** (dataset); từ CSV suy schema + dữ liệu cho basic stats.
-- **Bắt buộc khi chạy thật:** Biến môi trường **`OPENAI_API_KEY`** (hoặc `OPENAI_API_BASE`) để gọi LLM.
-- **Chạy thử không cần API:** thêm `--dry-run` → dùng mock LLM, vẫn ghi output đúng format.
+### 4) Dataset mặc định trong repo
 
-Chi tiết: [docs/QUGEN_INPUT_OUTPUT.md](docs/QUGEN_INPUT_OUTPUT.md).  
-**Hướng dẫn từng bước dùng LLM thật:** [docs/HUONG_DAN_LLM_THAT.md](docs/HUONG_DAN_LLM_THAT.md).
+- Dataset giao dịch: `data/transactions.csv`
+- Dataset Adidas (dùng nhiều trong baseline/evaluation): `data/Adidas_cleaned.csv`
 
-### Chạy QUGEN
+---
 
-**Chạy thử (mock LLM, không cần API key):**
+## Phần 1 - Chạy project IFQ (chạy app)
+
+Phần này gồm 2 cách thường dùng:
+- Cách A: chạy app giao diện Streamlit
+- Cách B: chạy pipeline bằng CLI (`Question Generation -> Insight Generation`)
+
+### A. Chạy app giao diện
+
+Từ thư mục gốc project:
 
 ```bash
-python run_qugen.py --csv data/transactions.csv --output insight_cards.json --iterations 2 --samples 1 --dry-run
+source venv/bin/activate
+streamlit run app.py
 ```
 
-**Chạy thật (cần OPENAI_API_KEY) – từ CSV:**
+Sau đó mở URL Streamlit (thường là `http://localhost:8501`).
+
+Trong app:
+- Tab `Home`: upload CSV và bấm **Generate New Report**
+- Tab `History`: xem report đã có sẵn
+- Tab `Settings`: chỉnh số vòng lặp, độ chặt lọc insight, mock LLM
+
+### B. Chạy IFQ bằng command line
+
+#### B1. Sinh Insight Cards (Question Generation)
+
+Chạy thử (không cần API key):
 
 ```bash
-python run_qugen.py --csv data/transactions.csv --output insight_cards.json
+python run_qugen.py \
+  --csv data/transactions.csv \
+  --output insight_cards.json \
+  --iterations 2 \
+  --samples 1 \
+  --dry-run
 ```
 
-**Từ file schema JSON (không cần CSV):**
+Chạy thật (có API key):
 
 ```bash
-python run_qugen.py --schema data/transactions_schema.json --output insight_cards.json
+python run_qugen.py \
+  --csv data/transactions.csv \
+  --output insight_cards.json
 ```
 
-**Từ CSV suy ra schema (rồi dùng schema đó):**
-
-Schema được suy từ kiểu cột trong DataFrame (pandas): `int` → INT, `float` → DOUBLE, còn lại → CHAR.
+#### B2. Sinh Insight Summary (Insight Generation)
 
 ```bash
-# Tạo file schema JSON từ CSV
-python csv_to_schema.py data/transactions.csv -o data/transactions_schema.json -n transactions
-
-# Sau đó chạy QUGEN bằng schema vừa tạo
-python run_qugen.py --schema data/transactions_schema.json --output insight_cards.json
+python run_isgen.py \
+  --csv data/transactions.csv \
+  --insight-cards insight_cards.json \
+  --output insights_summary.json \
+  --plot-dir plots
 ```
 
-Logic suy schema nằm trong `quis.qugen.models.schema_from_dataframe()` (và được gọi tự động khi dùng `run_qugen.py --csv ...`).
+Tùy chọn hay dùng:
+- `--no-subspace`: bỏ bước subspace search
+- `--no-llm`: không gọi LLM trong subspace search (chạy nhanh, không tốn API)
 
-**Tham số (theo bài báo Appendix D.2):**
+#### B3. Kiểm tra output IFQ
 
-- `--iterations 10` – số vòng lặp
-- `--samples 3` – số mẫu mỗi vòng
-- `--temperature 1.1`
-- `--in-context 6` – số Insight Cards dùng làm in-context
+- `insight_cards.json`: output từ Question Generation
+- `insights_summary.json`: output cuối của Insight Generation
+- `plots/`: hình biểu đồ cho từng insight (nếu có bật `--plot-dir`)
 
-### Dùng trong code
+---
 
-```python
-import pandas as pd
-from quis.qugen import QUGENPipeline, QUGENConfig, InsightCard
-from quis.qugen.models import schema_from_dataframe
+## Phần 2 - Chạy baseline
 
-df = pd.read_csv("data/transactions.csv")
-schema = schema_from_dataframe(df, table_name="transactions")
+Baseline nằm ở `baseline/auto_eda_agent`, chạy theo pipeline 5 bước.
 
-config = QUGENConfig(
-    temperature=1.1,
-    num_samples_per_iteration=3,
-    num_iterations=10,
-    num_in_context_examples=6,
-)
-pipeline = QUGENPipeline(config=config)
-cards: list[InsightCard] = pipeline.run(table_schema=schema, df=df)
+### 1) Chạy baseline pipeline
 
-for c in cards:
-    print(c.question, c.breakdown, c.measure)
+```bash
+source venv/bin/activate
+cd baseline/auto_eda_agent
+python run.py ../../data/transactions.csv output
 ```
 
-### Cấu trúc thư mục
+Nếu chỉ muốn chạy bước 1-4, bỏ bước insight extraction:
 
+```bash
+python run.py ../../data/transactions.csv output --skip-step5
 ```
-EDAProj/
-├── docs/
-│   └── QUGEN_PIPELINE.md   # Các bước pipeline theo bài báo
-├── quis/
-│   ├── qugen/
-│   │   ├── models.py       # InsightCard, TableSchema
-│   │   ├── prompts.py      # Figure 6, Figure 7
-│   │   ├── llm_client.py   # LLM (OpenAI-compatible)
-│   │   ├── parser.py       # Parse [INSIGHT] cards
-│   │   ├── filters.py      # Relevance, dedup, simple-question
-│   │   ├── stats.py        # Basic stats (Figure 7)
-│   │   ├── examples.py     # Few-shot examples
-│   │   └── pipeline.py     # QUGENPipeline
-│   └── __init__.py
-├── run_qugen.py            # CLI
-├── requirements.txt
-└── README.md
+
+### 2) Output baseline cần kiểm tra
+
+Kết quả nằm trong `baseline/auto_eda_agent/output/`:
+- `step1_profiling/`
+- `step2_quality/`
+- `step3_statistics/`
+- `step4_patterns/`
+- `step5_insights/`
+- `summary/summary.txt`
+- `quis_format/` (output đã convert sang format tương thích IFQ)
+
+### 3) Chạy demo baseline (tuỳ chọn)
+
+Từ thư mục gốc project:
+
+```bash
+source venv/bin/activate
+streamlit run baseline/auto_eda_agent/demo/app.py --server.port 8502
 ```
 
 ---
 
-## Phần 2: ISGEN (Insight Generation)
+## Phần 3 - Chạy evaluation
 
-Module ISGEN nhận **Insight Cards** từ QUGEN và **dataset (CSV)**, tính view (B, M), áp dụng scoring (Trend, Outstanding Value, Attribution, Distribution Difference), chạy **basic insight** + **subspace search** (Algorithm 1), rồi **NL explanation** và **rule-based plotting** → **Insight Summary**.
+Evaluation dùng script tại `evaluation/run_evaluation.py` để so sánh 2 hệ thống.
 
-- Chi tiết: [docs/ISGEN_PIPELINE.md](docs/ISGEN_PIPELINE.md), [docs/ISGEN_INPUT_OUTPUT.md](docs/ISGEN_INPUT_OUTPUT.md).
-- **Chạy:** `python run_isgen.py --csv data/transactions.csv --insight-cards insight_cards.json --output insights_summary.json` (thêm `--plot-dir plots` để lưu đồ thị; `--no-subspace` để chỉ chạy basic insights).
+### 1) Chuẩn bị 2 file insight summary để so sánh
+
+Ví dụ:
+- IFQ output: `insights_summary.json`
+- Baseline output: `baseline/auto_eda_agent/output/quis_format/insights.json`
+
+### 2) Chạy lệnh evaluation
+
+Từ thư mục gốc project:
+
+```bash
+source venv/bin/activate
+python evaluation/run_evaluation.py \
+  --data data/transactions.csv \
+  --system_a IFQ \
+  --path_a insights_summary.json \
+  --timing_a evaluation/timing.json \
+  --token_a evaluation/token.json \
+  --system_b Baseline \
+  --path_b baseline/auto_eda_agent/output/quis_format/insights.json \
+  --timing_b evaluation/timing.json \
+  --token_b evaluation/token.json \
+  --output evaluation/evaluation_results
+```
+
+Lưu ý:
+- `--timing_*` và `--token_*` là optional. Có thể bỏ nếu chưa có dữ liệu đo thời gian/token.
+- Đảm bảo cả 2 file input (`--path_a`, `--path_b`) cùng định dạng danh sách insights.
+
+### 3) Kết quả evaluation
+
+Trong thư mục output (mặc định `evaluation/evaluation_results/`) sẽ có:
+- `<system>_results.json` cho từng hệ thống
+- `comparison_table.csv`
+- `comparison_report.md`
+- các file biểu đồ tổng hợp
+
+---
+
+## Tài liệu chi tiết thêm
+
+- `docs/QUGEN_PIPELINE.md` (Question Generation pipeline)
+- `docs/ISGEN_PIPELINE.md` (Insight Generation pipeline)
+- `baseline/auto_eda_agent/README.md`
+- `evaluation/README.md`

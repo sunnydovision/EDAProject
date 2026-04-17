@@ -27,7 +27,7 @@ Một **insight** là bộ bốn thành phần **Insight(B, M, S, P)**:
 
 3. **Thu thập candidate (chưa vẽ plot):**
    - **Basic insight:** Với mỗi card đã resolve, tính v0 = view(D, B, M). Áp dụng pattern P phù hợp (Trend, Outstanding Value, Attribution); nếu score > ngưỡng → thêm (insight_dict, question) vào danh sách candidate.
-   - **Subspace search (Algorithm 1):** Nếu bật subspace, với mỗi card và mỗi pattern (Outstanding Value, Attribution), beam search mở rộng subspace; cột lọc có thể do LLM gợi ý (`llm_filter_columns.py`) nếu không dùng `--no-llm`. Chỉ thêm subspace đạt ngưỡng vào candidate (tối đa 2 subspace per card/pattern). Mỗi candidate là (insight_dict, question).
+   - **Subspace search (Algorithm 1):** Nếu bật subspace, với mỗi card và mỗi pattern (Outstanding Value, Attribution), beam search mở rộng subspace; cột lọc có thể do LLM gợi ý (`llm_filter_columns.py`) thông qua API thật. Chỉ thêm subspace đạt ngưỡng vào candidate (tối đa 2 subspace per card/pattern). Mỗi candidate là (insight_dict, question).
 
 4. **Deduplicate (trước khi vẽ plot):**
    - **Theo (question, breakdown, measure, pattern):** Mỗi nhóm giữ tối đa `max_overall_per_key` insight overall (subspace rỗng) và `max_subspace_per_key` insight subspace (chọn theo score).
@@ -99,15 +99,14 @@ python run_isgen.py --csv <CSV> --insight-cards <JSON> --output <OUT> [--plot-di
 | --exp-factor | 20 | Expansion factor. |
 | --max-depth | 1 | Max subspace depth. |
 | --no-subspace | | Chỉ chạy basic insight, không subspace. |
-| --no-llm | | Subspace không gọi OpenAI (tránh 429). |
 | --max-overall-per-key | 1 | Giới hạn insight overall mỗi nhóm. |
 | --max-subspace-per-key | 2 | Giới hạn insight subspace mỗi nhóm. |
 | --max-insights-per-question | 2 | Giới hạn số insight mỗi question. |
 
-**Ví dụ:** Chạy đầy đủ subspace, không gọi API, giảm trùng:
+**Ví dụ:** Chạy đầy đủ subspace (có gọi API), giảm trùng:
 
 ```bash
-python run_isgen.py --csv data/transactions.csv --insight-cards insight_cards.json --output insights_summary.json --plot-dir plots --no-llm
+python run_isgen.py --csv data/transactions.csv --insight-cards insight_cards.json --output insights_summary.json --plot-dir plots
 ```
 
 ---
@@ -121,7 +120,7 @@ python run_isgen.py --csv data/transactions.csv --insight-cards insight_cards.js
 | `quis/isgen/scoring.py` | SCOREFUNC và ngưỡng T cho từng pattern. |
 | `quis/isgen/basic_insight.py` | Basic insight từ card. |
 | `quis/isgen/subspace_search.py` | Algorithm 1 (beam search). |
-| `quis/isgen/llm_filter_columns.py` | LLM gợi ý cột lọc (tùy chọn, dùng khi không --no-llm). |
+| `quis/isgen/llm_filter_columns.py` | LLM gợi ý cột lọc (gọi API thật). |
 | `quis/isgen/nl_explanation.py` | Mô tả NL theo template (không gọi LLM). |
 | `quis/isgen/plotting.py` | Vẽ đồ thị theo pattern. |
 | `quis/isgen/pipeline.py` | Luồng đầy đủ: collect → dedup → explain + plot. |

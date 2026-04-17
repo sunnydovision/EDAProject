@@ -158,7 +158,7 @@ flowchart TB
 
 - **`OpenAICompatibleClient`:** SDK `openai`, có thể dùng **Responses API** (`responses.create`) hoặc **Chat Completions**.
 - Biến môi trường: `OPENAI_API_KEY`, `OPENAI_API_BASE` (endpoint tương thích OpenAI), `QUGEN_LLM_MODEL`, `OPENAI_USE_RESPONSES_API`.
-- **`MockLLMClient`:** không gọi API — dùng cho `--dry-run` hoặc demo không key.
+- Pipeline CLI vận hành với API thật thông qua `OpenAICompatibleClient`.
 
 ### 6.5 Đầu ra QUGEN
 
@@ -202,7 +202,7 @@ flowchart TB
 
 - Bắt đầu S = ∅, mở rộng thêm bộ lọc (cột X, giá trị y) theo beam width, expansion factor, `max_depth`.
 - **LLM tùy chọn** (`llm_filter_columns.py`): gợi ý cột lọc ưu tiên; trộn xác suất với `w_llm`.
-- CLI `run_isgen.py --no-llm`: không gọi API cho bước gợi ý cột.
+- ISGEN subspace search dùng API thật cho bước gợi ý cột.
 
 ### 7.5 Gom insight, dedup, giới hạn
 
@@ -239,7 +239,7 @@ flowchart TB
 ## 9. Chuỗi lệnh điển hình
 
 ```bash
-# QUGEN (cần OPENAI_API_KEY trừ khi --dry-run)
+# QUGEN (cần OPENAI_API_KEY)
 python run_qugen.py --csv data/transactions.csv --output insight_cards.json
 
 # ISGEN
@@ -258,9 +258,9 @@ streamlit run app.py
 |-----------|-------------------|-----------------------------|
 | NL stats | SQL từ câu stat → chạy DB → dịch NL | Thống kê đơn giản theo cột + câu `[STAT]` từ LLM |
 | Simple-question filter | Dựa trên thực thi truy vấn | Chủ yếu heuristic; `run_query_fn` placeholder thường trả cố định |
-| LLM thử nghiệm | Llama-3-70B | OpenAI-compatible API (model cấu hình env) + mock |
+| LLM thử nghiệm | Llama-3-70B | OpenAI-compatible API (model cấu hình env) |
 | Giải thích NL (ISGEN) | Mô tả thuật toán | Template; UI có tùy chọn làm giàu LLM |
-| Subspace | Có gợi ý cột LLM | Có; có thể tắt `--no-llm` |
+| Subspace | Có gợi ý cột LLM | Có; gọi API thật |
 
 Chi tiết: `docs/QUGEN_PIPELINE.md` mục “Khác biệt so với mô tả lý tưởng”.
 

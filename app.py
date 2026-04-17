@@ -145,11 +145,10 @@ _ERROR = "#ff6e84"
 
 
 def _init_llm_client() -> BaseLLMClient:
-    has_key = bool(os.getenv("OPENAI_API_KEY"))
-    use_mock = st.session_state.get("use_mock_llm", not has_key)
-    if not use_mock and not has_key:
-        use_mock = True
-    return get_default_llm_client(use_mock=use_mock)
+    has_key = bool(os.getenv("OPENAI_API_KEY") or os.getenv("OPENAI_API_BASE"))
+    if not has_key:
+        raise RuntimeError("OPENAI_API_KEY (hoặc OPENAI_API_BASE) là bắt buộc. App chỉ chạy với API thật.")
+    return get_default_llm_client(use_mock=False)
 
 
 def _clean_dataframe(df: pd.DataFrame, sep: str = ",") -> pd.DataFrame:
@@ -1104,10 +1103,9 @@ Rewrite clearly and concisely in 3-4 bullets:
 
 def _insight_expl_cache_key(ins: dict, use_llm: bool) -> str:
     """Stable key for Rich LLM explanation cache (pagination / fragment reruns)."""
-    mock = bool(st.session_state.get("use_mock_llm", False))
     parts = [
         "1" if use_llm else "0",
-        "1" if mock else "0",
+        "0",
         str(ins.get("pattern", "")),
         str(ins.get("question", "")),
         str(ins.get("breakdown", "")),
@@ -1856,7 +1854,6 @@ def run_app():
         "pipeline_cards": None,
         "pipeline_insights": None,
         "processed_file": None,
-        "use_mock_llm": not bool(os.getenv("OPENAI_API_KEY")),
         "max_cards": 8,
         "num_iterations": 2,
         "threshold_scale": 0.7,
@@ -2132,11 +2129,11 @@ def run_app():
         )
         _section("LLM Configuration", icon="smart_toy")
         st.markdown('<div class="cl-settings-card">', unsafe_allow_html=True)
-        has_key = bool(os.getenv("OPENAI_API_KEY"))
-        st.toggle("Mock LLM (no API key needed)", key="use_mock_llm",
-                   help="Uses a built-in mock model instead of calling OpenAI." + ("" if has_key else " **No API key detected.**"))
-        if not st.session_state.use_mock_llm and not has_key:
-            st.warning("OPENAI_API_KEY not set — mock mode recommended.")
+        has_key = bool(os.getenv("OPENAI_API_KEY") or os.getenv("OPENAI_API_BASE"))
+        if has_key:
+            st.success("Real API mode is active.")
+        else:
+            st.error("OPENAI_API_KEY (hoặc OPENAI_API_BASE) chưa được cấu hình.")
         st.toggle("Rich LLM explanations", key="llm_explanations", help="If off, show template explanations only.")
         st.markdown('</div>', unsafe_allow_html=True)
 

@@ -14,8 +14,7 @@ Từ CSV, pipeline tự làm:
 
 **Tóm tắt:** Chạy QUGEN chỉ cần **1 file CSV** + **API key LLM** (env). Không cần file config hay schema JSON riêng nếu dùng `--csv`.
 
-- **Chạy thật (cần LLM):** đặt `OPENAI_API_KEY` (hoặc `OPENAI_API_BASE`) rồi chạy không có `--dry-run`.
-- **Chạy thử không cần API:** dùng `--dry-run` → mock LLM trả về Insight Cards mẫu, vẫn ghi ra file output đúng format.
+- **Chạy QUGEN:** bắt buộc đặt `OPENAI_API_KEY` (hoặc `OPENAI_API_BASE`) vì project chạy với API thật.
 
 ## Output
 
