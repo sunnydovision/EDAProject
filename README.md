@@ -7,7 +7,7 @@ README này dành cho thành viên mới clone project và cần chạy được
 ### 1) Clone và vào project
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/sunnydovision/EDAProject.git
 cd EDAProj
 ```
 
@@ -34,12 +34,12 @@ OPENAI_API_KEY=your-real-key
 
 ### 4) Dataset mặc định trong repo
 
-- Dataset giao dịch: `data/transactions.csv`
+- Dataset giao dịch: `data/transactions_cleaned.csv`
 - Dataset Adidas (dùng nhiều trong baseline/evaluation): `data/Adidas_cleaned.csv`
 
 ---
 
-## Phần 1 - Chạy project IFQ (chạy app)
+## Phần 1 - Chạy project IFQ
 
 Phần này gồm 2 cách thường dùng:
 - Cách A: chạy app giao diện Streamlit
@@ -65,18 +65,7 @@ Trong app:
 
 #### B1. Sinh Insight Cards (Question Generation)
 
-Chạy thử (không cần API key):
-
-```bash
-python run_qugen.py \
-  --csv data/transactions.csv \
-  --output insight_cards.json \
-  --iterations 2 \
-  --samples 1 \
-  --dry-run
-```
-
-Chạy thật (có API key):
+Chạy với API key:
 
 ```bash
 python run_qugen.py \
@@ -96,7 +85,7 @@ python run_isgen.py \
 
 Tùy chọn hay dùng:
 - `--no-subspace`: bỏ bước subspace search
-- `--no-llm`: không gọi LLM trong subspace search (chạy nhanh, không tốn API)
+- `--no-llm`: không gọi LLM trong subspace search
 
 #### B3. Kiểm tra output IFQ
 
