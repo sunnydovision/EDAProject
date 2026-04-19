@@ -20,9 +20,12 @@ from quis.qugen.llm_client import get_default_llm_client, BaseLLMClient
 from quis.isgen.models import (
     ATTRIBUTION,
     DISTRIBUTION_DIFFERENCE,
+    Insight,
     OUTSTANDING_VALUE,
+    Subspace,
     TREND,
 )
+from quis.isgen.nl_explanation import explain_insight
 from quis.isgen.pipeline import ISGENPipeline, ISGENConfig
 from quis.isgen.views import parse_measure
 
@@ -1061,16 +1064,46 @@ def _render_overview_metrics_optional(df: pd.DataFrame | None, n_insights: int):
 # ───────────────────────────────────────────────────────────────────────────
 # LLM helpers (unchanged)
 # ───────────────────────────────────────────────────────────────────────────
-def _generate_llm_description(llm: BaseLLMClient, insight: dict, base_explanation: str) -> str:
+def _generate_llm_description(
+    llm: BaseLLMClient,
+    insight: dict,
+    base_explanation: str,
+    summary_lang: str = "en",
+) -> str:
     breakdown = insight.get("breakdown", "")
     measure = insight.get("measure", "")
     pattern = insight.get("pattern", "")
     subspace = insight.get("subspace") or []
-    filters_desc = ", ".join(f"{c}={v}" for c, v in subspace) if subspace else "overall data"
+    use_vi = (summary_lang or "").lower().startswith("vi")
+    if subspace:
+        filters_desc = ", ".join(f"{c}={v}" for c, v in subspace)
+    else:
+        filters_desc = "toàn bộ dữ liệu" if use_vi else "overall data"
     labels = insight.get("view_labels") or []
     values = insight.get("view_values") or []
     preview_rows = [f"- {breakdown} = {labels[i]} \u2192 {measure} = {values[i]}" for i in range(min(5, len(labels)))]
-    prompt = f"""You are a data analyst explaining insights to a non-technical business user.
+    sample_block = chr(10).join(preview_rows) or ("Không có số liệu mẫu." if use_vi else "No numeric sample available.")
+    if use_vi:
+        prompt = f"""Bạn là nhà phân tích dữ liệu, trình bày insight cho người dùng kinh doanh không chuyên kỹ thuật.
+
+Insight:
+- Dạng: {pattern}
+- Chiều phân nhóm: {breakdown}
+- Đo lường: {measure}
+- Phân khúc: {filters_desc}
+
+Mẫu số liệu:
+{sample_block}
+
+Mô tả gốc:
+\"\"\"{base_explanation}\"\"\"
+
+Viết lại rõ ràng, gọn, bằng **tiếng Việt**, 3-4 gạch đầu dòng:
+- Ý chính và ý nghĩa kinh doanh.
+- Nhóm cao/thấp hoặc xu hướng đáng chú ý.
+- Câu ngắn, dễ hiểu.""".strip()
+    else:
+        prompt = f"""You are a data analyst explaining insights to a non-technical business user.
 
 Insight:
 - Pattern: {pattern}
@@ -1079,7 +1112,7 @@ Insight:
 - Segment: {filters_desc}
 
 Sample data:
-{chr(10).join(preview_rows) or "No numeric sample available."}
+{sample_block}
 
 Base description:
 \"\"\"{base_explanation}\"\"\"
@@ -1101,10 +1134,11 @@ Rewrite clearly and concisely in 3-4 bullets:
         return base_explanation
 
 
-def _insight_expl_cache_key(ins: dict, use_llm: bool) -> str:
+def _insight_expl_cache_key(ins: dict, use_llm: bool, summary_lang: str = "en") -> str:
     """Stable key for Rich LLM explanation cache (pagination / fragment reruns)."""
     parts = [
         "1" if use_llm else "0",
+        (summary_lang or "en")[:8],
         "0",
         str(ins.get("pattern", "")),
         str(ins.get("question", "")),
@@ -1118,19 +1152,51 @@ def _insight_expl_cache_key(ins: dict, use_llm: bool) -> str:
 
 
 def _get_llm_description_cached(
-    llm: BaseLLMClient, ins: dict, base_expl: str, use_llm: bool,
+    llm: BaseLLMClient,
+    ins: dict,
+    base_expl: str,
+    use_llm: bool,
+    summary_lang: str = "en",
 ) -> str:
     if not use_llm:
         return base_expl
     if "insight_expl_cache" not in st.session_state:
         st.session_state.insight_expl_cache = {}
-    ck = _insight_expl_cache_key(ins, use_llm)
+    ck = _insight_expl_cache_key(ins, use_llm, summary_lang)
     cache: dict = st.session_state.insight_expl_cache
     if ck in cache:
         return cache[ck]
-    text = _generate_llm_description(llm, ins, base_expl)
+    text = _generate_llm_description(llm, ins, base_expl, summary_lang=summary_lang)
     cache[ck] = text
     return text
+
+
+def _insight_obj_from_item(item: dict, ins: dict) -> Insight:
+    q = item.get("question", "") or ins.get("question", "")
+    sub = ins.get("subspace") or []
+    if sub:
+        S = Subspace(filters=tuple((str(f[0]), f[1]) for f in sub))
+    else:
+        S = Subspace.empty()
+    return Insight(
+        breakdown=ins.get("breakdown", ""),
+        measure=ins.get("measure", ""),
+        subspace=S,
+        pattern=ins.get("pattern", ""),
+        score=float(ins.get("score") or 0),
+        view_labels=ins.get("view_labels") or [],
+        view_values=ins.get("view_values") or [],
+        view_labels_baseline=ins.get("view_labels_baseline"),
+        view_values_baseline=ins.get("view_values_baseline"),
+        question=q,
+        reason=ins.get("reason", ""),
+    )
+
+
+def _base_explanation_for_summary(item: dict, ins: dict, summary_lang: str) -> str:
+    if (summary_lang or "").lower().startswith("vi"):
+        return explain_insight(_insight_obj_from_item(item, ins), language="vi")
+    return item.get("explanation", "")
 
 
 def _normalize_text(value: str) -> str:
@@ -1191,9 +1257,23 @@ def _build_recommendation(insight: dict, language: str = "en") -> str:
             f"{low_label} to balance performance across {breakdown}.")
 
 
-def _recommendation_language_for_dataset(dataset_label: str | None) -> str:
-    low = (dataset_label or "").strip().lower()
-    if low == "steel metal company":
+def _recommendation_language_for_dataset(
+    dataset_label: str | None,
+    processed_filename: str | None = None,
+) -> str:
+    """Vietnamese recommendations for Steel (History label or Home CSV name)."""
+    if (dataset_label or "").strip().lower() == "steel metal company":
+        return "vi"
+    if (processed_filename or "").strip().lower() == "transactions_cleaned.csv":
+        return "vi"
+    return "en"
+
+
+def _summary_lang(dataset_label: str | None = None, processed_filename: str | None = None) -> str:
+    """Vietnamese Summary for curated Steel dataset (History) or same CSV on Home."""
+    if (dataset_label or "").strip().lower() == "steel metal company":
+        return "vi"
+    if (processed_filename or "").strip().lower() == "transactions_cleaned.csv":
         return "vi"
     return "en"
 
@@ -1588,16 +1668,19 @@ def _render_one_insight_card(
     plot_key_prefix: str,
     accent_idx: int = 0,
     recommendation_lang: str = "en",
+    summary_lang: str = "en",
 ):
     _accents = ["primary", "tertiary", "dim"]
     ins = item.get("insight") or {}
-    base_expl = item.get("explanation", "")
+    base_expl = _base_explanation_for_summary(item, ins, summary_lang)
     pattern = ins.get("pattern", "")
     question = item.get("question", "")
     why_reason = ins.get("reason", "") or ""
     breakdown = ins.get("breakdown", "") or ""
     measure = ins.get("measure", "") or ""
-    description = _get_llm_description_cached(llm_client, ins, base_expl, use_llm_explanations)
+    description = _get_llm_description_cached(
+        llm_client, ins, base_expl, use_llm_explanations, summary_lang=summary_lang
+    )
     recommendation = _build_recommendation(ins, language=recommendation_lang)
     chart = _get_chart_cached(ins)
     accent = _accents[accent_idx % len(_accents)]
@@ -1647,6 +1730,7 @@ def _render_insights_with_dataset_field_filter(
     plot_key_prefix: str,
     field_filter_key: str,
     recommendation_lang: str = "en",
+    summary_lang: str = "en",
 ):
     """Dropdown to limit insights to those referencing a chosen dataset column."""
     options = _dataset_field_dropdown_options(df, insight_summaries)
@@ -1681,6 +1765,7 @@ def _render_insights_with_dataset_field_filter(
         pager_base,
         plot_key_prefix,
         recommendation_lang=recommendation_lang,
+        summary_lang=summary_lang,
     )
 
 
@@ -1691,6 +1776,7 @@ def _render_insights_section_core(
     pager_base: str,
     plot_key_prefix: str,
     recommendation_lang: str = "en",
+    summary_lang: str = "en",
 ):
     buckets, other = _group_insights_by_pattern(insight_summaries)
     n_total = len(insight_summaries)
@@ -1719,6 +1805,7 @@ def _render_insights_section_core(
                     plot_key_prefix,
                     accent_idx=local_i,
                     recommendation_lang=recommendation_lang,
+                    summary_lang=summary_lang,
                 )
     if other:
         with st.expander(f"Uncategorized patterns ({len(other)})", expanded=False):
@@ -1734,6 +1821,7 @@ def _render_insights_section_core(
                     plot_key_prefix,
                     accent_idx=local_i,
                     recommendation_lang=recommendation_lang,
+                    summary_lang=summary_lang,
                 )
 
 
@@ -1744,6 +1832,7 @@ def _render_insights_section(
     pager_base: str,
     plot_key_prefix: str,
     recommendation_lang: str = "en",
+    summary_lang: str = "en",
 ):
     _render_insights_section_core(
         insight_summaries,
@@ -1752,6 +1841,7 @@ def _render_insights_section(
         pager_base,
         plot_key_prefix,
         recommendation_lang=recommendation_lang,
+        summary_lang=summary_lang,
     )
 
 
@@ -1769,7 +1859,7 @@ def _render_overview_metrics(df: pd.DataFrame, n_insights: int):
         _metric_card("functions", "dim", "Numeric Features", str(num_cols), img_icon="icon_chart.png")
 
 
-def _render_results(df, _cards, insight_summaries, llm_client, use_llm_explanations, threshold_scale):
+def _render_results(df, _cards, insight_summaries, llm_client, use_llm_explanations):
     st.markdown(
         '<div class="cl-report-metrics-spacer" aria-hidden="true"></div>',
         unsafe_allow_html=True,
@@ -1803,6 +1893,10 @@ def _render_results(df, _cards, insight_summaries, llm_client, use_llm_explanati
         pager_base="i_page",
         plot_key_prefix="insight_plot",
         field_filter_key="insight_field_filter_home",
+        recommendation_lang=_recommendation_language_for_dataset(
+            None, st.session_state.get("processed_file")
+        ),
+        summary_lang=_summary_lang(processed_filename=st.session_state.get("processed_file")),
     )
 
 
@@ -1839,7 +1933,41 @@ def _render_history_insights(
         plot_key_prefix=f"{pager_key}_plot",
         field_filter_key=f"insight_field_filter_{pager_key}",
         recommendation_lang=_recommendation_language_for_dataset(dataset_label),
+        summary_lang=_summary_lang(dataset_label=dataset_label),
     )
+
+
+# Insight filter preset → ISGEN threshold multiplier (replaces fine-grained slider).
+_INSIGHT_FILTER_PRESET_SCALES: dict[str, float] = {
+    "relaxed": 0.45,
+    "balanced": 0.7,
+    "strict": 1.0,
+}
+
+
+def _ensure_insight_filter_preset() -> None:
+    """Migrate legacy `threshold_scale` slider sessions to `insight_filter_preset`."""
+    preset = st.session_state.get("insight_filter_preset")
+    if preset in _INSIGHT_FILTER_PRESET_SCALES:
+        st.session_state.pop("threshold_scale", None)
+        return
+    raw = st.session_state.get("threshold_scale", 0.7)
+    try:
+        ts = float(raw)
+    except (TypeError, ValueError):
+        ts = 0.7
+    if ts < 0.58:
+        st.session_state.insight_filter_preset = "relaxed"
+    elif ts > 0.85:
+        st.session_state.insight_filter_preset = "strict"
+    else:
+        st.session_state.insight_filter_preset = "balanced"
+    st.session_state.pop("threshold_scale", None)
+
+
+def _threshold_scale_from_preset() -> float:
+    p = st.session_state.get("insight_filter_preset", "balanced")
+    return float(_INSIGHT_FILTER_PRESET_SCALES.get(p, 0.7))
 
 
 # ───────────────────────────────────────────────────────────────────────────
@@ -1856,12 +1984,13 @@ def run_app():
         "processed_file": None,
         "max_cards": 8,
         "num_iterations": 2,
-        "threshold_scale": 0.7,
+        "insight_filter_preset": "balanced",
         "llm_explanations": True,
     }
     for k, v in _defaults.items():
         if k not in st.session_state:
             st.session_state[k] = v
+    _ensure_insight_filter_preset()
     if "insight_expl_cache" not in st.session_state:
         st.session_state.insight_expl_cache = {}
     if "insight_chart_cache" not in st.session_state:
@@ -1971,7 +2100,7 @@ def run_app():
                     table_schema = schema_from_dataframe(df, table_name=os.path.splitext(uploaded.name)[0] or "Table")
                     max_cards = st.session_state.max_cards
                     iters = st.session_state.num_iterations
-                    ts = st.session_state.threshold_scale
+                    ts = _threshold_scale_from_preset()
 
                     with st.spinner("Agent is generating insight questions..."):
                         qcfg = QUGENConfig(num_iterations=iters, num_samples_per_iteration=1, num_questions_per_prompt=max_cards)
@@ -1994,7 +2123,7 @@ def run_app():
                 cached_insights = st.session_state.pipeline_insights
                 if cached_cards is not None and cached_insights is not None:
                     use_llm_expl = st.session_state.llm_explanations
-                    _render_results(df, cached_cards, cached_insights, llm_client, use_llm_expl, st.session_state.threshold_scale)
+                    _render_results(df, cached_cards, cached_insights, llm_client, use_llm_expl)
         elif uploaded is None and st.session_state.pipeline_cards is None:
             csv_icon = _icon_img("icon_csv.png", height=64, extra_style="display:block;margin:0 auto 0.75rem;opacity:0.7;")
             st.markdown(
@@ -2141,8 +2270,21 @@ def run_app():
         st.markdown('<div class="cl-settings-card">', unsafe_allow_html=True)
         st.slider("Questions per LLM call", min_value=4, max_value=12, step=2, key="max_cards")
         st.slider("LLM iterations", min_value=1, max_value=5, key="num_iterations")
-        st.slider("Insight strictness", min_value=0.3, max_value=1.0, step=0.1, key="threshold_scale",
-                   help="Lower = more insights kept (relaxed thresholds).")
+        st.radio(
+            "Insight filtering",
+            options=list(_INSIGHT_FILTER_PRESET_SCALES.keys()),
+            format_func=lambda k: {
+                "relaxed": "Relaxed — keep more insights",
+                "balanced": "Balanced — recommended",
+                "strict": "Strict — fewer, stronger only",
+            }[k],
+            key="insight_filter_preset",
+            help=(
+                "How strict ISGEN is when comparing pattern scores to thresholds. "
+                "Relaxed lowers the bar; Strict matches paper-style cutoffs more closely."
+            ),
+            horizontal=True,
+        )
         st.markdown('</div>', unsafe_allow_html=True)
 
         _section("About", icon="info")
