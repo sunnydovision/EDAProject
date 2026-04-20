@@ -2,8 +2,8 @@
 
 ## Summary
 
-- **Total Issues**: 20
-- **Critical Issues**: 20
+- **Total Issues**: 22
+- **Critical Issues**: 22
 - **Quality Score**: 68/100
 
 ## Missing Values
@@ -12,6 +12,8 @@
 - **Tên màu**: 32.0% (332 rows)
 - **Khu Vực (Quận/Huyện)**: 4.7% (49 rows)
 - **Khoảng_cách_đơn_trước**: 4.1% (42 rows)
+- **Tổng_doanh_thu_sản_phẩm**: 2.5% (26 rows)
+- **Doanh_thu_theo_tuan_trong_thang**: 2.4% (25 rows)
 
 ## Outliers
 
@@ -28,28 +30,28 @@
 
 ## Critical Issues
 
-### Missing values in 'Mã màu' (332 records, 32.05%), a high-importance product attribute.
+### Missing values in 'Mã màu' (32.05%), a high-importance product attribute.
 - **Severity**: high
-- **Impact**: Affects product-level analysis, SKU grouping, color-based sales reporting, inventory segmentation, and any downstream modeling that relies on product identity or color classification. Missing product code values can also break joins with reference/master data.
-- **Recommendation**: Investigate whether 'Mã màu' can be backfilled from 'Tên màu', SKU fields, or product master data. Enforce mandatory capture for this field at source and add validation rules to prevent null product color codes.
+- **Impact**: A large share of records cannot be reliably grouped, filtered, or analyzed by color code. This weakens product-level sales analysis, SKU mapping, inventory reporting, and any downstream segmentation or pricing analysis tied to color.
+- **Recommendation**: Backfill 'Mã màu' from product master data or infer from related fields such as 'Tên màu', 'SKU_Màu', or 'Mã_sản_phẩm'. Enforce mandatory population of color code at data entry.
 
-### Missing values in 'Tên màu' (332 records, 32.05%), reducing interpretability of product color information.
+### Missing values in 'Tên màu' (32.05%), a medium-importance descriptive product field closely related to a high-importance attribute.
 - **Severity**: medium
-- **Impact**: Limits business reporting and user-facing analysis by color, reduces explainability of product segmentation, and weakens validation against 'Mã màu'. While less critical than coded attributes, it still affects commercial analysis and data usability.
-- **Recommendation**: Standardize and populate 'Tên màu' using lookup tables from 'Mã màu'. Add a controlled dictionary for color names and enforce consistency between code and label.
+- **Impact**: Color-based reporting becomes less interpretable for business users, and validation between color code and color name is not possible for one-third of records. This also reduces trust in product categorization outputs.
+- **Recommendation**: Standardize and populate 'Tên màu' using reference mappings from 'Mã màu' or product master tables. Add validation rules to ensure color name is present when color code exists.
 
-### Missing values in 'Khu Vực (Quận/Huyện)' (49 records, 4.73%) in a high-importance geographic field.
+### Missing values in 'Khu Vực (Quận/Huyện)' (4.73%), a high-importance geographic field.
 - **Severity**: high
-- **Impact**: Reduces accuracy of district-level sales analysis, geographic demand mapping, delivery performance analysis, and regional customer segmentation. It may also distort local operational planning and territory performance reporting.
-- **Recommendation**: Backfill district values from customer address, province-city combinations, or CRM/location master data. Add address completeness checks during data entry.
+- **Impact**: Regional sales analysis, district-level demand planning, logistics optimization, and customer distribution reporting are incomplete. Geographic aggregation may be biased or understated in affected districts.
+- **Recommendation**: Recover missing district values from customer address, delivery records, or 'Tỉnh / Thành Phố'. Add address standardization and mandatory geographic validation in source systems.
 
-### Missing values in 'Khoảng_cách_đơn_trước' (42 records, 4.05%) in a medium-importance behavioral feature.
+### Missing values in 'Doanh_thu_theo_tuan_trong_thang' (2.41%), a derived medium-importance revenue metric.
 - **Severity**: medium
-- **Impact**: Impairs recency analysis, customer purchase pattern tracking, and predictive features used for churn, reorder, or sales frequency modeling.
-- **Recommendation**: Recompute this field from transaction dates ordered by customer/product. If derived, avoid manual storage and generate it systematically in the transformation layer.
+- **Impact**: Weekly-in-month revenue trend analysis and period-over-period comparisons may be inconsistent. Dashboards using this metric may show gaps or understate performance.
+- **Recommendation**: Recalculate the field from 'Ngày bán' and 'Thành Tiền' rather than storing it as a standalone value. Validate completeness during feature engineering.
 
-### High outlier rate in 'Khối lượng' (99 records, 9.56%) for a high-importance operational measure.
-- **Severity**: high
-- **Impact**: Can distort pricing analysis, logistics planning, product profitability, and unit economics. Extreme values may indicate unit inconsistency, entry errors, or genuinely exceptional orders that need separate treatment.
-- **Recommendation**: Validate units of measure and compare against expected ranges by product type. Review extreme records with business owners and either correct data-entry errors or flag legitimate exceptional transactions.
+### Missing values in 'Khoảng_cách_đơn_trước' (4.05%), a medium-importance behavioral feature.
+- **Severity**: medium
+- **Impact**: Customer purchase cadence analysis, churn modeling, and repeat-purchase behavior metrics become less reliable. Models using recency intervals may be biased.
+- **Recommendation**: Recompute from sorted transaction history by customer and sale date. Distinguish true first-order cases from missing historical data.
 

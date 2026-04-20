@@ -16,7 +16,7 @@
       "semantic_meaning": "Số thứ tự dòng/bản ghi trong dataset, dùng để đánh số giao dịch hoặc mục hàng.",
       "data_type_class": "ID",
       "importance": "low",
-      "potential_issues": "Có vẻ chỉ là chỉ số tuần tự, không mang ý nghĩa nghiệp vụ; không nên dùng làm biến phân tích hay mô hình hóa.",
+      "potential_issues": "Có vẻ chỉ là số thứ tự tuần tự, không phải khóa nghiệp vụ thực sự; không nên dùng làm biến phân tích.",
       "statistics": {
         "min": 1.0,
         "max": 1036.0,
@@ -29,10 +29,10 @@
       "dtype": "str",
       "missing_count": 0,
       "missing_percentage": 0.0,
-      "semantic_meaning": "Nhóm phân loại sản phẩm hoặc cấp chất lượng/quy cách hàng hóa.",
+      "semantic_meaning": "Nhóm phân loại sản phẩm hoặc quy cách hàng hóa nội bộ.",
       "data_type_class": "Categorical",
-      "importance": "high",
-      "potential_issues": "Giá trị dạng mã như 1, 1A, 1B, 2, 3 có thể bị hiểu sai là thứ bậc số; cần từ điển mã để diễn giải chính xác.",
+      "importance": "medium",
+      "potential_issues": "Mã phân loại dạng hỗn hợp số và chữ (1, 1A, 1B, 2, 3), cần chuẩn hóa định nghĩa nghiệp vụ để tránh hiểu sai thứ tự.",
       "unique_count": 5,
       "top_values": {
         "1": 876,
@@ -49,7 +49,7 @@
       "semantic_meaning": "Loại vật liệu/sản phẩm bán ra, ví dụ GL và PPGL.",
       "data_type_class": "Categorical",
       "importance": "high",
-      "potential_issues": "Tên mã viết tắt cần chuẩn hóa theo master data; chỉ có 2 giá trị nhưng cần xác nhận định nghĩa chính xác của từng loại.",
+      "potential_issues": "Cần xác nhận đầy đủ ý nghĩa viết tắt GL/PPGL; số lượng giá trị ít nên phù hợp phân nhóm.",
       "unique_count": 2,
       "top_values": {
         "PPGL": 704,
@@ -60,27 +60,27 @@
       "dtype": "str",
       "missing_count": 0,
       "missing_percentage": 0.0,
-      "semantic_meaning": "Mức lớp mạ hoặc quy cách mạ của sản phẩm thép/cuộn tôn.",
+      "semantic_meaning": "Mức lớp mạ hoặc quy cách mạ của sản phẩm, ví dụ AZ080, AZ100.",
       "data_type_class": "Categorical",
       "importance": "high",
-      "potential_issues": "Có dấu hiệu không nhất quán định dạng như 'AZ050' và ' AZ05' (thừa khoảng trắng, thiếu số 0); cần chuẩn hóa mã.",
+      "potential_issues": "Có khả năng không đồng nhất định dạng như AZ050 và AZ05; nên chuẩn hóa mã để tránh tách sai nhóm.",
       "unique_count": 5,
       "top_values": {
         "AZ050": 614,
         "AZ080": 303,
         "AZ030": 89,
         "AZ100": 29,
-        " AZ05": 1
+        "AZ05": 1
       }
     },
     "Độ D": {
       "dtype": "float64",
       "missing_count": 0,
       "missing_percentage": 0.0,
-      "semantic_meaning": "Độ dày vật liệu, nhiều khả năng tính bằng mm.",
+      "semantic_meaning": "Độ dày vật liệu/tôn, khả năng tính theo mm.",
       "data_type_class": "Numerical",
       "importance": "high",
-      "potential_issues": "Tên cột viết tắt; cần xác nhận đơn vị đo. Giá trị số hợp lý nhưng có thể bị làm tròn khác nhau giữa nguồn dữ liệu.",
+      "potential_issues": "Tên cột viết tắt; cần xác nhận đơn vị là mm. Giá trị float nhìn hợp lý.",
       "statistics": {
         "min": 0.25,
         "max": 0.5,
@@ -93,10 +93,10 @@
       "dtype": "str",
       "missing_count": 0,
       "missing_percentage": 0.0,
-      "semantic_meaning": "Cấp độ bền/kết cấu vật liệu nền, ví dụ G550 hoặc G350.",
+      "semantic_meaning": "Cấp độ bền kéo/độ cứng vật liệu nền, ví dụ G350, G550.",
       "data_type_class": "Categorical",
       "importance": "high",
-      "potential_issues": "Là mã kỹ thuật, cần tài liệu nghiệp vụ để diễn giải đúng; có thể bị nhầm là số đo nếu không giữ kiểu chuỗi.",
+      "potential_issues": "Là mã kỹ thuật, cần từ điển nghiệp vụ để diễn giải chính xác.",
       "unique_count": 2,
       "top_values": {
         "G550": 1035,
@@ -107,10 +107,10 @@
       "dtype": "str",
       "missing_count": 332,
       "missing_percentage": 32.04633204633205,
-      "semantic_meaning": "Mã màu chuẩn của sản phẩm.",
+      "semantic_meaning": "Mã màu sản phẩm theo hệ mã nội bộ.",
       "data_type_class": "Categorical",
       "importance": "high",
-      "potential_issues": "Là mã viết tắt, cần mapping sang tên màu; có thể phát sinh trùng nghĩa nếu nhiều mã gần giống cùng một màu.",
+      "potential_issues": "Là mã viết tắt, cần mapping với tên màu; có thể phát sinh trùng nghĩa nếu mã và tên màu không đồng bộ.",
       "unique_count": 21,
       "top_values": {
         "PGRE01": 145,
@@ -129,10 +129,10 @@
       "dtype": "int64",
       "missing_count": 0,
       "missing_percentage": 0.0,
-      "semantic_meaning": "Khối lượng hàng bán ra trong từng dòng giao dịch, nhiều khả năng tính bằng kg.",
+      "semantic_meaning": "Khối lượng hàng bán ra cho từng dòng giao dịch, nhiều khả năng tính bằng kg.",
       "data_type_class": "Numerical",
       "importance": "high",
-      "potential_issues": "Cần xác nhận đơn vị đo; giá trị nguyên lớn có thể là kg nhưng cũng có thể là tấn quy đổi hoặc trọng lượng cuộn.",
+      "potential_issues": "Cần xác nhận đơn vị đo; giá trị nguyên lớn và hợp lý nhưng chưa rõ có phải kg hay đơn vị khác.",
       "statistics": {
         "min": 210.0,
         "max": 5180.0,
@@ -145,10 +145,10 @@
       "dtype": "int64",
       "missing_count": 0,
       "missing_percentage": 0.0,
-      "semantic_meaning": "Chiều dài tính theo mét của phần/chuẩn A của sản phẩm hoặc số mét chính.",
+      "semantic_meaning": "Chiều dài tính theo mét của phần chính/loại A trong giao dịch hoặc quy cách cắt.",
       "data_type_class": "Numerical",
       "importance": "medium",
-      "potential_issues": "Tên cột mơ hồ, chưa rõ khác biệt với Met B và Met C; cần định nghĩa nghiệp vụ để tránh diễn giải sai.",
+      "potential_issues": "Tên cột mơ hồ, chưa rõ nghiệp vụ; cần tài liệu định nghĩa. Có thể là thành phần chiều dài theo nhóm.",
       "statistics": {
         "min": 0.0,
         "max": 2226.0,
@@ -161,10 +161,10 @@
       "dtype": "int64",
       "missing_count": 0,
       "missing_percentage": 0.0,
-      "semantic_meaning": "Chiều dài tính theo mét của phần/phân loại B hoặc mét phụ trong giao dịch.",
+      "semantic_meaning": "Chiều dài tính theo mét của phần phụ/loại B trong giao dịch hoặc quy cách cắt.",
       "data_type_class": "Numerical",
       "importance": "medium",
-      "potential_issues": "Có nhiều giá trị 0 và một số giá trị rất lớn so với mẫu khác; khả năng là cột bổ sung hoặc chỉ áp dụng cho một số trường hợp. Cần xác minh logic tính.",
+      "potential_issues": "Nhiều giá trị 0 xen lẫn giá trị rất lớn; cần xác nhận đây là số đo hợp lệ hay dữ liệu thiếu được mã hóa bằng 0.",
       "statistics": {
         "min": 0.0,
         "max": 1890.0,
@@ -177,10 +177,10 @@
       "dtype": "int64",
       "missing_count": 0,
       "missing_percentage": 0.0,
-      "semantic_meaning": "Chiều dài tính theo mét của phần/phân loại C hoặc mét phụ bổ sung.",
+      "semantic_meaning": "Chiều dài tính theo mét của phần phụ/loại C trong giao dịch hoặc quy cách cắt.",
       "data_type_class": "Numerical",
       "importance": "medium",
-      "potential_issues": "Tên cột không tự mô tả; giá trị nhỏ và rời rạc, có thể là phần dư, mét lẻ hoặc số lượng quy đổi. Cần định nghĩa rõ.",
+      "potential_issues": "Tên cột mơ hồ; giá trị nhỏ và rời rạc, có thể là phần bù hoặc số mét lẻ. Cần xác nhận ý nghĩa.",
       "statistics": {
         "min": 2.0,
         "max": 46.0,
@@ -193,10 +193,10 @@
       "dtype": "float64",
       "missing_count": 0,
       "missing_percentage": 0.0,
-      "semantic_meaning": "Mật độ/khối lượng trên đơn vị chiều dài thực tế của hàng hóa, có thể là kg trên mét hoặc chỉ số quy đổi thực tế.",
+      "semantic_meaning": "Tỷ trọng/khối lượng trên đơn vị chiều dài thực tế của hàng hóa, có thể là kg trên mét hoặc chỉ số hiệu suất thực tế.",
       "data_type_class": "Numerical",
       "importance": "high",
-      "potential_issues": "Tên 'tỷ trọng' có thể gây nhầm với density vật lý; cần xác nhận công thức. Độ chính xác thập phân rất cao, có thể cần làm tròn chuẩn.",
+      "potential_issues": "Tên cột dễ gây nhầm với density vật lý; cần xác nhận công thức tính. Nhiều chữ số thập phân, có thể cần làm tròn.",
       "statistics": {
         "min": 1.936416185,
         "max": 8.824786325,
@@ -209,10 +209,10 @@
       "dtype": "str",
       "missing_count": 332,
       "missing_percentage": 32.04633204633205,
-      "semantic_meaning": "Tên hiển thị hoặc mô tả màu của sản phẩm.",
+      "semantic_meaning": "Tên màu hoặc tên gọi thương mại của màu sản phẩm.",
       "data_type_class": "Categorical",
       "importance": "medium",
-      "potential_issues": "Có lẫn mã viết tắt và tên đầy đủ như 'XDT', 'XLC', 'Màu xanh ngọc '; có khoảng trắng cuối chuỗi; cần chuẩn hóa và mapping với 'Mã màu'.",
+      "potential_issues": "Có vẻ trộn giữa mã viết tắt (XDT, XLC, XN) và tên đầy đủ (Màu xanh ngọc, Màu nâu đất); cần chuẩn hóa format.",
       "unique_count": 21,
       "top_values": {
         "XN": 151,
@@ -224,17 +224,17 @@
         "XLC": 43,
         "XDT-G": 28,
         "TS": 20,
-        "Màu xanh ngọc ": 17
+        "Màu xanh ngọc": 17
       }
     },
     "Khổ (mm)": {
       "dtype": "int64",
       "missing_count": 0,
       "missing_percentage": 0.0,
-      "semantic_meaning": "Chiều rộng khổ sản phẩm, đơn vị mm.",
+      "semantic_meaning": "Khổ rộng sản phẩm, tính bằng mm.",
       "data_type_class": "Numerical",
       "importance": "medium",
-      "potential_issues": "Chỉ có một giá trị 1200 nên không có biến thiên; ít hữu ích cho phân tích dự báo trong dataset này.",
+      "potential_issues": "Chỉ có một giá trị 1200 nên không có sức phân biệt; cần kiểm tra có bị thiếu biến thiên hay dataset chỉ chứa một khổ.",
       "statistics": {
         "min": 1200.0,
         "max": 1200.0,
@@ -250,7 +250,7 @@
       "semantic_meaning": "Ngày phát sinh bán hàng/giao dịch.",
       "data_type_class": "Temporal",
       "importance": "high",
-      "potential_issues": "Đang ở dạng chuỗi; cần parse sang date. Dữ liệu trải qua 2025-2026 nên cần kiểm tra timezone/định dạng nhất quán.",
+      "potential_issues": "Đang ở dạng chuỗi dù có format ISO khá chuẩn; nên parse sang kiểu ngày để phân tích thời gian.",
       "unique_count": 135,
       "top_values": {
         "2026-01-31": 72,
@@ -269,10 +269,10 @@
       "dtype": "int64",
       "missing_count": 0,
       "missing_percentage": 0.0,
-      "semantic_meaning": "Doanh thu hoặc giá trị tiền của từng dòng bán hàng sau khi tính theo khối lượng/quy cách.",
+      "semantic_meaning": "Doanh thu/thành tiền của từng dòng bán hàng.",
       "data_type_class": "Numerical",
       "importance": "high",
-      "potential_issues": "Cần xác nhận đã bao gồm VAT/chiết khấu hay chưa; giá trị lớn nên cần kiểm tra đơn vị tiền tệ và dấu phân cách khi nhập xuất.",
+      "potential_issues": "Cần xác nhận đã bao gồm hay chưa bao gồm VAT/chiết khấu; giá trị lớn nhưng hợp lý.",
       "statistics": {
         "min": 4626930.0,
         "max": 121947595.0,
@@ -285,10 +285,10 @@
       "dtype": "str",
       "missing_count": 49,
       "missing_percentage": 4.72972972972973,
-      "semantic_meaning": "Địa bàn bán hàng ở cấp quận/huyện/thành phố trực thuộc tỉnh.",
+      "semantic_meaning": "Địa bàn khách hàng hoặc nơi bán theo cấp quận/huyện/thành phố trực thuộc tỉnh.",
       "data_type_class": "Categorical",
       "importance": "high",
-      "potential_issues": "Định dạng không đồng nhất như 'TP.', 'TX.', 'Huyện', 'H.'; cần chuẩn hóa tên hành chính để phân tích địa lý.",
+      "potential_issues": "Định dạng không đồng nhất như TP., Quận, Huyện, H.; cần chuẩn hóa tên hành chính.",
       "unique_count": 22,
       "top_values": {
         "Quận Bình Tân": 312,
@@ -307,10 +307,10 @@
       "dtype": "str",
       "missing_count": 0,
       "missing_percentage": 0.0,
-      "semantic_meaning": "Tỉnh hoặc thành phố nơi phát sinh bán hàng/khách hàng.",
+      "semantic_meaning": "Tỉnh/thành phố của khách hàng hoặc địa điểm bán.",
       "data_type_class": "Categorical",
       "importance": "high",
-      "potential_issues": "Có cách ghi không đồng nhất như 'TP. Hồ Chí Minh' và 'Tỉnh Khánh Hòa'; cần chuẩn hóa danh mục địa lý.",
+      "potential_issues": "Không đồng nhất cách ghi như 'TP. Hồ Chí Minh' và 'Tỉnh Khánh Hòa'; nên chuẩn hóa danh mục địa lý.",
       "unique_count": 11,
       "top_values": {
         "TP. Hồ Chí Minh": 509,
@@ -329,10 +329,10 @@
       "dtype": "int64",
       "missing_count": 0,
       "missing_percentage": 0.0,
-      "semantic_meaning": "Năm của ngày bán, tách từ thời gian giao dịch.",
+      "semantic_meaning": "Năm của ngày bán, tách ra để phân tích thời gian.",
       "data_type_class": "Temporal",
       "importance": "medium",
-      "potential_issues": "Là biến dẫn xuất từ 'Ngày bán', có thể dư thừa; chỉ có 2 năm nên ít biến thiên.",
+      "potential_issues": "Là biến dẫn xuất từ Ngày bán nên có thể dư thừa; chỉ có 2 năm.",
       "statistics": {
         "min": 2025.0,
         "max": 2026.0,
@@ -348,7 +348,7 @@
       "semantic_meaning": "Tháng của ngày bán.",
       "data_type_class": "Temporal",
       "importance": "medium",
-      "potential_issues": "Là biến dẫn xuất; dữ liệu chỉ có các tháng 8-12 và 1 nên cần chú ý khi phân tích mùa vụ qua năm.",
+      "potential_issues": "Là biến dẫn xuất; dữ liệu trải qua chuyển năm nên cần cẩn thận khi phân tích chuỗi thời gian.",
       "statistics": {
         "min": 1.0,
         "max": 12.0,
@@ -364,7 +364,7 @@
       "semantic_meaning": "Ngày trong tháng của ngày bán.",
       "data_type_class": "Temporal",
       "importance": "low",
-      "potential_issues": "Là biến dẫn xuất, dễ gây hiểu sai nếu dùng độc lập không kèm tháng/năm.",
+      "potential_issues": "Biến dẫn xuất, dễ gây hiểu nhầm nếu dùng độc lập không kèm tháng/năm.",
       "statistics": {
         "min": 1.0,
         "max": 31.0,
@@ -380,7 +380,7 @@
       "semantic_meaning": "Thứ trong tuần của ngày bán.",
       "data_type_class": "Categorical",
       "importance": "medium",
-      "potential_issues": "Mẫu không thấy 'Chủ nhật'; cần kiểm tra có thiếu dữ liệu cuối tuần hay doanh nghiệp không bán ngày đó.",
+      "potential_issues": "Không thấy Chủ nhật trong mẫu; cần kiểm tra có thiếu dữ liệu cuối tuần hoặc doanh nghiệp không bán Chủ nhật.",
       "unique_count": 6,
       "top_values": {
         "Thứ 6": 211,
@@ -398,7 +398,7 @@
       "semantic_meaning": "Cờ đánh dấu giao dịch diễn ra vào cuối tuần hay không.",
       "data_type_class": "Categorical",
       "importance": "medium",
-      "potential_issues": "Là biến dẫn xuất từ ngày; cần kiểm tra logic vì mẫu 'Thứ 7' xuất hiện nhưng chưa thấy 'Chủ nhật'."
+      "potential_issues": "Biến boolean hợp lý; cần xác nhận quy ước cuối tuần có bao gồm Chủ nhật nếu dữ liệu không có Chủ nhật."
     },
     "Tuần_trong_tháng": {
       "dtype": "int64",
@@ -407,7 +407,7 @@
       "semantic_meaning": "Số thứ tự tuần trong tháng của ngày bán.",
       "data_type_class": "Categorical",
       "importance": "low",
-      "potential_issues": "Biến dẫn xuất, cách tính tuần có thể khác nhau giữa hệ thống; cần định nghĩa rõ tuần bắt đầu từ ngày nào.",
+      "potential_issues": "Là biến dẫn xuất; cách xác định tuần trong tháng có thể khác nhau giữa các hệ thống.",
       "statistics": {
         "min": 1.0,
         "max": 5.0,
@@ -420,10 +420,10 @@
       "dtype": "str",
       "missing_count": 0,
       "missing_percentage": 0.0,
-      "semantic_meaning": "Quý tài chính/lịch của ngày bán, ví dụ 2025Q3.",
+      "semantic_meaning": "Quý tài chính/lịch của ngày bán, gắn với năm.",
       "data_type_class": "Temporal",
       "importance": "medium",
-      "potential_issues": "Đang ở dạng chuỗi; là biến dẫn xuất từ ngày bán nên có thể dư thừa.",
+      "potential_issues": "Định dạng chuỗi như 2025Q3 là hợp lý; là biến dẫn xuất từ ngày bán.",
       "unique_count": 3,
       "top_values": {
         "2025Q4": 537,
@@ -435,10 +435,10 @@
       "dtype": "str",
       "missing_count": 0,
       "missing_percentage": 0.0,
-      "semantic_meaning": "Mùa thời tiết tại thời điểm bán, phân loại thành mùa mưa hoặc mùa khô.",
+      "semantic_meaning": "Mùa thời tiết tại thời điểm bán, ví dụ mùa mưa hoặc mùa khô.",
       "data_type_class": "Categorical",
-      "importance": "medium",
-      "potential_issues": "Là biến suy diễn theo thời gian/địa lý; cần xác nhận quy tắc gán mùa có phù hợp cho tất cả tỉnh thành hay không.",
+      "importance": "low",
+      "potential_issues": "Là biến suy diễn theo thời gian/địa lý, có thể không chính xác tuyệt đối cho mọi tỉnh thành.",
       "unique_count": 2,
       "top_values": {
         "Mùa mưa": 533,
@@ -452,7 +452,7 @@
       "semantic_meaning": "Đơn giá bán bình quân trên mỗi kg hàng hóa.",
       "data_type_class": "Numerical",
       "importance": "high",
-      "potential_issues": "Nhiều khả năng là biến tính từ Thành Tiền và Khối lượng nên cần kiểm tra trùng lặp thông tin; cần xác nhận đã bao gồm thuế/chiết khấu.",
+      "potential_issues": "Có thể là biến tính toán từ Thành Tiền và Khối lượng; cần kiểm tra làm tròn và ngoại lệ.",
       "statistics": {
         "min": 8257.0,
         "max": 28917.0,
@@ -465,10 +465,10 @@
       "dtype": "int64",
       "missing_count": 0,
       "missing_percentage": 0.0,
-      "semantic_meaning": "Doanh thu quy đổi trên mỗi mm khổ hoặc trên đơn vị mm nào đó của sản phẩm.",
+      "semantic_meaning": "Doanh thu trên đơn vị khổ rộng hoặc trên mm quy cách, khả năng là chỉ số hiệu quả doanh thu chuẩn hóa theo mm.",
       "data_type_class": "Numerical",
       "importance": "medium",
-      "potential_issues": "Tên chỉ số chưa rõ công thức; vì 'Khổ (mm)' cố định 1200 nên cột này có thể chỉ là biến dẫn xuất gần như tỷ lệ trực tiếp từ doanh thu.",
+      "potential_issues": "Tên cột chưa thật rõ về công thức; vì Khổ (mm) chỉ có 1200 nên biến này có thể gần như chỉ là biến đổi tuyến tính của Thành Tiền.",
       "statistics": {
         "min": 3856.0,
         "max": 101623.0,
@@ -481,10 +481,10 @@
       "dtype": "str",
       "missing_count": 0,
       "missing_percentage": 0.0,
-      "semantic_meaning": "Nhóm phân loại độ dày sản phẩm thành các mức như mỏng hoặc trung bình.",
+      "semantic_meaning": "Nhóm phân loại độ dày sản phẩm thành các mức như mỏng, trung bình.",
       "data_type_class": "Categorical",
       "importance": "medium",
-      "potential_issues": "Là biến phân nhóm từ 'Độ D'; có thể mất thông tin chi tiết và quy tắc phân nhóm cần được xác nhận.",
+      "potential_issues": "Là biến phân nhóm dẫn xuất từ Độ D; hiện chỉ thấy 2 mức, có thể thiếu mức dày hoặc ngưỡng phân loại chưa đầy đủ.",
       "unique_count": 2,
       "top_values": {
         "Trung bình": 956,
@@ -495,10 +495,10 @@
       "dtype": "str",
       "missing_count": 0,
       "missing_percentage": 0.0,
-      "semantic_meaning": "Nhóm phân loại độ cứng/cấp bền vật liệu, ví dụ cao hoặc tiêu chuẩn.",
+      "semantic_meaning": "Nhóm phân loại độ cứng/cấp bền vật liệu thành mức như cao hoặc tiêu chuẩn.",
       "data_type_class": "Categorical",
       "importance": "medium",
-      "potential_issues": "Có thể được suy ra từ 'Độ MT' nên cần kiểm tra trùng lặp thông tin; định nghĩa mức phân loại cần thống nhất.",
+      "potential_issues": "Là biến dẫn xuất từ Độ MT; cần xác nhận quy tắc mapping giữa G350/G550 và nhãn phân loại.",
       "unique_count": 2,
       "top_values": {
         "Cao": 1035,
@@ -563,14 +563,14 @@
     },
     "Doanh_thu_theo_tuan_trong_thang": {
       "dtype": "float64",
-      "missing_count": 0,
-      "missing_percentage": 0.0,
+      "missing_count": 25,
+      "missing_percentage": 2.413127413127413,
       "statistics": {
         "min": 4626930.0,
         "max": 2428245666.0,
-        "mean": 601791829.921332,
-        "median": 335707592.0,
-        "std": 598161283.8882879
+        "mean": 612631791.0395647,
+        "median": 336587537.0,
+        "std": 601214469.8585545
       }
     },
     "Khoảng_cách_đơn_trước": {
@@ -599,14 +599,14 @@
     },
     "Tổng_doanh_thu_sản_phẩm": {
       "dtype": "float64",
-      "missing_count": 0,
-      "missing_percentage": 0.0,
+      "missing_count": 26,
+      "missing_percentage": 2.5096525096525095,
       "statistics": {
         "min": 7781840.0,
         "max": 15628940014.0,
-        "mean": 7349387719.106177,
+        "mean": 7524349657.855446,
         "median": 6111648257.0,
-        "std": 5447799719.65585
+        "std": 5405609787.982004
       }
     },
     "Doanh_thu_tb_mỗi_lần": {

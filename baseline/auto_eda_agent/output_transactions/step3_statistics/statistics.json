@@ -182,16 +182,16 @@
         "kurtosis": 2.9232651112860486
       },
       "Doanh_thu_theo_tuan_trong_thang": {
-        "count": 1036,
-        "mean": 601791829.921332,
-        "median": 335707592.0,
-        "std": 598161283.8882879,
+        "count": 1011,
+        "mean": 612631791.0395647,
+        "median": 336587537.0,
+        "std": 601214469.8585545,
         "min": 4626930.0,
         "max": 2428245666.0,
-        "q25": 150788308.0,
-        "q75": 927332395.0,
-        "skewness": 1.198986552911105,
-        "kurtosis": 0.5839023945405377
+        "q25": 159594435.0,
+        "q75": 993256495.0,
+        "skewness": 1.167274626402757,
+        "kurtosis": 0.5029880085676699
       },
       "Khoảng_cách_đơn_trước": {
         "count": 994,
@@ -218,16 +218,16 @@
         "kurtosis": -1.2563769005654588
       },
       "Tổng_doanh_thu_sản_phẩm": {
-        "count": 1036,
-        "mean": 7349387719.106177,
+        "count": 1010,
+        "mean": 7524349657.855446,
         "median": 6111648257.0,
-        "std": 5447799719.65585,
+        "std": 5405609787.982004,
         "min": 7781840.0,
         "max": 15628940014.0,
         "q25": 2363274177.0,
         "q75": 11121469464.0,
-        "skewness": 0.2828330869935793,
-        "kurtosis": -1.4067470484764988
+        "skewness": 0.2511944729562264,
+        "kurtosis": -1.4178454628874069
       },
       "Doanh_thu_tb_mỗi_lần": {
         "count": 1036,
@@ -393,7 +393,7 @@
           "AZ080": 303,
           "AZ030": 89,
           "AZ100": 29,
-          " AZ05": 1
+          "AZ05": 1
         }
       },
       "Độ MT": {
@@ -436,7 +436,7 @@
           "XLC": 43,
           "XDT-G": 28,
           "TS": 20,
-          "Màu xanh ngọc ": 17
+          "Màu xanh ngọc": 17
         }
       },
       "Ngày bán": {
@@ -695,7 +695,7 @@
         {
           "var1": "Giá_trên_kg",
           "var2": "Tổng_doanh_thu_sản_phẩm",
-          "correlation": -0.7057758468569361
+          "correlation": -0.719236380975975
         },
         {
           "var1": "Doanh_thu_trên_mm",
@@ -703,14 +703,9 @@
           "correlation": 0.9999999998623473
         },
         {
-          "var1": "Doanh_thu_theo_tuan_trong_thang",
-          "var2": "Tần_suất_bán",
-          "correlation": 0.7021597811469702
-        },
-        {
           "var1": "Số_lần_bán_sản_phẩm",
           "var2": "Tổng_doanh_thu_sản_phẩm",
-          "correlation": 0.9980737401776512
+          "correlation": 0.9980322732716542
         },
         {
           "var1": "Số_lần_bán_sản_phẩm",
@@ -720,7 +715,7 @@
         {
           "var1": "Tổng_doanh_thu_sản_phẩm",
           "var2": "Tần_suất_bán",
-          "correlation": 0.8884823034537601
+          "correlation": 0.885433448735155
         },
         {
           "var1": "Cờ_khiếu_nại_lặp_lại",

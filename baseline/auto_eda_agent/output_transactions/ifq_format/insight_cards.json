@@ -1,0 +1,128 @@
+[
+  {
+    "question": "How does Năm change over Khối lượng?",
+    "reason": "Theo Step 4, tổng Khối lượng theo thời gian tăng dần trong giai đoạn quan sát từ tháng 8 đến tháng 1, nhưng bị gián đoạn bởi một đáy rõ rệt vào tháng 11 trước khi phục hồi lại trong tháng 12 và tháng ...",
+    "breakdown": "Khối lượng",
+    "measure": "MEAN(Năm)"
+  },
+  {
+    "question": "How does Năm change over Khối lượng?",
+    "reason": "Step 4 cho thấy Khối lượng trung bình trên mỗi bản ghi chỉ dao động trong biên độ hẹp, giảm dần từ tháng 8 đến tháng 11 rồi phục hồi một phần trong tháng 12 và tháng 1. Điều này hàm ý biến động tổng s...",
+    "breakdown": "Khối lượng",
+    "measure": "MEAN(Năm)"
+  },
+  {
+    "question": "How does Khối lượng change over Met A?",
+    "reason": "Theo Step 4, tổng Met A đi lên rõ rệt trong giai đoạn đầu, đạt mức cao trước tháng 11, sau đó giảm mạnh trong tháng 11 và hồi phục ở tháng 12–1. Vì Met A có tương quan cao với Khối lượng (r = 0.767) v...",
+    "breakdown": "Met A",
+    "measure": "MEAN(Khối lượng)"
+  },
+  {
+    "question": "How does Năm change over Met A?",
+    "reason": "Step 4 cho thấy giá trị trung bình của Met A giảm liên tục từ tháng 8 đến tháng 11 và chỉ phục hồi một phần trong tháng 12–1. Xu hướng này gợi ý rằng trong giai đoạn giữa kỳ, mỗi giao dịch có xu hướng...",
+    "breakdown": "Met A",
+    "measure": "MEAN(Năm)"
+  },
+  {
+    "question": "How does Độ D change over STT?",
+    "reason": "Theo Step 4, số bản ghi giao dịch tăng mạnh đến tháng 10, giảm xuống mức thấp nhất ở tháng 11, rồi phục hồi trong tháng 12 và tháng 1. Vì mẫu hình này xuất hiện đồng thời trên nhiều biến đếm như STT, ...",
+    "breakdown": "STT",
+    "measure": "MEAN(Độ D)"
+  },
+  {
+    "question": "How does Năm change over Độ D?",
+    "reason": "Step 4 cho thấy giá trị trung bình của Độ D thay đổi rất ít trong toàn bộ giai đoạn 6 tháng. Điều này hàm ý doanh nghiệp duy trì cơ cấu sản phẩm theo độ dày khá nhất quán, dù tổng số giao dịch và tổng...",
+    "breakdown": "Độ D",
+    "measure": "MEAN(Năm)"
+  },
+  {
+    "question": "How does STT change over Độ D?",
+    "reason": "Step 4 cho thấy tổng Độ D tăng giảm cùng mô hình với số lượng bản ghi theo tháng, trong khi Độ D trung bình lại gần như ổn định. Vì vậy, biến động tổng Độ D chủ yếu phản ánh thay đổi về khối lượng gia...",
+    "breakdown": "Độ D",
+    "measure": "MEAN(STT)"
+  },
+  {
+    "question": "How does Năm change over STT?",
+    "reason": "Theo Step 4, giá trị STT trung bình tăng đều theo từng tháng trong toàn bộ kỳ quan sát. Đồng thời ở Step 3, STT có tương quan dương mạnh với Năm (r = 0.714), củng cố rằng chỉ số này dịch chuyển tăng t...",
+    "breakdown": "STT",
+    "measure": "MEAN(Năm)"
+  },
+  {
+    "question": "How does Năm change over STT?",
+    "reason": "Step 4 cho thấy tổng STT tăng mạnh từ tháng 8 đến tháng 1, chỉ có một điểm gãy là tháng 11 giảm xuống trước khi xu hướng tăng quay trở lại. Đây là dấu hiệu cho thấy hoạt động ghi nhận giao dịch hoặc k...",
+    "breakdown": "STT",
+    "measure": "MEAN(Năm)"
+  },
+  {
+    "question": "How does Năm change over Met B?",
+    "reason": "Theo Step 4, Met B không đi theo xu hướng tăng hoặc giảm đều mà có các đỉnh riêng lẻ, nổi bật ở tháng 9 và đặc biệt là tháng 12, trong khi tháng 8 và tháng 11 rất thấp. Điều này cho thấy nhu cầu liên ...",
+    "breakdown": "Met B",
+    "measure": "MEAN(Năm)"
+  },
+  {
+    "question": "How does count change over Khối lượng?",
+    "reason": "Ở cấp toàn bộ dữ liệu, Step 4 cho thấy tổng Khối lượng tăng dần nhưng giảm mạnh trong tháng 11 trước khi phục hồi. Với nhóm sản phẩm con 'Tôn Màu', đây là phân khúc tự nhiên cần theo dõi sát vì biến đ...",
+    "breakdown": "Khối lượng",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "How does count change over STT?",
+    "reason": "Step 4 cho thấy toàn bộ hệ thống có số giao dịch đạt đỉnh vào tháng 10, rơi xuống thấp nhất ở tháng 11 rồi phục hồi. Với thị trường lớn như TP. Hồ Chí Minh, nếu mô hình này lặp lại thì đây sẽ là tín h...",
+    "breakdown": "STT",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about mã màu thiếu dữ liệu ở mức bất thường, ảnh hưởng tới gần 1/3 giao dịch?",
+    "reason": "Trường 'Mã màu' bị thiếu 32.05% bản ghi, đây là một mức thiếu dữ liệu rất cao đối với thuộc tính sản phẩm cốt lõi. Đây là một anomaly rõ rệt vì gần 1 trên 3 giao dịch không thể gắn chính xác theo mã m...",
+    "breakdown": "Mã màu",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about tên màu cũng thiếu 32.05%, cho thấy lỗi đồng thời ở cả cặp thuộc tính màu?",
+    "reason": "Trường 'Tên màu' thiếu đúng 32.05% bản ghi, trùng với tỷ lệ thiếu của 'Mã màu'. Việc hai trường mô tả cùng một thuộc tính sản phẩm cùng thiếu ở mức rất cao là một anomaly dữ liệu đáng chú ý, cho thấy ...",
+    "breakdown": "Tên màu",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about tháng 11 là điểm trũng bất thường của khối lượng bán ra toàn hệ thống?",
+    "reason": "Theo phân tích chuỗi thời gian, tổng 'Khối lượng' tăng dần từ tháng 8 đến tháng 1 nhưng xuất hiện một cú rơi mạnh riêng trong tháng 11 trước khi phục hồi ở tháng 12 và tháng 1. Đây là một anomaly theo...",
+    "breakdown": "Khối lượng",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about số lượng giao dịch rơi xuống mức thấp nhất trong tháng 11 sau khi đạt đỉnh tháng 10?",
+    "reason": "Số bản ghi giao dịch tăng mạnh đến tháng 10, sau đó giảm xuống mức thấp nhất ở tháng 11 rồi bật lại trong tháng 12 và tháng 1. Sự đảo chiều đột ngột từ đỉnh sang đáy chỉ trong một tháng là một anomaly...",
+    "breakdown": "STT",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about met b có các đỉnh nhọn bất thường, đặc biệt ở tháng 12?",
+    "reason": "'Met B' không đi theo xu hướng tăng/giảm đều mà xuất hiện các spike rời rạc, nổi bật ở tháng 9 và đặc biệt là tháng 12, trong khi tháng 8 và tháng 11 ở mức rất thấp. Mẫu hình này cho thấy anomaly theo...",
+    "breakdown": "Met B",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about trong nhóm loại hàng = ppgl, rủi ro phân tích theo màu đặc biệt cao do thiếu mã màu quy mô lớn?",
+    "reason": "Với 'Loại Hàng' = 'PPGL' là nhóm hàng màu/giá trị gia tăng cao, việc 'Mã màu' toàn bộ dataset bị thiếu 32.05% là một anomaly đặc biệt nghiêm trọng cho phân tích của phân khúc này. Điều này có thể làm ...",
+    "breakdown": "Loại Hàng",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about trong nhóm sku_dòng = tôn màu, thiếu đồng thời mã màu và tên màu là bất thường nghiêm trọng?",
+    "reason": "Đối với 'SKU_Dòng' = 'Tôn Màu', hai trường nhận diện màu là 'Mã màu' và 'Tên màu' cùng thiếu 32.05% trên toàn bộ dữ liệu. Đây là một anomaly rất đáng lo vì màu sắc là thuộc tính cốt lõi để phân biệt S...",
+    "breakdown": "SKU_Dòng",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about khu vực (quận/huyện) có tỷ lệ thiếu gần 5%, là điểm bất thường cho dữ liệu địa lý chi tiết?",
+    "reason": "Trường 'Khu Vực (Quận/Huyện)' thiếu 4.73% bản ghi. Dù thấp hơn lỗi màu sắc, đây vẫn là một anomaly đáng chú ý vì cấp quận/huyện là trường quan trọng cho phân tích nhu cầu địa phương, tối ưu giao vận v...",
+    "breakdown": "Khu Vực (Quận/Huyện)",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about khoảng_cách_đơn_trước bị thiếu 4.05%, tạo anomaly trong phân tích hành vi mua lặp lại?",
+    "reason": "Biến 'Khoảng_cách_đơn_trước' bị thiếu 4.05% bản ghi. Đây là một anomaly ở lớp dữ liệu hành vi vì chỉ số này thường được dùng để đo nhịp mua hàng; dữ liệu thiếu có thể làm sai lệch nhận diện khách hàng...",
+    "breakdown": "Khoảng_cách_đơn_trước",
+    "measure": "COUNT(*)"
+  }
+]

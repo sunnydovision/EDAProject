@@ -1,7 +1,7 @@
 {
-  "input_tokens": 131926,
-  "output_tokens": 54959,
-  "total_tokens": 186885,
-  "requests": 22,
+  "input_tokens": 43348,
+  "output_tokens": 25895,
+  "total_tokens": 69243,
+  "requests": 9,
   "model": "gpt-5.4"
 }

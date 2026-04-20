@@ -11,43 +11,38 @@
 
 ### High Importance Columns
 
-**Phân loại**
-- Meaning: Nhóm phân loại sản phẩm hoặc cấp chất lượng/quy cách hàng hóa.
-- Type: Categorical
-- Missing: 0.0%
-
 **Loại Hàng**
 - Meaning: Loại vật liệu/sản phẩm bán ra, ví dụ GL và PPGL.
 - Type: Categorical
 - Missing: 0.0%
 
 **Độ M**
-- Meaning: Mức lớp mạ hoặc quy cách mạ của sản phẩm thép/cuộn tôn.
+- Meaning: Mức lớp mạ hoặc quy cách mạ của sản phẩm, ví dụ AZ080, AZ100.
 - Type: Categorical
 - Missing: 0.0%
 
 **Độ D**
-- Meaning: Độ dày vật liệu, nhiều khả năng tính bằng mm.
+- Meaning: Độ dày vật liệu/tôn, khả năng tính theo mm.
 - Type: Numerical
 - Missing: 0.0%
 
 **Độ MT**
-- Meaning: Cấp độ bền/kết cấu vật liệu nền, ví dụ G550 hoặc G350.
+- Meaning: Cấp độ bền kéo/độ cứng vật liệu nền, ví dụ G350, G550.
 - Type: Categorical
 - Missing: 0.0%
 
 **Mã màu**
-- Meaning: Mã màu chuẩn của sản phẩm.
+- Meaning: Mã màu sản phẩm theo hệ mã nội bộ.
 - Type: Categorical
 - Missing: 32.0%
 
 **Khối lượng**
-- Meaning: Khối lượng hàng bán ra trong từng dòng giao dịch, nhiều khả năng tính bằng kg.
+- Meaning: Khối lượng hàng bán ra cho từng dòng giao dịch, nhiều khả năng tính bằng kg.
 - Type: Numerical
 - Missing: 0.0%
 
 **Tỷ trọng thực tế**
-- Meaning: Mật độ/khối lượng trên đơn vị chiều dài thực tế của hàng hóa, có thể là kg trên mét hoặc chỉ số quy đổi thực tế.
+- Meaning: Tỷ trọng/khối lượng trên đơn vị chiều dài thực tế của hàng hóa, có thể là kg trên mét hoặc chỉ số hiệu suất thực tế.
 - Type: Numerical
 - Missing: 0.0%
 
@@ -57,9 +52,14 @@
 - Missing: 0.0%
 
 **Thành Tiền**
-- Meaning: Doanh thu hoặc giá trị tiền của từng dòng bán hàng sau khi tính theo khối lượng/quy cách.
+- Meaning: Doanh thu/thành tiền của từng dòng bán hàng.
 - Type: Numerical
 - Missing: 0.0%
+
+**Khu Vực (Quận/Huyện)**
+- Meaning: Địa bàn khách hàng hoặc nơi bán theo cấp quận/huyện/thành phố trực thuộc tỉnh.
+- Type: Categorical
+- Missing: 4.7%
 
 ## Data Quality
 
@@ -69,3 +69,5 @@ Columns with missing values:
 - **Tên màu**: 32.0%
 - **Khu Vực (Quận/Huyện)**: 4.7%
 - **Khoảng_cách_đơn_trước**: 4.1%
+- **Tổng_doanh_thu_sản_phẩm**: 2.5%
+- **Doanh_thu_theo_tuan_trong_thang**: 2.4%
