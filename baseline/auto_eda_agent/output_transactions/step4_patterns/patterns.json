@@ -1,0 +1,560 @@
+{
+  "pattern_categories": [
+    "Temporal Patterns",
+    "Correlation Patterns",
+    "Grouping Patterns",
+    "Anomaly Patterns"
+  ],
+  "total_patterns": 49,
+  "patterns_by_category": {
+    "Temporal Patterns": [
+      {
+        "pattern_name": "STT mean increases every month",
+        "description": "The monthly average of STT rises continuously across the full observed period, indicating a clear upward time trend with no monthly reversals.",
+        "variables_involved": [
+          "STT"
+        ],
+        "evidence": "STT mean increases from 71.0 (2025-08) to 208.0 (2025-09), 404.0 (2025-10), 584.5 (2025-11), 723.5 (2025-12), and 924.0 (2026-01).",
+        "strength": "strong",
+        "business_relevance": "This shows a consistent time progression in record numbering/order over the months and confirms the dataset spans a steadily advancing transaction sequence."
+      },
+      {
+        "pattern_name": "STT sum trends upward overall with a November dip",
+        "description": "Monthly STT totals rise strongly from August to October, fall in November, then rebound to new highs in December and January.",
+        "variables_involved": [
+          "STT"
+        ],
+        "evidence": "STT sum moves from 10,011 (2025-08) to 27,664 (2025-09) to 104,636 (2025-10), then drops to 59,619 (2025-11), before rising again to 127,336 (2025-12) and 207,900 (2026-01).",
+        "strength": "moderate",
+        "business_relevance": "This indicates the monthly total record index is generally higher later in the timeline, but month-to-month totals are affected by fluctuations in transaction volume."
+      },
+      {
+        "pattern_name": "Transaction count is volatile, peaking in October and January",
+        "description": "Monthly record counts do not follow a steady trend; instead they fluctuate with a sharp rise in October, a trough in November, and another high level in January.",
+        "variables_involved": [
+          "STT count",
+          "Độ D count",
+          "Khối lượng count",
+          "Met A count",
+          "Met B count"
+        ],
+        "evidence": "Monthly counts are identical across variables and equal to 141 (2025-08), 133 (2025-09), 259 (2025-10), 102 (2025-11), 176 (2025-12), and 225 (2026-01). The highest count is 259 in 2025-10 and the lowest is 102 in 2025-11.",
+        "strength": "strong",
+        "business_relevance": "This reflects changing transaction activity over time, with especially active months in October and January and a clear slowdown in November."
+      },
+      {
+        "pattern_name": "Khối lượng total declines early, surges in October, drops in November, then recovers",
+        "description": "Total monthly volume shows a cyclical-looking fluctuation over the six months rather than a steady increase or decrease.",
+        "variables_involved": [
+          "Khối lượng"
+        ],
+        "evidence": "Khối lượng sum is 553,400 (2025-08), then 500,880 (2025-09), rises sharply to 961,590 (2025-10), falls to 362,285 (2025-11), then recovers to 665,985 (2025-12) and 831,325 (2026-01).",
+        "strength": "moderate",
+        "business_relevance": "This suggests monthly sold volume varies substantially over time, which matters for production planning, logistics, and inventory allocation."
+      },
+      {
+        "pattern_name": "Average Khối lượng per record is relatively stable over time",
+        "description": "Despite large swings in total volume and transaction count, the monthly average volume per record stays within a narrow range.",
+        "variables_involved": [
+          "Khối lượng"
+        ],
+        "evidence": "Khối lượng mean stays between 3,551.81 (2025-11) and 3,924.82 (2025-08), with intermediate values 3,766.02 (2025-09), 3,712.70 (2025-10), 3,784.01 (2025-12), and 3,694.78 (2026-01).",
+        "strength": "strong",
+        "business_relevance": "This indicates that changes in total monthly volume are driven more by the number of transactions than by major shifts in average shipment size."
+      },
+      {
+        "pattern_name": "Độ D mean is highly stable across months",
+        "description": "Average material thickness remains nearly constant throughout the period, with only very small month-to-month movement.",
+        "variables_involved": [
+          "Độ D"
+        ],
+        "evidence": "Độ D mean is 0.4007 (2025-08), 0.3981 (2025-09), 0.4019 (2025-10), 0.4088 (2025-11), 0.4105 (2025-12), and 0.4027 (2026-01). The full range is only about 0.0124 from lowest to highest.",
+        "strength": "strong",
+        "business_relevance": "Product thickness mix appears stable over time, suggesting limited temporal change in the specification profile being sold."
+      },
+      {
+        "pattern_name": "Độ D total follows transaction count more than thickness changes",
+        "description": "Monthly total thickness aggregates rise and fall mainly in line with record count, while average thickness stays nearly unchanged.",
+        "variables_involved": [
+          "Độ D",
+          "count"
+        ],
+        "evidence": "Độ D sum is 56.5 (2025-08), 52.95 (2025-09), 104.1 (2025-10), 41.7 (2025-11), 72.25 (2025-12), and 90.6 (2026-01), while Độ D mean remains near 0.40 in all months and counts vary from 102 to 259.",
+        "strength": "moderate",
+        "business_relevance": "This suggests monthly total thickness accumulation is primarily a function of how many transactions occurred, not a major shift in average product thickness."
+      },
+      {
+        "pattern_name": "Met A mean declines from August to November, then partially rebounds",
+        "description": "Average Met A shows a downward trend through November, followed by recovery in December and January, though it remains below August levels.",
+        "variables_involved": [
+          "Met A"
+        ],
+        "evidence": "Met A mean decreases from 1,261.16 (2025-08) to 1,214.77 (2025-09), 1,194.53 (2025-10), and 1,116.16 (2025-11), then rises to 1,137.28 (2025-12) and 1,170.12 (2026-01).",
+        "strength": "moderate",
+        "business_relevance": "This indicates the average primary meter length per transaction shortened through late 2025 before recovering somewhat at the start of 2026."
+      },
+      {
+        "pattern_name": "Met A total is volatile with October high, November low, and January recovery",
+        "description": "Total Met A fluctuates strongly month to month, with a major peak in October, sharp drop in November, and renewed growth into January.",
+        "variables_involved": [
+          "Met A"
+        ],
+        "evidence": "Met A sum is 177,824 (2025-08), 161,564 (2025-09), 309,382 (2025-10), 113,848 (2025-11), 200,162 (2025-12), and 263,278 (2026-01).",
+        "strength": "moderate",
+        "business_relevance": "This points to substantial monthly variation in total sold meterage, relevant for forecasting and operational capacity planning."
+      },
+      {
+        "pattern_name": "Met B shows intermittent spikes rather than a stable trend",
+        "description": "Met B does not move smoothly over time; instead it stays near zero in some months and spikes sharply in others.",
+        "variables_involved": [
+          "Met B"
+        ],
+        "evidence": "Met B mean is 0.11 (2025-08), jumps to 14.27 (2025-09), falls to 3.92 (2025-10), drops back to 0.16 (2025-11), spikes to 45.98 (2025-12), then declines to 6.88 (2026-01). Met B sum follows the same pattern: 16, 1,898, 1,014, 16, 8,092, and 1,548 respectively.",
+        "strength": "strong",
+        "business_relevance": "This suggests the secondary meter component appears only heavily in certain months, which may reflect irregular order composition over time."
+      },
+      {
+        "pattern_name": "December is the clearest spike month for Met B",
+        "description": "Among all months, December stands out as the strongest concentration of Met B activity by both total and average.",
+        "variables_involved": [
+          "Met B"
+        ],
+        "evidence": "Met B reaches its highest sum of 8,092 and highest mean of 45.98 in 2025-12, far above 1,898/14.27 in 2025-09 and 1,548/6.88 in 2026-01. August and November are both only 16 in sum with means near zero.",
+        "strength": "strong",
+        "business_relevance": "December has an unusually high contribution from the Met B component, which could materially affect product mix, fulfillment, or reporting for that month."
+      },
+      {
+        "pattern_name": "Several totals recover from a November trough into December and January",
+        "description": "Multiple variables show a synchronized drop in November followed by recovery in the next two months.",
+        "variables_involved": [
+          "count",
+          "Khối lượng",
+          "Met A",
+          "STT",
+          "Độ D"
+        ],
+        "evidence": "From 2025-10 to 2025-11 to 2025-12 to 2026-01: count goes 259 -> 102 -> 176 -> 225; Khối lượng sum 961,590 -> 362,285 -> 665,985 -> 831,325; Met A sum 309,382 -> 113,848 -> 200,162 -> 263,278; STT sum 104,636 -> 59,619 -> 127,336 -> 207,900; Độ D sum 104.1 -> 41.7 -> 72.25 -> 90.6.",
+        "strength": "strong",
+        "business_relevance": "This common November dip followed by rebound suggests a broad temporal slowdown and recovery affecting overall transaction activity and shipped quantities."
+      }
+    ],
+    "Correlation Patterns": [
+      {
+        "pattern_name": "Khối lượng đi cùng doanh thu dòng bán",
+        "description": "Khối lượng tăng thì Thành Tiền cũng tăng rất mạnh. Đây là quan hệ đồng biến rõ rệt giữa lượng hàng bán ra và giá trị tiền của dòng giao dịch.",
+        "variables_involved": [
+          "Khối lượng",
+          "Thành Tiền"
+        ],
+        "evidence": "Tương quan dương rất mạnh, r = 0.9526892423164303. Khi Khối lượng cao hơn, Thành Tiền thường cao hơn.",
+        "strength": "strong",
+        "business_relevance": "Quan hệ này có ý nghĩa kinh doanh trực tiếp: doanh thu dòng bán phụ thuộc mạnh vào lượng hàng bán. Khả năng cao đây là quan hệ cấu trúc vì Thành Tiền thường được tính từ khối lượng nhân đơn giá hoặc các quy đổi liên quan."
+      },
+      {
+        "pattern_name": "Khối lượng đi cùng doanh thu quy đổi",
+        "description": "Khối lượng có quan hệ đồng biến rất mạnh với cả Doanh_thu_trên_mm và Tỷ_trọng_doanh_thu_%. Khi giao dịch có khối lượng lớn hơn, các chỉ tiêu doanh thu quy đổi và tỷ trọng doanh thu cũng tăng tương ứng.",
+        "variables_involved": [
+          "Khối lượng",
+          "Doanh_thu_trên_mm",
+          "Tỷ_trọng_doanh_thu_%"
+        ],
+        "evidence": "Khối lượng với Doanh_thu_trên_mm có r = 0.9526891335391047; Khối lượng với Tỷ_trọng_doanh_thu_% có r = 0.9526892424307136. Cả hai đều là tương quan dương rất mạnh.",
+        "strength": "strong",
+        "business_relevance": "Điều này cho thấy sản lượng bán ra gắn chặt với đóng góp doanh thu. Tuy nhiên quan hệ có thể mang tính cấu trúc nếu các chỉ tiêu doanh thu quy đổi hoặc tỷ trọng doanh thu được tính trực tiếp từ doanh thu dòng bán."
+      },
+      {
+        "pattern_name": "Met A đồng biến với khối lượng và doanh thu",
+        "description": "Chiều dài Met A tăng đi kèm với Khối lượng và các chỉ tiêu doanh thu tăng. Điều này phản ánh các đơn hàng có chiều dài chính lớn hơn thường cũng có quy mô bán lớn hơn.",
+        "variables_involved": [
+          "Met A",
+          "Khối lượng",
+          "Thành Tiền",
+          "Doanh_thu_trên_mm",
+          "Tỷ_trọng_doanh_thu_%"
+        ],
+        "evidence": "Met A với Khối lượng: r = 0.7669886519096648; Met A với Thành Tiền: r = 0.8027604332653903; Met A với Doanh_thu_trên_mm: r = 0.802760139039976; Met A với Tỷ_trọng_doanh_thu_%: r = 0.8027604334424707. Tất cả đều dương và mạnh.",
+        "strength": "strong",
+        "business_relevance": "Về kinh doanh, Met A có vẻ là chỉ báo quy mô đơn hàng. Một phần quan hệ có thể là cấu trúc nếu chiều dài là đầu vào trực tiếp để tính khối lượng hoặc giá trị bán."
+      },
+      {
+        "pattern_name": "Các chỉ tiêu doanh thu gần như trùng nhau",
+        "description": "Thành Tiền, Doanh_thu_trên_mm và Tỷ_trọng_doanh_thu_% gần như di chuyển giống hệt nhau. Đây là mức đồng biến gần hoàn hảo.",
+        "variables_involved": [
+          "Thành Tiền",
+          "Doanh_thu_trên_mm",
+          "Tỷ_trọng_doanh_thu_%"
+        ],
+        "evidence": "Thành Tiền với Doanh_thu_trên_mm: r = 0.9999999998623459; Thành Tiền với Tỷ_trọng_doanh_thu_%: r = 0.9999999999999999; Doanh_thu_trên_mm với Tỷ_trọng_doanh_thu_%: r = 0.9999999998623473. Tất cả là tương quan dương gần như hoàn hảo.",
+        "strength": "strong",
+        "business_relevance": "Đây gần như chắc chắn là quan hệ cấu trúc, tức các biến này được tính từ cùng một nguồn hoặc là biến đổi tuyến tính của nhau. Trong phân tích, nên tránh dùng đồng thời vì trùng lặp thông tin rất cao."
+      },
+      {
+        "pattern_name": "Độ dày đi cùng tỷ trọng thực tế",
+        "description": "Độ D tăng thì Tỷ trọng thực tế tăng rất mạnh. Vật liệu dày hơn thường đi cùng mức khối lượng trên đơn vị quy đổi cao hơn.",
+        "variables_involved": [
+          "Độ D",
+          "Tỷ trọng thực tế"
+        ],
+        "evidence": "Tương quan dương rất mạnh, r = 0.9365970466972825.",
+        "strength": "strong",
+        "business_relevance": "Về mặt kinh doanh và kỹ thuật, đây là quan hệ rất quan trọng vì độ dày ảnh hưởng mạnh đến đặc tính vật lý của sản phẩm. Khả năng cao đây là quan hệ cấu trúc hoặc vật lý, không phải hành vi thị trường."
+      },
+      {
+        "pattern_name": "Tần suất bán gắn với số lần bán và doanh thu sản phẩm",
+        "description": "Sản phẩm có số lần bán cao hơn thường có tần suất bán cao hơn và tổng doanh thu sản phẩm cũng cao hơn. Ba biến này cùng tăng theo nhau.",
+        "variables_involved": [
+          "Số_lần_bán_sản_phẩm",
+          "Tần_suất_bán",
+          "Tổng_doanh_thu_sản_phẩm"
+        ],
+        "evidence": "Số_lần_bán_sản_phẩm với Tần_suất_bán: r = 0.8912135324494245; Tổng_doanh_thu_sản_phẩm với Tần_suất_bán: r = 0.8884823034537601; Số_lần_bán_sản_phẩm với Tổng_doanh_thu_sản_phẩm: r = 0.9980737401776512. Tất cả là tương quan dương mạnh đến rất mạnh.",
+        "strength": "strong",
+        "business_relevance": "Điều này cho thấy các sản phẩm bán lặp lại nhiều lần thường tạo ra doanh thu tích lũy lớn. Riêng quan hệ giữa số lần bán và tổng doanh thu có thể mang tính cấu trúc một phần vì tổng doanh thu thường cộng dồn từ nhiều lần bán."
+      },
+      {
+        "pattern_name": "Doanh thu theo tuần đi cùng tần suất bán",
+        "description": "Khi Tần_suất_bán cao hơn thì Doanh_thu_theo_tuan_trong_thang cũng có xu hướng cao hơn.",
+        "variables_involved": [
+          "Doanh_thu_theo_tuan_trong_thang",
+          "Tần_suất_bán"
+        ],
+        "evidence": "Tương quan dương mạnh, r = 0.7021597811469702.",
+        "strength": "strong",
+        "business_relevance": "Đây là tín hiệu hành vi bán hàng: tuần có nhịp bán dày hơn thường tạo ra doanh thu tuần cao hơn. Quan hệ này hữu ích cho lập kế hoạch bán hàng và dự báo doanh thu ngắn hạn."
+      },
+      {
+        "pattern_name": "Giá trên kg nghịch biến với mức độ bán và doanh thu sản phẩm",
+        "description": "Giá_trên_kg cao hơn đi kèm với Số_lần_bán_sản_phẩm thấp hơn và Tổng_doanh_thu_sản_phẩm thấp hơn.",
+        "variables_involved": [
+          "Giá_trên_kg",
+          "Số_lần_bán_sản_phẩm",
+          "Tổng_doanh_thu_sản_phẩm"
+        ],
+        "evidence": "Giá_trên_kg với Số_lần_bán_sản_phẩm: r = -0.7161388135622632; Giá_trên_kg với Tổng_doanh_thu_sản_phẩm: r = -0.7057758468569361. Cả hai đều là tương quan âm mạnh.",
+        "strength": "strong",
+        "business_relevance": "Về kinh doanh, đây là dấu hiệu rằng các sản phẩm có giá/kg cao hơn đang gắn với mức bán lặp lại thấp hơn và doanh thu tích lũy thấp hơn. Đây thiên về quan hệ hành vi/thị trường hơn là cấu trúc, nhưng chỉ nên kết luận là cùng biến động ngược chiều, không khẳng định nhân quả."
+      },
+      {
+        "pattern_name": "Khiếu nại lặp lại đi cùng mức hài lòng thấp",
+        "description": "Các trường hợp có Cờ_khiếu_nại_lặp_lại cao hơn đi kèm với Điểm_hài_lòng_khách_hàng thấp hơn rõ rệt.",
+        "variables_involved": [
+          "Cờ_khiếu_nại_lặp_lại",
+          "Điểm_hài_lòng_khách_hàng"
+        ],
+        "evidence": "Tương quan âm mạnh, r = -0.8092756977375014.",
+        "strength": "strong",
+        "business_relevance": "Đây là tín hiệu hành vi khách hàng rất rõ: khi phát sinh khiếu nại lặp lại, mức hài lòng giảm mạnh. Quan hệ này hữu ích cho quản trị dịch vụ, giữ chân khách hàng và ưu tiên xử lý nhóm rủi ro."
+      },
+      {
+        "pattern_name": "Tỷ lệ chi phí và biên lợi nhuận đối nghịch hoàn hảo",
+        "description": "Tỷ_lệ_chi_phí tăng thì Ước_tính_biên_lợi_nhuận giảm gần như tuyệt đối theo tỷ lệ đối ứng.",
+        "variables_involved": [
+          "Tỷ_lệ_chi_phí",
+          "Ước_tính_biên_lợi_nhuận"
+        ],
+        "evidence": "Tương quan âm gần như hoàn hảo, r = -0.9999999999999998.",
+        "strength": "strong",
+        "business_relevance": "Đây gần như chắc chắn là quan hệ cấu trúc, nhiều khả năng hai biến là phần bù của nhau. Không nên xem đây là phát hiện hành vi mới mà là đặc điểm công thức tính toán."
+      },
+      {
+        "pattern_name": "Ngày trong tháng đi cùng tuần trong tháng",
+        "description": "Ngày càng lớn thì Tuần_trong_tháng cũng tăng rất mạnh.",
+        "variables_involved": [
+          "Ngày",
+          "Tuần_trong_tháng"
+        ],
+        "evidence": "Tương quan dương rất mạnh, r = 0.985714128487954.",
+        "strength": "strong",
+        "business_relevance": "Đây là quan hệ cấu trúc theo lịch, vì tuần trong tháng được xác định từ ngày trong tháng. Hữu ích để hiểu dữ liệu thời gian nhưng không phản ánh hành vi kinh doanh độc lập."
+      },
+      {
+        "pattern_name": "Năm và tháng biến động ngược chiều trong mẫu dữ liệu",
+        "description": "Trong dữ liệu này, khi Năm tăng thì Tháng có xu hướng giảm mạnh.",
+        "variables_involved": [
+          "Năm",
+          "Tháng"
+        ],
+        "evidence": "Tương quan âm rất mạnh, r = -0.9516897377861393.",
+        "strength": "strong",
+        "business_relevance": "Đây nhiều khả năng là hiệu ứng phạm vi thời gian lấy mẫu, không nhất thiết là quan hệ kinh doanh thực chất. Với thống kê cho thấy Năm chỉ có 2025 và 2026, còn Tháng trải từ 1 đến 12, quan hệ này nên được xem là cấu trúc theo giai đoạn dữ liệu hơn là hành vi."
+      },
+      {
+        "pattern_name": "STT tăng cùng năm",
+        "description": "STT cao hơn đi kèm với Năm cao hơn trong bộ dữ liệu.",
+        "variables_involved": [
+          "STT",
+          "Năm"
+        ],
+        "evidence": "Tương quan dương mạnh, r = 0.7141719034611382.",
+        "strength": "strong",
+        "business_relevance": "Vì STT là số thứ tự dòng, đây gần như chắc chắn phản ánh cách sắp xếp dữ liệu theo thời gian hoặc theo tải dữ liệu, không phải quan hệ kinh doanh thực chất. Đây là quan hệ cấu trúc do thứ tự bản ghi."
+      }
+    ],
+    "Grouping Patterns": [
+      {
+        "pattern_name": "Phân loại 1 dominates the dataset",
+        "description": "Within Phân loại, group 1 overwhelmingly dominates both record count and total khối lượng, far exceeding all other segments.",
+        "variables_involved": [
+          "Phân loại",
+          "count",
+          "Khối lượng"
+        ],
+        "evidence": "Phân loại 1 has 876 records and total khối lượng 3,431,980. The next largest group, Phân loại 2, has 77 records and 156,565 khối lượng. Group 1 therefore has about 11.4× more records (876 vs 77) and about 21.9× more total khối lượng (3,431,980 vs 156,565). Compared with all other non-1 groups combined (160 records, 443,485 khối lượng), group 1 is still about 5.5× larger in count and 7.7× larger in total khối lượng.",
+        "strength": "strong",
+        "business_relevance": "Very meaningful. Inventory, forecasting, and sales planning will be driven primarily by Phân loại 1 because it represents the bulk of observed activity."
+      },
+      {
+        "pattern_name": "Phân loại groups are highly uneven in average khối lượng",
+        "description": "Average khối lượng differs sharply across Phân loại groups, with groups 1 and 1A much heavier on average than groups 2 and 3.",
+        "variables_involved": [
+          "Phân loại",
+          "Khối lượng"
+        ],
+        "evidence": "Mean khối lượng by Phân loại is: 1A = 3,978.39, 1 = 3,917.79, 1B = 3,552.78, 2 = 2,033.31, 3 = 690.42. Phân loại 1 has about 1.93× the mean khối lượng of Phân loại 2 (3,917.79 vs 2,033.31) and about 5.67× that of Phân loại 3 (3,917.79 vs 690.42). Phân loại 1A is about 5.76× Phân loại 3 (3,978.39 vs 690.42).",
+        "strength": "strong",
+        "business_relevance": "Meaningful for production and logistics. Different Phân loại groups likely require different handling and stocking assumptions because average shipment weight is not uniform."
+      },
+      {
+        "pattern_name": "Loại Hàng is count-dominated by PPGL but average khối lượng is higher for GL",
+        "description": "PPGL accounts for most records and total khối lượng, but GL has the higher average khối lượng per record.",
+        "variables_involved": [
+          "Loại Hàng",
+          "count",
+          "Khối lượng",
+          "Độ D"
+        ],
+        "evidence": "PPGL has 704 records versus 332 for GL, about 2.12× more. Total khối lượng is 2,557,660 for PPGL versus 1,317,805 for GL, about 1.94× more. However, mean khối lượng is higher for GL at 3,969.29 versus 3,633.04 for PPGL, a difference of about 336.25 or roughly 9.3%. Mean Độ D is also slightly higher for PPGL at 0.4067 versus 0.3968 for GL.",
+        "strength": "strong",
+        "business_relevance": "Meaningful. PPGL drives volume through frequency, while GL contributes heavier average transactions. Sales and fulfillment strategies may differ by product type."
+      },
+      {
+        "pattern_name": "Độ M is concentrated in AZ050 and AZ080",
+        "description": "Most observations and total khối lượng are concentrated in two coating levels: AZ050 and AZ080.",
+        "variables_involved": [
+          "Độ M",
+          "count",
+          "Khối lượng"
+        ],
+        "evidence": "AZ050 has 614 records and 2,264,550 khối lượng; AZ080 has 303 records and 1,191,990 khối lượng. Combined, they account for 917 of 1,036 records (about 88.5%) and 3,456,540 of 3,875,465 total khối lượng (about 89.2%). By contrast, AZ030 has only 89 records and 288,650 khối lượng, while AZ100 has 29 records and 125,815 khối lượng.",
+        "strength": "strong",
+        "business_relevance": "Highly meaningful. Product planning and procurement should focus on AZ050 and AZ080 because they represent the clear majority of demand."
+      },
+      {
+        "pattern_name": "Higher Độ M groups tend to have higher average khối lượng among well-represented groups",
+        "description": "Among the larger Độ M groups, average khối lượng rises from AZ030 to AZ050 to AZ080, with AZ100 also high but based on a smaller sample.",
+        "variables_involved": [
+          "Độ M",
+          "Khối lượng"
+        ],
+        "evidence": "Mean khối lượng is 3,243.26 for AZ030, 3,688.19 for AZ050, 3,933.96 for AZ080, and 4,338.45 for AZ100. AZ080 is about 1.21× AZ030 (3,933.96 vs 3,243.26). AZ050 is about 13.7% above AZ030 (3,688.19 vs 3,243.26). AZ100 is highest, but it has only 29 records compared with 614 for AZ050 and 303 for AZ080.",
+        "strength": "moderate",
+        "business_relevance": "Potentially meaningful for pricing, transport, and stock planning, especially across AZ030/AZ050/AZ080 where sample sizes are substantial."
+      },
+      {
+        "pattern_name": "Độ MT is almost entirely concentrated in G550",
+        "description": "The material grade distribution is extremely imbalanced, with G550 representing nearly all records and total khối lượng.",
+        "variables_involved": [
+          "Độ MT",
+          "count",
+          "Khối lượng"
+        ],
+        "evidence": "G550 has 1,035 records and total khối lượng 3,874,750, while G350 has only 1 record and 715 khối lượng. That means G550 accounts for about 99.9% of records and virtually all total khối lượng in this aggregation.",
+        "strength": "strong",
+        "business_relevance": "Very meaningful. Operationally, the business appears centered on G550, while G350 is too rare here to support segment-level decisions."
+      },
+      {
+        "pattern_name": "Color demand is concentrated in a few Mã màu groups",
+        "description": "A small set of color codes contributes a large share of records and total khối lượng, while many colors are sparsely represented.",
+        "variables_involved": [
+          "Mã màu",
+          "count",
+          "Khối lượng"
+        ],
+        "evidence": "Top record-count colors are PGRE01 = 145, PGRE09 = 99, WRED02 = 81, WGRA01 = 76, and PBLU09 = 67. Together these 5 colors contribute 468 of 704 color-coded records, about 66.5%. In total khối lượng, the same leading groups are PGRE01 = 558,920, PGRE09 = 377,515, WRED02 = 278,280, WGRA01 = 266,335, and PBLU09 = 258,350; together they sum to 1,739,400 out of 2,559,660, about 68.0%. At the other end, several colors have very low counts such as WHI19 = 1, PRED24 = 3, PWHI01 = 3, and WRED03 = 4.",
+        "strength": "strong",
+        "business_relevance": "Highly meaningful. Color assortment is not evenly distributed, so stocking and replenishment should prioritize the few dominant colors."
+      },
+      {
+        "pattern_name": "PGRE01 is the single dominant color segment",
+        "description": "Among Mã màu groups, PGRE01 is the largest by both count and total khối lượng.",
+        "variables_involved": [
+          "Mã màu",
+          "count",
+          "Khối lượng"
+        ],
+        "evidence": "PGRE01 has 145 records and total khối lượng 558,920. The next largest by count is PGRE09 with 99 records, so PGRE01 has about 1.46× more records. The next largest by total khối lượng is PGRE09 with 377,515, so PGRE01 has about 1.48× more total khối lượng.",
+        "strength": "strong",
+        "business_relevance": "Meaningful. PGRE01 is the clearest lead color and should likely be monitored as a core SKU/color family."
+      },
+      {
+        "pattern_name": "Large variation in average khối lượng across color codes",
+        "description": "Average khối lượng per record differs materially across Mã màu groups, indicating uneven transaction size by color.",
+        "variables_involved": [
+          "Mã màu",
+          "Khối lượng"
+        ],
+        "evidence": "Among groups with more than minimal counts, PWHI19 has mean khối lượng 4,083.33 (6 records), PRED09 has 3,896.59 (44), WGRE01 has 3,879.29 (7), PBLU09 has 3,855.97 (67), and PGRE01 has 3,854.62 (145). Lower means include PWHI11 at 1,905.00 (10), PRED24 at 1,786.67 (3), and PRED10 at 2,817.89 (19). Comparing better-sized groups, PBLU09 at 3,855.97 is about 1.37× PRED10 at 2,817.89.",
+        "strength": "moderate",
+        "business_relevance": "Meaningful for shipment planning and SKU economics, though decisions should rely more on colors with larger counts such as PGRE01, PGRE09, WRED02, WGRA01, and PBLU09."
+      },
+      {
+        "pattern_name": "Average Độ D is relatively stable across Loại Hàng and Phân loại, but more dispersed across Độ M and Mã màu",
+        "description": "Thickness means are close between major Loại Hàng and Phân loại groups, while some larger differences appear in coating and color segments.",
+        "variables_involved": [
+          "Loại Hàng",
+          "Phân loại",
+          "Độ M",
+          "Mã màu",
+          "Độ D"
+        ],
+        "evidence": "By Loại Hàng, mean Độ D is 0.3968 for GL and 0.4067 for PPGL, a small gap of about 0.0099. By Phân loại, means range from 0.3916 (group 2) to 0.4333 (group 1B), but 1B has only 9 records; the larger groups 1, 1A, and 2 are all between 0.3916 and 0.4137. By Độ M, means range from 0.3719 for AZ030 to 0.41897 for AZ100, a gap of about 0.0471. By Mã màu, larger-count groups range from 0.3579 for PGRE03 (19) and 0.3739 for PGRE02 (23) up to 0.4266 for PGRE01 (145).",
+        "strength": "moderate",
+        "business_relevance": "Moderately meaningful. Thickness is fairly consistent across the biggest product-type segments, but some coating/color segments show enough variation to matter for specification control."
+      }
+    ],
+    "Anomaly Patterns": [
+      {
+        "pattern_name": "Severe zero-inflation in Met B",
+        "description": "Met B is dominated by zeros, with a small number of very large positive values creating an extremely concentrated and highly skewed distribution.",
+        "variables_involved": [
+          "Met B"
+        ],
+        "evidence": "Met B has median = 0.0, q25 = 0.0, q75 = 0.0, so at least 75% of records are exactly 0. The mean is 12.1467 despite median 0.0, std = 115.5356, min = 0.0, max = 1890.0. Skewness = 13.4920 and kurtosis = 201.9628 indicate an extreme right tail. Step 2 flags 40 outliers (3.8610%) with lower_bound = 0.0 and upper_bound = 0.0, meaning any non-zero value is treated as an outlier under the IQR rule.",
+        "strength": "strong",
+        "business_relevance": "This looks more like a structural/sparse field than random noise. Treat as zero-inflated or two-part data in downstream analysis; avoid standard normal-based methods. Investigate whether zero means 'not applicable' versus true zero usage."
+      },
+      {
+        "pattern_name": "Severe zero-inflation and point-mass behavior in Met C",
+        "description": "Met C is almost entirely fixed at 2, with a small set of much larger values creating a highly abnormal distribution.",
+        "variables_involved": [
+          "Met C"
+        ],
+        "evidence": "Met C has min = 2.0, median = 2.0, q25 = 2.0, q75 = 2.0, so the central 75% of values are exactly 2. Mean = 2.2915, std = 2.4037, max = 46.0. Skewness = 13.4726 and kurtosis = 212.6270 show an extreme right tail. Step 2 flags 44 outliers (4.2471%) with lower_bound = 2.0 and upper_bound = 2.0, so any value different from 2 is outside the IQR fence.",
+        "strength": "strong",
+        "business_relevance": "This may reflect a default/constant setting with occasional exceptions, or a coded business rule. For downstream analysis, treat 2 as a dominant baseline category and analyze deviations separately. Also check whether this field is partly categorical rather than continuous."
+      },
+      {
+        "pattern_name": "Rare-event binary flag in Cờ_giao_dịch_bất_thường",
+        "description": "The abnormal-transaction flag is highly imbalanced, with very few positive cases.",
+        "variables_involved": [
+          "Cờ_giao_dịch_bất_thường"
+        ],
+        "evidence": "Mean = 0.03861 implies about 3.861% of records are 1, while median = 0.0, q25 = 0.0, q75 = 0.0 show the distribution is dominated by zeros. Step 2 flags 40 outliers (3.8610%) with lower_bound = 0.0 and upper_bound = 0.0, consistent with only the value 1 being outside the IQR fence. Skewness = 4.7965 and kurtosis = 21.0474 confirm a rare-event distribution.",
+        "strength": "strong",
+        "business_relevance": "This is likely a real business-event flag rather than a data error. In downstream analysis, use class-imbalance-aware methods and avoid interpreting IQR outlier flags here as data-quality problems."
+      },
+      {
+        "pattern_name": "Single extreme high outlier in Tỷ trọng thực tế",
+        "description": "Tỷ trọng thực tế is mostly stable but contains one very large high-end value far above the normal range.",
+        "variables_involved": [
+          "Tỷ trọng thực tế"
+        ],
+        "evidence": "Mean = 3.2236, median = 3.1602, q25 = 2.8078, q75 = 3.6666, std = 0.5950. The upper IQR bound is 4.9548, but max = 8.8248, producing 1 outlier (0.0965%). Min = 1.9364 remains above the lower bound 1.5196, so the anomaly is isolated on the high side only. Skewness = 0.7888 and kurtosis = 6.5650 also support a heavy upper tail driven by few values.",
+        "strength": "strong",
+        "business_relevance": "Because there is only one flagged case, this could be either a data-entry/calculation issue or a genuinely unusual product configuration. It should be individually audited; downstream models should winsorize or exclude it in sensitivity checks."
+      },
+      {
+        "pattern_name": "Heavy low-end outliers in Khối lượng",
+        "description": "Khối lượng shows a concentration in the upper range with a substantial set of unusually small transactions pulling the distribution left.",
+        "variables_involved": [
+          "Khối lượng"
+        ],
+        "evidence": "Mean = 3740.7963 is below median = 4020.0, indicating left-skew. q25 = 3510.0 and q75 = 4260.0 give an IQR fence of 2385.0 to 5385.0. There are 99 outliers (9.5560%), and since max = 5180.0 is below the upper bound while min = 210.0 is far below the lower bound, the outliers are on the low side. Skewness = -1.8067 and kurtosis = 3.1102 confirm a heavy lower tail.",
+        "strength": "strong",
+        "business_relevance": "These are likely either small special orders or potentially problematic records if such low weights are not operationally plausible. Downstream analysis should segment small-volume transactions or use robust statistics instead of simple averages."
+      },
+      {
+        "pattern_name": "Heavy low-end outliers in Thành Tiền and derived revenue ratios",
+        "description": "Revenue-related measures contain a sizable cluster of unusually low values, with no corresponding high-side IQR outliers.",
+        "variables_involved": [
+          "Thành Tiền",
+          "Doanh_thu_trên_mm",
+          "Tỷ_trọng_doanh_thu_%"
+        ],
+        "evidence": "Thành Tiền has mean = 81,933,785.90 below median = 86,226,338.0, min = 4,626,930.0, max = 121,947,595.0, q25 = 78,720,185.5, q75 = 94,304,663.75, and IQR bounds 55,343,468.125 to 117,681,381.125. Step 2 flags 110 outliers (10.6178%). Because max exceeds the upper bound by only about 4.27M while min is far below the lower bound by about 50.72M, the outlier mass is predominantly low-end. The same 110 outliers appear in Doanh_thu_trên_mm with bounds 46,119.125 to 98,068.125 and in Tỷ_trọng_doanh_thu_% with bounds 0.0651994 to 0.1386389. Skewness is -1.7115 for all three variables, indicating the same strong left-tail pattern.",
+        "strength": "strong",
+        "business_relevance": "This is likely a real concentration of low-value transactions rather than random error, especially because the same pattern repeats across derived revenue metrics. Downstream analysis should use robust summaries, and analysts should consider separating low-ticket orders from standard orders."
+      },
+      {
+        "pattern_name": "Extreme low-price observations in Giá_trên_kg",
+        "description": "Unit price is generally tight, but a few records are dramatically below the normal range.",
+        "variables_involved": [
+          "Giá_trên_kg"
+        ],
+        "evidence": "Mean = 21,907.6940, median = 22,086.5, q25 = 20,671.75, q75 = 23,100.0, giving IQR bounds 17,029.375 to 26,742.375. Only 3 outliers (0.2896%) are flagged, but min = 8,257.0 is far below the lower bound by 8,772.375, while max = 28,917.0 is only 2,174.625 above the upper bound. Skewness = -0.5152 and kurtosis = 3.8547 indicate a heavier-than-normal tail, driven mainly by low-price extremes.",
+        "strength": "moderate",
+        "business_relevance": "These may be pricing errors, special discounts, or unusual product mixes. They should be reviewed individually; downstream pricing models should cap or separately tag these records."
+      },
+      {
+        "pattern_name": "Discrete year anomaly concentrated in 2026",
+        "description": "The year field is almost entirely 2025, with a minority of 2026 records appearing as IQR outliers because the distribution is nearly constant.",
+        "variables_involved": [
+          "Năm"
+        ],
+        "evidence": "Năm has min = 2025.0, q25 = 2025.0, median = 2025.0, q75 = 2025.0, max = 2026.0. Step 2 flags 225 outliers (21.7181%) with lower_bound = 2025.0 and upper_bound = 2025.0, so all 2026 values are treated as outliers. Mean = 2025.2172 and std = 0.4125 are consistent with a two-point distribution dominated by 2025.",
+        "strength": "strong",
+        "business_relevance": "This is not a data-quality issue by itself; it reflects a near-constant temporal field with one additional year present. Downstream analysis should not treat these as anomalous transactions, but should handle year as a categorical/time variable."
+      },
+      {
+        "pattern_name": "Month field produces false IQR outliers due to bounded discrete scale",
+        "description": "The month variable shows many flagged outliers even though all values fall within the valid calendar range 1-12.",
+        "variables_involved": [
+          "Tháng"
+        ],
+        "evidence": "Tháng has min = 1.0, max = 12.0, q25 = 8.0, median = 10.0, q75 = 11.0. Step 2 flags 225 outliers (21.7181%) using bounds 3.5 to 15.5. Since max = 12.0 is within the upper bound, all flagged outliers must be low months 1-3. However, these are valid calendar values, not impossible values. Mean = 8.0830 and skewness = -1.0416 indicate concentration in later months, which mechanically makes early months look like IQR outliers.",
+        "strength": "strong",
+        "business_relevance": "This is an outlier-detection artifact, not a true anomaly. For downstream work, month should be treated as cyclical/discrete time, and IQR-based anomaly rules should not be used."
+      },
+      {
+        "pattern_name": "Long-gap tail in Khoảng_cách_đơn_trước",
+        "description": "Time between orders is heavily concentrated at zero or short gaps, with a long right tail of unusually large intervals.",
+        "variables_involved": [
+          "Khoảng_cách_đơn_trước"
+        ],
+        "evidence": "Khoảng_cách_đơn_trước has count = 994, mean = 4.7978, median = 0.0, q25 = 0.0, q75 = 6.0, std = 10.0055, min = 0.0, max = 92.0. Step 2 flags 84 outliers (8.1081%) with upper_bound = 15.0; the lower bound is -9.0, so only high values are flagged. Skewness = 4.0422 and kurtosis = 21.7628 show a very heavy right tail.",
+        "strength": "strong",
+        "business_relevance": "This likely reflects a mix of frequent repeat orders and a smaller set of long inactivity gaps, which is a real business pattern. Downstream analysis should use survival/recency-style features or log transforms rather than assuming a symmetric distribution."
+      },
+      {
+        "pattern_name": "Strong left-tail in Doanh_thu_tb_mỗi_lần",
+        "description": "Average revenue per sale is tightly clustered for most records but contains a set of much lower values that strongly distort the distribution.",
+        "variables_involved": [
+          "Doanh_thu_tb_mỗi_lần"
+        ],
+        "evidence": "Mean = 81,933,785.85, median = 83,620,071.0, q25 = 78,537,387.0, q75 = 86,079,553.0, std = 7,839,984.88, min = 7,781,840.0, max = 102,368,079.0. Step 2 flags 38 outliers (3.6680%) with bounds 67,224,138.0 to 97,392,802.0. The minimum is far below the lower bound by about 59.44M, while the maximum is only about 4.98M above the upper bound. Skewness = -3.2970 and kurtosis = 19.5130 indicate a very heavy lower tail.",
+        "strength": "strong",
+        "business_relevance": "This may indicate a subset of unusually small average-order products or possible data issues in product-level aggregation. Downstream analysis should inspect the low-end cases and use robust estimators."
+      },
+      {
+        "pattern_name": "Single-value constant field in Khổ (mm)",
+        "description": "Khổ (mm) has no variation at all across the dataset.",
+        "variables_involved": [
+          "Khổ (mm)"
+        ],
+        "evidence": "Count = 1036, mean = median = min = max = q25 = q75 = 1200.0, std = 0.0.",
+        "strength": "strong",
+        "business_relevance": "This is not an outlier pattern, but it is an unusual distributional property. It may indicate a fixed product width in this extract or a non-informative field. Downstream models should drop it as a predictor unless this constancy is itself analytically meaningful."
+      },
+      {
+        "pattern_name": "High-end concentration in Doanh_thu_tỉnh",
+        "description": "Province revenue appears to have a strong pile-up at the upper quartile boundary, suggesting repeated identical high values or a small number of dominant province totals.",
+        "variables_involved": [
+          "Doanh_thu_tỉnh"
+        ],
+        "evidence": "Mean = 24,705,239,794.13, median = 10,689,658,678.0, q25 = 7,589,710,139.0, q75 = 42,799,130,622.0, and max = 42,799,130,622.0. The fact that q75 equals the maximum means at least 25% of records are at the top observed value. Std = 17,890,476,444.95 and kurtosis = -1.9583 indicate a very flat, non-normal distribution.",
+        "strength": "moderate",
+        "business_relevance": "This could be real if many rows inherit the same province-level aggregate, but it may also reflect repeated joined totals rather than transaction-level variation. Downstream analysis should avoid treating this as an independent row-level measure without checking its construction."
+      },
+      {
+        "pattern_name": "Boundary-limited satisfaction score with low-end flagged cases",
+        "description": "Customer satisfaction is bounded above at 90 and has a cluster of unusually low values below the normal range.",
+        "variables_involved": [
+          "Điểm_hài_lòng_khách_hàng"
+        ],
+        "evidence": "Mean = 77.5772, median = 85.0, q25 = 70.0, q75 = 85.0, min = 45.0, max = 90.0. Step 2 flags 22 outliers (2.1236%) with bounds 47.5 to 107.5. Since the upper bound exceeds the maximum, all flagged outliers are low-end values below 47.5. Skewness = -0.9038 shows the distribution is concentrated near the upper end with a left tail.",
+        "strength": "moderate",
+        "business_relevance": "These low scores are likely real negative customer experiences rather than data errors. For downstream analysis, keep them, but consider robust summaries and separate monitoring of low-satisfaction cases."
+      }
+    ]
+  }
+}

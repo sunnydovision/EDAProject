@@ -1,0 +1,746 @@
+[
+  {
+    "question": "How does Năm change over STT?",
+    "reason": "Theo Step 4, giá trị trung bình của STT tăng đều theo từng tháng trong toàn bộ kỳ dữ liệu, không xuất hiện tháng đảo chiều. Đây là tín hiệu cho thấy chỉ số STT có xu hướng đi lên rất rõ ràng theo thời...",
+    "breakdown": "STT",
+    "measure": "MEAN(Năm)"
+  },
+  {
+    "question": "How does count change over STT?",
+    "reason": "Step 4 cho thấy tổng STT theo tháng đi lên mạnh từ tháng 8 đến tháng 10, giảm trong tháng 11, sau đó phục hồi và lập mức cao mới trong tháng 12 và tháng 1. Mẫu hình này phản ánh xu hướng tăng trưởng c...",
+    "breakdown": "STT",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "How does Độ D change over STT?",
+    "reason": "Theo Step 4, số bản ghi theo tháng không tăng đều mà biến động rõ rệt: tăng vọt lên đỉnh vào tháng 10, rơi xuống đáy trong tháng 11, rồi phục hồi lên mức cao khác vào tháng 1. Điều này cho thấy nhu cầ...",
+    "breakdown": "STT",
+    "measure": "MEAN(Độ D)"
+  },
+  {
+    "question": "How does count change over Khối lượng?",
+    "reason": "Step 4 ghi nhận tổng Khối lượng theo tháng không đi theo xu hướng tăng hoặc giảm đều. Cụ thể, khối lượng bán ra giảm ở giai đoạn đầu, tăng mạnh lên đỉnh trong tháng 10, giảm rõ ở tháng 11 và hồi phục ...",
+    "breakdown": "Khối lượng",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "How does STT change over Khối lượng?",
+    "reason": "Theo Step 4, trong khi tổng Khối lượng và số giao dịch thay đổi mạnh giữa các tháng, Khối lượng trung bình trên mỗi dòng bán hàng chỉ dao động trong biên độ hẹp. Điều này cho thấy biến động doanh số c...",
+    "breakdown": "Khối lượng",
+    "measure": "MEAN(STT)"
+  },
+  {
+    "question": "How does Tỷ trọng thực tế change over Độ D?",
+    "reason": "Step 4 cho thấy Độ D trung bình duy trì rất ổn định qua các tháng, chỉ có dao động nhỏ. Step 3 cũng hỗ trợ bối cảnh kỹ thuật khi Độ D có tương quan rất cao với Tỷ trọng thực tế ở mức 0.937, hàm ý cấu ...",
+    "breakdown": "Độ D",
+    "measure": "MEAN(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does STT change over Độ D?",
+    "reason": "Theo Step 4, tổng Độ D theo tháng tăng giảm chủ yếu cùng chiều với số lượng bản ghi, trong khi Độ D trung bình gần như giữ nguyên. Điều này cho thấy biến động tổng độ dày bán ra là hệ quả của thay đổi...",
+    "breakdown": "Độ D",
+    "measure": "MEAN(STT)"
+  },
+  {
+    "question": "How does count change over Met A?",
+    "reason": "Step 4 cho thấy Met A trung bình có xu hướng giảm từ tháng 8 đến tháng 11, sau đó tăng trở lại trong tháng 12 và tháng 1 nhưng vẫn chưa quay về mức đầu kỳ tháng 8. Đây là dấu hiệu cho thấy quy mô chiề...",
+    "breakdown": "Met A",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "How does Khối lượng change over Met A?",
+    "reason": "Theo Step 4, tổng Met A không ổn định theo thời gian mà tăng mạnh lên mức cao trong tháng 10, giảm sâu trong tháng 11 rồi tăng trở lại đến tháng 1. Step 3 cũng cho thấy Met A liên hệ chặt với Khối lượ...",
+    "breakdown": "Met A",
+    "measure": "MEAN(Khối lượng)"
+  },
+  {
+    "question": "How does count change over Met B?",
+    "reason": "Step 4 cho thấy Met B gần như bằng 0 ở một số tháng nhưng tăng vọt ở các tháng khác. Điều này phản ánh xu hướng bán hàng của Met B mang tính chiến dịch hoặc đơn hàng đặc thù, không phải nhu cầu đều đặ...",
+    "breakdown": "Met B",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "How does Met A change over SKU_Dòng?",
+    "reason": "Dựa trên Step 4, xu hướng chung của Met A là giảm từ tháng 8 đến tháng 11 rồi phục hồi một phần. Với nhóm SKU_Dòng = Tôn Màu, đây là phân khúc rất phù hợp để theo dõi riêng vì Met A có liên hệ mạnh vớ...",
+    "breakdown": "SKU_Dòng",
+    "measure": "MEAN(Met A)"
+  },
+  {
+    "question": "How does Khối lượng change over Loại_khách_hàng?",
+    "reason": "Step 4 cho thấy tổng Khối lượng toàn bộ dữ liệu tăng vọt vào tháng 10, giảm trong tháng 11 rồi phục hồi về cuối kỳ. Với nhóm Loại_khách_hàng = Bán sỉ, xu hướng này đặc biệt đáng chú ý vì biến động khố...",
+    "breakdown": "Loại_khách_hàng",
+    "measure": "MEAN(Khối lượng)"
+  },
+  {
+    "question": "What insights can we find about khối lượng có tỷ lệ ngoại lệ rất cao so với mức chấp nhận thông thường?",
+    "reason": "Bước 2 cho thấy có 99 bản ghi ngoại lệ ở cột Khối lượng, tương đương 9.56% dữ liệu. Đây là mức rất cao đối với một biến vận hành cốt lõi, cho thấy phân phối khối lượng có đuôi dày hoặc tồn tại các gia...",
+    "breakdown": "Khối lượng",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about met b xuất hiện hành vi bất thường theo thời gian với các tháng gần như bằng 0 xen kẽ các tháng tăng vọt?",
+    "reason": "Bước 4 ghi nhận Met B không đi theo xu hướng ổn định mà có các đợt spike ngắt quãng: một số tháng gần như bằng 0, trong khi các tháng khác tăng mạnh. Kiểu biến động này là dấu hiệu anomaly rõ rệt vì k...",
+    "breakdown": "Met B",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about tháng 11 là điểm bất thường của hoạt động bán hàng khi số giao dịch rơi xuống đáy rồi bật tăng trở lại?",
+    "reason": "Theo Bước 4, số lượng bản ghi giao dịch biến động mạnh theo thời gian: tăng vọt vào tháng 10, chạm đáy ở tháng 11, rồi quay lại mức cao vào tháng 1. Việc xuất hiện một đáy rõ rệt giữa hai giai đoạn ca...",
+    "breakdown": "STT",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about tổng khối lượng tháng 11 giảm bất thường sau đỉnh tháng 10 rồi phục hồi ở các tháng sau?",
+    "reason": "Bước 4 cho thấy tổng Khối lượng giảm trong giai đoạn đầu, tăng mạnh lên đỉnh vào tháng 10, sau đó giảm rõ rệt ở tháng 11 rồi hồi phục trở lại. Vì khối lượng là biến gắn chặt với doanh thu, cú rơi ngay...",
+    "breakdown": "Khối lượng",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about mã màu bị thiếu 32.05% là bất thường dữ liệu nghiêm trọng trong nhóm tôn màu?",
+    "reason": "Bước 2 ghi nhận 332 bản ghi thiếu Mã màu, tương đương 32.05% toàn bộ dữ liệu. Với nhóm sản phẩm có phân biệt màu sắc, tỷ lệ thiếu này là anomaly dữ liệu nghiêm trọng vì làm suy yếu nhận diện SKU, phân...",
+    "breakdown": "Mã màu",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about tên màu thiếu 32.05% là bất thường về khả năng diễn giải sản phẩm trong phân khúc tôn màu?",
+    "reason": "Cũng theo Bước 2, cột Tên màu thiếu 332 bản ghi, tương đương 32.05%. Đây là anomaly dữ liệu vì làm mất khả năng đọc hiểu trực tiếp của báo cáo bán hàng theo màu, đặc biệt trong phân khúc SKU_Dòng = Tô...",
+    "breakdown": "Tên màu",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about khu vực (quận/huyện) bị thiếu gần 5% là bất thường vì làm đứt gãy phân tích địa bàn?",
+    "reason": "Bước 2 cho thấy 49 bản ghi thiếu Khu Vực (Quận/Huyện), tương đương 4.73%. Với một trường địa lý quan trọng cho phân tích thị trường và vận hành giao hàng, mức thiếu này là anomaly dữ liệu đáng lưu ý, ...",
+    "breakdown": "Khu Vực (Quận/Huyện)",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about khoảng_cách_đơn_trước bị thiếu 4.05% là bất thường trong dữ liệu hành vi mua lặp lại?",
+    "reason": "Theo Bước 2, có 42 bản ghi thiếu Khoảng_cách_đơn_trước, tương đương 4.05%. Đây là anomaly ở lớp dữ liệu hành vi vì biến này thường được tính hệ thống từ chuỗi giao dịch; việc thiếu dữ liệu cho thấy kh...",
+    "breakdown": "Khoảng_cách_đơn_trước",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What is the relationship between Khối lượng and Thành Tiền?",
+    "reason": "Có mối tương quan dương rất mạnh giữa Khối lượng và Thành Tiền với hệ số tương quan 0.953, cho thấy doanh thu ở cấp giao dịch chủ yếu được dẫn dắt bởi khối lượng bán ra. Đây là một trong những mối qua...",
+    "breakdown": "Khối lượng",
+    "measure": "MEAN(Thành Tiền)"
+  },
+  {
+    "question": "What is the relationship between Độ D and Tỷ trọng thực tế?",
+    "reason": "Độ D có tương quan dương cực mạnh với Tỷ trọng thực tế, hệ số đạt 0.937. Điều này cho thấy khi vật liệu dày hơn thì tỷ trọng thực tế cũng tăng rất nhất quán, phù hợp với logic kỹ thuật sản phẩm. Đây l...",
+    "breakdown": "Độ D",
+    "measure": "MEAN(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "What is the relationship between Met A and Khối lượng?",
+    "reason": "Met A có tương quan dương mạnh với Khối lượng ở mức 0.767, cho thấy chiều dài/met chính của đơn hàng tăng thường đi kèm với khối lượng bán tăng. Về mặt vận hành, đây là tín hiệu rằng Met A có thể dùng...",
+    "breakdown": "Met A",
+    "measure": "MEAN(Khối lượng)"
+  },
+  {
+    "question": "What is the relationship between Met A and Thành Tiền?",
+    "reason": "Met A và Thành Tiền có tương quan dương mạnh 0.803. So với tương quan 0.953 giữa Khối lượng và Thành Tiền, điều này cho thấy chiều dài hàng bán có ảnh hưởng rõ rệt đến doanh thu, nhưng khối lượng vẫn ...",
+    "breakdown": "Met A",
+    "measure": "MEAN(Thành Tiền)"
+  },
+  {
+    "question": "What is the relationship between Giá_trên_kg and Số_lần_bán_sản_phẩm?",
+    "reason": "Giá_trên_kg có tương quan âm mạnh với Số_lần_bán_sản_phẩm ở mức -0.716. Điều này gợi ý rằng các sản phẩm có đơn giá/kg cao hơn thường có tần suất bán thấp hơn, phản ánh khả năng nhạy cảm giá hoặc tính...",
+    "breakdown": "Giá_trên_kg",
+    "measure": "MEAN(Số_lần_bán_sản_phẩm)"
+  },
+  {
+    "question": "What is the relationship between Giá_trên_kg and Tổng_doanh_thu_sản_phẩm?",
+    "reason": "Giá_trên_kg và Tổng_doanh_thu_sản_phẩm có tương quan âm mạnh ở mức -0.706. Điều này cho thấy các sản phẩm giá cao hơn trên mỗi kg không nhất thiết tạo ra doanh thu tích lũy lớn; ngược lại, doanh thu t...",
+    "breakdown": "Giá_trên_kg",
+    "measure": "MEAN(Tổng_doanh_thu_sản_phẩm)"
+  },
+  {
+    "question": "What is the relationship between Số_lần_bán_sản_phẩm and Tổng_doanh_thu_sản_phẩm?",
+    "reason": "Số_lần_bán_sản_phẩm và Tổng_doanh_thu_sản_phẩm có tương quan cực mạnh 0.998, gần như tuyến tính hoàn hảo. Điều này cho thấy doanh thu tích lũy theo sản phẩm chủ yếu được tạo ra bởi tần suất bán lặp lạ...",
+    "breakdown": "Số_lần_bán_sản_phẩm",
+    "measure": "MEAN(Tổng_doanh_thu_sản_phẩm)"
+  },
+  {
+    "question": "What is the relationship between Giá_trên_kg and Số_lần_bán_sản_phẩm?",
+    "reason": "Ở phân khúc SKU_Dòng = Tôn Màu, dữ liệu tổng thể cho thấy Giá_trên_kg có tương quan âm mạnh với Số_lần_bán_sản_phẩm ở mức -0.716 theo step3_statistics. Insight này đặc biệt đáng theo dõi ở Tôn Màu vì ...",
+    "breakdown": "Giá_trên_kg",
+    "measure": "MEAN(Số_lần_bán_sản_phẩm)"
+  },
+  {
+    "question": "What is the relationship between Khối lượng and Thành Tiền?",
+    "reason": "Với đặc thù đơn hàng lớn của nhóm Loại_khách_hàng = Bán sỉ, mối tương quan toàn dữ liệu giữa Khối lượng và Thành Tiền ở mức 0.953 cho thấy doanh thu của nhóm này rất có khả năng bị chi phối mạnh bởi q...",
+    "breakdown": "Khối lượng",
+    "measure": "MEAN(Thành Tiền)"
+  },
+  {
+    "question": "What insights can we find about khối lượng có phân phối lệch phải với tỷ lệ ngoại lệ cao?",
+    "reason": "Phân phối của 'Khối lượng' nhiều khả năng bị kéo lệch bởi các đơn hàng rất lớn: bước đánh giá chất lượng ghi nhận 99 bản ghi ngoại lệ, tương đương 9.56% dữ liệu. Điều này cho thấy phần lớn giao dịch t...",
+    "breakdown": "Khối lượng",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about độ d ổn định hơn nhiều so với khối lượng trong toàn bộ dữ liệu?",
+    "reason": "So với 'Khối lượng' có 9.56% bản ghi ngoại lệ, 'Độ D' được mô tả là có giá trị trung bình gần như không đổi theo thời gian. Đây là một tương phản rõ rệt giữa một biến vận hành biến động mạnh theo quy ...",
+    "breakdown": "Độ D",
+    "measure": "MEAN(Khối lượng)"
+  },
+  {
+    "question": "What insights can we find about doanh thu tập trung chủ yếu theo khối lượng hơn là theo biến động giá?",
+    "reason": "Mức gắn kết giữa 'Khối lượng' và 'Thành Tiền' rất cao với hệ số tương quan 0.953, trong khi 'Khối lượng' cũng gần như đồng biến hoàn hảo với 'Doanh_thu_trên_mm' ở mức 0.953. Điều này cho thấy khác biệ...",
+    "breakdown": "Khối lượng",
+    "measure": "MEAN(Thành Tiền)"
+  },
+  {
+    "question": "What insights can we find about met a phân tán rộng hơn độ d và đóng vai trò lớn hơn trong khác biệt doanh thu?",
+    "reason": "'Met A' có tương quan với 'Thành Tiền' ở mức 0.803, thấp hơn 'Khối lượng' nhưng vẫn rất mạnh, trong khi 'Độ D' không xuất hiện như một biến doanh thu chính trong các tương quan mạnh. Kết hợp với việc ...",
+    "breakdown": "Met A",
+    "measure": "MEAN(Độ D)"
+  },
+  {
+    "question": "What insights can we find about trong nhóm tôn kẽm, phân phối màu nhiều khả năng tập trung vào hàng không màu?",
+    "reason": "Danh mục hợp lệ cho 'Mã_sản_phẩm' cho thấy 2 mã 'Tôn Kẽm' đều gắn với 'KHÔNGMÀU', trong khi các mã màu cụ thể chủ yếu thuộc 'Tôn Màu'. Điều này hàm ý trong phân khúc 'SKU_Dòng' = 'Tôn Kẽm', phân phối ...",
+    "breakdown": "SKU_Dòng",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about trong nhóm tôn màu, phân phối sku_màu đa dạng hơn rõ rệt so với tôn kẽm?",
+    "reason": "Danh sách giá trị hợp lệ cho thấy 'Tôn Màu' có ít nhất 8 mã sản phẩm màu khác nhau trong 'Mã_sản_phẩm' mẫu hợp lệ, gồm PBLU02, PBLU09, PGRA01, PGRA02, PGRE01, PGRE02, PGRE03, PGRE09 và PRED09. So với ...",
+    "breakdown": "SKU_Dòng",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about dữ liệu màu bị thiếu ở quy mô lớn, làm méo phân phối sản phẩm theo màu?",
+    "reason": "Cả 'Mã màu' và 'Tên màu' đều thiếu 332 bản ghi, tương đương 32.05% dữ liệu. Với tỷ lệ thiếu gần 1/3 tập dữ liệu, mọi so sánh cơ cấu bán theo màu hiện tại đều có nguy cơ đánh giá thấp các nhóm màu thực...",
+    "breakdown": "Mã màu",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about phân phối địa lý ở cấp quận/huyện đáng tin cậy hơn nhiều so với phân phối màu?",
+    "reason": "'Khu Vực (Quận/Huyện)' chỉ thiếu 49 bản ghi, tương đương 4.73%, trong khi 'Mã màu' và 'Tên màu' đều thiếu 32.05%. Chênh lệch 27.32 điểm phần trăm cho thấy các so sánh theo địa lý có nền dữ liệu đầy đủ...",
+    "breakdown": "Khu Vực (Quận/Huyện)",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about giá_trên_kg có xu hướng thấp hơn ở các sản phẩm bán thường xuyên hơn?",
+    "reason": "Có mối quan hệ nghịch mạnh giữa 'Giá_trên_kg' và 'Số_lần_bán_sản_phẩm' với hệ số tương quan -0.716. Đồng thời, 'Giá_trên_kg' cũng tương quan âm với 'Tổng_doanh_thu_sản_phẩm' ở mức -0.706. Điều này cho...",
+    "breakdown": "Giá_trên_kg",
+    "measure": "MEAN(Số_lần_bán_sản_phẩm)"
+  },
+  {
+    "question": "What insights can we find about sản phẩm bán nhiều lần gần như cũng là sản phẩm tạo doanh thu tích lũy cao nhất?",
+    "reason": "'Số_lần_bán_sản_phẩm' và 'Tổng_doanh_thu_sản_phẩm' có tương quan cực cao 0.998. Đây là dấu hiệu rất mạnh cho thấy phân phối doanh thu theo sản phẩm bị chi phối chủ yếu bởi tần suất bán: các SKU xuất h...",
+    "breakdown": "Số_lần_bán_sản_phẩm",
+    "measure": "MEAN(Tổng_doanh_thu_sản_phẩm)"
+  },
+  {
+    "question": "What patterns exist in Thành Tiền by Khối lượng?",
+    "reason": "Có một mẫu hình rất rõ: khi Khối lượng tăng thì Thành Tiền cũng tăng gần tương ứng. Ở bước 3, hệ số tương quan giữa Khối lượng và Thành Tiền đạt 0.953, cho thấy doanh thu dòng bán hàng chủ yếu được dẫ...",
+    "breakdown": "Khối lượng",
+    "measure": "MEAN(Thành Tiền)"
+  },
+  {
+    "question": "What patterns exist in Thành Tiền by Met A?",
+    "reason": "Met A cũng tăng cùng Thành Tiền, nhưng mức độ kém chặt hơn Khối lượng. Ở bước 3, tương quan Met A với Thành Tiền là 0.803, trong khi Khối lượng với Thành Tiền là 0.953. Điều này cho thấy chiều dài bán...",
+    "breakdown": "Met A",
+    "measure": "MEAN(Thành Tiền)"
+  },
+  {
+    "question": "What patterns exist in Tỷ trọng thực tế by Độ D?",
+    "reason": "Một mẫu hình cấu trúc rất mạnh xuất hiện giữa Độ D và Tỷ trọng thực tế. Bước 3 cho thấy hệ số tương quan đạt 0.937, nghĩa là sản phẩm dày hơn gần như luôn đi kèm tỷ trọng thực tế cao hơn. Đây là quan ...",
+    "breakdown": "Độ D",
+    "measure": "MEAN(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "What patterns exist in Tổng_doanh_thu_sản_phẩm by Số_lần_bán_sản_phẩm?",
+    "reason": "Có một mẫu hình rất nhất quán ở cấp sản phẩm: Số_lần_bán_sản_phẩm và Tổng_doanh_thu_sản_phẩm gần như tăng cùng nhau hoàn toàn. Bước 3 ghi nhận tương quan 0.998, cho thấy doanh thu tích lũy của sản phẩ...",
+    "breakdown": "Số_lần_bán_sản_phẩm",
+    "measure": "MEAN(Tổng_doanh_thu_sản_phẩm)"
+  },
+  {
+    "question": "What patterns exist in count by Doanh_thu_theo_tuan_trong_thang?",
+    "reason": "Ở bước 3, Doanh_thu_theo_tuan_trong_thang có tương quan dương 0.702 với Tần_suất_bán. Mẫu hình này cho thấy các tuần có nhịp bán dày hơn cũng thường là các tuần tạo doanh thu cao hơn, phản ánh tăng tr...",
+    "breakdown": "Doanh_thu_theo_tuan_trong_thang",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What patterns exist in Số_lần_bán_sản_phẩm by Giá_trên_kg?",
+    "reason": "Trong phân khúc SKU_Dòng = Tôn Màu, mẫu hình chung của toàn bộ dữ liệu nhiều khả năng đặc biệt quan trọng: Giá_trên_kg có xu hướng giảm khi Số_lần_bán_sản_phẩm tăng. Bước 3 cho thấy tương quan toàn cụ...",
+    "breakdown": "Giá_trên_kg",
+    "measure": "MEAN(Số_lần_bán_sản_phẩm)"
+  },
+  {
+    "question": "What patterns exist in Thành Tiền by Khối lượng?",
+    "reason": "Với nhóm Loại_khách_hàng = Bán sỉ, mẫu hình cốt lõi của dữ liệu là doanh thu tăng gần như đồng bộ với khối lượng bán. Bước 3 cho thấy tương quan toàn cục giữa Khối lượng và Thành Tiền là 0.953; đây là...",
+    "breakdown": "Khối lượng",
+    "measure": "MEAN(Thành Tiền)"
+  },
+  {
+    "question": "What patterns exist in count by Mã màu?",
+    "reason": "Bước 2 cho thấy cả Mã màu và Tên màu cùng thiếu đúng 332 bản ghi, tương đương 32.05%. Việc hai cột màu cùng thiếu với cùng quy mô là một mẫu hình dữ liệu rất rõ, cho thấy khả năng thiếu theo nhóm sản ...",
+    "breakdown": "Mã màu",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What patterns exist in count by Khối lượng?",
+    "reason": "Bước 2 ghi nhận 99 bản ghi ngoại lệ ở Khối lượng, tương đương 9.56% dữ liệu. Đây là tỷ lệ khá cao, cho thấy phân phối Khối lượng không đồng đều mà có đuôi dài hoặc tồn tại nhóm đơn hàng rất lớn tách b...",
+    "breakdown": "Khối lượng",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "How does Tuần_trong_tháng change over Doanh_thu_theo_tuan_trong_thang?",
+    "reason": "Có một xu hướng tăng đồng biến khá rõ giữa Doanh_thu_theo_tuan_trong_thang và tần suất bán: hệ số tương quan đạt 0.702. Mức tương quan này cho thấy khi hoạt động bán diễn ra thường xuyên hơn trong các...",
+    "breakdown": "Doanh_thu_theo_tuan_trong_thang",
+    "measure": "MEAN(Tuần_trong_tháng)"
+  },
+  {
+    "question": "How does Tuần_trong_tháng change over Ngày?",
+    "reason": "Biến Ngày và Tuần_trong_tháng có tương quan rất cao, đạt 0.986, cho thấy dữ liệu phân bổ theo tiến trình thời gian trong tháng khá nhất quán. Điều này hàm ý các xu hướng theo Tuần_trong_tháng có thể đ...",
+    "breakdown": "Ngày",
+    "measure": "MEAN(Tuần_trong_tháng)"
+  },
+  {
+    "question": "How does Số_lần_bán_sản_phẩm change over Giá_trên_kg?",
+    "reason": "Dữ liệu cho thấy một xu hướng giảm khá rõ của Giá_trên_kg khi Số_lần_bán_sản_phẩm tăng, với hệ số tương quan -0.716. Điều này gợi ý các sản phẩm được bán lặp lại nhiều thường đi kèm mức giá/kg thấp hơ...",
+    "breakdown": "Giá_trên_kg",
+    "measure": "MEAN(Số_lần_bán_sản_phẩm)"
+  },
+  {
+    "question": "How does Số_lần_bán_sản_phẩm change over Giá_trên_kg?",
+    "reason": "Nhóm SKU_Dòng = Tôn Màu là phân khúc phù hợp để theo dõi xu hướng giữa Giá_trên_kg và Số_lần_bán_sản_phẩm, vì đây là nhóm có đa dạng SKU_Màu hơn và do đó cạnh tranh giá thường thể hiện rõ hơn. Trên to...",
+    "breakdown": "Giá_trên_kg",
+    "measure": "MEAN(Số_lần_bán_sản_phẩm)"
+  },
+  {
+    "question": "How does Tuần_trong_tháng change over Doanh_thu_theo_tuan_trong_thang?",
+    "reason": "Phân khúc Loại_khách_hàng = Bán lẻ là nhóm tự nhiên để đọc xu hướng doanh thu theo tuần, vì doanh thu bán lẻ thường nhạy hơn với tần suất mua. Trên toàn bộ dữ liệu, Doanh_thu_theo_tuan_trong_thang có ...",
+    "breakdown": "Doanh_thu_theo_tuan_trong_thang",
+    "measure": "MEAN(Tuần_trong_tháng)"
+  },
+  {
+    "question": "How does Năm change over STT?",
+    "reason": "STT có tương quan dương khá mạnh với Năm, đạt 0.714, cho thấy chỉ số thứ tự bản ghi có xu hướng tăng lên rõ rệt theo tiến trình thời gian. Dù STT không phải chỉ số kinh doanh trực tiếp, xu hướng này x...",
+    "breakdown": "STT",
+    "measure": "MEAN(Năm)"
+  },
+  {
+    "question": "What insights can we find about thành tiền và doanh_thu_trên_mm gần như trùng lặp hoàn toàn, là một bất thường cấu trúc dữ liệu?",
+    "reason": "Bước 3 cho thấy hệ số tương quan giữa Thành Tiền và Doanh_thu_trên_mm đạt 0.9999999998623459, gần như bằng 1 tuyệt đối. Mức đồng biến này bất thường vì hai chỉ số theo tên gọi đáng ra phản ánh hai góc...",
+    "breakdown": "Thành Tiền",
+    "measure": "MEAN(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "What insights can we find about ngày và tuần_trong_tháng có quan hệ gần như xác định, cho thấy khả năng trùng thông tin theo lịch?",
+    "reason": "Theo Bước 3, tương quan giữa Ngày và Tuần_trong_tháng là 0.985714128487954. Đây là mức rất cao và mang tính bất thường đối với hai trường được lưu riêng, vì Tuần_trong_tháng thực chất gần như được suy...",
+    "breakdown": "Ngày",
+    "measure": "MEAN(Tuần_trong_tháng)"
+  },
+  {
+    "question": "What insights can we find about năm và tháng đảo chiều cực mạnh, là dấu hiệu bất thường do phạm vi thời gian quá ngắn?",
+    "reason": "Bước 3 ghi nhận tương quan giữa Năm và Tháng là -0.9516897377861393. Đây là mức âm rất mạnh và bất thường trong dữ liệu bán hàng, nhiều khả năng không phản ánh quy luật kinh doanh mà chỉ do dữ liệu tr...",
+    "breakdown": "Năm",
+    "measure": "MEAN(Tháng)"
+  },
+  {
+    "question": "What insights can we find about mã màu bị thiếu ở quy mô 32.05% là ngoại lệ nghiêm trọng trong nhận diện sản phẩm?",
+    "reason": "Bước 2 cho thấy Mã màu thiếu 332 bản ghi, tương đương 32.05% dữ liệu. Đây là mức thiếu rất cao đối với một thuộc tính nhận diện sản phẩm cốt lõi, đặc biệt trong bối cảnh danh mục có nhiều mã màu chuẩn...",
+    "breakdown": "Mã màu",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about trong nhóm loại hàng = ppgl, rủi ro méo phân tích màu đặc biệt cao vì mã màu thiếu nhiều ở cấp toàn bộ dữ liệu?",
+    "reason": "Bước 2 xác nhận Mã màu thiếu 332 bản ghi, tương đương 32.05% toàn bộ dữ liệu. Với nhóm Loại Hàng = PPGL là nhóm gắn chặt với phân biệt màu sắc hơn GL, mức thiếu lớn này là một bất thường đáng chú ý vì...",
+    "breakdown": "Loại Hàng",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about trong nhóm sku_dòng = tôn màu, thiếu tên màu ở mức 32.05% là bất thường vận hành và thương mại?",
+    "reason": "Theo Bước 2, Tên màu thiếu 332 bản ghi, tương đương 32.05% dữ liệu. Với phân khúc SKU_Dòng = Tôn Màu, đây là một bất thường đặc biệt nghiêm trọng vì màu sắc là thuộc tính thương mại trực tiếp ảnh hưởn...",
+    "breakdown": "SKU_Dòng",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about khu vực (quận/huyện) thiếu gần 5% là bất thường vì thấp hơn nhiều so với lỗi màu nhưng vẫn đủ làm gãy phân tích địa bàn?",
+    "reason": "Bước 2 ghi nhận 49 bản ghi thiếu Khu Vực (Quận/Huyện), tương đương 4.73%. Dù thấp hơn nhiều so với mức thiếu 32.05% của dữ liệu màu, đây vẫn là một bất thường đáng chú ý vì địa bàn là trường phân tích...",
+    "breakdown": "Khu Vực (Quận/Huyện)",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about met b có hành vi phát sinh theo từng đợt, khác thường rõ rệt so với các biến sản lượng chính?",
+    "reason": "Bước 4 cho thấy Met B 'stays near zero in some months and spikes sharply in others', tức có những tháng gần như bằng 0 rồi tăng vọt ở các tháng khác. Đây là mẫu hình bất thường so với Khối lượng, Độ D...",
+    "breakdown": "Met B",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What is the relationship between Thành Tiền and Doanh_thu_trên_mm?",
+    "reason": "Trên toàn bộ dữ liệu, \"Thành Tiền\" và \"Doanh_thu_trên_mm\" có tương quan gần như tuyệt đối với hệ số 0.9999999998623459. Mức này cho thấy hai chỉ số gần như di chuyển cùng nhau trong mọi giao dịch, nên...",
+    "breakdown": "Thành Tiền",
+    "measure": "MEAN(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "What is the relationship between Giá_trên_kg and Số_lần_bán_sản_phẩm?",
+    "reason": "Trong phân khúc \"SKU_Dòng\" = \"Tôn Màu\", mối quan hệ giữa \"Giá_trên_kg\" và \"Số_lần_bán_sản_phẩm\" mang chiều âm rõ rệt theo kết quả thống kê tổng thể: hệ số tương quan đạt -0.7161388135622632. Điều này ...",
+    "breakdown": "Giá_trên_kg",
+    "measure": "MEAN(Số_lần_bán_sản_phẩm)"
+  },
+  {
+    "question": "What is the relationship between Giá_trên_kg and Tổng_doanh_thu_sản_phẩm?",
+    "reason": "\"Giá_trên_kg\" và \"Tổng_doanh_thu_sản_phẩm\" có tương quan âm mạnh ở mức -0.7057758468569361. Nghĩa là các sản phẩm có đơn giá/kg cao hơn thường không chuyển hóa thành doanh thu tích lũy cao hơn; ngược ...",
+    "breakdown": "Giá_trên_kg",
+    "measure": "MEAN(Tổng_doanh_thu_sản_phẩm)"
+  },
+  {
+    "question": "What is the relationship between Số_lần_bán_sản_phẩm and Tần_suất_bán?",
+    "reason": "\"Số_lần_bán_sản_phẩm\" và \"Tần_suất_bán\" có tương quan 0.8912135324494245 theo thống kê đã phát hiện. Đây là mức rất cao, cho thấy các sản phẩm xuất hiện nhiều lần trong lịch sử cũng là các sản phẩm có...",
+    "breakdown": "Số_lần_bán_sản_phẩm",
+    "measure": "MEAN(Tần_suất_bán)"
+  },
+  {
+    "question": "What is the relationship between Tổng_doanh_thu_sản_phẩm and Tần_suất_bán?",
+    "reason": "\"Tổng_doanh_thu_sản_phẩm\" và \"Tần_suất_bán\" có tương quan dương mạnh ở mức 0.8884823034537601. Điều này cho thấy doanh thu tích lũy không chỉ đến từ việc sản phẩm được bán nhiều lần, mà còn gắn với vi...",
+    "breakdown": "Tổng_doanh_thu_sản_phẩm",
+    "measure": "MEAN(Tần_suất_bán)"
+  },
+  {
+    "question": "What is the relationship between Doanh_thu_theo_tuan_trong_thang and Tần_suất_bán?",
+    "reason": "\"Doanh_thu_theo_tuan_trong_thang\" và \"Tần_suất_bán\" có tương quan dương 0.7021597811469702. Đây là bằng chứng rằng các tuần có cường độ bán cao hơn thường cũng là các tuần tạo doanh thu lớn hơn, hàm ý...",
+    "breakdown": "Doanh_thu_theo_tuan_trong_thang",
+    "measure": "MEAN(Tần_suất_bán)"
+  },
+  {
+    "question": "What is the relationship between Ngày and Tuần_trong_tháng?",
+    "reason": "\"Ngày\" và \"Tuần_trong_tháng\" có tương quan rất cao ở mức 0.985714128487954. Đây là quan hệ gần tuyến tính, cho thấy vị trí ngày trong tháng gần như tự động kéo theo vị trí tuần tương ứng. Về mặt phân ...",
+    "breakdown": "Ngày",
+    "measure": "MEAN(Tuần_trong_tháng)"
+  },
+  {
+    "question": "What is the relationship between Giá_trên_kg and Số_lần_bán_sản_phẩm?",
+    "reason": "Ở phân khúc \"Loại_khách_hàng\" = \"Bán sỉ\", kết quả tương quan tổng thể giữa \"Giá_trên_kg\" và \"Số_lần_bán_sản_phẩm\" là -0.7161388135622632 cho thấy một rủi ro thương mại rõ rệt: khi giá/kg tăng, khả năn...",
+    "breakdown": "Giá_trên_kg",
+    "measure": "MEAN(Số_lần_bán_sản_phẩm)"
+  },
+  {
+    "question": "What insights can we find about doanh thu gần như là bản sao của doanh_thu_trên_mm trên toàn bộ dữ liệu?",
+    "reason": "Phân phối và chênh lệch giữa Thành Tiền và Doanh_thu_trên_mm gần như không đáng kể vì hệ số tương quan đạt 0.9999999998623459, tức hai biến di chuyển gần như trùng khít. Về mặt so sánh, điều này cho t...",
+    "breakdown": "Thành Tiền",
+    "measure": "MEAN(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "What insights can we find about ngày trong tháng và tuần_trong_tháng có cấu trúc phân bố gần như đồng tuyến?",
+    "reason": "Biến Ngày và Tuần_trong_tháng có tương quan 0.985714128487954, cho thấy khi ngày trong tháng tăng thì tuần trong tháng cũng tăng gần như đều. Đây là một quan hệ phân bố rất chặt, nên khi so sánh theo ...",
+    "breakdown": "Ngày",
+    "measure": "MEAN(Tuần_trong_tháng)"
+  },
+  {
+    "question": "What insights can we find about khối lượng gắn với met a mạnh hơn nhiều so với vai trò của các biến mét phụ?",
+    "reason": "Khối lượng và Met A có tương quan 0.7669886519096648, cho thấy phần lớn khác biệt về khối lượng giữa các giao dịch đi cùng khác biệt về Met A. So với mô tả ở bước 4 rằng Met B chỉ xuất hiện theo các đ...",
+    "breakdown": "Khối lượng",
+    "measure": "MEAN(Met A)"
+  },
+  {
+    "question": "What insights can we find about phân phối khối lượng có độ bất ổn cao hơn nhiều so với độ d?",
+    "reason": "Bước 2 ghi nhận 99 bản ghi ngoại lệ ở Khối lượng, tương đương 9.56% dữ liệu, trong khi bước 4 cho thấy Độ D bình quân gần như ổn định theo thời gian. So sánh hai biến cho thấy biến động vận hành tập t...",
+    "breakdown": "Khối lượng",
+    "measure": "MEAN(Độ D)"
+  },
+  {
+    "question": "What insights can we find about trong nhóm loại hàng = ppgl, phân tích theo màu đáng tin cậy kém hơn phân tích theo địa bàn?",
+    "reason": "Với 332 bản ghi thiếu ở Mã màu và cũng 332 bản ghi thiếu ở Tên màu, tương đương 32.05% dữ liệu, phân phối sản phẩm theo màu trong nhóm PPGL sẽ dễ bị méo mạnh. Trong khi đó, Khu Vực (Quận/Huyện) chỉ th...",
+    "breakdown": "Mã màu",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about trong nhóm sku_dòng = tôn kẽm, phân tích theo màu gần như không hữu ích bằng phân tích theo độ dày?",
+    "reason": "Danh mục SKU_Màu có giá trị KHÔNGMÀU trong khi dữ liệu màu toàn bộ lại thiếu tới 32.05% ở cả Mã màu và Tên màu. So với đó, SKU_Độ_dày chỉ có 2 mức rõ ràng là Mỏng và Trung bình, nên khi so sánh phân p...",
+    "breakdown": "SKU_Màu",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about giá_trên_kg phân hóa ngược chiều rõ với mức độ phổ biến bán hàng?",
+    "reason": "Giá_trên_kg có tương quan âm mạnh với Số_lần_bán_sản_phẩm ở mức -0.7161388135622632. Điều này cho thấy khi so sánh phân phối giá giữa các sản phẩm, nhóm được bán lặp lại nhiều thường nằm ở vùng giá th...",
+    "breakdown": "Giá_trên_kg",
+    "measure": "MEAN(Số_lần_bán_sản_phẩm)"
+  },
+  {
+    "question": "What insights can we find about năm và tháng tạo ra phân bố thời gian lệch mạnh giữa các giai đoạn quan sát?",
+    "reason": "Tương quan giữa Năm và Tháng là -0.9516897377861393, cho thấy dữ liệu không phân bố đều theo lịch mà tập trung vào một dải tháng gắn với hai năm liền kề. Khi so sánh theo thời gian, cần hiểu rằng sự k...",
+    "breakdown": "Năm",
+    "measure": "MEAN(Tháng)"
+  },
+  {
+    "question": "What patterns exist in Doanh_thu_trên_mm by Thành Tiền?",
+    "reason": "Có một mẫu hình rất rõ: \"Doanh_thu_trên_mm\" di chuyển gần như đồng nhất với \"Thành Tiền\" trên toàn bộ dữ liệu. Ở bước 3, hệ số tương quan giữa hai biến đạt 0.9999999998623459, tức gần như hoàn hảo. Đi...",
+    "breakdown": "Thành Tiền",
+    "measure": "MEAN(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "What patterns exist in Tuần_trong_tháng by Ngày?",
+    "reason": "Dữ liệu cho thấy một mẫu hình lịch rất ổn định: khi \"Ngày\" tăng lên, \"Tuần_trong_tháng\" cũng tăng gần như tương ứng. Ở bước 3, hệ số tương quan giữa hai biến đạt 0.985714128487954, mức rất cao. Điều n...",
+    "breakdown": "Ngày",
+    "measure": "MEAN(Tuần_trong_tháng)"
+  },
+  {
+    "question": "What patterns exist in Met A by Khối lượng?",
+    "reason": "Một mẫu hình vận hành nổi bật là \"Khối lượng\" tăng mạnh khi \"Met A\" tăng. Bước 3 cho thấy hệ số tương quan giữa hai biến là 0.7669886519096648, đủ cao để xem Met A là một thành phần cấu trúc quan trọn...",
+    "breakdown": "Khối lượng",
+    "measure": "MEAN(Met A)"
+  },
+  {
+    "question": "What patterns exist in Số_lần_bán_sản_phẩm by Giá_trên_kg?",
+    "reason": "Trong phân khúc \"SKU_Dòng = Tôn Màu\", dữ liệu nhiều khả năng đang thể hiện mẫu hình thương mại quen thuộc: sản phẩm có \"Giá_trên_kg\" cao hơn thường bán lặp lại ít hơn. Bằng chứng nền ở bước 3 cho toàn...",
+    "breakdown": "Giá_trên_kg",
+    "measure": "MEAN(Số_lần_bán_sản_phẩm)"
+  },
+  {
+    "question": "What patterns exist in count by Khối lượng?",
+    "reason": "Bước 2 cho thấy \"Khối lượng\" có 99 bản ghi ngoại lệ, tương đương 9.56% dữ liệu, một tỷ lệ khá cao. Trong bối cảnh phân khúc \"Loại_khách_hàng = Bán lẻ\", mẫu hình này gợi ý phân phối khối lượng đơn hàng...",
+    "breakdown": "Khối lượng",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What patterns exist in Tháng by Năm?",
+    "reason": "Bước 3 cho thấy \"Năm\" và \"Tháng\" có tương quan âm rất mạnh ở mức -0.9516897377861393. Đây là một mẫu hình thời gian đặc thù, hàm ý dữ liệu đang bao phủ một giai đoạn ngắn chuyển từ cuối một năm sang đ...",
+    "breakdown": "Năm",
+    "measure": "MEAN(Tháng)"
+  },
+  {
+    "question": "What patterns exist in count by Met B?",
+    "reason": "Theo bước 4, \"Met B\" không hình thành xu hướng tăng hoặc giảm đều mà xuất hiện các tháng gần như bằng 0 xen kẽ các tháng tăng vọt. Đây là một mẫu hình gián đoạn rõ rệt, cho thấy Met B có thể gắn với c...",
+    "breakdown": "Met B",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "How does Năm change over Met A?",
+    "reason": "Theo Step 4, giá trị trung bình của Met A giảm liên tục từ tháng 8 đến tháng 11 rồi mới hồi phục trong tháng 12 và tháng 1. Điểm quan trọng là nhịp hồi này chỉ mang tính phục hồi một phần, vì mức cuối...",
+    "breakdown": "Met A",
+    "measure": "MEAN(Năm)"
+  },
+  {
+    "question": "How does Năm change over STT?",
+    "reason": "Step 4 cho thấy số bản ghi theo tháng không đi theo một xu hướng tăng trưởng ổn định mà dao động mạnh: tăng vọt lên đỉnh vào tháng 10, rơi xuống đáy trong tháng 11, rồi trở lại mức cao trong tháng 1. ...",
+    "breakdown": "STT",
+    "measure": "MEAN(Năm)"
+  },
+  {
+    "question": "How does Tuần_trong_tháng change over Doanh_thu_theo_tuan_trong_thang?",
+    "reason": "Step 3 ghi nhận tương quan dương mạnh giữa Doanh_thu_theo_tuan_trong_thang và Tần_suất_bán ở mức 0.702. Đây là dấu hiệu xu hướng rõ ràng: khi nhịp bán lặp lại tăng lên theo tuần trong tháng, doanh thu...",
+    "breakdown": "Doanh_thu_theo_tuan_trong_thang",
+    "measure": "MEAN(Tuần_trong_tháng)"
+  },
+  {
+    "question": "How does Tuần_trong_tháng change over Doanh_thu_theo_tuan_trong_thang?",
+    "reason": "Dựa trên Step 3, mối liên hệ dương mạnh giữa Doanh_thu_theo_tuan_trong_thang và Tần_suất_bán đạt 0.702 trên toàn bộ dữ liệu. Khi đặt trong phân khúc Loại_khách_hàng = Bán lẻ, đây là một xu hướng đặc b...",
+    "breakdown": "Doanh_thu_theo_tuan_trong_thang",
+    "measure": "MEAN(Tuần_trong_tháng)"
+  },
+  {
+    "question": "How does Số_lần_bán_sản_phẩm change over Giá_trên_kg?",
+    "reason": "Step 3 cho thấy Giá_trên_kg có tương quan âm mạnh với Số_lần_bán_sản_phẩm ở mức -0.716 và với Tổng_doanh_thu_sản_phẩm ở mức -0.706. Với phân khúc SKU_Dòng = Tôn Màu, điều này phản ánh một xu hướng thư...",
+    "breakdown": "Giá_trên_kg",
+    "measure": "MEAN(Số_lần_bán_sản_phẩm)"
+  },
+  {
+    "question": "How does Tổng_doanh_thu_sản_phẩm change over Số_lần_bán_sản_phẩm?",
+    "reason": "Theo Step 3, Số_lần_bán_sản_phẩm và Tổng_doanh_thu_sản_phẩm có tương quan cực cao 0.998. Đây là một xu hướng gần như đơn điệu: khi một sản phẩm được bán lặp lại nhiều hơn, doanh thu tích lũy của sản p...",
+    "breakdown": "Số_lần_bán_sản_phẩm",
+    "measure": "MEAN(Tổng_doanh_thu_sản_phẩm)"
+  },
+  {
+    "question": "How does Tổng_doanh_thu_sản_phẩm change over Tần_suất_bán?",
+    "reason": "Step 3 cho thấy Tổng_doanh_thu_sản_phẩm có tương quan 0.888 với Tần_suất_bán, trong khi Số_lần_bán_sản_phẩm có tương quan 0.891 với Tần_suất_bán. Bộ chỉ số này cho thấy xu hướng tăng doanh thu sản phẩ...",
+    "breakdown": "Tần_suất_bán",
+    "measure": "MEAN(Tổng_doanh_thu_sản_phẩm)"
+  },
+  {
+    "question": "What insights can we find about thiếu thông tin màu là một bất thường dữ liệu quy mô lớn, cao gấp 6.8 lần mức thiếu của địa bàn quận/huyện?",
+    "reason": "Dữ liệu sản phẩm đang có một điểm bất thường rất rõ ở lớp nhận diện màu: cả 'Mã màu' và 'Tên màu' cùng thiếu 332 bản ghi, tương đương 32.05% dữ liệu. Mức này cao hơn nhiều so với 'Khu Vực (Quận/Huyện)...",
+    "breakdown": "Mã màu",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about khối lượng có tỷ lệ ngoại lệ 9.56%, gần 1 trên 10 giao dịch là mức bất thường cao cho biến vận hành cốt lõi?",
+    "reason": "'Khối lượng' có 99 bản ghi ngoại lệ, chiếm 9.56% tổng dữ liệu. Với một chỉ số vận hành nền tảng dùng cho doanh thu, logistics và định giá, tỷ lệ gần 10% là rất cao và cho thấy phân phối có đuôi cực tr...",
+    "breakdown": "Khối lượng",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about thành tiền và doanh_thu_trên_mm gần như trùng khít tuyệt đối, là một bất thường cấu trúc hơn là hai chỉ số độc lập?",
+    "reason": "Tương quan giữa 'Thành Tiền' và 'Doanh_thu_trên_mm' đạt 0.9999999998623459, tức gần như 1 tuyệt đối. Mức này cao đến mức hai cột gần như phản chiếu cùng một tín hiệu thay vì bổ sung thông tin khác nha...",
+    "breakdown": "Thành Tiền",
+    "measure": "MEAN(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "What insights can we find about stt tương quan mạnh với năm ở mức 0.714, cho thấy dấu vết thứ tự ghi nhận chen vào tín hiệu thời gian?",
+    "reason": "'STT' là số thứ tự dòng nhưng lại có tương quan 0.7141719034611382 với 'Năm'. Với một trường đánh số kỹ thuật, mức liên hệ này là bất thường vì cho thấy thứ tự bản ghi đang mang theo cấu trúc thời gia...",
+    "breakdown": "STT",
+    "measure": "MEAN(Năm)"
+  },
+  {
+    "question": "What insights can we find about tháng 11 là điểm gãy bất thường của nhịp bán khi số giao dịch rơi xuống đáy giữa hai giai đoạn cao?",
+    "reason": "Theo mẫu hình thời gian đã phát hiện, số lượng bản ghi tăng mạnh đến tháng 10, giảm sâu ở tháng 11 rồi quay lại mức cao trong tháng 1. Việc một tháng nằm giữa hai giai đoạn hoạt động cao nhưng lại tạo...",
+    "breakdown": "STT",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about tổng khối lượng tháng 11 lệch khỏi quỹ đạo phục hồi, tạo một đáy bất thường sau giai đoạn tăng mạnh?",
+    "reason": "Tổng 'Khối lượng' theo thời gian không đi theo xu hướng mượt mà mà giảm đầu kỳ, tăng vọt ở tháng 10, rơi mạnh ở tháng 11 rồi mới phục hồi. Điểm rơi tháng 11 là một anomaly rõ vì xảy ra ngay sau tháng ...",
+    "breakdown": "Khối lượng",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about trong nhóm loại hàng = ppgl, rủi ro méo phân tích theo màu đặc biệt cao vì dữ liệu màu toàn cục đã thiếu tới 32.05%?",
+    "reason": "Với nhóm 'Loại Hàng' = 'PPGL', mọi phân tích theo 'Mã màu' hoặc 'Tên màu' cần được xem là có rủi ro bất thường cao, vì ở cấp toàn bộ dữ liệu hai trường màu đang cùng thiếu 332 bản ghi, tương đương 32....",
+    "breakdown": "Loại Hàng",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about trong nhóm sku_dòng = tôn màu, thiếu đồng thời mã màu và tên màu là một nghịch lý dữ liệu nghiêm trọng?",
+    "reason": "Ở phân khúc 'SKU_Dòng' = 'Tôn Màu', việc toàn bộ dữ liệu chung đang thiếu 32.05% ở cả 'Mã màu' lẫn 'Tên màu' là một anomaly đặc biệt nghiêm trọng. Với một dòng sản phẩm mà màu là thuộc tính nhận diện ...",
+    "breakdown": "SKU_Dòng",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about khoảng_cách_đơn_trước thiếu 4.05% tuy nhỏ hơn lỗi màu nhưng vẫn là bất thường đáng kể ở dữ liệu hành vi mua lặp lại?",
+    "reason": "'Khoảng_cách_đơn_trước' thiếu 42 bản ghi, tương đương 4.05%. Xét riêng tỷ lệ này có vẻ không lớn, nhưng với một biến hành vi thường được tính toán có hệ thống từ lịch sử giao dịch, bất kỳ mức thiếu nà...",
+    "breakdown": "Khoảng_cách_đơn_trước",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What is the relationship between Met A and Thành Tiền?",
+    "reason": "Trên toàn bộ dữ liệu, Met A và Thành Tiền có tương quan dương mạnh ở mức 0.803, cho thấy các giao dịch có chiều dài chính lớn hơn thường đi kèm doanh thu dòng cao hơn. Mức liên hệ này đủ mạnh để xem M...",
+    "breakdown": "Met A",
+    "measure": "MEAN(Thành Tiền)"
+  },
+  {
+    "question": "What is the relationship between Giá_trên_kg and Tổng_doanh_thu_sản_phẩm?",
+    "reason": "Giá_trên_kg có tương quan âm khá mạnh với Tổng_doanh_thu_sản_phẩm ở mức -0.706. Điều này cho thấy các sản phẩm có đơn giá/kg cao hơn không phải là nhóm tích lũy doanh thu lớn nhất; ngược lại, doanh th...",
+    "breakdown": "Giá_trên_kg",
+    "measure": "MEAN(Tổng_doanh_thu_sản_phẩm)"
+  },
+  {
+    "question": "What is the relationship between Doanh_thu_theo_tuan_trong_thang and Số_lần_bán_sản_phẩm?",
+    "reason": "Doanh_thu_theo_tuan_trong_thang và Số_lần_bán_sản_phẩm không được nêu trực tiếp trong bảng tương quan mạnh, nhưng step3 cho thấy Doanh_thu_theo_tuan_trong_thang tương quan 0.702 với nhịp bán lặp lại l...",
+    "breakdown": "Doanh_thu_theo_tuan_trong_thang",
+    "measure": "MEAN(Số_lần_bán_sản_phẩm)"
+  },
+  {
+    "question": "What is the relationship between Mã màu and count?",
+    "reason": "Nhóm Loại Hàng = PPGL chịu ảnh hưởng trực tiếp từ vấn đề thiếu dữ liệu màu ở quy mô lớn toàn bộ tập dữ liệu: Mã màu thiếu 332 bản ghi, tương đương 32.05%, và Tên màu cũng thiếu đúng 32.05%. Vì màu là ...",
+    "breakdown": "Mã màu",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What is the relationship between Giá_trên_kg and Tổng_doanh_thu_sản_phẩm?",
+    "reason": "Ở cấp toàn bộ dữ liệu, Giá_trên_kg và Tổng_doanh_thu_sản_phẩm có tương quan âm -0.706. Với nhóm SKU_Dòng = Tôn Màu, mối quan hệ này đặc biệt đáng theo dõi về mặt thương mại vì sản phẩm màu thường nhạy...",
+    "breakdown": "Giá_trên_kg",
+    "measure": "MEAN(Tổng_doanh_thu_sản_phẩm)"
+  },
+  {
+    "question": "What is the relationship between Số_lần_bán_sản_phẩm and Tổng_doanh_thu_sản_phẩm?",
+    "reason": "Số_lần_bán_sản_phẩm và Tổng_doanh_thu_sản_phẩm có tương quan cực mạnh 0.998, gần như tuyến tính hoàn hảo. Điều này cho thấy khác biệt doanh thu giữa các sản phẩm chủ yếu đến từ việc sản phẩm đó được b...",
+    "breakdown": "Số_lần_bán_sản_phẩm",
+    "measure": "MEAN(Tổng_doanh_thu_sản_phẩm)"
+  },
+  {
+    "question": "What is the relationship between Số_lần_bán_sản_phẩm and Doanh_thu_tb_mỗi_lần?",
+    "reason": "Số_lần_bán_sản_phẩm có tương quan 0.891 với nhịp bán lặp lại, cho thấy hai biến này gần như cùng mô tả một động lực cầu cốt lõi: sản phẩm nào được mua đều và thường xuyên thì cũng là sản phẩm xuất hiệ...",
+    "breakdown": "Số_lần_bán_sản_phẩm",
+    "measure": "MEAN(Doanh_thu_tb_mỗi_lần)"
+  },
+  {
+    "question": "What insights can we find about dữ liệu màu thiếu nhiều gấp 6.8 lần dữ liệu khu vực, nên phân tích theo địa bàn đáng tin cậy hơn phân tích theo màu?",
+    "reason": "Chất lượng dữ liệu cho thấy 332 bản ghi thiếu ở cả 'Mã màu' và 'Tên màu' (32.05%), trong khi 'Khu Vực (Quận/Huyện)' chỉ thiếu 49 bản ghi (4.73%). Chênh lệch 27.32 điểm phần trăm, tương đương mức thiếu...",
+    "breakdown": "Mã màu",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about khối lượng biến động mạnh hơn met a, cho thấy độ phân tán doanh số vật lý không chỉ đến từ chiều dài?",
+    "reason": "Trong các quan hệ thống kê, 'Khối lượng' liên hệ mạnh với 'Met A' ở mức 0.767, nhưng lại liên hệ với 'Thành Tiền' tới 0.953. Chênh lệch 0.186 cho thấy phân bố khối lượng giữa các giao dịch rộng hơn và...",
+    "breakdown": "Khối lượng",
+    "measure": "MEAN(Met A)"
+  },
+  {
+    "question": "What insights can we find about giá_trên_kg phân hóa theo sức bán mạnh hơn theo doanh thu tích lũy, hàm ý áp lực giá nằm ở khả năng bán lặp lại?",
+    "reason": "'Giá_trên_kg' có tương quan âm với 'Số_lần_bán_sản_phẩm' ở mức -0.716 và với 'Tổng_doanh_thu_sản_phẩm' ở mức -0.706. Mức âm với số lần bán mạnh hơn 0.010 điểm tương quan, cho thấy khác biệt giá phản á...",
+    "breakdown": "Giá_trên_kg",
+    "measure": "MEAN(Số_lần_bán_sản_phẩm)"
+  },
+  {
+    "question": "What insights can we find about doanh thu tích lũy của sản phẩm bám sát số lần bán gần như tuyệt đối, mạnh hơn rõ rệt so với nhịp bán thường xuyên?",
+    "reason": "'Tổng_doanh_thu_sản_phẩm' có tương quan rất cao với 'Số_lần_bán_sản_phẩm' ở mức 0.998, trong khi với 'Tần_suất_bán' là 0.888. Khoảng cách 0.110 điểm tương quan là khá lớn ở vùng tương quan cao, cho th...",
+    "breakdown": "Tổng_doanh_thu_sản_phẩm",
+    "measure": "MEAN(Số_lần_bán_sản_phẩm)"
+  },
+  {
+    "question": "What insights can we find about trong nhóm tôn màu, rủi ro méo phân tích màu đặc biệt đáng lưu ý vì dữ liệu màu toàn cục đã thiếu tới 32.05%?",
+    "reason": "Với subspace 'SKU_Dòng' = 'Tôn Màu', việc phân tích phân bố theo 'Mã màu' hoặc 'Tên màu' cần rất thận trọng vì ở cấp toàn bộ dữ liệu, cả hai trường màu đều thiếu 332 bản ghi, tương đương 32.05%. Đây l...",
+    "breakdown": "SKU_Dòng",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about trong nhóm tôn kẽm, so sánh theo độ dày có nền dữ liệu ổn định hơn nhiều so với so sánh theo màu?",
+    "reason": "Ở subspace 'SKU_Dòng' = 'Tôn Kẽm', phân tích theo 'SKU_Độ_dày' hoặc 'Mức_độ_dày' có cơ sở tốt hơn vì vấn đề thiếu dữ liệu tập trung ở trường màu: 'Mã màu' và 'Tên màu' đều thiếu 32.05% trên toàn bộ dữ...",
+    "breakdown": "SKU_Dòng",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about khối lượng là biến vận hành gần doanh thu hơn nhiều so với met a, nên phân bố giá trị giao dịch nên ưu tiên nhìn theo khối lượng?",
+    "reason": "So sánh hai biến vận hành chính cho thấy 'Khối lượng' gắn với 'Thành Tiền' ở mức 0.953, còn 'Met A' gắn với 'Thành Tiền' ở mức 0.803. Chênh lệch 0.150 điểm tương quan cho thấy khi phân nhóm giao dịch ...",
+    "breakdown": "Khối lượng",
+    "measure": "MEAN(Met A)"
+  },
+  {
+    "question": "What insights can we find about doanh_thu_theo_tuan_trong_thang phản ánh nhịp bán nhưng không thay thế được số lần bán sản phẩm?",
+    "reason": "'Doanh_thu_theo_tuan_trong_thang' có tương quan dương với 'Tần_suất_bán' ở mức 0.702, thấp hơn đáng kể so với tương quan 0.891 giữa 'Số_lần_bán_sản_phẩm' và 'Tần_suất_bán'. Chênh lệch 0.189 điểm cho t...",
+    "breakdown": "Doanh_thu_theo_tuan_trong_thang",
+    "measure": "MEAN(Tần_suất_bán)"
+  },
+  {
+    "question": "What patterns exist in Tổng_doanh_thu_sản_phẩm by Số_lần_bán_sản_phẩm?",
+    "reason": "Ở cấp sản phẩm, mẫu hình tích lũy rất rõ: khi Số_lần_bán_sản_phẩm tăng thì Tổng_doanh_thu_sản_phẩm cũng tăng gần như tuyến tính. Bằng chứng là hệ số tương quan đạt 0.9981, cho thấy doanh thu tích lũy ...",
+    "breakdown": "Số_lần_bán_sản_phẩm",
+    "measure": "MEAN(Tổng_doanh_thu_sản_phẩm)"
+  },
+  {
+    "question": "What patterns exist in count by Số_lần_bán_sản_phẩm?",
+    "reason": "Số_lần_bán_sản_phẩm và tần suất bán đi cùng nhau rất chặt, với hệ số tương quan 0.8912. Đây là một mẫu hình hành vi ổn định: các SKU xuất hiện nhiều lần cũng thường có nhịp bán dày hơn, cho thấy danh ...",
+    "breakdown": "Số_lần_bán_sản_phẩm",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What patterns exist in count by Doanh_thu_theo_tuan_trong_thang?",
+    "reason": "Doanh_thu_theo_tuan_trong_thang có quan hệ cùng chiều mạnh với cường độ bán lặp lại, với hệ số tương quan 0.7022. Điều này cho thấy các tuần có doanh thu cao thường cũng là các tuần có nhịp bán dày hơ...",
+    "breakdown": "Doanh_thu_theo_tuan_trong_thang",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What patterns exist in Met A by Khối lượng?",
+    "reason": "Khối lượng có tương quan mạnh với Met A ở mức 0.7670, cho thấy phần lớn biến động sản lượng được dẫn dắt bởi chiều dài chính của đơn hàng. So với các mô tả trước đó về Met B phát sinh rời rạc, mẫu hìn...",
+    "breakdown": "Khối lượng",
+    "measure": "MEAN(Met A)"
+  },
+  {
+    "question": "What patterns exist in Thành Tiền by Met A?",
+    "reason": "Met A và Thành Tiền có tương quan 0.8028, tức là chiều dài chính vẫn là một động lực doanh thu quan trọng. Tuy nhiên, mức này thấp hơn độ gắn kết gần như tuyệt đối giữa Khối lượng và doanh thu đã được...",
+    "breakdown": "Met A",
+    "measure": "MEAN(Thành Tiền)"
+  },
+  {
+    "question": "What patterns exist in Tổng_doanh_thu_sản_phẩm by Giá_trên_kg?",
+    "reason": "Ở cấp SKU/sản phẩm, Giá_trên_kg và Tổng_doanh_thu_sản_phẩm có tương quan âm khá mạnh ở mức -0.7058. Mẫu hình này cho thấy các sản phẩm giá cao hơn thường không phải là nhóm tạo doanh thu tích lũy lớn ...",
+    "breakdown": "Giá_trên_kg",
+    "measure": "MEAN(Tổng_doanh_thu_sản_phẩm)"
+  },
+  {
+    "question": "What patterns exist in count by Khối lượng?",
+    "reason": "Phân phối Khối lượng không cân đối mà nghiêng mạnh về phía các đơn hàng lớn: có 99 bản ghi ngoại lệ, tương đương 9.56% dữ liệu. Đây là dấu hiệu cho thấy phần lớn giao dịch nằm ở vùng khối lượng thấp đ...",
+    "breakdown": "Khối lượng",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What patterns exist in count by Mã màu?",
+    "reason": "Mã màu và Tên màu cùng thiếu 332 bản ghi, tương đương 32.05% dữ liệu. Việc hai trường màu cùng thiếu ở đúng quy mô này cho thấy đây không phải lỗi rải rác mà là một mẫu hình thiếu dữ liệu có cấu trúc,...",
+    "breakdown": "Mã màu",
+    "measure": "COUNT(*)"
+  }
+]

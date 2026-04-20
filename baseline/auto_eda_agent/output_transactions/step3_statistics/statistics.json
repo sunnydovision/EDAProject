@@ -1,0 +1,749 @@
+{
+  "statistics": {
+    "numerical_stats": {
+      "STT": {
+        "count": 1036,
+        "mean": 518.5,
+        "median": 518.5,
+        "std": 299.2117421938295,
+        "min": 1.0,
+        "max": 1036.0,
+        "q25": 259.75,
+        "q75": 777.25,
+        "skewness": 0.0,
+        "kurtosis": -1.1999999999999997
+      },
+      "Độ D": {
+        "count": 1036,
+        "mean": 0.4035714285714286,
+        "median": 0.4,
+        "std": 0.056095034219119336,
+        "min": 0.25,
+        "max": 0.5,
+        "q25": 0.35,
+        "q75": 0.45,
+        "skewness": -0.013389103099613511,
+        "kurtosis": -0.64478511708126
+      },
+      "Khối lượng": {
+        "count": 1036,
+        "mean": 3740.796332046332,
+        "median": 4020.0,
+        "std": 934.4466538103986,
+        "min": 210.0,
+        "max": 5180.0,
+        "q25": 3510.0,
+        "q75": 4260.0,
+        "skewness": -1.8067205771100994,
+        "kurtosis": 3.1101967270858513
+      },
+      "Met A": {
+        "count": 1036,
+        "mean": 1183.453667953668,
+        "median": 1203.0,
+        "std": 392.9362264343975,
+        "min": 0.0,
+        "max": 2226.0,
+        "q25": 1014.0,
+        "q75": 1386.0,
+        "skewness": -0.6673220117797065,
+        "kurtosis": 1.2867927446028142
+      },
+      "Met B": {
+        "count": 1036,
+        "mean": 12.146718146718147,
+        "median": 0.0,
+        "std": 115.53564269601127,
+        "min": 0.0,
+        "max": 1890.0,
+        "q25": 0.0,
+        "q75": 0.0,
+        "skewness": 13.492035335774032,
+        "kurtosis": 201.9627621141001
+      },
+      "Met C": {
+        "count": 1036,
+        "mean": 2.2915057915057915,
+        "median": 2.0,
+        "std": 2.4036938664961394,
+        "min": 2.0,
+        "max": 46.0,
+        "q25": 2.0,
+        "q75": 2.0,
+        "skewness": 13.472556446077784,
+        "kurtosis": 212.62701246220325
+      },
+      "Tỷ trọng thực tế": {
+        "count": 1036,
+        "mean": 3.223551646960425,
+        "median": 3.160237389,
+        "std": 0.5950375019659784,
+        "min": 1.936416185,
+        "max": 8.824786325,
+        "q25": 2.80775559475,
+        "q75": 3.666555656,
+        "skewness": 0.7887535229535749,
+        "kurtosis": 6.564970633756431
+      },
+      "Khổ (mm)": {
+        "count": 1036,
+        "mean": 1200.0,
+        "median": 1200.0,
+        "std": 0.0,
+        "min": 1200.0,
+        "max": 1200.0,
+        "q25": 1200.0,
+        "q75": 1200.0,
+        "skewness": 0.0,
+        "kurtosis": 0.0
+      },
+      "Thành Tiền": {
+        "count": 1036,
+        "mean": 81933785.89864865,
+        "median": 86226338.0,
+        "std": 20920670.62342411,
+        "min": 4626930.0,
+        "max": 121947595.0,
+        "q25": 78720185.5,
+        "q75": 94304663.75,
+        "skewness": -1.7114930362620704,
+        "kurtosis": 2.9232736360293172
+      },
+      "Năm": {
+        "count": 1036,
+        "mean": 2025.2171814671815,
+        "median": 2025.0,
+        "std": 0.4125262923948877,
+        "min": 2025.0,
+        "max": 2026.0,
+        "q25": 2025.0,
+        "q75": 2025.0,
+        "skewness": 1.3738061104155237,
+        "kurtosis": -0.11287841383255826
+      },
+      "Tháng": {
+        "count": 1036,
+        "mean": 8.083011583011583,
+        "median": 10.0,
+        "std": 3.92204977019233,
+        "min": 1.0,
+        "max": 12.0,
+        "q25": 8.0,
+        "q75": 11.0,
+        "skewness": -1.0416479229815072,
+        "kurtosis": -0.4676422255973436
+      },
+      "Ngày": {
+        "count": 1036,
+        "mean": 19.845559845559844,
+        "median": 20.0,
+        "std": 9.203931609783641,
+        "min": 1.0,
+        "max": 31.0,
+        "q25": 12.0,
+        "q75": 30.0,
+        "skewness": -0.21755352022799,
+        "kurtosis": -1.2868054379748024
+      },
+      "Tuần_trong_tháng": {
+        "count": 1036,
+        "mean": 3.3465250965250966,
+        "median": 3.0,
+        "std": 1.4006890955400222,
+        "min": 1.0,
+        "max": 5.0,
+        "q25": 2.0,
+        "q75": 5.0,
+        "skewness": -0.17580570738788737,
+        "kurtosis": -1.2997894708122233
+      },
+      "Giá_trên_kg": {
+        "count": 1036,
+        "mean": 21907.694015444016,
+        "median": 22086.5,
+        "std": 1654.401151781904,
+        "min": 8257.0,
+        "max": 28917.0,
+        "q25": 20671.75,
+        "q75": 23100.0,
+        "skewness": -0.5152250943176246,
+        "kurtosis": 3.854677187855267
+      },
+      "Doanh_thu_trên_mm": {
+        "count": 1036,
+        "mean": 68278.14768339768,
+        "median": 71855.5,
+        "std": 17433.886942422327,
+        "min": 3856.0,
+        "max": 101623.0,
+        "q25": 65600.0,
+        "q75": 78587.25,
+        "skewness": -1.7114909144951027,
+        "kurtosis": 2.9232651112860486
+      },
+      "Doanh_thu_theo_tuan_trong_thang": {
+        "count": 1036,
+        "mean": 601791829.921332,
+        "median": 335707592.0,
+        "std": 598161283.8882879,
+        "min": 4626930.0,
+        "max": 2428245666.0,
+        "q25": 150788308.0,
+        "q75": 927332395.0,
+        "skewness": 1.198986552911105,
+        "kurtosis": 0.5839023945405377
+      },
+      "Khoảng_cách_đơn_trước": {
+        "count": 994,
+        "mean": 4.797786720321931,
+        "median": 0.0,
+        "std": 10.005454460619438,
+        "min": 0.0,
+        "max": 92.0,
+        "q25": 0.0,
+        "q75": 6.0,
+        "skewness": 4.042185380606718,
+        "kurtosis": 21.762837823675746
+      },
+      "Số_lần_bán_sản_phẩm": {
+        "count": 1036,
+        "mean": 89.8011583011583,
+        "median": 71.0,
+        "std": 68.39217006495169,
+        "min": 1.0,
+        "max": 199.0,
+        "q25": 28.0,
+        "q75": 133.0,
+        "skewness": 0.4012130386309984,
+        "kurtosis": -1.2563769005654588
+      },
+      "Tổng_doanh_thu_sản_phẩm": {
+        "count": 1036,
+        "mean": 7349387719.106177,
+        "median": 6111648257.0,
+        "std": 5447799719.65585,
+        "min": 7781840.0,
+        "max": 15628940014.0,
+        "q25": 2363274177.0,
+        "q75": 11121469464.0,
+        "skewness": 0.2828330869935793,
+        "kurtosis": -1.4067470484764988
+      },
+      "Doanh_thu_tb_mỗi_lần": {
+        "count": 1036,
+        "mean": 81933785.84942085,
+        "median": 83620071.0,
+        "std": 7839984.876683546,
+        "min": 7781840.0,
+        "max": 102368079.0,
+        "q25": 78537387.0,
+        "q75": 86079553.0,
+        "skewness": -3.2969517239161927,
+        "kurtosis": 19.513009084443418
+      },
+      "Tần_suất_bán": {
+        "count": 1036,
+        "mean": 17.986486486486488,
+        "median": 13.0,
+        "std": 14.51907992755782,
+        "min": 1.0,
+        "max": 50.0,
+        "q25": 6.0,
+        "q75": 30.0,
+        "skewness": 0.7427837280218643,
+        "kurtosis": -0.5100414839570941
+      },
+      "Doanh_thu_tỉnh": {
+        "count": 1036,
+        "mean": 24705239794.129345,
+        "median": 10689658678.0,
+        "std": 17890476444.954044,
+        "min": 63414010.0,
+        "max": 42799130622.0,
+        "q25": 7589710139.0,
+        "q75": 42799130622.0,
+        "skewness": 0.0010872062281758407,
+        "kurtosis": -1.9583264900129727
+      },
+      "Khoảng_cách_vận_chuyển_km": {
+        "count": 1036,
+        "mean": 262.16988416988414,
+        "median": 240.5,
+        "std": 177.27045332926028,
+        "min": 10.0,
+        "max": 599.0,
+        "q25": 110.0,
+        "q75": 414.0,
+        "skewness": 0.3158395583638842,
+        "kurtosis": -1.2059921123824577
+      },
+      "Cờ_giao_hàng_trễ": {
+        "count": 1036,
+        "mean": 0.2548262548262548,
+        "median": 0.0,
+        "std": 0.4359739706872205,
+        "min": 0.0,
+        "max": 1.0,
+        "q25": 0.0,
+        "q75": 1.0,
+        "skewness": 1.126892821904081,
+        "kurtosis": -0.7315285182373024
+      },
+      "Cờ_khiếu_nại_lặp_lại": {
+        "count": 1036,
+        "mean": 0.2886100386100386,
+        "median": 0.0,
+        "std": 0.45333503671418957,
+        "min": 0.0,
+        "max": 1.0,
+        "q25": 0.0,
+        "q75": 1.0,
+        "skewness": 0.9344031336891573,
+        "kurtosis": -1.1290741981822137
+      },
+      "Cờ_giao_dịch_bất_thường": {
+        "count": 1036,
+        "mean": 0.03861003861003861,
+        "median": 0.0,
+        "std": 0.19275675757272479,
+        "min": 0.0,
+        "max": 1.0,
+        "q25": 0.0,
+        "q75": 0.0,
+        "skewness": 4.796536362967172,
+        "kurtosis": 21.047389452578898
+      },
+      "Tỷ_trọng_doanh_thu_%": {
+        "count": 1036,
+        "mean": 0.09652509653474904,
+        "median": 0.1015820945,
+        "std": 0.02464636204850795,
+        "min": 0.005450924,
+        "max": 0.143664829,
+        "q25": 0.092739197,
+        "q75": 0.111099062,
+        "skewness": -1.7114930377478337,
+        "kurtosis": 2.9232736369355043
+      },
+      "Tỷ_lệ_chi_phí": {
+        "count": 1036,
+        "mean": 0.700713760273166,
+        "median": 0.7120764975,
+        "std": 0.08428655888135901,
+        "min": 0.500587116,
+        "max": 0.849962735,
+        "q25": 0.63593930075,
+        "q75": 0.76635134825,
+        "skewness": -0.29153083837271315,
+        "kurtosis": -0.7090505662540565
+      },
+      "Ước_tính_biên_lợi_nhuận": {
+        "count": 1036,
+        "mean": 0.29928623972683394,
+        "median": 0.2879235025,
+        "std": 0.08428655888135901,
+        "min": 0.150037265,
+        "max": 0.499412884,
+        "q25": 0.23364865175,
+        "q75": 0.36406069925,
+        "skewness": 0.29153083837271526,
+        "kurtosis": -0.7090505662540556
+      },
+      "Điểm_hài_lòng_khách_hàng": {
+        "count": 1036,
+        "mean": 77.57722007722008,
+        "median": 85.0,
+        "std": 11.773581430651262,
+        "min": 45.0,
+        "max": 90.0,
+        "q25": 70.0,
+        "q75": 85.0,
+        "skewness": -0.9038221104269307,
+        "kurtosis": -0.08904967307741263
+      }
+    },
+    "categorical_stats": {
+      "Phân loại": {
+        "unique_count": 5,
+        "most_common": "1",
+        "most_common_count": 876,
+        "distribution": {
+          "1": 876,
+          "2": 77,
+          "1A": 62,
+          "3": 12,
+          "1B": 9
+        }
+      },
+      "Loại Hàng": {
+        "unique_count": 2,
+        "most_common": "PPGL",
+        "most_common_count": 704,
+        "distribution": {
+          "PPGL": 704,
+          "GL": 332
+        }
+      },
+      "Độ M": {
+        "unique_count": 5,
+        "most_common": "AZ050",
+        "most_common_count": 614,
+        "distribution": {
+          "AZ050": 614,
+          "AZ080": 303,
+          "AZ030": 89,
+          "AZ100": 29,
+          " AZ05": 1
+        }
+      },
+      "Độ MT": {
+        "unique_count": 2,
+        "most_common": "G550",
+        "most_common_count": 1035,
+        "distribution": {
+          "G550": 1035,
+          "G350": 1
+        }
+      },
+      "Mã màu": {
+        "unique_count": 21,
+        "most_common": "PGRE01",
+        "most_common_count": 145,
+        "distribution": {
+          "PGRE01": 145,
+          "PGRE09": 99,
+          "WRED02": 81,
+          "WGRA01": 76,
+          "PBLU09": 67,
+          "PRED09": 44,
+          "PGRA01": 37,
+          "WBLU01": 32,
+          "PGRE02": 23,
+          "PGRE03": 19
+        }
+      },
+      "Tên màu": {
+        "unique_count": 21,
+        "most_common": "XN",
+        "most_common_count": 151,
+        "distribution": {
+          "XN": 151,
+          "XR": 106,
+          "XDT": 71,
+          "ND-G": 68,
+          "XLC-G": 62,
+          "ND": 58,
+          "XLC": 43,
+          "XDT-G": 28,
+          "TS": 20,
+          "Màu xanh ngọc ": 17
+        }
+      },
+      "Ngày bán": {
+        "unique_count": 135,
+        "most_common": "2026-01-31",
+        "most_common_count": 72,
+        "distribution": {
+          "2026-01-31": 72,
+          "2025-09-30": 66,
+          "2025-12-31": 59,
+          "2025-10-30": 57,
+          "2025-10-17": 53,
+          "2026-01-10": 51,
+          "2025-11-12": 39,
+          "2025-10-24": 30,
+          "2025-10-31": 30,
+          "2026-01-06": 25
+        }
+      },
+      "Khu Vực (Quận/Huyện)": {
+        "unique_count": 22,
+        "most_common": "Quận Bình Tân",
+        "most_common_count": 312,
+        "distribution": {
+          "Quận Bình Tân": 312,
+          "Quận Tân Phú": 151,
+          "Huyện Long Hồ": 93,
+          "Huyện Cẩm Mỹ": 77,
+          "TX. Phú Mỹ": 77,
+          "TP. Quy Nhơn": 68,
+          "TP. Dĩ An": 55,
+          "TX. Bến Cát": 50,
+          "TP. Thủ Đức": 39,
+          "TP. Tân Uyên": 23
+        }
+      },
+      "Tỉnh / Thành Phố": {
+        "unique_count": 11,
+        "most_common": "TP. Hồ Chí Minh",
+        "most_common_count": 509,
+        "distribution": {
+          "TP. Hồ Chí Minh": 509,
+          "Bình Dương": 128,
+          "Đồng Nai": 93,
+          "Vĩnh Long": 93,
+          "Bà Rịa - Vũng Tàu": 82,
+          "Bình Định": 68,
+          "Tỉnh Khánh Hòa": 49,
+          "Gia Lai": 8,
+          "Long An": 3,
+          "Bình Thuận": 2
+        }
+      },
+      "Thứ": {
+        "unique_count": 6,
+        "most_common": "Thứ 6",
+        "most_common_count": 211,
+        "distribution": {
+          "Thứ 6": 211,
+          "Thứ 7": 210,
+          "Thứ 4": 201,
+          "Thứ 3": 182,
+          "Thứ 5": 168,
+          "Thứ 2": 64
+        }
+      },
+      "Quý": {
+        "unique_count": 3,
+        "most_common": "2025Q4",
+        "most_common_count": 537,
+        "distribution": {
+          "2025Q4": 537,
+          "2025Q3": 274,
+          "2026Q1": 225
+        }
+      },
+      "Mùa": {
+        "unique_count": 2,
+        "most_common": "Mùa mưa",
+        "most_common_count": 533,
+        "distribution": {
+          "Mùa mưa": 533,
+          "Mùa khô": 503
+        }
+      },
+      "Mức_độ_dày": {
+        "unique_count": 2,
+        "most_common": "Trung bình",
+        "most_common_count": 956,
+        "distribution": {
+          "Trung bình": 956,
+          "Mỏng": 80
+        }
+      },
+      "Mức_độ_cứng": {
+        "unique_count": 2,
+        "most_common": "Cao",
+        "most_common_count": 1035,
+        "distribution": {
+          "Cao": 1035,
+          "Tiêu chuẩn": 1
+        }
+      },
+      "SKU_Dòng": {
+        "unique_count": 2,
+        "most_common": "Tôn Màu",
+        "most_common_count": 704,
+        "distribution": {
+          "Tôn Màu": 704,
+          "Tôn Kẽm": 332
+        }
+      },
+      "SKU_Độ_dày": {
+        "unique_count": 2,
+        "most_common": "Trung bình",
+        "most_common_count": 708,
+        "distribution": {
+          "Trung bình": 708,
+          "Mỏng": 328
+        }
+      },
+      "SKU_Màu": {
+        "unique_count": 22,
+        "most_common": "KHÔNGMÀU",
+        "most_common_count": 332,
+        "distribution": {
+          "KHÔNGMÀU": 332,
+          "PGRE01": 145,
+          "PGRE09": 99,
+          "WRED02": 81,
+          "WGRA01": 76,
+          "PBLU09": 67,
+          "PRED09": 44,
+          "PGRA01": 37,
+          "WBLU01": 32,
+          "PGRE02": 23
+        }
+      },
+      "Mã_sản_phẩm": {
+        "unique_count": 42,
+        "most_common": "Tôn Kẽm_Trung bình_G550_KHÔNGMÀU",
+        "most_common_count": 199,
+        "distribution": {
+          "Tôn Kẽm_Trung bình_G550_KHÔNGMÀU": 199,
+          "Tôn Kẽm_Mỏng_G550_KHÔNGMÀU": 133,
+          "Tôn Màu_Trung bình_G550_PGRE01": 126,
+          "Tôn Màu_Trung bình_G550_PGRE09": 71,
+          "Tôn Màu_Trung bình_G550_PBLU09": 57,
+          "Tôn Màu_Trung bình_G550_WRED02": 53,
+          "Tôn Màu_Trung bình_G550_WGRA01": 50,
+          "Tôn Màu_Trung bình_G550_PRED09": 33,
+          "Tôn Màu_Mỏng_G550_PGRE09": 28,
+          "Tôn Màu_Mỏng_G550_WRED02": 28
+        }
+      },
+      "Mã_khách_hàng": {
+        "unique_count": 120,
+        "most_common": "CUST_0101",
+        "most_common_count": 18,
+        "distribution": {
+          "CUST_0101": 18,
+          "CUST_0090": 16,
+          "CUST_0092": 15,
+          "CUST_0051": 15,
+          "CUST_0005": 15,
+          "CUST_0001": 14,
+          "CUST_0111": 14,
+          "CUST_0026": 13,
+          "CUST_0036": 13,
+          "CUST_0062": 13
+        }
+      },
+      "Loại_khách_hàng": {
+        "unique_count": 3,
+        "most_common": "Bán lẻ",
+        "most_common_count": 643,
+        "distribution": {
+          "Bán lẻ": 643,
+          "Bán sỉ": 245,
+          "Đối tác": 148
+        }
+      }
+    },
+    "correlations": {
+      "strong_correlations": [
+        {
+          "var1": "STT",
+          "var2": "Năm",
+          "correlation": 0.7141719034611382
+        },
+        {
+          "var1": "Độ D",
+          "var2": "Tỷ trọng thực tế",
+          "correlation": 0.9365970466972825
+        },
+        {
+          "var1": "Khối lượng",
+          "var2": "Met A",
+          "correlation": 0.7669886519096648
+        },
+        {
+          "var1": "Khối lượng",
+          "var2": "Thành Tiền",
+          "correlation": 0.9526892423164303
+        },
+        {
+          "var1": "Khối lượng",
+          "var2": "Doanh_thu_trên_mm",
+          "correlation": 0.9526891335391047
+        },
+        {
+          "var1": "Khối lượng",
+          "var2": "Tỷ_trọng_doanh_thu_%",
+          "correlation": 0.9526892424307136
+        },
+        {
+          "var1": "Met A",
+          "var2": "Thành Tiền",
+          "correlation": 0.8027604332653903
+        },
+        {
+          "var1": "Met A",
+          "var2": "Doanh_thu_trên_mm",
+          "correlation": 0.802760139039976
+        },
+        {
+          "var1": "Met A",
+          "var2": "Tỷ_trọng_doanh_thu_%",
+          "correlation": 0.8027604334424707
+        },
+        {
+          "var1": "Thành Tiền",
+          "var2": "Doanh_thu_trên_mm",
+          "correlation": 0.9999999998623459
+        },
+        {
+          "var1": "Thành Tiền",
+          "var2": "Tỷ_trọng_doanh_thu_%",
+          "correlation": 0.9999999999999999
+        },
+        {
+          "var1": "Năm",
+          "var2": "Tháng",
+          "correlation": -0.9516897377861393
+        },
+        {
+          "var1": "Ngày",
+          "var2": "Tuần_trong_tháng",
+          "correlation": 0.985714128487954
+        },
+        {
+          "var1": "Giá_trên_kg",
+          "var2": "Số_lần_bán_sản_phẩm",
+          "correlation": -0.7161388135622632
+        },
+        {
+          "var1": "Giá_trên_kg",
+          "var2": "Tổng_doanh_thu_sản_phẩm",
+          "correlation": -0.7057758468569361
+        },
+        {
+          "var1": "Doanh_thu_trên_mm",
+          "var2": "Tỷ_trọng_doanh_thu_%",
+          "correlation": 0.9999999998623473
+        },
+        {
+          "var1": "Doanh_thu_theo_tuan_trong_thang",
+          "var2": "Tần_suất_bán",
+          "correlation": 0.7021597811469702
+        },
+        {
+          "var1": "Số_lần_bán_sản_phẩm",
+          "var2": "Tổng_doanh_thu_sản_phẩm",
+          "correlation": 0.9980737401776512
+        },
+        {
+          "var1": "Số_lần_bán_sản_phẩm",
+          "var2": "Tần_suất_bán",
+          "correlation": 0.8912135324494245
+        },
+        {
+          "var1": "Tổng_doanh_thu_sản_phẩm",
+          "var2": "Tần_suất_bán",
+          "correlation": 0.8884823034537601
+        },
+        {
+          "var1": "Cờ_khiếu_nại_lặp_lại",
+          "var2": "Điểm_hài_lòng_khách_hàng",
+          "correlation": -0.8092756977375014
+        },
+        {
+          "var1": "Tỷ_lệ_chi_phí",
+          "var2": "Ước_tính_biên_lợi_nhuận",
+          "correlation": -0.9999999999999998
+        }
+      ]
+    }
+  },
+  "interpretation": {
+    "distribution_patterns": "",
+    "strong_correlations": [],
+    "key_findings": []
+  },
+  "summary": {
+    "numerical_columns": 30,
+    "categorical_columns": 20,
+    "strong_correlations": 0,
+    "key_findings": []
+  }
+}

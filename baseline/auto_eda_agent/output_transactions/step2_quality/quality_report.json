@@ -1,0 +1,258 @@
+{
+  "metrics": {
+    "missing_values": {
+      "Mã màu": {
+        "count": 332,
+        "percentage": 32.04633204633205
+      },
+      "Tên màu": {
+        "count": 332,
+        "percentage": 32.04633204633205
+      },
+      "Khu Vực (Quận/Huyện)": {
+        "count": 49,
+        "percentage": 4.72972972972973
+      },
+      "Khoảng_cách_đơn_trước": {
+        "count": 42,
+        "percentage": 4.054054054054054
+      }
+    },
+    "outliers": {
+      "Khối lượng": {
+        "count": 99,
+        "percentage": 9.555984555984557,
+        "lower_bound": 2385.0,
+        "upper_bound": 5385.0
+      },
+      "Met A": {
+        "count": 89,
+        "percentage": 8.59073359073359,
+        "lower_bound": 456.0,
+        "upper_bound": 1944.0
+      },
+      "Met B": {
+        "count": 40,
+        "percentage": 3.861003861003861,
+        "lower_bound": 0.0,
+        "upper_bound": 0.0
+      },
+      "Met C": {
+        "count": 44,
+        "percentage": 4.247104247104247,
+        "lower_bound": 2.0,
+        "upper_bound": 2.0
+      },
+      "Tỷ trọng thực tế": {
+        "count": 1,
+        "percentage": 0.09652509652509653,
+        "lower_bound": 1.5195555028750005,
+        "upper_bound": 4.954755747875
+      },
+      "Thành Tiền": {
+        "count": 110,
+        "percentage": 10.617760617760617,
+        "lower_bound": 55343468.125,
+        "upper_bound": 117681381.125
+      },
+      "Năm": {
+        "count": 225,
+        "percentage": 21.71814671814672,
+        "lower_bound": 2025.0,
+        "upper_bound": 2025.0
+      },
+      "Tháng": {
+        "count": 225,
+        "percentage": 21.71814671814672,
+        "lower_bound": 3.5,
+        "upper_bound": 15.5
+      },
+      "Giá_trên_kg": {
+        "count": 3,
+        "percentage": 0.28957528957528955,
+        "lower_bound": 17029.375,
+        "upper_bound": 26742.375
+      },
+      "Doanh_thu_trên_mm": {
+        "count": 110,
+        "percentage": 10.617760617760617,
+        "lower_bound": 46119.125,
+        "upper_bound": 98068.125
+      },
+      "Doanh_thu_theo_tuan_trong_thang": {
+        "count": 27,
+        "percentage": 2.606177606177606,
+        "lower_bound": -1014027822.5,
+        "upper_bound": 2092148525.5
+      },
+      "Khoảng_cách_đơn_trước": {
+        "count": 84,
+        "percentage": 8.108108108108109,
+        "lower_bound": -9.0,
+        "upper_bound": 15.0
+      },
+      "Doanh_thu_tb_mỗi_lần": {
+        "count": 38,
+        "percentage": 3.667953667953668,
+        "lower_bound": 67224138.0,
+        "upper_bound": 97392802.0
+      },
+      "Cờ_giao_dịch_bất_thường": {
+        "count": 40,
+        "percentage": 3.861003861003861,
+        "lower_bound": 0.0,
+        "upper_bound": 0.0
+      },
+      "Tỷ_trọng_doanh_thu_%": {
+        "count": 110,
+        "percentage": 10.617760617760617,
+        "lower_bound": 0.06519939949999999,
+        "upper_bound": 0.1386388595
+      },
+      "Điểm_hài_lòng_khách_hàng": {
+        "count": 22,
+        "percentage": 2.1235521235521233,
+        "lower_bound": 47.5,
+        "upper_bound": 107.5
+      }
+    },
+    "duplicates": 0,
+    "total_issues": 20
+  },
+  "assessment": {
+    "critical_issues": [
+      {
+        "issue": "Missing values in 'Mã màu' (332 records, 32.05%), a high-importance product attribute.",
+        "severity": "high",
+        "impact": "Affects product-level analysis, SKU grouping, color-based sales reporting, inventory segmentation, and any downstream modeling that relies on product identity or color classification. Missing product code values can also break joins with reference/master data.",
+        "recommendation": "Investigate whether 'Mã màu' can be backfilled from 'Tên màu', SKU fields, or product master data. Enforce mandatory capture for this field at source and add validation rules to prevent null product color codes."
+      },
+      {
+        "issue": "Missing values in 'Tên màu' (332 records, 32.05%), reducing interpretability of product color information.",
+        "severity": "medium",
+        "impact": "Limits business reporting and user-facing analysis by color, reduces explainability of product segmentation, and weakens validation against 'Mã màu'. While less critical than coded attributes, it still affects commercial analysis and data usability.",
+        "recommendation": "Standardize and populate 'Tên màu' using lookup tables from 'Mã màu'. Add a controlled dictionary for color names and enforce consistency between code and label."
+      },
+      {
+        "issue": "Missing values in 'Khu Vực (Quận/Huyện)' (49 records, 4.73%) in a high-importance geographic field.",
+        "severity": "high",
+        "impact": "Reduces accuracy of district-level sales analysis, geographic demand mapping, delivery performance analysis, and regional customer segmentation. It may also distort local operational planning and territory performance reporting.",
+        "recommendation": "Backfill district values from customer address, province-city combinations, or CRM/location master data. Add address completeness checks during data entry."
+      },
+      {
+        "issue": "Missing values in 'Khoảng_cách_đơn_trước' (42 records, 4.05%) in a medium-importance behavioral feature.",
+        "severity": "medium",
+        "impact": "Impairs recency analysis, customer purchase pattern tracking, and predictive features used for churn, reorder, or sales frequency modeling.",
+        "recommendation": "Recompute this field from transaction dates ordered by customer/product. If derived, avoid manual storage and generate it systematically in the transformation layer."
+      },
+      {
+        "issue": "High outlier rate in 'Khối lượng' (99 records, 9.56%) for a high-importance operational measure.",
+        "severity": "high",
+        "impact": "Can distort pricing analysis, logistics planning, product profitability, and unit economics. Extreme values may indicate unit inconsistency, entry errors, or genuinely exceptional orders that need separate treatment.",
+        "recommendation": "Validate units of measure and compare against expected ranges by product type. Review extreme records with business owners and either correct data-entry errors or flag legitimate exceptional transactions."
+      },
+      {
+        "issue": "High outlier rate in 'Thành Tiền' (110 records, 10.62%) for a high-importance revenue field.",
+        "severity": "high",
+        "impact": "Directly affects revenue reporting, profitability analysis, forecasting, customer value calculations, and anomaly detection. If invalid, these records can materially bias financial conclusions.",
+        "recommendation": "Audit extreme transactions against invoices and pricing rules. Segment by product/customer to distinguish valid large orders from erroneous amounts, and implement threshold-based validation at source."
+      },
+      {
+        "issue": "Outliers in 'Tỷ trọng thực tế' (1 record, 0.10%) for a high-importance physical characteristic.",
+        "severity": "medium",
+        "impact": "Although low in frequency, this may indicate a measurement or recording error in a critical product quality attribute, potentially affecting quality control and product specification analysis.",
+        "recommendation": "Review the specific record against lab or production measurements. If valid, document as a rare but acceptable case; otherwise correct or exclude from quality-sensitive analysis."
+      },
+      {
+        "issue": "Outliers in 'Giá_trên_kg' (3 records, 0.29%) for a high-importance pricing metric.",
+        "severity": "medium",
+        "impact": "Can distort pricing benchmarks, margin analysis, and exception reporting. Even a few pricing anomalies may indicate discounting errors, incorrect weight values, or invoice issues.",
+        "recommendation": "Cross-check these records with 'Thành Tiền' and 'Khối lượng' to confirm whether the price-per-kg calculation is correct. Apply pricing rule validation and investigate unusual discounts or surcharges."
+      },
+      {
+        "issue": "High outlier rate in 'Doanh_thu_trên_mm' (110 records, 10.62%) in a medium-importance derived revenue efficiency metric.",
+        "severity": "medium",
+        "impact": "Can mislead product-width profitability analysis and operational optimization if driven by bad source values in revenue or width. Because it is derived, issues may propagate from upstream fields.",
+        "recommendation": "Recalculate from validated source columns and verify formula logic. Prioritize fixing upstream fields such as 'Thành Tiền' and 'Khổ (mm)' before using this metric in reporting."
+      },
+      {
+        "issue": "Outliers in 'Met A' (89 records, 8.59%) in a medium-importance measurement field.",
+        "severity": "medium",
+        "impact": "May affect technical product characterization, process analysis, or derived product grouping if this metric is used operationally. The relatively high rate suggests either natural variability or data quality inconsistency.",
+        "recommendation": "Assess expected ranges by product category and determine whether the distribution is multimodal. Apply category-specific validation instead of a global outlier rule if appropriate."
+      },
+      {
+        "issue": "Outliers in 'Met B' (40 records, 3.86%) where the IQR bounds are exactly 0.0 to 0.0, suggesting a zero-dominated or low-variance field.",
+        "severity": "low",
+        "impact": "The flagged records may be statistically unusual but not necessarily erroneous. Standard outlier detection may be over-flagging valid non-zero values, reducing trust in automated quality checks.",
+        "recommendation": "Review the business meaning of 'Met B'. If zero is the normal/default value, use rule-based validation or category-aware checks instead of generic IQR outlier detection."
+      },
+      {
+        "issue": "Outliers in 'Met C' (44 records, 4.25%) where the IQR bounds are exactly 2.0 to 2.0, indicating a highly concentrated field.",
+        "severity": "low",
+        "impact": "May represent valid variation rather than true data defects. Over-reliance on generic outlier detection could create false positives and unnecessary remediation effort.",
+        "recommendation": "Validate whether 'Met C' is expected to be nearly constant. If so, replace generic outlier logic with domain thresholds or allowed-value checks."
+      },
+      {
+        "issue": "Outliers in 'Năm' (225 records, 21.72%) with bounds fixed at 2025.0, indicating records outside a single-year expectation.",
+        "severity": "medium",
+        "impact": "This likely reflects a limitation of the outlier method rather than a true defect, especially for time-series data spanning multiple years. However, if the dataset is intended to contain only one year, this would materially affect period comparisons and trend analysis.",
+        "recommendation": "Confirm the intended temporal scope of the dataset. If multiple years are valid, remove outlier treatment for calendar fields and instead validate against acceptable date ranges."
+      },
+      {
+        "issue": "Outliers in 'Tháng' (225 records, 21.72%) caused by IQR bounds of 3.5 to 15.5, which is not an appropriate method for cyclical calendar fields.",
+        "severity": "low",
+        "impact": "This is likely a false-positive pattern from statistical detection on month values rather than a real data quality issue. It can distract from more meaningful issues.",
+        "recommendation": "Use rule-based validation for month values (must be 1-12) instead of outlier detection. Exclude cyclical calendar fields from generic outlier analysis."
+      },
+      {
+        "issue": "Outliers in 'Doanh_thu_theo_tuan_trong_thang' (27 records, 2.61%) in a medium-importance derived metric.",
+        "severity": "low",
+        "impact": "May affect weekly revenue pattern analysis, but the statistical bounds are very wide, suggesting limited practical risk. This is more likely a concentration or aggregation effect than a severe defect.",
+        "recommendation": "Recompute from validated transaction data and review whether aggregation logic is correct. Keep under monitoring but lower remediation priority."
+      },
+      {
+        "issue": "Outliers in 'Khoảng_cách_đơn_trước' (84 records, 8.11%), including potential negative values due to lower bound at -9.0.",
+        "severity": "medium",
+        "impact": "Can distort customer recency and repeat-purchase behavior analysis. Negative or extreme gaps may indicate incorrect transaction ordering, duplicate timestamps, or derivation logic errors.",
+        "recommendation": "Recalculate using properly sorted transaction history by customer and date. Add business rules to prevent negative intervals unless explicitly allowed by design."
+      },
+      {
+        "issue": "Outliers in 'Doanh_thu_tb_mỗi_lần' (38 records, 3.67%) in a medium-importance customer/product performance metric.",
+        "severity": "medium",
+        "impact": "Can bias average order value analysis, customer segmentation, and sales performance benchmarking, especially if driven by a few extreme transactions.",
+        "recommendation": "Trace back to source transactions and verify whether the average is skewed by valid large orders or calculation issues. Consider robust metrics such as median alongside mean."
+      },
+      {
+        "issue": "Outliers in 'Cờ_giao_dịch_bất_thường' (40 records, 3.86%) with bounds 0.0 to 0.0, indicating a binary flag being treated as continuous.",
+        "severity": "low",
+        "impact": "This is likely not a true quality issue but a methodological one: valid flag value 1 is being labeled as an outlier. It may create confusion in quality reporting.",
+        "recommendation": "Exclude binary indicator fields from outlier analysis and validate them using allowed values only (e.g., 0/1)."
+      },
+      {
+        "issue": "High outlier rate in 'Tỷ_trọng_doanh_thu_%' (110 records, 10.62%) in a medium-importance ratio metric.",
+        "severity": "medium",
+        "impact": "Can distort contribution analysis across products, customers, or regions. Because this is a derived percentage, anomalies may reflect upstream revenue issues or denominator problems.",
+        "recommendation": "Recalculate after validating revenue totals and aggregation logic. Ensure percentages sum correctly within the intended grouping context."
+      },
+      {
+        "issue": "Outliers in 'Điểm_hài_lòng_khách_hàng' (22 records, 2.12%) in a medium-importance customer experience metric.",
+        "severity": "low",
+        "impact": "The upper bound exceeds 100, suggesting the statistical method may not align with the business scale. Potentially invalid scores could affect customer satisfaction reporting and service quality analysis.",
+        "recommendation": "Validate against the allowed score range defined by the business (for example 0-100 or 1-5). Use rule-based checks rather than IQR if the field has a fixed scale."
+      }
+    ],
+    "overall_quality_score": 68,
+    "priority_actions": [
+      "Backfill and enforce completeness for high-importance master data fields: 'Mã màu', 'Tên màu', and 'Khu Vực (Quận/Huyện)'.",
+      "Audit extreme values in high-impact financial and operational fields: 'Thành Tiền', 'Khối lượng', 'Giá_trên_kg', and related derived revenue metrics.",
+      "Refine validation methodology by removing generic outlier detection for calendar, binary, and fixed-scale fields, and recompute derived fields such as 'Khoảng_cách_đơn_trước' from trusted source data."
+    ],
+    "detailed_analysis": "The dataset shows moderate reliability with no duplicate records, which is a positive sign. However, several issues materially affect analytical trustworthiness. The most serious problems are missing values in high-importance product and geography fields, especially 'Mã màu' and 'Khu Vực (Quận/Huyện)', because they directly weaken segmentation, reporting, and master-data linkage. Another major concern is the high concentration of outliers in core business measures such as 'Thành Tiền' and 'Khối lượng', which can significantly bias revenue, pricing, and profitability analysis if not validated. Several derived metrics also show elevated outlier rates, but these are likely downstream symptoms of upstream issues in source fields or calculation logic. Some flagged outliers are methodological false positives rather than true defects, especially for calendar fields ('Năm', 'Tháng'), binary flags ('Cờ_giao_dịch_bất_thường'), and low-variance fields ('Met B', 'Met C'). This indicates that the current quality assessment approach should be adjusted to use business-rule validation for categorical, cyclical, binary, and bounded-scale variables. Overall, the dataset is usable for exploratory analysis after caution, but it is not yet fully reliable for high-stakes financial, operational, or predictive use without targeted remediation."
+  },
+  "summary": {
+    "total_issues": 20,
+    "critical_issues": 20,
+    "data_quality_score": 68
+  }
+}

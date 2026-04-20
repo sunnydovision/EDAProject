@@ -1,0 +1,41 @@
+======================================================================
+AGENTIC AUTOEDA BASELINE - SUMMARY
+======================================================================
+
+Total Insights: 124
+Passed ISGEN Threshold: 0/124 (0.0%)
+Average Pattern Score: 0.000
+
+Insights by Type:
+  • DISTRIBUTION, COMPARISON: 26
+  • TREND: 25
+  • OUTLIER, ANOMALY: 25
+  • CORRELATION: 24
+  • PATTERN: 24
+
+Insights by ISGEN Pattern:
+  • UNKNOWN: 124
+
+Top 10 Insights:
+  1. insight_000: STT bình quân tăng liên tục qua toàn bộ giai đoạn quan sát
+     Type: TREND
+  2. insight_001: Tổng STT tăng mạnh từ đầu kỳ đến tháng 10, giảm trong tháng 11 rồi bật lên mức cao mới vào cuối kỳ
+     Type: TREND
+  3. insight_002: Số lượng giao dịch biến động mạnh, đạt đỉnh vào tháng 10 và quay lại mức cao trong tháng 1
+     Type: TREND
+  4. insight_003: Tổng Khối lượng giảm đầu kỳ, bùng lên trong tháng 10, giảm tháng 11 rồi phục hồi về cuối kỳ
+     Type: TREND
+  5. insight_004: Khối lượng bình quân mỗi giao dịch giữ ổn định dù tổng sản lượng biến động mạnh
+     Type: TREND
+  6. insight_005: Độ D trung bình gần như không đổi theo thời gian
+     Type: TREND
+  7. insight_006: Tổng Độ D biến động chủ yếu do số giao dịch thay đổi, không phải do sản phẩm dày hơn
+     Type: TREND
+  8. insight_007: Met A bình quân giảm liên tục từ tháng 8 đến tháng 11 rồi hồi phục một phần
+     Type: TREND
+  9. insight_008: Tổng Met A biến động mạnh với đỉnh tháng 10, đáy tháng 11 và phục hồi đến tháng 1
+     Type: TREND
+  10. insight_009: Met B có xu hướng theo các đợt phát sinh rời rạc thay vì tăng trưởng ổn định
+     Type: TREND
+
+======================================================================
