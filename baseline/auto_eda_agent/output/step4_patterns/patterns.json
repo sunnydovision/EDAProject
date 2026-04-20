@@ -5,195 +5,203 @@
     "Grouping Patterns",
     "Anomaly Patterns"
   ],
-  "total_patterns": 38,
+  "total_patterns": 36,
   "patterns_by_category": {
     "Temporal Patterns": [
       {
-        "pattern_name": "Broad step-change upward from 2020 to 2021 in transaction volume and totals",
-        "description": "Monthly counts and monthly sums are much higher in every month of 2021 than in the corresponding months of 2020, indicating a clear year-over-year level shift rather than a small gradual increase.",
+        "pattern_name": "Step-change upward in monthly transaction volume from 2020 to 2021",
+        "description": "Monthly record counts rise sharply at the start of 2021 and remain at a much higher level throughout 2021 than in 2020.",
         "variables_involved": [
-          "Total Sales",
-          "Operating Profit",
+          "count",
+          "Retailer ID",
+          "Price per Unit",
           "Units Sold",
-          "count"
-        ],
-        "evidence": "Count rises from 150 in 2020-01 to 711 in 2021-01, from 60 in 2020-06 to 669 in 2021-06, and from 92 in 2020-12 to 667 in 2021-12. Total Sales sum rises from 16,253,746 in 2020-01 to 55,225,396 in 2021-01, from 8,829,819 in 2020-06 to 65,917,553 in 2021-06, and from 8,026,527 in 2020-12 to 77,815,430 in 2021-12. Operating Profit sum rises from 5,830,009 in 2020-01 to 19,311,961 in 2021-01 and from 2,712,198 in 2020-12 to 28,878,038 in 2021-12. Units Sold sum rises from 39,471.87 in 2020-01 to 177,251.05 in 2021-01 and from 20,545.0 in 2020-12 to 170,172.075 in 2021-12.",
-        "strength": "strong",
-        "business_relevance": "This indicates the business operated at a much larger monthly scale in 2021, affecting capacity planning, forecasting, and interpretation of year-over-year performance."
-      },
-      {
-        "pattern_name": "2020 mid-year trough followed by partial rebound",
-        "description": "In 2020, several key metrics decline from early-year levels into June, then recover in July through September before weakening again late in the year.",
-        "variables_involved": [
-          "Total Sales",
-          "Operating Profit",
-          "Units Sold",
-          "count"
-        ],
-        "evidence": "Total Sales sum falls from 24,607,006 in 2020-04 to 16,918,014 in 2020-05 and then to 8,829,819 in 2020-06, before recovering to 17,146,013 in 2020-07, 19,877,980 in 2020-08, and 18,304,436 in 2020-09. Operating Profit sum follows the same pattern: 9,301,302 in 2020-04, 5,870,848 in 2020-05, 2,292,728 in 2020-06, then 4,917,674 in 2020-07, 7,338,929 in 2020-08, and 7,119,707 in 2020-09. Units Sold sum drops from 45,123.595 in 2020-04 to 32,433.275 in 2020-05 and 16,269.0 in 2020-06, then rebounds to 37,220.0 in 2020-07, 56,992.32 in 2020-08, and 40,705.425 in 2020-09. Count also falls from 130 in 2020-04 to 95 in 2020-05 and 60 in 2020-06, then recovers to 104 in 2020-07 and 139 in 2020-08.",
-        "strength": "strong",
-        "business_relevance": "This shows a clear within-year disruption and rebound pattern in 2020, useful for identifying abnormal periods and avoiding misleading trend baselines."
-      },
-      {
-        "pattern_name": "2021 sales and profit trough in March, then climb to summer peak",
-        "description": "In 2021, Total Sales and Operating Profit decline from January to March, then rise through spring and early summer, reaching their highest levels around July-August before easing in autumn.",
-        "variables_involved": [
           "Total Sales",
           "Operating Profit"
         ],
-        "evidence": "Total Sales sum declines from 55,225,396 in 2021-01 to 46,102,165 in 2021-02 and 39,148,532 in 2021-03, then rises to 47,732,964 in 2021-04, 63,589,681 in 2021-05, 65,917,553 in 2021-06, and peaks at 78,334,681 in 2021-07 before easing to 72,288,221 in 2021-08, 59,357,023 in 2021-09, and 53,074,764 in 2021-10. Operating Profit sum similarly declines from 19,311,961 in 2021-01 to 16,185,404 in 2021-02 and 14,577,799 in 2021-03, then rises to 18,257,976 in 2021-04, 24,075,439 in 2021-05, 24,422,006 in 2021-06, and 29,137,256 in 2021-07 before dropping to 27,112,540 in 2021-08, 23,889,923 in 2021-09, and 20,938,999 in 2021-10.",
+        "evidence": "Counts are identical across variables. In 2020, monthly counts range from 60 (2020-06) to 150 (2020-01). In 2021, monthly counts range from 662 (2021-02) to 728 (2021-09 and 2021-10). The jump is visible from 92 in 2020-12 to 711 in 2021-01, and counts stay above 660 for every month in 2021.",
         "strength": "strong",
-        "business_relevance": "This seasonal-like rise into summer and decline into autumn can inform staffing, inventory, and promotional timing."
+        "business_relevance": "Any time-based comparison of sums between 2020 and 2021 is heavily influenced by much higher transaction volume in 2021."
       },
       {
-        "pattern_name": "Units sold peak in late summer in both years",
-        "description": "The highest monthly Units Sold sums occur in August in both 2020 and 2021, indicating a repeated late-summer volume high.",
+        "pattern_name": "Total Sales sums are consistently much higher in 2021 than in 2020",
+        "description": "Monthly total sales show a clear year-over-year level shift upward in 2021 versus 2020.",
+        "variables_involved": [
+          "Total Sales"
+        ],
+        "evidence": "In 2020, monthly Total Sales sums range from 8026527 (2020-12) to 24607006 (2020-04). In 2021, monthly sums range from 39148532 (2021-03) to 78334681 (2021-07). Even the lowest 2021 month, 39148532 in 2021-03, exceeds the highest 2020 month, 24607006 in 2020-04.",
+        "strength": "strong",
+        "business_relevance": "Revenue levels are materially higher in 2021, indicating a major change in business scale over time."
+      },
+      {
+        "pattern_name": "Operating Profit sums are consistently much higher in 2021 than in 2020",
+        "description": "Monthly operating profit also shifts to a higher level in 2021 compared with 2020.",
+        "variables_involved": [
+          "Operating Profit"
+        ],
+        "evidence": "In 2020, monthly Operating Profit sums range from 2292728 (2020-06) to 9301302 (2020-04). In 2021, monthly sums range from 14577799 (2021-03) to 29137256 (2021-07). The lowest 2021 month, 14577799 in 2021-03, is above the highest 2020 month, 9301302 in 2020-04.",
+        "strength": "strong",
+        "business_relevance": "Profitability in absolute dollars improved substantially in 2021, not just sales."
+      },
+      {
+        "pattern_name": "Units Sold sums are consistently much higher in 2021 than in 2020",
+        "description": "Monthly unit volume rises to a much higher level in 2021 and remains elevated all year.",
         "variables_involved": [
           "Units Sold"
         ],
-        "evidence": "Units Sold sum reaches 56,992.32 in 2020-08, higher than nearby months 37,220.0 in 2020-07 and 40,705.425 in 2020-09. In 2021, Units Sold sum reaches 193,266.15 in 2021-08, higher than 178,283.2 in 2021-07 and 181,401.025 in 2021-09.",
-        "strength": "moderate",
-        "business_relevance": "A repeated August volume peak suggests planning for higher fulfillment and inventory needs in late summer."
-      },
-      {
-        "pattern_name": "Late-year recovery in 2021 after autumn slowdown",
-        "description": "After declining from summer into October 2021, sales and profit recover in November and especially December.",
-        "variables_involved": [
-          "Total Sales",
-          "Operating Profit",
-          "Units Sold",
-          "Price per Unit"
-        ],
-        "evidence": "Total Sales sum falls from 72,288,221 in 2021-08 to 59,357,023 in 2021-09 and 53,074,764 in 2021-10, then rises to 59,235,040 in 2021-11 and 77,815,430 in 2021-12. Operating Profit sum similarly moves from 27,112,540 in 2021-08 down to 23,889,923 in 2021-09 and 20,938,999 in 2021-10, then up to 21,972,071 in 2021-11 and 28,878,038 in 2021-12. Units Sold sum rises from 149,350.0 in 2021-11 to 170,172.075 in 2021-12. Mean Price per Unit also increases from 44.43269230769231 in 2021-10 to 50.21304347826087 in 2021-11 and 56.656671664167916 in 2021-12.",
+        "evidence": "In 2020, monthly Units Sold sums range from 16269.0 (2020-06) to 56992.32 (2020-08). In 2021, monthly sums range from 142969.02 (2021-03) to 193266.15 (2021-08). The lowest 2021 month, 142969.02 in 2021-03, is well above the highest 2020 month, 56992.32 in 2020-08.",
         "strength": "strong",
-        "business_relevance": "This suggests year-end strengthening in 2021, relevant for revenue targeting and end-of-year commercial planning."
+        "business_relevance": "The business sold far more units in 2021, supporting the higher sales and profit totals."
       },
       {
-        "pattern_name": "Price per Unit mean declines early in 2021, then trends upward through year-end",
-        "description": "Average monthly price per unit is lowest in the first quarter of 2021 and generally rises through the rest of the year, ending at the yearly high in December.",
+        "pattern_name": "Mid-2020 decline followed by partial rebound in Total Sales",
+        "description": "Total Sales fall sharply from spring into early summer 2020, rebound in late summer, then weaken again toward year-end.",
         "variables_involved": [
-          "Price per Unit"
+          "Total Sales"
         ],
-        "evidence": "Mean Price per Unit is 38.22081575246132 in 2021-01, 36.63293051359516 in 2021-02, and 35.37108792846498 in 2021-03. It then rises to 45.110344827586204 in 2021-05, 48.14798206278027 in 2021-06, 51.95970149253731 in 2021-07, 50.21304347826087 in 2021-11, and 56.656671664167916 in 2021-12, the highest 2021 value.",
+        "evidence": "Total Sales rise to 24607006 in 2020-04, then drop to 16918014 in 2020-05 and 8829819 in 2020-06. They recover to 17146013 in 2020-07, 19877980 in 2020-08, and 18304436 in 2020-09, before falling again to 10836269 in 2020-10, 8622300 in 2020-11, and 8026527 in 2020-12.",
         "strength": "strong",
-        "business_relevance": "This indicates pricing strengthened over 2021, which may have contributed to the year-end rebound in sales and profit."
+        "business_relevance": "2020 shows pronounced intra-year volatility, which matters for planning and benchmarking."
       },
       {
-        "pattern_name": "2020 price spike into June followed by lower second-half pricing",
-        "description": "In 2020, average Price per Unit rises from January to a June high, then drops sharply in August and remains below the June level for the rest of the year.",
+        "pattern_name": "Mid-2020 decline followed by partial rebound in Operating Profit",
+        "description": "Operating Profit follows a similar 2020 pattern: spring high, June trough, late-summer recovery, then weaker final quarter.",
         "variables_involved": [
-          "Price per Unit"
+          "Operating Profit"
         ],
-        "evidence": "Mean Price per Unit increases from 47.18666666666667 in 2020-01 to 55.41228070175438 in 2020-02, 58.215384615384615 in 2020-04, 59.463157894736845 in 2020-05, and peaks at 64.53333333333333 in 2020-06. It then drops to 56.60576923076923 in 2020-07 and 41.201438848920866 in 2020-08, and remains below the June peak in 2020-09 through 2020-12, ranging from 42.63953488372093 to 48.666666666666664.",
-        "strength": "moderate",
-        "business_relevance": "This shows a clear pricing regime shift within 2020, important for interpreting revenue changes separately from volume changes."
-      },
-      {
-        "pattern_name": "Per-record sales and profit are generally lower in 2021 than in 2020 despite higher monthly totals",
-        "description": "Although monthly sums are much larger in 2021, the monthly mean Total Sales and mean Operating Profit per record are mostly lower than 2020 peaks and are lower year-over-year in comparable early months.",
-        "variables_involved": [
-          "Total Sales",
-          "Operating Profit",
-          "count"
-        ],
-        "evidence": "Mean Total Sales is 108,358.30666666667 in 2020-01 versus 77,672.84950773558 in 2021-01, 131,561.29824561405 in 2020-02 versus 69,640.7326283988 in 2021-02, and 134,813.5648854962 in 2020-03 versus 58,343.564828614006 in 2021-03. Mean Operating Profit is 38,866.72666666667 in 2020-01 versus 27,161.689170182843 in 2021-01, 45,678.60526315789 in 2020-02 versus 24,449.25075528701 in 2021-02, and 44,748.16030534351 in 2020-03 versus 21,725.482861400895 in 2021-03. At the same time, count is far higher in 2021, such as 150 in 2020-01 versus 711 in 2021-01.",
+        "evidence": "Operating Profit reaches 9301302 in 2020-04, then falls to 5870848 in 2020-05 and 2292728 in 2020-06. It rebounds to 4917674 in 2020-07, 7338929 in 2020-08, and 7119707 in 2020-09, then declines to 4139466 in 2020-10, 2783479 in 2020-11, and 2712198 in 2020-12.",
         "strength": "strong",
-        "business_relevance": "This indicates that 2021 growth in monthly totals is driven primarily by many more records rather than higher average value per record."
+        "business_relevance": "Profit volatility mirrors revenue volatility in 2020, indicating unstable monthly performance."
       },
       {
-        "pattern_name": "Retailer ID mean is very stable over time while count changes sharply",
-        "description": "The monthly mean of Retailer ID stays in a narrow band across all months, while the monthly count changes dramatically between 2020 and 2021.",
+        "pattern_name": "2021 Total Sales trough in March followed by rise to July peak",
+        "description": "In 2021, Total Sales decline through March, then climb strongly through July before easing in August-October and rebounding in December.",
         "variables_involved": [
-          "Retailer ID",
-          "count"
+          "Total Sales"
         ],
-        "evidence": "Retailer ID mean ranges from 1,128,299.0 in 2020-06 to 1,191,781.5 in 2020-09 and stays around 1.17 million throughout 2021, such as 1,168,978.271448664 in 2021-01 and 1,175,046.5127436281 in 2021-12. In contrast, count ranges from 60 in 2020-06 to 728 in 2021-09 and 2021-10.",
+        "evidence": "Total Sales move from 55225396 in 2021-01 to 46102165 in 2021-02 and 39148532 in 2021-03. They then rise to 47732964 in 2021-04, 63589681 in 2021-05, 65917553 in 2021-06, and peak at 78334681 in 2021-07. After that they fall to 72288221 in 2021-08, 59357023 in 2021-09, and 53074764 in 2021-10, then recover to 59235040 in 2021-11 and 77815430 in 2021-12.",
         "strength": "strong",
-        "business_relevance": "This means temporal change is concentrated in transaction volume, not in shifts in the average retailer identifier composition."
+        "business_relevance": "2021 revenue shows a clear within-year cycle with strong summer and year-end performance."
       },
       {
-        "pattern_name": "Repeated autumn softening in 2021 after summer highs",
-        "description": "After summer highs in 2021, multiple metrics weaken in September and October before stabilizing or recovering later.",
+        "pattern_name": "2021 Operating Profit trough in March followed by rise to July peak",
+        "description": "Operating Profit in 2021 declines through March, rises strongly to July, softens in August-October, and rebounds by December.",
         "variables_involved": [
-          "Total Sales",
-          "Operating Profit",
+          "Operating Profit"
+        ],
+        "evidence": "Operating Profit declines from 19311961 in 2021-01 to 16185404 in 2021-02 and 14577799 in 2021-03. It then rises to 18257976 in 2021-04, 24075439 in 2021-05, 24422006 in 2021-06, and peaks at 29137256 in 2021-07. It then drops to 27112540 in 2021-08, 23889923 in 2021-09, and 20938999 in 2021-10, before increasing to 21972071 in 2021-11 and 28878038 in 2021-12.",
+        "strength": "strong",
+        "business_relevance": "Profit follows a similar seasonal rhythm to sales in 2021, useful for forecasting earnings timing."
+      },
+      {
+        "pattern_name": "Units Sold in 2021 rise into late summer, then dip in autumn",
+        "description": "Monthly unit volume in 2021 is lowest in March, increases through August, then declines in October-November before recovering in December.",
+        "variables_involved": [
           "Units Sold"
         ],
-        "evidence": "From the summer period, Total Sales sum declines from 78,334,681 in 2021-07 to 72,288,221 in 2021-08, 59,357,023 in 2021-09, and 53,074,764 in 2021-10. Operating Profit sum declines from 29,137,256 in 2021-07 to 27,112,540 in 2021-08, 23,889,923 in 2021-09, and 20,938,999 in 2021-10. Units Sold sum declines from 193,266.15 in 2021-08 to 181,401.025 in 2021-09 and 152,834.0 in 2021-10.",
+        "evidence": "Units Sold are 177251.05 in 2021-01, 155039.075 in 2021-02, and bottom at 142969.02 in 2021-03. They increase to 161717.0 in 2021-04, 177856.045 in 2021-05, 163696.05 in 2021-06, 178283.2 in 2021-07, and peak at 193266.15 in 2021-08. They then fall to 181401.025 in 2021-09, 152834.0 in 2021-10, and 149350.0 in 2021-11, before rising to 170172.075 in 2021-12.",
         "strength": "moderate",
-        "business_relevance": "This points to a late-Q3 to early-Q4 slowdown period in 2021 that may matter for demand planning and quarterly target setting."
+        "business_relevance": "Demand volume appears strongest in late summer 2021 and weaker in early spring and autumn."
+      },
+      {
+        "pattern_name": "Price per Unit mean is lower in early 2021 than in 2020, then rises through late 2021",
+        "description": "Average selling price per unit falls to its lowest levels in early 2021, then trends upward across the rest of 2021.",
+        "variables_involved": [
+          "Price per Unit"
+        ],
+        "evidence": "In 2020, monthly mean Price per Unit ranges from 41.2014 (2020-08) to 64.5333 (2020-06). In early 2021 it drops to 38.2208 (2021-01), 36.6329 (2021-02), and 35.3711 (2021-03), the lowest point in the full series. It then rises to 45.1103 in 2021-05, 48.1480 in 2021-06, 51.9597 in 2021-07, 50.2130 in 2021-11, and 56.6567 in 2021-12.",
+        "strength": "strong",
+        "business_relevance": "Pricing was weakest in early 2021 and strengthened materially by year-end, affecting revenue per transaction."
+      },
+      {
+        "pattern_name": "Total Sales mean declines from 2020 into early 2021, then recovers by mid-to-late 2021",
+        "description": "Average sales per record are relatively high in parts of 2020, fall to a low in early 2021, then recover later in 2021.",
+        "variables_involved": [
+          "Total Sales"
+        ],
+        "evidence": "Mean Total Sales are high in 2020-04 at 189284.66 and 2020-09 at 190671.21. They fall to 77672.85 in 2021-01, 69640.73 in 2021-02, and a low of 58343.56 in 2021-03. They then recover to 98531.47 in 2021-06, 116917.43 in 2021-07, and 116664.81 in 2021-12.",
+        "strength": "moderate",
+        "business_relevance": "Although total revenue rose in 2021, average revenue per record was compressed early in the year before improving."
+      },
+      {
+        "pattern_name": "Operating Profit mean declines from 2020 into early 2021, then recovers later in 2021",
+        "description": "Average profit per record is higher in several 2020 months, reaches a low in early 2021, and then improves through mid and late 2021.",
+        "variables_involved": [
+          "Operating Profit"
+        ],
+        "evidence": "Mean Operating Profit reaches 71548.48 in 2020-04 and 74163.61 in 2020-09. It falls to 27161.69 in 2021-01, 24449.25 in 2021-02, and a low of 21725.48 in 2021-03. It then rises to 36505.24 in 2021-06, 43488.44 in 2021-07, and 43295.41 in 2021-12.",
+        "strength": "moderate",
+        "business_relevance": "Per-transaction profitability was weakest in early 2021 and improved later, even while aggregate profit stayed high due to larger volume."
+      },
+      {
+        "pattern_name": "Retailer ID mean remains nearly flat over time",
+        "description": "The monthly mean of Retailer ID changes only slightly across the full period, showing no strong temporal trend.",
+        "variables_involved": [
+          "Retailer ID"
+        ],
+        "evidence": "Retailer ID mean stays in a narrow band from 1128299.0 (2020-06) to 1191781.5 (2020-09). In 2021 it remains tightly clustered between 1168978.27 (2021-01) and 1178933.37 (2021-09).",
+        "strength": "weak",
+        "business_relevance": "This field appears temporally stable and is unlikely to be useful for identifying time-driven business performance changes."
       }
     ],
     "Correlation Patterns": [
       {
         "pattern_name": "Total Sales and Operating Profit move together very strongly",
-        "description": "Total Sales and Operating Profit have a very strong positive relationship: records with higher sales tend to also show higher operating profit. This is likely partly structural because profit is financially linked to sales, though the relationship is not perfect, indicating margins or cost structure vary across records.",
+        "description": "Total Sales and Operating Profit have a very strong positive relationship. Records with higher sales revenue also tend to have higher operating profit. Given the semantic definitions, this relationship is likely largely structural because profit is generated from sales after operating costs, and the relatively bounded Operating Margin distribution supports that profit tends to scale with sales.",
         "variables_involved": [
           "Total Sales",
           "Operating Profit"
         ],
-        "evidence": "Pearson correlation r = 0.9563, positive direction. This is the strongest relationship in the dataset and indicates near-parallel movement between sales revenue and operating profit.",
+        "evidence": "Pearson correlation r = 0.9563, a very strong positive correlation. As Total Sales increases, Operating Profit also increases strongly.",
         "strength": "strong",
-        "business_relevance": "Revenue growth is closely associated with profit growth in this dataset. From a business perspective, higher-revenue transactions are also the main source of higher operating profit. Because Operating Profit is economically dependent on Total Sales, this relationship is likely substantially structural rather than purely behavioral."
+        "business_relevance": "This indicates that revenue growth is closely tied to profit growth in the dataset. From a business perspective, sales expansion appears to translate into operating profit consistently, making Total Sales a key indicator for profit performance."
       },
       {
         "pattern_name": "Units Sold is strongly associated with Total Sales",
-        "description": "Units Sold and Total Sales show a strong positive relationship: transactions with more units sold generally produce higher total sales. This is consistent with the revenue structure of sales data, since selling more units typically increases revenue, although variation in Price per Unit prevents the relationship from being perfect.",
+        "description": "Units Sold and Total Sales show a strong positive relationship. Transactions with more units sold tend to generate higher total sales. This relationship is likely partly structural because sales revenue is directly influenced by quantity sold, though variation in Price per Unit means it is not a perfect one-to-one relationship.",
         "variables_involved": [
           "Units Sold",
           "Total Sales"
         ],
-        "evidence": "Pearson correlation r = 0.8449, positive direction. As Units Sold increases, Total Sales tends to increase strongly as well.",
+        "evidence": "Pearson correlation r = 0.8449, a strong positive correlation. Higher Units Sold is associated with higher Total Sales.",
         "strength": "strong",
-        "business_relevance": "Volume is a major driver of revenue in the dataset. This relationship is likely largely structural because Total Sales is directly influenced by quantity sold, but it also reflects business performance differences across transactions because price levels vary."
+        "business_relevance": "This suggests sales volume is a major driver of revenue. Operationally, actions that increase unit volume are likely to have a meaningful impact on total sales outcomes."
       },
       {
         "pattern_name": "Units Sold is strongly associated with Operating Profit",
-        "description": "Units Sold and Operating Profit have a strong positive relationship: higher-volume transactions tend to generate higher operating profit. This likely reflects a dependency chain where selling more units raises sales, which in turn raises profit, subject to margin differences.",
+        "description": "Units Sold and Operating Profit have a strong positive relationship. Records with higher quantities sold tend to produce higher operating profit. This dependency is likely partly structural and partly business-behavioral: more units sold raises revenue, which in turn supports higher profit, while margin variation prevents the relationship from being perfect.",
         "variables_involved": [
           "Units Sold",
           "Operating Profit"
         ],
-        "evidence": "Pearson correlation r = 0.8139, positive direction. Higher unit volume co-moves with higher operating profit across records.",
+        "evidence": "Pearson correlation r = 0.8139, a strong positive correlation. Higher Units Sold is associated with higher Operating Profit.",
         "strength": "strong",
-        "business_relevance": "Sales volume appears to be an important contributor to profitability. This relationship is partly structural rather than purely behavioral, because Operating Profit is financially downstream of sales volume through Total Sales, but the less-than-perfect correlation shows that profit per unit and operating margin vary."
+        "business_relevance": "This shows that volume growth is not only linked to revenue but also to profitability. Increasing sales quantity appears to be an important lever for improving operating profit in this dataset."
       }
     ],
     "Grouping Patterns": [
       {
-        "pattern_name": "Retailer transaction volume is concentrated in three chains",
-        "description": "Record counts are uneven across retailers, with Foot Locker, West Gear, and Sports Direct accounting for most observations.",
+        "pattern_name": "Retailer volume is concentrated in three retailers",
+        "description": "Units sold are heavily concentrated in West Gear, Foot Locker, and Sports Direct, while Walmart and Amazon are much smaller by total volume.",
         "variables_involved": [
           "Retailer",
-          "count"
+          "Units Sold"
         ],
-        "evidence": "Retailer counts are: Foot Locker 2,637, West Gear 2,374, Sports Direct 2,032, Kohl's 1,030, Amazon 949, Walmart 626. The top three retailers sum to 7,043 records, versus 2,605 for the other three. Foot Locker alone has 4.21× as many records as Walmart (2,637 vs 626).",
+        "evidence": "Total units sold by retailer: West Gear 619822.445, Foot Locker 569453.95, Sports Direct 553494.15, Kohl's 287375.0, Amazon 197990.0, Walmart 193412.825. West Gear sells about 3.21× Walmart (619822.445 vs 193412.825) and about 3.13× Amazon (619822.445 vs 197990.0). The top three retailers together total 1742770.545 units versus 678777.825 for the other three.",
         "strength": "strong",
-        "business_relevance": "High. Any retailer-level analysis will be dominated by Foot Locker, West Gear, and Sports Direct, so decisions based on aggregate retailer performance should account for this imbalance."
+        "business_relevance": "This concentration is meaningful because a small set of retailers accounts for most unit volume, so retailer partnerships, inventory allocation, and account management should prioritize these dominant channels."
       },
       {
-        "pattern_name": "Walmart has the highest average units sold per record despite the smallest retailer count",
-        "description": "Retailers differ meaningfully in average units sold, and Walmart leads on units per record even though it has the fewest records.",
+        "pattern_name": "Walmart has the highest average units sold per record despite the smallest record count",
+        "description": "Walmart stands out as a high-intensity retailer on a per-record basis, even though it has the fewest observations.",
         "variables_involved": [
           "Retailer",
           "Units Sold",
-          "count"
+          "Retailer count"
         ],
-        "evidence": "Mean Units Sold by retailer: Walmart 308.97, Kohl's 279.00, Sports Direct 272.39, West Gear 261.09, Foot Locker 215.95, Amazon 208.63. Walmart's mean is 1.48× Amazon's (308.97 vs 208.63) and 1.43× Foot Locker's (308.97 vs 215.95), while Walmart has the lowest count at 626 records.",
+        "evidence": "Mean units sold by retailer: Walmart 308.966, Kohl's 279.005, Sports Direct 272.389, West Gear 261.088, Foot Locker 215.948, Amazon 208.630. Walmart also has the lowest count at 626 records, versus West Gear 2374 and Foot Locker 2637. Walmart's mean is about 1.48× Amazon's (308.966 vs 208.630).",
         "strength": "strong",
-        "business_relevance": "High. Walmart appears to generate larger order quantities per record, which matters for fulfillment, inventory allocation, and channel strategy."
-      },
-      {
-        "pattern_name": "Foot Locker and West Gear dominate total units sold among retailers",
-        "description": "Total units sold are concentrated in two retailers, driven by their larger record counts.",
-        "variables_involved": [
-          "Retailer",
-          "Units Sold",
-          "count"
-        ],
-        "evidence": "Total Units Sold by retailer: West Gear 619,822.445, Foot Locker 569,453.95, Sports Direct 553,494.15, Kohl's 287,375.0, Amazon 197,990.0, Walmart 193,412.825. West Gear sells 3.21× Walmart's total units (619,822.445 vs 193,412.825) and 2.15× Amazon's (619,822.445 vs 197,990.0).",
-        "strength": "strong",
-        "business_relevance": "High. Volume planning and retailer prioritization should focus heavily on West Gear and Foot Locker because they carry the largest total unit movement."
+        "business_relevance": "This is meaningful because Walmart appears to generate larger orders per record, which may support different replenishment, packaging, or channel strategies than higher-frequency but lower-intensity retailers."
       },
       {
         "pattern_name": "Amazon has the highest average price per unit among retailers",
@@ -202,242 +210,197 @@
           "Retailer",
           "Price per Unit"
         ],
-        "evidence": "Mean Price per Unit by retailer: Amazon 48.76, Walmart 47.18, West Gear 46.74, Foot Locker 44.78, Kohl's 44.61, Sports Direct 42.05. Amazon's average price is 6.71 higher than Sports Direct's (48.76 vs 42.05), about 1.16× as high.",
+        "evidence": "Mean price per unit by retailer: Amazon 48.760, Walmart 47.184, West Gear 46.738, Foot Locker 44.785, Kohl's 44.609, Sports Direct 42.047. Amazon's average price is 6.713 higher than Sports Direct's and about 1.16× as high (48.760 vs 42.047).",
         "strength": "moderate",
-        "business_relevance": "Moderate to high. Retailers appear to operate at different price points, which is relevant for pricing strategy, promotion planning, and margin comparisons."
+        "business_relevance": "This matters for pricing and channel strategy because retailer channels are not priced evenly; Amazon supports the highest average unit price while Sports Direct is the lowest-priced among the listed retailers."
       },
       {
-        "pattern_name": "Regional record counts are concentrated in West and Northeast",
-        "description": "The number of records is uneven by region, with West and Northeast having the largest counts and Southeast the smallest.",
-        "variables_involved": [
-          "Region",
-          "count"
-        ],
-        "evidence": "Region counts are: West 2,448, Northeast 2,376, Midwest 1,872, South 1,728, Southeast 1,224. West has exactly 2.00× the Southeast count (2,448 vs 1,224). West plus Northeast total 4,824 records, compared with 4,824 for the other three regions combined.",
-        "strength": "strong",
-        "business_relevance": "High. Geographic analyses are balanced toward West and Northeast, so these regions will strongly influence overall results."
-      },
-      {
-        "pattern_name": "Southeast has the highest average units sold per record while Northeast has the lowest",
-        "description": "Average unit volume varies sharply by region, with Southeast leading and Northeast trailing.",
+        "pattern_name": "Regional unit volume is led by the West, but per-record intensity is led by the Southeast",
+        "description": "The West has the largest total units sold, while the Southeast has the highest average units sold per record.",
         "variables_involved": [
           "Region",
           "Units Sold"
         ],
-        "evidence": "Mean Units Sold by region: Southeast 314.23, South 283.02, West 279.78, Midwest 209.05, Northeast 198.49. Southeast exceeds Northeast by 115.74 units per record (314.23 vs 198.49), or about 1.58×.",
+        "evidence": "Regional total units sold: West 684912.075, South 489063.2, Northeast 471618.69, Midwest 391337.0, Southeast 384617.405. Regional mean units sold: Southeast 314.230, South 283.023, West 279.784, Midwest 209.048, Northeast 198.493. The West leads total volume, but the Southeast leads per-record volume by 34.445 units over the West (314.230 vs 279.784).",
         "strength": "strong",
-        "business_relevance": "High. Regional demand intensity differs materially, which can affect stocking levels, logistics, and sales target setting."
+        "business_relevance": "This is meaningful because total demand and transaction intensity point to different regions. The West is the largest market by volume, while the Southeast appears to have larger orders per record."
       },
       {
-        "pattern_name": "Higher-price regions are not the highest-unit regions",
-        "description": "Regions with the highest average prices are West and Southeast, but the highest average units sold are Southeast and South, while Northeast combines relatively high price with the lowest unit average.",
+        "pattern_name": "Price levels are much higher in Southeast and West than in South and Midwest",
+        "description": "Regional pricing is uneven, with Southeast and West clearly above South and Midwest on average price per unit.",
         "variables_involved": [
           "Region",
-          "Price per Unit",
-          "Units Sold"
-        ],
-        "evidence": "Mean Price per Unit: Southeast 50.18, West 49.94, Northeast 46.69, Midwest 40.36, South 38.24. Mean Units Sold: Southeast 314.23, South 283.02, West 279.78, Midwest 209.05, Northeast 198.49. Northeast has the third-highest price (46.69) but the lowest units sold (198.49), while South has the lowest price (38.24) and the second-highest units sold (283.02).",
-        "strength": "moderate",
-        "business_relevance": "Moderate to high. Region-level pricing and volume do not move uniformly, so pricing decisions should be region-specific rather than assuming a common price-volume pattern."
-      },
-      {
-        "pattern_name": "State-level record counts are highly standardized with a few larger states",
-        "description": "Most states fall into a small set of count levels, with only a few states having notably larger record counts.",
-        "variables_involved": [
-          "State",
-          "count"
-        ],
-        "evidence": "Many states have 144 or 216 records. Larger states include California 432, Texas 432, Florida 360, and New York 360. California and Texas each have 3.00× the count of a 144-record state such as Illinois or Ohio (432 vs 144).",
-        "strength": "strong",
-        "business_relevance": "Moderate. State comparisons are affected by a structured count imbalance, so larger states will contribute more to totals and may need normalization in performance reviews."
-      },
-      {
-        "pattern_name": "A small set of states dominates total units sold",
-        "description": "Total units sold are concentrated in a few states, especially New York, California, and Texas.",
-        "variables_involved": [
-          "State",
-          "Units Sold"
-        ],
-        "evidence": "Top state totals for Units Sold are New York 139,479.69, California 162,260.025, Texas 156,303.2, Florida 122,700.74. These are far above lower-total states such as Nebraska 19,154.0, Maryland 20,818.0, and Minnesota 20,838.0. California's total is 8.47× Nebraska's (162,260.025 vs 19,154.0).",
-        "strength": "strong",
-        "business_relevance": "High. A few states account for a disproportionate share of unit volume, making them priority markets for inventory, staffing, and regional planning."
-      },
-      {
-        "pattern_name": "State average prices are widely dispersed",
-        "description": "Average price per unit varies substantially across states, indicating very uneven price positioning.",
-        "variables_involved": [
-          "State",
           "Price per Unit"
         ],
-        "evidence": "Highest mean Price per Unit states include Washington 67.65, Hawaii 64.25, Colorado 60.09, Florida 56.69, Alaska 57.22. Lowest include Utah 26.83, Missouri 31.49, Arkansas 33.34, Oklahoma 33.42, Mississippi 35.48. Washington's mean price is 2.52× Utah's (67.65 vs 26.83).",
+        "evidence": "Mean price per unit by region: Southeast 50.183, West 49.941, Northeast 46.691, Midwest 40.362, South 38.237. Southeast is 11.946 higher than South and about 1.31× South's average price (50.183 vs 38.237). West is 9.579 higher than Midwest (49.941 vs 40.362).",
         "strength": "strong",
-        "business_relevance": "High. Pricing differs enough across states to matter for market segmentation, promotion design, and margin management."
+        "business_relevance": "This is meaningful for regional pricing and assortment decisions because the data shows materially different price levels across regions, not a uniform national pricing pattern."
       },
       {
-        "pattern_name": "Highest-unit states are not the highest-price states",
-        "description": "States with the largest average units sold are different from those with the highest average prices.",
+        "pattern_name": "Northeast has many records but the lowest average units sold among major regions",
+        "description": "The Northeast combines a high number of records with relatively low units sold per record.",
         "variables_involved": [
-          "State",
-          "Price per Unit",
-          "Units Sold"
+          "Region",
+          "Units Sold",
+          "Region count"
         ],
-        "evidence": "Highest mean Units Sold states include South Carolina 452.27, North Carolina 422.66, New York 387.44, California 375.60, Texas 361.81. Highest mean Price per Unit states include Washington 67.65, Hawaii 64.25, Colorado 60.09, Alaska 57.22, Florida 56.69. For example, South Carolina has the highest mean units sold at 452.27 but a mid-range mean price of 47.72, while Washington has the highest mean price at 67.65 but mean units sold of 316.40.",
-        "strength": "moderate",
-        "business_relevance": "Moderate to high. High-volume states are not simply the highest-price states, so state strategies should separate volume optimization from premium pricing."
-      },
-      {
-        "pattern_name": "City record counts are concentrated in Portland and Charleston",
-        "description": "Most cities have 144 or 216 records, but Portland and Charleston stand out with larger counts.",
-        "variables_involved": [
-          "City",
-          "count"
-        ],
-        "evidence": "City counts show Portland at 360 and Charleston at 288, while many cities are at 144 or 216. Portland has 2.50× the count of a 144-record city such as Seattle or Chicago (360 vs 144).",
+        "evidence": "Northeast has 2376 records, second only to West at 2448, but its mean units sold is 198.493, the lowest among all regions. By comparison, Southeast has only 1224 records but a much higher mean of 314.230. Northeast's mean is about 0.63× Southeast's (198.493 vs 314.230).",
         "strength": "strong",
-        "business_relevance": "Moderate. City-level totals will be influenced by these higher-frequency cities, so direct total comparisons should consider count differences."
+        "business_relevance": "This matters because the Northeast appears to generate many smaller transactions, which can affect logistics, staffing, and sales planning differently from regions with fewer but larger transactions."
       },
       {
-        "pattern_name": "City-level unit sales are highly concentrated in a few markets",
-        "description": "A small number of cities account for much larger total units sold than the rest.",
-        "variables_involved": [
-          "City",
-          "Units Sold"
-        ],
-        "evidence": "Top city totals for Units Sold include Charleston 95,000.49, Houston 87,125.2, San Francisco 85,876.025, New York 82,293.69, Los Angeles 76,384.0, Portland 72,946.0. Lower cities include Omaha 19,154.0, Baltimore 20,818.0, Minneapolis 20,838.0. Charleston's total is 4.96× Omaha's (95,000.49 vs 19,154.0).",
-        "strength": "strong",
-        "business_relevance": "High. These cities are likely the most operationally important markets by volume and should be prioritized for local inventory and sales planning."
-      },
-      {
-        "pattern_name": "City average prices vary sharply, from premium to low-price markets",
-        "description": "Cities show large differences in average price per unit, indicating uneven pricing environments.",
-        "variables_involved": [
-          "City",
-          "Price per Unit"
-        ],
-        "evidence": "Highest mean Price per Unit cities include Seattle 67.65, Honolulu 64.25, Orlando 60.62, Denver 60.09, Anchorage 57.22. Lowest include Salt Lake City 26.83, St. Louis 31.49, Little Rock 33.34, Oklahoma City 33.42, Jackson 35.48. Seattle's mean price is 2.52× Salt Lake City's (67.65 vs 26.83).",
-        "strength": "strong",
-        "business_relevance": "High. City-level pricing is highly uneven, which supports localized pricing and promotion strategies rather than uniform national pricing."
-      },
-      {
-        "pattern_name": "Product counts are nearly balanced across categories",
-        "description": "Unlike geography and retailer, product categories have very similar record counts.",
-        "variables_involved": [
-          "Product",
-          "count"
-        ],
-        "evidence": "Product counts range narrowly from 1,606 to 1,610: Men's Apparel 1,606, Men's Athletic Footwear 1,610, Men's Street Footwear 1,610, Women's Apparel 1,608, Women's Athletic Footwear 1,606, Women's Street Footwear 1,608. The maximum difference is only 4 records.",
-        "strength": "strong",
-        "business_relevance": "High. Product comparisons are less affected by count imbalance, so differences in averages and totals across products are more directly comparable."
-      },
-      {
-        "pattern_name": "Apparel categories have higher average prices than footwear categories",
-        "description": "Average price per unit is consistently higher for apparel than for footwear, especially versus women's footwear categories.",
+        "pattern_name": "Product categories split into higher-priced apparel and lower-priced footwear",
+        "description": "Apparel categories have the highest average prices per unit, while footwear categories are lower-priced on average.",
         "variables_involved": [
           "Product",
           "Price per Unit"
         ],
-        "evidence": "Mean Price per Unit: Women's Apparel 51.60, Men's Apparel 50.32, Men's Street Footwear 44.24, Men's Athletic Footwear 43.78, Women's Athletic Footwear 41.11, Women's Street Footwear 40.25. Women's Apparel exceeds Women's Street Footwear by 11.35 per unit (51.60 vs 40.25), about 1.28×.",
+        "evidence": "Mean price per unit by product: Women's Apparel 51.601, Men's Apparel 50.322, Men's Street Footwear 44.237, Men's Athletic Footwear 43.780, Women's Athletic Footwear 41.113, Women's Street Footwear 40.252. Women's Apparel is 11.348 higher than Women's Street Footwear and about 1.28× as high (51.601 vs 40.252).",
         "strength": "strong",
-        "business_relevance": "High. Product pricing is clearly segmented, which is important for assortment, discounting, and margin expectations."
+        "business_relevance": "This is meaningful because pricing differs systematically by product segment, supporting category-specific pricing, promotion, and margin management rather than a one-size-fits-all approach."
       },
       {
         "pattern_name": "Men's Street Footwear is the dominant product by units sold",
-        "description": "Among product categories, Men's Street Footwear leads clearly in both total and average units sold.",
+        "description": "Among product groups, Men's Street Footwear clearly leads both total units sold and average units sold per record.",
         "variables_involved": [
           "Product",
           "Units Sold"
         ],
-        "evidence": "Total Units Sold by product: Men's Street Footwear 555,462.895, Men's Athletic Footwear 429,482.05, Women's Apparel 423,612.225, Women's Street Footwear 389,072.2, Women's Athletic Footwear 317,236.0, Men's Apparel 306,683.0. Mean Units Sold: Men's Street Footwear 345.01, Men's Athletic Footwear 266.76, Women's Apparel 263.44, Women's Street Footwear 241.96, Women's Athletic Footwear 197.53, Men's Apparel 190.96. Men's Street Footwear total is 1.81× Men's Apparel (555,462.895 vs 306,683.0).",
+        "evidence": "Total units sold by product: Men's Street Footwear 555462.895, Men's Athletic Footwear 429482.05, Women's Apparel 423612.225, Women's Street Footwear 389072.2, Women's Athletic Footwear 317236.0, Men's Apparel 306683.0. Mean units sold by product: Men's Street Footwear 345.008, Men's Athletic Footwear 266.759, Women's Apparel 263.440, Women's Street Footwear 241.960, Women's Athletic Footwear 197.532, Men's Apparel 190.961. Men's Street Footwear total is about 1.81× Men's Apparel (555462.895 vs 306683.0).",
         "strength": "strong",
-        "business_relevance": "High. Men's Street Footwear is the clearest volume-leading category and should be central in demand planning and inventory prioritization."
+        "business_relevance": "This is meaningful because one product segment is the clear volume leader, which can guide assortment depth, forecasting, and promotional focus."
       },
       {
-        "pattern_name": "Women's Apparel combines the highest average price with high unit volume",
-        "description": "Women's Apparel stands out by pairing the highest average price with the third-highest average units sold among products.",
+        "pattern_name": "Women's Apparel pairs the highest average price with strong unit demand",
+        "description": "Women's Apparel has the highest average price per unit and still ranks near the top in units sold.",
         "variables_involved": [
           "Product",
           "Price per Unit",
           "Units Sold"
         ],
-        "evidence": "Women's Apparel has the highest mean Price per Unit at 51.60 and mean Units Sold of 263.44. This unit average is above Women's Street Footwear (241.96), Women's Athletic Footwear (197.53), and Men's Apparel (190.96), trailing only Men's Street Footwear (345.01) and Men's Athletic Footwear (266.76).",
+        "evidence": "Women's Apparel has the highest mean price per unit at 51.601. Its total units sold are 423612.225, ranking third behind Men's Street Footwear 555462.895 and Men's Athletic Footwear 429482.05, and its mean units sold is 263.440. This places it above both Women's Street Footwear (389072.2 units; mean 241.960) and Women's Athletic Footwear (317236.0 units; mean 197.532) despite the higher price.",
         "strength": "moderate",
-        "business_relevance": "High. This category appears attractive because it maintains premium pricing without low unit movement, which is useful for assortment and profitability focus."
+        "business_relevance": "This is meaningful because Women's Apparel combines premium pricing with substantial volume, making it an important category for revenue and margin attention."
+      },
+      {
+        "pattern_name": "State-level unit sales are highly uneven, with a few states far ahead",
+        "description": "A small set of states dominates total units sold, while several states are much smaller.",
+        "variables_involved": [
+          "State",
+          "Units Sold"
+        ],
+        "evidence": "Top state totals for units sold include California 162260.025, Texas 156303.2, New York 139479.69, Florida 122700.74. Lower totals include Nebraska 19154.0, Maryland 20818.0, Minnesota 20838.0, Maine 22410.0. California sells about 8.47× Nebraska (162260.025 vs 19154.0).",
+        "strength": "strong",
+        "business_relevance": "This concentration is meaningful for territory planning and inventory deployment because the largest states materially outweigh the smallest in total unit demand."
+      },
+      {
+        "pattern_name": "Some states combine high prices with low volume, while others combine low prices with high volume",
+        "description": "State-level pricing and volume are not aligned uniformly; there are clear high-price/low-volume and low-price/high-volume examples.",
+        "variables_involved": [
+          "State",
+          "Price per Unit",
+          "Units Sold"
+        ],
+        "evidence": "Washington has the highest mean price per unit at 67.653 with mean units sold of 316.403. Utah has the lowest mean price at 26.829 with mean units sold of 224.759. Hawaii is also high-priced at 64.250 with mean units sold 280.382. South Carolina has the highest mean units sold at 452.274 with mean price 47.715, while North Carolina has mean units sold 422.660 with mean price 44.479. Pennsylvania and Rhode Island have very low mean units sold, 128.065 and 127.190 respectively, with mean prices near 49.940 and 40.352.",
+        "strength": "moderate",
+        "business_relevance": "This is meaningful because states do not follow a single price-volume pattern, so state-level pricing and demand planning should be localized rather than assumed to move together."
+      },
+      {
+        "pattern_name": "City-level counts are uneven, with Portland and Charleston standing out",
+        "description": "Most cities have 144 or 216 records, but Portland and Charleston have noticeably more observations.",
+        "variables_involved": [
+          "City",
+          "count"
+        ],
+        "evidence": "City record counts: Portland 360, Charleston 288, several large cities such as New York 216, Los Angeles 216, Houston 216, while many others have 144. Portland has 2.5× the records of a 144-count city and 1.67× the records of a 216-count city.",
+        "strength": "strong",
+        "business_relevance": "This matters because city-level comparisons should account for uneven representation; cities with more records may contribute more to totals simply due to more observations."
+      },
+      {
+        "pattern_name": "Highest-volume cities are not the highest-priced cities",
+        "description": "Cities with the largest average units sold are different from those with the highest average prices per unit.",
+        "variables_involved": [
+          "City",
+          "Units Sold",
+          "Price per Unit"
+        ],
+        "evidence": "Highest mean units sold cities include Miami 433.373, Charlotte 422.660, Houston 403.357, San Francisco 397.574, Albany 397.125. Highest mean price cities include Seattle 67.653, Honolulu 64.250, Orlando 60.616, Denver 60.090, Anchorage 57.215. Miami's mean price is 50.813, while Seattle's mean units sold is 316.403. Charlotte's mean price is 44.479, well below Seattle's 67.653, despite Charlotte's much higher mean units sold (422.660 vs 316.403).",
+        "strength": "moderate",
+        "business_relevance": "This is meaningful because pricing leaders and volume leaders are different city groups, suggesting separate strategies for premium pricing markets versus high-throughput markets."
       }
     ],
     "Anomaly Patterns": [
       {
         "pattern_name": "High-end outliers in Units Sold",
-        "description": "Units Sold shows a noticeable upper-tail anomaly pattern, with unusually large transaction quantities relative to the central distribution.",
+        "description": "Units Sold shows a noticeable upper-tail outlier pattern, with unusually large transaction quantities relative to the central distribution.",
         "variables_involved": [
           "Units Sold"
         ],
-        "evidence": "Outlier threshold is above 655 units, and 627 records (6.50%) are flagged as outliers. The distribution is right-skewed (skewness 1.356), with mean 250.99 above median 175. Min is 0 and max is 975, while the IQR spans only 105 to 325, so the maximum is far beyond the upper quartile and upper outlier bound.",
+        "evidence": "Outlier bounds are -225 to 655, and 627 records (6.50%) fall outside these bounds. Since the minimum is 0, the flagged outliers are effectively high-end values above 655. The distribution is right-skewed (skewness 1.356), with mean 250.99 above median 175, max 975, and IQR from 105 to 325.",
         "strength": "strong",
-        "business_relevance": "This is more consistent with real high-volume sales events than a clear data quality issue because values are nonnegative and the upper-tail pattern aligns with positive skew. In downstream analysis, use robust summaries (median, IQR), consider winsorizing or segmenting bulk-sale records, and test whether these records correspond to specific products, channels, or periods."
+        "business_relevance": "Likely a real business-volume effect rather than a data quality issue, because values are nonnegative and the anomaly is concentrated in the upper tail. Downstream analysis should use robust summaries or winsorization if modeling average transaction size, while preserving these records for demand and large-order analysis."
       },
       {
         "pattern_name": "Extreme right tail in Total Sales",
-        "description": "Total Sales has a strongly concentrated lower/middle range with a very large upper tail, indicating revenue spikes or very large orders.",
+        "description": "Total Sales has a strongly uneven distribution with very large high-end values compared with the typical record, indicating revenue spikes or a mixture of small and very large transactions.",
         "variables_involved": [
           "Total Sales"
         ],
-        "evidence": "653 records (6.77%) exceed the outlier bounds. The upper outlier bound is 368,618.25, while the maximum reaches 825,000. Mean is 93,273.44 versus median 9,576.0, showing a very large mean-median gap. Quartiles are 4,254.5 and 150,000.0, with strong right skew (1.841) and elevated kurtosis (3.144), both consistent with heavy upper-tail behavior.",
+        "evidence": "653 records (6.77%) are outside the IQR-based bounds of -214363.75 to 368618.25; because the minimum is 0, these are upper-tail outliers above 368618.25. Mean is 93273.44 while median is only 9576.0, q25 is 4254.5, q75 is 150000.0, max is 825000.0, skewness is 1.841, and kurtosis is 3.144.",
         "strength": "strong",
-        "business_relevance": "This could reflect real large transactions, but the very large mean-median gap indicates that aggregate results will be dominated by a small subset of records. Downstream analysis should use log scaling or robust statistics, and analysts should separately profile these high-sales records before modeling or benchmarking."
+        "business_relevance": "This is more consistent with real sales spikes or heterogeneous transaction sizes than with impossible values, since sales are nonnegative and the tail is on the high side. Use log transforms, robust statistics, or segment-level analysis in downstream work; do not remove by default because these records may represent major revenue events."
       },
       {
-        "pattern_name": "Extreme right tail in Operating Profit",
-        "description": "Operating Profit contains a pronounced set of unusually high values, more extreme than the sales distribution, indicating profit spikes concentrated in a minority of records.",
+        "pattern_name": "Highly concentrated extreme values in Operating Profit",
+        "description": "Operating Profit contains a pronounced concentration of unusually high values, with a heavier tail than Total Sales and a very large gap between typical and average profit.",
         "variables_involved": [
           "Operating Profit"
         ],
-        "evidence": "706 records (7.32%) are outliers, the highest outlier share among the business measures listed. The upper outlier bound is 127,274.5, but the maximum is 390,000. Mean is 34,425.28 versus median 4,371.5, a very large gap. The distribution has strong right skew (2.234) and high kurtosis (5.820), indicating a heavy-tailed and sharply peaked distribution with extreme upper values.",
+        "evidence": "706 records (7.32%) are outside the IQR bounds of -73289.5 to 127274.5; with minimum 0, the outliers are upper-tail values above 127274.5. Mean is 34425.28 versus median 4371.5, q25 is 1922.0, q75 is 52063.0, max is 390000.0, skewness is 2.234, and kurtosis is 5.820, the highest kurtosis among the reported business measures.",
         "strength": "strong",
-        "business_relevance": "This likely reflects real highly profitable transactions or combinations of high sales and high margin, rather than obvious data error, because values remain nonnegative. For downstream work, use robust estimators, inspect these records separately, and avoid relying only on averages when comparing profitability across groups."
+        "business_relevance": "This pattern likely reflects real profit spikes tied to large or high-margin transactions rather than obvious data errors, because values are nonnegative and the tail is one-sided. For downstream analysis, use robust estimators and consider separate treatment of high-profit records in forecasting or profitability segmentation."
       },
       {
-        "pattern_name": "Zero-inflation at the lower bound in sales and profit measures",
-        "description": "Both Total Sales and Operating Profit have exact zeros as their minimum values, creating a lower-bound mass that is unusual for continuous monetary measures and may indicate no-sale, canceled, or placeholder records.",
-        "variables_involved": [
-          "Total Sales",
-          "Operating Profit",
-          "Units Sold"
-        ],
-        "evidence": "The minimum for Units Sold is 0, Total Sales is 0, and Operating Profit is 0. These are hard lower bounds for all three related measures. Because Total Sales and Operating Profit are monetary variables with large positive upper tails (max 825,000 and 390,000 respectively), the presence of exact zeros suggests a distinct subgroup at the boundary rather than a smooth continuous distribution.",
-        "strength": "moderate",
-        "business_relevance": "This could be either a real business state (no units sold / no revenue / no profit) or a data quality/process artifact. Downstream analysis should explicitly quantify zero counts, treat zero-valued records as a separate segment, and verify whether they represent valid transactions before including them in revenue or margin modeling."
-      },
-      {
-        "pattern_name": "Mild upper-tail anomalies in Price per Unit",
-        "description": "Price per Unit has some unusually high values, but the anomaly rate is low and the distribution is much more stable than the volume and monetary measures.",
+        "pattern_name": "Price per Unit has limited but distinct upper-end price anomalies",
+        "description": "Price per Unit is relatively stable overall but includes a small set of unusually high prices above the normal range.",
         "variables_involved": [
           "Price per Unit"
         ],
-        "evidence": "Only 81 records (0.84%) are outliers. The outlier bounds are 5.0 to 85.0, while observed values range from 7.0 to 110. Mean is 45.22 and median 45.0, indicating little central distortion. Skewness is only 0.362 and kurtosis 0.430, both relatively mild compared with Total Sales and Operating Profit.",
+        "evidence": "Only 81 records (0.84%) are outside the IQR bounds of 5.0 to 85.0. The observed minimum is 7.0, so outliers are only on the high side above 85.0. Mean is 45.22, median 45.0, q25 35.0, q75 55.0, and max 110.0, with mild right skewness of 0.362.",
         "strength": "moderate",
-        "business_relevance": "These high prices may be legitimate premium-price transactions rather than data errors, since the lower bound is not violated and the central tendency is stable. In downstream analysis, keep these values but consider capping or separate segmentation if price-sensitive models are affected by the small number of high-price records."
+        "business_relevance": "Because the outlier share is small and the overall distribution is fairly centered, these values are more likely premium pricing or product/channel differences than data quality issues. Keep them in analysis, but check whether pricing models should cap or segment high-price records."
       },
       {
-        "pattern_name": "Limited anomalies in Operating Margin despite wider business-value spikes",
-        "description": "Operating Margin is comparatively well-behaved, with few outliers and only mild asymmetry, even though Total Sales and Operating Profit show strong upper-tail anomalies.",
+        "pattern_name": "Operating Margin has a small set of boundary-like extreme values",
+        "description": "Operating Margin is mostly compact but includes a small number of unusually low and high margin records near the edges of the observed range.",
         "variables_involved": [
-          "Operating Margin",
+          "Operating Margin"
+        ],
+        "evidence": "44 records (0.46%) are outside the IQR bounds of 14.0 to 70.0. Observed values range from 10.0 to 80.0, so the anomalies are values below 14 and above 70. Mean is 42.30, median 41.0, q25 35.0, q75 49.0, with low skewness 0.227 and low kurtosis 0.175.",
+        "strength": "moderate",
+        "business_relevance": "These could be real unusually low- or high-margin transactions, but because margin is a ratio-like measure, edge values should be validated for calculation consistency. Downstream analysis should retain them but consider sensitivity checks, especially in margin benchmarking."
+      },
+      {
+        "pattern_name": "Zero-inflation at the lower bound in sales and profit measures",
+        "description": "Several business measures have a minimum of exactly zero despite substantial positive upper tails, indicating a pile-up at the lower boundary.",
+        "variables_involved": [
+          "Units Sold",
           "Total Sales",
           "Operating Profit"
         ],
-        "evidence": "Operating Margin has only 44 outliers (0.46%), with bounds 14.0 to 70.0 and observed range 10.0 to 80.0. Mean is 42.30 and median 41.0, with low skewness (0.227) and low kurtosis (0.175). By contrast, Total Sales has 6.77% outliers and Operating Profit has 7.32% outliers, with much larger skewness and kurtosis values.",
-        "strength": "strong",
-        "business_relevance": "This pattern suggests the extreme sales and profit values are more likely driven by transaction size than by abnormal margins. That makes the anomalies more consistent with real business scale effects than margin-calculation errors. In downstream analysis, margin can likely be used without heavy transformation, while sales and profit should be handled with robust methods."
+        "evidence": "Units Sold min = 0, Total Sales min = 0, and Operating Profit min = 0. At the same time, these variables have large positive maxima (975, 825000, and 390000 respectively) and strong right skewness (1.356, 1.841, and 2.234).",
+        "strength": "moderate",
+        "business_relevance": "The exact count of zeros is not provided, so zero-inflation cannot be quantified precisely, but the boundary mass is plausible for no-sale or zero-profit records. This is more likely a real business state than a data error. Downstream analysis should explicitly account for zeros, for example with two-part models or separate treatment of zero vs positive records."
       },
       {
-        "pattern_name": "Retailer ID concentration indicating an unexpected identifier distribution",
-        "description": "Retailer ID is highly concentrated at a single value or narrow set of values, which is unusual for an identifier field expected to vary across records.",
+        "pattern_name": "Retailer ID is heavily concentrated on a single value",
+        "description": "Retailer ID shows an unexpectedly concentrated distribution for an identifier field, with the middle 50% collapsing to one value.",
         "variables_involved": [
           "Retailer ID"
         ],
-        "evidence": "Retailer ID has q25 = 1,185,732, median = 1,185,732, and q75 = 1,185,732, so the entire interquartile range collapses to one value. Mean is 1,173,849.72, below the median, and skewness is negative (-1.081). The range is 1,128,299 to 1,197,831, but at least 50% of records share the same ID value implied by the identical quartiles.",
+        "evidence": "Median, q25, and q75 are all 1185732.0, meaning at least 50% of records share that exact ID. The range is 1128299.0 to 1197831.0, mean is 1173849.72, and skewness is -1.081.",
         "strength": "strong",
-        "business_relevance": "For an identifier, this is not necessarily an error, but it is an unusual distribution that can distort analyses if Retailer ID is treated as a numeric feature. Downstream analysis should treat this field as categorical/identifier only, check cardinality and frequency by ID, and avoid interpreting its numeric distribution as a business measure."
+        "business_relevance": "For an identifier, this concentration is unusual and may indicate dataset dominance by one retailer, repeated records from one entity, or possible encoding/coverage imbalance rather than a numeric outlier issue. It should not be treated as a continuous variable in modeling; instead, validate category balance and consider stratified analysis by retailer."
       }
     ]
   }

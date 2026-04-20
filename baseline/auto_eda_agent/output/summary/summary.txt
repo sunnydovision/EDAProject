@@ -2,40 +2,40 @@
 AGENTIC AUTOEDA BASELINE - SUMMARY
 ======================================================================
 
-Total Insights: 114
-Passed ISGEN Threshold: 0/114 (0.0%)
+Total Insights: 110
+Passed ISGEN Threshold: 0/110 (0.0%)
 Average Pattern Score: 0.000
 
 Insights by Type:
-  • OUTLIER, ANOMALY: 30
-  • PATTERN: 29
-  • DISTRIBUTION, COMPARISON: 21
+  • OUTLIER, ANOMALY: 28
+  • DISTRIBUTION, COMPARISON: 24
+  • PATTERN: 22
   • TREND: 19
-  • CORRELATION: 15
+  • CORRELATION: 17
 
 Insights by ISGEN Pattern:
-  • UNKNOWN: 114
+  • UNKNOWN: 110
 
 Top 10 Insights:
-  1. insight_000: Sales and profit show a clear upward level shift from 2020 to 2021
+  1. insight_000: Total Sales shifted to a much higher monthly level in 2021 than in 2020
      Type: TREND
-  2. insight_001: 2020 weakened into mid-year before recovering in late summer
+  2. insight_001: Operating Profit followed the same upward step-change as sales in 2021
      Type: TREND
-  3. insight_002: 2021 sales and profit bottomed in March and peaked around July-August
+  3. insight_002: Units Sold rose sharply in 2021 and stayed elevated through the year
      Type: TREND
-  4. insight_003: Units Sold consistently reaches its annual high in August
+  4. insight_003: Transaction activity stepped up sharply at the start of 2021
      Type: TREND
-  5. insight_004: After the 2021 summer peak, performance softened in September-October before recovering late in the year
+  5. insight_004: Total Sales fell through mid-2020, recovered late summer, then softened again near year-end
      Type: TREND
-  6. insight_005: Average price in 2021 was weakest in Q1 and climbed steadily to a December high
+  6. insight_005: Operating Profit mirrored the 2020 sales dip and rebound pattern
      Type: TREND
-  7. insight_006: 2020 pricing rose into June, then dropped sharply and stayed below the mid-year peak
+  7. insight_006: In 2021, Total Sales bottomed in March and climbed strongly to a July peak
      Type: TREND
-  8. insight_007: 2021 generated higher monthly totals even though average sales and profit per record were lower than 2020 peaks
+  8. insight_007: Operating Profit in 2021 also troughed in March and peaked in July
      Type: TREND
-  9. insight_008: Retailer mix stayed stable over time even as transaction activity changed sharply
+  9. insight_008: 2021 unit volume rose from a March low into late summer before dipping in autumn
      Type: TREND
-  10. insight_009: Operating Profit shows the most concentrated anomaly burden with 706 extreme records
-     Type: OUTLIER, ANOMALY
+  10. insight_009: Average Price per Unit was weakest in early 2021 and then trended upward through late 2021
+     Type: TREND
 
 ======================================================================

@@ -358,12 +358,26 @@ Already extracted insights (do not repeat these):
 {used_titles}
 
 SUBSPACE RULES:
-- Use subspace only when the insight is specifically about a subset of data
-- Subspace must be a column that exists in the categorical columns list above
-- Subspace value must be an actual value that exists in that column
+Ask yourself: "Is this insight stronger or more specific when restricted to one segment?"
+- If YES → add subspace using a categorical column and one of its known values
+- If NO (the pattern holds uniformly across all segments) → leave "subspace": []
+
+When to use subspace:
+- The pattern or anomaly is clearly driven by one segment (e.g., one region, one product, one sales channel)
+- The insight would be misleading or diluted without the segment filter
+- The comparison or distribution is meaningfully different in one group vs others
+- For TREND insights: only use subspace if the Step 4 evidence explicitly mentions that segment (do NOT infer segment-specific trends on your own)
+
+When NOT to use subspace:
+- The finding applies equally across all segments
+- There is no categorical column that meaningfully differentiates the insight
+- For TREND insights: if Step 4 temporal patterns are global (whole dataset), leave subspace empty
+
+Subspace format rules:
+- Subspace MUST use a categorical column (from the categorical columns list above)
+- Subspace value MUST be taken exactly from the VALID SUBSPACE VALUES list above
 - Each insight uses at most ONE subspace condition: [["column_name", "value"]]
-- For global insights (whole dataset): "subspace": []
-- Do NOT use numerical columns or derived columns as subspace
+- Do NOT use numerical columns, date columns, or derived columns as subspace
 
 For each insight:
 - Write a specific, concrete title
@@ -387,7 +401,7 @@ Return JSON:
         "data_points": "..."
       },
       "chart_type": "line|bar|scatter|histogram|box",
-      "subspace": []
+      "subspace": [["CategoryColumn", "CategoryValue"]]  // or [] for global insights
     }
   ]
 }

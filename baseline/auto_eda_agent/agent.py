@@ -1580,13 +1580,13 @@ Step 4 — Discovered patterns (relevant to {', '.join(category['types'])}):
 Already extracted insights (do not repeat these):
 {used_titles}
 
-SUBSPACE RULES:
+Subspace rules:
 - Use subspace only when the insight is specifically about a subset of data
-- Subspace must be a column that exists in the categorical columns list above
+- Subspace MUST use a categorical column (from the categorical columns list above)
 - Subspace value must be an actual value that exists in that column
 - Each insight uses at most ONE subspace condition: [["column_name", "value"]]
-- For global insights (whole dataset): "subspace": []
-- Do NOT use numerical columns or derived columns as subspace
+- Do NOT use numerical columns, date columns, or derived columns as subspace
+- REQUIRED: At least 1 or 2 insights in your response MUST have a non-empty subspace (pick the insights that are most naturally segment-specific)
 
 For each insight:
 - Write a specific, concrete title
@@ -1609,7 +1609,7 @@ Return JSON:
         "data_points": "..."
       }},
       "chart_type": "line|bar|scatter|histogram|box",
-      "subspace": []
+      "subspace": [["CategoryColumn", "CategoryValue"]]  // or [] for global insights
     }}
   ]
 }}
