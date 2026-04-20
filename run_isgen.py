@@ -23,6 +23,7 @@ except ImportError:
 
 import pandas as pd
 
+from ifq.shared.data_loader import load_data
 from ifq.isgen.pipeline import ISGENPipeline, ISGENConfig
 
 def _get_llm():
@@ -61,36 +62,8 @@ def main():
         print(f"Insight cards not found: {args.insight_cards}", file=sys.stderr)
         sys.exit(1)
 
-    with open(args.csv, "r", encoding="utf-8") as f:
-        first_line = f.readline()
-    sep = ";" if first_line.count(";") > first_line.count(",") else ","
-    
-    # Check if preprocessed cleaned file exists
-    base_dir = os.path.dirname(args.csv)
-    base_name = os.path.basename(args.csv)
-    name_without_ext = os.path.splitext(base_name)[0]
-    cleaned_path = os.path.join(base_dir, f"{name_without_ext}_cleaned.csv")
-    
-    if os.path.exists(cleaned_path):
-        print(f"Loading preprocessed cleaned data from: {cleaned_path}")
-        df = pd.read_csv(cleaned_path, sep=sep)
-    else:
-        print(f"No preprocessed file found, using original data with cleaning...")
-        df = pd.read_csv(args.csv, sep=sep, decimal="," if sep == ";" else ".")
-        
-        # Clean currency ($), percentage (%), and European number formatting so columns become numeric
-        for col in df.columns:
-            if df[col].dtype == object:
-                sample = df[col].dropna().head(20).astype(str).str.strip()
-                # Detect columns that look numeric: digits with optional $, %, dots, commas
-                numeric_like = sample.str.match(r"^\$?\s*[\d.,]+\s*%?$")
-                if numeric_like.sum() >= len(sample) * 0.8:
-                    cleaned = df[col].astype(str).str.replace(r"[$%]", "", regex=True).str.strip()
-                    if sep == ";":
-                        cleaned = cleaned.str.replace(".", "", regex=False).str.replace(",", ".", regex=False)
-                    converted = pd.to_numeric(cleaned, errors="coerce")
-                    if converted.notna().sum() >= len(df) * 0.5:
-                        df[col] = converted
+    # Load CSV using shared data loader (includes validation)
+    df = load_data(args.csv)
 
     cards = load_cards(args.insight_cards)
     config = ISGENConfig(

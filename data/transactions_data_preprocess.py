@@ -38,6 +38,12 @@ def clean_dataframe(df: pd.DataFrame, sep: str) -> pd.DataFrame:
         print("  Ngày bán: Parsing as datetime (format: D/M/YY)")
         df["Ngày bán"] = pd.to_datetime(df["Ngày bán"], dayfirst=True, errors="coerce")
     
+    # Trim whitespace from all string columns
+    for col in df.columns:
+        if df[col].dtype == object or 'str' in str(df[col].dtype).lower():
+            print(f"  {col}: Trimming whitespace")
+            df[col] = df[col].astype(str).str.strip()
+    
     # Process numeric columns with EU format (comma as decimal) and boolean columns
     for col in df.columns:
         if col == "Ngày bán":
@@ -54,13 +60,22 @@ def clean_dataframe(df: pd.DataFrame, sep: str) -> pd.DataFrame:
                 df[col] = df[col].astype(str).str.upper().map({'TRUE': True, 'FALSE': False})
                 continue
             
-            # Check for numeric values with EU format (comma as decimal)
-            has_comma_decimal = sample.str.contains(r',\d+$')
+            # Check for numeric values with EU format (comma as decimal) OR plain integers
+            has_comma_decimal = sample.str.contains(r',\d')
             has_digits = sample.str.contains(r'[\d.,]')
-            numeric_like = has_comma_decimal & has_digits
+            # Check if it's a plain integer (no comma, only digits and possibly dots as thousand separators)
+            is_plain_integer = sample.str.match(r'^[\d\.]+$')
+            numeric_like = (has_comma_decimal & has_digits) | is_plain_integer
             if numeric_like.sum() >= len(sample) * 0.8:
-                print(f"  {col}: Converting EU format (comma=decimal) to numeric")
-                cleaned = df[col].astype(str).str.replace('.', '', regex=False).str.replace(',', '.', regex=False)
+                print(f"  {col}: Converting to numeric")
+                # For EU format: remove dots (thousand separators), replace comma with dot (decimal)
+                # For plain integers: just convert directly
+                if has_comma_decimal.sum() >= len(sample) * 0.5:
+                    # Has comma decimal, treat as European format
+                    cleaned = df[col].astype(str).str.replace('.', '', regex=False).str.replace(',', '.', regex=False)
+                else:
+                    # Plain integer, just convert
+                    cleaned = df[col].astype(str)
                 converted = pd.to_numeric(cleaned, errors="coerce")
                 if converted.notna().sum() >= len(df) * 0.5:
                     df[col] = converted
