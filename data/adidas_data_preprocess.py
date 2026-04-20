@@ -46,7 +46,7 @@ def clean_dataframe(df: pd.DataFrame, sep: str) -> pd.DataFrame:
         if col == "Invoice Date":
             continue
         
-        # Check for object or string dtype (QUIS only checks object, but that doesn't work with this data)
+        # Check for object or string dtype (IFQ only checks object, but that doesn't work with this data)
         dtype_str = str(df[col].dtype)
         if df[col].dtype == object or 'str' in dtype_str.lower() or 'string' in dtype_str.lower():
             sample = df[col].dropna().head(20).astype(str).str.strip()
@@ -89,7 +89,7 @@ def main():
     sep = ";" if first_line.count(";") > first_line.count(",") else ","
     print(f"Detected separator: '{sep}'")
     
-    # Load raw data (without decimal parameter - QUIS's approach doesn't work with this data)
+    # Load raw data (without decimal parameter - IFQ's approach doesn't work with this data)
     print(f"Loading data from: {input_path}")
     df = pd.read_csv(input_path, sep=sep)
     print(f"Loaded {len(df)} rows, {len(df.columns)} columns")

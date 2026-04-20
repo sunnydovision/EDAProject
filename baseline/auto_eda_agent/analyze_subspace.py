@@ -3,7 +3,7 @@ Analyze subspace generation from new baseline output
 """
 import json
 
-insights_path = "output_adidas_cleaned_new/quis_format/insights_summary.json"
+insights_path = "output_adidas_cleaned_new/ifq_format/insights_summary.json"
 
 with open(insights_path, 'r', encoding='utf-8') as f:
     insights = json.load(f)

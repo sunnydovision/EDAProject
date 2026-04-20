@@ -1,7 +1,7 @@
 """
-Output Converter: Transform Agentic AutoEDA output to QUIS-compatible format
+Output Converter: Transform Agentic AutoEDA output to IFQ-compatible format
 
-This module converts the baseline's custom output format to QUIS-compatible format
+This module converts the baseline's custom output format to IFQ-compatible format
 while preserving the 5-step EDA methodology.
 
 Key transformations:
@@ -17,10 +17,10 @@ from typing import Dict, List, Any, Tuple
 import sys
 import os
 
-# Import QUIS views for compatibility only (not models)
+# Import IFQ views for compatibility only (not models)
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
-from quis.isgen.views import compute_view, parse_measure
-from agent import _clean_dataframe_like_quis
+from ifq.isgen.views import compute_view, parse_measure
+from agent import _clean_dataframe_like_ifq
 
 
 class OutputConverter:
@@ -56,7 +56,7 @@ class OutputConverter:
     
     def convert_insights(self, insights_path: str, output_dir: str):
         """
-        Convert baseline insights.json to QUIS-compatible format.
+        Convert baseline insights.json to IFQ-compatible format.
         
         Args:
             insights_path: Path to baseline insights.json
@@ -64,7 +64,7 @@ class OutputConverter:
         
         Generates:
             - insight_cards.json: InsightCards with (Q, R, B, M)
-            - insights_summary.json: QUIS format with question, explanation, plot_path, nested insight
+            - insights_summary.json: IFQ format with question, explanation, plot_path, nested insight
         """
         os.makedirs(output_dir, exist_ok=True)
         
@@ -72,7 +72,7 @@ class OutputConverter:
         with open(insights_path, 'r', encoding='utf-8') as f:
             baseline_insights = json.load(f)
         
-        print(f"\n🔄 Converting {len(baseline_insights)} insights to QUIS format...")
+        print(f"\n🔄 Converting {len(baseline_insights)} insights to IFQ format...")
         
         # Convert each insight
         insight_cards = []
@@ -93,18 +93,18 @@ class OutputConverter:
                 card = self._generate_insight_card(baseline_insight, breakdown, measure)
                 insight_cards.append(card)
                 
-                # Convert to QUIS Insight format
-                quis_insight = self._convert_to_quis_insight(baseline_insight, breakdown, measure, idx)
+                # Convert to IFQ Insight format
+                ifq_insight = self._convert_to_ifq_insight(baseline_insight, breakdown, measure, idx)
                 
-                # Use existing chart path from baseline (already in QUIS format)
+                # Use existing chart path from baseline (already in IFQ format)
                 chart_path = baseline_insight.get('chart_path', '')
                 
-                # Create insights_summary entry (QUIS format)
+                # Create insights_summary entry (IFQ format)
                 summary_entry = {
-                    'question': quis_insight['insight']['question'],
-                    'explanation': self._generate_explanation(quis_insight['insight']),
+                    'question': ifq_insight['insight']['question'],
+                    'explanation': self._generate_explanation(ifq_insight['insight']),
                     'plot_path': chart_path,
-                    'insight': quis_insight['insight']
+                    'insight': ifq_insight['insight']
                 }
                 insights_summary.append(summary_entry)
                 
@@ -117,7 +117,7 @@ class OutputConverter:
         with open(cards_path, 'w', encoding='utf-8') as f:
             json.dump(insight_cards, f, indent=2, ensure_ascii=False)
         
-        # Save Insights Summary (QUIS format)
+        # Save Insights Summary (IFQ format)
         summary_path = f"{output_dir}/insights_summary.json"
         with open(summary_path, 'w', encoding='utf-8') as f:
             json.dump(insights_summary, f, indent=2, ensure_ascii=False)
@@ -286,7 +286,7 @@ class OutputConverter:
     def _fix_label_types(self, labels: List[str], breakdown: str) -> List[Any]:
         """
         Convert string labels back to original data types to match cleaned data.
-        QUIS compute_view returns strings, but we need original types for faithfulness.
+        IFQ compute_view returns strings, but we need original types for faithfulness.
         """
         if breakdown not in self.df.columns:
             return labels
@@ -326,7 +326,7 @@ class OutputConverter:
         
         return fixed_labels
 
-    def _convert_to_quis_insight(self, baseline_insight: Dict, breakdown: str, measure: str, idx: int) -> Dict:
+    def _convert_to_ifq_insight(self, baseline_insight: Dict, breakdown: str, measure: str, idx: int) -> Dict:
         """
         Convert baseline insight to ISGEN-compatible format.
         
@@ -344,21 +344,21 @@ class OutputConverter:
         score_data = baseline_insight.get('score', {})
         score = float(score_data.get('overall', score_data.get('pattern_score', 0.0)))
         
-        # Extract and convert subspace from baseline format to QUIS Subspace format
+        # Extract and convert subspace from baseline format to IFQ Subspace format
         # Baseline uses [["column", "value"]] (list of lists)
-        # QUIS uses Subspace(filters=((col, val), ...)) (tuple of tuples)
+        # IFQ uses Subspace(filters=((col, val), ...)) (tuple of tuples)
         baseline_subspace = baseline_insight.get('subspace', [])
         if baseline_subspace:
             # Convert from [["col", "val"], ...] to ((col, val), ...)
             subspace_filters = tuple(tuple(filter_pair) for filter_pair in baseline_subspace)
-            from quis.isgen.models import Subspace
-            quis_subspace = Subspace(filters=subspace_filters)
+            from ifq.isgen.models import Subspace
+            ifq_subspace = Subspace(filters=subspace_filters)
         else:
-            quis_subspace = None
+            ifq_subspace = None
         
         # Compute view (labels and values) with actual subspace
         try:
-            labels, values = compute_view(self.df, breakdown, measure, quis_subspace)
+            labels, values = compute_view(self.df, breakdown, measure, ifq_subspace)
             # Convert string labels back to original data types to match cleaned data
             labels = self._fix_label_types(labels, breakdown)
             # Remove duplicates to avoid faithfulness errors
@@ -425,7 +425,7 @@ class OutputConverter:
             return f"{pattern}: {subspace_text}interesting pattern found in {measure} by {breakdown}."
     
     def _compute_view_fallback(self, breakdown: str, measure: str) -> Tuple[List[str], List[float]]:
-        """Fallback view computation if QUIS compute_view fails"""
+        """Fallback view computation if IFQ compute_view fails"""
         try:
             if measure == "COUNT(*)":
                 # Count by breakdown
@@ -488,11 +488,11 @@ def convert_baseline_output(data_path: str, insights_path: str, output_dir: str)
     Args:
         data_path: Path to original CSV data
         insights_path: Path to baseline insights.json
-        output_dir: Output directory for QUIS-compatible files
+        output_dir: Output directory for IFQ-compatible files
     """
     # Load data with same cleaning as baseline agent
     df = pd.read_csv(data_path, sep=None, engine='python')
-    df = _clean_dataframe_like_quis(df, data_path)
+    df = _clean_dataframe_like_ifq(df, data_path)
     
     # Convert
     converter = OutputConverter(df)
@@ -504,13 +504,13 @@ def convert_baseline_output(data_path: str, insights_path: str, output_dir: str)
 if __name__ == "__main__":
     import argparse
     
-    parser = argparse.ArgumentParser(description='Convert Agentic AutoEDA output to QUIS format')
+    parser = argparse.ArgumentParser(description='Convert Agentic AutoEDA output to IFQ format')
     parser.add_argument('--data', type=str, required=True, help='Path to CSV data file')
     parser.add_argument('--insights', type=str, required=True, help='Path to baseline insights.json')
-    parser.add_argument('--output', type=str, default='quis_compatible_output', help='Output directory')
+    parser.add_argument('--output', type=str, default='ifq_compatible_output', help='Output directory')
     
     args = parser.parse_args()
     
     convert_baseline_output(args.data, args.insights, args.output)
     
-    print("\n✅ Conversion complete! Output is now QUIS-compatible.")
+    print("\n✅ Conversion complete! Output is now IFQ-compatible.")

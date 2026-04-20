@@ -1,5 +1,5 @@
 """
-ISGEN: Insight Generation module of QUIS.
+ISGEN: Insight Generation module of IFQ.
 Consumes Insight Cards from QUGEN, computes views and scores, runs basic insight + subspace search,
 then NL explanation and rule-based plotting to produce Insight Summary.
 """

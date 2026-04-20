@@ -1,5 +1,5 @@
 """
-QUGEN: Question Generation module of QUIS.
+QUGEN: Question Generation module of IFQ.
 Generates Insight Cards (Question, Reason, Breakdown, Measure) from data semantics
 in an iterative way, without manually curated examples.
 """

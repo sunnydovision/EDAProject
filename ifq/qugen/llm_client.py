@@ -51,7 +51,7 @@ def _add_usage_from_response(resp: Any) -> None:
 
 
 def _flush_usage_file() -> None:
-    path = os.getenv("QUIS_USAGE_OUTPUT", "").strip()
+    path = os.getenv("IFQ_USAGE_OUTPUT", "").strip()
     if not path or _SESSION_USAGE["requests"] <= 0:
         return
     try:

@@ -26,7 +26,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 import pandas as pd
 
-from quis.qugen.models import schema_from_dataframe
+from ifq.qugen.models import schema_from_dataframe
 
 
 def main():

@@ -76,7 +76,7 @@ def main() -> None:
 
     t0 = time.perf_counter()
     env_q = os.environ.copy()
-    env_q["QUIS_USAGE_OUTPUT"] = str(usage_qugen_path)
+    env_q["IFQ_USAGE_OUTPUT"] = str(usage_qugen_path)
     r1 = subprocess.run(
         [py, str(ROOT / "run_qugen.py"), "--csv", str(csv_path), "--output", str(cards_path)],
         cwd=str(ROOT),
@@ -87,7 +87,7 @@ def main() -> None:
         sys.exit(r1.returncode)
 
     env_i = os.environ.copy()
-    env_i["QUIS_USAGE_OUTPUT"] = str(usage_isgen_path)
+    env_i["IFQ_USAGE_OUTPUT"] = str(usage_isgen_path)
     r2 = subprocess.run(
         [
             py,

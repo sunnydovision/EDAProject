@@ -1,12 +1,12 @@
 # QUGEN Pipeline – Theo code thực thi trong project
 
-Tài liệu này mô tả **đúng luồng và chi tiết** của QUGEN theo code trong `quis/qugen/` (tham chiếu bài báo QUIS, Figure 1 & Section 3.1).
+Tài liệu này mô tả **đúng luồng và chi tiết** của QUGEN theo code trong `ifq/qugen/` (tham chiếu bài báo IFQ, Figure 1 & Section 3.1).
 
 ---
 
 ## 1. Định nghĩa Insight Card (đầu ra)
 
-Mỗi **Insight Card** có 4 trường (`quis/qugen/models.py` – `InsightCard`):
+Mỗi **Insight Card** có 4 trường (`ifq/qugen/models.py` – `InsightCard`):
 
 | Thành phần | Mô tả |
 |------------|--------|
@@ -127,4 +127,4 @@ Schema bảng: **TableSchema** (`table_name` + `columns`: list dict `name`, `dty
 - **LLM**: Project dùng **OpenAI** (Responses API hoặc Chat Completions), không dùng Llama-3-70b trực tiếp; có thể dùng endpoint khác qua OPENAI_API_BASE.
 - **Debug**: Khi parse ra 0 card, ghi phản hồi thô vào `debug_llm_response.txt`.
 
-Document này phản ánh đúng code trong `quis/qugen/` và `run_qugen.py` tại thời điểm review.
+Document này phản ánh đúng code trong `ifq/qugen/` và `run_qugen.py` tại thời điểm review.

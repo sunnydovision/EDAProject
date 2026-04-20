@@ -11,7 +11,7 @@ python evaluation_v2/run_evaluation.py \
   --system_a IFQ \
   --path_a insights_summary_adidas_2.json \
   --system_b Baseline \
-  --path_b baseline/auto_eda_agent/output/quis_format/insights_summary.json \
+  --path_b baseline/auto_eda_agent/output/ifq_format/insights_summary.json \
   --output evaluation_results
 ```
 
@@ -237,7 +237,7 @@ python evaluation_v2/run_evaluation.py \
   --system_a IFQ \
   --path_a insights_summary_adidas_2.json \
   --system_b Baseline \
-  --path_b baseline/auto_eda_agent/output/quis_format/insights_summary.json
+  --path_b baseline/auto_eda_agent/output/ifq_format/insights_summary.json
 ```
 
 ### 2. Custom Output Directory
@@ -248,7 +248,7 @@ python evaluation_v2/run_evaluation.py \
   --system_a IFQ \
   --path_a insights_summary_adidas_2.json \
   --system_b Baseline \
-  --path_b baseline/auto_eda_agent/output/quis_format/insights_summary.json \
+  --path_b baseline/auto_eda_agent/output/ifq_format/insights_summary.json \
   --output my_evaluation_results
 ```
 

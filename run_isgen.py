@@ -23,11 +23,11 @@ except ImportError:
 
 import pandas as pd
 
-from quis.isgen.pipeline import ISGENPipeline, ISGENConfig
+from ifq.isgen.pipeline import ISGENPipeline, ISGENConfig
 
 def _get_llm():
     try:
-        from quis.qugen.llm_client import get_default_llm_client
+        from ifq.qugen.llm_client import get_default_llm_client
         return get_default_llm_client(use_mock=False)
     except Exception:
         return None

@@ -1,4 +1,4 @@
-# QUIS - QUGEN (Question Generation) - dependencies per paper
+# IFQ - QUGEN (Question Generation) - dependencies per paper
 # LLM: Llama-3-70b-instruct (via API or transformers)
 # Semantic similarity: all-MiniLM-L6-v2 (Sentence Transformers)
 
