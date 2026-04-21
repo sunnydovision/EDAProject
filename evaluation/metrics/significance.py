@@ -7,26 +7,42 @@ Measures whether insights are statistically significant (not random noise).
 import pandas as pd
 import numpy as np
 import re
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 from scipy import stats
 from scipy.stats import chi2_contingency, ks_2samp
 
+from .breakdown_measure import _load_column_classes, _is_categorical
 
-def parse_measure(measure_str: str) -> tuple[str, str]:
-    """Parse measure string into (agg, column)."""
+
+def parse_measure(measure_str: str) -> tuple[str, str] | None:
+    """
+    Parse measure string into (agg, column).
+    Returns None if aggregation type is not recognized.
+    """
     s = measure_str.strip()
-    m = re.match(r"(SUM|MEAN|AVG|COUNT|MIN|MAX)\s*\(\s*([^)]+)\s*\)", s, re.IGNORECASE)
+    # Support more aggregation types
+    m = re.match(r"(SUM|MEAN|AVG|AVERAGE|COUNT|MIN|MAX|MEDIAN|STD|STDEV|TOTAL)\s*\(\s*([^)]+)\s*\)", s, re.IGNORECASE)
     if m:
-        return m.group(1).lower(), m.group(2).strip()
+        agg = m.group(1).lower()
+        col = m.group(2).strip()
+        # Normalize aliases
+        if agg in ("average", "avg"):
+            agg = "mean"
+        elif agg in ("total",):
+            agg = "sum"
+        elif agg in ("stdev",):
+            agg = "std"
+        return agg, col
     if re.match(r"COUNT\s*\(\s*\*\s*\)", s, re.IGNORECASE):
         return "count", "*"
-    return "mean", s
+    return None  # Unknown aggregation — reject
 
 
 def compute_significance(
     insights: List[Dict],
     df_cleaned: pd.DataFrame,
-    csv_path: str = None
+    csv_path: str = None,
+    profile_path: str = None,
 ) -> Dict[str, Any]:
     """
     Compute statistical significance of insights using pattern-specific p-value calculation.
@@ -47,168 +63,123 @@ def compute_significance(
     Returns:
         Dictionary with significance metrics (overall and per pattern type)
     """
+    _PATTERNS_ZERO = ['TREND', 'OUTSTANDING_VALUE', 'ATTRIBUTION', 'DISTRIBUTION_DIFFERENCE']
     if len(insights) == 0:
         return {
-            'avg_zscore': 0.0,
+            'avg_effect_size': 0.0,
             'significant_count': 0,
             'significant_rate': 0.0,
-            'max_zscore': 0.0,
+            'max_effect_size': 0.0,
             'total_evaluated': 0,
-            'by_pattern': {
-                'TREND': {'significant_count': 0, 'total_count': 0, 'significant_rate': 0.0},
-                'OUTSTANDING_VALUE': {'significant_count': 0, 'total_count': 0, 'significant_rate': 0.0},
-                'ATTRIBUTION': {'significant_count': 0, 'total_count': 0, 'significant_rate': 0.0},
-                'DISTRIBUTION_DIFFERENCE': {'significant_count': 0, 'total_count': 0, 'significant_rate': 0.0},
-            }
+            'by_pattern': {p: {'significant_count': 0, 'total_count': 0, 'significant_rate': 0.0} for p in _PATTERNS_ZERO},
         }
+
+    _PATTERNS = ['TREND', 'OUTSTANDING_VALUE', 'ATTRIBUTION', 'DISTRIBUTION_DIFFERENCE']
+    _empty = {
+        'avg_effect_size': 0.0,
+        'significant_count': 0,
+        'significant_rate': 0.0,
+        'max_effect_size': 0.0,
+        'total_evaluated': 0,
+        'by_pattern': {p: {'significant_count': 0, 'total_count': 0, 'significant_rate': 0.0} for p in _PATTERNS},
+    }
 
     try:
-        from .faithfulness import parse_measure
-
-        p_values = []
-        significant_count = 0
         alpha = 0.05
+        effect_sizes = []
+        significant_count = 0
 
-        # Track significance per pattern type
-        pattern_stats = {
-            'TREND': {'significant_count': 0, 'total_count': 0, 'insights': []},
-            'OUTSTANDING_VALUE': {'significant_count': 0, 'total_count': 0, 'insights': []},
-            'ATTRIBUTION': {'significant_count': 0, 'total_count': 0, 'insights': []},
-            'DISTRIBUTION_DIFFERENCE': {'significant_count': 0, 'total_count': 0, 'insights': []},
-        }
+        pattern_stats = {p: {'significant_count': 0, 'total_count': 0, 'insights': []} for p in _PATTERNS}
 
         for ins in insights:
-            # Access nested insight object if it exists
             insight_data = ins.get('insight', ins)
             pattern = insight_data.get('pattern', '')
             measure = insight_data.get('measure', '')
-            agg, col = parse_measure(measure)
+            parsed = parse_measure(measure)
+            if parsed is None:
+                continue  # Unknown aggregation type
+            agg, col = parsed
             breakdown = insight_data.get('breakdown', '')
 
-            # Normalize pattern name
             pattern_upper = pattern.upper().replace(' ', '_')
 
             # For COUNT(*), use breakdown column if available
             if not col or col == "*":
                 if breakdown and breakdown in df_cleaned.columns:
-                    col = breakdown  # Use breakdown for COUNT(*) cases
+                    col = breakdown
                 else:
                     continue
 
-            # Resolve column names to match cleaned dataframe
             col_resolved = resolve_column(col, list(df_cleaned.columns)) or col
+            breakdown_resolved = (
+                resolve_column(breakdown, list(df_cleaned.columns)) or breakdown
+            ) if breakdown else None
 
-            breakdown_resolved = resolve_column(breakdown, list(df_cleaned.columns)) or breakdown if breakdown else None
-
-            # Check if required columns exist
             if col_resolved not in df_cleaned.columns:
                 continue
-
             if breakdown_resolved and breakdown_resolved not in df_cleaned.columns:
                 continue
 
-            # Compute p-value based on pattern
-            p_value = compute_p_value(
-                pattern,
-                df_cleaned,
-                breakdown_resolved,
-                col_resolved,
-                agg
+            # ── single source of truth ──────────────────────────────────
+            scored = compute_insight_score(
+                pattern, df_cleaned, breakdown_resolved, col_resolved, agg,
+                profile_path=profile_path,
             )
+            p_value = scored.get('p_value')
+            effect  = scored.get('score')
+            significant = scored.get('significant')
 
-            if p_value is not None:
-                # Handle dictionary return for TREND (Mann-Kendall only)
-                if isinstance(p_value, dict):
-                    mk_p = p_value.get('mann_kendall_p')
-                    if mk_p is not None:
-                        p_values.append(mk_p)
-                        # Count as significant if Mann-Kendall p < alpha
-                        mk_significant = mk_p < alpha
+            if p_value is None or effect is None:
+                continue
 
-                        if mk_significant:
-                            significant_count += 1
+            effect_sizes.append(effect)
+            if significant:
+                significant_count += 1
 
-                        # Track per pattern with insight details
-                        if pattern_upper in pattern_stats:
-                            pattern_stats[pattern_upper]['total_count'] += 1
-                            if mk_significant:
-                                pattern_stats[pattern_upper]['significant_count'] += 1
-                            pattern_stats[pattern_upper]['insights'].append({
-                                'breakdown': breakdown_resolved,
-                                'col': col_resolved,
-                                'mann_kendall_p': mk_p,
-                                'significant': str(mk_significant)
-                            })
-                else:
-                    p_values.append(p_value)
-                    if p_value < alpha:
-                        significant_count += 1
+            if pattern_upper in pattern_stats:
+                pattern_stats[pattern_upper]['total_count'] += 1
+                if significant:
+                    pattern_stats[pattern_upper]['significant_count'] += 1
+                pattern_stats[pattern_upper]['insights'].append({
+                    'breakdown': breakdown_resolved,
+                    'col': col_resolved,
+                    'p_value': p_value,
+                    'effect_size': effect,
+                    'significant': str(significant),
+                })
 
-                    # Track per pattern with insight details
-                    if pattern_upper in pattern_stats:
-                        pattern_stats[pattern_upper]['total_count'] += 1
-                        if p_value < alpha:
-                            pattern_stats[pattern_upper]['significant_count'] += 1
-                        pattern_stats[pattern_upper]['insights'].append({
-                            'breakdown': breakdown_resolved,
-                            'col': col_resolved,
-                            'p_value': p_value,
-                            'significant': str(p_value < alpha)
-                        })
+        if not effect_sizes:
+            return _empty
 
-        if not p_values:
-            return {
-                'avg_zscore': 0.0,
-                'significant_count': 0,
-                'significant_rate': 0.0,
-                'max_zscore': 0.0,
-                'total_evaluated': 0,
-                'by_pattern': {p: {'significant_count': 0, 'total_count': 0, 'significant_rate': 0.0} for p in pattern_stats}
-            }
-
-        # Convert p-values to z-scores for reporting
-        z_scores = []
-        for p in p_values:
-            if p > 0:
-                z = stats.norm.ppf(1 - p/2)
-                z_scores.append(abs(z))
-
-        # Calculate significance rate per pattern
         by_pattern = {}
-        for p, stats_data in pattern_stats.items():
-            total = stats_data['total_count']
-            sig = stats_data['significant_count']
+        pattern_rates = []
+        for p, data in pattern_stats.items():
+            total = data['total_count']
+            sig   = data['significant_count']
+            rate = sig / total if total > 0 else 0.0
             by_pattern[p] = {
                 'significant_count': sig,
                 'total_count': total,
-                'significant_rate': sig / total if total > 0 else 0.0,
-                'insights': stats_data['insights']
+                'significant_rate': rate,
+                'insights': data['insights'],
             }
+            pattern_rates.append(rate)
+
+        # Pattern-averaged significance: average of pattern-specific rates
+        pattern_avg_significance = float(np.mean(pattern_rates)) if pattern_rates else 0.0
 
         return {
-            'avg_zscore': np.mean(z_scores) if z_scores else 0.0,
+            'avg_effect_size': float(np.mean(effect_sizes)),
             'significant_count': significant_count,
-            'significant_rate': significant_count / len(p_values),
-            'max_zscore': max(z_scores) if z_scores else 0.0,
-            'total_evaluated': len(p_values),
-            'by_pattern': by_pattern
+            'significant_rate': significant_count / len(effect_sizes),
+            'pattern_avg_significance': pattern_avg_significance,  # New metric
+            'max_effect_size': float(max(effect_sizes)),
+            'total_evaluated': len(effect_sizes),
+            'by_pattern': by_pattern,
         }
     except Exception as e:
         print(f"Significance computation failed: {e}")
-        return {
-            'avg_zscore': 0.0,
-            'significant_count': 0,
-            'significant_rate': 0.0,
-            'max_zscore': 0.0,
-            'total_evaluated': 0,
-            'by_pattern': {
-                'TREND': {'significant_count': 0, 'total_count': 0, 'significant_rate': 0.0},
-                'OUTSTANDING_VALUE': {'significant_count': 0, 'total_count': 0, 'significant_rate': 0.0},
-                'ATTRIBUTION': {'significant_count': 0, 'total_count': 0, 'significant_rate': 0.0},
-                'DISTRIBUTION_DIFFERENCE': {'significant_count': 0, 'total_count': 0, 'significant_rate': 0.0},
-            },
-            'error': str(e)
-        }
+        return {**_empty, 'error': str(e)}
 
 
 def resolve_column(name: str, df_columns: list[str]) -> str | None:
@@ -241,6 +212,152 @@ def resolve_column(name: str, df_columns: list[str]) -> str | None:
             best_score = overlap
             best_col = c
     return best_col
+
+
+def compute_insight_score(
+    pattern: str,
+    df: pd.DataFrame,
+    breakdown: str,
+    col: str,
+    agg: str = None,
+    profile_path: str = None,
+) -> Dict[str, Any]:
+    """
+    Compute a normalised effect-size score AND p-value for one insight.
+
+    Score is an effect-size measure in [0, 1] — independent of sample size,
+    so it does NOT saturate like (1 - p_value) does for large datasets.
+
+    Pattern → score formula:
+      OUTSTANDING_VALUE  : z / (z + 1)        where z = (max - μ) / σ
+      TREND              : |Kendall τ|         from Mann-Kendall test  [0, 1]
+      ATTRIBUTION        : Cramér's V          from Chi-square          [0, 1]
+      DISTRIBUTION_DIFF  : KS statistic        from KS test             [0, 1]
+
+    Returns dict:
+      {
+        'score':   float in [0, 1] or None,
+        'p_value': float or None,
+        'significant': bool or None   (p_value < 0.05)
+      }
+    """
+    result: Dict[str, Any] = {'score': None, 'p_value': None, 'significant': None}
+    alpha = 0.05
+    pattern_upper = pattern.upper().replace(' ', '_')
+    col_classes = _load_column_classes(profile_path) if profile_path else {}
+
+    if pattern_upper == 'OUTSTANDING_VALUE':
+        if col not in df.columns:
+            return result
+        if breakdown and breakdown in df.columns:
+            try:
+                agg_func = (agg or 'mean').lower()
+                if agg_func == 'count':
+                    grouped = df.groupby(breakdown).size()
+                elif agg_func == 'min':
+                    grouped = df.groupby(breakdown)[col].min()
+                elif agg_func == 'max':
+                    grouped = df.groupby(breakdown)[col].max()
+                elif agg_func == 'sum':
+                    grouped = df.groupby(breakdown)[col].sum()
+                else:
+                    grouped = df.groupby(breakdown)[col].mean()
+                values = grouped.values
+            except Exception:
+                values = pd.to_numeric(df[col], errors='coerce').dropna().values
+        else:
+            values = pd.to_numeric(df[col], errors='coerce').dropna().values
+        if len(values) < 3:
+            return result
+        mean_val = values.mean()
+        std_val = values.std()
+        if std_val == 0:
+            return result
+        z = abs((values.max() - mean_val) / std_val)
+        p = float(1 - stats.norm.cdf(z))
+        score = float(z / (z + 1))          # maps [0, ∞) → [0, 1)
+        result['score'] = round(score, 4)
+        result['p_value'] = round(p, 6)
+        result['significant'] = p < alpha
+
+    elif pattern_upper == 'TREND':
+        if not (breakdown and breakdown in df.columns and col in df.columns):
+            return result
+        # TREND requires datetime breakdown — numeric breakdown is not a time axis
+        if not _is_categorical(df[breakdown], breakdown, col_classes or None):
+            return result
+        try:
+            x_dt = pd.to_datetime(df[breakdown], errors='coerce')
+        except Exception:
+            return result
+        if x_dt.notna().sum() < 3:
+            return result
+        y = pd.to_numeric(df[col], errors='coerce')
+        mask = x_dt.notna() & y.notna()
+        if mask.sum() < 3:
+            return result
+        y_clean = y[mask].values
+        try:
+            import pymannkendall as mk
+            res = mk.original_test(y_clean)
+            # Kendall τ is the normalised effect size for TREND
+            score = float(abs(res.Tau))      # [0, 1]
+            p = float(res.p)
+            result['score'] = round(score, 4)
+            result['p_value'] = round(p, 6)
+            result['significant'] = p < alpha
+        except Exception:
+            return result
+
+    elif pattern_upper == 'ATTRIBUTION':
+        if not (breakdown and breakdown in df.columns and col in df.columns):
+            return result
+        # ATTRIBUTION requires categorical breakdown (grouping descriptor)
+        if not _is_categorical(df[breakdown], breakdown, col_classes or None):
+            return result
+        try:
+            col_numeric = pd.to_numeric(df[col], errors='coerce')
+            if col_numeric.isna().all():
+                ct = pd.crosstab(df[breakdown], df[col])
+            else:
+                ct = pd.crosstab(df[breakdown], pd.cut(col_numeric, bins=5, duplicates='drop'))
+            if ct.size == 0 or ct.sum().sum() == 0:
+                return result
+            chi2_stat, p, dof, _ = chi2_contingency(ct)
+            n = ct.sum().sum()
+            # Cramér's V = sqrt(χ² / (n * (min(r,c) - 1)))
+            min_dim = min(ct.shape) - 1
+            if min_dim <= 0 or n == 0:
+                return result
+            cramers_v = float(np.sqrt(chi2_stat / (n * min_dim)))
+            cramers_v = min(max(cramers_v, 0.0), 1.0)
+            result['score'] = round(cramers_v, 4)
+            result['p_value'] = round(float(p), 6)
+            result['significant'] = p < alpha
+        except Exception:
+            return result
+
+    elif pattern_upper == 'DISTRIBUTION_DIFFERENCE':
+        if not (breakdown and breakdown in df.columns and col in df.columns):
+            return result
+        if breakdown == col:
+            return result
+        # DISTRIBUTION_DIFFERENCE requires categorical breakdown (two groups to compare)
+        if not _is_categorical(df[breakdown], breakdown, col_classes or None):
+            return result
+        cats = df[breakdown].unique()
+        if len(cats) < 2:
+            return result
+        g1 = pd.to_numeric(df[df[breakdown] == cats[0]][col], errors='coerce').dropna()
+        g2 = pd.to_numeric(df[df[breakdown] == cats[1]][col], errors='coerce').dropna()
+        if len(g1) < 3 or len(g2) < 3:
+            return result
+        ks_stat, p = ks_2samp(g1, g2)
+        result['score'] = round(float(ks_stat), 4)   # KS statistic ∈ [0, 1]
+        result['p_value'] = round(float(p), 6)
+        result['significant'] = p < alpha
+
+    return result
 
 
 def compute_p_value(pattern: str, df: pd.DataFrame, breakdown: str, col: str, agg: str = None):

@@ -1,0 +1,757 @@
+{
+  "system": "Baseline",
+  "num_cards": 86,
+  "num_insights": 86,
+  "score_uplift_from_subspace": {
+    "num_with_subspace_scored": 21,
+    "num_without_subspace_scored": 19,
+    "mean_score_with_subspace": 0.4818,
+    "mean_score_without_subspace": 0.5935,
+    "score_uplift_abs": -0.1116,
+    "score_uplift_ratio": 0.8119,
+    "score_uplift_direction": "down"
+  },
+  "faithfulness": {
+    "faithfulness": 1.0,
+    "verified_count": 86,
+    "total_count": 86,
+    "hallucination_count": 0,
+    "hallucination_rate": 0.0,
+    "_failed_insights": []
+  },
+  "insight_significance": {
+    "avg_effect_size": 0.5348675,
+    "significant_count": 33,
+    "significant_rate": 0.825,
+    "pattern_avg_significance": 0.603125,
+    "max_effect_size": 0.9208,
+    "total_evaluated": 40,
+    "by_pattern": {
+      "TREND": {
+        "significant_count": 14,
+        "total_count": 15,
+        "significant_rate": 0.9333333333333333,
+        "insights": [
+          {
+            "breakdown": "Invoice Date",
+            "col": "Total Sales",
+            "p_value": 0.0,
+            "effect_size": 0.5653,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Invoice Date",
+            "col": "Operating Profit",
+            "p_value": 0.0,
+            "effect_size": 0.579,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Invoice Date",
+            "col": "Units Sold",
+            "p_value": 0.0,
+            "effect_size": 0.4672,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Invoice Date",
+            "col": "Retailer ID",
+            "p_value": 0.073624,
+            "effect_size": 0.011,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Invoice Date",
+            "col": "Price per Unit",
+            "p_value": 0.0,
+            "effect_size": 0.2078,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Invoice Date",
+            "col": "Total Sales",
+            "p_value": 0.0,
+            "effect_size": 0.5653,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Invoice Date",
+            "col": "Operating Profit",
+            "p_value": 0.0,
+            "effect_size": 0.579,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Invoice Date",
+            "col": "Total Sales",
+            "p_value": 0.0,
+            "effect_size": 0.5653,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Invoice Date",
+            "col": "Units Sold",
+            "p_value": 0.0,
+            "effect_size": 0.4672,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Invoice Date",
+            "col": "Operating Margin",
+            "p_value": 0.0,
+            "effect_size": 0.2228,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Invoice Date",
+            "col": "Price per Unit",
+            "p_value": 0.0,
+            "effect_size": 0.2078,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Invoice Date",
+            "col": "Units Sold",
+            "p_value": 0.0,
+            "effect_size": 0.4672,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Invoice Date",
+            "col": "Total Sales",
+            "p_value": 0.0,
+            "effect_size": 0.5653,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Invoice Date",
+            "col": "Operating Margin",
+            "p_value": 0.0,
+            "effect_size": 0.2228,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Invoice Date",
+            "col": "Units Sold",
+            "p_value": 0.0,
+            "effect_size": 0.4672,
+            "significant": "True"
+          }
+        ]
+      },
+      "OUTSTANDING_VALUE": {
+        "significant_count": 13,
+        "total_count": 16,
+        "significant_rate": 0.8125,
+        "insights": [
+          {
+            "breakdown": "Operating Profit",
+            "col": "Operating Profit",
+            "p_value": 0.0,
+            "effect_size": 0.9173,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Total Sales",
+            "col": "Total Sales",
+            "p_value": 0.0,
+            "effect_size": 0.9208,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Units Sold",
+            "col": "Total Sales",
+            "p_value": 5e-06,
+            "effect_size": 0.8158,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Price per Unit",
+            "col": "Total Sales",
+            "p_value": 5e-06,
+            "effect_size": 0.8154,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Operating Margin",
+            "col": "Operating Profit",
+            "p_value": 0.002317,
+            "effect_size": 0.739,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Invoice Date",
+            "col": "Total Sales",
+            "p_value": 3e-06,
+            "effect_size": 0.8193,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Sales Method",
+            "col": "Price per Unit",
+            "p_value": 0.122395,
+            "effect_size": 0.5377,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Units Sold",
+            "col": "Units Sold",
+            "p_value": 1e-06,
+            "effect_size": 0.8283,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Price per Unit",
+            "col": "Price per Unit",
+            "p_value": 1.7e-05,
+            "effect_size": 0.8058,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Operating Margin",
+            "col": "Operating Margin",
+            "p_value": 2e-06,
+            "effect_size": 0.8211,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Invoice Date",
+            "col": "Invoice Date",
+            "p_value": 1.8e-05,
+            "effect_size": 0.8052,
+            "significant": "True"
+          },
+          {
+            "breakdown": "State",
+            "col": "Operating Profit",
+            "p_value": 0.00109,
+            "effect_size": 0.754,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Operating Profit",
+            "col": "Total Sales",
+            "p_value": 0.0,
+            "effect_size": 0.8507,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Invoice Date",
+            "col": "Retailer ID",
+            "p_value": 0.118339,
+            "effect_size": 0.542,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Region",
+            "col": "Operating Profit",
+            "p_value": 0.036471,
+            "effect_size": 0.642,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Sales Method",
+            "col": "Operating Profit",
+            "p_value": 0.088044,
+            "effect_size": 0.575,
+            "significant": "False"
+          }
+        ]
+      },
+      "ATTRIBUTION": {
+        "significant_count": 0,
+        "total_count": 0,
+        "significant_rate": 0.0,
+        "insights": []
+      },
+      "DISTRIBUTION_DIFFERENCE": {
+        "significant_count": 6,
+        "total_count": 9,
+        "significant_rate": 0.6666666666666666,
+        "insights": [
+          {
+            "breakdown": "Sales Method",
+            "col": "Total Sales",
+            "p_value": 0.0,
+            "effect_size": 0.6149,
+            "significant": "True"
+          },
+          {
+            "breakdown": "State",
+            "col": "Operating Profit",
+            "p_value": 0.0,
+            "effect_size": 0.2384,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Sales Method",
+            "col": "Operating Profit",
+            "p_value": 0.0,
+            "effect_size": 0.6084,
+            "significant": "True"
+          },
+          {
+            "breakdown": "State",
+            "col": "Operating Margin",
+            "p_value": 0.0,
+            "effect_size": 0.2046,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Invoice Date",
+            "col": "Retailer ID",
+            "p_value": 0.474026,
+            "effect_size": 0.5,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Invoice Date",
+            "col": "Total Sales",
+            "p_value": 0.930736,
+            "effect_size": 0.3333,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Invoice Date",
+            "col": "Units Sold",
+            "p_value": 0.930736,
+            "effect_size": 0.3333,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Region",
+            "col": "Operating Profit",
+            "p_value": 0.0,
+            "effect_size": 0.1054,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Retailer",
+            "col": "Price per Unit",
+            "p_value": 1.7e-05,
+            "effect_size": 0.1068,
+            "significant": "True"
+          }
+        ]
+      }
+    }
+  },
+  "question_diversity": {
+    "semantic_diversity": 0.4508174657821655,
+    "avg_similarity": 0.5491825342178345,
+    "num_insights": 86,
+    "subspace_diversity": {
+      "subspace_diversity_entropy": 1.5159720511803938,
+      "subspace_diversity_count_ratio": 0.05813953488372093,
+      "unique_columns": 5,
+      "total_columns": 32,
+      "column_distribution": {
+        "Sales Method": 10,
+        "Region": 9,
+        "Product": 3,
+        "State": 6,
+        "Retailer": 4
+      }
+    },
+    "value_diversity": {
+      "value_diversity": 0.375,
+      "unique_pairs": 12,
+      "total_pairs": 32
+    },
+    "dedup_rate": 0.011627906976744207,
+    "unique_count": 85,
+    "total_count": 86,
+    "duplicate_count": 1
+  },
+  "bm_quality": {
+    "nmi_mean": 0.1215,
+    "int_mean": 0.1311,
+    "actionability": 0.6774,
+    "bm_diversity": 0.3605,
+    "total_evaluated": 31,
+    "total_categorical": 21,
+    "total_insights": 86,
+    "pairs": [
+      {
+        "breakdown": "Invoice Date",
+        "col": "Total Sales",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.2406,
+        "interestingness": 0.0882
+      },
+      {
+        "breakdown": "Invoice Date",
+        "col": "Operating Profit",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.2232,
+        "interestingness": 0.0887
+      },
+      {
+        "breakdown": "Invoice Date",
+        "col": "Units Sold",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.2413,
+        "interestingness": 0.1446
+      },
+      {
+        "breakdown": "Invoice Date",
+        "col": "Retailer ID",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.2456,
+        "interestingness": 0.569
+      },
+      {
+        "breakdown": "Invoice Date",
+        "col": "Price per Unit",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.2629,
+        "interestingness": 0.458
+      },
+      {
+        "breakdown": "Units Sold",
+        "col": "Total Sales",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Price per Unit",
+        "col": "Total Sales",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Operating Margin",
+        "col": "Operating Profit",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Sales Method",
+        "col": "Price per Unit",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.1172,
+        "interestingness": 0.0266
+      },
+      {
+        "breakdown": "Total Sales",
+        "col": "Operating Profit",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Units Sold",
+        "col": "Operating Profit",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Sales Method",
+        "col": "Total Sales",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.1309,
+        "interestingness": 0.1578
+      },
+      {
+        "breakdown": "State",
+        "col": "Operating Profit",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.1029,
+        "interestingness": 0.0751
+      },
+      {
+        "breakdown": "Operating Margin",
+        "col": "Total Sales",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Product",
+        "col": "Units Sold",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.049,
+        "interestingness": 0.0757
+      },
+      {
+        "breakdown": "Invoice Date",
+        "col": "Operating Margin",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.1988,
+        "interestingness": 0.1649
+      },
+      {
+        "breakdown": "Retailer",
+        "col": "Total Sales",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.0265,
+        "interestingness": 0.0054
+      },
+      {
+        "breakdown": "Region",
+        "col": "Operating Profit",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.0348,
+        "interestingness": 0.0156
+      },
+      {
+        "breakdown": "Price per Unit",
+        "col": "Units Sold",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Operating Profit",
+        "col": "Total Sales",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Sales Method",
+        "col": "Operating Profit",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.1306,
+        "interestingness": 0.1303
+      },
+      {
+        "breakdown": "State",
+        "col": "Operating Margin",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.115,
+        "interestingness": 0.1706
+      },
+      {
+        "breakdown": "Retailer",
+        "col": "Operating Profit",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.022,
+        "interestingness": 0.0035
+      },
+      {
+        "breakdown": "Price per Unit",
+        "col": "Operating Margin",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Operating Margin",
+        "col": "Price per Unit",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Retailer",
+        "col": "Price per Unit",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.024,
+        "interestingness": 0.0197
+      },
+      {
+        "breakdown": "Sales Method",
+        "col": "Units Sold",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.0808,
+        "interestingness": 0.1271
+      },
+      {
+        "breakdown": "State",
+        "col": "Units Sold",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.1114,
+        "interestingness": 0.1908
+      },
+      {
+        "breakdown": "City",
+        "col": "Operating Profit",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.1052,
+        "interestingness": 0.0746
+      },
+      {
+        "breakdown": "Region",
+        "col": "Price per Unit",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.0452,
+        "interestingness": 0.1046
+      },
+      {
+        "breakdown": "Region",
+        "col": "Operating Margin",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.0431,
+        "interestingness": 0.0625
+      }
+    ]
+  },
+  "time_to_insight": null,
+  "token_usage": null,
+  "insight_novelty": {
+    "novelty": 0.8488372093023255,
+    "novel_count": 73,
+    "total_count": 86,
+    "avg_max_similarity": 0.7602787613868713,
+    "tau": 0.85
+  },
+  "subspace_metrics": {
+    "total_with_subspace": 32,
+    "total_original": 32,
+    "faithfulness": {
+      "faithfulness": 1.0,
+      "verified_count": 32,
+      "total_count": 32,
+      "hallucination_count": 0,
+      "hallucination_rate": 0.0,
+      "_failed_insights": []
+    },
+    "significance": {
+      "avg_effect_size": 0.6888666666666666,
+      "significant_count": 4,
+      "significant_rate": 0.6666666666666666,
+      "pattern_avg_significance": 0.16666666666666666,
+      "max_effect_size": 0.8193,
+      "total_evaluated": 6,
+      "by_pattern": {
+        "TREND": {
+          "significant_count": 0,
+          "total_count": 0,
+          "significant_rate": 0.0,
+          "insights": []
+        },
+        "OUTSTANDING_VALUE": {
+          "significant_count": 4,
+          "total_count": 6,
+          "significant_rate": 0.6666666666666666,
+          "insights": [
+            {
+              "breakdown": "Invoice Date",
+              "col": "Total Sales",
+              "p_value": 3e-06,
+              "effect_size": 0.8193,
+              "significant": "True"
+            },
+            {
+              "breakdown": "Sales Method",
+              "col": "Price per Unit",
+              "p_value": 0.122395,
+              "effect_size": 0.5377,
+              "significant": "False"
+            },
+            {
+              "breakdown": "Invoice Date",
+              "col": "Invoice Date",
+              "p_value": 1.8e-05,
+              "effect_size": 0.8052,
+              "significant": "True"
+            },
+            {
+              "breakdown": "State",
+              "col": "Operating Profit",
+              "p_value": 0.00109,
+              "effect_size": 0.754,
+              "significant": "True"
+            },
+            {
+              "breakdown": "Region",
+              "col": "Operating Profit",
+              "p_value": 0.036471,
+              "effect_size": 0.642,
+              "significant": "True"
+            },
+            {
+              "breakdown": "Sales Method",
+              "col": "Operating Profit",
+              "p_value": 0.088044,
+              "effect_size": 0.575,
+              "significant": "False"
+            }
+          ]
+        },
+        "ATTRIBUTION": {
+          "significant_count": 0,
+          "total_count": 0,
+          "significant_rate": 0.0,
+          "insights": []
+        },
+        "DISTRIBUTION_DIFFERENCE": {
+          "significant_count": 0,
+          "total_count": 0,
+          "significant_rate": 0.0,
+          "insights": []
+        }
+      }
+    },
+    "novelty": {
+      "novelty": 0.96875,
+      "novel_count": 31,
+      "total_count": 32,
+      "avg_max_similarity": 0.7031502723693848,
+      "tau": 0.85
+    },
+    "diversity": {
+      "semantic_diversity": 0.457344651222229,
+      "avg_similarity": 0.542655348777771,
+      "num_insights": 32,
+      "subspace_diversity": {
+        "subspace_diversity_entropy": 1.5159720511803938,
+        "subspace_diversity_count_ratio": 0.15625,
+        "unique_columns": 5,
+        "total_columns": 32,
+        "column_distribution": {
+          "Sales Method": 10,
+          "Region": 9,
+          "Product": 3,
+          "State": 6,
+          "Retailer": 4
+        }
+      },
+      "value_diversity": {
+        "value_diversity": 0.375,
+        "unique_pairs": 12,
+        "total_pairs": 32
+      },
+      "dedup_rate": 0.0,
+      "unique_count": 32,
+      "total_count": 32,
+      "duplicate_count": 0
+    }
+  }
+}

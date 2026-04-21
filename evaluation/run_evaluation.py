@@ -25,6 +25,7 @@ from metrics.time_to_insight import compute_time_to_insight
 from metrics.token_usage import compute_token_usage
 from metrics.subspace import compute_subspace_metrics, filter_insights_with_subspace
 from metrics.score_uplift import compute_score_uplift_from_subspace
+from metrics.breakdown_measure import compute_bm_quality
 from compare import create_comparison_table, generate_report
 from plot_evaluation import plot_evaluation_results
 
@@ -43,7 +44,8 @@ def evaluate_system(
     df_cleaned: pd.DataFrame,
     csv_path: str = None,
     timing_file: str = None,
-    token_file: str = None
+    token_file: str = None,
+    profile_path: str = None,
 ) -> dict:
     """
     Evaluate a single system across all metrics.
@@ -56,6 +58,9 @@ def evaluate_system(
         csv_path: Path to CSV file
         timing_file: Path to timing file (optional)
         token_file: Path to token usage file (optional)
+        profile_path: Path to profile.json from LLM column profiling step.
+            Adidas dataset : baseline/auto_eda_agent/output_adidas/step1_profiling/profile.json
+            Transactions   : baseline/auto_eda_agent/output_transactions/step1_profiling/profile.json
         
     Returns:
         Dictionary with all evaluation results
@@ -103,12 +108,13 @@ def evaluate_system(
         'system': system_name,
         'num_cards': len(cards),
         'num_insights': len(insights_data),
-        'score_uplift_from_subspace': compute_score_uplift_from_subspace(insights_data),
+        'score_uplift_from_subspace': compute_score_uplift_from_subspace(insights_data, df_cleaned, profile_path),
         
         # 4 CORE METRICS for Defense
         'faithfulness': compute_faithfulness(insights_data, df_raw, df_cleaned, csv_path),
-        'insight_significance': compute_significance(insights_data, df_cleaned, csv_path),
+        'insight_significance': compute_significance(insights_data, df_cleaned, csv_path, profile_path),
         'question_diversity': compute_diversity(insights_data),
+        'bm_quality': compute_bm_quality(insights_data, df_cleaned, profile_path) if profile_path else None,
         
         # EFFICIENCY METRICS
         'time_to_insight': timing_data,
@@ -169,6 +175,11 @@ def main():
     parser.add_argument('--timing_b', type=str, default=None, help='Path to system B timing file')
     parser.add_argument('--token_b', type=str, default=None, help='Path to system B token usage file')
     parser.add_argument('--output', type=str, default='evaluation/results', help='Output directory')
+    # profile.json is produced by the LLM column profiling step (baseline auto_eda_agent step1).
+    # Adidas dataset   : baseline/auto_eda_agent/output_adidas/step1_profiling/profile.json
+    # Transactions set : baseline/auto_eda_agent/output_transactions/step1_profiling/profile.json
+    parser.add_argument('--profile', type=str, default=None,
+                        help='Path to profile.json for BM Quality categorical detection')
     
     args = parser.parse_args()
     
@@ -191,7 +202,8 @@ def main():
         df_cleaned=df_cleaned,
         csv_path=args.data,
         timing_file=args.timing_a,
-        token_file=args.token_a
+        token_file=args.token_a,
+        profile_path=args.profile,
     )
     
     results_b = evaluate_system(
@@ -201,7 +213,8 @@ def main():
         df_cleaned=df_cleaned,
         csv_path=args.data,
         timing_file=args.timing_b,
-        token_file=args.token_b
+        token_file=args.token_b,
+        profile_path=args.profile,
     )
     
     # Load insights for novelty computation
@@ -265,13 +278,16 @@ def main():
     
     print(f"{args.system_a} Wins: {a_wins}/{len(comparison_df)} metrics")
     print(f"{args.system_b} Wins: {b_wins}/{len(comparison_df)} metrics")
-    
-    print(f"\n4 CORE METRICS + 2 EFFICIENCY METRICS:\n")
-    
-    print(f"1. Faithfulness (Correctness):")
+
+    # ── GROUP 1: Core + Efficiency ─────────────────────────────────────────
+    print(f"\n{'─'*70}")
+    print(f"GROUP 1 — Core Metrics & Efficiency")
+    print(f"{'─'*70}")
+
+    print(f"\n1. Faithfulness (Correctness):")
     print(f"  • {args.system_a}: {results_a['faithfulness']['faithfulness']*100:.1f}%")
     print(f"  • {args.system_b}: {results_b['faithfulness']['faithfulness']*100:.1f}%")
-    
+
     print(f"\n2. Statistical Significance (Validity):")
     sig_a = results_a['insight_significance']
     sig_b = results_b['insight_significance']
@@ -284,11 +300,11 @@ def main():
         count_a = bp_a.get(pattern, {}).get('total_count', 0)
         count_b = bp_b.get(pattern, {}).get('total_count', 0)
         print(f"  {pattern:25} {args.system_a}={p_a*100:.1f}% ({count_a})  {args.system_b}={p_b*100:.1f}% ({count_b})")
-    
+
     print(f"\n3. Insight Novelty (Usefulness):")
     print(f"  • {args.system_a}: {results_a['insight_novelty']['novelty']*100:.1f}%")
     print(f"  • {args.system_b}: {results_b['insight_novelty']['novelty']*100:.1f}%")
-    
+
     print(f"\n4. Insight Diversity (Non-redundancy):")
     _div_a = results_a['question_diversity']
     _div_b = results_b['question_diversity']
@@ -300,7 +316,7 @@ def main():
     _vd_b = (_div_b.get('value_diversity') or {}).get('value_diversity')
     print(f"  4c. Value Diversity:   {args.system_a}={f'{_vd_a:.3f}' if _vd_a is not None else 'N/A'}  {args.system_b}={f'{_vd_b:.3f}' if _vd_b is not None else 'N/A'}")
     print(f"  4d. Dedup Rate:        {args.system_a}={(_div_a.get('dedup_rate') or 0):.3f}  {args.system_b}={(_div_b.get('dedup_rate') or 0):.3f}")
-    
+
     print(f"\n5. Time to Insight (Efficiency):")
     if results_a.get('time_to_insight') and results_b.get('time_to_insight'):
         time_a = results_a['time_to_insight'].get('time_per_insight_seconds')
@@ -312,7 +328,7 @@ def main():
             print(f"  • Timing data not available")
     else:
         print(f"  • Timing data not available")
-    
+
     print(f"\n6. Token Usage (Efficiency):")
     if results_a.get('token_usage') and results_b.get('token_usage'):
         tokens_a = results_a['token_usage'].get('tokens_per_insight')
@@ -324,13 +340,19 @@ def main():
             print(f"  • Token data not available")
     else:
         print(f"  • Token data not available")
-    
-    # Subspace metrics summary
-    print(f"\n7. Subspace Metrics (insights with subspace filter only):")
+
+    # ── GROUP 2: Subspace Deep-dive ────────────────────────────────────────
+    print(f"\n{'─'*70}")
+    print(f"GROUP 2 — Subspace Deep-dive")
+    print(f"{'─'*70}")
+
+    print(f"\n7. Subspace Coverage & Quality (insights with subspace filter only):")
     sa = results_a.get('subspace_metrics', {})
     sb = results_b.get('subspace_metrics', {})
-    print(f"  • {args.system_a}: {sa.get('total_with_subspace', 0)} subspace insights")
-    print(f"  • {args.system_b}: {sb.get('total_with_subspace', 0)} subspace insights")
+    total_a_n = results_a.get('num_insights', 1) or 1
+    total_b_n = results_b.get('num_insights', 1) or 1
+    print(f"  • {args.system_a}: {sa.get('total_with_subspace', 0)}/{total_a_n} subspace insights ({sa.get('total_with_subspace', 0)/total_a_n*100:.1f}%)")
+    print(f"  • {args.system_b}: {sb.get('total_with_subspace', 0)}/{total_b_n} subspace insights ({sb.get('total_with_subspace', 0)/total_b_n*100:.1f}%)")
     if sa.get('faithfulness') and sb.get('faithfulness'):
         print(f"  Faithfulness:  {args.system_a}={sa['faithfulness']['faithfulness']*100:.1f}%  {args.system_b}={sb['faithfulness']['faithfulness']*100:.1f}%")
     if sa.get('significance') and sb.get('significance'):
@@ -338,9 +360,18 @@ def main():
     if sa.get('novelty') and sb.get('novelty'):
         print(f"  Novelty:       {args.system_a}={sa['novelty']['novelty']*100:.1f}%  {args.system_b}={sb['novelty']['novelty']*100:.1f}%")
     if sa.get('diversity') and sb.get('diversity'):
-        _sdiv_a = sa['diversity'].get('diversity') or sa['diversity'].get('semantic_diversity', 0)
-        _sdiv_b = sb['diversity'].get('diversity') or sb['diversity'].get('semantic_diversity', 0)
-        print(f"  Diversity:     {args.system_a}={_sdiv_a:.3f}  {args.system_b}={_sdiv_b:.3f}")
+        _sdiv_a = sa['diversity'].get('semantic_diversity', 0) or 0
+        _sdiv_b = sb['diversity'].get('semantic_diversity', 0) or 0
+        print(f"  Diversity Semantic:      {args.system_a}={_sdiv_a:.3f}  {args.system_b}={_sdiv_b:.3f}")
+        _sse_a = (sa['diversity'].get('subspace_diversity') or {}).get('subspace_diversity_entropy')
+        _sse_b = (sb['diversity'].get('subspace_diversity') or {}).get('subspace_diversity_entropy')
+        print(f"  Diversity Sub-Entropy:   {args.system_a}={f'{_sse_a:.3f}' if _sse_a is not None else 'N/A'}  {args.system_b}={f'{_sse_b:.3f}' if _sse_b is not None else 'N/A'}")
+        _svd_a = (sa['diversity'].get('value_diversity') or {}).get('value_diversity')
+        _svd_b = (sb['diversity'].get('value_diversity') or {}).get('value_diversity')
+        print(f"  Diversity Value:         {args.system_a}={f'{_svd_a:.3f}' if _svd_a is not None else 'N/A'}  {args.system_b}={f'{_svd_b:.3f}' if _svd_b is not None else 'N/A'}")
+        _sdr_a = sa['diversity'].get('dedup_rate', 0) or 0
+        _sdr_b = sb['diversity'].get('dedup_rate', 0) or 0
+        print(f"  Diversity Dedup Rate:    {args.system_a}={_sdr_a:.3f}  {args.system_b}={_sdr_b:.3f}")
 
     print(f"\n8. Score Uplift from Subspace:")
     up_a = results_a.get('score_uplift_from_subspace', {})
@@ -355,9 +386,27 @@ def main():
         f"without={up_b.get('mean_score_without_subspace')} "
         f"uplift={up_b.get('score_uplift_abs')} ratio={up_b.get('score_uplift_ratio')}"
     )
+
     print(f"\n9. Direction Uplift:")
     print(f"  • {args.system_a}: direction={up_a.get('score_uplift_direction')}")
     print(f"  • {args.system_b}: direction={up_b.get('score_uplift_direction')}")
+
+    # ── GROUP 3: Breakdown|Measure Deep-dive ──────────────────────────────
+    print(f"\n{'─'*70}")
+    print(f"GROUP 3 — Breakdown|Measure Deep-dive")
+    print(f"{'─'*70}")
+
+    print(f"\n10. BM Quality (Breakdown-Measure Quality):")
+    bm_a = results_a.get('bm_quality')
+    bm_b = results_b.get('bm_quality')
+    if bm_a and bm_b:
+        print(f"  10a. NMI mean:          {args.system_a}={bm_a.get('nmi_mean', 0):.4f}  {args.system_b}={bm_b.get('nmi_mean', 0):.4f}")
+        print(f"  10b. Interestingness:   {args.system_a}={bm_a.get('int_mean', 0):.4f}  {args.system_b}={bm_b.get('int_mean', 0):.4f}")
+        print(f"  10c. Actionability:     {args.system_a}={bm_a.get('actionability', 0):.4f}  {args.system_b}={bm_b.get('actionability', 0):.4f}")
+        print(f"  10d. BM Diversity:      {args.system_a}={bm_a.get('bm_diversity', 0):.4f}  {args.system_b}={bm_b.get('bm_diversity', 0):.4f}")
+        print(f"  10e. Cat pairs:         {args.system_a}={bm_a.get('total_categorical', 0)}/{bm_a.get('total_evaluated', 0)}  {args.system_b}={bm_b.get('total_categorical', 0)}/{bm_b.get('total_evaluated', 0)}")
+    else:
+        print(f"  BM Quality not available (--profile not provided)")
     
     print(f"\nEvaluation complete! Results saved to: {args.output}/")
 

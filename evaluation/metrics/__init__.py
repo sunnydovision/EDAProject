@@ -9,6 +9,7 @@ This package contains individual metric computation modules:
 - time_to_insight: Efficiency metric
 - token_usage: Efficiency metric
 - subspace: Subspace analysis
+- breakdown_measure: BM Quality (NMI, Interestingness)
 - data_loader: Data loading and cleaning utilities
 """
 
@@ -21,6 +22,7 @@ from .time_to_insight import compute_time_to_insight
 from .token_usage import compute_token_usage
 from .subspace import compute_subspace_count, filter_insights_with_subspace, compute_subspace_metrics
 from .score_uplift import compute_score_uplift_from_subspace
+from .breakdown_measure import compute_bm_quality
 
 __all__ = [
     'load_and_clean_data',
@@ -34,4 +36,5 @@ __all__ = [
     'filter_insights_with_subspace',
     'compute_subspace_metrics',
     'compute_score_uplift_from_subspace',
+    'compute_bm_quality',
 ]

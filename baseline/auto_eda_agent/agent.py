@@ -1578,6 +1578,13 @@ CRITICAL: Do NOT use derived or computed column names (e.g., "month", "year", "q
 If a temporal insight is needed, use the original date column name (e.g., "Invoice Date").
 Even if a "month" column exists in the dataframe, DO NOT use it. Always use the original date column.
 
+BREAKDOWN SELECTION RULES — for TREND, ATTRIBUTION, DISTRIBUTION_DIFFERENCE:
+- The FIRST variable in "variables" is the breakdown column (grouping dimension)
+- Breakdown MUST be a CATEGORICAL or TEMPORAL or ID column (from the categorical columns list above)
+- DO NOT use numerical columns as breakdown for these patterns
+- Example: Use "Retailer" or "Invoice Date" as breakdown, NOT "Total Sales" or "Units Sold"
+- OUTSTANDING_VALUE can use any column as breakdown (it groups by breakdown to find outliers)
+
 VALID SUBSPACE VALUES — when using subspace, the value MUST be taken from this list exactly as written:
 {json.dumps(categorical_values, indent=2, ensure_ascii=False)}
 
@@ -1716,6 +1723,16 @@ Extract as many valuable insights as possible."""
                 if breakdown_col not in filtered_df.columns:
                     print(f"    ⚠️  Skipping insight: breakdown column '{breakdown_col}' not found")
                     continue
+
+                # 3.5 Validate breakdown column type for EDA correctness
+                insight_type = insight.get('type', '')
+                # For TREND, ATTRIBUTION, DISTRIBUTION_DIFFERENCE: breakdown must be categorical/temporal/ID
+                if insight_type in ['TREND', 'ATTRIBUTION', 'DISTRIBUTION_DIFFERENCE']:
+                    # Get numerical columns in current scope
+                    numerical_cols = filtered_df.select_dtypes(include=[np.number]).columns.tolist()
+                    if breakdown_col in numerical_cols:
+                        print(f"    ⚠️  Skipping insight: breakdown column '{breakdown_col}' is numerical (not EDA-correct for {insight_type})")
+                        continue
 
                 # 4. Compute view_labels
                 view_labels = sorted(filtered_df[breakdown_col].dropna().unique().tolist())

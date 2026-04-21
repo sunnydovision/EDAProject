@@ -46,7 +46,7 @@ try:
     print(f"  - Significant rate: {result_ifq['significant_rate']*100:.1f}%")
     print(f"  - Significant count: {result_ifq['significant_count']}")
     print(f"  - Total evaluated: {result_ifq['total_evaluated']}")
-    print(f"  - Avg z-score: {result_ifq['avg_zscore']:.4f}")
+    print(f"  - Avg effect size: {result_ifq['avg_effect_size']:.4f}")
     if 'by_pattern' in result_ifq:
         print(f"  - By pattern:")
         for pattern, stats in result_ifq['by_pattern'].items():
@@ -62,7 +62,7 @@ try:
     print(f"  - Significant rate: {result_baseline['significant_rate']*100:.1f}%")
     print(f"  - Significant count: {result_baseline['significant_count']}")
     print(f"  - Total evaluated: {result_baseline['total_evaluated']}")
-    print(f"  - Avg z-score: {result_baseline['avg_zscore']:.4f}")
+    print(f"  - Avg effect size: {result_baseline['avg_effect_size']:.4f}")
     if 'by_pattern' in result_baseline:
         print(f"  - By pattern:")
         for pattern, stats in result_baseline['by_pattern'].items():

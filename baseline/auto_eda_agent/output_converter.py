@@ -39,9 +39,11 @@ class OutputConverter:
         'TREND': 'TREND',
         'ANOMALY': 'OUTSTANDING_VALUE',
         'OUTLIER': 'OUTSTANDING_VALUE',
+        'OUTLIER, ANOMALY': 'OUTSTANDING_VALUE',  # Combined type
         'CORRELATION': 'ATTRIBUTION',
         'DISTRIBUTION': 'DISTRIBUTION_DIFFERENCE',
-        'COMPARISON': 'ATTRIBUTION',
+        'COMPARISON': 'DISTRIBUTION_DIFFERENCE',  # Fixed: should be DISTRIBUTION_DIFFERENCE
+        'DISTRIBUTION, COMPARISON': 'DISTRIBUTION_DIFFERENCE',  # Combined type
         'PATTERN': 'TREND'  # Generic patterns mapped to trend
     }
     

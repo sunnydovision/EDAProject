@@ -1,464 +1,518 @@
 [
   {
-    "question": "How does count change over Total Sales?",
-    "reason": "Monthly Total Sales were higher in every month of 2021 than the same month in 2020, indicating a broad-based year-over-year growth trend rather than a one-off spike. Step 4 explicitly identifies this ...",
-    "breakdown": "Total Sales",
-    "measure": "COUNT(*)"
-  },
-  {
-    "question": "How does Total Sales change over Operating Profit?",
-    "reason": "Monthly Operating Profit was also higher in every month of 2021 than in the same month of 2020, showing that profit growth kept pace with revenue growth. Step 4 flags this as a consistent monthly patt...",
-    "breakdown": "Operating Profit",
+    "question": "How does Total Sales change over Invoice Date?",
+    "reason": "A clear upward time trend is visible in Total Sales when tracked by Invoice Date: every month in 2021 is higher than its matched month in 2020. This indicates a broad-based year-over-year revenue expa...",
+    "breakdown": "Invoice Date",
     "measure": "MEAN(Total Sales)"
   },
   {
-    "question": "How does Total Sales change over Units Sold?",
-    "reason": "Monthly unit volume increased consistently from 2020 to 2021 across all matched months, pointing to stronger demand and/or broader transaction activity. Step 4 identifies this as a universal year-over...",
-    "breakdown": "Units Sold",
-    "measure": "MEAN(Total Sales)"
-  },
-  {
-    "question": "How does count change over Units Sold?",
-    "reason": "Units Sold in 2021 were lowest in early spring, rose into late summer, then declined in autumn before recovering in December. This indicates demand was not evenly distributed through the year and inst...",
-    "breakdown": "Units Sold",
-    "measure": "COUNT(*)"
-  },
-  {
-    "question": "How does count change over Price per Unit?",
-    "reason": "Price per Unit was relatively higher in parts of 2020, dropped to its lowest levels in early 2021, and then trended upward through late 2021. This suggests the 2021 growth story was initially volume-l...",
-    "breakdown": "Price per Unit",
-    "measure": "COUNT(*)"
-  },
-  {
-    "question": "How does Units Sold change over Retailer ID?",
-    "reason": "Step 4 shows monthly record counts rose sharply from 2020 to 2021 and stayed consistently high throughout 2021, while average Units Sold per record were generally higher in 2020 than in 2021. This mea...",
-    "breakdown": "Retailer ID",
-    "measure": "MEAN(Units Sold)"
-  },
-  {
-    "question": "How does count change over Total Sales?",
-    "reason": "The dataset shows a business-wide pattern where monthly Total Sales in 2021 exceeded the same month in 2020 across the full calendar. For the Online channel, this implies the same directional trend is...",
-    "breakdown": "Total Sales",
-    "measure": "COUNT(*)"
-  },
-  {
-    "question": "How does count change over Total Sales?",
-    "reason": "At the overall level, 2021 Total Sales declined from January to March, rose through July, softened through October, and rebounded in November-December. Applying this trend lens to the West region is v...",
-    "breakdown": "Total Sales",
-    "measure": "COUNT(*)"
-  },
-  {
-    "question": "What insights can we find about operating profit has the largest concentration of extreme records?",
-    "reason": "Operating Profit shows 706 outlier records, representing 7.32% of the dataset, which is the highest outlier share among the core financial measures reviewed. This indicates unusually large or small pr...",
-    "breakdown": "Operating Profit",
-    "measure": "COUNT(*)"
-  },
-  {
-    "question": "What insights can we find about total sales contains an unusually high number of extreme revenue records?",
-    "reason": "Total Sales has 653 outlier records, or 6.77% of all observations, making extreme revenue events a recurring anomaly rather than a handful of isolated cases. Given Total Sales is a primary business KP...",
-    "breakdown": "Total Sales",
-    "measure": "COUNT(*)"
-  },
-  {
-    "question": "What insights can we find about units sold shows frequent volume spikes relative to the rest of the data?",
-    "reason": "Units Sold includes 508 outlier records, equal to 5.27% of the dataset. This means roughly 1 in 19 records has an unusually high or low unit quantity, suggesting repeated bulk-order, return, or data-e...",
-    "breakdown": "Units Sold",
-    "measure": "COUNT(*)"
-  },
-  {
-    "question": "What insights can we find about revenue and profit are dominated by a small set of exceptionally large transactions?",
-    "reason": "Step 3 reports extreme right skew and large mean-median gaps for both Total Sales and Operating Profit, indicating that a relatively small number of very large records sit far above the bulk of transa...",
-    "breakdown": "Total Sales",
+    "question": "How does Operating Profit change over Invoice Date?",
+    "reason": "Operating Profit shows the same trend pattern as Total Sales, with monthly profit totals in 2021 running above the corresponding months in 2020. This suggests the business scaled profit alongside reve...",
+    "breakdown": "Invoice Date",
     "measure": "MEAN(Operating Profit)"
   },
   {
-    "question": "What insights can we find about price per unit anomalies are rare but still meaningful in a critical pricing field?",
-    "reason": "Only 81 records, or 0.84% of the dataset, are outliers in Price per Unit. While the rate is much lower than for sales, profit, or volume, pricing is a root driver of both revenue and margin, so even t...",
-    "breakdown": "Price per Unit",
+    "question": "How does Units Sold change over Invoice Date?",
+    "reason": "Unit demand strengthened materially over time, with monthly Units Sold in 2021 exceeding the same months in 2020 throughout the year. This is a volume-led growth signal, not just a pricing effect. Ste...",
+    "breakdown": "Invoice Date",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "How does Retailer ID change over Invoice Date?",
+    "reason": "The number of records rose sharply from 2020 into 2021 and then stayed elevated throughout 2021, indicating a structural increase in transaction activity. This matters because Step 4 notes that higher...",
+    "breakdown": "Invoice Date",
+    "measure": "MEAN(Retailer ID)"
+  },
+  {
+    "question": "How does Price per Unit change over Invoice Date?",
+    "reason": "Price per Unit shows a distinct trend over time: it is relatively higher in parts of 2020, drops to its lowest levels in early 2021, and then climbs steadily toward the end of 2021. This suggests pric...",
+    "breakdown": "Invoice Date",
+    "measure": "MEAN(Price per Unit)"
+  },
+  {
+    "question": "How does Total Sales change over Invoice Date?",
+    "reason": "For the Online channel, Total Sales are expected to reflect the same 2021 temporal shape seen overall: lower levels in Q1, stronger performance through summer, softer fall results, and a rebound by De...",
+    "breakdown": "Invoice Date",
+    "measure": "MEAN(Total Sales)"
+  },
+  {
+    "question": "How does Operating Profit change over Invoice Date?",
+    "reason": "In the West region, Operating Profit should be evaluated against the broader 2021 trend of early-year softness, summer strengthening, autumn decline, and December recovery. This is a valuable regional...",
+    "breakdown": "Invoice Date",
+    "measure": "MEAN(Operating Profit)"
+  },
+  {
+    "question": "What insights can we find about operating profit has the most severe concentration of extreme values?",
+    "reason": "Operating Profit shows 706 outlier records, representing 7.32% of the dataset, making it the most pronounced anomaly among the core financial measures reviewed. This indicates that profitability is he...",
+    "breakdown": "Operating Profit",
     "measure": "COUNT(*)"
   },
   {
-    "question": "What insights can we find about operating margin is unusually stable compared with dollar-based measures?",
-    "reason": "Operating Margin has just 44 outlier records, or 0.46% of observations, far below Operating Profit at 7.32% and Total Sales at 6.77%. This gap suggests the main anomalies are driven by transaction siz...",
+    "question": "What insights can we find about revenue is distorted by a large tail of extreme total sales records?",
+    "reason": "Total Sales contains 653 outlier records, or 6.77% of all observations, confirming a substantial set of anomalously large revenue transactions. Combined with the strong right skew noted in the statist...",
+    "breakdown": "Total Sales",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about units sold includes a meaningful cluster of unusually large-volume transactions?",
+    "reason": "Units Sold has 508 outlier records, equal to 5.27% of the dataset, indicating that demand volume is punctuated by a notable number of exceptionally large orders or potentially erroneous quantities. Be...",
+    "breakdown": "Units Sold",
+    "measure": "MEAN(Total Sales)"
+  },
+  {
+    "question": "What insights can we find about price per unit anomalies are rare but still material for pricing integrity?",
+    "reason": "Only 81 records, or 0.84% of the dataset, are outliers in Price per Unit, which is far lower than the anomaly rates for sales, profit, and volume. Even so, because pricing directly affects Total Sales...",
+    "breakdown": "Price per Unit",
+    "measure": "MEAN(Total Sales)"
+  },
+  {
+    "question": "What insights can we find about operating margin is unusually stable despite large anomalies in dollar metrics?",
+    "reason": "Operating Margin has just 44 outlier records, or 0.46% of observations, compared with 706 for Operating Profit and 653 for Total Sales. This sharp contrast indicates that the main anomalies are driven...",
     "breakdown": "Operating Margin",
     "measure": "MEAN(Operating Profit)"
   },
   {
-    "question": "What insights can we find about the west region likely contains a disproportionate share of high-value anomalies?",
-    "reason": "The dataset shows strong structural links between Units Sold, Total Sales, and Operating Profit, with correlations of 0.913, 0.956, and 0.892 respectively, while Step 2 flags 653 Total Sales outliers ...",
-    "breakdown": "Units Sold",
+    "question": "What insights can we find about west region anomalies are likely to be amplified by the dataset-wide 2021 transaction surge?",
+    "reason": "For the West subspace, anomaly risk should be interpreted in the context of the broader dataset shift: Step 4 reports a sharp year-over-year step-up in transaction volume in 2021, while Step 2 shows 6...",
+    "breakdown": "Invoice Date",
     "measure": "MEAN(Total Sales)"
   },
   {
-    "question": "What insights can we find about online sales should be prioritized for anomaly review because extreme volume can cascade into revenue and profit outliers?",
-    "reason": "Step 2 identifies 508 Units Sold outliers, 653 Total Sales outliers, and 706 Operating Profit outliers, while Step 3 shows these measures are tightly correlated at 0.913, 0.956, and 0.892. In the Onli...",
-    "breakdown": "Units Sold",
-    "measure": "MEAN(Total Sales)"
-  },
-  {
-    "question": "What is the relationship between Units Sold and Total Sales?",
-    "reason": "There is a very strong positive correlation between Units Sold and Total Sales, with a correlation coefficient of 0.913. This indicates that records with higher unit volume almost always generate high...",
-    "breakdown": "Units Sold",
-    "measure": "MEAN(Total Sales)"
+    "question": "What insights can we find about online sales deserve targeted anomaly review because small pricing errors can cascade into large financial outliers?",
+    "reason": "Within the Online channel, the dataset-wide pattern suggests a concentrated anomaly risk: 81 Price per Unit outliers (0.84%), 653 Total Sales outliers (6.77%), and 706 Operating Profit outliers (7.32%...",
+    "breakdown": "Sales Method",
+    "measure": "MEAN(Price per Unit)"
   },
   {
     "question": "What is the relationship between Total Sales and Operating Profit?",
-    "reason": "Total Sales and Operating Profit have the strongest relationship in the analysis, with a correlation of 0.956. This near-linear association means higher-revenue records tend to translate directly into...",
+    "reason": "The strongest relationship in the dataset is between Total Sales and Operating Profit, with a correlation of 0.9563. This indicates that higher-revenue transactions almost always come with higher oper...",
     "breakdown": "Total Sales",
     "measure": "MEAN(Operating Profit)"
+  },
+  {
+    "question": "What is the relationship between Units Sold and Total Sales?",
+    "reason": "Units Sold and Total Sales have a correlation of 0.9134, showing that transaction revenue rises strongly with volume sold. This is consistent with the structural relationship expected in retail data a...",
+    "breakdown": "Units Sold",
+    "measure": "MEAN(Total Sales)"
   },
   {
     "question": "What is the relationship between Units Sold and Operating Profit?",
-    "reason": "Units Sold and Operating Profit show a strong positive correlation of 0.892. This suggests that larger-quantity transactions are typically more profitable in absolute dollars, even if margin percentag...",
+    "reason": "Units Sold and Operating Profit show a strong positive correlation of 0.8924. This means larger-quantity transactions generally produce more operating profit, although the relationship is slightly wea...",
     "breakdown": "Units Sold",
     "measure": "MEAN(Operating Profit)"
   },
   {
     "question": "What is the relationship between Total Sales and Operating Profit?",
-    "reason": "For the West region, the most relevant correlation pattern is the same core global relationship: Total Sales and Operating Profit move together very closely, supported by the overall correlation of 0....",
+    "reason": "For the Online sales method, the global dataset shows a very strong correlation of 0.9563 between Total Sales and Operating Profit, implying that profit in this channel is also likely dominated by tra...",
     "breakdown": "Total Sales",
     "measure": "MEAN(Operating Profit)"
   },
   {
     "question": "What is the relationship between Units Sold and Total Sales?",
-    "reason": "Within the Online channel, the most business-relevant correlation is the strong alignment between Units Sold and Total Sales, anchored by the overall dataset correlation of 0.913. Because Total Sales ...",
+    "reason": "The overall correlation between Units Sold and Total Sales is 0.9134, indicating that revenue is highly sensitive to unit volume. For Women's Apparel, this relationship is especially useful to inspect...",
     "breakdown": "Units Sold",
     "measure": "MEAN(Total Sales)"
   },
   {
-    "question": "What insights can we find about total sales is heavily right-skewed, with a small share of records contributing disproportionately large revenue?",
-    "reason": "The distribution of Total Sales is strongly concentrated in lower-value transactions with a long right tail of very large records. Step 2 flagged 653 outliers, representing 6.77% of records, and Step ...",
+    "question": "What is the relationship between Operating Margin and Operating Profit?",
+    "reason": "Step 3 reports that Operating Margin is much more stable than dollar-based measures, while the strongest observed correlations are all among Units Sold, Total Sales, and Operating Profit, ranging from...",
+    "breakdown": "Operating Margin",
+    "measure": "MEAN(Operating Profit)"
+  },
+  {
+    "question": "What insights can we find about total sales are far more concentrated in large transactions than typical records suggest?",
+    "reason": "The distribution of Total Sales is strongly right-skewed, meaning a relatively small number of very large transactions account for a disproportionate share of revenue. Step 2 flagged 653 Total Sales o...",
     "breakdown": "Total Sales",
     "measure": "COUNT(*)"
   },
   {
-    "question": "What insights can we find about operating profit is even more concentrated than typical transactions suggest?",
-    "reason": "Operating Profit shows a pronounced right-skewed distribution, indicating that most records generate modest profit while a smaller set of transactions contributes very large profit amounts. Step 2 ide...",
+    "question": "What insights can we find about operating profit is even more unevenly distributed than most operational measures?",
+    "reason": "Operating Profit shows a highly concentrated distribution with a long right tail. Step 2 identified 706 outliers, or 7.32% of all records, the highest outlier rate among the major financial measures r...",
     "breakdown": "Operating Profit",
     "measure": "COUNT(*)"
   },
   {
-    "question": "What insights can we find about units sold has a wide spread, with high-volume transactions standing out from the bulk of records?",
-    "reason": "The Units Sold distribution is uneven, with most transactions clustered at lower volumes and a smaller group of very large-quantity sales extending the upper tail. Step 2 detected 508 outliers, or 5.2...",
+    "question": "What insights can we find about units sold are concentrated in a smaller set of high-volume orders, but less extremely than revenue and profit?",
+    "reason": "Units Sold also has a right-skewed distribution, though it is somewhat less extreme than the skew seen in Total Sales and Operating Profit. Step 2 found 508 outliers in Units Sold, equal to 5.27% of r...",
     "breakdown": "Units Sold",
     "measure": "COUNT(*)"
   },
   {
-    "question": "What insights can we find about operating margin is far more stable than revenue and profit dollars?",
-    "reason": "Compared with Total Sales and Operating Profit, Operating Margin has a much tighter distribution. Step 2 found only 44 outliers, just 0.46% of records, versus 653 Total Sales outliers and 706 Operatin...",
+    "question": "What insights can we find about operating margin is much more stable than dollar-based performance measures?",
+    "reason": "Operating Margin has a comparatively tight distribution relative to Total Sales and Operating Profit. Only 44 records, or 0.46%, were flagged as outliers in Step 2, versus 6.77% for Total Sales and 7....",
     "breakdown": "Operating Margin",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about price per unit is the most stable commercial measure among the core sales drivers?",
+    "reason": "Price per Unit varies much less than Units Sold, Total Sales, or Operating Profit. Step 2 found only 81 price outliers, or 0.84% of records, compared with 508 outliers in Units Sold (5.27%), 653 in To...",
+    "breakdown": "Price per Unit",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about the relationship between units sold and total sales is very strong, showing volume is the main driver of revenue differences?",
+    "reason": "Step 3 reports a correlation of 0.913 between Units Sold and Total Sales, indicating a very strong positive association. Compared with most business datasets, a coefficient above 0.90 is exceptionally...",
+    "breakdown": "Units Sold",
     "measure": "MEAN(Total Sales)"
   },
   {
-    "question": "What insights can we find about price per unit is comparatively consistent, with fewer extreme pricing records than sales or profit measures?",
-    "reason": "Price per Unit appears much less dispersed than transaction-level sales and profit outcomes. Step 2 identified only 81 outliers, or 0.84% of records, compared with 508 outliers in Units Sold, 653 in T...",
-    "breakdown": "Price per Unit",
-    "measure": "MEAN(Units Sold)"
+    "question": "What insights can we find about operating profit tracks total sales more closely than it tracks units sold?",
+    "reason": "Among the strongest pairwise relationships in Step 3, Operating Profit correlates 0.956 with Total Sales and 0.892 with Units Sold. The 0.064 higher correlation with Total Sales shows profit is more t...",
+    "breakdown": "Total Sales",
+    "measure": "MEAN(Operating Profit)"
   },
   {
-    "question": "What insights can we find about online sales likely show stronger concentration in large transactions than a typical channel view would imply?",
-    "reason": "Within the Online channel, the business should expect a distribution where a relatively small number of large transactions can materially affect reported performance. This segment-specific caution is ...",
+    "question": "What insights can we find about in the online channel, financial results are likely especially sensitive to a small number of extreme transactions?",
+    "reason": "For the Online sales method, the global distribution evidence suggests caution because the dataset contains 653 Total Sales outliers (6.77%) and 706 Operating Profit outliers (7.32%) overall, while St...",
     "breakdown": "Sales Method",
     "measure": "MEAN(Total Sales)"
   },
   {
-    "question": "What insights can we find about california transactions should be evaluated with care because high-value records can dominate state-level averages?",
-    "reason": "For California, average sales and profit metrics are likely sensitive to a small number of unusually large transactions. This follows the overall dataset pattern from Step 3, where Total Sales and Ope...",
+    "question": "What insights can we find about in california, profitability comparisons should emphasize margin stability over raw profit averages?",
+    "reason": "For California, the dataset-wide evidence indicates that Operating Profit is highly skewed, with 706 outliers or 7.32% of records, while Operating Margin has only 44 outliers or 0.46%. Step 3 also sta...",
     "breakdown": "State",
-    "measure": "MEAN(Total Sales)"
-  },
-  {
-    "question": "What insights can we find about revenue varies more across records than profitability percentage does?",
-    "reason": "Comparing the distributions directly, Total Sales and Operating Profit have much heavier tails than Operating Margin. Step 2 shows outlier rates above 6% for both dollar measures, versus just 0.46% fo...",
-    "breakdown": "Total Sales",
-    "measure": "MEAN(Operating Profit)"
-  },
-  {
-    "question": "What patterns exist in Operating Profit by Total Sales?",
-    "reason": "The business shows a consistent pattern where larger sales records also produce larger profits. Step 3 reports a very strong correlation of 0.956 between Total Sales and Operating Profit, indicating t...",
-    "breakdown": "Total Sales",
     "measure": "MEAN(Operating Profit)"
   },
   {
     "question": "What patterns exist in Total Sales by Units Sold?",
-    "reason": "A clear volume-to-revenue pattern exists in the data: records with more Units Sold tend to generate much higher Total Sales. Step 3 found a correlation of 0.913 between Units Sold and Total Sales, sho...",
+    "reason": "The dataset shows a consistent pattern where larger-volume records also generate much higher revenue and profit. Step 3 reports a correlation of 0.913 between Units Sold and Total Sales, 0.892 between...",
     "breakdown": "Units Sold",
     "measure": "MEAN(Total Sales)"
   },
   {
-    "question": "What patterns exist in Operating Profit by Units Sold?",
-    "reason": "The dataset shows a strong pattern where higher-volume transactions are also more profitable in dollar terms. Step 3 reports a correlation of 0.892 between Units Sold and Operating Profit, meaning pro...",
-    "breakdown": "Units Sold",
+    "question": "What patterns exist in Operating Profit by Total Sales?",
+    "reason": "A strong concentration pattern appears in the financial measures: Step 3 notes extreme right skew and large mean-median gaps for both Total Sales and Operating Profit, while Step 2 flags 653 Total Sal...",
+    "breakdown": "Total Sales",
     "measure": "MEAN(Operating Profit)"
   },
   {
     "question": "What patterns exist in Total Sales by Operating Margin?",
-    "reason": "A notable pattern in the dataset is that Operating Margin is comparatively stable even when Total Sales and Operating Profit vary widely. Step 3 states that Operating Margin is much more stable than d...",
+    "reason": "The business shows a stable-margin but variable-scale pattern. Step 3 states that Operating Margin is much more stable than dollar-based measures, while Step 2 finds only 44 Operating Margin outliers ...",
     "breakdown": "Operating Margin",
     "measure": "MEAN(Total Sales)"
   },
   {
     "question": "What patterns exist in Total Sales by Sales Method?",
-    "reason": "The dataset contains a strong global pattern of revenue and profit concentration in a small number of large records, and this is especially worth monitoring within the Online channel because Step 2 id...",
+    "reason": "Within the Online channel, the most likely pattern is the same as the full dataset: a small number of large transactions disproportionately shape Total Sales and Operating Profit. Step 2 shows 6.77% o...",
     "breakdown": "Sales Method",
     "measure": "MEAN(Total Sales)"
   },
   {
-    "question": "What patterns exist in Units Sold by State?",
-    "reason": "The overall dataset shows a strong pattern where Units Sold and Total Sales move together, with a correlation of 0.913 in Step 3. For a major market such as California, this implies that sales perform...",
-    "breakdown": "State",
-    "measure": "MEAN(Units Sold)"
-  },
-  {
-    "question": "How does Total Sales change over Operating Margin?",
-    "reason": "Operating Margin appears much more stable over time than the business’s dollar metrics. Step 3 notes that Operating Margin is substantially steadier than Total Sales and Operating Profit, while Step 4...",
-    "breakdown": "Operating Margin",
-    "measure": "MEAN(Total Sales)"
-  },
-  {
-    "question": "How does Total Sales change over Retailer?",
-    "reason": "The overall business posted a clear year-over-year step-up in 2021, with Step 4 showing that Total Sales, Operating Profit, and Units Sold were higher in every matched month of 2021 than in 2020. For ...",
-    "breakdown": "Retailer",
-    "measure": "MEAN(Total Sales)"
-  },
-  {
-    "question": "How does Units Sold change over Product?",
-    "reason": "Step 4 identifies a clear 2021 seasonal pattern in Total Sales: decline from January to March, strong build through summer, softening through October, and recovery in November–December. For Women's Ap...",
+    "question": "What patterns exist in Units Sold by Product?",
+    "reason": "For Men's Street Footwear, the most important expected pattern is that higher unit volume should translate into sharply higher sales and profit, consistent with the full dataset. Step 3 shows Units So...",
     "breakdown": "Product",
     "measure": "MEAN(Units Sold)"
   },
   {
-    "question": "How does Units Sold change over Sales Method?",
-    "reason": "The overall 2021 pattern shows Total Sales falling from January to March, strengthening through summer, softening through October, and rebounding at year-end. For the In-store channel, the same broad ...",
-    "breakdown": "Sales Method",
+    "question": "How does Total Sales change over Invoice Date?",
+    "reason": "For the In-store channel, Total Sales appear to mirror the broader 2021 revenue pattern identified earlier: sales weaken from the start of 2021 into early spring, build through summer, soften in fall,...",
+    "breakdown": "Invoice Date",
+    "measure": "MEAN(Total Sales)"
+  },
+  {
+    "question": "How does Units Sold change over Invoice Date?",
+    "reason": "Within the Outlet channel, unit demand likely followed the same broad 2021 pattern seen in the full dataset: lower levels in early spring, a climb into late summer, a decline in autumn, and a recovery...",
+    "breakdown": "Invoice Date",
     "measure": "MEAN(Units Sold)"
   },
   {
-    "question": "How does Total Sales change over Price per Unit?",
-    "reason": "Step 4 shows that Price per Unit hit lower levels in early 2021 and then trended upward steadily into late 2021. At the same time, Total Sales and Operating Profit both rebounded strongly in November–...",
-    "breakdown": "Price per Unit",
-    "measure": "MEAN(Total Sales)"
-  },
-  {
-    "question": "What insights can we find about operating margin is unusually stable, with only 44 anomalous records?",
-    "reason": "Operating Margin has just 44 outlier records, or 0.46% of the dataset, making it the least anomaly-prone of the major financial measures reviewed. Compared with Operating Profit's 706 outliers, the an...",
-    "breakdown": "Operating Margin",
-    "measure": "COUNT(*)"
-  },
-  {
-    "question": "What insights can we find about large unit-volume anomalies are likely to cascade into revenue anomalies?",
-    "reason": "The dataset shows a very strong correlation of 0.913 between Units Sold and Total Sales, while Units Sold also has 508 outlier records (5.27%). This combination suggests that many extreme-volume trans...",
-    "breakdown": "Units Sold",
-    "measure": "MEAN(Total Sales)"
-  },
-  {
-    "question": "What insights can we find about profit anomalies appear to be volume-led rather than margin-led?",
-    "reason": "Operating Profit is strongly correlated with Units Sold at 0.892 and has 706 outlier records, while Operating Margin has only 44 outliers, or 0.46%. This gap of 662 records suggests that most profit a...",
-    "breakdown": "Units Sold",
-    "measure": "MEAN(Operating Profit)"
-  },
-  {
-    "question": "What insights can we find about in california, extreme sales records should be treated as potential high-impact anomalies?",
-    "reason": "California is a high-value review subspace because the dataset overall contains 653 Total Sales outliers (6.77%) and 706 Operating Profit outliers (7.32%), while Total Sales and Operating Profit are c...",
-    "breakdown": "Total Sales",
-    "measure": "MEAN(Operating Profit)"
-  },
-  {
-    "question": "What is the relationship between Price per Unit and Total Sales?",
-    "reason": "Step 3 shows the strongest relationships are Units Sold to Total Sales (0.913), Units Sold to Operating Profit (0.892), and Total Sales to Operating Profit (0.956), while Price per Unit does not appea...",
-    "breakdown": "Price per Unit",
-    "measure": "MEAN(Total Sales)"
-  },
-  {
-    "question": "What is the relationship between Total Sales and Operating Profit?",
-    "reason": "Globally, Total Sales and Operating Profit are correlated at 0.956, and Step 3 states Operating Margin is much more stable than dollar-based measures. That combination implies that for a major retaile...",
-    "breakdown": "Total Sales",
-    "measure": "MEAN(Operating Profit)"
-  },
-  {
-    "question": "What is the relationship between Total Sales and Operating Profit?",
-    "reason": "Step 3 reports a 0.956 correlation between Total Sales and Operating Profit overall, while Step 2 finds only 44 Operating Margin outliers (0.46%) versus 653 Total Sales outliers (6.77%) and 706 Operat...",
-    "breakdown": "Total Sales",
-    "measure": "MEAN(Operating Profit)"
-  },
-  {
-    "question": "What is the relationship between Total Sales and Operating Margin?",
-    "reason": "Step 3 highlights that Operating Margin is much more stable than Total Sales and Operating Profit, and it does not appear in the strongest-correlation list. With only 44 margin outliers (0.46%) from S...",
-    "breakdown": "Total Sales",
+    "question": "How does Operating Margin change over Invoice Date?",
+    "reason": "Operating Margin shows a much flatter time pattern than the dollar-based measures. Step 3 notes that Operating Margin is far more stable than Total Sales and Operating Profit, implying that the major ...",
+    "breakdown": "Invoice Date",
     "measure": "MEAN(Operating Margin)"
   },
   {
-    "question": "What is the relationship between Units Sold and Operating Profit?",
-    "reason": "The global correlation between Units Sold and Operating Profit is 0.892, making it one of the strongest relationships in the dataset, while Price per Unit is not listed among the strongest correlation...",
-    "breakdown": "Units Sold",
+    "question": "How does Total Sales change over Retailer?",
+    "reason": "Across retailers, the dominant trend signal is likely a broad-based increase from 2020 to 2021 rather than a change confined to one seller. Step 4 shows monthly Total Sales were higher in every month ...",
+    "breakdown": "Retailer",
+    "measure": "MEAN(Total Sales)"
+  },
+  {
+    "question": "How does Operating Profit change over Region?",
+    "reason": "By Region, Operating Profit likely rose materially from 2020 to 2021 in line with the broader business trend rather than showing isolated geographic divergence. Step 4 reports that monthly Operating P...",
+    "breakdown": "Region",
     "measure": "MEAN(Operating Profit)"
   },
   {
-    "question": "What insights can we find about total sales is more outlier-prone than price per unit by a factor of about 8?",
-    "reason": "Step 2 shows 653 outliers in Total Sales (6.77% of records) versus only 81 outliers in Price per Unit (0.84%). This indicates revenue values are far more dispersed and extreme than unit pricing, so va...",
-    "breakdown": "Total Sales",
+    "question": "How does Price per Unit change over Invoice Date?",
+    "reason": "For Amazon, Price per Unit likely followed the broader pricing trend: lower levels in early 2021 followed by a steady rise toward late 2021. Step 4 explicitly identifies that average selling price rea...",
+    "breakdown": "Invoice Date",
     "measure": "MEAN(Price per Unit)"
   },
   {
-    "question": "What insights can we find about operating profit has slightly more extreme records than total sales?",
-    "reason": "According to Step 2, Operating Profit has 706 outliers, or 7.32% of records, compared with 653 outliers, or 6.77%, for Total Sales. The 0.55 percentage-point gap suggests profit is even more unevenly ...",
-    "breakdown": "Operating Profit",
-    "measure": "MEAN(Total Sales)"
-  },
-  {
-    "question": "What insights can we find about units sold has over 6 times the outlier rate of price per unit?",
-    "reason": "Step 2 identifies 508 outliers in Units Sold (5.27%) versus 81 in Price per Unit (0.84%). This 4.43 percentage-point difference shows transaction volume varies much more widely than pricing, reinforci...",
+    "question": "What insights can we find about units sold shows a meaningful cluster of abnormal high-volume transactions?",
+    "reason": "Units Sold has 508 outlier records, or 5.27% of all observations. This indicates that unusual order sizes are not isolated incidents; instead, there is a notable cluster of exceptionally large-volume ...",
     "breakdown": "Units Sold",
-    "measure": "MEAN(Price per Unit)"
-  },
-  {
-    "question": "What insights can we find about the sales-volume link is stronger than the profit-volume link?",
-    "reason": "From Step 3, Units Sold correlates 0.9134 with Total Sales but 0.8924 with Operating Profit. The 0.0210 gap suggests unit volume translates into revenue slightly more directly than into profit, where ...",
-    "breakdown": "Units Sold",
-    "measure": "MEAN(Total Sales)"
-  },
-  {
-    "question": "What insights can we find about online sales should be checked for the same broad 2021 expansion seen overall?",
-    "reason": "Step 4 shows a business-wide step-up in monthly record counts, Total Sales, Units Sold, and Operating Profit from 2020 to 2021, while Step 3 shows strong structural relationships among Units Sold, Tot...",
-    "breakdown": "Sales Method",
-    "measure": "MEAN(Units Sold)"
-  },
-  {
-    "question": "What insights can we find about the west region is a high-priority segment for comparing revenue and profit dispersion?",
-    "reason": "Step 2 flags 653 Total Sales outliers (6.77%) and 706 Operating Profit outliers (7.32%), while Step 3 shows these two measures are tightly linked at 0.9563. In the West region, this combination makes ...",
-    "breakdown": "Region",
-    "measure": "MEAN(Total Sales)"
-  },
-  {
-    "question": "What patterns exist in count by Total Sales?",
-    "reason": "Total Sales exhibits a strong concentration pattern, with 653 outlier records representing 6.77% of all records. Step 3 further states that revenue is highly right-skewed and that the mean-median gap ...",
-    "breakdown": "Total Sales",
     "measure": "COUNT(*)"
   },
   {
-    "question": "What patterns exist in Total Sales by Operating Profit?",
-    "reason": "Operating Profit shows 706 outlier records, or 7.32% of the dataset, which is higher than the 6.77% outlier share for Total Sales. Combined with Step 3's observation that profit is highly right-skewed...",
-    "breakdown": "Operating Profit",
+    "question": "What insights can we find about price per unit anomalies are rare but still visible in a critical pricing field?",
+    "reason": "Price per Unit has 81 outlier records, or 0.84% of the dataset. While much lower than the anomaly rates for sales, profit, and volume, these pricing exceptions still matter because even a small number...",
+    "breakdown": "Price per Unit",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about operating margin is unusually stable, with very few ratio anomalies?",
+    "reason": "Operating Margin has only 44 outlier records, or 0.46% of all observations, far below the outlier rates for Operating Profit (7.32%) and Total Sales (6.77%). This suggests that most anomalies are driv...",
+    "breakdown": "Operating Margin",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about the west region is exposed to anomaly amplification during the 2021 transaction surge?",
+    "reason": "Prior pattern analysis shows a sharp step-up in transaction volume from 2020 to 2021, while quality checks show high outlier rates in Operating Profit (7.32%), Total Sales (6.77%), and Units Sold (5.2...",
+    "breakdown": "Invoice Date",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about california is likely to contain dollar outliers without corresponding margin anomalies?",
+    "reason": "The dataset shows a strong mismatch between anomaly rates in dollar metrics and profitability ratios: Operating Profit outliers occur in 7.32% of records and Total Sales outliers in 6.77%, versus only...",
+    "breakdown": "State",
+    "measure": "MEAN(Operating Profit)"
+  },
+  {
+    "question": "What is the relationship between Operating Margin and Total Sales?",
+    "reason": "Step 3 states that Operating Margin is much more stable than dollar-based measures, while Step 2 finds only 44 margin outliers, or 0.46% of records. In contrast, Total Sales has 653 outliers (6.77%) a...",
+    "breakdown": "Operating Margin",
     "measure": "MEAN(Total Sales)"
   },
   {
-    "question": "What patterns exist in Units Sold by Price per Unit?",
-    "reason": "Price per Unit has only 81 outlier records, or 0.84% of the dataset, far below the outlier shares seen in Units Sold (5.27%), Total Sales (6.77%), and Operating Profit (7.32%). This pattern suggests p...",
+    "question": "What is the relationship between Price per Unit and Units Sold?",
+    "reason": "Step 2 shows Price per Unit has just 81 outliers, or 0.84% of records, versus 508 outliers in Units Sold, or 5.27%. Step 3 also highlights that business differences are driven more by transaction size...",
     "breakdown": "Price per Unit",
     "measure": "MEAN(Units Sold)"
   },
   {
-    "question": "What patterns exist in Total Sales by Units Sold?",
-    "reason": "The global data shows a strong 0.913 correlation between Units Sold and Total Sales, indicating a consistent scale effect. Given Step 3's conclusion that raw performance differences are driven more by...",
-    "breakdown": "Units Sold",
-    "measure": "MEAN(Total Sales)"
-  },
-  {
-    "question": "What patterns exist in Operating Profit by Total Sales?",
-    "reason": "Across the full dataset, Total Sales and Operating Profit move together with a correlation of 0.956, the strongest relationship reported. Because Step 3 also notes that Operating Margin is relatively ...",
-    "breakdown": "Total Sales",
-    "measure": "MEAN(Operating Profit)"
-  },
-  {
-    "question": "How does Total Sales change over Operating Profit?",
-    "reason": "For Foot Locker, Operating Profit likely followed the same broad 2021 shape seen overall: a decline from January to March, a climb into summer, a softer fall period, and a rebound by December. This is...",
-    "breakdown": "Operating Profit",
-    "measure": "MEAN(Total Sales)"
-  },
-  {
-    "question": "How does count change over Units Sold?",
-    "reason": "In the South region, Units Sold likely followed the overall 2021 pattern: lowest in early spring, rising into late summer, then declining in autumn before recovering in December. Step 4 describes this...",
-    "breakdown": "Units Sold",
-    "measure": "COUNT(*)"
-  },
-  {
-    "question": "How does Operating Profit change over Total Sales?",
-    "reason": "Across 2021, Total Sales and Operating Profit shared the same directional pattern: both weakened in Q1, strengthened through summer, softened in fall, and rebounded at year-end. The relationship is re...",
-    "breakdown": "Total Sales",
-    "measure": "MEAN(Operating Profit)"
-  },
-  {
-    "question": "How does count change over Total Sales?",
-    "reason": "For Walmart, Total Sales likely followed the same year-over-year step-up seen across the business, with every month in 2021 above its 2020 counterpart. Step 4 explicitly states that monthly Total Sale...",
-    "breakdown": "Total Sales",
-    "measure": "COUNT(*)"
-  },
-  {
-    "question": "What insights can we find about the dataset shows a structural anomaly between transaction growth and transaction size?",
-    "reason": "Step 4 shows a sharp rise in monthly record counts in 2021, while average Units Sold per record was generally higher in 2020 than in 2021. This is an unusual pattern: the business processed many more ...",
-    "breakdown": "Retailer ID",
-    "measure": "MEAN(Units Sold)"
-  },
-  {
-    "question": "What insights can we find about 2021 profit mirrors the same anomalous reversals seen in sales?",
-    "reason": "Operating Profit in 2021 declined in Q1, climbed into summer, weakened in fall, and rebounded strongly in December. Because this pattern closely matches Total Sales, the anomaly appears to be driven b...",
-    "breakdown": "Operating Profit",
-    "measure": "MEAN(Total Sales)"
-  },
-  {
-    "question": "What insights can we find about online channel should be treated as a likely hotspot for scale-driven anomalies?",
-    "reason": "The Online channel is a natural anomaly-review segment because Step 2 shows high outlier rates in Units Sold (508 records, 5.27%), Total Sales (653, 6.77%), and Operating Profit (706, 7.32%), while pr...",
-    "breakdown": "Sales Method",
-    "measure": "MEAN(Units Sold)"
-  },
-  {
-    "question": "What insights can we find about california is a high-risk subspace for outsized sales and profit records?",
-    "reason": "California is a strong candidate for anomaly concentration because Step 2 identifies heavy outlier presence in Total Sales with 653 records (6.77%) and Operating Profit with 706 records (7.32%), and p...",
-    "breakdown": "State",
-    "measure": "MEAN(Total Sales)"
-  },
-  {
     "question": "What is the relationship between Total Sales and Operating Profit?",
-    "reason": "Step 3 shows a global correlation of 0.956 between Total Sales and Operating Profit, and Step 3 further notes that Operating Margin is relatively stable compared with dollar-based measures. That combi...",
+    "reason": "For the West region, Step 4 notes profit should be monitored against the 2021 summer peak and fall dip pattern, while the broader dataset shows Total Sales and Operating Profit correlate at 0.9563. Be...",
     "breakdown": "Total Sales",
-    "measure": "MEAN(Operating Profit)"
-  },
-  {
-    "question": "What is the relationship between Total Sales and Operating Profit?",
-    "reason": "The overall correlation between Total Sales and Operating Profit is 0.956, one of the highest in the dataset. Step 3 also states that Operating Margin is much more stable than dollar measures, implyin...",
-    "breakdown": "Total Sales",
-    "measure": "MEAN(Operating Profit)"
-  },
-  {
-    "question": "What is the relationship between Operating Margin and Operating Profit?",
-    "reason": "Step 3 notes that Operating Margin is much more stable than dollar-based measures, while Operating Profit has 706 outlier records in Step 2 versus only 44 for Operating Margin. This large contrast imp...",
-    "breakdown": "Operating Margin",
     "measure": "MEAN(Operating Profit)"
   },
   {
     "question": "What is the relationship between Units Sold and Operating Profit?",
-    "reason": "Globally, Units Sold and Operating Profit have a strong correlation of 0.892 in Step 3. Since Step 3 also states that differences in performance are driven more by transaction size and volume than by ...",
+    "reason": "The dataset-wide correlation between Units Sold and Operating Profit is 0.8924, and prior analysis already noted that Women's Apparel should be monitored closely for volume-to-revenue linkage. Extendi...",
     "breakdown": "Units Sold",
     "measure": "MEAN(Operating Profit)"
   },
   {
-    "question": "What insights can we find about operating margin is the tightest-distributed metric in the dataset?",
-    "reason": "Operating Margin has just 44 outlier records, representing 0.46% of all records. This is far below Operating Profit at 7.32%, Total Sales at 6.77%, Units Sold at 5.27%, and even Price per Unit at 0.84...",
-    "breakdown": "Operating Margin",
-    "measure": "MEAN(Operating Profit)"
+    "question": "What insights can we find about operating profit is more unevenly distributed than total sales?",
+    "reason": "Operating Profit shows the heaviest concentration in a small number of extreme records: 706 records (7.32%) were flagged as outliers, compared with 653 Total Sales outliers (6.77%) and 508 Units Sold ...",
+    "breakdown": "Operating Profit",
+    "measure": "MEAN(Total Sales)"
   },
   {
-    "question": "What insights can we find about transaction count expanded in 2021 even as average units per record fell?",
-    "reason": "Pattern analysis shows monthly record counts rose sharply from 2020 to 2021, while average Units Sold per record were generally higher in 2020 than in 2021. This comparison suggests growth came from m...",
-    "breakdown": "Retailer ID",
+    "question": "What insights can we find about dollar metrics are far more dispersed than operating margin?",
+    "reason": "Operating Margin is comparatively tight, with only 44 outliers (0.46%), while Total Sales has 653 outliers (6.77%) and Operating Profit has 706 outliers (7.32%). This means dispersion in business outc...",
+    "breakdown": "Operating Margin",
+    "measure": "MEAN(Total Sales)"
+  },
+  {
+    "question": "What insights can we find about price per unit has the narrowest distribution among the main commercial drivers?",
+    "reason": "Only 81 Price per Unit records (0.84%) were flagged as outliers, versus 508 for Units Sold (5.27%), 653 for Total Sales (6.77%), and 706 for Operating Profit (7.32%). Compared with the volume and doll...",
+    "breakdown": "Price per Unit",
     "measure": "MEAN(Units Sold)"
   },
   {
-    "question": "What patterns exist in Operating Profit by Total Sales?",
-    "reason": "For Foot Locker, the most likely segment pattern is that larger sales records also produce larger operating profit records, mirroring the full-business structure. Step 3 shows a very strong overall To...",
-    "breakdown": "Total Sales",
+    "question": "What insights can we find about in the online channel, profit concentration risk is especially important because the dataset-wide profit tail is already severe?",
+    "reason": "Within the Online channel, comparisons should account for the fact that Operating Profit is globally the most extreme major metric, with 706 outliers (7.32%), compared with 653 for Total Sales (6.77%)...",
+    "breakdown": "Sales Method",
     "measure": "MEAN(Operating Profit)"
   },
   {
-    "question": "What patterns exist in Operating Profit by Total Sales?",
-    "reason": "Within California, the most plausible pattern is that records with higher Total Sales also show higher Operating Profit, consistent with the overall business structure. Step 3 reports a 0.956 correlat...",
-    "breakdown": "Total Sales",
+    "question": "What insights can we find about california profitability comparisons should emphasize margin stability over profit volatility?",
+    "reason": "For California, segment comparisons are likely to be more reliable on Operating Margin than on Operating Profit because the global data shows only 44 Operating Margin outliers (0.46%) versus 706 Opera...",
+    "breakdown": "State",
+    "measure": "MEAN(Operating Margin)"
+  },
+  {
+    "question": "What patterns exist in Operating Profit by Units Sold?",
+    "reason": "Units Sold and Operating Profit are strongly positively related, with a correlation of 0.892. This means larger-quantity transactions generally generate substantially more operating profit, though the...",
+    "breakdown": "Units Sold",
     "measure": "MEAN(Operating Profit)"
   },
   {
-    "question": "What patterns exist in Price per Unit by Total Sales?",
-    "reason": "A strong structural pattern is that Total Sales contains many more extreme records than Price per Unit. Step 2 found 653 Total Sales outliers, representing 6.77% of records, compared with just 81 Pric...",
+    "question": "What patterns exist in count by Operating Profit?",
+    "reason": "Operating Profit shows 706 outlier records, equal to 7.32% of the dataset, the highest outlier share among the core financial measures reviewed. This indicates a pronounced long-tail pattern where a r...",
+    "breakdown": "Operating Profit",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What patterns exist in count by Total Sales?",
+    "reason": "Total Sales has 653 outlier records, or 6.77% of all records, confirming a strong right-skewed pattern in revenue. Combined with Step 3's note about a large mean-median gap and extreme right skew, thi...",
     "breakdown": "Total Sales",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What patterns exist in count by Units Sold?",
+    "reason": "Units Sold contains 508 outlier records, equal to 5.27% of the dataset. This shows that demand is also concentrated in some unusually large orders, but the tail is smaller than for Total Sales (6.77%)...",
+    "breakdown": "Units Sold",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What patterns exist in count by Price per Unit?",
+    "reason": "Price per Unit has only 81 outlier records, or 0.84% of the dataset, far below the outlier rates for Units Sold, Total Sales, and Operating Profit. This pattern suggests that pricing is relatively con...",
+    "breakdown": "Price per Unit",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What patterns exist in count by Operating Margin?",
+    "reason": "Operating Margin has just 44 outlier records, representing 0.46% of all records, the lowest outlier rate among the reviewed measures. This supports Step 3's finding that margin is much more stable tha...",
+    "breakdown": "Operating Margin",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What patterns exist in Total Sales by Operating Margin?",
+    "reason": "The overall dataset shows only 44 Operating Margin outliers, or 0.46% of records, versus 653 Total Sales outliers (6.77%) and 706 Operating Profit outliers (7.32%). Within the California subset, this ...",
+    "breakdown": "Operating Margin",
+    "measure": "MEAN(Total Sales)"
+  },
+  {
+    "question": "What patterns exist in Operating Profit by Region?",
+    "reason": "At the dataset level, Operating Profit has 706 outliers, or 7.32% of records, the highest concentration of extremes among the core measures. In the West subset, this implies regional profit results ar...",
+    "breakdown": "Region",
+    "measure": "MEAN(Operating Profit)"
+  },
+  {
+    "question": "How does Units Sold change over Invoice Date?",
+    "reason": "The business recorded much higher total Units Sold in 2021, but Step 4 shows that average Units Sold per record were generally lower in 2021 than in 2020 because transaction counts increased sharply. ...",
+    "breakdown": "Invoice Date",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "How does Total Sales change over Invoice Date?",
+    "reason": "Step 4 reports that monthly Total Sales were higher in every month of 2021 than the same month in 2020 for the full dataset. Given this consistent year-over-year lift across all months, Walmart likely...",
+    "breakdown": "Invoice Date",
+    "measure": "MEAN(Total Sales)"
+  },
+  {
+    "question": "How does Operating Margin change over Invoice Date?",
+    "reason": "Step 3 shows Operating Margin had only 44 outliers, or 0.46% of records, far below Total Sales at 6.77% and Operating Profit at 7.32%. Combined with Step 3's finding that margin is much more stable th...",
+    "breakdown": "Invoice Date",
+    "measure": "MEAN(Operating Margin)"
+  },
+  {
+    "question": "How does Operating Profit change over Retailer?",
+    "reason": "Step 4 shows Operating Profit was much higher in every month of 2021 than in the same month of 2020, and Step 3 reports a very strong 0.956 correlation between Total Sales and Operating Profit. This i...",
+    "breakdown": "Retailer",
+    "measure": "MEAN(Operating Profit)"
+  },
+  {
+    "question": "How does Units Sold change over Invoice Date?",
+    "reason": "Step 4 shows monthly Units Sold were higher in every month of 2021 than the same month in 2020 for the overall business. That full-year consistency suggests California likely experienced the same tren...",
+    "breakdown": "Invoice Date",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "What insights can we find about anomaly intensity is concentrated in dollar metrics rather than ratio metrics?",
+    "reason": "The anomaly rates show a clear separation between scale-driven metrics and ratio stability: Operating Profit has 7.32% outliers, Total Sales 6.77%, and Units Sold 5.27%, while Price per Unit is only 0...",
+    "breakdown": "Operating Profit",
+    "measure": "MEAN(Total Sales)"
+  },
+  {
+    "question": "What insights can we find about the 2021 transaction surge likely amplified exposure to outlier records?",
+    "reason": "Step 4 reports a sharp year-over-year step-up in transaction volume from 2020 to 2021, while Step 2 separately identifies 706 Operating Profit outliers, 653 Total Sales outliers, and 508 Units Sold ou...",
+    "breakdown": "Invoice Date",
+    "measure": "MEAN(Retailer ID)"
+  },
+  {
+    "question": "What insights can we find about west region is likely vulnerable to amplified financial anomalies during the 2021 expansion?",
+    "reason": "The West region is a plausible hotspot for anomaly monitoring because Step 4 shows the business experienced a strong 2021 transaction expansion, while Step 2 shows high outlier counts in Operating Pro...",
+    "breakdown": "Region",
+    "measure": "MEAN(Operating Profit)"
+  },
+  {
+    "question": "What insights can we find about online channel likely concentrates anomalous high-scale transactions?",
+    "reason": "The Online channel merits focused anomaly review because the dataset overall contains 706 Operating Profit outliers, 653 Total Sales outliers, and 508 Units Sold outliers, while Step 4 indicates busin...",
+    "breakdown": "Sales Method",
+    "measure": "MEAN(Operating Profit)"
+  },
+  {
+    "question": "What is the relationship between Price per Unit and Operating Margin?",
+    "reason": "Price per Unit and Operating Margin are both described as relatively stable compared with sales, units, and profit. Step 4 notes that average Price per Unit changes gradually over time, while Step 3 s...",
+    "breakdown": "Price per Unit",
+    "measure": "MEAN(Operating Margin)"
+  },
+  {
+    "question": "What insights can we find about operating margin has the narrowest distribution of all core business measures?",
+    "reason": "Operating Margin shows just 44 outlier records (0.46%), the lowest among all listed numerical fields. Compared with Price per Unit at 81 outliers (0.84%) and Operating Profit at 706 (7.32%), margin pe...",
+    "breakdown": "Operating Margin",
     "measure": "MEAN(Price per Unit)"
+  },
+  {
+    "question": "What insights can we find about the business expanded sharply from 2020 to 2021 across both transaction count and financial scale?",
+    "reason": "Step 4 shows monthly record counts rose sharply from 2020 to 2021 and stayed consistently high throughout 2021, while monthly Total Sales, Operating Profit, and Units Sold were all much higher in ever...",
+    "breakdown": "Invoice Date",
+    "measure": "MEAN(Retailer ID)"
+  },
+  {
+    "question": "What insights can we find about in 2021, total sales and operating profit shared the same seasonal distribution pattern?",
+    "reason": "Step 4 shows that in 2021 both Total Sales and Operating Profit declined from January to March, strengthened through summer, softened in fall, and rebounded in November-December. The close alignment o...",
+    "breakdown": "Invoice Date",
+    "measure": "MEAN(Total Sales)"
+  },
+  {
+    "question": "What insights can we find about in 2021, units sold peaked in late summer while early spring and autumn were weaker?",
+    "reason": "Step 4 indicates that 2021 Units Sold were lowest in early spring, rose into late summer, then declined in autumn before recovering in December. Compared with the stronger summer period, both early sp...",
+    "breakdown": "Invoice Date",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "What insights can we find about in the west region, profit distribution should be treated as more fragile than margin distribution?",
+    "reason": "The West region is a natural segment for comparison because prior analysis tied it to the 2021 transaction surge, while step 2 shows Operating Profit has 706 outliers (7.32%) versus only 44 for Operat...",
+    "breakdown": "Region",
+    "measure": "MEAN(Operating Profit)"
+  },
+  {
+    "question": "What insights can we find about for walmart, pricing appears inherently more stable than sales volume and profit?",
+    "reason": "Using Walmart as a retailer-level slice, the dataset-wide dispersion pattern strongly suggests Price per Unit is much tighter than operational and financial outcomes: 81 price outliers (0.84%) versus ...",
+    "breakdown": "Retailer",
+    "measure": "MEAN(Price per Unit)"
+  },
+  {
+    "question": "What patterns exist in Total Sales by Retailer?",
+    "reason": "Step 4 shows Total Sales were much higher in every month of 2021 than in the same month of 2020 across the full business, while Step 3 reports a strong 0.956 correlation between Total Sales and Operat...",
+    "breakdown": "Retailer",
+    "measure": "MEAN(Total Sales)"
+  },
+  {
+    "question": "What patterns exist in Units Sold by Sales Method?",
+    "reason": "Step 3 shows Units Sold and Total Sales have a very strong correlation of 0.913, and Step 4 shows Units Sold increased sharply in 2021 across matched months. This suggests differences across Sales Met...",
+    "breakdown": "Sales Method",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "What patterns exist in Units Sold by Product?",
+    "reason": "Step 4 reports that 2021 Units Sold were lowest in early spring, rose into late summer, declined in autumn, and recovered in December. Because Step 3 shows Units Sold is strongly tied to Total Sales (...",
+    "breakdown": "Product",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "What patterns exist in Units Sold by State?",
+    "reason": "Step 3 shows Units Sold correlates 0.913 with Total Sales and 0.892 with Operating Profit, while Step 2 flags 508 Units Sold outliers (5.27%) and 653 Total Sales outliers (6.77%). In Texas, this impli...",
+    "breakdown": "State",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "What patterns exist in Price per Unit by Retailer?",
+    "reason": "Step 4 shows Price per Unit was lower in early 2021 than in 2020 and then trended upward through late 2021. Since Step 2 found only 81 Price per Unit outliers, just 0.84% of records, pricing appears r...",
+    "breakdown": "Retailer",
+    "measure": "MEAN(Price per Unit)"
+  },
+  {
+    "question": "What patterns exist in Operating Profit by City?",
+    "reason": "Step 3 reports a 0.956 correlation between Total Sales and Operating Profit, the strongest relationship in the dataset. Combined with Step 4's finding that Operating Profit rose sharply in 2021 alongs...",
+    "breakdown": "City",
+    "measure": "MEAN(Operating Profit)"
+  },
+  {
+    "question": "What patterns exist in Price per Unit by Region?",
+    "reason": "Step 2 finds only 81 Price per Unit outliers, or 0.84% of records, compared with 508 Units Sold outliers (5.27%) and 653 Total Sales outliers (6.77%). Step 4 also shows Price per Unit followed a gradu...",
+    "breakdown": "Region",
+    "measure": "MEAN(Price per Unit)"
+  },
+  {
+    "question": "What patterns exist in Operating Margin by Region?",
+    "reason": "Step 3 notes Operating Margin is much more stable than dollar-based measures, and Step 2 confirms only 44 Operating Margin outliers, or 0.46% of records, versus 706 Operating Profit outliers, or 7.32%...",
+    "breakdown": "Region",
+    "measure": "MEAN(Operating Margin)"
   }
 ]
