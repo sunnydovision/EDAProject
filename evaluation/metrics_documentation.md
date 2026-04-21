@@ -248,54 +248,76 @@ Insight Diversity / Non-redundancy
 
 ### Công thức (Theo code thực tế)
 
+`compute_diversity` thực ra gồm **4 sub-metrics** khác nhau:
+
+#### 4a. Semantic Diversity (chính)
+
 ```
-diversity = 1 - avg_similarity
+semantic_diversity = 1 - avg_similarity
 
 Trong đó:
 - avg_similarity = total_similarity / (n * (n - 1))
 - total_similarity = similarity_matrix.sum() - similarity_matrix.trace()
 - n = số insights
 
-Quy trình tính diversity cho một system:
+Quy trình:
 
-1. Convert insights sang string representation:
+1. Input là danh sách insight dicts. Với mỗi insight:
+   - insight_data = ins.get('insight', ins)
+   - Lấy: breakdown, measure, pattern, subspace từ insight_data
+
+2. Convert sang string representation:
    - Format: "{breakdown} | {measure} | {pattern} | {condition}"
-   - Ví dụ: "Region | SUM(Operating Profit) | TREND | State=Iowa"
-   - condition được tạo từ subspace: "k1=v1, k2=v2"
+   - Ví dụ: "Region | SUM(Operating Profit) | Outstanding Value | Sales Method=Online"
+   - condition = "k1=v1, k2=v2" từ subspace; rỗng nếu không có subspace
 
-2. Embed insights sử dụng SentenceTransformer:
-   - Model: all-MiniLM-L6-v2
-   - embeddings = model.encode(representations)
+3. Embed strings (all-MiniLM-L6-v2):
+   - embeddings = SentenceTransformer.encode(representations)
 
-3. Compute pairwise cosine similarity:
-   - similarity_matrix = cosine_similarity(embeddings)
-   - Kết quả: matrix n x n (n = số insights)
-   - similarity_matrix[i][j] = cosine similarity giữa insight i và insight j
+4. Compute pairwise cosine similarity:
+   - similarity_matrix = cosine_similarity(embeddings)  → matrix n×n
 
-4. Calculate average similarity (excluding diagonal):
-   - total_similarity = sum(similarity_matrix) - sum(diagonal)
-   - avg_similarity = total_similarity / (n * (n - 1))
-   - Diagonal = similarity của insight với chính nó = 1.0, nên bị loại bỏ
+5. Average similarity (exclude diagonal):
+   - avg_similarity = (sum(matrix) - trace(matrix)) / (n*(n-1))
 
-5. Calculate diversity:
-   - diversity = 1 - avg_similarity
+6. semantic_diversity = 1 - avg_similarity
 ```
 
-### Giải thích
-Insight Diversity đo lường xem insights có "đa dạng" hay không (non-redundancy). Code thực hiện bằng cách:
-- Convert mỗi insight sang string representation
-- Embed strings sử dụng sentence transformer (all-MiniLM-L6-v2)
-- Tính cosine similarity giữa tất cả cặp insights
-- Tính average similarity (excluding self-similarity)
-- Diversity = 1 - average similarity
+#### 4b. Subspace Diversity (entropy)
+
+```
+subspace_diversity_entropy = -Σ (p_c × log(p_c))
+
+Trong đó p_c = số lần column c xuất hiện trong subspace / tổng số subspace columns.
+Chỉ tính khi có ít nhất 1 insight có subspace ≠ rỗng.
+```
+
+#### 4c. Value Diversity
+
+```
+value_diversity = |unique (column, value) pairs| / total_pairs
+
+Đo mức độ khám phá các giá trị khác nhau trong subspace conditions.
+Chỉ tính khi có ít nhất 1 insight có subspace ≠ rỗng.
+```
+
+#### 4d. Dedup Rate
+
+```
+dedup_rate = 1 - (unique_count / total_count)
+
+Unique = distinct by (pattern, breakdown, measure, subspace)
+dedup_rate = 0 nghĩa là không có insight nào trùng nhau (tốt).
+```
 
 ### Ý nghĩa
-- Non-redundancy: insights có trùng lặp không?
-- Nếu diversity thấp → insights rất giống nhau, không đa dạng
-- Diversity cao → insights đa dạng, không trùng lặp, bao phủ nhiều khía cạnh khác nhau
+- Non-redundancy: insights có trùng lặp về chiều phân tích không?
+- Semantic diversity thấp → breakdown/measure rất giống nhau
+- Subspace diversity cao → system khám phá nhiều columns/values khác nhau làm filter
+- Dedup rate thấp (gần 0) → ít insight bị trùng cấu trúc
 - Diversity khác novelty:
-  * Novelty: so sánh với system khác (system A vs system B)
-  * Diversity: so sánh nội bộ trong cùng một system (insight A vs insight B trong cùng system)
+  * Novelty: so sánh với system khác (A vs B)
+  * Diversity: so sánh nội bộ trong cùng một system
 
 ### Ngưỡng
 - Thường mong muốn: ≥ 0.4
@@ -462,6 +484,124 @@ Token Usage đo lường hiệu quả về mặt cost của system. Code thực 
 **KHÔNG** - Token Usage càng thấp càng tốt (lower is better)
 - Tokens càng ít càng tốt
 - Minimize tokens_per_insight
+
+---
+
+## 7. Subspace Metrics (Metrics riêng cho insights có subspace filter)
+
+### Tên
+Subspace Metrics / Conditional Insight Quality
+
+### Công thức (Theo code thực tế)
+
+```
+Subspace Metrics = tập hợp các metrics được tính lại
+                   CHỈ trên insights có subspace condition khác rỗng
+
+Quy trình:
+
+1. Lọc insights có subspace:
+   - insights_with_subspace = [ins for ins in insights if ins['insight']['subspace']]
+   - Chỉ giữ insights có ít nhất 1 (column, value) filter trong subspace
+
+2. Với tập insights đã lọc, tính lại 4 metrics:
+   - faithfulness:   như Section 1, nhưng chỉ trên subspace insights
+   - significance:   như Section 2, nhưng chỉ trên subspace insights
+   - novelty:        như Section 3, system A subspace vs system B subspace
+   - diversity:      như Section 4, chỉ trên subspace insights
+
+3. Output thêm:
+   - total_with_subspace: số insights có subspace
+   - total_original: tổng số insights của system
+   - subspace_rate = total_with_subspace / total_original
+```
+
+### Giải thích
+Subspace Metrics là một bộ metrics phụ để đánh giá **chất lượng riêng của insights có điều kiện lọc** (insights tìm thấy trong một phân khúc dữ liệu cụ thể). Code thực hiện bằng cách:
+- Lọc chỉ lấy insights có `subspace` khác rỗng
+- Chạy lại Faithfulness, Significance, Novelty, Diversity trên tập con này
+- So sánh giữa hai systems chỉ trên tập subspace insights
+
+### Ý nghĩa
+- Đánh giá chất lượng của insights phân khúc (conditional insights), tách biệt với insights toàn bộ dữ liệu
+- Phát hiện trường hợp một system có faithfulness/significance tốt trên global insights nhưng kém trên subspace insights hoặc ngược lại
+- Subspace insights thường khó hơn (cần filter đúng + aggregation đúng + pattern có ý nghĩa)
+
+### Ngưỡng
+- Áp dụng ngưỡng tương tự từng metric thành phần (xem Section 1–4)
+- `subspace_rate` càng cao → system khám phá nhiều phân khúc dữ liệu hơn
+
+### Càng cao càng tốt?
+**Phụ thuộc metric thành phần** — faithfulness, significance, diversity, novelty trong subspace đều higher is better
+
+---
+
+## 8. Evaluation Pipeline (Tổng quan)
+
+### Luồng chạy evaluation
+
+```
+Input:
+  --data   CSV dataset (đã preprocessed)
+  --path_a insights_summary.json của system A
+  --path_b insights_summary.json của system B
+  --timing_a / --timing_b  timing.json của mỗi system
+  --token_a / --token_b    token usage file của mỗi system
+
+Bước 1: Load & clean data
+  - load_and_clean_data(csv_path) → (df_raw, df_cleaned)
+
+Bước 2: Evaluate từng system độc lập
+  Với mỗi system:
+  - Faithfulness    (df_raw + df_cleaned)
+  - Significance    (df_cleaned)
+  - Diversity       (question cards)
+  - Time to Insight (timing file)
+  - Token Usage     (token file + timing file)
+
+Bước 3: Evaluate comparative metrics
+  - Novelty A vs B  (insights_a, insights_b)
+  - Novelty B vs A  (insights_b, insights_a)
+
+Bước 4: Compute Subspace Metrics
+  - Filter insights có subspace từ cả 2 systems
+  - Tính lại Faithfulness, Significance, Novelty, Diversity
+    trên tập subspace insights
+
+Bước 5: Output
+  - {system_a}_results.json
+  - {system_b}_results.json
+  - comparison_table.csv
+  - comparison_report.md
+  - evaluation plots (PNG)
+```
+
+### Input format — insights_summary.json
+
+Mỗi entry trong file cần có cấu trúc:
+```json
+{
+  "question": "...",
+  "explanation": "...",
+  "plot_path": "...",
+  "insight": {
+    "breakdown": "Region",
+    "measure": "SUM(Operating Profit)",
+    "subspace": [["Sales Method", "Online"]],
+    "pattern": "Outstanding Value",
+    "score": 2.34,
+    "view_labels": ["Midwest", "Northeast", "Southeast", "South", "West"],
+    "view_values": [1234.5, 2345.6, 3456.7, 4567.8, 5678.9]
+  }
+}
+```
+
+### Ghi chú về hai dataframes
+
+- **df_raw**: dataframe gốc, load trực tiếp từ CSV (chỉ detect separator)
+- **df_cleaned**: dataframe đã làm sạch currency/percentage strings thành float
+- Faithfulness dùng cả hai: thử trên df_cleaned trước, fallback sang df_raw nếu cần
+- Significance dùng df_cleaned
 
 ---
 

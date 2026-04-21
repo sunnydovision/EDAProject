@@ -18,15 +18,37 @@
     "total_evaluated": 76
   },
   "question_diversity": {
-    "semantic_diversity": 0.49686628580093384,
-    "avg_similarity": 0.5031337141990662,
+    "semantic_diversity": 0.45892763137817383,
+    "avg_similarity": 0.5410723686218262,
     "num_insights": 93,
-    "subspace_diversity": null,
-    "value_diversity": null,
-    "dedup_rate": 0.3655913978494624,
-    "unique_count": 59,
+    "subspace_diversity": {
+      "subspace_diversity_entropy": 1.9593244403411831,
+      "subspace_diversity_count_ratio": 0.11827956989247312,
+      "unique_columns": 11,
+      "total_columns": 41,
+      "column_distribution": {
+        "Region": 4,
+        "Retailer": 3,
+        "Invoice Date": 15,
+        "State": 4,
+        "City": 7,
+        "Units Sold": 3,
+        "Operating Profit": 1,
+        "Total Sales": 1,
+        "Sales Method": 1,
+        "Retailer ID": 1,
+        "Operating Margin": 1
+      }
+    },
+    "value_diversity": {
+      "value_diversity": 0.9512195121951219,
+      "unique_pairs": 39,
+      "total_pairs": 41
+    },
+    "dedup_rate": 0.0,
+    "unique_count": 93,
     "total_count": 93,
-    "duplicate_count": 34
+    "duplicate_count": 0
   },
   "time_to_insight": {
     "total_time_seconds": 613.299,

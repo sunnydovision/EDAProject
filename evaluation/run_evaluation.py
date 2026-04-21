@@ -106,7 +106,7 @@ def evaluate_system(
         # 4 CORE METRICS for Defense
         'faithfulness': compute_faithfulness(insights_data, df_raw, df_cleaned, csv_path),
         'insight_significance': compute_significance(insights_data, df_cleaned, csv_path),
-        'question_diversity': compute_diversity(cards),
+        'question_diversity': compute_diversity(insights_data),
         
         # EFFICIENCY METRICS
         'time_to_insight': timing_data,
@@ -278,11 +278,17 @@ def main():
     print(f"  • {args.system_a}: {results_a['insight_novelty']['novelty']*100:.1f}%")
     print(f"  • {args.system_b}: {results_b['insight_novelty']['novelty']*100:.1f}%")
     
-    _div_a = results_a['question_diversity'].get('diversity') or results_a['question_diversity'].get('semantic_diversity', 0)
-    _div_b = results_b['question_diversity'].get('diversity') or results_b['question_diversity'].get('semantic_diversity', 0)
     print(f"\n4. Insight Diversity (Non-redundancy):")
-    print(f"  • {args.system_a}: {_div_a:.3f}")
-    print(f"  • {args.system_b}: {_div_b:.3f}")
+    _div_a = results_a['question_diversity']
+    _div_b = results_b['question_diversity']
+    print(f"  4a. Semantic:          {args.system_a}={(_div_a.get('semantic_diversity') or 0):.3f}  {args.system_b}={(_div_b.get('semantic_diversity') or 0):.3f}")
+    _se_a = (_div_a.get('subspace_diversity') or {}).get('subspace_diversity_entropy')
+    _se_b = (_div_b.get('subspace_diversity') or {}).get('subspace_diversity_entropy')
+    print(f"  4b. Subspace Entropy:  {args.system_a}={f'{_se_a:.3f}' if _se_a is not None else 'N/A'}  {args.system_b}={f'{_se_b:.3f}' if _se_b is not None else 'N/A'}")
+    _vd_a = (_div_a.get('value_diversity') or {}).get('value_diversity')
+    _vd_b = (_div_b.get('value_diversity') or {}).get('value_diversity')
+    print(f"  4c. Value Diversity:   {args.system_a}={f'{_vd_a:.3f}' if _vd_a is not None else 'N/A'}  {args.system_b}={f'{_vd_b:.3f}' if _vd_b is not None else 'N/A'}")
+    print(f"  4d. Dedup Rate:        {args.system_a}={(_div_a.get('dedup_rate') or 0):.3f}  {args.system_b}={(_div_b.get('dedup_rate') or 0):.3f}")
     
     print(f"\n5. Time to Insight (Efficiency):")
     if results_a.get('time_to_insight') and results_b.get('time_to_insight'):

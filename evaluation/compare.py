@@ -58,16 +58,52 @@ def create_comparison_table(
         'Description': 'Usefulness - khác baseline'
     })
     
-    # 4. Insight Diversity
-    div_a = results_a['question_diversity'].get('diversity') or results_a['question_diversity'].get('semantic_diversity', 0)
-    div_b = results_b['question_diversity'].get('diversity') or results_b['question_diversity'].get('semantic_diversity', 0)
+    # 4. Insight Diversity (4 sub-metrics)
+    div_a = results_a['question_diversity']
+    div_b = results_b['question_diversity']
+
+    sem_a = div_a.get('semantic_diversity', 0) or 0
+    sem_b = div_b.get('semantic_diversity', 0) or 0
     metrics.append({
-        'Metric': '4. Insight Diversity',
-        name_a: format_metric_value(div_a, 'default'),
-        name_b: format_metric_value(div_b, 'default'),
-        'Winner': name_a if div_a > div_b else name_b,
+        'Metric': '4a. Diversity — Semantic',
+        name_a: format_metric_value(sem_a, 'default'),
+        name_b: format_metric_value(sem_b, 'default'),
+        'Winner': name_a if sem_a > sem_b else name_b,
         'Category': 'Core',
-        'Description': 'Non-redundancy - không trùng lặp'
+        'Description': 'Semantic diversity (breakdown|measure|pattern|subspace)'
+    })
+
+    sub_ent_a = (div_a.get('subspace_diversity') or {}).get('subspace_diversity_entropy')
+    sub_ent_b = (div_b.get('subspace_diversity') or {}).get('subspace_diversity_entropy')
+    metrics.append({
+        'Metric': '4b. Diversity — Subspace Entropy',
+        name_a: format_metric_value(sub_ent_a, 'default') if sub_ent_a is not None else 'N/A',
+        name_b: format_metric_value(sub_ent_b, 'default') if sub_ent_b is not None else 'N/A',
+        'Winner': (name_a if (sub_ent_a or 0) > (sub_ent_b or 0) else name_b) if sub_ent_a is not None or sub_ent_b is not None else 'N/A',
+        'Category': 'Core',
+        'Description': 'Entropy of subspace filter columns used'
+    })
+
+    val_a = (div_a.get('value_diversity') or {}).get('value_diversity')
+    val_b = (div_b.get('value_diversity') or {}).get('value_diversity')
+    metrics.append({
+        'Metric': '4c. Diversity — Value',
+        name_a: format_metric_value(val_a, 'default') if val_a is not None else 'N/A',
+        name_b: format_metric_value(val_b, 'default') if val_b is not None else 'N/A',
+        'Winner': (name_a if (val_a or 0) > (val_b or 0) else name_b) if val_a is not None or val_b is not None else 'N/A',
+        'Category': 'Core',
+        'Description': 'Unique (column, value) pairs in subspace / total'
+    })
+
+    dedup_a = div_a.get('dedup_rate', 0) or 0
+    dedup_b = div_b.get('dedup_rate', 0) or 0
+    metrics.append({
+        'Metric': '4d. Diversity — Dedup Rate',
+        name_a: format_metric_value(dedup_a, 'default'),
+        name_b: format_metric_value(dedup_b, 'default'),
+        'Winner': name_a if dedup_a < dedup_b else name_b,
+        'Category': 'Core',
+        'Description': 'Duplicate rate — lower is better'
     })
     
     # 5. Time to Insight (Efficiency)
@@ -124,6 +160,66 @@ def create_comparison_table(
                 'Description': 'Cost - tokens mỗi insight'
             })
     
+    # 7. Subspace Metrics
+    sa = results_a.get('subspace_metrics', {})
+    sb = results_b.get('subspace_metrics', {})
+    sub_count_a = sa.get('total_with_subspace', 0)
+    sub_count_b = sb.get('total_with_subspace', 0)
+    total_a = results_a.get('num_insights', 1) or 1
+    total_b = results_b.get('num_insights', 1) or 1
+    metrics.append({
+        'Metric': '7. Subspace Rate',
+        name_a: f"{sub_count_a}/{total_a} ({sub_count_a/total_a*100:.1f}%)",
+        name_b: f"{sub_count_b}/{total_b} ({sub_count_b/total_b*100:.1f}%)",
+        'Winner': name_a if sub_count_a / total_a > sub_count_b / total_b else name_b,
+        'Category': 'Subspace',
+        'Description': 'Insights with subspace filter / total'
+    })
+    if sa.get('faithfulness') and sb.get('faithfulness'):
+        sf_a = sa['faithfulness']['faithfulness']
+        sf_b = sb['faithfulness']['faithfulness']
+        metrics.append({
+            'Metric': '7a. Subspace Faithfulness',
+            name_a: format_metric_value(sf_a, 'percentage'),
+            name_b: format_metric_value(sf_b, 'percentage'),
+            'Winner': name_a if sf_a > sf_b else name_b,
+            'Category': 'Subspace',
+            'Description': 'Faithfulness restricted to subspace insights'
+        })
+    if sa.get('significance') and sb.get('significance'):
+        ss_a = sa['significance']['significant_rate']
+        ss_b = sb['significance']['significant_rate']
+        metrics.append({
+            'Metric': '7b. Subspace Significance',
+            name_a: format_metric_value(ss_a, 'percentage'),
+            name_b: format_metric_value(ss_b, 'percentage'),
+            'Winner': name_a if ss_a > ss_b else name_b,
+            'Category': 'Subspace',
+            'Description': 'Significance restricted to subspace insights'
+        })
+    if sa.get('novelty') and sb.get('novelty'):
+        sn_a = sa['novelty']['novelty']
+        sn_b = sb['novelty']['novelty']
+        metrics.append({
+            'Metric': '7c. Subspace Novelty',
+            name_a: format_metric_value(sn_a, 'percentage'),
+            name_b: format_metric_value(sn_b, 'percentage'),
+            'Winner': name_a if sn_a > sn_b else name_b,
+            'Category': 'Subspace',
+            'Description': 'Novelty restricted to subspace insights'
+        })
+    if sa.get('diversity') and sb.get('diversity'):
+        sd_a = sa['diversity'].get('semantic_diversity', 0) or 0
+        sd_b = sb['diversity'].get('semantic_diversity', 0) or 0
+        metrics.append({
+            'Metric': '7d. Subspace Diversity',
+            name_a: format_metric_value(sd_a, 'default'),
+            name_b: format_metric_value(sd_b, 'default'),
+            'Winner': name_a if sd_a > sd_b else name_b,
+            'Category': 'Subspace',
+            'Description': 'Semantic diversity restricted to subspace insights'
+        })
+
     df = pd.DataFrame(metrics)
     return df
 
@@ -187,9 +283,24 @@ def generate_report(
         f.write(f"- **Faithfulness**: {results_a['faithfulness']['faithfulness']*100:.1f}% vs {results_b['faithfulness']['faithfulness']*100:.1f}%\n")
         f.write(f"- **Statistical Significance**: {results_a['insight_significance']['significant_rate']*100:.1f}% vs {results_b['insight_significance']['significant_rate']*100:.1f}%\n")
         f.write(f"- **Insight Novelty**: {results_a['insight_novelty']['novelty']*100:.1f}% vs {results_b['insight_novelty']['novelty']*100:.1f}%\n")
-        _div_a = results_a['question_diversity'].get('diversity') or results_a['question_diversity'].get('semantic_diversity', 0)
-        _div_b = results_b['question_diversity'].get('diversity') or results_b['question_diversity'].get('semantic_diversity', 0)
-        f.write(f"- **Insight Diversity**: {_div_a:.3f} vs {_div_b:.3f}\n")
+        _sem_a = results_a['question_diversity'].get('semantic_diversity', 0) or 0
+        _sem_b = results_b['question_diversity'].get('semantic_diversity', 0) or 0
+        _sub_ent_a = (results_a['question_diversity'].get('subspace_diversity') or {}).get('subspace_diversity_entropy')
+        _sub_ent_b = (results_b['question_diversity'].get('subspace_diversity') or {}).get('subspace_diversity_entropy')
+        _val_a = (results_a['question_diversity'].get('value_diversity') or {}).get('value_diversity')
+        _val_b = (results_b['question_diversity'].get('value_diversity') or {}).get('value_diversity')
+        _dedup_a = results_a['question_diversity'].get('dedup_rate', 0) or 0
+        _dedup_b = results_b['question_diversity'].get('dedup_rate', 0) or 0
+        f.write(f"- **Insight Diversity (Semantic)**: {_sem_a:.3f} vs {_sem_b:.3f}\n")
+        if _sub_ent_a is not None or _sub_ent_b is not None:
+            _se_a_str = f"{_sub_ent_a:.3f}" if _sub_ent_a is not None else "N/A"
+            _se_b_str = f"{_sub_ent_b:.3f}" if _sub_ent_b is not None else "N/A"
+            f.write(f"- **Insight Diversity (Subspace Entropy)**: {_se_a_str} vs {_se_b_str}\n")
+        if _val_a is not None or _val_b is not None:
+            _va_str = f"{_val_a:.3f}" if _val_a is not None else "N/A"
+            _vb_str = f"{_val_b:.3f}" if _val_b is not None else "N/A"
+            f.write(f"- **Insight Diversity (Value)**: {_va_str} vs {_vb_str}\n")
+        f.write(f"- **Insight Diversity (Dedup Rate)**: {_dedup_a:.3f} vs {_dedup_b:.3f}\n")
         
         if results_a.get('time_to_insight') and results_b.get('time_to_insight'):
             time_a = results_a['time_to_insight'].get('time_per_insight_seconds')
@@ -210,7 +321,32 @@ def generate_report(
         f.write("\n")
         
         f.write("---\n\n")
-        
+
+        # Subspace Metrics
+        sa = results_a.get('subspace_metrics', {})
+        sb = results_b.get('subspace_metrics', {})
+        if sa or sb:
+            f.write("### Subspace Insights Analysis\n\n")
+            total_a = results_a.get('num_insights', 1) or 1
+            total_b = results_b.get('num_insights', 1) or 1
+            sub_a = sa.get('total_with_subspace', 0)
+            sub_b = sb.get('total_with_subspace', 0)
+            f.write(f"- **{name_a}**: {sub_a}/{total_a} insights have subspace filter ({sub_a/total_a*100:.1f}%)\n")
+            f.write(f"- **{name_b}**: {sub_b}/{total_b} insights have subspace filter ({sub_b/total_b*100:.1f}%)\n")
+            if sa.get('faithfulness') and sb.get('faithfulness'):
+                f.write(f"- Subspace Faithfulness: {name_a}={sa['faithfulness']['faithfulness']*100:.1f}%  {name_b}={sb['faithfulness']['faithfulness']*100:.1f}%\n")
+            if sa.get('significance') and sb.get('significance'):
+                f.write(f"- Subspace Significance: {name_a}={sa['significance']['significant_rate']*100:.1f}%  {name_b}={sb['significance']['significant_rate']*100:.1f}%\n")
+            if sa.get('novelty') and sb.get('novelty'):
+                f.write(f"- Subspace Novelty: {name_a}={sa['novelty']['novelty']*100:.1f}%  {name_b}={sb['novelty']['novelty']*100:.1f}%\n")
+            if sa.get('diversity') and sb.get('diversity'):
+                _sd_a = sa['diversity'].get('semantic_diversity', 0) or 0
+                _sd_b = sb['diversity'].get('semantic_diversity', 0) or 0
+                f.write(f"- Subspace Diversity: {name_a}={_sd_a:.3f}  {name_b}={_sd_b:.3f}\n")
+            f.write("\n")
+
+        f.write("---\n\n")
+
         # Detailed Metrics
         f.write("## Detailed Metrics Comparison\n\n")
         f.write(comparison_df.to_markdown(index=False))

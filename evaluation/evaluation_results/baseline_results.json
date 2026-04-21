@@ -18,15 +18,31 @@
     "total_evaluated": 50
   },
   "question_diversity": {
-    "semantic_diversity": 0.2715083956718445,
-    "avg_similarity": 0.7284916043281555,
+    "semantic_diversity": 0.3298514485359192,
+    "avg_similarity": 0.6701485514640808,
     "num_insights": 77,
-    "subspace_diversity": null,
-    "value_diversity": null,
-    "dedup_rate": 0.6883116883116883,
-    "unique_count": 24,
+    "subspace_diversity": {
+      "subspace_diversity_entropy": 1.508113754807558,
+      "subspace_diversity_count_ratio": 0.06493506493506493,
+      "unique_columns": 5,
+      "total_columns": 31,
+      "column_distribution": {
+        "Sales Method": 10,
+        "Region": 5,
+        "State": 7,
+        "Retailer": 7,
+        "Product": 2
+      }
+    },
+    "value_diversity": {
+      "value_diversity": 0.3225806451612903,
+      "unique_pairs": 10,
+      "total_pairs": 31
+    },
+    "dedup_rate": 0.36363636363636365,
+    "unique_count": 49,
     "total_count": 77,
-    "duplicate_count": 53
+    "duplicate_count": 28
   },
   "time_to_insight": {
     "total_time_seconds": 594.2439229488373,

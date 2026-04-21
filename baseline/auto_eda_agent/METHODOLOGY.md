@@ -58,12 +58,12 @@ Raw CSV
 
 ## 3. Preprocessing
 
-Before any agent runs, the dataset is cleaned to ensure consistent numeric types:
+Before any agent runs, the dataset is cleaned to ensure consistent numeric types. The cleaning logic mirrors the IFQ preprocessing pipeline to ensure a fair comparison between the two systems:
 
+- **Separator detection** → auto-detects `,` vs `;` CSV formats
 - **Currency strings** (`$50.00`, `$1,200`) → parsed to float
 - **Percentage strings** (`35%`) → parsed to float
-- **Date normalization** → standardized to `YYYY-MM-DD`
-- **Separator detection** → auto-detects `,` vs `;` CSV formats
+- **European number formatting** → normalized when `;` separator is detected
 
 This step runs once on load. All agents operate on the cleaned dataframe.
 
@@ -187,9 +187,13 @@ The LLM is instructed to optionally generate subspace conditions (filtering crit
 
 Each insight includes a title, description with specific numbers, the variables involved, the source evidence, and optionally a subspace condition. A chart is generated for each insight matched to its type: line plot for trends, scatter plot for correlations, histogram for distributions, bar chart for comparisons and groupings, and box plot for outliers and anomalies.
 
-Duplicate insights (matched by title) are tracked and skipped across batches to avoid redundancy.
+**Post-processing:** After the LLM returns each batch of insights, every insight undergoes automated validation before being accepted. If a subspace condition is specified, the system verifies that the referenced column and value actually exist in the data; insights that fail this check are discarded. For accepted insights, the sorted unique values of the breakdown column under the subspace filter are computed and attached as `view_labels`, ensuring that labels always reflect the actual filtered data.
 
-**Output:** `insights.json` — structured list of insights, each with title, description, type, variables, evidence, chart path, and optionally subspace conditions.
+**Deduplication:** Two layers of deduplication are applied across all batches. First, insights with repeated titles are skipped. Second, insights sharing the same structural combination of type, breakdown column, measure column, and subspace condition are also skipped even if their titles differ. This prevents both surface-level and structural redundancy across extraction batches.
+
+**Output:** `insights.json` — structured list of insights, each with title, description, type, variables involved, evidence, chart path, subspace condition, and `view_labels`.
+
+After Step 5 completes, the pipeline produces an IFQ-compatible output (insight cards and insight summaries) to enable direct evaluation against the IFQ system.
 
 ---
 
