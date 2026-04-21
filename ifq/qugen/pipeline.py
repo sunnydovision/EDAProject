@@ -17,6 +17,7 @@ from .filters import (
     filter_by_schema_relevance,
     filter_duplicates,
     filter_simple_questions,
+    filter_invalid_measures,
 )
 from .stats import BasicStatsGenerator
 from .examples import get_default_few_shot_examples
@@ -146,6 +147,7 @@ class QUGENPipeline:
         all_cards = filter_duplicates(all_cards, threshold=self.config.dedup_similarity_threshold)
         qfn = run_query_fn if run_query_fn is not None else self.config.run_query_fn
         all_cards = filter_simple_questions(all_cards, run_query_fn=qfn)
+        all_cards = filter_invalid_measures(all_cards, table_schema)
 
         return all_cards
 

@@ -73,7 +73,12 @@ def schema_from_dataframe(df, table_name: str = "Table") -> TableSchema:
     columns = []
     for name in df.columns:
         s = df[name]
-        if pd.api.types.is_integer_dtype(s):
+        name_norm = str(name).strip().lower().replace("-", " ").replace("_", " ")
+        # Treat identifier columns as categorical dimensions even if stored as numbers.
+        is_identifier = name_norm.endswith(" id") or name_norm == "id"
+        if is_identifier:
+            dtype = "CHAR"
+        elif pd.api.types.is_integer_dtype(s):
             dtype = "INT"
         elif pd.api.types.is_float_dtype(s):
             dtype = "DOUBLE"

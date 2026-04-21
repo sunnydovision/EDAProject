@@ -112,7 +112,7 @@ class ISGENConfig:
     beam_width: int = 20
     exp_factor: int = 20
     max_depth: int = 1
-    w_llm: float = 0.5
+    w_llm: float = 1.0
     run_subspace_search: bool = True
     max_insights_per_card: int = 3
     plot_dir: str | None = None

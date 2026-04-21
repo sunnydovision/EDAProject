@@ -121,6 +121,41 @@ def filter_simple_questions(
     return kept
 
 
+def filter_invalid_measures(
+    cards: list[InsightCard],
+    schema: TableSchema,
+) -> list[InsightCard]:
+    """
+    Drop cards whose measure aggregation is incompatible with schema dtype.
+    Numeric aggregations (SUM/MEAN/AVG/MIN/MAX) are only allowed on INT/DOUBLE columns.
+    COUNT(*) and COUNT(col) are always allowed.
+    """
+    if not cards:
+        return []
+
+    dtype_by_col = {str(c.get("name", "")).strip().lower(): str(c.get("dtype", "")).strip().upper() for c in schema.columns}
+    allowed_numeric_dtypes = {"INT", "DOUBLE"}
+    m_re = re.compile(r"^(SUM|MEAN|AVG|COUNT|MIN|MAX)\s*\(\s*([^)]+)\s*\)$", re.IGNORECASE)
+
+    kept: list[InsightCard] = []
+    for c in cards:
+        measure = (c.measure or "").strip()
+        m = m_re.match(measure)
+        if not m:
+            continue
+        agg = m.group(1).upper()
+        col = m.group(2).strip()
+
+        if agg == "COUNT" or col == "*":
+            kept.append(c)
+            continue
+
+        dtype = dtype_by_col.get(col.lower())
+        if dtype in allowed_numeric_dtypes:
+            kept.append(c)
+    return kept
+
+
 def _filter_simple_heuristic(cards: list[InsightCard]) -> list[InsightCard]:
     """
     Heuristic when no SQL execution is available: drop very short questions
