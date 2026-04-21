@@ -57,7 +57,7 @@ def compute_significance(
         }
     
     try:
-        from faithfulness import parse_measure
+        from .faithfulness import parse_measure
         
         p_values = []
         significant_count = 0

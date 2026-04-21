@@ -1,5 +1,5 @@
 Metric,IFQ,Baseline,Winner,Category,Description
-1. Faithfulness,98.8%,100.0%,Baseline,Core,Correctness - đúng dữ liệu
-2. Statistical Significance,87.0%,100.0%,Baseline,Core,Validity - không phải noise
-3. Insight Novelty,97.5%,93.9%,IFQ,Core,Usefulness - khác baseline
-4. Insight Diversity,0.491,0.237,IFQ,Core,Non-redundancy - không trùng lặp
+1. Faithfulness,76.7%,79.0%,Baseline,Core,Correctness - đúng dữ liệu
+2. Statistical Significance,71.1%,94.9%,Baseline,Core,Validity - không phải noise
+3. Insight Novelty,96.7%,95.2%,IFQ,Core,Usefulness - khác baseline
+4. Insight Diversity,0.400,0.507,Baseline,Core,Non-redundancy - không trùng lặp

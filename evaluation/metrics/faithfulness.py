@@ -109,6 +109,9 @@ def compute_faithfulness(
             verified_count += 1
             continue
         
+        # Convert recomputed index to string to match with view_labels
+        recomputed.index = recomputed.index.astype(str)
+        
         # Check for duplicate labels (data format error)
         if len(view_labels) != len(set(view_labels)):
             failed_insights.append({
@@ -190,6 +193,14 @@ def _clean_insight(insight: Dict, df_columns: list, sep: str) -> Dict:
 
 def _recompute_values(df: pd.DataFrame, breakdown: str, col: str, agg: str):
     """Recompute values based on aggregation type."""
+    # Check if column is numeric before aggregation
+    if col not in df.columns:
+        return None
+    
+    if not pd.api.types.is_numeric_dtype(df[col]):
+        # Column is string/categorical, use COUNT instead
+        agg = 'COUNT'
+    
     if breakdown and breakdown in df.columns:
         if agg.lower() in ['avg', 'mean']:
             return df.groupby(breakdown)[col].mean()

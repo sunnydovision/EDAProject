@@ -1,40 +1,153 @@
 {
   "system": "IFQ",
-  "num_cards": 80,
-  "num_insights": 80,
+  "num_cards": 90,
+  "num_insights": 90,
   "faithfulness": {
-    "faithfulness": 0.9875,
-    "verified_count": 79,
-    "total_count": 80,
-    "hallucination_count": 1,
-    "hallucination_rate": 0.012499999999999956,
+    "faithfulness": 0.7666666666666667,
+    "verified_count": 69,
+    "total_count": 90,
+    "hallucination_count": 21,
+    "hallucination_rate": 0.23333333333333328,
     "_failed_insights": [
       {
-        "idx": 65,
-        "reason": "Subspace filter resulted in empty dataframe for subspace: [['Units Sold', 1870]]",
-        "pattern": "Distribution Difference"
+        "idx": 15,
+        "reason": "Value mismatch for \"1\": reported=21.36187214611872, recomputed=0.40348173515981733, delta=2.10e+01",
+        "pattern": "Outstanding Value"
+      },
+      {
+        "idx": 16,
+        "reason": "Value mismatch for \"M\u1ecfng\": reported=1778437409.2307692, recomputed=2.147065704846154, delta=1.78e+09",
+        "pattern": "Outstanding Value"
+      },
+      {
+        "idx": 20,
+        "reason": "Value mismatch for \"Cao c\u1ea5p\": reported=411844802.3125, recomputed=0.421817471125, delta=4.12e+08",
+        "pattern": "Outstanding Value"
+      },
+      {
+        "idx": 22,
+        "reason": "Value mismatch for \"Cao\": reported=520796749.5714286, recomputed=0.6099696045714286, delta=5.21e+08",
+        "pattern": "Outstanding Value"
+      },
+      {
+        "idx": 23,
+        "reason": "Value mismatch for \"Cao\": reported=374478027.26153845, recomputed=0.41955555127692307, delta=3.74e+08",
+        "pattern": "Outstanding Value"
+      },
+      {
+        "idx": 25,
+        "reason": "Value mismatch for \"M\u00e0u xanh ng\u1ecdc \": reported=2994528454.0, recomputed=2.994528454, delta=2.99e+09",
+        "pattern": "Outstanding Value"
+      },
+      {
+        "idx": 26,
+        "reason": "Value mismatch for \"Cao\": reported=337092668.59322035, recomputed=0.3735053603898305, delta=3.37e+08",
+        "pattern": "Outstanding Value"
+      },
+      {
+        "idx": 30,
+        "reason": "Value mismatch for \"Th\u1ee9 4\": reported=29472546.0, recomputed=0.029472546, delta=2.95e+07",
+        "pattern": "Outstanding Value"
+      },
+      {
+        "idx": 33,
+        "reason": "Value mismatch for \"Cao c\u1ea5p\": reported=517937357.35384613, recomputed=0.580444448723077, delta=5.18e+08",
+        "pattern": "Outstanding Value"
+      },
+      {
+        "idx": 34,
+        "reason": "Value mismatch for \"Cao\": reported=517937357.35384613, recomputed=0.580444448723077, delta=5.18e+08",
+        "pattern": "Outstanding Value"
+      },
+      {
+        "idx": 44,
+        "reason": "Value mismatch for \"Cao\": reported=7636686707.246154, recomputed=7710309844.673575, delta=7.36e+07",
+        "pattern": "Outstanding Value"
+      },
+      {
+        "idx": 46,
+        "reason": "Value mismatch for \"B\u00e1n l\u1ebb\": reported=87507408.90824261, recomputed=0.09588060014307931, delta=8.75e+07",
+        "pattern": "Outstanding Value"
+      },
+      {
+        "idx": 57,
+        "reason": "Value mismatch for \"M\u1ecfng\": reported=21.0, recomputed=2.1, delta=1.89e+01",
+        "pattern": "Attribution"
+      },
+      {
+        "idx": 58,
+        "reason": "Value mismatch for \"DD-G\": reported=325.0, recomputed=3.25, delta=3.22e+02",
+        "pattern": "Attribution"
+      },
+      {
+        "idx": 69,
+        "reason": "Value mismatch for \"Cao c\u1ea5p\": reported=357820484.0, recomputed=0.357820484, delta=3.58e+08",
+        "pattern": "Attribution"
+      },
+      {
+        "idx": 71,
+        "reason": "Value mismatch for \"Th\u1ea5p\": reported=756474914.5555556, recomputed=0.7564749145555556, delta=7.56e+08",
+        "pattern": "Attribution"
+      },
+      {
+        "idx": 77,
+        "reason": "Value mismatch for \"Th\u1ee9 6\": reported=98753770.75, recomputed=0.09875377075, delta=9.88e+07",
+        "pattern": "Attribution"
+      },
+      {
+        "idx": 83,
+        "reason": "Value mismatch for \"Cao\": reported=374478027.26153845, recomputed=0.41955555127692307, delta=3.74e+08",
+        "pattern": "Attribution"
+      },
+      {
+        "idx": 84,
+        "reason": "Value mismatch for \"Cao\": reported=337092668.59322035, recomputed=0.3735053603898305, delta=3.37e+08",
+        "pattern": "Attribution"
+      },
+      {
+        "idx": 85,
+        "reason": "Value mismatch for \"Cao c\u1ea5p\": reported=517937357.35384613, recomputed=0.580444448723077, delta=5.18e+08",
+        "pattern": "Attribution"
+      },
+      {
+        "idx": 86,
+        "reason": "Value mismatch for \"Cao\": reported=517937357.35384613, recomputed=0.580444448723077, delta=5.18e+08",
+        "pattern": "Attribution"
       }
     ]
   },
   "insight_significance": {
     "avg_zscore": Infinity,
-    "significant_count": 67,
-    "significant_rate": 0.8701298701298701,
+    "significant_count": 64,
+    "significant_rate": 0.7111111111111111,
     "max_zscore": Infinity,
-    "total_evaluated": 77
+    "total_evaluated": 90
   },
   "question_diversity": {
-    "diversity": 0.4913730025291443,
-    "avg_similarity": 0.5086269974708557,
-    "num_questions": 80
+    "diversity": 0.4000393748283386,
+    "avg_similarity": 0.5999606251716614,
+    "num_questions": 90
   },
-  "time_to_insight": null,
-  "token_usage": null,
+  "time_to_insight": {
+    "total_time_seconds": 629.731,
+    "insights_generated": 80,
+    "time_per_insight_seconds": 7.8716375,
+    "throughput_insights_per_second": 0.12703837035178514
+  },
+  "token_usage": {
+    "total_tokens": 78804,
+    "input_tokens": 53533,
+    "output_tokens": 25271,
+    "requests": 101,
+    "insights_generated": 80,
+    "tokens_per_insight": 985.05,
+    "model": "gpt-5.4"
+  },
   "insight_novelty": {
-    "novelty": 0.975,
-    "novel_count": 78,
-    "total_count": 80,
-    "avg_max_similarity": 0.6453222036361694,
+    "novelty": 0.9666666666666667,
+    "novel_count": 87,
+    "total_count": 90,
+    "avg_max_similarity": 0.6989516019821167,
     "tau": 0.85
   }
 }

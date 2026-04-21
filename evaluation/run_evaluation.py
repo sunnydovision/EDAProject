@@ -16,13 +16,14 @@ import os
 # Add project root to path
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
-from data_loader import load_and_clean_data
-from faithfulness import compute_faithfulness
-from significance import compute_significance
-from novelty import compute_novelty
-from diversity import compute_diversity
-from time_to_insight import compute_time_to_insight
-from token_usage import compute_token_usage
+from metrics.data_loader import load_and_clean_data
+from metrics.faithfulness import compute_faithfulness
+from metrics.significance import compute_significance
+from metrics.novelty import compute_novelty
+from metrics.diversity import compute_diversity
+from metrics.time_to_insight import compute_time_to_insight
+from metrics.token_usage import compute_token_usage
+from metrics.subspace import compute_subspace_metrics, filter_insights_with_subspace
 from compare import create_comparison_table, generate_report
 from plot_evaluation import plot_evaluation_results
 
@@ -208,6 +209,15 @@ def main():
     # Compute comparative metrics (novelty)
     comparison_results = evaluate_comparison(results_a, results_b, insights_a, insights_b)
     
+    # Compute subspace-specific metrics
+    print(f"\n{'='*70}")
+    print("Computing Subspace Metrics")
+    print(f"{'='*70}\n")
+    print(f" Subspace insights: {args.system_a}={len(filter_insights_with_subspace(insights_a))}, {args.system_b}={len(filter_insights_with_subspace(insights_b))}")
+    subspace_results = compute_subspace_metrics(insights_a, insights_b, df_raw, df_cleaned, args.data)
+    results_a['subspace_metrics'] = subspace_results['system_a']
+    results_b['subspace_metrics'] = subspace_results['system_b']
+    
     # Save individual results
     os.makedirs(args.output, exist_ok=True)
     
@@ -295,6 +305,21 @@ def main():
             print(f"  • Token data not available")
     else:
         print(f"  • Token data not available")
+    
+    # Subspace metrics summary
+    print(f"\n7. Subspace Metrics (insights with subspace filter only):")
+    sa = results_a.get('subspace_metrics', {})
+    sb = results_b.get('subspace_metrics', {})
+    print(f"  • {args.system_a}: {sa.get('total_with_subspace', 0)} subspace insights")
+    print(f"  • {args.system_b}: {sb.get('total_with_subspace', 0)} subspace insights")
+    if sa.get('faithfulness') and sb.get('faithfulness'):
+        print(f"  Faithfulness:  {args.system_a}={sa['faithfulness']['faithfulness']*100:.1f}%  {args.system_b}={sb['faithfulness']['faithfulness']*100:.1f}%")
+    if sa.get('significance') and sb.get('significance'):
+        print(f"  Significance:  {args.system_a}={sa['significance']['significant_rate']*100:.1f}%  {args.system_b}={sb['significance']['significant_rate']*100:.1f}%")
+    if sa.get('novelty') and sb.get('novelty'):
+        print(f"  Novelty:       {args.system_a}={sa['novelty']['novelty']*100:.1f}%  {args.system_b}={sb['novelty']['novelty']*100:.1f}%")
+    if sa.get('diversity') and sb.get('diversity'):
+        print(f"  Diversity:     {args.system_a}={sa['diversity']['diversity']:.3f}  {args.system_b}={sb['diversity']['diversity']:.3f}")
     
     print(f"\nEvaluation complete! Results saved to: {args.output}/")
 
