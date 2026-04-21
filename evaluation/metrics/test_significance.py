@@ -4,19 +4,19 @@ Test script for significance.py - compares IFQ vs Baseline
 
 import sys
 import os
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
-from data_loader import load_and_clean_data
-from significance import compute_significance
+from metrics.data_loader import load_and_clean_data
+from metrics.significance import compute_significance
 import json
 
 # Test significance
 print("Testing significance.py - IFQ vs Baseline")
 print("="*70)
 
-csv_path = "../data/Adidas_cleaned.csv"
-insights_ifq_path = "../insights_summary_adidas_cleaned.json"
-insights_baseline_path = "../baseline/auto_eda_agent/output/ifq_format/insights_summary.json"
+csv_path = "../../data/Adidas_cleaned.csv"
+insights_ifq_path = "../../insights_summary_adidas_adidas_v3.json"
+insights_baseline_path = "../../baseline/auto_eda_agent/output_adidas/ifq_format/insights_summary.json"
 
 print(f"Loading data from: {csv_path}")
 
@@ -47,6 +47,10 @@ try:
     print(f"  - Significant count: {result_ifq['significant_count']}")
     print(f"  - Total evaluated: {result_ifq['total_evaluated']}")
     print(f"  - Avg z-score: {result_ifq['avg_zscore']:.4f}")
+    if 'by_pattern' in result_ifq:
+        print(f"  - By pattern:")
+        for pattern, stats in result_ifq['by_pattern'].items():
+            print(f"    {pattern}: {stats['significant_rate']*100:.1f}% ({stats['significant_count']}/{stats['total_count']})")
     
     # Compute significance for Baseline
     print("\n" + "-"*70)
@@ -59,6 +63,10 @@ try:
     print(f"  - Significant count: {result_baseline['significant_count']}")
     print(f"  - Total evaluated: {result_baseline['total_evaluated']}")
     print(f"  - Avg z-score: {result_baseline['avg_zscore']:.4f}")
+    if 'by_pattern' in result_baseline:
+        print(f"  - By pattern:")
+        for pattern, stats in result_baseline['by_pattern'].items():
+            print(f"    {pattern}: {stats['significant_rate']*100:.1f}% ({stats['significant_count']}/{stats['total_count']})")
     
     # Comparison
     print("\n" + "="*70)

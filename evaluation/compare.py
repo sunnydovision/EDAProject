@@ -33,27 +33,75 @@ def create_comparison_table(
         'Metric': '1. Faithfulness',
         name_a: format_metric_value(results_a['faithfulness']['faithfulness'], 'percentage'),
         name_b: format_metric_value(results_b['faithfulness']['faithfulness'], 'percentage'),
-        'Winner': name_a if results_a['faithfulness']['faithfulness'] > results_b['faithfulness']['faithfulness'] else name_b,
+        'Winner': name_a if results_a['faithfulness']['faithfulness'] > results_b['faithfulness']['faithfulness'] else name_b if results_b['faithfulness']['faithfulness'] > results_a['faithfulness']['faithfulness'] else 'Tie',
         'Category': 'Core',
         'Description': 'Correctness - đúng dữ liệu'
     })
     
-    # 2. Statistical Significance
+    # 2. Statistical Significance (4 sub-metrics)
+    sig_a = results_a['insight_significance']
+    sig_b = results_b['insight_significance']
+
+    # Overall significance
     metrics.append({
-        'Metric': '2. Statistical Significance',
-        name_a: format_metric_value(results_a['insight_significance']['significant_rate'], 'percentage'),
-        name_b: format_metric_value(results_b['insight_significance']['significant_rate'], 'percentage'),
-        'Winner': name_a if results_a['insight_significance']['significant_rate'] > results_b['insight_significance']['significant_rate'] else name_b,
+        'Metric': '2. Statistical Significance (Overall)',
+        name_a: format_metric_value(sig_a['significant_rate'], 'percentage'),
+        name_b: format_metric_value(sig_b['significant_rate'], 'percentage'),
+        'Winner': name_a if sig_a['significant_rate'] > sig_b['significant_rate'] else name_b if sig_b['significant_rate'] > sig_a['significant_rate'] else 'Tie',
         'Category': 'Core',
-        'Description': 'Validity - không phải noise'
+        'Description': 'Validity - không phải noise (tổng)'
     })
+
+    # Per pattern significance
+    bp_a = sig_a.get('by_pattern', {})
+    bp_b = sig_b.get('by_pattern', {})
+
+    for pattern in ['TREND', 'OUTSTANDING_VALUE', 'ATTRIBUTION', 'DISTRIBUTION_DIFFERENCE']:
+        p_a = bp_a.get(pattern, {}).get('significant_rate', 0) or 0
+        p_b = bp_b.get(pattern, {}).get('significant_rate', 0) or 0
+        count_a = bp_a.get(pattern, {}).get('total_count', 0)
+        count_b = bp_b.get(pattern, {}).get('total_count', 0)
+        
+        # Get insight details for breakdown and Mann-Kendall/LR
+        insights_a = bp_a.get(pattern, {}).get('insights', [])
+        insights_b = bp_b.get(pattern, {}).get('insights', [])
+        
+        # Format insight details string
+        def format_insights(insights, pattern_name):
+            if not insights:
+                return 'N/A'
+            details = []
+            for ins in insights[:5]:  # Show first 5 insights
+                if pattern_name == 'TREND':
+                    mk_p = ins.get('mann_kendall_p', 'N/A')
+                    mk_str = f"{mk_p:.4f}" if isinstance(mk_p, float) else str(mk_p)
+                    details.append(f"{ins['breakdown']}/{ins['col']}: MK={mk_str}")
+                else:
+                    p_val = ins.get('p_value', 'N/A')
+                    p_str = f"{p_val:.4f}" if isinstance(p_val, float) else str(p_val)
+                    details.append(f"{ins['breakdown']}/{ins['col']}: p={p_str}")
+            if len(insights) > 5:
+                details.append(f"... and {len(insights)-5} more")
+            return '; '.join(details)
+        
+        details_a = format_insights(insights_a, pattern)
+        details_b = format_insights(insights_b, pattern)
+        
+        metrics.append({
+            'Metric': f'2a. Significance — {pattern}',
+            name_a: f"{p_a*100:.1f}% ({count_a})\n{details_a}" if count_a > 0 else 'N/A',
+            name_b: f"{p_b*100:.1f}% ({count_b})\n{details_b}" if count_b > 0 else 'N/A',
+            'Winner': name_a if p_a > p_b else name_b if p_b > p_a else 'N/A',
+            'Category': 'Core',
+            'Description': f'Validity - {pattern} pattern'
+        })
     
     # 3. Insight Novelty
     metrics.append({
         'Metric': '3. Insight Novelty',
         name_a: format_metric_value(results_a['insight_novelty']['novelty'], 'percentage'),
         name_b: format_metric_value(results_b['insight_novelty']['novelty'], 'percentage'),
-        'Winner': name_a if results_a['insight_novelty']['novelty'] > results_b['insight_novelty']['novelty'] else name_b,
+        'Winner': name_a if results_a['insight_novelty']['novelty'] > results_b['insight_novelty']['novelty'] else name_b if results_b['insight_novelty']['novelty'] > results_a['insight_novelty']['novelty'] else 'Tie',
         'Category': 'Core',
         'Description': 'Usefulness - khác baseline'
     })
@@ -68,7 +116,7 @@ def create_comparison_table(
         'Metric': '4a. Diversity — Semantic',
         name_a: format_metric_value(sem_a, 'default'),
         name_b: format_metric_value(sem_b, 'default'),
-        'Winner': name_a if sem_a > sem_b else name_b,
+        'Winner': name_a if sem_a > sem_b else name_b if sem_b > sem_a else 'Tie',
         'Category': 'Core',
         'Description': 'Semantic diversity (breakdown|measure|pattern|subspace)'
     })
@@ -79,7 +127,7 @@ def create_comparison_table(
         'Metric': '4b. Diversity — Subspace Entropy',
         name_a: format_metric_value(sub_ent_a, 'default') if sub_ent_a is not None else 'N/A',
         name_b: format_metric_value(sub_ent_b, 'default') if sub_ent_b is not None else 'N/A',
-        'Winner': (name_a if (sub_ent_a or 0) > (sub_ent_b or 0) else name_b) if sub_ent_a is not None or sub_ent_b is not None else 'N/A',
+        'Winner': (name_a if (sub_ent_a or 0) > (sub_ent_b or 0) else name_b if (sub_ent_b or 0) > (sub_ent_a or 0) else 'Tie') if sub_ent_a is not None or sub_ent_b is not None else 'N/A',
         'Category': 'Core',
         'Description': 'Entropy of subspace filter columns used'
     })
@@ -90,7 +138,7 @@ def create_comparison_table(
         'Metric': '4c. Diversity — Value',
         name_a: format_metric_value(val_a, 'default') if val_a is not None else 'N/A',
         name_b: format_metric_value(val_b, 'default') if val_b is not None else 'N/A',
-        'Winner': (name_a if (val_a or 0) > (val_b or 0) else name_b) if val_a is not None or val_b is not None else 'N/A',
+        'Winner': (name_a if (val_a or 0) > (val_b or 0) else name_b if (val_b or 0) > (val_a or 0) else 'Tie') if val_a is not None or val_b is not None else 'N/A',
         'Category': 'Core',
         'Description': 'Unique (column, value) pairs in subspace / total'
     })
@@ -101,7 +149,7 @@ def create_comparison_table(
         'Metric': '4d. Diversity — Dedup Rate',
         name_a: format_metric_value(dedup_a, 'default'),
         name_b: format_metric_value(dedup_b, 'default'),
-        'Winner': name_a if dedup_a < dedup_b else name_b,
+        'Winner': name_a if dedup_a < dedup_b else name_b if dedup_b < dedup_a else 'Tie',
         'Category': 'Core',
         'Description': 'Duplicate rate — lower is better'
     })
@@ -116,7 +164,7 @@ def create_comparison_table(
                 'Metric': '5. Time to Insight',
                 name_a: f"{time_a:.2f}s",
                 name_b: f"{time_b:.2f}s",
-                'Winner': name_a if time_a < time_b else name_b,
+                'Winner': name_a if time_a < time_b else name_b if time_b < time_a else 'Tie',
                 'Category': 'Efficiency',
                 'Description': 'Speed - thời gian mỗi insight'
             })
@@ -143,7 +191,7 @@ def create_comparison_table(
                 'Metric': '6. Token Usage',
                 name_a: f"{tokens_a:.0f}",
                 name_b: f"{tokens_b:.0f}",
-                'Winner': name_a if tokens_a < tokens_b else name_b,
+                'Winner': name_a if tokens_a < tokens_b else name_b if tokens_b < tokens_a else 'Tie',
                 'Category': 'Efficiency',
                 'Description': 'Cost - tokens mỗi insight'
             })
@@ -171,7 +219,7 @@ def create_comparison_table(
         'Metric': '7. Subspace Rate',
         name_a: f"{sub_count_a}/{total_a} ({sub_count_a/total_a*100:.1f}%)",
         name_b: f"{sub_count_b}/{total_b} ({sub_count_b/total_b*100:.1f}%)",
-        'Winner': name_a if sub_count_a / total_a > sub_count_b / total_b else name_b,
+        'Winner': name_a if sub_count_a / total_a > sub_count_b / total_b else name_b if sub_count_b / total_b > sub_count_a / total_a else 'Tie',
         'Category': 'Subspace',
         'Description': 'Insights with subspace filter / total'
     })
@@ -182,7 +230,7 @@ def create_comparison_table(
             'Metric': '7a. Subspace Faithfulness',
             name_a: format_metric_value(sf_a, 'percentage'),
             name_b: format_metric_value(sf_b, 'percentage'),
-            'Winner': name_a if sf_a > sf_b else name_b,
+            'Winner': name_a if sf_a > sf_b else name_b if sf_b > sf_a else 'Tie',
             'Category': 'Subspace',
             'Description': 'Faithfulness restricted to subspace insights'
         })
@@ -193,7 +241,7 @@ def create_comparison_table(
             'Metric': '7b. Subspace Significance',
             name_a: format_metric_value(ss_a, 'percentage'),
             name_b: format_metric_value(ss_b, 'percentage'),
-            'Winner': name_a if ss_a > ss_b else name_b,
+            'Winner': name_a if ss_a > ss_b else name_b if ss_b > ss_a else 'Tie',
             'Category': 'Subspace',
             'Description': 'Significance restricted to subspace insights'
         })
@@ -204,20 +252,54 @@ def create_comparison_table(
             'Metric': '7c. Subspace Novelty',
             name_a: format_metric_value(sn_a, 'percentage'),
             name_b: format_metric_value(sn_b, 'percentage'),
-            'Winner': name_a if sn_a > sn_b else name_b,
+            'Winner': name_a if sn_a > sn_b else name_b if sn_b > sn_a else 'Tie',
             'Category': 'Subspace',
             'Description': 'Novelty restricted to subspace insights'
         })
     if sa.get('diversity') and sb.get('diversity'):
+        # 7d.1: Subspace Semantic Diversity
         sd_a = sa['diversity'].get('semantic_diversity', 0) or 0
         sd_b = sb['diversity'].get('semantic_diversity', 0) or 0
         metrics.append({
-            'Metric': '7d. Subspace Diversity',
+            'Metric': '7d.1. Diversity — Semantic (Subspace)',
             name_a: format_metric_value(sd_a, 'default'),
             name_b: format_metric_value(sd_b, 'default'),
-            'Winner': name_a if sd_a > sd_b else name_b,
+            'Winner': name_a if sd_a > sd_b else name_b if sd_b > sd_a else 'Tie',
             'Category': 'Subspace',
             'Description': 'Semantic diversity restricted to subspace insights'
+        })
+        # 7d.2: Subspace Subspace Entropy
+        sub_ent_a = (sa['diversity'].get('subspace_diversity') or {}).get('subspace_diversity_entropy')
+        sub_ent_b = (sb['diversity'].get('subspace_diversity') or {}).get('subspace_diversity_entropy')
+        metrics.append({
+            'Metric': '7d.2. Diversity — Subspace Entropy (Subspace)',
+            name_a: format_metric_value(sub_ent_a, 'default') if sub_ent_a is not None else 'N/A',
+            name_b: format_metric_value(sub_ent_b, 'default') if sub_ent_b is not None else 'N/A',
+            'Winner': (name_a if (sub_ent_a or 0) > (sub_ent_b or 0) else name_b if (sub_ent_b or 0) > (sub_ent_a or 0) else 'Tie') if sub_ent_a is not None or sub_ent_b is not None else 'N/A',
+            'Category': 'Subspace',
+            'Description': 'Entropy of subspace filter columns used (subspace insights)'
+        })
+        # 7d.3: Subspace Value Diversity
+        val_a = (sa['diversity'].get('value_diversity') or {}).get('value_diversity')
+        val_b = (sb['diversity'].get('value_diversity') or {}).get('value_diversity')
+        metrics.append({
+            'Metric': '7d.3. Diversity — Value (Subspace)',
+            name_a: format_metric_value(val_a, 'default') if val_a is not None else 'N/A',
+            name_b: format_metric_value(val_b, 'default') if val_b is not None else 'N/A',
+            'Winner': (name_a if (val_a or 0) > (val_b or 0) else name_b if (val_b or 0) > (val_a or 0) else 'Tie') if val_a is not None or val_b is not None else 'N/A',
+            'Category': 'Subspace',
+            'Description': 'Unique (column, value) pairs in subspace / total (subspace insights)'
+        })
+        # 7d.4: Subspace Dedup Rate
+        dedup_a = sa['diversity'].get('dedup_rate', 0) or 0
+        dedup_b = sb['diversity'].get('dedup_rate', 0) or 0
+        metrics.append({
+            'Metric': '7d.4. Diversity — Dedup Rate (Subspace)',
+            name_a: format_metric_value(dedup_a, 'default'),
+            name_b: format_metric_value(dedup_b, 'default'),
+            'Winner': name_a if dedup_a < dedup_b else name_b if dedup_b < dedup_a else 'Tie',
+            'Category': 'Subspace',
+            'Description': 'Duplicate rate restricted to subspace insights - lower is better'
         })
 
     df = pd.DataFrame(metrics)
@@ -342,7 +424,22 @@ def generate_report(
             if sa.get('diversity') and sb.get('diversity'):
                 _sd_a = sa['diversity'].get('semantic_diversity', 0) or 0
                 _sd_b = sb['diversity'].get('semantic_diversity', 0) or 0
-                f.write(f"- Subspace Diversity: {name_a}={_sd_a:.3f}  {name_b}={_sd_b:.3f}\n")
+                f.write(f"- Subspace Diversity (Semantic): {name_a}={_sd_a:.3f}  {name_b}={_sd_b:.3f}\n")
+                _sse_a = (sa['diversity'].get('subspace_diversity') or {}).get('subspace_diversity_entropy')
+                _sse_b = (sb['diversity'].get('subspace_diversity') or {}).get('subspace_diversity_entropy')
+                if _sse_a is not None or _sse_b is not None:
+                    _sse_a_str = f"{_sse_a:.3f}" if _sse_a is not None else "N/A"
+                    _sse_b_str = f"{_sse_b:.3f}" if _sse_b is not None else "N/A"
+                    f.write(f"- Subspace Diversity (Subspace Entropy): {name_a}={_sse_a_str}  {name_b}={_sse_b_str}\n")
+                _svd_a = (sa['diversity'].get('value_diversity') or {}).get('value_diversity')
+                _svd_b = (sb['diversity'].get('value_diversity') or {}).get('value_diversity')
+                if _svd_a is not None or _svd_b is not None:
+                    _svd_a_str = f"{_svd_a:.3f}" if _svd_a is not None else "N/A"
+                    _svd_b_str = f"{_svd_b:.3f}" if _svd_b is not None else "N/A"
+                    f.write(f"- Subspace Diversity (Value): {name_a}={_svd_a_str}  {name_b}={_svd_b_str}\n")
+                _sdr_a = sa['diversity'].get('dedup_rate', 0) or 0
+                _sdr_b = sb['diversity'].get('dedup_rate', 0) or 0
+                f.write(f"- Subspace Diversity (Dedup Rate): {name_a}={_sdr_a:.3f}  {name_b}={_sdr_b:.3f}\n")
             f.write("\n")
 
         f.write("---\n\n")

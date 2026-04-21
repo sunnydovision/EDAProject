@@ -102,7 +102,7 @@ Quy trình tính p-value cho từng insight dựa trên pattern:
 
 3. Compute p-value theo pattern type:
 
-   a. TREND (Linear Regression):
+   a. TREND (Mann-Kendall only):
       - Nếu breakdown là datetime/string:
         * Convert breakdown sang timestamp (numeric)
         * y = col (numeric)
@@ -111,8 +111,9 @@ Quy trình tính p-value cho từng insight dựa trên pattern:
         * x = breakdown index (numeric), y = count values
       - Nếu cả 2 đều numeric:
         * x = breakdown, y = col
-      - Chạy linear regression: stats.linregress(x, y)
-      - Return: p_value từ regression
+      - Chạy Mann-Kendall test: pymannkendall.original_test(y)
+      - Return: dictionary {'mann_kendall_p': p_value}
+      - Significant nếu mann_kendall_p < alpha (0.05)
 
    b. OUTSTANDING_VALUE (Z-test):
       - Nếu có breakdown:
@@ -161,7 +162,7 @@ Statistical Significance đo lường xem insights có phải là "signal" thự
 - Validity: insight có ý nghĩa thống kê không hay chỉ là ngẫu nhiên?
 - Nếu significance thấp → insights có thể là noise, không đáng tin cậy
 - Các pattern khác nhau dùng test khác nhau:
-  * Trend: Linear regression (có xu hướng tăng/giảm không?)
+  * Trend: Mann-Kendall trend test (có xu hướng tăng/giảm không?)
   * Outstanding Value: Z-test (giá trị cực đại có bất thường không?)
   * Attribution: Chi-square test (có mối quan hệ giữa 2 biến không?)
   * Distribution Difference: KS-test (phân phối có khác nhau không?)
@@ -174,6 +175,25 @@ Statistical Significance đo lường xem insights có phải là "signal" thự
 
 ### Càng cao càng tốt?
 **CÓ** - Statistical Significance càng cao càng tốt (max = 1.0 = 100%)
+
+### Breakdown theo Pattern Type
+
+Code cũng trả về `by_pattern` với significance rate cho từng pattern type:
+
+```
+by_pattern = {
+  'TREND': {
+    'significant_count': số insights Trend có p < 0.05,
+    'total_count': tổng số insights Trend,
+    'significant_rate': significant_count / total_count
+  },
+  'OUTSTANDING_VALUE': { ... },
+  'ATTRIBUTION': { ... },
+  'DISTRIBUTION_DIFFERENCE': { ... }
+}
+```
+
+Điều này cho phép đánh giá xem system có mạnh ở pattern nào (ví dụ: Trend nhiều nhưng Attribution ít).
 
 ---
 
