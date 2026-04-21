@@ -1,0 +1,122 @@
+{
+  "system": "IFQ_v4",
+  "num_cards": 97,
+  "num_insights": 97,
+  "score_uplift_from_subspace": {
+    "num_with_subspace_scored": 45,
+    "num_without_subspace_scored": 52,
+    "mean_score_with_subspace": 4.599931540031812,
+    "mean_score_without_subspace": 1.054861306323688,
+    "score_uplift_abs": 3.545070233708124,
+    "score_uplift_ratio": 4.360697953803139,
+    "score_uplift_direction": "up"
+  },
+  "faithfulness": {
+    "faithfulness": 1.0,
+    "verified_count": 97,
+    "total_count": 97,
+    "hallucination_count": 0,
+    "hallucination_rate": 0.0,
+    "_failed_insights": []
+  },
+  "insight_significance": {
+    "avg_zscore": Infinity,
+    "significant_count": 77,
+    "significant_rate": 0.9166666666666666,
+    "max_zscore": Infinity,
+    "total_evaluated": 84
+  },
+  "question_diversity": {
+    "semantic_diversity": 0.46807861328125,
+    "avg_similarity": 0.53192138671875,
+    "num_insights": 97,
+    "subspace_diversity": {
+      "subspace_diversity_entropy": 1.353565082590618,
+      "subspace_diversity_count_ratio": 0.07216494845360824,
+      "unique_columns": 7,
+      "total_columns": 45,
+      "column_distribution": {
+        "City": 8,
+        "Invoice Date": 21,
+        "Retailer": 1,
+        "State": 12,
+        "Sales Method": 1,
+        "Product": 1,
+        "Region": 1
+      }
+    },
+    "value_diversity": {
+      "value_diversity": 1.0,
+      "unique_pairs": 45,
+      "total_pairs": 45
+    },
+    "dedup_rate": 0.0,
+    "unique_count": 97,
+    "total_count": 97,
+    "duplicate_count": 0
+  },
+  "time_to_insight": null,
+  "token_usage": null,
+  "insight_novelty": {
+    "novelty": 0.979381443298969,
+    "novel_count": 95,
+    "total_count": 97,
+    "avg_max_similarity": 0.6644511222839355,
+    "tau": 0.85
+  },
+  "subspace_metrics": {
+    "total_with_subspace": 45,
+    "total_original": 45,
+    "faithfulness": {
+      "faithfulness": 1.0,
+      "verified_count": 45,
+      "total_count": 45,
+      "hallucination_count": 0,
+      "hallucination_rate": 0.0,
+      "_failed_insights": []
+    },
+    "significance": {
+      "avg_zscore": Infinity,
+      "significant_count": 43,
+      "significant_rate": 0.9772727272727273,
+      "max_zscore": Infinity,
+      "total_evaluated": 44
+    },
+    "novelty": {
+      "novelty": 1.0,
+      "novel_count": 45,
+      "total_count": 45,
+      "avg_max_similarity": 0.6428472399711609,
+      "tau": 0.85
+    },
+    "diversity": {
+      "semantic_diversity": 0.44438356161117554,
+      "avg_similarity": 0.5556164383888245,
+      "num_insights": 45,
+      "subspace_diversity": {
+        "subspace_diversity_entropy": 1.353565082590618,
+        "subspace_diversity_count_ratio": 0.15555555555555556,
+        "unique_columns": 7,
+        "total_columns": 45,
+        "column_distribution": {
+          "City": 8,
+          "Invoice Date": 21,
+          "Retailer": 1,
+          "State": 12,
+          "Sales Method": 1,
+          "Product": 1,
+          "Region": 1
+        }
+      },
+      "value_diversity": {
+        "value_diversity": 1.0,
+        "unique_pairs": 45,
+        "total_pairs": 45
+      },
+      "dedup_rate": 0.0,
+      "unique_count": 45,
+      "total_count": 45,
+      "duplicate_count": 0
+    }
+  }
+}

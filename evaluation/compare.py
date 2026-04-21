@@ -220,6 +220,46 @@ def create_comparison_table(
             'Description': 'Semantic diversity restricted to subspace insights'
         })
 
+    # 8. Score uplift from subspace
+    uplift_a = (results_a.get('score_uplift_from_subspace') or {}).get('score_uplift_abs')
+    uplift_b = (results_b.get('score_uplift_from_subspace') or {}).get('score_uplift_abs')
+    ratio_a = (results_a.get('score_uplift_from_subspace') or {}).get('score_uplift_ratio')
+    ratio_b = (results_b.get('score_uplift_from_subspace') or {}).get('score_uplift_ratio')
+    if uplift_a is not None or uplift_b is not None:
+        metrics.append({
+            'Metric': '8. Score Uplift from Subspace',
+            name_a: (
+                f"Δ={uplift_a:.3f}, x={ratio_a:.3f}"
+                if uplift_a is not None and ratio_a is not None
+                else (f"Δ={uplift_a:.3f}" if uplift_a is not None else "N/A")
+            ),
+            name_b: (
+                f"Δ={uplift_b:.3f}, x={ratio_b:.3f}"
+                if uplift_b is not None and ratio_b is not None
+                else (f"Δ={uplift_b:.3f}" if uplift_b is not None else "N/A")
+            ),
+            'Winner': name_a if (uplift_a or 0) > (uplift_b or 0) else name_b,
+            'Category': 'Subspace',
+            'Description': 'Δ = mean(score|subspace) - mean(score|no-subspace)'
+        })
+
+    # 9. Direction uplift from subspace
+    dir_a = (results_a.get('score_uplift_from_subspace') or {}).get('score_uplift_direction')
+    dir_b = (results_b.get('score_uplift_from_subspace') or {}).get('score_uplift_direction')
+    if dir_a is not None or dir_b is not None:
+        rank = {'down': 0, 'flat': 1, 'up': 2}
+        a_rank = rank.get(dir_a, -1)
+        b_rank = rank.get(dir_b, -1)
+        winner = name_a if a_rank > b_rank else name_b if b_rank > a_rank else 'Tie'
+        metrics.append({
+            'Metric': '9. Direction Uplift',
+            name_a: dir_a if dir_a is not None else 'N/A',
+            name_b: dir_b if dir_b is not None else 'N/A',
+            'Winner': winner,
+            'Category': 'Subspace',
+            'Description': 'Direction of Δ score uplift: up/down/flat'
+        })
+
     df = pd.DataFrame(metrics)
     return df
 
@@ -343,6 +383,26 @@ def generate_report(
                 _sd_a = sa['diversity'].get('semantic_diversity', 0) or 0
                 _sd_b = sb['diversity'].get('semantic_diversity', 0) or 0
                 f.write(f"- Subspace Diversity: {name_a}={_sd_a:.3f}  {name_b}={_sd_b:.3f}\n")
+            up_a = results_a.get('score_uplift_from_subspace') or {}
+            up_b = results_b.get('score_uplift_from_subspace') or {}
+            f.write(
+                f"- Score Uplift from Subspace ({name_a}): "
+                f"mean_with={up_a.get('mean_score_with_subspace')} "
+                f"mean_without={up_a.get('mean_score_without_subspace')} "
+                f"delta={up_a.get('score_uplift_abs')} ratio={up_a.get('score_uplift_ratio')}\n"
+            )
+            f.write(
+                f"- Score Uplift from Subspace ({name_b}): "
+                f"mean_with={up_b.get('mean_score_with_subspace')} "
+                f"mean_without={up_b.get('mean_score_without_subspace')} "
+                f"delta={up_b.get('score_uplift_abs')} ratio={up_b.get('score_uplift_ratio')}\n"
+            )
+            f.write(
+                f"- Direction Uplift ({name_a}): {up_a.get('score_uplift_direction')}\n"
+            )
+            f.write(
+                f"- Direction Uplift ({name_b}): {up_b.get('score_uplift_direction')}\n"
+            )
             f.write("\n")
 
         f.write("---\n\n")

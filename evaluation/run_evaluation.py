@@ -24,6 +24,7 @@ from metrics.diversity import compute_diversity
 from metrics.time_to_insight import compute_time_to_insight
 from metrics.token_usage import compute_token_usage
 from metrics.subspace import compute_subspace_metrics, filter_insights_with_subspace
+from metrics.score_uplift import compute_score_uplift_from_subspace
 from compare import create_comparison_table, generate_report
 from plot_evaluation import plot_evaluation_results
 
@@ -102,6 +103,7 @@ def evaluate_system(
         'system': system_name,
         'num_cards': len(cards),
         'num_insights': len(insights_data),
+        'score_uplift_from_subspace': compute_score_uplift_from_subspace(insights_data),
         
         # 4 CORE METRICS for Defense
         'faithfulness': compute_faithfulness(insights_data, df_raw, df_cleaned, csv_path),
@@ -330,6 +332,23 @@ def main():
         _sdiv_a = sa['diversity'].get('diversity') or sa['diversity'].get('semantic_diversity', 0)
         _sdiv_b = sb['diversity'].get('diversity') or sb['diversity'].get('semantic_diversity', 0)
         print(f"  Diversity:     {args.system_a}={_sdiv_a:.3f}  {args.system_b}={_sdiv_b:.3f}")
+
+    print(f"\n8. Score Uplift from Subspace:")
+    up_a = results_a.get('score_uplift_from_subspace', {})
+    up_b = results_b.get('score_uplift_from_subspace', {})
+    print(
+        f"  • {args.system_a}: with={up_a.get('mean_score_with_subspace')} "
+        f"without={up_a.get('mean_score_without_subspace')} "
+        f"uplift={up_a.get('score_uplift_abs')} ratio={up_a.get('score_uplift_ratio')}"
+    )
+    print(
+        f"  • {args.system_b}: with={up_b.get('mean_score_with_subspace')} "
+        f"without={up_b.get('mean_score_without_subspace')} "
+        f"uplift={up_b.get('score_uplift_abs')} ratio={up_b.get('score_uplift_ratio')}"
+    )
+    print(f"\n9. Direction Uplift:")
+    print(f"  • {args.system_a}: direction={up_a.get('score_uplift_direction')}")
+    print(f"  • {args.system_b}: direction={up_b.get('score_uplift_direction')}")
     
     print(f"\nEvaluation complete! Results saved to: {args.output}/")
 
