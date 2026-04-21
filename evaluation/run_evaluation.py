@@ -273,8 +273,17 @@ def main():
     print(f"  • {args.system_b}: {results_b['faithfulness']['faithfulness']*100:.1f}%")
     
     print(f"\n2. Statistical Significance (Validity):")
-    print(f"  • {args.system_a}: {results_a['insight_significance']['significant_rate']*100:.1f}%")
-    print(f"  • {args.system_b}: {results_b['insight_significance']['significant_rate']*100:.1f}%")
+    sig_a = results_a['insight_significance']
+    sig_b = results_b['insight_significance']
+    print(f"  Overall:                 {args.system_a}={sig_a['significant_rate']*100:.1f}%  {args.system_b}={sig_b['significant_rate']*100:.1f}%")
+    bp_a = sig_a.get('by_pattern', {})
+    bp_b = sig_b.get('by_pattern', {})
+    for pattern in ['TREND', 'OUTSTANDING_VALUE', 'ATTRIBUTION', 'DISTRIBUTION_DIFFERENCE']:
+        p_a = bp_a.get(pattern, {}).get('significant_rate', 0) or 0
+        p_b = bp_b.get(pattern, {}).get('significant_rate', 0) or 0
+        count_a = bp_a.get(pattern, {}).get('total_count', 0)
+        count_b = bp_b.get(pattern, {}).get('total_count', 0)
+        print(f"  {pattern:25} {args.system_a}={p_a*100:.1f}% ({count_a})  {args.system_b}={p_b*100:.1f}% ({count_b})")
     
     print(f"\n3. Insight Novelty (Usefulness):")
     print(f"  • {args.system_a}: {results_a['insight_novelty']['novelty']*100:.1f}%")

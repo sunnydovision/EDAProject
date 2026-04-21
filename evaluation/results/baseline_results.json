@@ -1,0 +1,561 @@
+{
+  "system": "Baseline",
+  "num_cards": 77,
+  "num_insights": 77,
+  "faithfulness": {
+    "faithfulness": 1.0,
+    "verified_count": 77,
+    "total_count": 77,
+    "hallucination_count": 0,
+    "hallucination_rate": 0.0,
+    "_failed_insights": []
+  },
+  "insight_significance": {
+    "avg_zscore": Infinity,
+    "significant_count": 50,
+    "significant_rate": 1.0,
+    "max_zscore": Infinity,
+    "total_evaluated": 50,
+    "by_pattern": {
+      "TREND": {
+        "significant_count": 36,
+        "total_count": 36,
+        "significant_rate": 1.0,
+        "insights": [
+          {
+            "breakdown": "Operating Profit",
+            "col": "Total Sales",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Units Sold",
+            "col": "Total Sales",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Retailer ID",
+            "col": "Units Sold",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Total Sales",
+            "col": "Operating Profit",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Operating Margin",
+            "col": "Operating Profit",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Units Sold",
+            "col": "Total Sales",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Units Sold",
+            "col": "Total Sales",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Operating Margin",
+            "col": "Total Sales",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Price per Unit",
+            "col": "Units Sold",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Total Sales",
+            "col": "Operating Profit",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Total Sales",
+            "col": "Operating Profit",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Units Sold",
+            "col": "Total Sales",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Units Sold",
+            "col": "Operating Profit",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Operating Margin",
+            "col": "Total Sales",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Operating Margin",
+            "col": "Total Sales",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Price per Unit",
+            "col": "Total Sales",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Units Sold",
+            "col": "Total Sales",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Units Sold",
+            "col": "Operating Profit",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Total Sales",
+            "col": "Operating Profit",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Total Sales",
+            "col": "Price per Unit",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Operating Profit",
+            "col": "Total Sales",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Units Sold",
+            "col": "Price per Unit",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Units Sold",
+            "col": "Total Sales",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Operating Profit",
+            "col": "Total Sales",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Price per Unit",
+            "col": "Units Sold",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Units Sold",
+            "col": "Total Sales",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Total Sales",
+            "col": "Operating Profit",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Operating Profit",
+            "col": "Total Sales",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Total Sales",
+            "col": "Operating Profit",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Retailer ID",
+            "col": "Units Sold",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Operating Profit",
+            "col": "Total Sales",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Operating Margin",
+            "col": "Operating Profit",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Retailer ID",
+            "col": "Units Sold",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Total Sales",
+            "col": "Operating Profit",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Total Sales",
+            "col": "Operating Profit",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Total Sales",
+            "col": "Price per Unit",
+            "mann_kendall_p": 0.0,
+            "significant": "True"
+          }
+        ]
+      },
+      "OUTSTANDING_VALUE": {
+        "significant_count": 0,
+        "total_count": 0,
+        "significant_rate": 0.0,
+        "insights": []
+      },
+      "ATTRIBUTION": {
+        "significant_count": 14,
+        "total_count": 14,
+        "significant_rate": 1.0,
+        "insights": [
+          {
+            "breakdown": "Units Sold",
+            "col": "Total Sales",
+            "p_value": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Total Sales",
+            "col": "Operating Profit",
+            "p_value": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Units Sold",
+            "col": "Operating Profit",
+            "p_value": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Total Sales",
+            "col": "Operating Profit",
+            "p_value": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Units Sold",
+            "col": "Total Sales",
+            "p_value": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Price per Unit",
+            "col": "Total Sales",
+            "p_value": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Total Sales",
+            "col": "Operating Profit",
+            "p_value": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Total Sales",
+            "col": "Operating Profit",
+            "p_value": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Total Sales",
+            "col": "Operating Margin",
+            "p_value": 2.4070624243115006e-102,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Units Sold",
+            "col": "Operating Profit",
+            "p_value": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Total Sales",
+            "col": "Operating Profit",
+            "p_value": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Total Sales",
+            "col": "Operating Profit",
+            "p_value": 0.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Operating Margin",
+            "col": "Operating Profit",
+            "p_value": 3.4153527435821614e-296,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Units Sold",
+            "col": "Operating Profit",
+            "p_value": 0.0,
+            "significant": "True"
+          }
+        ]
+      },
+      "DISTRIBUTION_DIFFERENCE": {
+        "significant_count": 0,
+        "total_count": 0,
+        "significant_rate": 0.0,
+        "insights": []
+      }
+    }
+  },
+  "question_diversity": {
+    "semantic_diversity": 0.3298514485359192,
+    "avg_similarity": 0.6701485514640808,
+    "num_insights": 77,
+    "subspace_diversity": {
+      "subspace_diversity_entropy": 1.508113754807558,
+      "subspace_diversity_count_ratio": 0.06493506493506493,
+      "unique_columns": 5,
+      "total_columns": 31,
+      "column_distribution": {
+        "Sales Method": 10,
+        "Region": 5,
+        "State": 7,
+        "Retailer": 7,
+        "Product": 2
+      }
+    },
+    "value_diversity": {
+      "value_diversity": 0.3225806451612903,
+      "unique_pairs": 10,
+      "total_pairs": 31
+    },
+    "dedup_rate": 0.36363636363636365,
+    "unique_count": 49,
+    "total_count": 77,
+    "duplicate_count": 28
+  },
+  "time_to_insight": null,
+  "token_usage": null,
+  "insight_novelty": {
+    "novelty": 0.922077922077922,
+    "novel_count": 71,
+    "total_count": 77,
+    "avg_max_similarity": 0.7344142198562622,
+    "tau": 0.85
+  },
+  "subspace_metrics": {
+    "total_with_subspace": 31,
+    "total_original": 31,
+    "faithfulness": {
+      "faithfulness": 1.0,
+      "verified_count": 31,
+      "total_count": 31,
+      "hallucination_count": 0,
+      "hallucination_rate": 0.0,
+      "_failed_insights": []
+    },
+    "significance": {
+      "avg_zscore": 0.0,
+      "significant_count": 16,
+      "significant_rate": 1.0,
+      "max_zscore": 0.0,
+      "total_evaluated": 16,
+      "by_pattern": {
+        "TREND": {
+          "significant_count": 8,
+          "total_count": 8,
+          "significant_rate": 1.0,
+          "insights": [
+            {
+              "breakdown": "Units Sold",
+              "col": "Total Sales",
+              "mann_kendall_p": 0.0,
+              "significant": "True"
+            },
+            {
+              "breakdown": "Units Sold",
+              "col": "Total Sales",
+              "mann_kendall_p": 0.0,
+              "significant": "True"
+            },
+            {
+              "breakdown": "Total Sales",
+              "col": "Operating Profit",
+              "mann_kendall_p": 0.0,
+              "significant": "True"
+            },
+            {
+              "breakdown": "Units Sold",
+              "col": "Total Sales",
+              "mann_kendall_p": 0.0,
+              "significant": "True"
+            },
+            {
+              "breakdown": "Total Sales",
+              "col": "Operating Profit",
+              "mann_kendall_p": 0.0,
+              "significant": "True"
+            },
+            {
+              "breakdown": "Operating Profit",
+              "col": "Total Sales",
+              "mann_kendall_p": 0.0,
+              "significant": "True"
+            },
+            {
+              "breakdown": "Total Sales",
+              "col": "Operating Profit",
+              "mann_kendall_p": 0.0,
+              "significant": "True"
+            },
+            {
+              "breakdown": "Total Sales",
+              "col": "Operating Profit",
+              "mann_kendall_p": 0.0,
+              "significant": "True"
+            }
+          ]
+        },
+        "OUTSTANDING_VALUE": {
+          "significant_count": 0,
+          "total_count": 0,
+          "significant_rate": 0.0,
+          "insights": []
+        },
+        "ATTRIBUTION": {
+          "significant_count": 8,
+          "total_count": 8,
+          "significant_rate": 1.0,
+          "insights": [
+            {
+              "breakdown": "Total Sales",
+              "col": "Operating Profit",
+              "p_value": 0.0,
+              "significant": "True"
+            },
+            {
+              "breakdown": "Units Sold",
+              "col": "Total Sales",
+              "p_value": 0.0,
+              "significant": "True"
+            },
+            {
+              "breakdown": "Total Sales",
+              "col": "Operating Profit",
+              "p_value": 0.0,
+              "significant": "True"
+            },
+            {
+              "breakdown": "Total Sales",
+              "col": "Operating Profit",
+              "p_value": 0.0,
+              "significant": "True"
+            },
+            {
+              "breakdown": "Units Sold",
+              "col": "Operating Profit",
+              "p_value": 0.0,
+              "significant": "True"
+            },
+            {
+              "breakdown": "Total Sales",
+              "col": "Operating Profit",
+              "p_value": 0.0,
+              "significant": "True"
+            },
+            {
+              "breakdown": "Total Sales",
+              "col": "Operating Profit",
+              "p_value": 0.0,
+              "significant": "True"
+            },
+            {
+              "breakdown": "Units Sold",
+              "col": "Operating Profit",
+              "p_value": 0.0,
+              "significant": "True"
+            }
+          ]
+        },
+        "DISTRIBUTION_DIFFERENCE": {
+          "significant_count": 0,
+          "total_count": 0,
+          "significant_rate": 0.0,
+          "insights": []
+        }
+      }
+    },
+    "novelty": {
+      "novelty": 1.0,
+      "novel_count": 31,
+      "total_count": 31,
+      "avg_max_similarity": 0.6665948629379272,
+      "tau": 0.85
+    },
+    "diversity": {
+      "semantic_diversity": 0.3439411520957947,
+      "avg_similarity": 0.6560588479042053,
+      "num_insights": 31,
+      "subspace_diversity": {
+        "subspace_diversity_entropy": 1.508113754807558,
+        "subspace_diversity_count_ratio": 0.16129032258064516,
+        "unique_columns": 5,
+        "total_columns": 31,
+        "column_distribution": {
+          "Sales Method": 10,
+          "Region": 5,
+          "State": 7,
+          "Retailer": 7,
+          "Product": 2
+        }
+      },
+      "value_diversity": {
+        "value_diversity": 0.3225806451612903,
+        "unique_pairs": 10,
+        "total_pairs": 31
+      },
+      "dedup_rate": 0.12903225806451613,
+      "unique_count": 27,
+      "total_count": 31,
+      "duplicate_count": 4
+    }
+  }
+}
