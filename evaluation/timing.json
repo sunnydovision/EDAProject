@@ -1,22 +1,22 @@
 {
   "baseline": {
-    "total_time_seconds": 628.2293219566345,
+    "total_time_seconds": 594.2439229488373,
     "step_times": {
-      "profiling": 19.46478271484375,
-      "quality": 20.04315185546875,
-      "statistics": 25.109739065170288,
-      "patterns": 121.61887621879578,
-      "insights": 441.42553520202637
+      "profiling": 20.344295978546143,
+      "quality": 17.85874891281128,
+      "statistics": 20.860668897628784,
+      "patterns": 117.39950108528137,
+      "insights": 417.4703121185303
     },
-    "insights_generated": 114,
-    "throughput_insights_per_second": 0.18146239918401835
+    "insights_generated": 77,
+    "throughput_insights_per_second": 0.1295764197602564
   },
   "ifq": {
-    "total_time_seconds": 629.731,
+    "total_time_seconds": 613.299,
     "step_times": {
-      "qugen": 515.707,
-      "isgen": 114.024
+      "qugen": 452.448,
+      "isgen": 160.851
     },
-    "insights_generated": 80
+    "insights_generated": 93
   }
 }

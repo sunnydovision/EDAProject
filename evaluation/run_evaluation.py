@@ -278,9 +278,11 @@ def main():
     print(f"  • {args.system_a}: {results_a['insight_novelty']['novelty']*100:.1f}%")
     print(f"  • {args.system_b}: {results_b['insight_novelty']['novelty']*100:.1f}%")
     
+    _div_a = results_a['question_diversity'].get('diversity') or results_a['question_diversity'].get('semantic_diversity', 0)
+    _div_b = results_b['question_diversity'].get('diversity') or results_b['question_diversity'].get('semantic_diversity', 0)
     print(f"\n4. Insight Diversity (Non-redundancy):")
-    print(f"  • {args.system_a}: {results_a['question_diversity']['diversity']:.3f}")
-    print(f"  • {args.system_b}: {results_b['question_diversity']['diversity']:.3f}")
+    print(f"  • {args.system_a}: {_div_a:.3f}")
+    print(f"  • {args.system_b}: {_div_b:.3f}")
     
     print(f"\n5. Time to Insight (Efficiency):")
     if results_a.get('time_to_insight') and results_b.get('time_to_insight'):
@@ -319,7 +321,9 @@ def main():
     if sa.get('novelty') and sb.get('novelty'):
         print(f"  Novelty:       {args.system_a}={sa['novelty']['novelty']*100:.1f}%  {args.system_b}={sb['novelty']['novelty']*100:.1f}%")
     if sa.get('diversity') and sb.get('diversity'):
-        print(f"  Diversity:     {args.system_a}={sa['diversity']['diversity']:.3f}  {args.system_b}={sb['diversity']['diversity']:.3f}")
+        _sdiv_a = sa['diversity'].get('diversity') or sa['diversity'].get('semantic_diversity', 0)
+        _sdiv_b = sb['diversity'].get('diversity') or sb['diversity'].get('semantic_diversity', 0)
+        print(f"  Diversity:     {args.system_a}={_sdiv_a:.3f}  {args.system_b}={_sdiv_b:.3f}")
     
     print(f"\nEvaluation complete! Results saved to: {args.output}/")
 

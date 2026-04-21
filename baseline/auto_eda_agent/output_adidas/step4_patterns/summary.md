@@ -2,130 +2,130 @@
 
 ## Summary
 
-- **Total Patterns**: 36
+- **Total Patterns**: 40
 - **Pattern Categories**: 4
 
 ## Temporal Patterns
 
 Found 13 patterns:
 
-### Step-change upward in monthly transaction volume from 2020 to 2021
-- **Description**: Monthly record counts rise sharply at the start of 2021 and remain at a much higher level throughout 2021 than in 2020.
+### Sharp year-over-year step-up in transaction volume in 2021
+- **Description**: Monthly record counts rise sharply from 2020 to 2021 and remain consistently high throughout 2021.
 - **Strength**: strong
 - **Variables**: count, Retailer ID, Price per Unit, Units Sold, Total Sales, Operating Profit
 - **Relevance**: Any time-based comparison of sums between 2020 and 2021 is heavily influenced by much higher transaction volume in 2021.
 
-### Total Sales sums are consistently much higher in 2021 than in 2020
-- **Description**: Monthly total sales show a clear year-over-year level shift upward in 2021 versus 2020.
+### Total Sales sums are much higher in every month of 2021 than the same month in 2020
+- **Description**: Monthly Total Sales show a clear year-over-year increase across the full calendar year.
 - **Strength**: strong
 - **Variables**: Total Sales
-- **Relevance**: Revenue levels are materially higher in 2021, indicating a major change in business scale over time.
+- **Relevance**: Revenue expanded materially year over year, indicating a much larger sales base in 2021.
 
-### Operating Profit sums are consistently much higher in 2021 than in 2020
-- **Description**: Monthly operating profit also shifts to a higher level in 2021 compared with 2020.
+### Operating Profit sums are much higher in every month of 2021 than the same month in 2020
+- **Description**: Monthly Operating Profit follows the same year-over-year expansion pattern as Total Sales.
 - **Strength**: strong
 - **Variables**: Operating Profit
-- **Relevance**: Profitability in absolute dollars improved substantially in 2021, not just sales.
+- **Relevance**: Profitability in absolute dollars increased substantially year over year.
 
-### Units Sold sums are consistently much higher in 2021 than in 2020
-- **Description**: Monthly unit volume rises to a much higher level in 2021 and remains elevated all year.
+### Units Sold sums are much higher in every month of 2021 than the same month in 2020
+- **Description**: Monthly unit volume increases consistently from 2020 to 2021 across all matched months.
 - **Strength**: strong
 - **Variables**: Units Sold
-- **Relevance**: The business sold far more units in 2021, supporting the higher sales and profit totals.
+- **Relevance**: The revenue and profit increase is accompanied by substantially higher unit movement.
 
-### Mid-2020 decline followed by partial rebound in Total Sales
-- **Description**: Total Sales fall sharply from spring into early summer 2020, rebound in late summer, then weaken again toward year-end.
+### 2020 mid-year decline followed by partial recovery in Total Sales
+- **Description**: In 2020, Total Sales fall sharply from spring into early summer, recover in late summer, then weaken again toward year-end.
 - **Strength**: strong
 - **Variables**: Total Sales
-- **Relevance**: 2020 shows pronounced intra-year volatility, which matters for planning and benchmarking.
+- **Relevance**: 2020 shows pronounced within-year volatility, which may matter for planning and benchmarking.
 
 ## Correlation Patterns
 
 Found 3 patterns:
 
 ### Total Sales and Operating Profit move together very strongly
-- **Description**: Total Sales and Operating Profit have a very strong positive relationship. Records with higher sales revenue also tend to have higher operating profit. Given the semantic definitions, this relationship is likely largely structural because profit is generated from sales after operating costs, and the relatively bounded Operating Margin distribution supports that profit tends to scale with sales.
+- **Description**: Total Sales and Operating Profit have a very strong positive relationship: records with higher sales tend to also show higher operating profit. This is likely largely structural because profit is financially tied to sales, though the less-than-perfect correlation indicates margins or cost structure vary across records.
 - **Strength**: strong
 - **Variables**: Total Sales, Operating Profit
-- **Relevance**: This indicates that revenue growth is closely tied to profit growth in the dataset. From a business perspective, sales expansion appears to translate into operating profit consistently, making Total Sales a key indicator for profit performance.
+- **Relevance**: This suggests revenue growth is closely associated with profit growth in the dataset. From a business perspective, sales expansion appears to translate into higher operating profit, but not perfectly, implying margin differences across products, channels, or transactions.
 
-### Units Sold is strongly associated with Total Sales
-- **Description**: Units Sold and Total Sales show a strong positive relationship. Transactions with more units sold tend to generate higher total sales. This relationship is likely partly structural because sales revenue is directly influenced by quantity sold, though variation in Price per Unit means it is not a perfect one-to-one relationship.
+### Units Sold strongly co-moves with Total Sales
+- **Description**: Units Sold and Total Sales show a strong positive relationship: transactions with more units sold generally produce higher total sales. This relationship is likely structural because sales revenue is directly influenced by quantity sold, together with price per unit.
 - **Strength**: strong
 - **Variables**: Units Sold, Total Sales
-- **Relevance**: This suggests sales volume is a major driver of revenue. Operationally, actions that increase unit volume are likely to have a meaningful impact on total sales outcomes.
+- **Relevance**: Volume is a major driver of revenue in this dataset. Increasing units sold is strongly linked to higher sales outcomes, which is useful for forecasting and for identifying volume-led growth opportunities.
 
-### Units Sold is strongly associated with Operating Profit
-- **Description**: Units Sold and Operating Profit have a strong positive relationship. Records with higher quantities sold tend to produce higher operating profit. This dependency is likely partly structural and partly business-behavioral: more units sold raises revenue, which in turn supports higher profit, while margin variation prevents the relationship from being perfect.
+### Units Sold strongly co-moves with Operating Profit
+- **Description**: Units Sold and Operating Profit have a strong positive relationship: records with higher sales volume tend to generate higher operating profit. This is partly structural because more units sold tends to raise sales, which in turn supports profit, though profitability per unit is not constant.
 - **Strength**: strong
 - **Variables**: Units Sold, Operating Profit
-- **Relevance**: This shows that volume growth is not only linked to revenue but also to profitability. Increasing sales quantity appears to be an important lever for improving operating profit in this dataset.
+- **Relevance**: Sales volume appears to be an important profit driver. Operationally, this means initiatives that increase unit throughput are likely to improve profit, although the correlation being lower than Sales-Profit suggests margins and pricing still matter.
 
 ## Grouping Patterns
 
-Found 13 patterns:
+Found 17 patterns:
 
-### Retailer volume is concentrated in three retailers
-- **Description**: Units sold are heavily concentrated in West Gear, Foot Locker, and Sports Direct, while Walmart and Amazon are much smaller by total volume.
+### Retailer transaction volume is concentrated in three retailers
+- **Description**: Foot Locker, West Gear, and Sports Direct dominate the dataset by record count, while Walmart and Amazon have much smaller representation.
+- **Strength**: strong
+- **Variables**: Retailer, count
+- **Relevance**: High. Any retailer-level analysis or planning will be heavily influenced by these three retailers, so they should be prioritized for segmentation, forecasting, and partnership decisions.
+
+### West Gear and Foot Locker lead total units sold, but Walmart leads per-record unit volume
+- **Description**: The dominant retailers differ depending on whether total volume or average volume per record is considered.
 - **Strength**: strong
 - **Variables**: Retailer, Units Sold
-- **Relevance**: This concentration is meaningful because a small set of retailers accounts for most unit volume, so retailer partnerships, inventory allocation, and account management should prioritize these dominant channels.
-
-### Walmart has the highest average units sold per record despite the smallest record count
-- **Description**: Walmart stands out as a high-intensity retailer on a per-record basis, even though it has the fewest observations.
-- **Strength**: strong
-- **Variables**: Retailer, Units Sold, Retailer count
-- **Relevance**: This is meaningful because Walmart appears to generate larger orders per record, which may support different replenishment, packaging, or channel strategies than higher-frequency but lower-intensity retailers.
+- **Relevance**: High. West Gear and Foot Locker matter most for aggregate volume, while Walmart appears to generate larger orders per record, which may call for different inventory and channel strategies.
 
 ### Amazon has the highest average price per unit among retailers
-- **Description**: Average selling price differs across retailers, with Amazon at the top and Sports Direct at the bottom.
+- **Description**: Retailer pricing levels are uneven, with Amazon at the top and Sports Direct at the bottom on average price per unit.
 - **Strength**: moderate
 - **Variables**: Retailer, Price per Unit
-- **Relevance**: This matters for pricing and channel strategy because retailer channels are not priced evenly; Amazon supports the highest average unit price while Sports Direct is the lowest-priced among the listed retailers.
+- **Relevance**: Moderate to high. This indicates retailer-level pricing differences that may affect positioning, margin expectations, and promotional planning.
 
-### Regional unit volume is led by the West, but per-record intensity is led by the Southeast
-- **Description**: The West has the largest total units sold, while the Southeast has the highest average units sold per record.
+### Regional record counts are concentrated in West and Northeast
+- **Description**: The West and Northeast have the largest number of records, while the Southeast has the smallest.
 - **Strength**: strong
-- **Variables**: Region, Units Sold
-- **Relevance**: This is meaningful because total demand and transaction intensity point to different regions. The West is the largest market by volume, while the Southeast appears to have larger orders per record.
+- **Variables**: Region, count
+- **Relevance**: High. Coverage, staffing, and market analysis will be disproportionately driven by West and Northeast activity.
 
-### Price levels are much higher in Southeast and West than in South and Midwest
-- **Description**: Regional pricing is uneven, with Southeast and West clearly above South and Midwest on average price per unit.
+### Southeast has the highest average units sold per record despite the fewest records
+- **Description**: The Southeast is underrepresented in record count but leads all regions in average units sold per record.
 - **Strength**: strong
-- **Variables**: Region, Price per Unit
-- **Relevance**: This is meaningful for regional pricing and assortment decisions because the data shows materially different price levels across regions, not a uniform national pricing pattern.
+- **Variables**: Region, Units Sold, count
+- **Relevance**: High. The Southeast appears to produce larger transactions on average, which is important for inventory allocation and sales strategy even though it has fewer records.
 
 ## Anomaly Patterns
 
 Found 7 patterns:
 
-### High-end outliers in Units Sold
-- **Description**: Units Sold shows a noticeable upper-tail outlier pattern, with unusually large transaction quantities relative to the central distribution.
-- **Strength**: strong
-- **Variables**: Units Sold
-- **Relevance**: Likely a real business-volume effect rather than a data quality issue, because values are nonnegative and the anomaly is concentrated in the upper tail. Downstream analysis should use robust summaries or winsorization if modeling average transaction size, while preserving these records for demand and large-order analysis.
-
-### Extreme right tail in Total Sales
-- **Description**: Total Sales has a strongly uneven distribution with very large high-end values compared with the typical record, indicating revenue spikes or a mixture of small and very large transactions.
-- **Strength**: strong
-- **Variables**: Total Sales
-- **Relevance**: This is more consistent with real sales spikes or heterogeneous transaction sizes than with impossible values, since sales are nonnegative and the tail is on the high side. Use log transforms, robust statistics, or segment-level analysis in downstream work; do not remove by default because these records may represent major revenue events.
-
-### Highly concentrated extreme values in Operating Profit
-- **Description**: Operating Profit contains a pronounced concentration of unusually high values, with a heavier tail than Total Sales and a very large gap between typical and average profit.
+### Heavy right-tail outliers in Operating Profit
+- **Description**: Operating Profit shows a pronounced concentration of unusually high values relative to its central range, indicating a heavy right tail.
 - **Strength**: strong
 - **Variables**: Operating Profit
-- **Relevance**: This pattern likely reflects real profit spikes tied to large or high-margin transactions rather than obvious data errors, because values are nonnegative and the tail is one-sided. For downstream analysis, use robust estimators and consider separate treatment of high-profit records in forecasting or profitability segmentation.
+- **Relevance**: This is more consistent with real business concentration in a subset of records than random noise, because multiple statistics align in the same direction. Downstream analysis should use robust summaries (median, IQR), consider winsorization or log transforms for modeling, and separately inspect the highest-profit records to confirm they are valid.
 
-### Price per Unit has limited but distinct upper-end price anomalies
-- **Description**: Price per Unit is relatively stable overall but includes a small set of unusually high prices above the normal range.
-- **Strength**: moderate
-- **Variables**: Price per Unit
-- **Relevance**: Because the outlier share is small and the overall distribution is fairly centered, these values are more likely premium pricing or product/channel differences than data quality issues. Keep them in analysis, but check whether pricing models should cap or segment high-price records.
+### Extreme right-skew and high-value spikes in Total Sales
+- **Description**: Total Sales contains many unusually large records compared with the typical transaction level, producing a strongly skewed distribution with substantial upper-end spikes.
+- **Strength**: strong
+- **Variables**: Total Sales
+- **Relevance**: These values may reflect real large sales events or aggregation differences rather than obvious data errors, since the minimum is 0 and no negative sales are present. Use robust statistics, segment analyses by sales size, and validate whether very large sales records represent bulk orders or a different transaction grain.
 
-### Operating Margin has a small set of boundary-like extreme values
-- **Description**: Operating Margin is mostly compact but includes a small number of unusually low and high margin records near the edges of the observed range.
+### Right-skewed Units Sold with upper-end volume outliers
+- **Description**: Units Sold has a long upper tail with a noticeable set of unusually high-volume records.
+- **Strength**: strong
+- **Variables**: Units Sold
+- **Relevance**: High-unit records are likely real high-volume sales events, but they can dominate averages and regression fits. Downstream analysis should consider robust scaling, possible log transformation, and separate review of zero-unit and very high-unit records.
+
+### Zero-valued records in sales and profit measures
+- **Description**: The dataset contains records with zero Total Sales, zero Operating Profit, and zero Units Sold, which is unusual for completed sale records and may indicate cancellations, placeholders, or nonstandard transaction states.
 - **Strength**: moderate
-- **Variables**: Operating Margin
-- **Relevance**: These could be real unusually low- or high-margin transactions, but because margin is a ratio-like measure, edge values should be validated for calculation consistency. Downstream analysis should retain them but consider sensitivity checks, especially in margin benchmarking.
+- **Variables**: Units Sold, Total Sales, Operating Profit
+- **Relevance**: These could be valid business records such as returns netted to zero, canceled invoices, or non-sales placeholders, but they also may reflect data quality issues depending on business rules. Downstream analysis should quantify zero frequency, decide whether zero records belong in revenue/profit modeling, and possibly exclude them from analyses intended to represent completed sales.
+
+### Retailer ID is highly concentrated at a single value
+- **Description**: Retailer ID appears unusually concentrated, with the middle 50% of records all sharing the same identifier.
+- **Strength**: strong
+- **Variables**: Retailer ID
+- **Relevance**: Because Retailer ID is an identifier rather than a continuous measure, this is not a numeric outlier issue but a distribution anomaly that may indicate one retailer dominates the dataset or that records are unevenly sampled. This is likely a real composition issue rather than a data error. Downstream analysis should account for retailer imbalance, avoid interpreting ID numerically, and consider stratifying or weighting by retailer.
 

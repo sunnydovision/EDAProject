@@ -39,8 +39,8 @@ def plot_evaluation_results(results_a, results_b, output_path="evaluation_result
             'Category': 'Core'
         },
         'Insight Diversity': {
-            name_a: results_a['question_diversity']['diversity'] * 100,
-            name_b: results_b['question_diversity']['diversity'] * 100,
+            name_a: (results_a['question_diversity'].get('diversity') or results_a['question_diversity'].get('semantic_diversity', 0)) * 100,
+            name_b: (results_b['question_diversity'].get('diversity') or results_b['question_diversity'].get('semantic_diversity', 0)) * 100,
             'Category': 'Core'
         }
     }

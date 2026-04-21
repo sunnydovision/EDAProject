@@ -1401,6 +1401,8 @@ Return JSON:
         
         all_processed_insights = []
         used_titles = set()  # Track titles to avoid duplicates
+        used_struct_keys = set()  # Track (type, breakdown, measure, subspace) globally to avoid structural duplicates
+        category_struct_keys = {}  # Per-category struct keys for prompt context
         iteration = 0
         
         # Insight categories to extract
@@ -1429,6 +1431,7 @@ Return JSON:
                 print(f"  ├─ ✍️  Generating insight extraction prompt...")
                 
                 # Pass unified context to avoid duplicates
+                cat_key = ','.join(category['types'])
                 insights = self._extract_insights_by_category(
                     category, 
                     output_dir, 
@@ -1438,7 +1441,8 @@ Return JSON:
                     critical_issues,
                     statistical_findings,
                     strong_correlations,
-                    discovered_patterns
+                    discovered_patterns,
+                    category_struct_keys.get(cat_key, set())
                 )
                 
                 if insights:
@@ -1456,10 +1460,25 @@ Return JSON:
             for insight_data in all_insights:
                 title = insight_data.get('title', '')
                 
-                # Skip duplicates
-                if title in used_titles:
+                # Build structural key to detect duplicates with different titles
+                variables = insight_data.get('variables', [])
+                subspace = insight_data.get('subspace', [])
+                subspace_key = tuple(tuple(pair) for pair in subspace) if subspace else ()
+                breakdown = variables[0] if variables else ''
+                measure = variables[1] if len(variables) > 1 else ''
+                struct_key = (insight_data.get('type', ''), breakdown, measure, subspace_key)
+                
+                # Skip duplicates (by title OR by structure)
+                if title in used_titles or struct_key in used_struct_keys:
                     continue
                 used_titles.add(title)
+                used_struct_keys.add(struct_key)
+                
+                # Update per-category struct keys so next iteration's prompt knows what's covered
+                cat_key_for_insight = insight_data.get('type', '')
+                if cat_key_for_insight not in category_struct_keys:
+                    category_struct_keys[cat_key_for_insight] = set()
+                category_struct_keys[cat_key_for_insight].add(struct_key)
                 
                 idx = len(all_processed_insights)
                 insight_id = f"insight_{idx:03d}"
@@ -1513,11 +1532,13 @@ Return JSON:
         
         return all_processed_insights
     
-    def _extract_insights_by_category(self, category: Dict, output_dir: str, used_titles: set = None, semantic_meanings: Dict = None, quality_score: int = 0, critical_issues: List = None, statistical_findings: List = None, strong_correlations: List = None, discovered_patterns: List = None) -> List[Dict[str, Any]]:
+    def _extract_insights_by_category(self, category: Dict, output_dir: str, used_titles: set = None, semantic_meanings: Dict = None, quality_score: int = 0, critical_issues: List = None, statistical_findings: List = None, strong_correlations: List = None, discovered_patterns: List = None, used_struct_keys_for_category: set = None) -> List[Dict[str, Any]]:
         """Extract insights for a specific category using LLM with unified context from all prior steps"""
         
         if used_titles is None:
             used_titles = set()
+        if used_struct_keys_for_category is None:
+            used_struct_keys_for_category = set()
         if semantic_meanings is None:
             semantic_meanings = {}
         if critical_issues is None:
@@ -1540,10 +1561,11 @@ Return JSON:
             # Limit to top 10 values to avoid too much context
             categorical_values[col] = unique_vals[:10].tolist()
         
-        # Build exclusion text if there are used titles
+        # Build exclusion text using per-category structural keys (keeps context window small)
         exclusion_text = ""
-        if used_titles:
-            exclusion_text = f"\n\nIMPORTANT: Avoid these already-extracted insights:\n{chr(10).join(['- ' + t for t in list(used_titles)[:10]])}\n\nGenerate DIFFERENT insights with different angles and variables."
+        if used_struct_keys_for_category:
+            struct_lines = [f"- breakdown={k[1]}, measure={k[2]}, subspace={list(k[3])}" for k in list(used_struct_keys_for_category)[:15]]
+            exclusion_text = f"\n\nIMPORTANT: These (breakdown, measure, subspace) combinations are already covered for this category — do NOT repeat them:\n{chr(10).join(struct_lines)}\n\nGenerate insights with DIFFERENT breakdown/measure/subspace combinations."
         
         # Build unified context according to PROMPTS.md
         prompt = f"""Extract insights of the following type(s): {', '.join(category['types'])}

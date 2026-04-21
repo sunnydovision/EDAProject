@@ -1,153 +1,112 @@
 {
   "system": "IFQ",
-  "num_cards": 90,
-  "num_insights": 90,
+  "num_cards": 93,
+  "num_insights": 93,
   "faithfulness": {
-    "faithfulness": 0.7666666666666667,
-    "verified_count": 69,
-    "total_count": 90,
-    "hallucination_count": 21,
-    "hallucination_rate": 0.23333333333333328,
-    "_failed_insights": [
-      {
-        "idx": 15,
-        "reason": "Value mismatch for \"1\": reported=21.36187214611872, recomputed=0.40348173515981733, delta=2.10e+01",
-        "pattern": "Outstanding Value"
-      },
-      {
-        "idx": 16,
-        "reason": "Value mismatch for \"M\u1ecfng\": reported=1778437409.2307692, recomputed=2.147065704846154, delta=1.78e+09",
-        "pattern": "Outstanding Value"
-      },
-      {
-        "idx": 20,
-        "reason": "Value mismatch for \"Cao c\u1ea5p\": reported=411844802.3125, recomputed=0.421817471125, delta=4.12e+08",
-        "pattern": "Outstanding Value"
-      },
-      {
-        "idx": 22,
-        "reason": "Value mismatch for \"Cao\": reported=520796749.5714286, recomputed=0.6099696045714286, delta=5.21e+08",
-        "pattern": "Outstanding Value"
-      },
-      {
-        "idx": 23,
-        "reason": "Value mismatch for \"Cao\": reported=374478027.26153845, recomputed=0.41955555127692307, delta=3.74e+08",
-        "pattern": "Outstanding Value"
-      },
-      {
-        "idx": 25,
-        "reason": "Value mismatch for \"M\u00e0u xanh ng\u1ecdc \": reported=2994528454.0, recomputed=2.994528454, delta=2.99e+09",
-        "pattern": "Outstanding Value"
-      },
-      {
-        "idx": 26,
-        "reason": "Value mismatch for \"Cao\": reported=337092668.59322035, recomputed=0.3735053603898305, delta=3.37e+08",
-        "pattern": "Outstanding Value"
-      },
-      {
-        "idx": 30,
-        "reason": "Value mismatch for \"Th\u1ee9 4\": reported=29472546.0, recomputed=0.029472546, delta=2.95e+07",
-        "pattern": "Outstanding Value"
-      },
-      {
-        "idx": 33,
-        "reason": "Value mismatch for \"Cao c\u1ea5p\": reported=517937357.35384613, recomputed=0.580444448723077, delta=5.18e+08",
-        "pattern": "Outstanding Value"
-      },
-      {
-        "idx": 34,
-        "reason": "Value mismatch for \"Cao\": reported=517937357.35384613, recomputed=0.580444448723077, delta=5.18e+08",
-        "pattern": "Outstanding Value"
-      },
-      {
-        "idx": 44,
-        "reason": "Value mismatch for \"Cao\": reported=7636686707.246154, recomputed=7710309844.673575, delta=7.36e+07",
-        "pattern": "Outstanding Value"
-      },
-      {
-        "idx": 46,
-        "reason": "Value mismatch for \"B\u00e1n l\u1ebb\": reported=87507408.90824261, recomputed=0.09588060014307931, delta=8.75e+07",
-        "pattern": "Outstanding Value"
-      },
-      {
-        "idx": 57,
-        "reason": "Value mismatch for \"M\u1ecfng\": reported=21.0, recomputed=2.1, delta=1.89e+01",
-        "pattern": "Attribution"
-      },
-      {
-        "idx": 58,
-        "reason": "Value mismatch for \"DD-G\": reported=325.0, recomputed=3.25, delta=3.22e+02",
-        "pattern": "Attribution"
-      },
-      {
-        "idx": 69,
-        "reason": "Value mismatch for \"Cao c\u1ea5p\": reported=357820484.0, recomputed=0.357820484, delta=3.58e+08",
-        "pattern": "Attribution"
-      },
-      {
-        "idx": 71,
-        "reason": "Value mismatch for \"Th\u1ea5p\": reported=756474914.5555556, recomputed=0.7564749145555556, delta=7.56e+08",
-        "pattern": "Attribution"
-      },
-      {
-        "idx": 77,
-        "reason": "Value mismatch for \"Th\u1ee9 6\": reported=98753770.75, recomputed=0.09875377075, delta=9.88e+07",
-        "pattern": "Attribution"
-      },
-      {
-        "idx": 83,
-        "reason": "Value mismatch for \"Cao\": reported=374478027.26153845, recomputed=0.41955555127692307, delta=3.74e+08",
-        "pattern": "Attribution"
-      },
-      {
-        "idx": 84,
-        "reason": "Value mismatch for \"Cao\": reported=337092668.59322035, recomputed=0.3735053603898305, delta=3.37e+08",
-        "pattern": "Attribution"
-      },
-      {
-        "idx": 85,
-        "reason": "Value mismatch for \"Cao c\u1ea5p\": reported=517937357.35384613, recomputed=0.580444448723077, delta=5.18e+08",
-        "pattern": "Attribution"
-      },
-      {
-        "idx": 86,
-        "reason": "Value mismatch for \"Cao\": reported=517937357.35384613, recomputed=0.580444448723077, delta=5.18e+08",
-        "pattern": "Attribution"
-      }
-    ]
+    "faithfulness": 1.0,
+    "verified_count": 93,
+    "total_count": 93,
+    "hallucination_count": 0,
+    "hallucination_rate": 0.0,
+    "_failed_insights": []
   },
   "insight_significance": {
     "avg_zscore": Infinity,
-    "significant_count": 64,
-    "significant_rate": 0.7111111111111111,
+    "significant_count": 68,
+    "significant_rate": 0.8947368421052632,
     "max_zscore": Infinity,
-    "total_evaluated": 90
+    "total_evaluated": 76
   },
   "question_diversity": {
-    "diversity": 0.4000393748283386,
-    "avg_similarity": 0.5999606251716614,
-    "num_questions": 90
+    "semantic_diversity": 0.49686628580093384,
+    "avg_similarity": 0.5031337141990662,
+    "num_insights": 93,
+    "subspace_diversity": null,
+    "value_diversity": null,
+    "dedup_rate": 0.3655913978494624,
+    "unique_count": 59,
+    "total_count": 93,
+    "duplicate_count": 34
   },
   "time_to_insight": {
-    "total_time_seconds": 629.731,
-    "insights_generated": 80,
-    "time_per_insight_seconds": 7.8716375,
-    "throughput_insights_per_second": 0.12703837035178514
+    "total_time_seconds": 613.299,
+    "insights_generated": 93,
+    "time_per_insight_seconds": 6.594612903225806,
+    "throughput_insights_per_second": 0.15163892326581324
   },
   "token_usage": {
-    "total_tokens": 78804,
-    "input_tokens": 53533,
-    "output_tokens": 25271,
+    "total_tokens": 77347,
+    "input_tokens": 52816,
+    "output_tokens": 24531,
     "requests": 101,
-    "insights_generated": 80,
-    "tokens_per_insight": 985.05,
+    "insights_generated": 93,
+    "tokens_per_insight": 831.6881720430108,
     "model": "gpt-5.4"
   },
   "insight_novelty": {
-    "novelty": 0.9666666666666667,
-    "novel_count": 87,
-    "total_count": 90,
-    "avg_max_similarity": 0.6989516019821167,
+    "novelty": 0.967741935483871,
+    "novel_count": 90,
+    "total_count": 93,
+    "avg_max_similarity": 0.6894288659095764,
     "tau": 0.85
+  },
+  "subspace_metrics": {
+    "total_with_subspace": 41,
+    "total_original": 41,
+    "faithfulness": {
+      "faithfulness": 1.0,
+      "verified_count": 41,
+      "total_count": 41,
+      "hallucination_count": 0,
+      "hallucination_rate": 0.0,
+      "_failed_insights": []
+    },
+    "significance": {
+      "avg_zscore": Infinity,
+      "significant_count": 40,
+      "significant_rate": 0.975609756097561,
+      "max_zscore": Infinity,
+      "total_evaluated": 41
+    },
+    "novelty": {
+      "novelty": 1.0,
+      "novel_count": 41,
+      "total_count": 41,
+      "avg_max_similarity": 0.6761656999588013,
+      "tau": 0.85
+    },
+    "diversity": {
+      "semantic_diversity": 0.438870906829834,
+      "avg_similarity": 0.561129093170166,
+      "num_insights": 41,
+      "subspace_diversity": {
+        "subspace_diversity_entropy": 1.9593244403411831,
+        "subspace_diversity_count_ratio": 0.2682926829268293,
+        "unique_columns": 11,
+        "total_columns": 41,
+        "column_distribution": {
+          "Region": 4,
+          "Retailer": 3,
+          "Invoice Date": 15,
+          "State": 4,
+          "City": 7,
+          "Units Sold": 3,
+          "Operating Profit": 1,
+          "Total Sales": 1,
+          "Sales Method": 1,
+          "Retailer ID": 1,
+          "Operating Margin": 1
+        }
+      },
+      "value_diversity": {
+        "value_diversity": 0.9512195121951219,
+        "unique_pairs": 39,
+        "total_pairs": 41
+      },
+      "dedup_rate": 0.0,
+      "unique_count": 41,
+      "total_count": 41,
+      "duplicate_count": 0
+    }
   }
 }

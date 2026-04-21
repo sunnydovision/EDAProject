@@ -59,11 +59,13 @@ def create_comparison_table(
     })
     
     # 4. Insight Diversity
+    div_a = results_a['question_diversity'].get('diversity') or results_a['question_diversity'].get('semantic_diversity', 0)
+    div_b = results_b['question_diversity'].get('diversity') or results_b['question_diversity'].get('semantic_diversity', 0)
     metrics.append({
         'Metric': '4. Insight Diversity',
-        name_a: format_metric_value(results_a['question_diversity']['diversity'], 'default'),
-        name_b: format_metric_value(results_b['question_diversity']['diversity'], 'default'),
-        'Winner': name_a if results_a['question_diversity']['diversity'] > results_b['question_diversity']['diversity'] else name_b,
+        name_a: format_metric_value(div_a, 'default'),
+        name_b: format_metric_value(div_b, 'default'),
+        'Winner': name_a if div_a > div_b else name_b,
         'Category': 'Core',
         'Description': 'Non-redundancy - không trùng lặp'
     })
@@ -185,7 +187,9 @@ def generate_report(
         f.write(f"- **Faithfulness**: {results_a['faithfulness']['faithfulness']*100:.1f}% vs {results_b['faithfulness']['faithfulness']*100:.1f}%\n")
         f.write(f"- **Statistical Significance**: {results_a['insight_significance']['significant_rate']*100:.1f}% vs {results_b['insight_significance']['significant_rate']*100:.1f}%\n")
         f.write(f"- **Insight Novelty**: {results_a['insight_novelty']['novelty']*100:.1f}% vs {results_b['insight_novelty']['novelty']*100:.1f}%\n")
-        f.write(f"- **Insight Diversity**: {results_a['question_diversity']['diversity']:.3f} vs {results_b['question_diversity']['diversity']:.3f}\n")
+        _div_a = results_a['question_diversity'].get('diversity') or results_a['question_diversity'].get('semantic_diversity', 0)
+        _div_b = results_b['question_diversity'].get('diversity') or results_b['question_diversity'].get('semantic_diversity', 0)
+        f.write(f"- **Insight Diversity**: {_div_a:.3f} vs {_div_b:.3f}\n")
         
         if results_a.get('time_to_insight') and results_b.get('time_to_insight'):
             time_a = results_a['time_to_insight'].get('time_per_insight_seconds')

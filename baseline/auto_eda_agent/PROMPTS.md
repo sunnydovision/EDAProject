@@ -10,12 +10,14 @@
 ### System Prompt
 
 ```
-You are an expert data analyst. Your job is to infer the semantic meaning and classification of dataset columns from their names and sample values.
+You are an expert data analyst inferring semantic meaning from data samples.
 ```
 
 ### User Prompt
 
 ```
+You are an expert data analyst. Your job is to infer the semantic meaning and classification of dataset columns from their names and sample values.
+
 Analyze the following dataset columns and infer their semantic meaning.
 
 Dataset: {n_rows} rows × {n_columns} columns
@@ -40,6 +42,8 @@ Return a JSON object where each key is a column name:
   }
 }
 ```
+
+**API params:** `temperature=0.3`, `max_completion_tokens=8000`, `response_format=json_object`
 
 ---
 
@@ -92,6 +96,8 @@ Return JSON:
 }
 ```
 
+**API params:** `temperature=0.3`, `max_completion_tokens=8000`, `response_format=json_object`
+
 ---
 
 ## Step 3: Statistical Analysis Agent
@@ -142,6 +148,8 @@ Return JSON:
   "recommendations": ["...", "..."]
 }
 ```
+
+**API params:** `temperature=0.3`, `max_completion_tokens=8000`, `response_format=json_object`
 
 ---
 
@@ -299,6 +307,8 @@ Return JSON:
 }
 ```
 
+**API params (all 4 categories):** `temperature=0.3`, `max_completion_tokens=8000`, `response_format=json_object`
+
 ---
 
 ## Step 5: Insight Extraction Agent
@@ -306,10 +316,14 @@ Return JSON:
 Five batches, one prompt per batch. The same system prompt applies to all five.
 
 > **Pipeline note**: The LLM output from this step does NOT include `view_labels`.
-> Labels are computed by post-processing code after the LLM responds:
+> Labels are computed by post-processing code (`_compute_view_labels`) after the LLM responds:
 > for each insight, apply its `subspace` filter to `df`, then extract
 > sorted unique values of the `breakdown` column from the filtered dataframe.
 > This ensures labels always match the subspace-filtered data and pass faithfulness checks.
+
+> **Deduplication note**: Two layers of dedup are applied:
+> 1. **Post-hoc (global)**: `used_struct_keys` set tracks `(type, breakdown, measure, subspace)` across all categories. Insights with duplicate structural keys are silently dropped before saving.
+> 2. **Pre-emptive (per-category via prompt)**: `used_struct_keys_for_category` is passed into the prompt as an exclusion list so the LLM does not generate structural combinations already extracted in the same category during a previous iteration.
 
 ### System Prompt
 
@@ -329,8 +343,9 @@ AVAILABLE COLUMNS — use ONLY these exact names in "variables" and "subspace":
 - Numerical: {numerical_columns}
 - Categorical: {categorical_columns}
 
-Do NOT use derived or computed column names (e.g., "month", "year", "quarter").
+CRITICAL: Do NOT use derived or computed column names (e.g., "month", "year", "quarter", "day").
 If a temporal insight is needed, use the original date column name (e.g., "Invoice Date").
+Even if a "month" column exists in the dataframe, DO NOT use it. Always use the original date column.
 
 VALID SUBSPACE VALUES — when using subspace, the value MUST be taken from this list exactly as written:
 {categorical_values_json}
@@ -342,42 +357,32 @@ Context from prior analysis steps:
 Step 1 — Column meanings:
 {semantic_meanings_json}
 
-Step 2 — Data quality:
-- Quality score: {quality_score}
+Step 2 — Quality Assessment:
+- Overall quality score: {quality_score}
 - Critical issues: {critical_issues}
 
-Step 3 — Statistical findings:
+Step 3 — Statistical Analysis:
+- Key statistical findings: {statistical_findings_json}
 - Strong correlations: {strong_correlations_json}
-- Key findings: {key_findings}
-- Statistical anomalies: {statistical_anomalies}
 
 Step 4 — Discovered patterns (relevant to {insight_types}):
 {relevant_patterns}
 
+IMPORTANT: These (breakdown, measure, subspace) combinations are already covered for this category — do NOT repeat them:
+{used_struct_keys_for_category}
+
+Generate insights with DIFFERENT breakdown/measure/subspace combinations.
+
 Already extracted insights (do not repeat these):
 {used_titles}
 
-SUBSPACE RULES:
-Ask yourself: "Is this insight stronger or more specific when restricted to one segment?"
-- If YES → add subspace using a categorical column and one of its known values
-- If NO (the pattern holds uniformly across all segments) → leave "subspace": []
-
-When to use subspace:
-- The pattern or anomaly is clearly driven by one segment (e.g., one region, one product, one sales channel)
-- The insight would be misleading or diluted without the segment filter
-- The comparison or distribution is meaningfully different in one group vs others
-- For TREND insights: only use subspace if the Step 4 evidence explicitly mentions that segment (do NOT infer segment-specific trends on your own)
-
-When NOT to use subspace:
-- The finding applies equally across all segments
-- There is no categorical column that meaningfully differentiates the insight
-- For TREND insights: if Step 4 temporal patterns are global (whole dataset), leave subspace empty
-
-Subspace format rules:
+Subspace rules:
+- Use subspace only when the insight is specifically about a subset of data
 - Subspace MUST use a categorical column (from the categorical columns list above)
-- Subspace value MUST be taken exactly from the VALID SUBSPACE VALUES list above
+- Subspace value must be an actual value that exists in that column
 - Each insight uses at most ONE subspace condition: [["column_name", "value"]]
 - Do NOT use numerical columns, date columns, or derived columns as subspace
+- REQUIRED: At least 1 or 2 insights in your response MUST have a non-empty subspace (pick the insights that are most naturally segment-specific)
 
 For each insight:
 - Write a specific, concrete title
@@ -405,7 +410,11 @@ Return JSON:
     }
   ]
 }
+
+Extract as many valuable insights as possible.
 ```
+
+**API params:** `temperature=0.5`, `max_completion_tokens=16000`, `response_format=json_object`
 
 ### Batch Mapping
 
@@ -421,8 +430,7 @@ Return JSON:
 
 ## Post-processing: view_labels Computation (Pipeline Code)
 
-> This is not a prompt — it is the pipeline logic that runs after Step 5 LLM output.
-> Include this in the instructions to the AI Agent modifying the pipeline.
+> This is not a prompt — it is the pipeline logic that runs after Step 5 LLM output (`_compute_view_labels` in `agent.py`).
 
 ```
 For each insight generated by Step 5:
@@ -453,4 +461,41 @@ For each insight generated by Step 5:
 
 This guarantees view_labels are always derived from the same filtered data
 that the faithfulness verifier uses, eliminating the label mismatch issue.
+```
+
+---
+
+## Post-processing: Deduplication (Pipeline Code)
+
+> This is not a prompt — it is the pipeline logic in `_run_insight_agent` in `agent.py`.
+
+```
+Two layers of deduplication are applied after each batch is returned from the LLM:
+
+Layer 1 — Structural dedup (global, post-hoc):
+  For each insight in the LLM response:
+    variables = insight["variables"]
+    subspace = insight["subspace"]
+    breakdown = variables[0] if variables else ''
+    measure = variables[1] if len(variables) > 1 else ''
+    struct_key = (insight["type"], breakdown, measure, tuple(subspace))
+
+    if struct_key in used_struct_keys:
+        → skip (silent drop)
+    else:
+        used_struct_keys.add(struct_key)
+        → accept insight
+
+Layer 2 — Title dedup (global, post-hoc):
+    if insight["title"] in used_titles:
+        → skip (silent drop)
+    else:
+        used_titles.add(insight["title"])
+
+Layer 3 — Per-category pre-emptive (via prompt):
+    After each accepted insight, add its struct_key to category_struct_keys[type].
+    On the next iteration, pass category_struct_keys[type] to the prompt
+    as the exclusion list, so the LLM avoids regenerating the same combinations.
+    This keeps the exclusion list scoped to the current category only,
+    avoiding unnecessary context window inflation.
 ```

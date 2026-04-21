@@ -1,165 +1,106 @@
 {
   "system": "Baseline",
-  "num_cards": 124,
-  "num_insights": 124,
+  "num_cards": 77,
+  "num_insights": 77,
   "faithfulness": {
-    "faithfulness": 0.7903225806451613,
-    "verified_count": 98,
-    "total_count": 124,
-    "hallucination_count": 26,
-    "hallucination_rate": 0.20967741935483875,
-    "_failed_insights": [
-      {
-        "idx": 5,
-        "reason": "Label \"0\" not found in recomputed values (converted: 0)",
-        "pattern": "TREND"
-      },
-      {
-        "idx": 6,
-        "reason": "Label \"0\" not found in recomputed values (converted: 0)",
-        "pattern": "TREND"
-      },
-      {
-        "idx": 21,
-        "reason": "Label \"0\" not found in recomputed values (converted: 0)",
-        "pattern": "ATTRIBUTION"
-      },
-      {
-        "idx": 25,
-        "reason": "Value mismatch for \"21168\": reported=10511412155.166666, recomputed=15628940014.0, delta=5.12e+09",
-        "pattern": "ATTRIBUTION"
-      },
-      {
-        "idx": 26,
-        "reason": "Value mismatch for \"6\": reported=498944950.1666667, recomputed=470048397.5, delta=2.89e+07",
-        "pattern": "ATTRIBUTION"
-      },
-      {
-        "idx": 30,
-        "reason": "Label \"0\" not found in recomputed values (converted: 0)",
-        "pattern": "TREND"
-      },
-      {
-        "idx": 38,
-        "reason": "Value mismatch for \"6\": reported=498944950.1666667, recomputed=470048397.5, delta=2.89e+07",
-        "pattern": "TREND"
-      },
-      {
-        "idx": 41,
-        "reason": "Label \"0\" not found in recomputed values (converted: 0)",
-        "pattern": "TREND"
-      },
-      {
-        "idx": 42,
-        "reason": "Value mismatch for \"6\": reported=498944950.1666667, recomputed=470048397.5, delta=2.89e+07",
-        "pattern": "TREND"
-      },
-      {
-        "idx": 48,
-        "reason": "Label \"4626930\" not found in recomputed values (converted: 4626930)",
-        "pattern": "TREND"
-      },
-      {
-        "idx": 52,
-        "reason": "Label \"4626930\" not found in recomputed values (converted: 4626930)",
-        "pattern": "TREND"
-      },
-      {
-        "idx": 64,
-        "reason": "Value mismatch for \"21168\": reported=10511412155.166666, recomputed=15628940014.0, delta=5.12e+09",
-        "pattern": "ATTRIBUTION"
-      },
-      {
-        "idx": 66,
-        "reason": "Label \"7781840\" not found in recomputed values (converted: 7781840)",
-        "pattern": "ATTRIBUTION"
-      },
-      {
-        "idx": 67,
-        "reason": "Label \"4626930\" not found in recomputed values (converted: 4626930)",
-        "pattern": "ATTRIBUTION"
-      },
-      {
-        "idx": 87,
-        "reason": "Label \"4626930\" not found in recomputed values (converted: 4626930)",
-        "pattern": "TREND"
-      },
-      {
-        "idx": 88,
-        "reason": "Label \"4626930\" not found in recomputed values (converted: 4626930)",
-        "pattern": "TREND"
-      },
-      {
-        "idx": 90,
-        "reason": "Value mismatch for \"6\": reported=498944950.1666667, recomputed=470048397.5, delta=2.89e+07",
-        "pattern": "TREND"
-      },
-      {
-        "idx": 91,
-        "reason": "Value mismatch for \"1\": reported=722057075.3979592, recomputed=736970522.7857143, delta=1.49e+07",
-        "pattern": "TREND"
-      },
-      {
-        "idx": 102,
-        "reason": "Value mismatch for \"21168\": reported=10511412155.166666, recomputed=15628940014.0, delta=5.12e+09",
-        "pattern": "ATTRIBUTION"
-      },
-      {
-        "idx": 103,
-        "reason": "Label \"4626930\" not found in recomputed values (converted: 4626930)",
-        "pattern": "ATTRIBUTION"
-      },
-      {
-        "idx": 105,
-        "reason": "Value mismatch for \"21223\": reported=3477629520.75, recomputed=6111648257.0, delta=2.63e+09",
-        "pattern": "ATTRIBUTION"
-      },
-      {
-        "idx": 106,
-        "reason": "Value mismatch for \"6\": reported=498944950.1666667, recomputed=470048397.5, delta=2.89e+07",
-        "pattern": "ATTRIBUTION"
-      },
-      {
-        "idx": 111,
-        "reason": "Label \"7781840\" not found in recomputed values (converted: 7781840)",
-        "pattern": "TREND"
-      },
-      {
-        "idx": 115,
-        "reason": "Label \"4626930\" not found in recomputed values (converted: 4626930)",
-        "pattern": "TREND"
-      },
-      {
-        "idx": 116,
-        "reason": "Value mismatch for \"6\": reported=498944950.1666667, recomputed=470048397.5, delta=2.89e+07",
-        "pattern": "TREND"
-      },
-      {
-        "idx": 121,
-        "reason": "Value mismatch for \"21168\": reported=10511412155.166666, recomputed=15628940014.0, delta=5.12e+09",
-        "pattern": "TREND"
-      }
-    ]
+    "faithfulness": 1.0,
+    "verified_count": 77,
+    "total_count": 77,
+    "hallucination_count": 0,
+    "hallucination_rate": 0.0,
+    "_failed_insights": []
   },
   "insight_significance": {
     "avg_zscore": Infinity,
-    "significant_count": 75,
-    "significant_rate": 0.9493670886075949,
+    "significant_count": 47,
+    "significant_rate": 0.94,
     "max_zscore": Infinity,
-    "total_evaluated": 79
+    "total_evaluated": 50
   },
   "question_diversity": {
-    "diversity": 0.5066425800323486,
-    "avg_similarity": 0.49335741996765137,
-    "num_questions": 124
+    "semantic_diversity": 0.2715083956718445,
+    "avg_similarity": 0.7284916043281555,
+    "num_insights": 77,
+    "subspace_diversity": null,
+    "value_diversity": null,
+    "dedup_rate": 0.6883116883116883,
+    "unique_count": 24,
+    "total_count": 77,
+    "duplicate_count": 53
   },
-  "time_to_insight": null,
-  "token_usage": null,
+  "time_to_insight": {
+    "total_time_seconds": 594.2439229488373,
+    "insights_generated": 77,
+    "time_per_insight_seconds": 7.717453544790095,
+    "throughput_insights_per_second": 0.1295764197602564
+  },
+  "token_usage": {
+    "total_tokens": 116850,
+    "input_tokens": 76395,
+    "output_tokens": 40455,
+    "requests": 22,
+    "insights_generated": 77,
+    "tokens_per_insight": 1517.5324675324675,
+    "model": "gpt-5.4"
+  },
   "insight_novelty": {
-    "novelty": 0.9516129032258065,
-    "novel_count": 118,
-    "total_count": 124,
-    "avg_max_similarity": 0.6948105096817017,
+    "novelty": 0.922077922077922,
+    "novel_count": 71,
+    "total_count": 77,
+    "avg_max_similarity": 0.7457183003425598,
     "tau": 0.85
+  },
+  "subspace_metrics": {
+    "total_with_subspace": 31,
+    "total_original": 31,
+    "faithfulness": {
+      "faithfulness": 1.0,
+      "verified_count": 31,
+      "total_count": 31,
+      "hallucination_count": 0,
+      "hallucination_rate": 0.0,
+      "_failed_insights": []
+    },
+    "significance": {
+      "avg_zscore": 0.0,
+      "significant_count": 16,
+      "significant_rate": 1.0,
+      "max_zscore": 0.0,
+      "total_evaluated": 16
+    },
+    "novelty": {
+      "novelty": 1.0,
+      "novel_count": 31,
+      "total_count": 31,
+      "avg_max_similarity": 0.6860722899436951,
+      "tau": 0.85
+    },
+    "diversity": {
+      "semantic_diversity": 0.3439411520957947,
+      "avg_similarity": 0.6560588479042053,
+      "num_insights": 31,
+      "subspace_diversity": {
+        "subspace_diversity_entropy": 1.508113754807558,
+        "subspace_diversity_count_ratio": 0.16129032258064516,
+        "unique_columns": 5,
+        "total_columns": 31,
+        "column_distribution": {
+          "Sales Method": 10,
+          "Region": 5,
+          "State": 7,
+          "Retailer": 7,
+          "Product": 2
+        }
+      },
+      "value_diversity": {
+        "value_diversity": 0.3225806451612903,
+        "unique_pairs": 10,
+        "total_pairs": 31
+      },
+      "dedup_rate": 0.12903225806451613,
+      "unique_count": 27,
+      "total_count": 31,
+      "duplicate_count": 4
+    }
   }
 }

@@ -269,17 +269,55 @@ def _compare_values(view_labels, view_values, recomputed, sep: str, pattern: str
     converted_labels = [normalize_label(l) for l in converted_labels]
     recomputed.index = [normalize_label(str(i)) for i in recomputed.index]
     
-    # Compare values
+    # Compare values - check label type and compare 3 cases
     for orig_label, conv_label in zip(view_labels, converted_labels):
+        # Case 1: Direct string match
         if conv_label in recomputed.index:
             reported = reported_values[orig_label]
             recomputed_val = recomputed[conv_label]
-            
             delta = abs(reported - recomputed_val)
-            if delta > epsilon:
-                return False
-        else:
+            if delta <= epsilon:
+                continue  # Matched
             return False
+        
+        # Case 2: Parsed string computed value vs label
+        # Try converting recomputed index to string and compare
+        found_match = False
+        for idx in recomputed.index:
+            idx_str = str(idx)
+            if idx_str == conv_label:
+                reported = reported_values[orig_label]
+                recomputed_val = recomputed[idx]
+                delta = abs(reported - recomputed_val)
+                if delta <= epsilon:
+                    found_match = True
+                    break
+        if found_match:
+            continue
+        
+        # Case 3: Computed value vs parsed float label
+        # Only if both can be converted to float
+        try:
+            conv_label_float = float(conv_label)
+            for idx in recomputed.index:
+                try:
+                    idx_float = float(idx)
+                    if abs(conv_label_float - idx_float) < epsilon:
+                        reported = reported_values[orig_label]
+                        recomputed_val = recomputed[idx]
+                        delta = abs(reported - recomputed_val)
+                        if delta <= epsilon:
+                            found_match = True
+                            break
+                except:
+                    continue
+            if found_match:
+                continue
+        except:
+            pass
+        
+        # If no match found in any case
+        return False
     
     return True
 
@@ -305,16 +343,54 @@ def _get_failure_reason(view_labels, view_values, recomputed, sep: str, pattern:
     # Convert recomputed index to strings
     recomputed.index = recomputed.index.astype(str)
     
-    # Find first mismatch
+    # Find first mismatch - use same 3-case comparison logic
     for orig_label, conv_label in zip(view_labels, converted_labels):
-        if conv_label not in recomputed.index:
-            return f'Label "{orig_label}" not found in recomputed values (converted: {conv_label})'
+        # Case 1: Direct string match
+        if conv_label in recomputed.index:
+            reported = reported_values[orig_label]
+            recomputed_val = recomputed[conv_label]
+            delta = abs(reported - recomputed_val)
+            if delta > epsilon:
+                return f'Value mismatch for "{orig_label}": reported={reported}, recomputed={recomputed_val}, delta={delta:.2e}'
+            continue
         
-        reported = reported_values[orig_label]
-        recomputed_val = recomputed[conv_label]
+        # Case 2: Parsed string computed value vs label
+        found_match = False
+        for idx in recomputed.index:
+            idx_str = str(idx)
+            if idx_str == conv_label:
+                reported = reported_values[orig_label]
+                recomputed_val = recomputed[idx]
+                delta = abs(reported - recomputed_val)
+                if delta > epsilon:
+                    return f'Value mismatch for "{orig_label}": reported={reported}, recomputed={recomputed_val}, delta={delta:.2e}'
+                found_match = True
+                break
+        if found_match:
+            continue
         
-        delta = abs(reported - recomputed_val)
-        if delta > epsilon:
-            return f'Value mismatch for "{orig_label}": reported={reported}, recomputed={recomputed_val}, delta={delta:.2e}'
+        # Case 3: Computed value vs parsed float label
+        try:
+            conv_label_float = float(conv_label)
+            for idx in recomputed.index:
+                try:
+                    idx_float = float(idx)
+                    if abs(conv_label_float - idx_float) < epsilon:
+                        reported = reported_values[orig_label]
+                        recomputed_val = recomputed[idx]
+                        delta = abs(reported - recomputed_val)
+                        if delta > epsilon:
+                            return f'Value mismatch for "{orig_label}": reported={reported}, recomputed={recomputed_val}, delta={delta:.2e}'
+                        found_match = True
+                        break
+                except:
+                    continue
+            if found_match:
+                continue
+        except:
+            pass
+        
+        # If no match found
+        return f'Label "{orig_label}" not found in recomputed values (converted: {conv_label})'
     
     return "Unknown failure"

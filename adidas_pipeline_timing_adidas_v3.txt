@@ -1,0 +1,17 @@
+Adidas pipeline — QUGEN (questions/cards) → ISGEN (insights)
+CSV: /Users/linoedge/study/study-projects/BA/EDAProject/data/Adidas_cleaned.csv
+QUGEN_LLM_MODEL=(default from llm_client)
+OPENAI_USE_RESPONSES_API=
+
+Wall-clock seconds:
+  QUGEN (question/card generation): 452.448
+  ISGEN (insight generation):       160.851
+  Total (start → insights complete): 613.299
+
+LLM token usage (from OpenAI API usage fields, per process):
+  QUGEN:  input=46,534  output=23,367  total=69,901  requests=31
+  ISGEN:  input=6,282  output=1,164  total=7,446  requests=70
+  Sum:    input=52,816  output=24,531  total=77,347  requests=101
+  Detail files: adidas_llm_usage_qugen_adidas_v3.json, adidas_llm_usage_isgen_adidas_v3.json
+
+Outputs: insight_cards_adidas_adidas_v3.json, insights_summary_adidas_adidas_v3.json
