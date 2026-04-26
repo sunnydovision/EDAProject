@@ -1,13 +1,13 @@
 # Báo cáo: Module QUGEN – Tạo sinh câu hỏi (Insight Cards)
 
 **Môn học:** [Điền tên môn học]  
-**Tham chiếu:** IFQ – Question-guided Insights Generation for Automated Exploratory Data Analysis (arXiv:2410.10270).
+**Tham chiếu:** QUIS – Question-guided Insights Generation for Automated Exploratory Data Analysis (arXiv:2410.10270).
 
 ---
 
 ## 1. Mục tiêu
 
-Module **QUGEN (Question Generation)** thuộc hệ thống IFQ, có nhiệm vụ **tự động sinh tập câu hỏi phân tích** từ dữ liệu bảng (schema + thống kê cơ bản), không cần mục tiêu định sẵn hay bộ ví dụ soạn tay. Mỗi câu hỏi được đóng gói dưới dạng **Insight Card** (Question, Reason, Breakdown, Measure), dùng làm đầu vào cho bước sinh insight thống kê (ISGEN) sau này.
+Module **QUGEN (QUGEN)** thuộc hệ thống QUIS, có nhiệm vụ **tự động sinh tập câu hỏi phân tích** từ dữ liệu bảng (schema + thống kê cơ bản), không cần mục tiêu định sẵn hay bộ ví dụ soạn tay. Mỗi câu hỏi được đóng gói dưới dạng **Insight Card** (Question, Reason, Breakdown, Measure), dùng làm đầu vào cho bước sinh insight thống kê (ISGEN) sau này.
 
 ---
 
@@ -74,4 +74,4 @@ Tham số mặc định: số iteration 10, số samples mỗi iteration 3, số
 
 ## 6. Kết luận
 
-Module QUGEN triển khai pipeline tạo sinh câu hỏi theo bài báo IFQ: chuẩn bị data semantics, xây prompt có few-shot và in-context từ pool, dùng LLM sinh Insight Card, lọc theo relevance–dedup–simple question, cập nhật pool và chọn few-shot cho vòng sau. Pipeline vừa khớp với sơ đồ *Pipeline tạo sinh câu hỏi (Insight Cards)* (chuẩn bị semantics → build prompt → LLM → filter → pool → pick few-shot → feedback), vừa phản ánh đúng luồng thực thi trong code và tài liệu `docs/QUGEN_PIPELINE.md`.
+Module QUGEN triển khai pipeline tạo sinh câu hỏi theo bài báo QUIS: chuẩn bị data semantics, xây prompt có few-shot và in-context từ pool, dùng LLM sinh Insight Card, lọc theo relevance–dedup–simple question, cập nhật pool và chọn few-shot cho vòng sau. Pipeline vừa khớp với sơ đồ *Pipeline tạo sinh câu hỏi (Insight Cards)* (chuẩn bị semantics → build prompt → LLM → filter → pool → pick few-shot → feedback), vừa phản ánh đúng luồng thực thi trong code và tài liệu `docs/QUGEN_PIPELINE.md`.

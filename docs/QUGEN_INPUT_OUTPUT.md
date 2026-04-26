@@ -25,4 +25,4 @@ Từ CSV, pipeline tự làm:
   - `breakdown`: chiều breakdown (B)
   - `measure`: đại lượng đo (M), ví dụ MEAN(...), SUM(...)
 
-Output này là đầu vào cho bước **ISGEN** (Insight Generation).
+Output này là đầu vào cho bước **ISGEN** (ISGEN).

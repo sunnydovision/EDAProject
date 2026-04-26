@@ -1,6 +1,6 @@
-# Methodology — EDAProj (IFQ)
+# Methodology — EDAProj (QUIS)
 
-Tài liệu mô tả **phương pháp và cấu trúc kỹ thuật** của project, hiện thực bài báo **IFQ: Question-guided Insights Generation for Automated Exploratory Data Analysis** (arXiv:2410.10270). Mục tiêu là giúp đọc hiểu **luồng dữ liệu**, **vai trò từng module**, và **khác biệt so với bài báo** khi cần.
+Tài liệu mô tả **phương pháp và cấu trúc kỹ thuật** của project, hiện thực bài báo **QUIS: Question-guided Insights Generation for Automated Exploratory Data Analysis** (arXiv:2410.10270). Mục tiêu là giúp đọc hiểu **luồng dữ liệu**, **vai trò từng module**, và **khác biệt so với bài báo** khi cần.
 
 ---
 
@@ -119,7 +119,7 @@ flowchart TB
 
 ---
 
-## 6. Giai đoạn B — QUGEN (Question Generation)
+## 6. Giai đoạn B — QUGEN (QUGEN)
 
 **Module chính:** `ifq/qugen/pipeline.py` — `QUGENPipeline`, `QUGENConfig`.
 
@@ -166,7 +166,7 @@ flowchart TB
 
 ---
 
-## 7. Giai đoạn C — ISGEN (Insight Generation)
+## 7. Giai đoạn C — ISGEN (ISGEN)
 
 **Module chính:** `ifq/isgen/pipeline.py` — `ISGENPipeline`, `ISGENConfig`.
 

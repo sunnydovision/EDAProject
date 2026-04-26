@@ -5,7 +5,7 @@ OPENAI_USE_RESPONSES_API=
 
 Wall-clock seconds:
   QUGEN (question/card generation): 515.707
-  ISGEN (insight generation):       114.024
+  ISGEN (ISGEN):       114.024
   Total (start → insights complete): 629.731
 
 LLM token usage (from OpenAI API usage fields, per process):

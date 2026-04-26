@@ -409,11 +409,11 @@ def main():
     print(f"  • {args.system_a}: direction={up_a.get('score_uplift_direction')}")
     print(f"  • {args.system_b}: direction={up_b.get('score_uplift_direction')}")
 
-    # ── GROUP 3: QuGen Quality (Intent Layer) ─────────────────────────────
+    # ── GROUP 3: Intent Layer Quality ─────────────────────────────
     # Merged group: BM target structure (10a-e) + Question text/reason (11a-e).
     # Both probe the same QuGen module, separated only for readability.
     print(f"\n{'─'*70}")
-    print(f"GROUP 3 — QuGen Quality (Intent Layer)")
+    print(f"GROUP 3 — Intent Layer Quality")
     print(f"{'─'*70}")
 
     print(f"\n[3.1] Target structure — (breakdown, measure)")

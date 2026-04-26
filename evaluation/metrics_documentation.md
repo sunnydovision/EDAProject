@@ -580,7 +580,7 @@ uplift_ratio = mean(score | subspace != []) / mean(score | subspace == [])
 ### Tại sao dùng effect-size thay vì (1 − p_value)?
 - **`1 − p_value` bão hoà**: với dataset n ≥ 1000, hầu hết p_value ≈ 0 → mọi insight có score = 1.0, không phân biệt được
 - **Effect-size độc lập với n**: z/(z+1), Kendall τ, Cramér's V, KS statistic đo **magnitude thực sự** của pattern
-- **Cùng hệ quy chiếu**: cả IFQ lẫn Baseline đều được tính bằng cùng `compute_insight_score()`, không phụ thuộc internal score của từng system
+- **Cùng hệ quy chiếu**: cả QUIS lẫn Baseline đều được tính bằng cùng `compute_insight_score()`, không phụ thuộc internal score của từng system
 - **EDA-correct**: insights dùng numeric breakdown bị loại trước khi tính (sai tinh thần EDA → không nên cho điểm)
 
 Metric đo liệu insights trong phân khúc (subspace) có **effect-size cao hơn** so với insights toàn bộ dữ liệu hay không. `uplift_abs > 0` nghĩa là subspace giúp tìm ra các pattern mạnh hơn.
@@ -637,7 +637,7 @@ Direction Uplift là biểu diễn định tính của `score_uplift_abs` — ch
 Breakdown-Measure Quality / BM Quality
 
 ### Động lực
-Module QuGen của IFQ sinh ra insight cards có cấu trúc `(question, reason, breakdown, measure)` thông qua vòng lặp đào sâu dữ liệu. BM Quality đo liệu các cặp `(B, M)` được chọn có **actionable, đa dạng, và giải thích được data** hay không — không phụ thuộc vào loại pattern hay nội dung câu hỏi.
+Module QUGEN của QUIS sinh ra insight cards có cấu trúc `(question, reason, breakdown, measure)` thông qua vòng lặp đào sâu dữ liệu. BM Quality đo liệu các cặp `(B, M)` được chọn có **actionable, đa dạng, và giải thích được data** hay không — không phụ thuộc vào loại pattern hay nội dung câu hỏi.
 
 Theo Subgroup Discovery literature, một breakdown hợp lệ phải là **descriptor (categorical attribute)**, không phải numeric target. Dùng cột numeric làm B (ví dụ: Operating Profit làm breakdown) cho NMI/Interestingness cao một cách giả tạo vì hai cột numeric tương quan tuyến tính tự nhiên.
 
@@ -652,7 +652,7 @@ thuộc {"Categorical", "Temporal", "ID"}
 ```
 - Đo liệu system có chọn breakdown **có nghĩa kinh doanh** không (Region, Product, Sales Method)
 - Numeric breakdown (Total Sales, Operating Profit) không actionable → penalty
-- **IFQ: 100%, Baseline: 42%** (Adidas dataset)
+- **QUIS: 100%, Baseline: 42%** (Adidas dataset)
 
 #### 8b. BM Diversity
 ```
@@ -660,7 +660,7 @@ BM Diversity = # unique (B, M) pairs / # tổng insights
 ```
 - Đo breadth: system có khai thác nhiều góc nhìn khác nhau không?
 - Giá trị cao → mỗi insight mang thêm chiều phân tích mới
-- **IFQ: 0.454, Baseline: 0.247** (IFQ khám phá gấp đôi combinations)
+- **QUIS: 0.454, Baseline: 0.247** (QUIS khám phá gấp đôi combinations)
 
 #### 8c. NMI — Normalized Mutual Information
 ```

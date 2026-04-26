@@ -1,6 +1,6 @@
-# Báo cáo: Module ISGEN – Insight Generation
+# Báo cáo: Module ISGEN – ISGEN
 
-**Tham chiếu:** IFQ (arXiv:2410.10270), Section 3.2, Figure 1 (ISGen), Appendix A (scoring), Appendix B (plotting).
+**Tham chiếu:** QUIS (arXiv:2410.10270), Section 3.2, Figure 1 (ISGen), Appendix A (scoring), Appendix B (plotting).
 
 ---
 

@@ -1,6 +1,6 @@
 # Evaluation v2 - 4 CORE METRICS + 2 EFFICIENCY METRICS
 
-Comprehensive evaluation comparing IFQ and Baseline EDA systems using **4 CORE METRICS** for defense and **2 EFFICIENCY METRICS** for performance analysis.
+Comprehensive evaluation comparing QUIS and Baseline EDA systems using **4 CORE METRICS** for defense and **2 EFFICIENCY METRICS** for performance analysis.
 
 ## Quick Start
 
@@ -8,10 +8,10 @@ Comprehensive evaluation comparing IFQ and Baseline EDA systems using **4 CORE M
 # Run full evaluation
 python evaluation_v2/run_evaluation.py \
   --data data/Adidas_cleaned.csv \
-  --system_a IFQ \
+  --system_a QUIS \
   --path_a insights_summary_adidas_2.json \
   --system_b Baseline \
-  --path_b baseline/auto_eda_agent/output/ifq_format/insights_summary.json \
+  --path_b baseline/auto_eda_agent/output/quis_format/insights_summary.json \
   --output evaluation_results
 ```
 
@@ -21,7 +21,7 @@ The evaluation generates:
 
 ```
 evaluation_results/
-├── ifq_results.json              # IFQ metrics
+├── quis_results.json              # QUIS metrics
 ├── baseline_results.json          # Baseline metrics
 ├── comparison_table.csv           # Side-by-side comparison
 ├── comparison_report.md           # Full markdown report
@@ -186,20 +186,20 @@ Tokens per Insight = Total Tokens / Number of Insights
 
 ## Results on Adidas Dataset
 
-| Metric                      | IFQ    | Baseline   | Winner   | Category   |
+| Metric                      | QUIS    | Baseline   | Winner   | Category   |
 |:----------------------------|:-------|:-----------|:---------|:----------|
-| 1. Faithfulness             | 100.0% | 51.9%      | IFQ      | Core      |
+| 1. Faithfulness             | 100.0% | 51.9%      | QUIS      | Core      |
 | 2. Statistical Significance | 47.7%  | 98.9%      | Baseline | Core      |
 | 3. Insight Novelty          | 85.4%  | 85.7%      | Baseline | Core      |
-| 4. Insight Diversity        | 0.521  | 0.315      | IFQ      | Core      |
+| 4. Insight Diversity        | 0.521  | 0.315      | QUIS      | Core      |
 | 5. Time to Insight          | 14.35s | 5.23s      | Baseline | Efficiency|
-| 6. Token Usage              | 871    | 886        | IFQ      | Efficiency|
+| 6. Token Usage              | 871    | 886        | QUIS      | Efficiency|
 
-**Overall**: IFQ wins 3/6 metrics, Baseline wins 3/6 metrics (Tie)
+**Overall**: QUIS wins 3/6 metrics, Baseline wins 3/6 metrics (Tie)
 
 ## Key Findings
 
-### IFQ Strengths
+### QUIS Strengths
 - **Faithfulness**: Perfect (100%) - all insights grounded in actual data
 - **Diversity**: Higher (0.521) - more spread out insights
 - **Token Efficiency**: Slightly better (871 vs 886 tokens per insight)
@@ -234,10 +234,10 @@ evaluation_v2/
 ```bash
 python evaluation_v2/run_evaluation.py \
   --data data/Adidas_cleaned.csv \
-  --system_a IFQ \
+  --system_a QUIS \
   --path_a insights_summary_adidas_2.json \
   --system_b Baseline \
-  --path_b baseline/auto_eda_agent/output/ifq_format/insights_summary.json
+  --path_b baseline/auto_eda_agent/output/quis_format/insights_summary.json
 ```
 
 ### 2. Custom Output Directory
@@ -245,10 +245,10 @@ python evaluation_v2/run_evaluation.py \
 ```bash
 python evaluation_v2/run_evaluation.py \
   --data data/Adidas_cleaned.csv \
-  --system_a IFQ \
+  --system_a QUIS \
   --path_a insights_summary_adidas_2.json \
   --system_b Baseline \
-  --path_b baseline/auto_eda_agent/output/ifq_format/insights_summary.json \
+  --path_b baseline/auto_eda_agent/output/quis_format/insights_summary.json \
   --output my_evaluation_results
 ```
 

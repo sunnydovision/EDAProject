@@ -332,7 +332,7 @@ def create_comparison_table(
         cat_pairs_a = f"{bm_a.get('total_categorical', 0)}/{bm_a.get('total_evaluated', 0)}"
         cat_pairs_b = f"{bm_b.get('total_categorical', 0)}/{bm_b.get('total_evaluated', 0)}"
         metrics.append({
-            'Group': 'QuGen Quality (Intent Layer)',
+            'Group': 'Intent Layer Quality',
             'Metric': '10. Total (B,M) pairs evaluated',
             name_a: cat_pairs_a,
             name_b: cat_pairs_b,
@@ -351,7 +351,7 @@ def create_comparison_table(
             winner = (name_a if va > vb else name_b if vb > va else 'Tie') if higher_better \
                      else (name_a if va < vb else name_b if vb < va else 'Tie')
             metrics.append({
-                'Group': 'QuGen Quality (Intent Layer)',
+                'Group': 'Intent Layer Quality',
                 'Metric': label,
                 name_a: format_metric_value(va, 'default'),
                 name_b: format_metric_value(vb, 'default'),
@@ -368,7 +368,7 @@ def create_comparison_table(
         qd_a = (qa.get('question_diversity') or {}).get('question_diversity', 0) or 0
         qd_b = (qb.get('question_diversity') or {}).get('question_diversity', 0) or 0
         metrics.append({
-            'Group': 'QuGen Quality (Intent Layer)',
+            'Group': 'Intent Layer Quality',
             'Metric': '11a. Question Semantic Diversity',
             name_a: format_metric_value(qd_a, 'default'),
             name_b: format_metric_value(qd_b, 'default'),
@@ -384,7 +384,7 @@ def create_comparison_table(
         s_a = sp_a.get('question_specificity_std', 0) or 0
         s_b = sp_b.get('question_specificity_std', 0) or 0
         metrics.append({
-            'Group': 'QuGen Quality (Intent Layer)',
+            'Group': 'Intent Layer Quality',
             'Metric': '11b. Question Specificity',
             name_a: f"{m_a:.2f} ± {s_a:.2f}",
             name_b: f"{m_b:.2f} ± {s_b:.2f}",
@@ -396,7 +396,7 @@ def create_comparison_table(
         al_a = (qa.get('question_insight_alignment') or {}).get('question_insight_alignment', 0) or 0
         al_b = (qb.get('question_insight_alignment') or {}).get('question_insight_alignment', 0) or 0
         metrics.append({
-            'Group': 'QuGen Quality (Intent Layer)',
+            'Group': 'Intent Layer Quality',
             'Metric': '11c. Question–Insight Alignment',
             name_a: format_metric_value(al_a, 'default'),
             name_b: format_metric_value(al_b, 'default'),
@@ -408,7 +408,7 @@ def create_comparison_table(
         qn_a = (qa.get('question_novelty') or {}).get('question_novelty', 0) or 0
         qn_b = (qb.get('question_novelty') or {}).get('question_novelty', 0) or 0
         metrics.append({
-            'Group': 'QuGen Quality (Intent Layer)',
+            'Group': 'Intent Layer Quality',
             'Metric': '11d. Question Novelty (cross-system)',
             name_a: format_metric_value(qn_a, 'percentage'),
             name_b: format_metric_value(qn_b, 'percentage'),
@@ -420,7 +420,7 @@ def create_comparison_table(
         rc_a = (qa.get('reason_insight_coherence') or {}).get('reason_insight_coherence', 0) or 0
         rc_b = (qb.get('reason_insight_coherence') or {}).get('reason_insight_coherence', 0) or 0
         metrics.append({
-            'Group': 'QuGen Quality (Intent Layer)',
+            'Group': 'Intent Layer Quality',
             'Metric': '11e. Reason–Insight Coherence',
             name_a: format_metric_value(rc_a, 'default'),
             name_b: format_metric_value(rc_b, 'default'),
@@ -512,11 +512,11 @@ def generate_report(
 
         f.write("---\n\n")
 
-        # ── GROUP 3: QuGen Quality (Intent Layer) ─────────────────────────
+        # ── GROUP 3: Intent Layer Quality ─────────────────────────
         # Merged group: BM Deep-dive (target structure 10a-e) +
         # Question Generation text/reason (11a-e).  Both measure the same
         # QuGen module — split into two sub-sections for readability.
-        f.write("## Group 3 — QuGen Quality (Intent Layer)\n\n")
+        f.write("## Group 3 — Intent Layer Quality\n\n")
         f.write(
             "> Đánh giá mô-đun *Question Generation (QuGen)* ở hai lớp: "
             "**(3.1) Target structure** — chất lượng cặp `(breakdown, measure)` mà "
@@ -525,7 +525,7 @@ def generate_report(
         )
 
         g3_df = comparison_df[
-            comparison_df['Group'] == 'QuGen Quality (Intent Layer)'
+            comparison_df['Group'] == 'Intent Layer Quality'
         ].drop(columns=['Group'])
 
         # Split by metric prefix: "10*" => target structure, "11*" => text/reason.

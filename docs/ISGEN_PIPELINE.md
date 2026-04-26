@@ -1,6 +1,6 @@
-# ISGEN Pipeline – Theo bài báo IFQ (Section 3.2, Figure 1)
+# ISGEN Pipeline – Theo bài báo QUIS (Section 3.2, Figure 1)
 
-Tài liệu mô tả **Insight Generation (ISGEN)** trong project: từ Insight Cards + CSV → Basic insight + Subspace search → Deduplicate → NL explanation + Plotting → Insight Summary.
+Tài liệu mô tả **ISGEN (ISGEN)** trong project: từ Insight Cards + CSV → Basic insight + Subspace search → Deduplicate → NL explanation + Plotting → Insight Summary.
 
 ---
 

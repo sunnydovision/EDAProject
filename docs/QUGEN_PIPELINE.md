@@ -1,6 +1,6 @@
 # QUGEN Pipeline – Theo code thực thi trong project
 
-Tài liệu này mô tả **đúng luồng và chi tiết** của QUGEN theo code trong `ifq/qugen/` (tham chiếu bài báo IFQ, Figure 1 & Section 3.1).
+Tài liệu này mô tả **đúng luồng và chi tiết** của QUGEN theo code trong `ifq/qugen/` (tham chiếu bài báo QUIS, Figure 1 & Section 3.1).
 
 ---
 
