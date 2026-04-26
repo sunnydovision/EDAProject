@@ -6,8 +6,6 @@ Core & Efficiency,2a. Significance — TREND,50.0% (2),93.3% (15),Baseline,Valid
 Core & Efficiency,2a. Significance — OUTSTANDING_VALUE,53.0% (66),81.2% (16),Baseline,Validity - OUTSTANDING_VALUE pattern
 Core & Efficiency,2a. Significance — ATTRIBUTION,95.8% (24),N/A,QUIS,Validity - ATTRIBUTION pattern
 Core & Efficiency,2a. Significance — DISTRIBUTION_DIFFERENCE,100.0% (4),66.7% (9),QUIS,Validity - DISTRIBUTION_DIFFERENCE pattern
-Core & Efficiency,2b. Pattern Coverage,4/4 (100%),3/4 (75%),QUIS,Patterns with ≥1 structurally valid insight / 4 total patterns
-Core & Efficiency,2b1. Uncovered Patterns,—,ATTRIBUTION,N/A,Patterns with 0 valid insights (breakdown type mismatch)
 Core & Efficiency,3. Insight Novelty,83.5%,84.9%,Baseline,Usefulness - khác baseline
 Core & Efficiency,4a. Diversity — Semantic,0.468,0.451,QUIS,Semantic diversity (breakdown|measure|pattern|subspace)
 Core & Efficiency,4b. Diversity — Subspace Entropy,1.354,1.516,Baseline,Entropy of subspace filter columns used
@@ -30,11 +28,6 @@ Intent Layer Quality,10c. BM — Actionability,1.000,0.677,QUIS,% pairs with cat
 Intent Layer Quality,10d. BM — Diversity,0.454,0.360,QUIS,"Unique (B,M) pairs / total insights"
 Intent Layer Quality,11a. Question Semantic Diversity,0.521,0.596,Baseline,1 - mean cosine sim of question embeddings (within-system)
 Intent Layer Quality,11b. Question Specificity,9.53 ± 1.76,12.78 ± 5.24,Baseline,Avg word count per question (mean ± std) — higher = more specific
-Intent Layer Quality,11c. Question–Insight Alignment,0.563,0.576,Baseline,"Mean cosine(Embed(question), Embed(insight)) — control metric (Tie = both execute faithfully)"
+Intent Layer Quality,11c. Question–Insight Alignment,0.563,0.576,Baseline,"Mean cosine(Embed(question), Embed(insight)) — semantic faithfulness"
 Intent Layer Quality,11d. Question Novelty (cross-system),97.9%,95.3%,QUIS,% of questions with cross-system max cosine sim < 0.85
 Intent Layer Quality,11e. Reason–Insight Coherence,0.571,0.510,QUIS,"Mean cosine(Embed(reason), Embed(insight)) — reason grounding"
-Intent Layer Quality,12. Structural Validity Rate,100.0% (97/97),43.0% (37/86),QUIS,% insights with breakdown type valid for their pattern — measures QUGEN structural understanding
-Intent Layer Quality,12a. SVR — OUTSTANDING_VALUE,100% (66/66),100% (16/16),Tie,Structural validity for OUTSTANDING_VALUE pattern
-Intent Layer Quality,12a. SVR — TREND,100% (3/3),38% (15/39),QUIS,Structural validity for TREND pattern
-Intent Layer Quality,12a. SVR — ATTRIBUTION,100% (24/24),0% (0/11),QUIS,Structural validity for ATTRIBUTION pattern
-Intent Layer Quality,12a. SVR — DISTRIBUTION_DIFFERENCE,100% (4/4),30% (6/20),QUIS,Structural validity for DISTRIBUTION_DIFFERENCE pattern
