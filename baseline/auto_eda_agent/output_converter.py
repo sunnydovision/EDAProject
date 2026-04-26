@@ -233,8 +233,8 @@ class OutputConverter:
         # Generate question based on pattern type
         question = self._generate_question(insight_type, breakdown, measure, title)
         
-        # Use description as reason (truncate if too long)
-        reason = description[:200] + "..." if len(description) > 200 else description
+        # Use description as reason (preserve full content)
+        reason = description
         
         return {
             'question': question,

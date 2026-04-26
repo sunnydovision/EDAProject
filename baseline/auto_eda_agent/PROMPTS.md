@@ -52,7 +52,7 @@ Return a JSON object where each key is a column name:
 ### System Prompt
 
 ```
-You are a data quality expert. Your job is to assess data quality issues and prioritize them based on their business impact.
+You are a data quality expert providing professional assessment.
 ```
 
 ### User Prompt
@@ -96,7 +96,7 @@ Return JSON:
 }
 ```
 
-**API params:** `temperature=0.3`, `max_completion_tokens=8000`, `response_format=json_object`
+**API params:** `temperature=0.3`, `max_completion_tokens=4000`, `response_format=json_object`
 
 ---
 
@@ -105,7 +105,7 @@ Return JSON:
 ### System Prompt
 
 ```
-You are an expert statistician. Your job is to interpret statistical findings in the context of the dataset's business meaning and known data quality issues.
+You are an expert statistician interpreting data.
 ```
 
 ### User Prompt
@@ -149,7 +149,7 @@ Return JSON:
 }
 ```
 
-**API params:** `temperature=0.3`, `max_completion_tokens=8000`, `response_format=json_object`
+**API params:** `temperature=0.3`, `max_completion_tokens=4000`, `response_format=json_object`
 
 ---
 
@@ -307,7 +307,7 @@ Return JSON:
 }
 ```
 
-**API params (all 4 categories):** `temperature=0.3`, `max_completion_tokens=8000`, `response_format=json_object`
+**API params (all 4 categories):** `temperature=0.5`, `max_completion_tokens=8000`, `response_format=json_object`
 
 ---
 
@@ -329,9 +329,6 @@ Five batches, one prompt per batch. The same system prompt applies to all five.
 
 ```
 You are an expert data analyst extracting insights for a business audience.
-Each insight must be specific, supported by evidence from the prior analysis, and expressed with concrete numbers.
-Do not generate generic observations.
-Use only the column names provided in the "Available columns" section — do not invent or derive new column names.
 ```
 
 ### User Prompt Template (used for all 5 batches)
@@ -351,6 +348,13 @@ VALID SUBSPACE VALUES — when using subspace, the value MUST be taken from this
 {categorical_values_json}
 
 Do NOT invent subspace values. Only use values that appear in the list above.
+
+BREAKDOWN SELECTION RULES — for TREND, ATTRIBUTION, DISTRIBUTION_DIFFERENCE:
+- The FIRST variable in "variables" is the breakdown column (grouping dimension)
+- Breakdown MUST be a CATEGORICAL or TEMPORAL or ID column (from the categorical columns list above)
+- DO NOT use numerical columns as breakdown for these patterns
+- Example: Use "Retailer" or "Invoice Date" as breakdown, NOT "Total Sales" or "Units Sold"
+- OUTSTANDING_VALUE can use any column as breakdown (it groups by breakdown to find outliers)
 
 Context from prior analysis steps:
 

@@ -10917,13 +10917,13 @@
   },
   {
     "question": "What insights can we find about mã màu thiếu dữ liệu ở mức bất thường, ảnh hưởng tới gần 1/3 giao dịch?",
-    "explanation": "TREND: COUNT(*) shows a monotonic trend across Mã màu.",
+    "explanation": "OUTSTANDING_VALUE: one category in Mã màu has a value much larger (or smaller) than the others when measuring COUNT(*).",
     "plot_path": "output_transactions/step5_insights/insight_012.png",
     "insight": {
       "breakdown": "Mã màu",
       "measure": "COUNT(*)",
       "subspace": [],
-      "pattern": "TREND",
+      "pattern": "OUTSTANDING_VALUE",
       "score": 0.0,
       "question": "What insights can we find about mã màu thiếu dữ liệu ở mức bất thường, ảnh hưởng tới gần 1/3 giao dịch?",
       "reason": "Trường 'Mã màu' bị thiếu 32.05% bản ghi, đây là một mức thiếu dữ liệu rất cao đối với thuộc tính sản phẩm cốt lõi. Đây là một anomaly rõ rệt vì gần 1 trên 3 giao dịch không thể gắn chính xác theo mã màu, làm méo phân tích theo SKU, màu sắc và định giá theo màu.",
@@ -10977,13 +10977,13 @@
   },
   {
     "question": "What insights can we find about tên màu cũng thiếu 32.05%, cho thấy lỗi đồng thời ở cả cặp thuộc tính màu?",
-    "explanation": "TREND: COUNT(*) shows a monotonic trend across Tên màu.",
+    "explanation": "OUTSTANDING_VALUE: one category in Tên màu has a value much larger (or smaller) than the others when measuring COUNT(*).",
     "plot_path": "output_transactions/step5_insights/insight_013.png",
     "insight": {
       "breakdown": "Tên màu",
       "measure": "COUNT(*)",
       "subspace": [],
-      "pattern": "TREND",
+      "pattern": "OUTSTANDING_VALUE",
       "score": 0.0,
       "question": "What insights can we find about tên màu cũng thiếu 32.05%, cho thấy lỗi đồng thời ở cả cặp thuộc tính màu?",
       "reason": "Trường 'Tên màu' thiếu đúng 32.05% bản ghi, trùng với tỷ lệ thiếu của 'Mã màu'. Việc hai trường mô tả cùng một thuộc tính sản phẩm cùng thiếu ở mức rất cao là một anomaly dữ liệu đáng chú ý, cho thấy khả năng lỗi đồng bộ từ nguồn nhập liệu hoặc mapping master data.",
@@ -11037,13 +11037,13 @@
   },
   {
     "question": "What insights can we find about tháng 11 là điểm trũng bất thường của khối lượng bán ra toàn hệ thống?",
-    "explanation": "TREND: COUNT(*) shows a monotonic trend across Khối lượng.",
+    "explanation": "OUTSTANDING_VALUE: one category in Khối lượng has a value much larger (or smaller) than the others when measuring COUNT(*).",
     "plot_path": "output_transactions/step5_insights/insight_014.png",
     "insight": {
       "breakdown": "Khối lượng",
       "measure": "COUNT(*)",
       "subspace": [],
-      "pattern": "TREND",
+      "pattern": "OUTSTANDING_VALUE",
       "score": 0.0,
       "question": "What insights can we find about tháng 11 là điểm trũng bất thường của khối lượng bán ra toàn hệ thống?",
       "reason": "Theo phân tích chuỗi thời gian, tổng 'Khối lượng' tăng dần từ tháng 8 đến tháng 1 nhưng xuất hiện một cú rơi mạnh riêng trong tháng 11 trước khi phục hồi ở tháng 12 và tháng 1. Đây là một anomaly theo thời gian vì xu hướng tăng trưởng bị gián đoạn đột ngột chỉ trong một tháng.",
@@ -11723,13 +11723,13 @@
   },
   {
     "question": "What insights can we find about số lượng giao dịch rơi xuống mức thấp nhất trong tháng 11 sau khi đạt đỉnh tháng 10?",
-    "explanation": "TREND: COUNT(*) shows a monotonic trend across STT.",
+    "explanation": "OUTSTANDING_VALUE: one category in STT has a value much larger (or smaller) than the others when measuring COUNT(*).",
     "plot_path": "output_transactions/step5_insights/insight_015.png",
     "insight": {
       "breakdown": "STT",
       "measure": "COUNT(*)",
       "subspace": [],
-      "pattern": "TREND",
+      "pattern": "OUTSTANDING_VALUE",
       "score": 0.0,
       "question": "What insights can we find about số lượng giao dịch rơi xuống mức thấp nhất trong tháng 11 sau khi đạt đỉnh tháng 10?",
       "reason": "Số bản ghi giao dịch tăng mạnh đến tháng 10, sau đó giảm xuống mức thấp nhất ở tháng 11 rồi bật lại trong tháng 12 và tháng 1. Sự đảo chiều đột ngột từ đỉnh sang đáy chỉ trong một tháng là một anomaly vận hành hoặc nhu cầu cần được kiểm tra thêm.",
@@ -13813,13 +13813,13 @@
   },
   {
     "question": "What insights can we find about met b có các đỉnh nhọn bất thường, đặc biệt ở tháng 12?",
-    "explanation": "TREND: COUNT(*) shows a monotonic trend across Met B.",
+    "explanation": "OUTSTANDING_VALUE: one category in Met B has a value much larger (or smaller) than the others when measuring COUNT(*).",
     "plot_path": "output_transactions/step5_insights/insight_016.png",
     "insight": {
       "breakdown": "Met B",
       "measure": "COUNT(*)",
       "subspace": [],
-      "pattern": "TREND",
+      "pattern": "OUTSTANDING_VALUE",
       "score": 0.0,
       "question": "What insights can we find about met b có các đỉnh nhọn bất thường, đặc biệt ở tháng 12?",
       "reason": "'Met B' không đi theo xu hướng tăng/giảm đều mà xuất hiện các spike rời rạc, nổi bật ở tháng 9 và đặc biệt là tháng 12, trong khi tháng 8 và tháng 11 ở mức rất thấp. Mẫu hình này cho thấy anomaly theo thời gian, có thể phản ánh đơn hàng đặc thù hoặc sai lệch nhập liệu ở một số kỳ.",
@@ -13885,7 +13885,7 @@
   },
   {
     "question": "What insights can we find about trong nhóm loại hàng = ppgl, rủi ro phân tích theo màu đặc biệt cao do thiếu mã màu quy mô lớn?",
-    "explanation": "TREND: for Loại Hàng=PPGL, COUNT(*) shows a monotonic trend across Loại Hàng.",
+    "explanation": "OUTSTANDING_VALUE: for Loại Hàng=PPGL, one category in Loại Hàng has a value much larger (or smaller) than the others when measuring COUNT(*).",
     "plot_path": "output_transactions/step5_insights/insight_017.png",
     "insight": {
       "breakdown": "Loại Hàng",
@@ -13896,7 +13896,7 @@
           "PPGL"
         ]
       ],
-      "pattern": "TREND",
+      "pattern": "OUTSTANDING_VALUE",
       "score": 0.0,
       "question": "What insights can we find about trong nhóm loại hàng = ppgl, rủi ro phân tích theo màu đặc biệt cao do thiếu mã màu quy mô lớn?",
       "reason": "Với 'Loại Hàng' = 'PPGL' là nhóm hàng màu/giá trị gia tăng cao, việc 'Mã màu' toàn bộ dataset bị thiếu 32.05% là một anomaly đặc biệt nghiêm trọng cho phân tích của phân khúc này. Điều này có thể làm sai lệch đánh giá cơ cấu bán theo màu, SKU và hiệu quả giá bán trong nhóm PPGL.",
@@ -13910,7 +13910,7 @@
   },
   {
     "question": "What insights can we find about trong nhóm sku_dòng = tôn màu, thiếu đồng thời mã màu và tên màu là bất thường nghiêm trọng?",
-    "explanation": "TREND: for SKU_Dòng=Tôn Màu, COUNT(*) shows a monotonic trend across SKU_Dòng.",
+    "explanation": "OUTSTANDING_VALUE: for SKU_Dòng=Tôn Màu, one category in SKU_Dòng has a value much larger (or smaller) than the others when measuring COUNT(*).",
     "plot_path": "output_transactions/step5_insights/insight_018.png",
     "insight": {
       "breakdown": "SKU_Dòng",
@@ -13921,7 +13921,7 @@
           "Tôn Màu"
         ]
       ],
-      "pattern": "TREND",
+      "pattern": "OUTSTANDING_VALUE",
       "score": 0.0,
       "question": "What insights can we find about trong nhóm sku_dòng = tôn màu, thiếu đồng thời mã màu và tên màu là bất thường nghiêm trọng?",
       "reason": "Đối với 'SKU_Dòng' = 'Tôn Màu', hai trường nhận diện màu là 'Mã màu' và 'Tên màu' cùng thiếu 32.05% trên toàn bộ dữ liệu. Đây là một anomaly rất đáng lo vì màu sắc là thuộc tính cốt lõi để phân biệt SKU trong dòng tôn màu; mức thiếu này có thể làm sai lệch cả phân tích doanh thu lẫn cơ cấu sản phẩm.",
@@ -13935,13 +13935,13 @@
   },
   {
     "question": "What insights can we find about khu vực (quận/huyện) có tỷ lệ thiếu gần 5%, là điểm bất thường cho dữ liệu địa lý chi tiết?",
-    "explanation": "TREND: COUNT(*) shows a monotonic trend across Khu Vực (Quận/Huyện).",
+    "explanation": "OUTSTANDING_VALUE: one category in Khu Vực (Quận/Huyện) has a value much larger (or smaller) than the others when measuring COUNT(*).",
     "plot_path": "output_transactions/step5_insights/insight_019.png",
     "insight": {
       "breakdown": "Khu Vực (Quận/Huyện)",
       "measure": "COUNT(*)",
       "subspace": [],
-      "pattern": "TREND",
+      "pattern": "OUTSTANDING_VALUE",
       "score": 0.0,
       "question": "What insights can we find about khu vực (quận/huyện) có tỷ lệ thiếu gần 5%, là điểm bất thường cho dữ liệu địa lý chi tiết?",
       "reason": "Trường 'Khu Vực (Quận/Huyện)' thiếu 4.73% bản ghi. Dù thấp hơn lỗi màu sắc, đây vẫn là một anomaly đáng chú ý vì cấp quận/huyện là trường quan trọng cho phân tích nhu cầu địa phương, tối ưu giao vận và đánh giá độ phủ khách hàng.",
@@ -13997,13 +13997,13 @@
   },
   {
     "question": "What insights can we find about khoảng_cách_đơn_trước bị thiếu 4.05%, tạo anomaly trong phân tích hành vi mua lặp lại?",
-    "explanation": "TREND: COUNT(*) shows a monotonic trend across Khoảng_cách_đơn_trước.",
+    "explanation": "OUTSTANDING_VALUE: one category in Khoảng_cách_đơn_trước has a value much larger (or smaller) than the others when measuring COUNT(*).",
     "plot_path": "output_transactions/step5_insights/insight_020.png",
     "insight": {
       "breakdown": "Khoảng_cách_đơn_trước",
       "measure": "COUNT(*)",
       "subspace": [],
-      "pattern": "TREND",
+      "pattern": "OUTSTANDING_VALUE",
       "score": 0.0,
       "question": "What insights can we find about khoảng_cách_đơn_trước bị thiếu 4.05%, tạo anomaly trong phân tích hành vi mua lặp lại?",
       "reason": "Biến 'Khoảng_cách_đơn_trước' bị thiếu 4.05% bản ghi. Đây là một anomaly ở lớp dữ liệu hành vi vì chỉ số này thường được dùng để đo nhịp mua hàng; dữ liệu thiếu có thể làm sai lệch nhận diện khách hàng mua lại bất thường hoặc có dấu hiệu rời bỏ.",
