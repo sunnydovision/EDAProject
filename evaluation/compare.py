@@ -332,7 +332,7 @@ def create_comparison_table(
         cat_pairs_a = f"{bm_a.get('total_categorical', 0)}/{bm_a.get('total_evaluated', 0)}"
         cat_pairs_b = f"{bm_b.get('total_categorical', 0)}/{bm_b.get('total_evaluated', 0)}"
         metrics.append({
-            'Group': 'Breakdown|Measure Deep-dive',
+            'Group': 'QuGen Quality (Intent Layer)',
             'Metric': '10. Total (B,M) pairs evaluated',
             name_a: cat_pairs_a,
             name_b: cat_pairs_b,
@@ -351,13 +351,82 @@ def create_comparison_table(
             winner = (name_a if va > vb else name_b if vb > va else 'Tie') if higher_better \
                      else (name_a if va < vb else name_b if vb < va else 'Tie')
             metrics.append({
-                'Group': 'Breakdown|Measure Deep-dive',
+                'Group': 'QuGen Quality (Intent Layer)',
                 'Metric': label,
                 name_a: format_metric_value(va, 'default'),
                 name_b: format_metric_value(vb, 'default'),
                 'Winner': winner,
                 'Description': desc,
             })
+
+    # ── 11. Question Generation (QuGen) Quality ───────────────────────────
+    qa = results_a.get('question_quality') or {}
+    qb = results_b.get('question_quality') or {}
+
+    if qa or qb:
+        # 11a. Question Semantic Diversity (within-system)
+        qd_a = (qa.get('question_diversity') or {}).get('question_diversity', 0) or 0
+        qd_b = (qb.get('question_diversity') or {}).get('question_diversity', 0) or 0
+        metrics.append({
+            'Group': 'QuGen Quality (Intent Layer)',
+            'Metric': '11a. Question Semantic Diversity',
+            name_a: format_metric_value(qd_a, 'default'),
+            name_b: format_metric_value(qd_b, 'default'),
+            'Winner': name_a if qd_a > qd_b else name_b if qd_b > qd_a else 'Tie',
+            'Description': '1 - mean cosine sim of question embeddings (within-system)'
+        })
+
+        # 11b. Question Specificity (avg word count) — std reported alongside
+        sp_a = qa.get('question_specificity') or {}
+        sp_b = qb.get('question_specificity') or {}
+        m_a = sp_a.get('question_specificity_mean', 0) or 0
+        m_b = sp_b.get('question_specificity_mean', 0) or 0
+        s_a = sp_a.get('question_specificity_std', 0) or 0
+        s_b = sp_b.get('question_specificity_std', 0) or 0
+        metrics.append({
+            'Group': 'QuGen Quality (Intent Layer)',
+            'Metric': '11b. Question Specificity',
+            name_a: f"{m_a:.2f} ± {s_a:.2f}",
+            name_b: f"{m_b:.2f} ± {s_b:.2f}",
+            'Winner': name_a if m_a > m_b else name_b if m_b > m_a else 'Tie',
+            'Description': 'Avg word count per question (mean ± std) — higher = more specific'
+        })
+
+        # 11c. Question–Insight Alignment
+        al_a = (qa.get('question_insight_alignment') or {}).get('question_insight_alignment', 0) or 0
+        al_b = (qb.get('question_insight_alignment') or {}).get('question_insight_alignment', 0) or 0
+        metrics.append({
+            'Group': 'QuGen Quality (Intent Layer)',
+            'Metric': '11c. Question–Insight Alignment',
+            name_a: format_metric_value(al_a, 'default'),
+            name_b: format_metric_value(al_b, 'default'),
+            'Winner': name_a if al_a > al_b else name_b if al_b > al_a else 'Tie',
+            'Description': 'Mean cosine(Embed(question), Embed(insight)) — semantic faithfulness'
+        })
+
+        # 11d. Question Novelty (cross-system)
+        qn_a = (qa.get('question_novelty') or {}).get('question_novelty', 0) or 0
+        qn_b = (qb.get('question_novelty') or {}).get('question_novelty', 0) or 0
+        metrics.append({
+            'Group': 'QuGen Quality (Intent Layer)',
+            'Metric': '11d. Question Novelty (cross-system)',
+            name_a: format_metric_value(qn_a, 'percentage'),
+            name_b: format_metric_value(qn_b, 'percentage'),
+            'Winner': name_a if qn_a > qn_b else name_b if qn_b > qn_a else 'Tie',
+            'Description': '% of questions with cross-system max cosine sim < 0.85'
+        })
+
+        # 11e. Reason–Insight Coherence
+        rc_a = (qa.get('reason_insight_coherence') or {}).get('reason_insight_coherence', 0) or 0
+        rc_b = (qb.get('reason_insight_coherence') or {}).get('reason_insight_coherence', 0) or 0
+        metrics.append({
+            'Group': 'QuGen Quality (Intent Layer)',
+            'Metric': '11e. Reason–Insight Coherence',
+            name_a: format_metric_value(rc_a, 'default'),
+            name_b: format_metric_value(rc_b, 'default'),
+            'Winner': name_a if rc_a > rc_b else name_b if rc_b > rc_a else 'Tie',
+            'Description': 'Mean cosine(Embed(reason), Embed(insight)) — reason grounding'
+        })
 
     df = pd.DataFrame(metrics)
     return df
@@ -443,15 +512,41 @@ def generate_report(
 
         f.write("---\n\n")
 
-        # ── GROUP 3: Breakdown|Measure Deep-dive ─────────────────────────
-        f.write("## Group 3 — Breakdown|Measure Deep-dive\n\n")
+        # ── GROUP 3: QuGen Quality (Intent Layer) ─────────────────────────
+        # Merged group: BM Deep-dive (target structure 10a-e) +
+        # Question Generation text/reason (11a-e).  Both measure the same
+        # QuGen module — split into two sub-sections for readability.
+        f.write("## Group 3 — QuGen Quality (Intent Layer)\n\n")
+        f.write(
+            "> Đánh giá mô-đun *Question Generation (QuGen)* ở hai lớp: "
+            "**(3.1) Target structure** — chất lượng cặp `(breakdown, measure)` mà "
+            "QuGen chọn; **(3.2) Question text & reason** — chất lượng câu hỏi và "
+            "lý do ở dạng ngôn ngữ tự nhiên.\n\n"
+        )
 
-        g3_df = comparison_df[comparison_df['Group'] == 'Breakdown|Measure Deep-dive'].drop(columns=['Group'])
-        if not g3_df.empty:
-            f.write(g3_df.to_markdown(index=False))
+        g3_df = comparison_df[
+            comparison_df['Group'] == 'QuGen Quality (Intent Layer)'
+        ].drop(columns=['Group'])
+
+        # Split by metric prefix: "10*" => target structure, "11*" => text/reason.
+        bm_mask = g3_df['Metric'].str.startswith(('10.', '10a', '10b', '10c', '10d', '10e'))
+        qg_mask = g3_df['Metric'].str.startswith(('11a', '11b', '11c', '11d', '11e'))
+
+        f.write("### 3.1 Target structure — `(breakdown, measure)`\n\n")
+        bm_df = g3_df[bm_mask]
+        if not bm_df.empty:
+            f.write(bm_df.to_markdown(index=False))
             f.write("\n\n")
         else:
             f.write("_BM Quality not available (run with --profile to enable)._\n\n")
+
+        f.write("### 3.2 Question text & reason\n\n")
+        qg_df = g3_df[qg_mask]
+        if not qg_df.empty:
+            f.write(qg_df.to_markdown(index=False))
+            f.write("\n\n")
+        else:
+            f.write("_QuGen text metrics not available._\n\n")
 
         f.write("---\n\n")
 

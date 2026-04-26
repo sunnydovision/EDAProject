@@ -26,6 +26,10 @@ from metrics.token_usage import compute_token_usage
 from metrics.subspace import compute_subspace_metrics, filter_insights_with_subspace
 from metrics.score_uplift import compute_score_uplift_from_subspace
 from metrics.breakdown_measure import compute_bm_quality
+from metrics.question_quality import (
+    compute_question_quality,
+    compute_question_novelty,
+)
 from compare import create_comparison_table, generate_report
 from plot_evaluation import plot_evaluation_results
 
@@ -115,7 +119,12 @@ def evaluate_system(
         'insight_significance': compute_significance(insights_data, df_cleaned, csv_path, profile_path),
         'question_diversity': compute_diversity(insights_data),
         'bm_quality': compute_bm_quality(insights_data, df_cleaned, profile_path) if profile_path else None,
-        
+
+        # GROUP 3 (sub-section 3.2) — QuGen text / reason metrics.
+        # Stored under the same key for backward compatibility with downstream
+        # consumers that parse `results['question_quality']`.
+        'question_quality': compute_question_quality(insights_data),
+
         # EFFICIENCY METRICS
         'time_to_insight': timing_data,
         'token_usage': token_data,
@@ -156,7 +165,16 @@ def evaluate_comparison(
     print(f" Computing {results_b['system']} novelty vs {results_a['system']}...")
     novelty_b = compute_novelty(insights_b, insights_a)
     results_b['insight_novelty'] = novelty_b
-    
+
+    # Cross-system Question Novelty (Group 3 / 3.2 — QuGen text & reason)
+    print(f" Computing {results_a['system']} question novelty vs {results_b['system']}...")
+    q_novelty_a = compute_question_novelty(insights_a, insights_b)
+    results_a.setdefault('question_quality', {})['question_novelty'] = q_novelty_a
+
+    print(f" Computing {results_b['system']} question novelty vs {results_a['system']}...")
+    q_novelty_b = compute_question_novelty(insights_b, insights_a)
+    results_b.setdefault('question_quality', {})['question_novelty'] = q_novelty_b
+
     return {
         'system_a': results_a,
         'system_b': results_b
@@ -391,11 +409,14 @@ def main():
     print(f"  • {args.system_a}: direction={up_a.get('score_uplift_direction')}")
     print(f"  • {args.system_b}: direction={up_b.get('score_uplift_direction')}")
 
-    # ── GROUP 3: Breakdown|Measure Deep-dive ──────────────────────────────
+    # ── GROUP 3: QuGen Quality (Intent Layer) ─────────────────────────────
+    # Merged group: BM target structure (10a-e) + Question text/reason (11a-e).
+    # Both probe the same QuGen module, separated only for readability.
     print(f"\n{'─'*70}")
-    print(f"GROUP 3 — Breakdown|Measure Deep-dive")
+    print(f"GROUP 3 — QuGen Quality (Intent Layer)")
     print(f"{'─'*70}")
 
+    print(f"\n[3.1] Target structure — (breakdown, measure)")
     print(f"\n10. BM Quality (Breakdown-Measure Quality):")
     bm_a = results_a.get('bm_quality')
     bm_b = results_b.get('bm_quality')
@@ -407,7 +428,42 @@ def main():
         print(f"  10e. Cat pairs:         {args.system_a}={bm_a.get('total_categorical', 0)}/{bm_a.get('total_evaluated', 0)}  {args.system_b}={bm_b.get('total_categorical', 0)}/{bm_b.get('total_evaluated', 0)}")
     else:
         print(f"  BM Quality not available (--profile not provided)")
-    
+
+    print(f"\n[3.2] Question text & reason")
+
+    qa = results_a.get('question_quality') or {}
+    qb = results_b.get('question_quality') or {}
+
+    qd_a = (qa.get('question_diversity') or {}).get('question_diversity', 0) or 0
+    qd_b = (qb.get('question_diversity') or {}).get('question_diversity', 0) or 0
+    print(f"\n11a. Question Semantic Diversity (within-system):")
+    print(f"  • {args.system_a}: {qd_a:.4f}")
+    print(f"  • {args.system_b}: {qd_b:.4f}")
+
+    sp_a = qa.get('question_specificity') or {}
+    sp_b = qb.get('question_specificity') or {}
+    print(f"\n11b. Question Specificity (avg ± std word count):")
+    print(f"  • {args.system_a}: {sp_a.get('question_specificity_mean', 0):.2f} ± {sp_a.get('question_specificity_std', 0):.2f}")
+    print(f"  • {args.system_b}: {sp_b.get('question_specificity_mean', 0):.2f} ± {sp_b.get('question_specificity_std', 0):.2f}")
+
+    al_a = (qa.get('question_insight_alignment') or {}).get('question_insight_alignment', 0) or 0
+    al_b = (qb.get('question_insight_alignment') or {}).get('question_insight_alignment', 0) or 0
+    print(f"\n11c. Question–Insight Alignment (cosine sim):")
+    print(f"  • {args.system_a}: {al_a:.4f}")
+    print(f"  • {args.system_b}: {al_b:.4f}")
+
+    qn_a = (qa.get('question_novelty') or {}).get('question_novelty', 0) or 0
+    qn_b = (qb.get('question_novelty') or {}).get('question_novelty', 0) or 0
+    print(f"\n11d. Question Novelty (cross-system, tau=0.85):")
+    print(f"  • {args.system_a}: {qn_a*100:.1f}%")
+    print(f"  • {args.system_b}: {qn_b*100:.1f}%")
+
+    rc_a = (qa.get('reason_insight_coherence') or {}).get('reason_insight_coherence', 0) or 0
+    rc_b = (qb.get('reason_insight_coherence') or {}).get('reason_insight_coherence', 0) or 0
+    print(f"\n11e. Reason–Insight Coherence (cosine sim):")
+    print(f"  • {args.system_a}: {rc_a:.4f}")
+    print(f"  • {args.system_b}: {rc_b:.4f}")
+
     print(f"\nEvaluation complete! Results saved to: {args.output}/")
 
 

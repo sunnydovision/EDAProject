@@ -1,0 +1,60 @@
+{
+  "IFQ": {
+    "question_diversity": {
+      "question_diversity": 0.5213310420513153,
+      "avg_similarity": 0.4786689579486847,
+      "num_questions": 97
+    },
+    "question_specificity": {
+      "question_specificity_mean": 9.525773195876289,
+      "question_specificity_std": 1.7591749677381696,
+      "num_questions": 97
+    },
+    "question_insight_alignment": {
+      "question_insight_alignment": 0.5629646182060242,
+      "question_insight_alignment_std": 0.09591254591941833,
+      "num_pairs": 97
+    },
+    "reason_insight_coherence": {
+      "reason_insight_coherence": 0.5712996125221252,
+      "reason_insight_coherence_std": 0.0959041565656662,
+      "num_pairs": 97
+    },
+    "question_novelty": {
+      "question_novelty": 0.6185567010309279,
+      "novel_count": 60,
+      "total_count": 97,
+      "avg_max_similarity": 0.8259336352348328,
+      "tau": 0.85
+    }
+  },
+  "Baseline": {
+    "question_diversity": {
+      "question_diversity": 0.5360822379589081,
+      "avg_similarity": 0.4639177620410919,
+      "num_questions": 80
+    },
+    "question_specificity": {
+      "question_specificity_mean": 9.1375,
+      "question_specificity_std": 1.4641016870422627,
+      "num_questions": 80
+    },
+    "question_insight_alignment": {
+      "question_insight_alignment": 0.5628906488418579,
+      "question_insight_alignment_std": 0.09065325558185577,
+      "num_pairs": 80
+    },
+    "reason_insight_coherence": {
+      "reason_insight_coherence": 0.5672727823257446,
+      "reason_insight_coherence_std": 0.0821884348988533,
+      "num_pairs": 80
+    },
+    "question_novelty": {
+      "question_novelty": 0.575,
+      "novel_count": 46,
+      "total_count": 80,
+      "avg_max_similarity": 0.8290393948554993,
+      "tau": 0.85
+    }
+  }
+}

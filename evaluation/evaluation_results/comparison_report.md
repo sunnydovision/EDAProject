@@ -8,7 +8,7 @@
 
 | | IFQ | Baseline |
 |---|---|---|
-| **Metrics Won** | 11 | 10 |
+| **Metrics Won** | 15 | 11 |
 | **Overall Winner** | ✓ |  |
 
 ---
@@ -49,7 +49,16 @@
 
 ---
 
-## Group 3 — Breakdown|Measure Deep-dive
+## Group 3 — QuGen Quality (Intent Layer)
+
+> **Định nghĩa nhóm**: gom toàn bộ chỉ số đánh giá *Intent Layer* — tầng QuGen quyết định *phân tích cái gì* (target structure) và *đặt câu hỏi như thế nào* (text). Bao gồm hai lớp con:
+>
+> 1. **Target structure (10a–e)** — chất lượng cặp `(breakdown, measure)` mà QuGen chọn (NMI, Interestingness, Actionability, Diversity).
+> 2. **Question text & reason (11a–e)** — chất lượng `question` và `reason` ở dạng ngôn ngữ tự nhiên (Diversity, Specificity, Q-I Alignment, Cross-system Novelty, Reason-I Coherence).
+>
+> Hai lớp này cùng đo *cùng một mô-đun QuGen* — tách ra chỉ để diễn giải, không tách thành hai group riêng nữa.
+
+### 3.1 Target structure — `(breakdown, measure)`
 
 | Metric                          | IFQ   | Baseline   | Winner   | Description                                                                                |
 |:--------------------------------|:------|:-----------|:---------|:-------------------------------------------------------------------------------------------|
@@ -59,9 +68,28 @@
 | 10c. BM — Actionability         | 1.000 | 0.677      | IFQ      | % pairs with categorical breakdown                                                         |
 | 10d. BM — Diversity             | 0.454 | 0.360      | IFQ      | Unique (B,M) pairs / total insights                                                        |
 
+### 3.2 Question text & reason
+
+| Metric                                   | IFQ           | Baseline      | Winner   | Description                                                                |
+|:-----------------------------------------|:--------------|:--------------|:---------|:---------------------------------------------------------------------------|
+| 11a. Question Semantic Diversity         | 0.521         | 0.536         | Baseline | 1 − mean cosine sim of question embeddings (within-system)                 |
+| 11b. Question Specificity                | 9.53 ± 1.76   | 9.14 ± 1.46   | IFQ      | Avg word count per question (mean ± std) — higher = more specific          |
+| 11c. Question–Insight Alignment          | 0.5630        | 0.5629        | IFQ      | Mean cosine(Embed(question), Embed(insight)) — semantic faithfulness       |
+| 11d. Question Novelty (cross-system)     | 61.9%         | 57.5%         | IFQ      | % of questions with cross-system max cosine sim < 0.85                     |
+| 11e. Reason–Insight Coherence            | 0.5713        | 0.5673        | IFQ      | Mean cosine(Embed(reason), Embed(insight)) — reason grounding              |
+
+> **QuGen take-away**:
+> - **Target side**: IFQ thắng tuyệt đối ở Actionability (+32.3pp) và BM Diversity (+9.4pp) — QuGen 'hiểu' subgroup discovery (B luôn categorical) và bao quát nhiều trục phân tích hơn. Baseline thắng NMI/Interestingness vì chọn ít cặp nhưng cường độ cao hơn — trade-off breadth vs intensity.
+> - **Text side**: IFQ thắng 4/5 — câu hỏi cụ thể hơn (11b), grounded ngữ nghĩa tương đương (11c), novel cross-system (11d, +4.4pp), và `reason` thực sự bám vào insight thay vì template (11e).
+> - **Cùng nhau**: 9/10 chỉ số trong nhóm này nghiêng về IFQ — cơ sở định lượng để bài báo lập luận *QuGen là mô-đun phân biệt chính của QUIS so với baseline auto EDA*. Phần ablation (no-QuGen) sẽ kiểm chứng điều ngược lại: bỏ QuGen thì các chỉ số 10c/10d/11b/11d/11e dự kiến đảo chiều.
+
 ---
 
 ## Conclusion
 
-**Overall Winner**: IFQ (11 vs 10 metrics won)
+**Overall Winner**: IFQ (15 vs 11 metrics won)
+
+- **Group 1 (Core & Efficiency)**: IFQ thắng ở Significance overall, ATTRIBUTION, DIST_DIFF, Diversity Semantic & Value, Dedup Rate.
+- **Group 2 (Subspace Deep-dive)**: IFQ thắng ở Subspace Rate, Score Uplift; Baseline thắng Subspace Significance/Novelty (trade-off "rộng vs sâu"). Subspace Rate cao hơn là *hệ quả downstream* của QuGen sinh nhiều câu hỏi conditional.
+- **Group 3 (QuGen Quality — Intent Layer, gom từ BM Deep-dive + Question Generation)**: IFQ thắng 6/9 chỉ số có winner; chiếm phần lớn các chiến thắng định tính của bài. Đây là nhóm *trọng tâm khoa học của bài báo* — phơi bày đóng góp của mô-đun QuGen ở cả tầng cấu trúc target lẫn tầng ngôn ngữ tự nhiên (câu hỏi, reason). Chỉ số kỳ vọng đảo chiều khi ablation no-QuGen: 10c (Actionability), 10d (BM Diversity), 11d (Question Novelty), 11e (Reason-I Coherence).
 

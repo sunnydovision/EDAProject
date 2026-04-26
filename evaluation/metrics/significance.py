@@ -4,6 +4,8 @@ Statistical significance metric computation.
 Measures whether insights are statistically significant (not random noise).
 """
 
+from __future__ import annotations
+
 import pandas as pd
 import numpy as np
 import re
