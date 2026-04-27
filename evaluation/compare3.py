@@ -17,14 +17,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from metrics.pattern_coverage import compute_structural_validity, compute_pattern_coverage
 from metrics.data_loader import load_and_clean_data
 from compare import format_metric_value
-from configs.eval_config import (
-    DATA_PATH,
-    PROFILE_PATH,
-    QUIS_INSIGHTS_PATH,
-    BASELINE_INSIGHTS_PATH,
-    ONLYSTATS_INSIGHTS_PATH,
-    RESULTS_DIR,
-)
+from configs.eval_config import EvalConfig
 from utils.log_config import save_run_log, load_eval_config
 
 
@@ -275,17 +268,25 @@ def create_comparison_table_3way(
 
 def main():
     parser = argparse.ArgumentParser(description='3-way comparison: QUIS vs Baseline vs ONLYSTATS')
-    parser.add_argument('--output', default=RESULTS_DIR, help='Output directory')
+    parser.add_argument('--dataset', type=str, required=True, 
+                        help=f'Dataset name: {", ".join(EvalConfig.list_datasets())}')
+    parser.add_argument('--output', default=None, help='Output directory (default: dataset-specific)')
     args = parser.parse_args()
+    
+    # Get dataset configuration
+    config = EvalConfig.get_dataset_config(args.dataset)
+    
+    # Use dataset-specific output directory if not provided
+    output_dir = args.output or config.results_dir
 
     # Save run log
     args_dict = vars(args)
-    config_dict = load_eval_config()
+    config_dict = load_eval_config(args.dataset)
     save_run_log("compare3", args_dict, config_dict)
 
     # Load data
-    print(f"Loading data: {DATA_PATH}")
-    _, df_cleaned = load_and_clean_data(DATA_PATH)
+    print(f"Loading data: {config.data_path}")
+    _, df_cleaned = load_and_clean_data(config.data_path)
 
     def load_json(p):
         with open(p) as f:
@@ -293,25 +294,25 @@ def main():
 
     # Load results
     print("Loading results...")
-    results_quis = load_json(f"{RESULTS_DIR}/quis_results.json")
-    results_baseline = load_json(f"{RESULTS_DIR}/baseline_results.json")
-    results_onlystats = load_json(f"{RESULTS_DIR}/onlystats_results.json")
+    results_quis = load_json(f"{output_dir}/quis_results.json")
+    results_baseline = load_json(f"{output_dir}/baseline_results.json")
+    results_onlystats = load_json(f"{output_dir}/onlystats_results.json")
 
     # Load insights
     print("Loading insights...")
-    insights_quis = load_json(QUIS_INSIGHTS_PATH)
-    insights_baseline = load_json(BASELINE_INSIGHTS_PATH)
-    insights_onlystats = load_json(ONLYSTATS_INSIGHTS_PATH)
+    insights_quis = load_json(config.quis_insights_path)
+    insights_baseline = load_json(config.baseline_insights_path)
+    insights_onlystats = load_json(config.onlystats_insights_path)
 
     df = create_comparison_table_3way(
         results_quis, results_baseline, results_onlystats,
         'QUIS', 'Baseline', 'ONLYSTATS',
         insights_quis, insights_baseline, insights_onlystats,
-        df_cleaned, PROFILE_PATH,
+        df_cleaned, config.profile_path,
     )
 
-    os.makedirs(args.output, exist_ok=True)
-    out_path = os.path.join(args.output, 'comparison_table_3way.csv')
+    os.makedirs(output_dir, exist_ok=True)
+    out_path = os.path.join(output_dir, 'comparison_table_3way.csv')
     df.to_csv(out_path, index=False)
     print(f"Saved: {out_path}")
     print(df.to_string(index=False))

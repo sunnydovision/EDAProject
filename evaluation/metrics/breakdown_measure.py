@@ -44,19 +44,25 @@ import re
 # data_type_class values from profile.json that are valid EDA breakdown descriptors
 _VALID_BREAKDOWN_CLASSES = {'Categorical', 'Temporal', 'ID'}
 
-# Default profile path relative to this file (can be overridden via compute_bm_quality)
-_DEFAULT_PROFILE_PATH = os.path.join(
-    os.path.dirname(__file__),
-    '../../baseline/auto_eda_agent/output_adidas/step1_profiling/profile.json'
-)
-
 
 def _load_column_classes(profile_path: str) -> Dict[str, str]:
     """
     Load column → data_type_class mapping from a profile.json produced by the
     baseline LLM profiling step.
-    Returns empty dict if the file is missing or malformed.
+    
+    Args:
+        profile_path: Path to profile.json file
+        
+    Returns:
+        Dictionary mapping column names to data_type_class values
+        
+    Raises:
+        FileNotFoundError: If profile.json doesn't exist
+        ValueError: If profile.json is malformed
     """
+    if not os.path.exists(profile_path):
+        raise FileNotFoundError(f"Profile file not found: {profile_path}. Run baseline to generate profile.")
+    
     try:
         with open(profile_path, encoding='utf-8') as f:
             profile = json.load(f)
@@ -64,8 +70,10 @@ def _load_column_classes(profile_path: str) -> Dict[str, str]:
             col: meta.get('data_type_class', '')
             for col, meta in profile.get('columns', {}).items()
         }
-    except Exception:
-        return {}
+    except json.JSONDecodeError as e:
+        raise ValueError(f"Profile file is malformed: {profile_path}. Error: {e}")
+    except Exception as e:
+        raise ValueError(f"Error loading profile file: {profile_path}. Error: {e}")
 
 
 def _is_categorical(series: pd.Series,
@@ -251,7 +259,7 @@ def compute_interestingness_pair(df: pd.DataFrame, breakdown: str,
 def compute_bm_quality(
     insights: List[Dict],
     df_cleaned: pd.DataFrame,
-    profile_path: str = _DEFAULT_PROFILE_PATH,
+    profile_path: str,
 ) -> Dict[str, Any]:
     """
     Compute BM Quality metrics for a list of insights.
@@ -273,6 +281,11 @@ def compute_bm_quality(
     Args:
         insights   : list of insight dicts
         df_cleaned : cleaned dataframe
+        profile_path: path to profile.json file (required)
+        
+    Raises:
+        FileNotFoundError: If profile.json doesn't exist
+        ValueError: If profile.json is malformed
     """
     col_classes = _load_column_classes(profile_path)
     total_insights = len(insights)

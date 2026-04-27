@@ -187,7 +187,6 @@ def main():
         exp_factor=args.exp_factor,
         max_depth=args.max_depth,
         run_subspace_search=not args.no_subspace,
-        plot_dir=args.plot_dir,
         max_overall_per_key=args.max_overall_per_key,
         max_subspace_per_key=args.max_subspace_per_key,
         max_insights_per_question=args.max_insights_per_question,

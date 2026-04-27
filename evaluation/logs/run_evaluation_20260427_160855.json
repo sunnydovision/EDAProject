@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-04-27T16:08:55.675667",
+  "script": "run_evaluation",
+  "arguments": {
+    "dataset": "transactions",
+    "system_a": "QUIS",
+    "system_b": "Baseline",
+    "output": null
+  },
+  "config": {
+    "dataset": "transactions",
+    "data_path": "data/transactions_cleaned.csv",
+    "profile_path": "baseline/auto_eda_agent/output_transactions/step1_profiling/profile.json",
+    "quis_insights_path": "quis_results/quis_20260427_144322_transactions_cleaned/insights_summary.json",
+    "baseline_insights_path": "baseline/auto_eda_agent/output_transactions/quis_format/insights_summary.json",
+    "onlystats_insights_path": "onlystats_results/onlystats_20260427_160049_transactions_cleaned_v4/insights_summary.json",
+    "results_dir": "evaluation/evaluation_results/transactions"
+  }
+}

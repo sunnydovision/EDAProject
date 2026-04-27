@@ -101,7 +101,7 @@ class EvalConfig:
             "profile_path": "baseline/auto_eda_agent/output_transactions/step1_profiling/profile.json",  # Run baseline to generate
             "quis_insights_path": "quis_results/quis_20260427_144322_transactions_cleaned/insights_summary.json",
             "baseline_insights_path": "baseline/auto_eda_agent/output_transactions/quis_format/insights_summary.json",
-            "onlystats_insights_path": None,  # Doesn't exist yet
+            "onlystats_insights_path": "onlystats_results/onlystats_20260427_160049_transactions_cleaned_v4/insights_summary.json",
             "quis_timing_path": "quis_results/quis_20260427_144322_transactions_cleaned/timing.json",
             "quis_usage_path": "quis_results/quis_20260427_144322_transactions_cleaned/usage.json",
             "baseline_timing_path": "baseline/auto_eda_agent/output_transactions/timing.json",

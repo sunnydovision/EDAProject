@@ -174,9 +174,9 @@
       "question_novelty": 1.0,
       "novel_count": 12,
       "total_count": 12,
-      "avg_max_similarity": 0.2699887156486511,
+      "avg_max_similarity": 0.2253711074590683,
       "tau": 0.85,
-      "compared_against": "Baseline"
+      "compared_against": "ONLYSTATS"
     }
   },
   "time_to_insight": {
@@ -198,9 +198,9 @@
     "novelty": 1.0,
     "novel_count": 12,
     "total_count": 12,
-    "avg_max_similarity": 0.5965495109558105,
+    "avg_max_similarity": 0.7470929026603699,
     "tau": 0.85,
-    "compared_against": "Baseline"
+    "compared_against": "ONLYSTATS"
   },
   "subspace_metrics": {
     "total_with_subspace": 12,
@@ -259,7 +259,7 @@
       "novelty": 1.0,
       "novel_count": 12,
       "total_count": 12,
-      "avg_max_similarity": 0.5751801133155823,
+      "avg_max_similarity": 0.7420184016227722,
       "tau": 0.85
     },
     "diversity": {

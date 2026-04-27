@@ -6,7 +6,7 @@ Measures how many insights are novel compared to another system.
 
 import pandas as pd
 from typing import List, Dict, Any
-from evaluation.utils.model_singleton import get_embedding_model
+from utils.model_singleton import get_embedding_model
 
 
 def compute_novelty(

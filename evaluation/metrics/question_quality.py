@@ -16,7 +16,7 @@ from __future__ import annotations
 from typing import List, Dict, Any, Optional
 
 import numpy as np
-from evaluation.utils.model_singleton import get_embedding_model
+from utils.model_singleton import get_embedding_model
 
 
 # ───────────────────────── helpers ──────────────────────────

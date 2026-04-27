@@ -1,0 +1,2282 @@
+[
+  {
+    "question": "How does SUM(Độ D) vary by Phân loại?",
+    "reason": "Statistics-based analysis: SUM(Độ D) grouped by Phân loại.",
+    "breakdown": "Phân loại",
+    "measure": "SUM(Độ D)"
+  },
+  {
+    "question": "How does MEAN(Độ D) vary by Phân loại?",
+    "reason": "Statistics-based analysis: MEAN(Độ D) grouped by Phân loại.",
+    "breakdown": "Phân loại",
+    "measure": "MEAN(Độ D)"
+  },
+  {
+    "question": "How does SUM(Khối lượng) vary by Phân loại?",
+    "reason": "Statistics-based analysis: SUM(Khối lượng) grouped by Phân loại.",
+    "breakdown": "Phân loại",
+    "measure": "SUM(Khối lượng)"
+  },
+  {
+    "question": "How does MEAN(Khối lượng) vary by Phân loại?",
+    "reason": "Statistics-based analysis: MEAN(Khối lượng) grouped by Phân loại.",
+    "breakdown": "Phân loại",
+    "measure": "MEAN(Khối lượng)"
+  },
+  {
+    "question": "How does SUM(Met A) vary by Phân loại?",
+    "reason": "Statistics-based analysis: SUM(Met A) grouped by Phân loại.",
+    "breakdown": "Phân loại",
+    "measure": "SUM(Met A)"
+  },
+  {
+    "question": "How does MEAN(Met A) vary by Phân loại?",
+    "reason": "Statistics-based analysis: MEAN(Met A) grouped by Phân loại.",
+    "breakdown": "Phân loại",
+    "measure": "MEAN(Met A)"
+  },
+  {
+    "question": "How does SUM(Met B) vary by Phân loại?",
+    "reason": "Statistics-based analysis: SUM(Met B) grouped by Phân loại.",
+    "breakdown": "Phân loại",
+    "measure": "SUM(Met B)"
+  },
+  {
+    "question": "How does MEAN(Met B) vary by Phân loại?",
+    "reason": "Statistics-based analysis: MEAN(Met B) grouped by Phân loại.",
+    "breakdown": "Phân loại",
+    "measure": "MEAN(Met B)"
+  },
+  {
+    "question": "How does SUM(Met C) vary by Phân loại?",
+    "reason": "Statistics-based analysis: SUM(Met C) grouped by Phân loại.",
+    "breakdown": "Phân loại",
+    "measure": "SUM(Met C)"
+  },
+  {
+    "question": "How does MEAN(Met C) vary by Phân loại?",
+    "reason": "Statistics-based analysis: MEAN(Met C) grouped by Phân loại.",
+    "breakdown": "Phân loại",
+    "measure": "MEAN(Met C)"
+  },
+  {
+    "question": "How does SUM(Tỷ trọng thực tế) vary by Phân loại?",
+    "reason": "Statistics-based analysis: SUM(Tỷ trọng thực tế) grouped by Phân loại.",
+    "breakdown": "Phân loại",
+    "measure": "SUM(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does MEAN(Tỷ trọng thực tế) vary by Phân loại?",
+    "reason": "Statistics-based analysis: MEAN(Tỷ trọng thực tế) grouped by Phân loại.",
+    "breakdown": "Phân loại",
+    "measure": "MEAN(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does SUM(Khổ (mm)) vary by Phân loại?",
+    "reason": "Statistics-based analysis: SUM(Khổ (mm)) grouped by Phân loại.",
+    "breakdown": "Phân loại",
+    "measure": "SUM(Khổ (mm))"
+  },
+  {
+    "question": "How does MEAN(Khổ (mm)) vary by Phân loại?",
+    "reason": "Statistics-based analysis: MEAN(Khổ (mm)) grouped by Phân loại.",
+    "breakdown": "Phân loại",
+    "measure": "MEAN(Khổ (mm))"
+  },
+  {
+    "question": "How does SUM(Thành Tiền) vary by Phân loại?",
+    "reason": "Statistics-based analysis: SUM(Thành Tiền) grouped by Phân loại.",
+    "breakdown": "Phân loại",
+    "measure": "SUM(Thành Tiền)"
+  },
+  {
+    "question": "How does MEAN(Thành Tiền) vary by Phân loại?",
+    "reason": "Statistics-based analysis: MEAN(Thành Tiền) grouped by Phân loại.",
+    "breakdown": "Phân loại",
+    "measure": "MEAN(Thành Tiền)"
+  },
+  {
+    "question": "How does SUM(Giá_trên_kg) vary by Phân loại?",
+    "reason": "Statistics-based analysis: SUM(Giá_trên_kg) grouped by Phân loại.",
+    "breakdown": "Phân loại",
+    "measure": "SUM(Giá_trên_kg)"
+  },
+  {
+    "question": "How does MEAN(Giá_trên_kg) vary by Phân loại?",
+    "reason": "Statistics-based analysis: MEAN(Giá_trên_kg) grouped by Phân loại.",
+    "breakdown": "Phân loại",
+    "measure": "MEAN(Giá_trên_kg)"
+  },
+  {
+    "question": "How does SUM(Doanh_thu_trên_mm) vary by Phân loại?",
+    "reason": "Statistics-based analysis: SUM(Doanh_thu_trên_mm) grouped by Phân loại.",
+    "breakdown": "Phân loại",
+    "measure": "SUM(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does MEAN(Doanh_thu_trên_mm) vary by Phân loại?",
+    "reason": "Statistics-based analysis: MEAN(Doanh_thu_trên_mm) grouped by Phân loại.",
+    "breakdown": "Phân loại",
+    "measure": "MEAN(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does SUM(Độ D) vary by Loại Hàng?",
+    "reason": "Statistics-based analysis: SUM(Độ D) grouped by Loại Hàng.",
+    "breakdown": "Loại Hàng",
+    "measure": "SUM(Độ D)"
+  },
+  {
+    "question": "How does MEAN(Độ D) vary by Loại Hàng?",
+    "reason": "Statistics-based analysis: MEAN(Độ D) grouped by Loại Hàng.",
+    "breakdown": "Loại Hàng",
+    "measure": "MEAN(Độ D)"
+  },
+  {
+    "question": "How does SUM(Khối lượng) vary by Loại Hàng?",
+    "reason": "Statistics-based analysis: SUM(Khối lượng) grouped by Loại Hàng.",
+    "breakdown": "Loại Hàng",
+    "measure": "SUM(Khối lượng)"
+  },
+  {
+    "question": "How does MEAN(Khối lượng) vary by Loại Hàng?",
+    "reason": "Statistics-based analysis: MEAN(Khối lượng) grouped by Loại Hàng.",
+    "breakdown": "Loại Hàng",
+    "measure": "MEAN(Khối lượng)"
+  },
+  {
+    "question": "How does SUM(Met A) vary by Loại Hàng?",
+    "reason": "Statistics-based analysis: SUM(Met A) grouped by Loại Hàng.",
+    "breakdown": "Loại Hàng",
+    "measure": "SUM(Met A)"
+  },
+  {
+    "question": "How does MEAN(Met A) vary by Loại Hàng?",
+    "reason": "Statistics-based analysis: MEAN(Met A) grouped by Loại Hàng.",
+    "breakdown": "Loại Hàng",
+    "measure": "MEAN(Met A)"
+  },
+  {
+    "question": "How does SUM(Met B) vary by Loại Hàng?",
+    "reason": "Statistics-based analysis: SUM(Met B) grouped by Loại Hàng.",
+    "breakdown": "Loại Hàng",
+    "measure": "SUM(Met B)"
+  },
+  {
+    "question": "How does MEAN(Met B) vary by Loại Hàng?",
+    "reason": "Statistics-based analysis: MEAN(Met B) grouped by Loại Hàng.",
+    "breakdown": "Loại Hàng",
+    "measure": "MEAN(Met B)"
+  },
+  {
+    "question": "How does SUM(Met C) vary by Loại Hàng?",
+    "reason": "Statistics-based analysis: SUM(Met C) grouped by Loại Hàng.",
+    "breakdown": "Loại Hàng",
+    "measure": "SUM(Met C)"
+  },
+  {
+    "question": "How does MEAN(Met C) vary by Loại Hàng?",
+    "reason": "Statistics-based analysis: MEAN(Met C) grouped by Loại Hàng.",
+    "breakdown": "Loại Hàng",
+    "measure": "MEAN(Met C)"
+  },
+  {
+    "question": "How does SUM(Tỷ trọng thực tế) vary by Loại Hàng?",
+    "reason": "Statistics-based analysis: SUM(Tỷ trọng thực tế) grouped by Loại Hàng.",
+    "breakdown": "Loại Hàng",
+    "measure": "SUM(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does MEAN(Tỷ trọng thực tế) vary by Loại Hàng?",
+    "reason": "Statistics-based analysis: MEAN(Tỷ trọng thực tế) grouped by Loại Hàng.",
+    "breakdown": "Loại Hàng",
+    "measure": "MEAN(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does SUM(Khổ (mm)) vary by Loại Hàng?",
+    "reason": "Statistics-based analysis: SUM(Khổ (mm)) grouped by Loại Hàng.",
+    "breakdown": "Loại Hàng",
+    "measure": "SUM(Khổ (mm))"
+  },
+  {
+    "question": "How does MEAN(Khổ (mm)) vary by Loại Hàng?",
+    "reason": "Statistics-based analysis: MEAN(Khổ (mm)) grouped by Loại Hàng.",
+    "breakdown": "Loại Hàng",
+    "measure": "MEAN(Khổ (mm))"
+  },
+  {
+    "question": "How does SUM(Thành Tiền) vary by Loại Hàng?",
+    "reason": "Statistics-based analysis: SUM(Thành Tiền) grouped by Loại Hàng.",
+    "breakdown": "Loại Hàng",
+    "measure": "SUM(Thành Tiền)"
+  },
+  {
+    "question": "How does MEAN(Thành Tiền) vary by Loại Hàng?",
+    "reason": "Statistics-based analysis: MEAN(Thành Tiền) grouped by Loại Hàng.",
+    "breakdown": "Loại Hàng",
+    "measure": "MEAN(Thành Tiền)"
+  },
+  {
+    "question": "How does SUM(Giá_trên_kg) vary by Loại Hàng?",
+    "reason": "Statistics-based analysis: SUM(Giá_trên_kg) grouped by Loại Hàng.",
+    "breakdown": "Loại Hàng",
+    "measure": "SUM(Giá_trên_kg)"
+  },
+  {
+    "question": "How does MEAN(Giá_trên_kg) vary by Loại Hàng?",
+    "reason": "Statistics-based analysis: MEAN(Giá_trên_kg) grouped by Loại Hàng.",
+    "breakdown": "Loại Hàng",
+    "measure": "MEAN(Giá_trên_kg)"
+  },
+  {
+    "question": "How does SUM(Doanh_thu_trên_mm) vary by Loại Hàng?",
+    "reason": "Statistics-based analysis: SUM(Doanh_thu_trên_mm) grouped by Loại Hàng.",
+    "breakdown": "Loại Hàng",
+    "measure": "SUM(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does MEAN(Doanh_thu_trên_mm) vary by Loại Hàng?",
+    "reason": "Statistics-based analysis: MEAN(Doanh_thu_trên_mm) grouped by Loại Hàng.",
+    "breakdown": "Loại Hàng",
+    "measure": "MEAN(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does SUM(Độ D) vary by Độ M?",
+    "reason": "Statistics-based analysis: SUM(Độ D) grouped by Độ M.",
+    "breakdown": "Độ M",
+    "measure": "SUM(Độ D)"
+  },
+  {
+    "question": "How does MEAN(Độ D) vary by Độ M?",
+    "reason": "Statistics-based analysis: MEAN(Độ D) grouped by Độ M.",
+    "breakdown": "Độ M",
+    "measure": "MEAN(Độ D)"
+  },
+  {
+    "question": "How does SUM(Khối lượng) vary by Độ M?",
+    "reason": "Statistics-based analysis: SUM(Khối lượng) grouped by Độ M.",
+    "breakdown": "Độ M",
+    "measure": "SUM(Khối lượng)"
+  },
+  {
+    "question": "How does MEAN(Khối lượng) vary by Độ M?",
+    "reason": "Statistics-based analysis: MEAN(Khối lượng) grouped by Độ M.",
+    "breakdown": "Độ M",
+    "measure": "MEAN(Khối lượng)"
+  },
+  {
+    "question": "How does SUM(Met A) vary by Độ M?",
+    "reason": "Statistics-based analysis: SUM(Met A) grouped by Độ M.",
+    "breakdown": "Độ M",
+    "measure": "SUM(Met A)"
+  },
+  {
+    "question": "How does MEAN(Met A) vary by Độ M?",
+    "reason": "Statistics-based analysis: MEAN(Met A) grouped by Độ M.",
+    "breakdown": "Độ M",
+    "measure": "MEAN(Met A)"
+  },
+  {
+    "question": "How does SUM(Met B) vary by Độ M?",
+    "reason": "Statistics-based analysis: SUM(Met B) grouped by Độ M.",
+    "breakdown": "Độ M",
+    "measure": "SUM(Met B)"
+  },
+  {
+    "question": "How does MEAN(Met B) vary by Độ M?",
+    "reason": "Statistics-based analysis: MEAN(Met B) grouped by Độ M.",
+    "breakdown": "Độ M",
+    "measure": "MEAN(Met B)"
+  },
+  {
+    "question": "How does SUM(Met C) vary by Độ M?",
+    "reason": "Statistics-based analysis: SUM(Met C) grouped by Độ M.",
+    "breakdown": "Độ M",
+    "measure": "SUM(Met C)"
+  },
+  {
+    "question": "How does MEAN(Met C) vary by Độ M?",
+    "reason": "Statistics-based analysis: MEAN(Met C) grouped by Độ M.",
+    "breakdown": "Độ M",
+    "measure": "MEAN(Met C)"
+  },
+  {
+    "question": "How does SUM(Tỷ trọng thực tế) vary by Độ M?",
+    "reason": "Statistics-based analysis: SUM(Tỷ trọng thực tế) grouped by Độ M.",
+    "breakdown": "Độ M",
+    "measure": "SUM(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does MEAN(Tỷ trọng thực tế) vary by Độ M?",
+    "reason": "Statistics-based analysis: MEAN(Tỷ trọng thực tế) grouped by Độ M.",
+    "breakdown": "Độ M",
+    "measure": "MEAN(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does SUM(Khổ (mm)) vary by Độ M?",
+    "reason": "Statistics-based analysis: SUM(Khổ (mm)) grouped by Độ M.",
+    "breakdown": "Độ M",
+    "measure": "SUM(Khổ (mm))"
+  },
+  {
+    "question": "How does MEAN(Khổ (mm)) vary by Độ M?",
+    "reason": "Statistics-based analysis: MEAN(Khổ (mm)) grouped by Độ M.",
+    "breakdown": "Độ M",
+    "measure": "MEAN(Khổ (mm))"
+  },
+  {
+    "question": "How does SUM(Thành Tiền) vary by Độ M?",
+    "reason": "Statistics-based analysis: SUM(Thành Tiền) grouped by Độ M.",
+    "breakdown": "Độ M",
+    "measure": "SUM(Thành Tiền)"
+  },
+  {
+    "question": "How does MEAN(Thành Tiền) vary by Độ M?",
+    "reason": "Statistics-based analysis: MEAN(Thành Tiền) grouped by Độ M.",
+    "breakdown": "Độ M",
+    "measure": "MEAN(Thành Tiền)"
+  },
+  {
+    "question": "How does SUM(Giá_trên_kg) vary by Độ M?",
+    "reason": "Statistics-based analysis: SUM(Giá_trên_kg) grouped by Độ M.",
+    "breakdown": "Độ M",
+    "measure": "SUM(Giá_trên_kg)"
+  },
+  {
+    "question": "How does MEAN(Giá_trên_kg) vary by Độ M?",
+    "reason": "Statistics-based analysis: MEAN(Giá_trên_kg) grouped by Độ M.",
+    "breakdown": "Độ M",
+    "measure": "MEAN(Giá_trên_kg)"
+  },
+  {
+    "question": "How does SUM(Doanh_thu_trên_mm) vary by Độ M?",
+    "reason": "Statistics-based analysis: SUM(Doanh_thu_trên_mm) grouped by Độ M.",
+    "breakdown": "Độ M",
+    "measure": "SUM(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does MEAN(Doanh_thu_trên_mm) vary by Độ M?",
+    "reason": "Statistics-based analysis: MEAN(Doanh_thu_trên_mm) grouped by Độ M.",
+    "breakdown": "Độ M",
+    "measure": "MEAN(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does SUM(Độ D) vary by Độ MT?",
+    "reason": "Statistics-based analysis: SUM(Độ D) grouped by Độ MT.",
+    "breakdown": "Độ MT",
+    "measure": "SUM(Độ D)"
+  },
+  {
+    "question": "How does MEAN(Độ D) vary by Độ MT?",
+    "reason": "Statistics-based analysis: MEAN(Độ D) grouped by Độ MT.",
+    "breakdown": "Độ MT",
+    "measure": "MEAN(Độ D)"
+  },
+  {
+    "question": "How does SUM(Khối lượng) vary by Độ MT?",
+    "reason": "Statistics-based analysis: SUM(Khối lượng) grouped by Độ MT.",
+    "breakdown": "Độ MT",
+    "measure": "SUM(Khối lượng)"
+  },
+  {
+    "question": "How does MEAN(Khối lượng) vary by Độ MT?",
+    "reason": "Statistics-based analysis: MEAN(Khối lượng) grouped by Độ MT.",
+    "breakdown": "Độ MT",
+    "measure": "MEAN(Khối lượng)"
+  },
+  {
+    "question": "How does SUM(Met A) vary by Độ MT?",
+    "reason": "Statistics-based analysis: SUM(Met A) grouped by Độ MT.",
+    "breakdown": "Độ MT",
+    "measure": "SUM(Met A)"
+  },
+  {
+    "question": "How does MEAN(Met A) vary by Độ MT?",
+    "reason": "Statistics-based analysis: MEAN(Met A) grouped by Độ MT.",
+    "breakdown": "Độ MT",
+    "measure": "MEAN(Met A)"
+  },
+  {
+    "question": "How does SUM(Met B) vary by Độ MT?",
+    "reason": "Statistics-based analysis: SUM(Met B) grouped by Độ MT.",
+    "breakdown": "Độ MT",
+    "measure": "SUM(Met B)"
+  },
+  {
+    "question": "How does MEAN(Met B) vary by Độ MT?",
+    "reason": "Statistics-based analysis: MEAN(Met B) grouped by Độ MT.",
+    "breakdown": "Độ MT",
+    "measure": "MEAN(Met B)"
+  },
+  {
+    "question": "How does SUM(Met C) vary by Độ MT?",
+    "reason": "Statistics-based analysis: SUM(Met C) grouped by Độ MT.",
+    "breakdown": "Độ MT",
+    "measure": "SUM(Met C)"
+  },
+  {
+    "question": "How does MEAN(Met C) vary by Độ MT?",
+    "reason": "Statistics-based analysis: MEAN(Met C) grouped by Độ MT.",
+    "breakdown": "Độ MT",
+    "measure": "MEAN(Met C)"
+  },
+  {
+    "question": "How does SUM(Tỷ trọng thực tế) vary by Độ MT?",
+    "reason": "Statistics-based analysis: SUM(Tỷ trọng thực tế) grouped by Độ MT.",
+    "breakdown": "Độ MT",
+    "measure": "SUM(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does MEAN(Tỷ trọng thực tế) vary by Độ MT?",
+    "reason": "Statistics-based analysis: MEAN(Tỷ trọng thực tế) grouped by Độ MT.",
+    "breakdown": "Độ MT",
+    "measure": "MEAN(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does SUM(Khổ (mm)) vary by Độ MT?",
+    "reason": "Statistics-based analysis: SUM(Khổ (mm)) grouped by Độ MT.",
+    "breakdown": "Độ MT",
+    "measure": "SUM(Khổ (mm))"
+  },
+  {
+    "question": "How does MEAN(Khổ (mm)) vary by Độ MT?",
+    "reason": "Statistics-based analysis: MEAN(Khổ (mm)) grouped by Độ MT.",
+    "breakdown": "Độ MT",
+    "measure": "MEAN(Khổ (mm))"
+  },
+  {
+    "question": "How does SUM(Thành Tiền) vary by Độ MT?",
+    "reason": "Statistics-based analysis: SUM(Thành Tiền) grouped by Độ MT.",
+    "breakdown": "Độ MT",
+    "measure": "SUM(Thành Tiền)"
+  },
+  {
+    "question": "How does MEAN(Thành Tiền) vary by Độ MT?",
+    "reason": "Statistics-based analysis: MEAN(Thành Tiền) grouped by Độ MT.",
+    "breakdown": "Độ MT",
+    "measure": "MEAN(Thành Tiền)"
+  },
+  {
+    "question": "How does SUM(Giá_trên_kg) vary by Độ MT?",
+    "reason": "Statistics-based analysis: SUM(Giá_trên_kg) grouped by Độ MT.",
+    "breakdown": "Độ MT",
+    "measure": "SUM(Giá_trên_kg)"
+  },
+  {
+    "question": "How does MEAN(Giá_trên_kg) vary by Độ MT?",
+    "reason": "Statistics-based analysis: MEAN(Giá_trên_kg) grouped by Độ MT.",
+    "breakdown": "Độ MT",
+    "measure": "MEAN(Giá_trên_kg)"
+  },
+  {
+    "question": "How does SUM(Doanh_thu_trên_mm) vary by Độ MT?",
+    "reason": "Statistics-based analysis: SUM(Doanh_thu_trên_mm) grouped by Độ MT.",
+    "breakdown": "Độ MT",
+    "measure": "SUM(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does MEAN(Doanh_thu_trên_mm) vary by Độ MT?",
+    "reason": "Statistics-based analysis: MEAN(Doanh_thu_trên_mm) grouped by Độ MT.",
+    "breakdown": "Độ MT",
+    "measure": "MEAN(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does SUM(Độ D) vary by Mã màu?",
+    "reason": "Statistics-based analysis: SUM(Độ D) grouped by Mã màu.",
+    "breakdown": "Mã màu",
+    "measure": "SUM(Độ D)"
+  },
+  {
+    "question": "How does MEAN(Độ D) vary by Mã màu?",
+    "reason": "Statistics-based analysis: MEAN(Độ D) grouped by Mã màu.",
+    "breakdown": "Mã màu",
+    "measure": "MEAN(Độ D)"
+  },
+  {
+    "question": "How does SUM(Khối lượng) vary by Mã màu?",
+    "reason": "Statistics-based analysis: SUM(Khối lượng) grouped by Mã màu.",
+    "breakdown": "Mã màu",
+    "measure": "SUM(Khối lượng)"
+  },
+  {
+    "question": "How does MEAN(Khối lượng) vary by Mã màu?",
+    "reason": "Statistics-based analysis: MEAN(Khối lượng) grouped by Mã màu.",
+    "breakdown": "Mã màu",
+    "measure": "MEAN(Khối lượng)"
+  },
+  {
+    "question": "How does SUM(Met A) vary by Mã màu?",
+    "reason": "Statistics-based analysis: SUM(Met A) grouped by Mã màu.",
+    "breakdown": "Mã màu",
+    "measure": "SUM(Met A)"
+  },
+  {
+    "question": "How does MEAN(Met A) vary by Mã màu?",
+    "reason": "Statistics-based analysis: MEAN(Met A) grouped by Mã màu.",
+    "breakdown": "Mã màu",
+    "measure": "MEAN(Met A)"
+  },
+  {
+    "question": "How does SUM(Met B) vary by Mã màu?",
+    "reason": "Statistics-based analysis: SUM(Met B) grouped by Mã màu.",
+    "breakdown": "Mã màu",
+    "measure": "SUM(Met B)"
+  },
+  {
+    "question": "How does MEAN(Met B) vary by Mã màu?",
+    "reason": "Statistics-based analysis: MEAN(Met B) grouped by Mã màu.",
+    "breakdown": "Mã màu",
+    "measure": "MEAN(Met B)"
+  },
+  {
+    "question": "How does SUM(Met C) vary by Mã màu?",
+    "reason": "Statistics-based analysis: SUM(Met C) grouped by Mã màu.",
+    "breakdown": "Mã màu",
+    "measure": "SUM(Met C)"
+  },
+  {
+    "question": "How does MEAN(Met C) vary by Mã màu?",
+    "reason": "Statistics-based analysis: MEAN(Met C) grouped by Mã màu.",
+    "breakdown": "Mã màu",
+    "measure": "MEAN(Met C)"
+  },
+  {
+    "question": "How does SUM(Tỷ trọng thực tế) vary by Mã màu?",
+    "reason": "Statistics-based analysis: SUM(Tỷ trọng thực tế) grouped by Mã màu.",
+    "breakdown": "Mã màu",
+    "measure": "SUM(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does MEAN(Tỷ trọng thực tế) vary by Mã màu?",
+    "reason": "Statistics-based analysis: MEAN(Tỷ trọng thực tế) grouped by Mã màu.",
+    "breakdown": "Mã màu",
+    "measure": "MEAN(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does SUM(Khổ (mm)) vary by Mã màu?",
+    "reason": "Statistics-based analysis: SUM(Khổ (mm)) grouped by Mã màu.",
+    "breakdown": "Mã màu",
+    "measure": "SUM(Khổ (mm))"
+  },
+  {
+    "question": "How does MEAN(Khổ (mm)) vary by Mã màu?",
+    "reason": "Statistics-based analysis: MEAN(Khổ (mm)) grouped by Mã màu.",
+    "breakdown": "Mã màu",
+    "measure": "MEAN(Khổ (mm))"
+  },
+  {
+    "question": "How does SUM(Thành Tiền) vary by Mã màu?",
+    "reason": "Statistics-based analysis: SUM(Thành Tiền) grouped by Mã màu.",
+    "breakdown": "Mã màu",
+    "measure": "SUM(Thành Tiền)"
+  },
+  {
+    "question": "How does MEAN(Thành Tiền) vary by Mã màu?",
+    "reason": "Statistics-based analysis: MEAN(Thành Tiền) grouped by Mã màu.",
+    "breakdown": "Mã màu",
+    "measure": "MEAN(Thành Tiền)"
+  },
+  {
+    "question": "How does SUM(Giá_trên_kg) vary by Mã màu?",
+    "reason": "Statistics-based analysis: SUM(Giá_trên_kg) grouped by Mã màu.",
+    "breakdown": "Mã màu",
+    "measure": "SUM(Giá_trên_kg)"
+  },
+  {
+    "question": "How does MEAN(Giá_trên_kg) vary by Mã màu?",
+    "reason": "Statistics-based analysis: MEAN(Giá_trên_kg) grouped by Mã màu.",
+    "breakdown": "Mã màu",
+    "measure": "MEAN(Giá_trên_kg)"
+  },
+  {
+    "question": "How does SUM(Doanh_thu_trên_mm) vary by Mã màu?",
+    "reason": "Statistics-based analysis: SUM(Doanh_thu_trên_mm) grouped by Mã màu.",
+    "breakdown": "Mã màu",
+    "measure": "SUM(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does MEAN(Doanh_thu_trên_mm) vary by Mã màu?",
+    "reason": "Statistics-based analysis: MEAN(Doanh_thu_trên_mm) grouped by Mã màu.",
+    "breakdown": "Mã màu",
+    "measure": "MEAN(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does SUM(Độ D) vary by Tên màu?",
+    "reason": "Statistics-based analysis: SUM(Độ D) grouped by Tên màu.",
+    "breakdown": "Tên màu",
+    "measure": "SUM(Độ D)"
+  },
+  {
+    "question": "How does MEAN(Độ D) vary by Tên màu?",
+    "reason": "Statistics-based analysis: MEAN(Độ D) grouped by Tên màu.",
+    "breakdown": "Tên màu",
+    "measure": "MEAN(Độ D)"
+  },
+  {
+    "question": "How does SUM(Khối lượng) vary by Tên màu?",
+    "reason": "Statistics-based analysis: SUM(Khối lượng) grouped by Tên màu.",
+    "breakdown": "Tên màu",
+    "measure": "SUM(Khối lượng)"
+  },
+  {
+    "question": "How does MEAN(Khối lượng) vary by Tên màu?",
+    "reason": "Statistics-based analysis: MEAN(Khối lượng) grouped by Tên màu.",
+    "breakdown": "Tên màu",
+    "measure": "MEAN(Khối lượng)"
+  },
+  {
+    "question": "How does SUM(Met A) vary by Tên màu?",
+    "reason": "Statistics-based analysis: SUM(Met A) grouped by Tên màu.",
+    "breakdown": "Tên màu",
+    "measure": "SUM(Met A)"
+  },
+  {
+    "question": "How does MEAN(Met A) vary by Tên màu?",
+    "reason": "Statistics-based analysis: MEAN(Met A) grouped by Tên màu.",
+    "breakdown": "Tên màu",
+    "measure": "MEAN(Met A)"
+  },
+  {
+    "question": "How does SUM(Met B) vary by Tên màu?",
+    "reason": "Statistics-based analysis: SUM(Met B) grouped by Tên màu.",
+    "breakdown": "Tên màu",
+    "measure": "SUM(Met B)"
+  },
+  {
+    "question": "How does MEAN(Met B) vary by Tên màu?",
+    "reason": "Statistics-based analysis: MEAN(Met B) grouped by Tên màu.",
+    "breakdown": "Tên màu",
+    "measure": "MEAN(Met B)"
+  },
+  {
+    "question": "How does SUM(Met C) vary by Tên màu?",
+    "reason": "Statistics-based analysis: SUM(Met C) grouped by Tên màu.",
+    "breakdown": "Tên màu",
+    "measure": "SUM(Met C)"
+  },
+  {
+    "question": "How does MEAN(Met C) vary by Tên màu?",
+    "reason": "Statistics-based analysis: MEAN(Met C) grouped by Tên màu.",
+    "breakdown": "Tên màu",
+    "measure": "MEAN(Met C)"
+  },
+  {
+    "question": "How does SUM(Tỷ trọng thực tế) vary by Tên màu?",
+    "reason": "Statistics-based analysis: SUM(Tỷ trọng thực tế) grouped by Tên màu.",
+    "breakdown": "Tên màu",
+    "measure": "SUM(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does MEAN(Tỷ trọng thực tế) vary by Tên màu?",
+    "reason": "Statistics-based analysis: MEAN(Tỷ trọng thực tế) grouped by Tên màu.",
+    "breakdown": "Tên màu",
+    "measure": "MEAN(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does SUM(Khổ (mm)) vary by Tên màu?",
+    "reason": "Statistics-based analysis: SUM(Khổ (mm)) grouped by Tên màu.",
+    "breakdown": "Tên màu",
+    "measure": "SUM(Khổ (mm))"
+  },
+  {
+    "question": "How does MEAN(Khổ (mm)) vary by Tên màu?",
+    "reason": "Statistics-based analysis: MEAN(Khổ (mm)) grouped by Tên màu.",
+    "breakdown": "Tên màu",
+    "measure": "MEAN(Khổ (mm))"
+  },
+  {
+    "question": "How does SUM(Thành Tiền) vary by Tên màu?",
+    "reason": "Statistics-based analysis: SUM(Thành Tiền) grouped by Tên màu.",
+    "breakdown": "Tên màu",
+    "measure": "SUM(Thành Tiền)"
+  },
+  {
+    "question": "How does MEAN(Thành Tiền) vary by Tên màu?",
+    "reason": "Statistics-based analysis: MEAN(Thành Tiền) grouped by Tên màu.",
+    "breakdown": "Tên màu",
+    "measure": "MEAN(Thành Tiền)"
+  },
+  {
+    "question": "How does SUM(Giá_trên_kg) vary by Tên màu?",
+    "reason": "Statistics-based analysis: SUM(Giá_trên_kg) grouped by Tên màu.",
+    "breakdown": "Tên màu",
+    "measure": "SUM(Giá_trên_kg)"
+  },
+  {
+    "question": "How does MEAN(Giá_trên_kg) vary by Tên màu?",
+    "reason": "Statistics-based analysis: MEAN(Giá_trên_kg) grouped by Tên màu.",
+    "breakdown": "Tên màu",
+    "measure": "MEAN(Giá_trên_kg)"
+  },
+  {
+    "question": "How does SUM(Doanh_thu_trên_mm) vary by Tên màu?",
+    "reason": "Statistics-based analysis: SUM(Doanh_thu_trên_mm) grouped by Tên màu.",
+    "breakdown": "Tên màu",
+    "measure": "SUM(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does MEAN(Doanh_thu_trên_mm) vary by Tên màu?",
+    "reason": "Statistics-based analysis: MEAN(Doanh_thu_trên_mm) grouped by Tên màu.",
+    "breakdown": "Tên màu",
+    "measure": "MEAN(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does SUM(Độ D) vary by Ngày bán?",
+    "reason": "Statistics-based analysis: SUM(Độ D) grouped by Ngày bán.",
+    "breakdown": "Ngày bán",
+    "measure": "SUM(Độ D)"
+  },
+  {
+    "question": "How does MEAN(Độ D) vary by Ngày bán?",
+    "reason": "Statistics-based analysis: MEAN(Độ D) grouped by Ngày bán.",
+    "breakdown": "Ngày bán",
+    "measure": "MEAN(Độ D)"
+  },
+  {
+    "question": "How does SUM(Khối lượng) vary by Ngày bán?",
+    "reason": "Statistics-based analysis: SUM(Khối lượng) grouped by Ngày bán.",
+    "breakdown": "Ngày bán",
+    "measure": "SUM(Khối lượng)"
+  },
+  {
+    "question": "How does MEAN(Khối lượng) vary by Ngày bán?",
+    "reason": "Statistics-based analysis: MEAN(Khối lượng) grouped by Ngày bán.",
+    "breakdown": "Ngày bán",
+    "measure": "MEAN(Khối lượng)"
+  },
+  {
+    "question": "How does SUM(Met A) vary by Ngày bán?",
+    "reason": "Statistics-based analysis: SUM(Met A) grouped by Ngày bán.",
+    "breakdown": "Ngày bán",
+    "measure": "SUM(Met A)"
+  },
+  {
+    "question": "How does MEAN(Met A) vary by Ngày bán?",
+    "reason": "Statistics-based analysis: MEAN(Met A) grouped by Ngày bán.",
+    "breakdown": "Ngày bán",
+    "measure": "MEAN(Met A)"
+  },
+  {
+    "question": "How does SUM(Met B) vary by Ngày bán?",
+    "reason": "Statistics-based analysis: SUM(Met B) grouped by Ngày bán.",
+    "breakdown": "Ngày bán",
+    "measure": "SUM(Met B)"
+  },
+  {
+    "question": "How does MEAN(Met B) vary by Ngày bán?",
+    "reason": "Statistics-based analysis: MEAN(Met B) grouped by Ngày bán.",
+    "breakdown": "Ngày bán",
+    "measure": "MEAN(Met B)"
+  },
+  {
+    "question": "How does SUM(Met C) vary by Ngày bán?",
+    "reason": "Statistics-based analysis: SUM(Met C) grouped by Ngày bán.",
+    "breakdown": "Ngày bán",
+    "measure": "SUM(Met C)"
+  },
+  {
+    "question": "How does MEAN(Met C) vary by Ngày bán?",
+    "reason": "Statistics-based analysis: MEAN(Met C) grouped by Ngày bán.",
+    "breakdown": "Ngày bán",
+    "measure": "MEAN(Met C)"
+  },
+  {
+    "question": "How does SUM(Tỷ trọng thực tế) vary by Ngày bán?",
+    "reason": "Statistics-based analysis: SUM(Tỷ trọng thực tế) grouped by Ngày bán.",
+    "breakdown": "Ngày bán",
+    "measure": "SUM(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does MEAN(Tỷ trọng thực tế) vary by Ngày bán?",
+    "reason": "Statistics-based analysis: MEAN(Tỷ trọng thực tế) grouped by Ngày bán.",
+    "breakdown": "Ngày bán",
+    "measure": "MEAN(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does SUM(Khổ (mm)) vary by Ngày bán?",
+    "reason": "Statistics-based analysis: SUM(Khổ (mm)) grouped by Ngày bán.",
+    "breakdown": "Ngày bán",
+    "measure": "SUM(Khổ (mm))"
+  },
+  {
+    "question": "How does MEAN(Khổ (mm)) vary by Ngày bán?",
+    "reason": "Statistics-based analysis: MEAN(Khổ (mm)) grouped by Ngày bán.",
+    "breakdown": "Ngày bán",
+    "measure": "MEAN(Khổ (mm))"
+  },
+  {
+    "question": "How does SUM(Thành Tiền) vary by Ngày bán?",
+    "reason": "Statistics-based analysis: SUM(Thành Tiền) grouped by Ngày bán.",
+    "breakdown": "Ngày bán",
+    "measure": "SUM(Thành Tiền)"
+  },
+  {
+    "question": "How does MEAN(Thành Tiền) vary by Ngày bán?",
+    "reason": "Statistics-based analysis: MEAN(Thành Tiền) grouped by Ngày bán.",
+    "breakdown": "Ngày bán",
+    "measure": "MEAN(Thành Tiền)"
+  },
+  {
+    "question": "How does SUM(Giá_trên_kg) vary by Ngày bán?",
+    "reason": "Statistics-based analysis: SUM(Giá_trên_kg) grouped by Ngày bán.",
+    "breakdown": "Ngày bán",
+    "measure": "SUM(Giá_trên_kg)"
+  },
+  {
+    "question": "How does MEAN(Giá_trên_kg) vary by Ngày bán?",
+    "reason": "Statistics-based analysis: MEAN(Giá_trên_kg) grouped by Ngày bán.",
+    "breakdown": "Ngày bán",
+    "measure": "MEAN(Giá_trên_kg)"
+  },
+  {
+    "question": "How does SUM(Doanh_thu_trên_mm) vary by Ngày bán?",
+    "reason": "Statistics-based analysis: SUM(Doanh_thu_trên_mm) grouped by Ngày bán.",
+    "breakdown": "Ngày bán",
+    "measure": "SUM(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does MEAN(Doanh_thu_trên_mm) vary by Ngày bán?",
+    "reason": "Statistics-based analysis: MEAN(Doanh_thu_trên_mm) grouped by Ngày bán.",
+    "breakdown": "Ngày bán",
+    "measure": "MEAN(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does SUM(Độ D) vary by Khu Vực (Quận/Huyện)?",
+    "reason": "Statistics-based analysis: SUM(Độ D) grouped by Khu Vực (Quận/Huyện).",
+    "breakdown": "Khu Vực (Quận/Huyện)",
+    "measure": "SUM(Độ D)"
+  },
+  {
+    "question": "How does MEAN(Độ D) vary by Khu Vực (Quận/Huyện)?",
+    "reason": "Statistics-based analysis: MEAN(Độ D) grouped by Khu Vực (Quận/Huyện).",
+    "breakdown": "Khu Vực (Quận/Huyện)",
+    "measure": "MEAN(Độ D)"
+  },
+  {
+    "question": "How does SUM(Khối lượng) vary by Khu Vực (Quận/Huyện)?",
+    "reason": "Statistics-based analysis: SUM(Khối lượng) grouped by Khu Vực (Quận/Huyện).",
+    "breakdown": "Khu Vực (Quận/Huyện)",
+    "measure": "SUM(Khối lượng)"
+  },
+  {
+    "question": "How does MEAN(Khối lượng) vary by Khu Vực (Quận/Huyện)?",
+    "reason": "Statistics-based analysis: MEAN(Khối lượng) grouped by Khu Vực (Quận/Huyện).",
+    "breakdown": "Khu Vực (Quận/Huyện)",
+    "measure": "MEAN(Khối lượng)"
+  },
+  {
+    "question": "How does SUM(Met A) vary by Khu Vực (Quận/Huyện)?",
+    "reason": "Statistics-based analysis: SUM(Met A) grouped by Khu Vực (Quận/Huyện).",
+    "breakdown": "Khu Vực (Quận/Huyện)",
+    "measure": "SUM(Met A)"
+  },
+  {
+    "question": "How does MEAN(Met A) vary by Khu Vực (Quận/Huyện)?",
+    "reason": "Statistics-based analysis: MEAN(Met A) grouped by Khu Vực (Quận/Huyện).",
+    "breakdown": "Khu Vực (Quận/Huyện)",
+    "measure": "MEAN(Met A)"
+  },
+  {
+    "question": "How does SUM(Met B) vary by Khu Vực (Quận/Huyện)?",
+    "reason": "Statistics-based analysis: SUM(Met B) grouped by Khu Vực (Quận/Huyện).",
+    "breakdown": "Khu Vực (Quận/Huyện)",
+    "measure": "SUM(Met B)"
+  },
+  {
+    "question": "How does MEAN(Met B) vary by Khu Vực (Quận/Huyện)?",
+    "reason": "Statistics-based analysis: MEAN(Met B) grouped by Khu Vực (Quận/Huyện).",
+    "breakdown": "Khu Vực (Quận/Huyện)",
+    "measure": "MEAN(Met B)"
+  },
+  {
+    "question": "How does SUM(Met C) vary by Khu Vực (Quận/Huyện)?",
+    "reason": "Statistics-based analysis: SUM(Met C) grouped by Khu Vực (Quận/Huyện).",
+    "breakdown": "Khu Vực (Quận/Huyện)",
+    "measure": "SUM(Met C)"
+  },
+  {
+    "question": "How does MEAN(Met C) vary by Khu Vực (Quận/Huyện)?",
+    "reason": "Statistics-based analysis: MEAN(Met C) grouped by Khu Vực (Quận/Huyện).",
+    "breakdown": "Khu Vực (Quận/Huyện)",
+    "measure": "MEAN(Met C)"
+  },
+  {
+    "question": "How does SUM(Tỷ trọng thực tế) vary by Khu Vực (Quận/Huyện)?",
+    "reason": "Statistics-based analysis: SUM(Tỷ trọng thực tế) grouped by Khu Vực (Quận/Huyện).",
+    "breakdown": "Khu Vực (Quận/Huyện)",
+    "measure": "SUM(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does MEAN(Tỷ trọng thực tế) vary by Khu Vực (Quận/Huyện)?",
+    "reason": "Statistics-based analysis: MEAN(Tỷ trọng thực tế) grouped by Khu Vực (Quận/Huyện).",
+    "breakdown": "Khu Vực (Quận/Huyện)",
+    "measure": "MEAN(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does SUM(Khổ (mm)) vary by Khu Vực (Quận/Huyện)?",
+    "reason": "Statistics-based analysis: SUM(Khổ (mm)) grouped by Khu Vực (Quận/Huyện).",
+    "breakdown": "Khu Vực (Quận/Huyện)",
+    "measure": "SUM(Khổ (mm))"
+  },
+  {
+    "question": "How does MEAN(Khổ (mm)) vary by Khu Vực (Quận/Huyện)?",
+    "reason": "Statistics-based analysis: MEAN(Khổ (mm)) grouped by Khu Vực (Quận/Huyện).",
+    "breakdown": "Khu Vực (Quận/Huyện)",
+    "measure": "MEAN(Khổ (mm))"
+  },
+  {
+    "question": "How does SUM(Thành Tiền) vary by Khu Vực (Quận/Huyện)?",
+    "reason": "Statistics-based analysis: SUM(Thành Tiền) grouped by Khu Vực (Quận/Huyện).",
+    "breakdown": "Khu Vực (Quận/Huyện)",
+    "measure": "SUM(Thành Tiền)"
+  },
+  {
+    "question": "How does MEAN(Thành Tiền) vary by Khu Vực (Quận/Huyện)?",
+    "reason": "Statistics-based analysis: MEAN(Thành Tiền) grouped by Khu Vực (Quận/Huyện).",
+    "breakdown": "Khu Vực (Quận/Huyện)",
+    "measure": "MEAN(Thành Tiền)"
+  },
+  {
+    "question": "How does SUM(Giá_trên_kg) vary by Khu Vực (Quận/Huyện)?",
+    "reason": "Statistics-based analysis: SUM(Giá_trên_kg) grouped by Khu Vực (Quận/Huyện).",
+    "breakdown": "Khu Vực (Quận/Huyện)",
+    "measure": "SUM(Giá_trên_kg)"
+  },
+  {
+    "question": "How does MEAN(Giá_trên_kg) vary by Khu Vực (Quận/Huyện)?",
+    "reason": "Statistics-based analysis: MEAN(Giá_trên_kg) grouped by Khu Vực (Quận/Huyện).",
+    "breakdown": "Khu Vực (Quận/Huyện)",
+    "measure": "MEAN(Giá_trên_kg)"
+  },
+  {
+    "question": "How does SUM(Doanh_thu_trên_mm) vary by Khu Vực (Quận/Huyện)?",
+    "reason": "Statistics-based analysis: SUM(Doanh_thu_trên_mm) grouped by Khu Vực (Quận/Huyện).",
+    "breakdown": "Khu Vực (Quận/Huyện)",
+    "measure": "SUM(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does MEAN(Doanh_thu_trên_mm) vary by Khu Vực (Quận/Huyện)?",
+    "reason": "Statistics-based analysis: MEAN(Doanh_thu_trên_mm) grouped by Khu Vực (Quận/Huyện).",
+    "breakdown": "Khu Vực (Quận/Huyện)",
+    "measure": "MEAN(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does SUM(Độ D) vary by Tỉnh / Thành Phố?",
+    "reason": "Statistics-based analysis: SUM(Độ D) grouped by Tỉnh / Thành Phố.",
+    "breakdown": "Tỉnh / Thành Phố",
+    "measure": "SUM(Độ D)"
+  },
+  {
+    "question": "How does MEAN(Độ D) vary by Tỉnh / Thành Phố?",
+    "reason": "Statistics-based analysis: MEAN(Độ D) grouped by Tỉnh / Thành Phố.",
+    "breakdown": "Tỉnh / Thành Phố",
+    "measure": "MEAN(Độ D)"
+  },
+  {
+    "question": "How does SUM(Khối lượng) vary by Tỉnh / Thành Phố?",
+    "reason": "Statistics-based analysis: SUM(Khối lượng) grouped by Tỉnh / Thành Phố.",
+    "breakdown": "Tỉnh / Thành Phố",
+    "measure": "SUM(Khối lượng)"
+  },
+  {
+    "question": "How does MEAN(Khối lượng) vary by Tỉnh / Thành Phố?",
+    "reason": "Statistics-based analysis: MEAN(Khối lượng) grouped by Tỉnh / Thành Phố.",
+    "breakdown": "Tỉnh / Thành Phố",
+    "measure": "MEAN(Khối lượng)"
+  },
+  {
+    "question": "How does SUM(Met A) vary by Tỉnh / Thành Phố?",
+    "reason": "Statistics-based analysis: SUM(Met A) grouped by Tỉnh / Thành Phố.",
+    "breakdown": "Tỉnh / Thành Phố",
+    "measure": "SUM(Met A)"
+  },
+  {
+    "question": "How does MEAN(Met A) vary by Tỉnh / Thành Phố?",
+    "reason": "Statistics-based analysis: MEAN(Met A) grouped by Tỉnh / Thành Phố.",
+    "breakdown": "Tỉnh / Thành Phố",
+    "measure": "MEAN(Met A)"
+  },
+  {
+    "question": "How does SUM(Met B) vary by Tỉnh / Thành Phố?",
+    "reason": "Statistics-based analysis: SUM(Met B) grouped by Tỉnh / Thành Phố.",
+    "breakdown": "Tỉnh / Thành Phố",
+    "measure": "SUM(Met B)"
+  },
+  {
+    "question": "How does MEAN(Met B) vary by Tỉnh / Thành Phố?",
+    "reason": "Statistics-based analysis: MEAN(Met B) grouped by Tỉnh / Thành Phố.",
+    "breakdown": "Tỉnh / Thành Phố",
+    "measure": "MEAN(Met B)"
+  },
+  {
+    "question": "How does SUM(Met C) vary by Tỉnh / Thành Phố?",
+    "reason": "Statistics-based analysis: SUM(Met C) grouped by Tỉnh / Thành Phố.",
+    "breakdown": "Tỉnh / Thành Phố",
+    "measure": "SUM(Met C)"
+  },
+  {
+    "question": "How does MEAN(Met C) vary by Tỉnh / Thành Phố?",
+    "reason": "Statistics-based analysis: MEAN(Met C) grouped by Tỉnh / Thành Phố.",
+    "breakdown": "Tỉnh / Thành Phố",
+    "measure": "MEAN(Met C)"
+  },
+  {
+    "question": "How does SUM(Tỷ trọng thực tế) vary by Tỉnh / Thành Phố?",
+    "reason": "Statistics-based analysis: SUM(Tỷ trọng thực tế) grouped by Tỉnh / Thành Phố.",
+    "breakdown": "Tỉnh / Thành Phố",
+    "measure": "SUM(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does MEAN(Tỷ trọng thực tế) vary by Tỉnh / Thành Phố?",
+    "reason": "Statistics-based analysis: MEAN(Tỷ trọng thực tế) grouped by Tỉnh / Thành Phố.",
+    "breakdown": "Tỉnh / Thành Phố",
+    "measure": "MEAN(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does SUM(Khổ (mm)) vary by Tỉnh / Thành Phố?",
+    "reason": "Statistics-based analysis: SUM(Khổ (mm)) grouped by Tỉnh / Thành Phố.",
+    "breakdown": "Tỉnh / Thành Phố",
+    "measure": "SUM(Khổ (mm))"
+  },
+  {
+    "question": "How does MEAN(Khổ (mm)) vary by Tỉnh / Thành Phố?",
+    "reason": "Statistics-based analysis: MEAN(Khổ (mm)) grouped by Tỉnh / Thành Phố.",
+    "breakdown": "Tỉnh / Thành Phố",
+    "measure": "MEAN(Khổ (mm))"
+  },
+  {
+    "question": "How does SUM(Thành Tiền) vary by Tỉnh / Thành Phố?",
+    "reason": "Statistics-based analysis: SUM(Thành Tiền) grouped by Tỉnh / Thành Phố.",
+    "breakdown": "Tỉnh / Thành Phố",
+    "measure": "SUM(Thành Tiền)"
+  },
+  {
+    "question": "How does MEAN(Thành Tiền) vary by Tỉnh / Thành Phố?",
+    "reason": "Statistics-based analysis: MEAN(Thành Tiền) grouped by Tỉnh / Thành Phố.",
+    "breakdown": "Tỉnh / Thành Phố",
+    "measure": "MEAN(Thành Tiền)"
+  },
+  {
+    "question": "How does SUM(Giá_trên_kg) vary by Tỉnh / Thành Phố?",
+    "reason": "Statistics-based analysis: SUM(Giá_trên_kg) grouped by Tỉnh / Thành Phố.",
+    "breakdown": "Tỉnh / Thành Phố",
+    "measure": "SUM(Giá_trên_kg)"
+  },
+  {
+    "question": "How does MEAN(Giá_trên_kg) vary by Tỉnh / Thành Phố?",
+    "reason": "Statistics-based analysis: MEAN(Giá_trên_kg) grouped by Tỉnh / Thành Phố.",
+    "breakdown": "Tỉnh / Thành Phố",
+    "measure": "MEAN(Giá_trên_kg)"
+  },
+  {
+    "question": "How does SUM(Doanh_thu_trên_mm) vary by Tỉnh / Thành Phố?",
+    "reason": "Statistics-based analysis: SUM(Doanh_thu_trên_mm) grouped by Tỉnh / Thành Phố.",
+    "breakdown": "Tỉnh / Thành Phố",
+    "measure": "SUM(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does MEAN(Doanh_thu_trên_mm) vary by Tỉnh / Thành Phố?",
+    "reason": "Statistics-based analysis: MEAN(Doanh_thu_trên_mm) grouped by Tỉnh / Thành Phố.",
+    "breakdown": "Tỉnh / Thành Phố",
+    "measure": "MEAN(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does SUM(Độ D) vary by Năm?",
+    "reason": "Statistics-based analysis: SUM(Độ D) grouped by Năm.",
+    "breakdown": "Năm",
+    "measure": "SUM(Độ D)"
+  },
+  {
+    "question": "How does MEAN(Độ D) vary by Năm?",
+    "reason": "Statistics-based analysis: MEAN(Độ D) grouped by Năm.",
+    "breakdown": "Năm",
+    "measure": "MEAN(Độ D)"
+  },
+  {
+    "question": "How does SUM(Khối lượng) vary by Năm?",
+    "reason": "Statistics-based analysis: SUM(Khối lượng) grouped by Năm.",
+    "breakdown": "Năm",
+    "measure": "SUM(Khối lượng)"
+  },
+  {
+    "question": "How does MEAN(Khối lượng) vary by Năm?",
+    "reason": "Statistics-based analysis: MEAN(Khối lượng) grouped by Năm.",
+    "breakdown": "Năm",
+    "measure": "MEAN(Khối lượng)"
+  },
+  {
+    "question": "How does SUM(Met A) vary by Năm?",
+    "reason": "Statistics-based analysis: SUM(Met A) grouped by Năm.",
+    "breakdown": "Năm",
+    "measure": "SUM(Met A)"
+  },
+  {
+    "question": "How does MEAN(Met A) vary by Năm?",
+    "reason": "Statistics-based analysis: MEAN(Met A) grouped by Năm.",
+    "breakdown": "Năm",
+    "measure": "MEAN(Met A)"
+  },
+  {
+    "question": "How does SUM(Met B) vary by Năm?",
+    "reason": "Statistics-based analysis: SUM(Met B) grouped by Năm.",
+    "breakdown": "Năm",
+    "measure": "SUM(Met B)"
+  },
+  {
+    "question": "How does MEAN(Met B) vary by Năm?",
+    "reason": "Statistics-based analysis: MEAN(Met B) grouped by Năm.",
+    "breakdown": "Năm",
+    "measure": "MEAN(Met B)"
+  },
+  {
+    "question": "How does SUM(Met C) vary by Năm?",
+    "reason": "Statistics-based analysis: SUM(Met C) grouped by Năm.",
+    "breakdown": "Năm",
+    "measure": "SUM(Met C)"
+  },
+  {
+    "question": "How does MEAN(Met C) vary by Năm?",
+    "reason": "Statistics-based analysis: MEAN(Met C) grouped by Năm.",
+    "breakdown": "Năm",
+    "measure": "MEAN(Met C)"
+  },
+  {
+    "question": "How does SUM(Tỷ trọng thực tế) vary by Năm?",
+    "reason": "Statistics-based analysis: SUM(Tỷ trọng thực tế) grouped by Năm.",
+    "breakdown": "Năm",
+    "measure": "SUM(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does MEAN(Tỷ trọng thực tế) vary by Năm?",
+    "reason": "Statistics-based analysis: MEAN(Tỷ trọng thực tế) grouped by Năm.",
+    "breakdown": "Năm",
+    "measure": "MEAN(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does SUM(Khổ (mm)) vary by Năm?",
+    "reason": "Statistics-based analysis: SUM(Khổ (mm)) grouped by Năm.",
+    "breakdown": "Năm",
+    "measure": "SUM(Khổ (mm))"
+  },
+  {
+    "question": "How does MEAN(Khổ (mm)) vary by Năm?",
+    "reason": "Statistics-based analysis: MEAN(Khổ (mm)) grouped by Năm.",
+    "breakdown": "Năm",
+    "measure": "MEAN(Khổ (mm))"
+  },
+  {
+    "question": "How does SUM(Thành Tiền) vary by Năm?",
+    "reason": "Statistics-based analysis: SUM(Thành Tiền) grouped by Năm.",
+    "breakdown": "Năm",
+    "measure": "SUM(Thành Tiền)"
+  },
+  {
+    "question": "How does MEAN(Thành Tiền) vary by Năm?",
+    "reason": "Statistics-based analysis: MEAN(Thành Tiền) grouped by Năm.",
+    "breakdown": "Năm",
+    "measure": "MEAN(Thành Tiền)"
+  },
+  {
+    "question": "How does SUM(Giá_trên_kg) vary by Năm?",
+    "reason": "Statistics-based analysis: SUM(Giá_trên_kg) grouped by Năm.",
+    "breakdown": "Năm",
+    "measure": "SUM(Giá_trên_kg)"
+  },
+  {
+    "question": "How does MEAN(Giá_trên_kg) vary by Năm?",
+    "reason": "Statistics-based analysis: MEAN(Giá_trên_kg) grouped by Năm.",
+    "breakdown": "Năm",
+    "measure": "MEAN(Giá_trên_kg)"
+  },
+  {
+    "question": "How does SUM(Doanh_thu_trên_mm) vary by Năm?",
+    "reason": "Statistics-based analysis: SUM(Doanh_thu_trên_mm) grouped by Năm.",
+    "breakdown": "Năm",
+    "measure": "SUM(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does MEAN(Doanh_thu_trên_mm) vary by Năm?",
+    "reason": "Statistics-based analysis: MEAN(Doanh_thu_trên_mm) grouped by Năm.",
+    "breakdown": "Năm",
+    "measure": "MEAN(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does SUM(Độ D) vary by Tháng?",
+    "reason": "Statistics-based analysis: SUM(Độ D) grouped by Tháng.",
+    "breakdown": "Tháng",
+    "measure": "SUM(Độ D)"
+  },
+  {
+    "question": "How does MEAN(Độ D) vary by Tháng?",
+    "reason": "Statistics-based analysis: MEAN(Độ D) grouped by Tháng.",
+    "breakdown": "Tháng",
+    "measure": "MEAN(Độ D)"
+  },
+  {
+    "question": "How does SUM(Khối lượng) vary by Tháng?",
+    "reason": "Statistics-based analysis: SUM(Khối lượng) grouped by Tháng.",
+    "breakdown": "Tháng",
+    "measure": "SUM(Khối lượng)"
+  },
+  {
+    "question": "How does MEAN(Khối lượng) vary by Tháng?",
+    "reason": "Statistics-based analysis: MEAN(Khối lượng) grouped by Tháng.",
+    "breakdown": "Tháng",
+    "measure": "MEAN(Khối lượng)"
+  },
+  {
+    "question": "How does SUM(Met A) vary by Tháng?",
+    "reason": "Statistics-based analysis: SUM(Met A) grouped by Tháng.",
+    "breakdown": "Tháng",
+    "measure": "SUM(Met A)"
+  },
+  {
+    "question": "How does MEAN(Met A) vary by Tháng?",
+    "reason": "Statistics-based analysis: MEAN(Met A) grouped by Tháng.",
+    "breakdown": "Tháng",
+    "measure": "MEAN(Met A)"
+  },
+  {
+    "question": "How does SUM(Met B) vary by Tháng?",
+    "reason": "Statistics-based analysis: SUM(Met B) grouped by Tháng.",
+    "breakdown": "Tháng",
+    "measure": "SUM(Met B)"
+  },
+  {
+    "question": "How does MEAN(Met B) vary by Tháng?",
+    "reason": "Statistics-based analysis: MEAN(Met B) grouped by Tháng.",
+    "breakdown": "Tháng",
+    "measure": "MEAN(Met B)"
+  },
+  {
+    "question": "How does SUM(Met C) vary by Tháng?",
+    "reason": "Statistics-based analysis: SUM(Met C) grouped by Tháng.",
+    "breakdown": "Tháng",
+    "measure": "SUM(Met C)"
+  },
+  {
+    "question": "How does MEAN(Met C) vary by Tháng?",
+    "reason": "Statistics-based analysis: MEAN(Met C) grouped by Tháng.",
+    "breakdown": "Tháng",
+    "measure": "MEAN(Met C)"
+  },
+  {
+    "question": "How does SUM(Tỷ trọng thực tế) vary by Tháng?",
+    "reason": "Statistics-based analysis: SUM(Tỷ trọng thực tế) grouped by Tháng.",
+    "breakdown": "Tháng",
+    "measure": "SUM(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does MEAN(Tỷ trọng thực tế) vary by Tháng?",
+    "reason": "Statistics-based analysis: MEAN(Tỷ trọng thực tế) grouped by Tháng.",
+    "breakdown": "Tháng",
+    "measure": "MEAN(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does SUM(Khổ (mm)) vary by Tháng?",
+    "reason": "Statistics-based analysis: SUM(Khổ (mm)) grouped by Tháng.",
+    "breakdown": "Tháng",
+    "measure": "SUM(Khổ (mm))"
+  },
+  {
+    "question": "How does MEAN(Khổ (mm)) vary by Tháng?",
+    "reason": "Statistics-based analysis: MEAN(Khổ (mm)) grouped by Tháng.",
+    "breakdown": "Tháng",
+    "measure": "MEAN(Khổ (mm))"
+  },
+  {
+    "question": "How does SUM(Thành Tiền) vary by Tháng?",
+    "reason": "Statistics-based analysis: SUM(Thành Tiền) grouped by Tháng.",
+    "breakdown": "Tháng",
+    "measure": "SUM(Thành Tiền)"
+  },
+  {
+    "question": "How does MEAN(Thành Tiền) vary by Tháng?",
+    "reason": "Statistics-based analysis: MEAN(Thành Tiền) grouped by Tháng.",
+    "breakdown": "Tháng",
+    "measure": "MEAN(Thành Tiền)"
+  },
+  {
+    "question": "How does SUM(Giá_trên_kg) vary by Tháng?",
+    "reason": "Statistics-based analysis: SUM(Giá_trên_kg) grouped by Tháng.",
+    "breakdown": "Tháng",
+    "measure": "SUM(Giá_trên_kg)"
+  },
+  {
+    "question": "How does MEAN(Giá_trên_kg) vary by Tháng?",
+    "reason": "Statistics-based analysis: MEAN(Giá_trên_kg) grouped by Tháng.",
+    "breakdown": "Tháng",
+    "measure": "MEAN(Giá_trên_kg)"
+  },
+  {
+    "question": "How does SUM(Doanh_thu_trên_mm) vary by Tháng?",
+    "reason": "Statistics-based analysis: SUM(Doanh_thu_trên_mm) grouped by Tháng.",
+    "breakdown": "Tháng",
+    "measure": "SUM(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does MEAN(Doanh_thu_trên_mm) vary by Tháng?",
+    "reason": "Statistics-based analysis: MEAN(Doanh_thu_trên_mm) grouped by Tháng.",
+    "breakdown": "Tháng",
+    "measure": "MEAN(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does SUM(Độ D) vary by Ngày?",
+    "reason": "Statistics-based analysis: SUM(Độ D) grouped by Ngày.",
+    "breakdown": "Ngày",
+    "measure": "SUM(Độ D)"
+  },
+  {
+    "question": "How does MEAN(Độ D) vary by Ngày?",
+    "reason": "Statistics-based analysis: MEAN(Độ D) grouped by Ngày.",
+    "breakdown": "Ngày",
+    "measure": "MEAN(Độ D)"
+  },
+  {
+    "question": "How does SUM(Khối lượng) vary by Ngày?",
+    "reason": "Statistics-based analysis: SUM(Khối lượng) grouped by Ngày.",
+    "breakdown": "Ngày",
+    "measure": "SUM(Khối lượng)"
+  },
+  {
+    "question": "How does MEAN(Khối lượng) vary by Ngày?",
+    "reason": "Statistics-based analysis: MEAN(Khối lượng) grouped by Ngày.",
+    "breakdown": "Ngày",
+    "measure": "MEAN(Khối lượng)"
+  },
+  {
+    "question": "How does SUM(Met A) vary by Ngày?",
+    "reason": "Statistics-based analysis: SUM(Met A) grouped by Ngày.",
+    "breakdown": "Ngày",
+    "measure": "SUM(Met A)"
+  },
+  {
+    "question": "How does MEAN(Met A) vary by Ngày?",
+    "reason": "Statistics-based analysis: MEAN(Met A) grouped by Ngày.",
+    "breakdown": "Ngày",
+    "measure": "MEAN(Met A)"
+  },
+  {
+    "question": "How does SUM(Met B) vary by Ngày?",
+    "reason": "Statistics-based analysis: SUM(Met B) grouped by Ngày.",
+    "breakdown": "Ngày",
+    "measure": "SUM(Met B)"
+  },
+  {
+    "question": "How does MEAN(Met B) vary by Ngày?",
+    "reason": "Statistics-based analysis: MEAN(Met B) grouped by Ngày.",
+    "breakdown": "Ngày",
+    "measure": "MEAN(Met B)"
+  },
+  {
+    "question": "How does SUM(Met C) vary by Ngày?",
+    "reason": "Statistics-based analysis: SUM(Met C) grouped by Ngày.",
+    "breakdown": "Ngày",
+    "measure": "SUM(Met C)"
+  },
+  {
+    "question": "How does MEAN(Met C) vary by Ngày?",
+    "reason": "Statistics-based analysis: MEAN(Met C) grouped by Ngày.",
+    "breakdown": "Ngày",
+    "measure": "MEAN(Met C)"
+  },
+  {
+    "question": "How does SUM(Tỷ trọng thực tế) vary by Ngày?",
+    "reason": "Statistics-based analysis: SUM(Tỷ trọng thực tế) grouped by Ngày.",
+    "breakdown": "Ngày",
+    "measure": "SUM(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does MEAN(Tỷ trọng thực tế) vary by Ngày?",
+    "reason": "Statistics-based analysis: MEAN(Tỷ trọng thực tế) grouped by Ngày.",
+    "breakdown": "Ngày",
+    "measure": "MEAN(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does SUM(Khổ (mm)) vary by Ngày?",
+    "reason": "Statistics-based analysis: SUM(Khổ (mm)) grouped by Ngày.",
+    "breakdown": "Ngày",
+    "measure": "SUM(Khổ (mm))"
+  },
+  {
+    "question": "How does MEAN(Khổ (mm)) vary by Ngày?",
+    "reason": "Statistics-based analysis: MEAN(Khổ (mm)) grouped by Ngày.",
+    "breakdown": "Ngày",
+    "measure": "MEAN(Khổ (mm))"
+  },
+  {
+    "question": "How does SUM(Thành Tiền) vary by Ngày?",
+    "reason": "Statistics-based analysis: SUM(Thành Tiền) grouped by Ngày.",
+    "breakdown": "Ngày",
+    "measure": "SUM(Thành Tiền)"
+  },
+  {
+    "question": "How does MEAN(Thành Tiền) vary by Ngày?",
+    "reason": "Statistics-based analysis: MEAN(Thành Tiền) grouped by Ngày.",
+    "breakdown": "Ngày",
+    "measure": "MEAN(Thành Tiền)"
+  },
+  {
+    "question": "How does SUM(Giá_trên_kg) vary by Ngày?",
+    "reason": "Statistics-based analysis: SUM(Giá_trên_kg) grouped by Ngày.",
+    "breakdown": "Ngày",
+    "measure": "SUM(Giá_trên_kg)"
+  },
+  {
+    "question": "How does MEAN(Giá_trên_kg) vary by Ngày?",
+    "reason": "Statistics-based analysis: MEAN(Giá_trên_kg) grouped by Ngày.",
+    "breakdown": "Ngày",
+    "measure": "MEAN(Giá_trên_kg)"
+  },
+  {
+    "question": "How does SUM(Doanh_thu_trên_mm) vary by Ngày?",
+    "reason": "Statistics-based analysis: SUM(Doanh_thu_trên_mm) grouped by Ngày.",
+    "breakdown": "Ngày",
+    "measure": "SUM(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does MEAN(Doanh_thu_trên_mm) vary by Ngày?",
+    "reason": "Statistics-based analysis: MEAN(Doanh_thu_trên_mm) grouped by Ngày.",
+    "breakdown": "Ngày",
+    "measure": "MEAN(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does SUM(Độ D) vary by Thứ?",
+    "reason": "Statistics-based analysis: SUM(Độ D) grouped by Thứ.",
+    "breakdown": "Thứ",
+    "measure": "SUM(Độ D)"
+  },
+  {
+    "question": "How does MEAN(Độ D) vary by Thứ?",
+    "reason": "Statistics-based analysis: MEAN(Độ D) grouped by Thứ.",
+    "breakdown": "Thứ",
+    "measure": "MEAN(Độ D)"
+  },
+  {
+    "question": "How does SUM(Khối lượng) vary by Thứ?",
+    "reason": "Statistics-based analysis: SUM(Khối lượng) grouped by Thứ.",
+    "breakdown": "Thứ",
+    "measure": "SUM(Khối lượng)"
+  },
+  {
+    "question": "How does MEAN(Khối lượng) vary by Thứ?",
+    "reason": "Statistics-based analysis: MEAN(Khối lượng) grouped by Thứ.",
+    "breakdown": "Thứ",
+    "measure": "MEAN(Khối lượng)"
+  },
+  {
+    "question": "How does SUM(Met A) vary by Thứ?",
+    "reason": "Statistics-based analysis: SUM(Met A) grouped by Thứ.",
+    "breakdown": "Thứ",
+    "measure": "SUM(Met A)"
+  },
+  {
+    "question": "How does MEAN(Met A) vary by Thứ?",
+    "reason": "Statistics-based analysis: MEAN(Met A) grouped by Thứ.",
+    "breakdown": "Thứ",
+    "measure": "MEAN(Met A)"
+  },
+  {
+    "question": "How does SUM(Met B) vary by Thứ?",
+    "reason": "Statistics-based analysis: SUM(Met B) grouped by Thứ.",
+    "breakdown": "Thứ",
+    "measure": "SUM(Met B)"
+  },
+  {
+    "question": "How does MEAN(Met B) vary by Thứ?",
+    "reason": "Statistics-based analysis: MEAN(Met B) grouped by Thứ.",
+    "breakdown": "Thứ",
+    "measure": "MEAN(Met B)"
+  },
+  {
+    "question": "How does SUM(Met C) vary by Thứ?",
+    "reason": "Statistics-based analysis: SUM(Met C) grouped by Thứ.",
+    "breakdown": "Thứ",
+    "measure": "SUM(Met C)"
+  },
+  {
+    "question": "How does MEAN(Met C) vary by Thứ?",
+    "reason": "Statistics-based analysis: MEAN(Met C) grouped by Thứ.",
+    "breakdown": "Thứ",
+    "measure": "MEAN(Met C)"
+  },
+  {
+    "question": "How does SUM(Tỷ trọng thực tế) vary by Thứ?",
+    "reason": "Statistics-based analysis: SUM(Tỷ trọng thực tế) grouped by Thứ.",
+    "breakdown": "Thứ",
+    "measure": "SUM(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does MEAN(Tỷ trọng thực tế) vary by Thứ?",
+    "reason": "Statistics-based analysis: MEAN(Tỷ trọng thực tế) grouped by Thứ.",
+    "breakdown": "Thứ",
+    "measure": "MEAN(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does SUM(Khổ (mm)) vary by Thứ?",
+    "reason": "Statistics-based analysis: SUM(Khổ (mm)) grouped by Thứ.",
+    "breakdown": "Thứ",
+    "measure": "SUM(Khổ (mm))"
+  },
+  {
+    "question": "How does MEAN(Khổ (mm)) vary by Thứ?",
+    "reason": "Statistics-based analysis: MEAN(Khổ (mm)) grouped by Thứ.",
+    "breakdown": "Thứ",
+    "measure": "MEAN(Khổ (mm))"
+  },
+  {
+    "question": "How does SUM(Thành Tiền) vary by Thứ?",
+    "reason": "Statistics-based analysis: SUM(Thành Tiền) grouped by Thứ.",
+    "breakdown": "Thứ",
+    "measure": "SUM(Thành Tiền)"
+  },
+  {
+    "question": "How does MEAN(Thành Tiền) vary by Thứ?",
+    "reason": "Statistics-based analysis: MEAN(Thành Tiền) grouped by Thứ.",
+    "breakdown": "Thứ",
+    "measure": "MEAN(Thành Tiền)"
+  },
+  {
+    "question": "How does SUM(Giá_trên_kg) vary by Thứ?",
+    "reason": "Statistics-based analysis: SUM(Giá_trên_kg) grouped by Thứ.",
+    "breakdown": "Thứ",
+    "measure": "SUM(Giá_trên_kg)"
+  },
+  {
+    "question": "How does MEAN(Giá_trên_kg) vary by Thứ?",
+    "reason": "Statistics-based analysis: MEAN(Giá_trên_kg) grouped by Thứ.",
+    "breakdown": "Thứ",
+    "measure": "MEAN(Giá_trên_kg)"
+  },
+  {
+    "question": "How does SUM(Doanh_thu_trên_mm) vary by Thứ?",
+    "reason": "Statistics-based analysis: SUM(Doanh_thu_trên_mm) grouped by Thứ.",
+    "breakdown": "Thứ",
+    "measure": "SUM(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does MEAN(Doanh_thu_trên_mm) vary by Thứ?",
+    "reason": "Statistics-based analysis: MEAN(Doanh_thu_trên_mm) grouped by Thứ.",
+    "breakdown": "Thứ",
+    "measure": "MEAN(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does SUM(Độ D) vary by Cuối_tuần?",
+    "reason": "Statistics-based analysis: SUM(Độ D) grouped by Cuối_tuần.",
+    "breakdown": "Cuối_tuần",
+    "measure": "SUM(Độ D)"
+  },
+  {
+    "question": "How does MEAN(Độ D) vary by Cuối_tuần?",
+    "reason": "Statistics-based analysis: MEAN(Độ D) grouped by Cuối_tuần.",
+    "breakdown": "Cuối_tuần",
+    "measure": "MEAN(Độ D)"
+  },
+  {
+    "question": "How does SUM(Khối lượng) vary by Cuối_tuần?",
+    "reason": "Statistics-based analysis: SUM(Khối lượng) grouped by Cuối_tuần.",
+    "breakdown": "Cuối_tuần",
+    "measure": "SUM(Khối lượng)"
+  },
+  {
+    "question": "How does MEAN(Khối lượng) vary by Cuối_tuần?",
+    "reason": "Statistics-based analysis: MEAN(Khối lượng) grouped by Cuối_tuần.",
+    "breakdown": "Cuối_tuần",
+    "measure": "MEAN(Khối lượng)"
+  },
+  {
+    "question": "How does SUM(Met A) vary by Cuối_tuần?",
+    "reason": "Statistics-based analysis: SUM(Met A) grouped by Cuối_tuần.",
+    "breakdown": "Cuối_tuần",
+    "measure": "SUM(Met A)"
+  },
+  {
+    "question": "How does MEAN(Met A) vary by Cuối_tuần?",
+    "reason": "Statistics-based analysis: MEAN(Met A) grouped by Cuối_tuần.",
+    "breakdown": "Cuối_tuần",
+    "measure": "MEAN(Met A)"
+  },
+  {
+    "question": "How does SUM(Met B) vary by Cuối_tuần?",
+    "reason": "Statistics-based analysis: SUM(Met B) grouped by Cuối_tuần.",
+    "breakdown": "Cuối_tuần",
+    "measure": "SUM(Met B)"
+  },
+  {
+    "question": "How does MEAN(Met B) vary by Cuối_tuần?",
+    "reason": "Statistics-based analysis: MEAN(Met B) grouped by Cuối_tuần.",
+    "breakdown": "Cuối_tuần",
+    "measure": "MEAN(Met B)"
+  },
+  {
+    "question": "How does SUM(Met C) vary by Cuối_tuần?",
+    "reason": "Statistics-based analysis: SUM(Met C) grouped by Cuối_tuần.",
+    "breakdown": "Cuối_tuần",
+    "measure": "SUM(Met C)"
+  },
+  {
+    "question": "How does MEAN(Met C) vary by Cuối_tuần?",
+    "reason": "Statistics-based analysis: MEAN(Met C) grouped by Cuối_tuần.",
+    "breakdown": "Cuối_tuần",
+    "measure": "MEAN(Met C)"
+  },
+  {
+    "question": "How does SUM(Tỷ trọng thực tế) vary by Cuối_tuần?",
+    "reason": "Statistics-based analysis: SUM(Tỷ trọng thực tế) grouped by Cuối_tuần.",
+    "breakdown": "Cuối_tuần",
+    "measure": "SUM(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does MEAN(Tỷ trọng thực tế) vary by Cuối_tuần?",
+    "reason": "Statistics-based analysis: MEAN(Tỷ trọng thực tế) grouped by Cuối_tuần.",
+    "breakdown": "Cuối_tuần",
+    "measure": "MEAN(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does SUM(Khổ (mm)) vary by Cuối_tuần?",
+    "reason": "Statistics-based analysis: SUM(Khổ (mm)) grouped by Cuối_tuần.",
+    "breakdown": "Cuối_tuần",
+    "measure": "SUM(Khổ (mm))"
+  },
+  {
+    "question": "How does MEAN(Khổ (mm)) vary by Cuối_tuần?",
+    "reason": "Statistics-based analysis: MEAN(Khổ (mm)) grouped by Cuối_tuần.",
+    "breakdown": "Cuối_tuần",
+    "measure": "MEAN(Khổ (mm))"
+  },
+  {
+    "question": "How does SUM(Thành Tiền) vary by Cuối_tuần?",
+    "reason": "Statistics-based analysis: SUM(Thành Tiền) grouped by Cuối_tuần.",
+    "breakdown": "Cuối_tuần",
+    "measure": "SUM(Thành Tiền)"
+  },
+  {
+    "question": "How does MEAN(Thành Tiền) vary by Cuối_tuần?",
+    "reason": "Statistics-based analysis: MEAN(Thành Tiền) grouped by Cuối_tuần.",
+    "breakdown": "Cuối_tuần",
+    "measure": "MEAN(Thành Tiền)"
+  },
+  {
+    "question": "How does SUM(Giá_trên_kg) vary by Cuối_tuần?",
+    "reason": "Statistics-based analysis: SUM(Giá_trên_kg) grouped by Cuối_tuần.",
+    "breakdown": "Cuối_tuần",
+    "measure": "SUM(Giá_trên_kg)"
+  },
+  {
+    "question": "How does MEAN(Giá_trên_kg) vary by Cuối_tuần?",
+    "reason": "Statistics-based analysis: MEAN(Giá_trên_kg) grouped by Cuối_tuần.",
+    "breakdown": "Cuối_tuần",
+    "measure": "MEAN(Giá_trên_kg)"
+  },
+  {
+    "question": "How does SUM(Doanh_thu_trên_mm) vary by Cuối_tuần?",
+    "reason": "Statistics-based analysis: SUM(Doanh_thu_trên_mm) grouped by Cuối_tuần.",
+    "breakdown": "Cuối_tuần",
+    "measure": "SUM(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does MEAN(Doanh_thu_trên_mm) vary by Cuối_tuần?",
+    "reason": "Statistics-based analysis: MEAN(Doanh_thu_trên_mm) grouped by Cuối_tuần.",
+    "breakdown": "Cuối_tuần",
+    "measure": "MEAN(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does SUM(Độ D) vary by Tuần_trong_tháng?",
+    "reason": "Statistics-based analysis: SUM(Độ D) grouped by Tuần_trong_tháng.",
+    "breakdown": "Tuần_trong_tháng",
+    "measure": "SUM(Độ D)"
+  },
+  {
+    "question": "How does MEAN(Độ D) vary by Tuần_trong_tháng?",
+    "reason": "Statistics-based analysis: MEAN(Độ D) grouped by Tuần_trong_tháng.",
+    "breakdown": "Tuần_trong_tháng",
+    "measure": "MEAN(Độ D)"
+  },
+  {
+    "question": "How does SUM(Khối lượng) vary by Tuần_trong_tháng?",
+    "reason": "Statistics-based analysis: SUM(Khối lượng) grouped by Tuần_trong_tháng.",
+    "breakdown": "Tuần_trong_tháng",
+    "measure": "SUM(Khối lượng)"
+  },
+  {
+    "question": "How does MEAN(Khối lượng) vary by Tuần_trong_tháng?",
+    "reason": "Statistics-based analysis: MEAN(Khối lượng) grouped by Tuần_trong_tháng.",
+    "breakdown": "Tuần_trong_tháng",
+    "measure": "MEAN(Khối lượng)"
+  },
+  {
+    "question": "How does SUM(Met A) vary by Tuần_trong_tháng?",
+    "reason": "Statistics-based analysis: SUM(Met A) grouped by Tuần_trong_tháng.",
+    "breakdown": "Tuần_trong_tháng",
+    "measure": "SUM(Met A)"
+  },
+  {
+    "question": "How does MEAN(Met A) vary by Tuần_trong_tháng?",
+    "reason": "Statistics-based analysis: MEAN(Met A) grouped by Tuần_trong_tháng.",
+    "breakdown": "Tuần_trong_tháng",
+    "measure": "MEAN(Met A)"
+  },
+  {
+    "question": "How does SUM(Met B) vary by Tuần_trong_tháng?",
+    "reason": "Statistics-based analysis: SUM(Met B) grouped by Tuần_trong_tháng.",
+    "breakdown": "Tuần_trong_tháng",
+    "measure": "SUM(Met B)"
+  },
+  {
+    "question": "How does MEAN(Met B) vary by Tuần_trong_tháng?",
+    "reason": "Statistics-based analysis: MEAN(Met B) grouped by Tuần_trong_tháng.",
+    "breakdown": "Tuần_trong_tháng",
+    "measure": "MEAN(Met B)"
+  },
+  {
+    "question": "How does SUM(Met C) vary by Tuần_trong_tháng?",
+    "reason": "Statistics-based analysis: SUM(Met C) grouped by Tuần_trong_tháng.",
+    "breakdown": "Tuần_trong_tháng",
+    "measure": "SUM(Met C)"
+  },
+  {
+    "question": "How does MEAN(Met C) vary by Tuần_trong_tháng?",
+    "reason": "Statistics-based analysis: MEAN(Met C) grouped by Tuần_trong_tháng.",
+    "breakdown": "Tuần_trong_tháng",
+    "measure": "MEAN(Met C)"
+  },
+  {
+    "question": "How does SUM(Tỷ trọng thực tế) vary by Tuần_trong_tháng?",
+    "reason": "Statistics-based analysis: SUM(Tỷ trọng thực tế) grouped by Tuần_trong_tháng.",
+    "breakdown": "Tuần_trong_tháng",
+    "measure": "SUM(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does MEAN(Tỷ trọng thực tế) vary by Tuần_trong_tháng?",
+    "reason": "Statistics-based analysis: MEAN(Tỷ trọng thực tế) grouped by Tuần_trong_tháng.",
+    "breakdown": "Tuần_trong_tháng",
+    "measure": "MEAN(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does SUM(Khổ (mm)) vary by Tuần_trong_tháng?",
+    "reason": "Statistics-based analysis: SUM(Khổ (mm)) grouped by Tuần_trong_tháng.",
+    "breakdown": "Tuần_trong_tháng",
+    "measure": "SUM(Khổ (mm))"
+  },
+  {
+    "question": "How does MEAN(Khổ (mm)) vary by Tuần_trong_tháng?",
+    "reason": "Statistics-based analysis: MEAN(Khổ (mm)) grouped by Tuần_trong_tháng.",
+    "breakdown": "Tuần_trong_tháng",
+    "measure": "MEAN(Khổ (mm))"
+  },
+  {
+    "question": "How does SUM(Thành Tiền) vary by Tuần_trong_tháng?",
+    "reason": "Statistics-based analysis: SUM(Thành Tiền) grouped by Tuần_trong_tháng.",
+    "breakdown": "Tuần_trong_tháng",
+    "measure": "SUM(Thành Tiền)"
+  },
+  {
+    "question": "How does MEAN(Thành Tiền) vary by Tuần_trong_tháng?",
+    "reason": "Statistics-based analysis: MEAN(Thành Tiền) grouped by Tuần_trong_tháng.",
+    "breakdown": "Tuần_trong_tháng",
+    "measure": "MEAN(Thành Tiền)"
+  },
+  {
+    "question": "How does SUM(Giá_trên_kg) vary by Tuần_trong_tháng?",
+    "reason": "Statistics-based analysis: SUM(Giá_trên_kg) grouped by Tuần_trong_tháng.",
+    "breakdown": "Tuần_trong_tháng",
+    "measure": "SUM(Giá_trên_kg)"
+  },
+  {
+    "question": "How does MEAN(Giá_trên_kg) vary by Tuần_trong_tháng?",
+    "reason": "Statistics-based analysis: MEAN(Giá_trên_kg) grouped by Tuần_trong_tháng.",
+    "breakdown": "Tuần_trong_tháng",
+    "measure": "MEAN(Giá_trên_kg)"
+  },
+  {
+    "question": "How does SUM(Doanh_thu_trên_mm) vary by Tuần_trong_tháng?",
+    "reason": "Statistics-based analysis: SUM(Doanh_thu_trên_mm) grouped by Tuần_trong_tháng.",
+    "breakdown": "Tuần_trong_tháng",
+    "measure": "SUM(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does MEAN(Doanh_thu_trên_mm) vary by Tuần_trong_tháng?",
+    "reason": "Statistics-based analysis: MEAN(Doanh_thu_trên_mm) grouped by Tuần_trong_tháng.",
+    "breakdown": "Tuần_trong_tháng",
+    "measure": "MEAN(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does SUM(Độ D) vary by Quý?",
+    "reason": "Statistics-based analysis: SUM(Độ D) grouped by Quý.",
+    "breakdown": "Quý",
+    "measure": "SUM(Độ D)"
+  },
+  {
+    "question": "How does MEAN(Độ D) vary by Quý?",
+    "reason": "Statistics-based analysis: MEAN(Độ D) grouped by Quý.",
+    "breakdown": "Quý",
+    "measure": "MEAN(Độ D)"
+  },
+  {
+    "question": "How does SUM(Khối lượng) vary by Quý?",
+    "reason": "Statistics-based analysis: SUM(Khối lượng) grouped by Quý.",
+    "breakdown": "Quý",
+    "measure": "SUM(Khối lượng)"
+  },
+  {
+    "question": "How does MEAN(Khối lượng) vary by Quý?",
+    "reason": "Statistics-based analysis: MEAN(Khối lượng) grouped by Quý.",
+    "breakdown": "Quý",
+    "measure": "MEAN(Khối lượng)"
+  },
+  {
+    "question": "How does SUM(Met A) vary by Quý?",
+    "reason": "Statistics-based analysis: SUM(Met A) grouped by Quý.",
+    "breakdown": "Quý",
+    "measure": "SUM(Met A)"
+  },
+  {
+    "question": "How does MEAN(Met A) vary by Quý?",
+    "reason": "Statistics-based analysis: MEAN(Met A) grouped by Quý.",
+    "breakdown": "Quý",
+    "measure": "MEAN(Met A)"
+  },
+  {
+    "question": "How does SUM(Met B) vary by Quý?",
+    "reason": "Statistics-based analysis: SUM(Met B) grouped by Quý.",
+    "breakdown": "Quý",
+    "measure": "SUM(Met B)"
+  },
+  {
+    "question": "How does MEAN(Met B) vary by Quý?",
+    "reason": "Statistics-based analysis: MEAN(Met B) grouped by Quý.",
+    "breakdown": "Quý",
+    "measure": "MEAN(Met B)"
+  },
+  {
+    "question": "How does SUM(Met C) vary by Quý?",
+    "reason": "Statistics-based analysis: SUM(Met C) grouped by Quý.",
+    "breakdown": "Quý",
+    "measure": "SUM(Met C)"
+  },
+  {
+    "question": "How does MEAN(Met C) vary by Quý?",
+    "reason": "Statistics-based analysis: MEAN(Met C) grouped by Quý.",
+    "breakdown": "Quý",
+    "measure": "MEAN(Met C)"
+  },
+  {
+    "question": "How does SUM(Tỷ trọng thực tế) vary by Quý?",
+    "reason": "Statistics-based analysis: SUM(Tỷ trọng thực tế) grouped by Quý.",
+    "breakdown": "Quý",
+    "measure": "SUM(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does MEAN(Tỷ trọng thực tế) vary by Quý?",
+    "reason": "Statistics-based analysis: MEAN(Tỷ trọng thực tế) grouped by Quý.",
+    "breakdown": "Quý",
+    "measure": "MEAN(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does SUM(Khổ (mm)) vary by Quý?",
+    "reason": "Statistics-based analysis: SUM(Khổ (mm)) grouped by Quý.",
+    "breakdown": "Quý",
+    "measure": "SUM(Khổ (mm))"
+  },
+  {
+    "question": "How does MEAN(Khổ (mm)) vary by Quý?",
+    "reason": "Statistics-based analysis: MEAN(Khổ (mm)) grouped by Quý.",
+    "breakdown": "Quý",
+    "measure": "MEAN(Khổ (mm))"
+  },
+  {
+    "question": "How does SUM(Thành Tiền) vary by Quý?",
+    "reason": "Statistics-based analysis: SUM(Thành Tiền) grouped by Quý.",
+    "breakdown": "Quý",
+    "measure": "SUM(Thành Tiền)"
+  },
+  {
+    "question": "How does MEAN(Thành Tiền) vary by Quý?",
+    "reason": "Statistics-based analysis: MEAN(Thành Tiền) grouped by Quý.",
+    "breakdown": "Quý",
+    "measure": "MEAN(Thành Tiền)"
+  },
+  {
+    "question": "How does SUM(Giá_trên_kg) vary by Quý?",
+    "reason": "Statistics-based analysis: SUM(Giá_trên_kg) grouped by Quý.",
+    "breakdown": "Quý",
+    "measure": "SUM(Giá_trên_kg)"
+  },
+  {
+    "question": "How does MEAN(Giá_trên_kg) vary by Quý?",
+    "reason": "Statistics-based analysis: MEAN(Giá_trên_kg) grouped by Quý.",
+    "breakdown": "Quý",
+    "measure": "MEAN(Giá_trên_kg)"
+  },
+  {
+    "question": "How does SUM(Doanh_thu_trên_mm) vary by Quý?",
+    "reason": "Statistics-based analysis: SUM(Doanh_thu_trên_mm) grouped by Quý.",
+    "breakdown": "Quý",
+    "measure": "SUM(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does MEAN(Doanh_thu_trên_mm) vary by Quý?",
+    "reason": "Statistics-based analysis: MEAN(Doanh_thu_trên_mm) grouped by Quý.",
+    "breakdown": "Quý",
+    "measure": "MEAN(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does SUM(Độ D) vary by Mùa?",
+    "reason": "Statistics-based analysis: SUM(Độ D) grouped by Mùa.",
+    "breakdown": "Mùa",
+    "measure": "SUM(Độ D)"
+  },
+  {
+    "question": "How does MEAN(Độ D) vary by Mùa?",
+    "reason": "Statistics-based analysis: MEAN(Độ D) grouped by Mùa.",
+    "breakdown": "Mùa",
+    "measure": "MEAN(Độ D)"
+  },
+  {
+    "question": "How does SUM(Khối lượng) vary by Mùa?",
+    "reason": "Statistics-based analysis: SUM(Khối lượng) grouped by Mùa.",
+    "breakdown": "Mùa",
+    "measure": "SUM(Khối lượng)"
+  },
+  {
+    "question": "How does MEAN(Khối lượng) vary by Mùa?",
+    "reason": "Statistics-based analysis: MEAN(Khối lượng) grouped by Mùa.",
+    "breakdown": "Mùa",
+    "measure": "MEAN(Khối lượng)"
+  },
+  {
+    "question": "How does SUM(Met A) vary by Mùa?",
+    "reason": "Statistics-based analysis: SUM(Met A) grouped by Mùa.",
+    "breakdown": "Mùa",
+    "measure": "SUM(Met A)"
+  },
+  {
+    "question": "How does MEAN(Met A) vary by Mùa?",
+    "reason": "Statistics-based analysis: MEAN(Met A) grouped by Mùa.",
+    "breakdown": "Mùa",
+    "measure": "MEAN(Met A)"
+  },
+  {
+    "question": "How does SUM(Met B) vary by Mùa?",
+    "reason": "Statistics-based analysis: SUM(Met B) grouped by Mùa.",
+    "breakdown": "Mùa",
+    "measure": "SUM(Met B)"
+  },
+  {
+    "question": "How does MEAN(Met B) vary by Mùa?",
+    "reason": "Statistics-based analysis: MEAN(Met B) grouped by Mùa.",
+    "breakdown": "Mùa",
+    "measure": "MEAN(Met B)"
+  },
+  {
+    "question": "How does SUM(Met C) vary by Mùa?",
+    "reason": "Statistics-based analysis: SUM(Met C) grouped by Mùa.",
+    "breakdown": "Mùa",
+    "measure": "SUM(Met C)"
+  },
+  {
+    "question": "How does MEAN(Met C) vary by Mùa?",
+    "reason": "Statistics-based analysis: MEAN(Met C) grouped by Mùa.",
+    "breakdown": "Mùa",
+    "measure": "MEAN(Met C)"
+  },
+  {
+    "question": "How does SUM(Tỷ trọng thực tế) vary by Mùa?",
+    "reason": "Statistics-based analysis: SUM(Tỷ trọng thực tế) grouped by Mùa.",
+    "breakdown": "Mùa",
+    "measure": "SUM(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does MEAN(Tỷ trọng thực tế) vary by Mùa?",
+    "reason": "Statistics-based analysis: MEAN(Tỷ trọng thực tế) grouped by Mùa.",
+    "breakdown": "Mùa",
+    "measure": "MEAN(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does SUM(Khổ (mm)) vary by Mùa?",
+    "reason": "Statistics-based analysis: SUM(Khổ (mm)) grouped by Mùa.",
+    "breakdown": "Mùa",
+    "measure": "SUM(Khổ (mm))"
+  },
+  {
+    "question": "How does MEAN(Khổ (mm)) vary by Mùa?",
+    "reason": "Statistics-based analysis: MEAN(Khổ (mm)) grouped by Mùa.",
+    "breakdown": "Mùa",
+    "measure": "MEAN(Khổ (mm))"
+  },
+  {
+    "question": "How does SUM(Thành Tiền) vary by Mùa?",
+    "reason": "Statistics-based analysis: SUM(Thành Tiền) grouped by Mùa.",
+    "breakdown": "Mùa",
+    "measure": "SUM(Thành Tiền)"
+  },
+  {
+    "question": "How does MEAN(Thành Tiền) vary by Mùa?",
+    "reason": "Statistics-based analysis: MEAN(Thành Tiền) grouped by Mùa.",
+    "breakdown": "Mùa",
+    "measure": "MEAN(Thành Tiền)"
+  },
+  {
+    "question": "How does SUM(Giá_trên_kg) vary by Mùa?",
+    "reason": "Statistics-based analysis: SUM(Giá_trên_kg) grouped by Mùa.",
+    "breakdown": "Mùa",
+    "measure": "SUM(Giá_trên_kg)"
+  },
+  {
+    "question": "How does MEAN(Giá_trên_kg) vary by Mùa?",
+    "reason": "Statistics-based analysis: MEAN(Giá_trên_kg) grouped by Mùa.",
+    "breakdown": "Mùa",
+    "measure": "MEAN(Giá_trên_kg)"
+  },
+  {
+    "question": "How does SUM(Doanh_thu_trên_mm) vary by Mùa?",
+    "reason": "Statistics-based analysis: SUM(Doanh_thu_trên_mm) grouped by Mùa.",
+    "breakdown": "Mùa",
+    "measure": "SUM(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does MEAN(Doanh_thu_trên_mm) vary by Mùa?",
+    "reason": "Statistics-based analysis: MEAN(Doanh_thu_trên_mm) grouped by Mùa.",
+    "breakdown": "Mùa",
+    "measure": "MEAN(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does SUM(Độ D) vary by Mức_độ_dày?",
+    "reason": "Statistics-based analysis: SUM(Độ D) grouped by Mức_độ_dày.",
+    "breakdown": "Mức_độ_dày",
+    "measure": "SUM(Độ D)"
+  },
+  {
+    "question": "How does MEAN(Độ D) vary by Mức_độ_dày?",
+    "reason": "Statistics-based analysis: MEAN(Độ D) grouped by Mức_độ_dày.",
+    "breakdown": "Mức_độ_dày",
+    "measure": "MEAN(Độ D)"
+  },
+  {
+    "question": "How does SUM(Khối lượng) vary by Mức_độ_dày?",
+    "reason": "Statistics-based analysis: SUM(Khối lượng) grouped by Mức_độ_dày.",
+    "breakdown": "Mức_độ_dày",
+    "measure": "SUM(Khối lượng)"
+  },
+  {
+    "question": "How does MEAN(Khối lượng) vary by Mức_độ_dày?",
+    "reason": "Statistics-based analysis: MEAN(Khối lượng) grouped by Mức_độ_dày.",
+    "breakdown": "Mức_độ_dày",
+    "measure": "MEAN(Khối lượng)"
+  },
+  {
+    "question": "How does SUM(Met A) vary by Mức_độ_dày?",
+    "reason": "Statistics-based analysis: SUM(Met A) grouped by Mức_độ_dày.",
+    "breakdown": "Mức_độ_dày",
+    "measure": "SUM(Met A)"
+  },
+  {
+    "question": "How does MEAN(Met A) vary by Mức_độ_dày?",
+    "reason": "Statistics-based analysis: MEAN(Met A) grouped by Mức_độ_dày.",
+    "breakdown": "Mức_độ_dày",
+    "measure": "MEAN(Met A)"
+  },
+  {
+    "question": "How does SUM(Met B) vary by Mức_độ_dày?",
+    "reason": "Statistics-based analysis: SUM(Met B) grouped by Mức_độ_dày.",
+    "breakdown": "Mức_độ_dày",
+    "measure": "SUM(Met B)"
+  },
+  {
+    "question": "How does MEAN(Met B) vary by Mức_độ_dày?",
+    "reason": "Statistics-based analysis: MEAN(Met B) grouped by Mức_độ_dày.",
+    "breakdown": "Mức_độ_dày",
+    "measure": "MEAN(Met B)"
+  },
+  {
+    "question": "How does SUM(Met C) vary by Mức_độ_dày?",
+    "reason": "Statistics-based analysis: SUM(Met C) grouped by Mức_độ_dày.",
+    "breakdown": "Mức_độ_dày",
+    "measure": "SUM(Met C)"
+  },
+  {
+    "question": "How does MEAN(Met C) vary by Mức_độ_dày?",
+    "reason": "Statistics-based analysis: MEAN(Met C) grouped by Mức_độ_dày.",
+    "breakdown": "Mức_độ_dày",
+    "measure": "MEAN(Met C)"
+  },
+  {
+    "question": "How does SUM(Tỷ trọng thực tế) vary by Mức_độ_dày?",
+    "reason": "Statistics-based analysis: SUM(Tỷ trọng thực tế) grouped by Mức_độ_dày.",
+    "breakdown": "Mức_độ_dày",
+    "measure": "SUM(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does MEAN(Tỷ trọng thực tế) vary by Mức_độ_dày?",
+    "reason": "Statistics-based analysis: MEAN(Tỷ trọng thực tế) grouped by Mức_độ_dày.",
+    "breakdown": "Mức_độ_dày",
+    "measure": "MEAN(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does SUM(Khổ (mm)) vary by Mức_độ_dày?",
+    "reason": "Statistics-based analysis: SUM(Khổ (mm)) grouped by Mức_độ_dày.",
+    "breakdown": "Mức_độ_dày",
+    "measure": "SUM(Khổ (mm))"
+  },
+  {
+    "question": "How does MEAN(Khổ (mm)) vary by Mức_độ_dày?",
+    "reason": "Statistics-based analysis: MEAN(Khổ (mm)) grouped by Mức_độ_dày.",
+    "breakdown": "Mức_độ_dày",
+    "measure": "MEAN(Khổ (mm))"
+  },
+  {
+    "question": "How does SUM(Thành Tiền) vary by Mức_độ_dày?",
+    "reason": "Statistics-based analysis: SUM(Thành Tiền) grouped by Mức_độ_dày.",
+    "breakdown": "Mức_độ_dày",
+    "measure": "SUM(Thành Tiền)"
+  },
+  {
+    "question": "How does MEAN(Thành Tiền) vary by Mức_độ_dày?",
+    "reason": "Statistics-based analysis: MEAN(Thành Tiền) grouped by Mức_độ_dày.",
+    "breakdown": "Mức_độ_dày",
+    "measure": "MEAN(Thành Tiền)"
+  },
+  {
+    "question": "How does SUM(Giá_trên_kg) vary by Mức_độ_dày?",
+    "reason": "Statistics-based analysis: SUM(Giá_trên_kg) grouped by Mức_độ_dày.",
+    "breakdown": "Mức_độ_dày",
+    "measure": "SUM(Giá_trên_kg)"
+  },
+  {
+    "question": "How does MEAN(Giá_trên_kg) vary by Mức_độ_dày?",
+    "reason": "Statistics-based analysis: MEAN(Giá_trên_kg) grouped by Mức_độ_dày.",
+    "breakdown": "Mức_độ_dày",
+    "measure": "MEAN(Giá_trên_kg)"
+  },
+  {
+    "question": "How does SUM(Doanh_thu_trên_mm) vary by Mức_độ_dày?",
+    "reason": "Statistics-based analysis: SUM(Doanh_thu_trên_mm) grouped by Mức_độ_dày.",
+    "breakdown": "Mức_độ_dày",
+    "measure": "SUM(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does MEAN(Doanh_thu_trên_mm) vary by Mức_độ_dày?",
+    "reason": "Statistics-based analysis: MEAN(Doanh_thu_trên_mm) grouped by Mức_độ_dày.",
+    "breakdown": "Mức_độ_dày",
+    "measure": "MEAN(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does SUM(Độ D) vary by Mức_độ_cứng?",
+    "reason": "Statistics-based analysis: SUM(Độ D) grouped by Mức_độ_cứng.",
+    "breakdown": "Mức_độ_cứng",
+    "measure": "SUM(Độ D)"
+  },
+  {
+    "question": "How does MEAN(Độ D) vary by Mức_độ_cứng?",
+    "reason": "Statistics-based analysis: MEAN(Độ D) grouped by Mức_độ_cứng.",
+    "breakdown": "Mức_độ_cứng",
+    "measure": "MEAN(Độ D)"
+  },
+  {
+    "question": "How does SUM(Khối lượng) vary by Mức_độ_cứng?",
+    "reason": "Statistics-based analysis: SUM(Khối lượng) grouped by Mức_độ_cứng.",
+    "breakdown": "Mức_độ_cứng",
+    "measure": "SUM(Khối lượng)"
+  },
+  {
+    "question": "How does MEAN(Khối lượng) vary by Mức_độ_cứng?",
+    "reason": "Statistics-based analysis: MEAN(Khối lượng) grouped by Mức_độ_cứng.",
+    "breakdown": "Mức_độ_cứng",
+    "measure": "MEAN(Khối lượng)"
+  },
+  {
+    "question": "How does SUM(Met A) vary by Mức_độ_cứng?",
+    "reason": "Statistics-based analysis: SUM(Met A) grouped by Mức_độ_cứng.",
+    "breakdown": "Mức_độ_cứng",
+    "measure": "SUM(Met A)"
+  },
+  {
+    "question": "How does MEAN(Met A) vary by Mức_độ_cứng?",
+    "reason": "Statistics-based analysis: MEAN(Met A) grouped by Mức_độ_cứng.",
+    "breakdown": "Mức_độ_cứng",
+    "measure": "MEAN(Met A)"
+  },
+  {
+    "question": "How does SUM(Met B) vary by Mức_độ_cứng?",
+    "reason": "Statistics-based analysis: SUM(Met B) grouped by Mức_độ_cứng.",
+    "breakdown": "Mức_độ_cứng",
+    "measure": "SUM(Met B)"
+  },
+  {
+    "question": "How does MEAN(Met B) vary by Mức_độ_cứng?",
+    "reason": "Statistics-based analysis: MEAN(Met B) grouped by Mức_độ_cứng.",
+    "breakdown": "Mức_độ_cứng",
+    "measure": "MEAN(Met B)"
+  },
+  {
+    "question": "How does SUM(Met C) vary by Mức_độ_cứng?",
+    "reason": "Statistics-based analysis: SUM(Met C) grouped by Mức_độ_cứng.",
+    "breakdown": "Mức_độ_cứng",
+    "measure": "SUM(Met C)"
+  },
+  {
+    "question": "How does MEAN(Met C) vary by Mức_độ_cứng?",
+    "reason": "Statistics-based analysis: MEAN(Met C) grouped by Mức_độ_cứng.",
+    "breakdown": "Mức_độ_cứng",
+    "measure": "MEAN(Met C)"
+  },
+  {
+    "question": "How does SUM(Tỷ trọng thực tế) vary by Mức_độ_cứng?",
+    "reason": "Statistics-based analysis: SUM(Tỷ trọng thực tế) grouped by Mức_độ_cứng.",
+    "breakdown": "Mức_độ_cứng",
+    "measure": "SUM(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does MEAN(Tỷ trọng thực tế) vary by Mức_độ_cứng?",
+    "reason": "Statistics-based analysis: MEAN(Tỷ trọng thực tế) grouped by Mức_độ_cứng.",
+    "breakdown": "Mức_độ_cứng",
+    "measure": "MEAN(Tỷ trọng thực tế)"
+  },
+  {
+    "question": "How does SUM(Khổ (mm)) vary by Mức_độ_cứng?",
+    "reason": "Statistics-based analysis: SUM(Khổ (mm)) grouped by Mức_độ_cứng.",
+    "breakdown": "Mức_độ_cứng",
+    "measure": "SUM(Khổ (mm))"
+  },
+  {
+    "question": "How does MEAN(Khổ (mm)) vary by Mức_độ_cứng?",
+    "reason": "Statistics-based analysis: MEAN(Khổ (mm)) grouped by Mức_độ_cứng.",
+    "breakdown": "Mức_độ_cứng",
+    "measure": "MEAN(Khổ (mm))"
+  },
+  {
+    "question": "How does SUM(Thành Tiền) vary by Mức_độ_cứng?",
+    "reason": "Statistics-based analysis: SUM(Thành Tiền) grouped by Mức_độ_cứng.",
+    "breakdown": "Mức_độ_cứng",
+    "measure": "SUM(Thành Tiền)"
+  },
+  {
+    "question": "How does MEAN(Thành Tiền) vary by Mức_độ_cứng?",
+    "reason": "Statistics-based analysis: MEAN(Thành Tiền) grouped by Mức_độ_cứng.",
+    "breakdown": "Mức_độ_cứng",
+    "measure": "MEAN(Thành Tiền)"
+  },
+  {
+    "question": "How does SUM(Giá_trên_kg) vary by Mức_độ_cứng?",
+    "reason": "Statistics-based analysis: SUM(Giá_trên_kg) grouped by Mức_độ_cứng.",
+    "breakdown": "Mức_độ_cứng",
+    "measure": "SUM(Giá_trên_kg)"
+  },
+  {
+    "question": "How does MEAN(Giá_trên_kg) vary by Mức_độ_cứng?",
+    "reason": "Statistics-based analysis: MEAN(Giá_trên_kg) grouped by Mức_độ_cứng.",
+    "breakdown": "Mức_độ_cứng",
+    "measure": "MEAN(Giá_trên_kg)"
+  },
+  {
+    "question": "How does SUM(Doanh_thu_trên_mm) vary by Mức_độ_cứng?",
+    "reason": "Statistics-based analysis: SUM(Doanh_thu_trên_mm) grouped by Mức_độ_cứng.",
+    "breakdown": "Mức_độ_cứng",
+    "measure": "SUM(Doanh_thu_trên_mm)"
+  },
+  {
+    "question": "How does MEAN(Doanh_thu_trên_mm) vary by Mức_độ_cứng?",
+    "reason": "Statistics-based analysis: MEAN(Doanh_thu_trên_mm) grouped by Mức_độ_cứng.",
+    "breakdown": "Mức_độ_cứng",
+    "measure": "MEAN(Doanh_thu_trên_mm)"
+  }
+]

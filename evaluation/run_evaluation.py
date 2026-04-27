@@ -127,7 +127,7 @@ def evaluate_system(
         'faithfulness': compute_faithfulness(insights_data, df_raw, df_cleaned, config.data_path),
         'insight_significance': compute_significance(insights_data, df_cleaned, config.data_path, config.profile_path),
         'question_diversity': compute_diversity(insights_data),
-        'bm_quality': compute_bm_quality(insights_data, df_cleaned, config.profile_path) if config.profile_path else None,
+        'bm_quality': compute_bm_quality(insights_data, df_cleaned, config.profile_path),
 
         # GROUP 3 (sub-section 3.2) — QuGen text / reason metrics.
         # Stored under the same key for backward compatibility with downstream
@@ -362,9 +362,11 @@ def main():
     if results_a.get('time_to_insight') and results_b.get('time_to_insight'):
         time_a = results_a['time_to_insight'].get('time_per_insight_seconds')
         time_b = results_b['time_to_insight'].get('time_per_insight_seconds')
+        total_a = results_a['time_to_insight'].get('total_time_seconds', 0) or 0
+        total_b = results_b['time_to_insight'].get('total_time_seconds', 0) or 0
         if time_a is not None and time_b is not None:
-            print(f"  • {args.system_a}: {results_a['time_to_insight'].get('total_time_seconds', 0):.2f}s total, {time_a:.2f}s per insight")
-            print(f"  • {args.system_b}: {results_b['time_to_insight'].get('total_time_seconds', 0):.2f}s total, {time_b:.2f}s per insight")
+            print(f"  • {args.system_a}: {total_a:.2f}s total, {time_a:.2f}s per insight")
+            print(f"  • {args.system_b}: {total_b:.2f}s total, {time_b:.2f}s per insight")
         else:
             print(f"  • Timing data not available")
     else:

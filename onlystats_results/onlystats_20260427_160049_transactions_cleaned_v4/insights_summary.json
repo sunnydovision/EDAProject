@@ -1,0 +1,2654 @@
+[
+  {
+    "question": "How does SUM(Met A) vary by Độ MT?",
+    "explanation": "Outstanding value: for overall data, one category in Độ MT has a value much larger (or smaller) than the others when measuring SUM(Met A).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Độ MT",
+      "measure": "SUM(Met A)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 5837.371428571429,
+      "question": "How does SUM(Met A) vary by Độ MT?",
+      "reason": "Statistics-based analysis: SUM(Met A) grouped by Độ MT.",
+      "view_labels": [
+        "G350",
+        "G550"
+      ],
+      "view_values": [
+        210.0,
+        1225848.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Khối lượng) vary by Độ MT?",
+    "explanation": "Outstanding value: for overall data, one category in Độ MT has a value much larger (or smaller) than the others when measuring SUM(Khối lượng).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Độ MT",
+      "measure": "SUM(Khối lượng)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 5419.2307692307695,
+      "question": "How does SUM(Khối lượng) vary by Độ MT?",
+      "reason": "Statistics-based analysis: SUM(Khối lượng) grouped by Độ MT.",
+      "view_labels": [
+        "G350",
+        "G550"
+      ],
+      "view_values": [
+        715.0,
+        3874750.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Độ D) vary by Độ MT?",
+    "explanation": "Outstanding value: for overall data, one category in Độ MT has a value much larger (or smaller) than the others when measuring SUM(Độ D).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Độ MT",
+      "measure": "SUM(Độ D)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 1044.25,
+      "question": "How does SUM(Độ D) vary by Độ MT?",
+      "reason": "Statistics-based analysis: SUM(Độ D) grouped by Độ MT.",
+      "view_labels": [
+        "G350",
+        "G550"
+      ],
+      "view_values": [
+        0.4,
+        417.7
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Met B) vary by Phân loại?",
+    "explanation": "Outstanding value: for Doanh_thu_tb_mỗi_lần=83620071, one category in Phân loại has a value much larger (or smaller) than the others when measuring MEAN(Met B).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "MEAN(Met B)",
+      "subspace": [
+        [
+          "Doanh_thu_tb_mỗi_lần",
+          83620071
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 963.3333333333334,
+      "question": "How does MEAN(Met B) vary by Phân loại?",
+      "reason": "Statistics-based analysis: MEAN(Met B) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "1A",
+        "2"
+      ],
+      "view_values": [
+        0.0,
+        0.5,
+        481.6666666666667
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Met B) vary by Phân loại?",
+    "explanation": "Outstanding value: for Loại Hàng=GL, one category in Phân loại has a value much larger (or smaller) than the others when measuring SUM(Met B).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "SUM(Met B)",
+      "subspace": [
+        [
+          "Loại Hàng",
+          "GL"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 332.77777777777777,
+      "question": "How does SUM(Met B) vary by Phân loại?",
+      "reason": "Statistics-based analysis: SUM(Met B) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "1A",
+        "1B",
+        "2"
+      ],
+      "view_values": [
+        0.0,
+        18.0,
+        0.0,
+        5990.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Thành Tiền) vary by Phân loại?",
+    "explanation": "Outstanding value: for Tần_suất_bán=32, one category in Phân loại has a value much larger (or smaller) than the others when measuring SUM(Thành Tiền).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "SUM(Thành Tiền)",
+      "subspace": [
+        [
+          "Tần_suất_bán",
+          32
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 79.584665270639,
+      "question": "How does SUM(Thành Tiền) vary by Phân loại?",
+      "reason": "Statistics-based analysis: SUM(Thành Tiền) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "2",
+        "3"
+      ],
+      "view_values": [
+        2759184428.0,
+        17589000.0,
+        34669800.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Met C) vary by Phân loại?",
+    "explanation": "Outstanding value: for SKU_Màu=PRED09, one category in Phân loại has a value much larger (or smaller) than the others when measuring SUM(Met C).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "SUM(Met C)",
+      "subspace": [
+        [
+          "SKU_Màu",
+          "PRED09"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 44.0,
+      "question": "How does SUM(Met C) vary by Phân loại?",
+      "reason": "Statistics-based analysis: SUM(Met C) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "1A",
+        "2",
+        "3"
+      ],
+      "view_values": [
+        88.0,
+        2.0,
+        2.0,
+        2.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Met A) vary by Phân loại?",
+    "explanation": "Outstanding value: for Số_lần_bán_sản_phẩm=33, one category in Phân loại has a value much larger (or smaller) than the others when measuring SUM(Met A).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "SUM(Met A)",
+      "subspace": [
+        [
+          "Số_lần_bán_sản_phẩm",
+          33
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 39.58351409978308,
+      "question": "How does SUM(Met A) vary by Phân loại?",
+      "reason": "Statistics-based analysis: SUM(Met A) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "1A",
+        "2",
+        "3"
+      ],
+      "view_values": [
+        36496.0,
+        922.0,
+        210.0,
+        0.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Doanh_thu_trên_mm) vary by Phân loại?",
+    "explanation": "Outstanding value: for Khoảng_cách_đơn_trước=0.0, one category in Phân loại has a value much larger (or smaller) than the others when measuring SUM(Doanh_thu_trên_mm).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "SUM(Doanh_thu_trên_mm)",
+      "subspace": [
+        [
+          "Khoảng_cách_đơn_trước",
+          0.0
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 27.734307310831618,
+      "question": "How does SUM(Doanh_thu_trên_mm) vary by Phân loại?",
+      "reason": "Statistics-based analysis: SUM(Doanh_thu_trên_mm) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "1A",
+        "1B",
+        "2",
+        "3"
+      ],
+      "view_values": [
+        32816841.0,
+        1183258.0,
+        222799.0,
+        1050032.0,
+        64413.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Khối lượng) vary by Phân loại?",
+    "explanation": "Outstanding value: for Loại_khách_hàng=Bán sỉ, one category in Phân loại has a value much larger (or smaller) than the others when measuring SUM(Khối lượng).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "SUM(Khối lượng)",
+      "subspace": [
+        [
+          "Loại_khách_hàng",
+          "Bán sỉ"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 22.272536961925944,
+      "question": "How does SUM(Khối lượng) vary by Phân loại?",
+      "reason": "Statistics-based analysis: SUM(Khối lượng) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "1A",
+        "1B",
+        "2",
+        "3"
+      ],
+      "view_values": [
+        851145.0,
+        35390.0,
+        6075.0,
+        38215.0,
+        750.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Giá_trên_kg) vary by Phân loại?",
+    "explanation": "Outstanding value: for Độ_phức_tạp_bảo_hành=Cao, one category in Phân loại has a value much larger (or smaller) than the others when measuring SUM(Giá_trên_kg).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "SUM(Giá_trên_kg)",
+      "subspace": [
+        [
+          "Độ_phức_tạp_bảo_hành",
+          "Cao"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 16.384372473405943,
+      "question": "How does SUM(Giá_trên_kg) vary by Phân loại?",
+      "reason": "Statistics-based analysis: SUM(Giá_trên_kg) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "1A",
+        "2",
+        "3"
+      ],
+      "view_values": [
+        3870595.0,
+        170463.0,
+        236237.0,
+        19910.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Tỷ trọng thực tế) vary by Phân loại?",
+    "explanation": "Outstanding value: for Khoảng_cách_đơn_trước=0.0, one category in Phân loại has a value much larger (or smaller) than the others when measuring SUM(Tỷ trọng thực tế).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "SUM(Tỷ trọng thực tế)",
+      "subspace": [
+        [
+          "Khoảng_cách_đơn_trước",
+          0.0
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 16.12422767641207,
+      "question": "How does SUM(Tỷ trọng thực tế) vary by Phân loại?",
+      "reason": "Statistics-based analysis: SUM(Tỷ trọng thực tế) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "1A",
+        "1B",
+        "2",
+        "3"
+      ],
+      "view_values": [
+        1519.375826085,
+        55.040231319,
+        11.096592681,
+        94.229370645,
+        18.030594405000002
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Độ D) vary by Phân loại?",
+    "explanation": "Outstanding value: for Độ M=AZ080, one category in Phân loại has a value much larger (or smaller) than the others when measuring SUM(Độ D).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "SUM(Độ D)",
+      "subspace": [
+        [
+          "Độ M",
+          "AZ080"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 15.964539007092199,
+      "question": "How does SUM(Độ D) vary by Phân loại?",
+      "reason": "Statistics-based analysis: SUM(Độ D) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "2"
+      ],
+      "view_values": [
+        112.55,
+        7.05
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Khổ (mm)) vary by Phân loại?",
+    "explanation": "Outstanding value: for Loại_khách_hàng=Đối tác, one category in Phân loại has a value much larger (or smaller) than the others when measuring SUM(Khổ (mm))).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "SUM(Khổ (mm)))",
+      "subspace": [
+        [
+          "Loại_khách_hàng",
+          "Đối tác"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 14.666666666666666,
+      "question": "How does SUM(Khổ (mm)) vary by Phân loại?",
+      "reason": "Statistics-based analysis: SUM(Khổ (mm)) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "1A",
+        "2"
+      ],
+      "view_values": [
+        158400.0,
+        8400.0,
+        10800.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Met C) vary by Phân loại?",
+    "explanation": "Outstanding value: for Tên màu=ND-G, one category in Phân loại has a value much larger (or smaller) than the others when measuring MEAN(Met C).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "MEAN(Met C)",
+      "subspace": [
+        [
+          "Tên màu",
+          "ND-G"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 11.26153846153846,
+      "question": "How does MEAN(Met C) vary by Phân loại?",
+      "reason": "Statistics-based analysis: MEAN(Met C) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "1A",
+        "2",
+        "3"
+      ],
+      "view_values": [
+        2.1311475409836067,
+        2.0,
+        2.0,
+        24.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Met A) vary by Loại Hàng?",
+    "explanation": "Outstanding value: for Tên_khách_hàng=Đại lý VLXD Đạt - Bình Dương, one category in Loại Hàng has a value much larger (or smaller) than the others when measuring SUM(Met A).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Loại Hàng",
+      "measure": "SUM(Met A)",
+      "subspace": [
+        [
+          "Tên_khách_hàng",
+          "Đại lý VLXD Đạt - Bình Dương"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 7.270807453416149,
+      "question": "How does SUM(Met A) vary by Loại Hàng?",
+      "reason": "Statistics-based analysis: SUM(Met A) grouped by Loại Hàng.",
+      "view_labels": [
+        "GL",
+        "PPGL"
+      ],
+      "view_values": [
+        1610.0,
+        11706.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Khối lượng) vary by Độ MT?",
+    "explanation": "Outstanding value: for overall data, one category in Độ MT has a value much larger (or smaller) than the others when measuring MEAN(Khối lượng).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Độ MT",
+      "measure": "MEAN(Khối lượng)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 5.235971757710888,
+      "question": "How does MEAN(Khối lượng) vary by Độ MT?",
+      "reason": "Statistics-based analysis: MEAN(Khối lượng) grouped by Độ MT.",
+      "view_labels": [
+        "G350",
+        "G550"
+      ],
+      "view_values": [
+        715.0,
+        3743.719806763285
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Khối lượng) vary by Loại Hàng?",
+    "explanation": "Outstanding value: for Tuần_trong_tháng=1, one category in Loại Hàng has a value much larger (or smaller) than the others when measuring SUM(Khối lượng).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Loại Hàng",
+      "measure": "SUM(Khối lượng)",
+      "subspace": [
+        [
+          "Tuần_trong_tháng",
+          1
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 4.4418983220636115,
+      "question": "How does SUM(Khối lượng) vary by Loại Hàng?",
+      "reason": "Statistics-based analysis: SUM(Khối lượng) grouped by Loại Hàng.",
+      "view_labels": [
+        "GL",
+        "PPGL"
+      ],
+      "view_values": [
+        79860.0,
+        354730.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Độ D) vary by Loại Hàng?",
+    "explanation": "Outstanding value: for Ngày=14, one category in Loại Hàng has a value much larger (or smaller) than the others when measuring SUM(Độ D).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Loại Hàng",
+      "measure": "SUM(Độ D)",
+      "subspace": [
+        [
+          "Ngày",
+          14
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 3.857142857142857,
+      "question": "How does SUM(Độ D) vary by Loại Hàng?",
+      "reason": "Statistics-based analysis: SUM(Độ D) grouped by Loại Hàng.",
+      "view_labels": [
+        "GL",
+        "PPGL"
+      ],
+      "view_values": [
+        1.75,
+        6.75
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Doanh_thu_trên_mm) vary by Phân loại?",
+    "explanation": "Outstanding value: for Mã_khách_hàng=CUST_0015, one category in Phân loại has a value much larger (or smaller) than the others when measuring MEAN(Doanh_thu_trên_mm).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "MEAN(Doanh_thu_trên_mm)",
+      "subspace": [
+        [
+          "Mã_khách_hàng",
+          "CUST_0015"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 2.471757591706277,
+      "question": "How does MEAN(Doanh_thu_trên_mm) vary by Phân loại?",
+      "reason": "Statistics-based analysis: MEAN(Doanh_thu_trên_mm) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "2",
+        "3"
+      ],
+      "view_values": [
+        75142.66666666667,
+        30400.5,
+        6803.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Thành Tiền) vary by Phân loại?",
+    "explanation": "Outstanding value: for Tổng_doanh_thu_sản_phẩm=2399111897.0, one category in Phân loại has a value much larger (or smaller) than the others when measuring MEAN(Thành Tiền).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "MEAN(Thành Tiền)",
+      "subspace": [
+        [
+          "Tổng_doanh_thu_sản_phẩm",
+          2399111897.0
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 2.39484037692796,
+      "question": "How does MEAN(Thành Tiền) vary by Phân loại?",
+      "reason": "Statistics-based analysis: MEAN(Thành Tiền) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "2"
+      ],
+      "view_values": [
+        95628544.95652173,
+        39931072.6
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Met C) vary by Độ M?",
+    "explanation": "Outstanding value: for overall data, one category in Độ M has a value much larger (or smaller) than the others when measuring SUM(Met C).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Độ M",
+      "measure": "SUM(Met C)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 2.3915857605177995,
+      "question": "How does SUM(Met C) vary by Độ M?",
+      "reason": "Statistics-based analysis: SUM(Met C) grouped by Độ M.",
+      "view_labels": [
+        "AZ030",
+        "AZ05",
+        "AZ050",
+        "AZ080",
+        "AZ100"
+      ],
+      "view_values": [
+        188.0,
+        2.0,
+        1478.0,
+        618.0,
+        88.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Giá_trên_kg) vary by Loại Hàng?",
+    "explanation": "Outstanding value: for overall data, one category in Loại Hàng has a value much larger (or smaller) than the others when measuring SUM(Giá_trên_kg).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Loại Hàng",
+      "measure": "SUM(Giá_trên_kg)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 2.3690596356558724,
+      "question": "How does SUM(Giá_trên_kg) vary by Loại Hàng?",
+      "reason": "Statistics-based analysis: SUM(Giá_trên_kg) grouped by Loại Hàng.",
+      "view_labels": [
+        "GL",
+        "PPGL"
+      ],
+      "view_values": [
+        6736708.0,
+        15959663.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Met C) vary by Loại Hàng?",
+    "explanation": "Outstanding value: for overall data, one category in Loại Hàng has a value much larger (or smaller) than the others when measuring SUM(Met C).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Loại Hàng",
+      "measure": "SUM(Met C)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 2.3626062322946177,
+      "question": "How does SUM(Met C) vary by Loại Hàng?",
+      "reason": "Statistics-based analysis: SUM(Met C) grouped by Loại Hàng.",
+      "view_labels": [
+        "GL",
+        "PPGL"
+      ],
+      "view_values": [
+        706.0,
+        1668.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Giá_trên_kg) vary by Độ M?",
+    "explanation": "Outstanding value: for overall data, one category in Độ M has a value much larger (or smaller) than the others when measuring SUM(Giá_trên_kg).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Độ M",
+      "measure": "SUM(Giá_trên_kg)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 2.270040596438468,
+      "question": "How does SUM(Giá_trên_kg) vary by Độ M?",
+      "reason": "Statistics-based analysis: SUM(Giá_trên_kg) grouped by Độ M.",
+      "view_labels": [
+        "AZ030",
+        "AZ05",
+        "AZ050",
+        "AZ080",
+        "AZ100"
+      ],
+      "view_values": [
+        1988547.0,
+        20325.0,
+        13950791.0,
+        6145613.0,
+        591095.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Tỷ trọng thực tế) vary by Loại Hàng?",
+    "explanation": "Outstanding value: for overall data, one category in Loại Hàng has a value much larger (or smaller) than the others when measuring SUM(Tỷ trọng thực tế).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Loại Hàng",
+      "measure": "SUM(Tỷ trọng thực tế)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 2.2309412276618215,
+      "question": "How does SUM(Tỷ trọng thực tế) vary by Loại Hàng?",
+      "reason": "Statistics-based analysis: SUM(Tỷ trọng thực tế) grouped by Loại Hàng.",
+      "view_labels": [
+        "GL",
+        "PPGL"
+      ],
+      "view_values": [
+        1033.630533932,
+        2305.968972319
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Tỷ trọng thực tế) vary by Độ M?",
+    "explanation": "Outstanding value: for overall data, one category in Độ M has a value much larger (or smaller) than the others when measuring SUM(Tỷ trọng thực tế).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Độ M",
+      "measure": "SUM(Tỷ trọng thực tế)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 2.195168160737907,
+      "question": "How does SUM(Tỷ trọng thực tế) vary by Độ M?",
+      "reason": "Statistics-based analysis: SUM(Tỷ trọng thực tế) grouped by Độ M.",
+      "view_labels": [
+        "AZ030",
+        "AZ05",
+        "AZ050",
+        "AZ080",
+        "AZ100"
+      ],
+      "view_values": [
+        254.739841891,
+        4.272030651,
+        2046.957099777,
+        932.483049084,
+        101.147484848
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Doanh_thu_trên_mm) vary by Loại Hàng?",
+    "explanation": "Outstanding value: for overall data, one category in Loại Hàng has a value much larger (or smaller) than the others when measuring SUM(Doanh_thu_trên_mm).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Loại Hàng",
+      "measure": "SUM(Doanh_thu_trên_mm)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 2.1731633692282717,
+      "question": "How does SUM(Doanh_thu_trên_mm) vary by Loại Hàng?",
+      "reason": "Statistics-based analysis: SUM(Doanh_thu_trên_mm) grouped by Loại Hàng.",
+      "view_labels": [
+        "GL",
+        "PPGL"
+      ],
+      "view_values": [
+        22292001.0,
+        48444160.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Thành Tiền) vary by Loại Hàng?",
+    "explanation": "Outstanding value: for overall data, one category in Loại Hàng has a value much larger (or smaller) than the others when measuring SUM(Thành Tiền).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Loại Hàng",
+      "measure": "SUM(Thành Tiền)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 2.1731627233896953,
+      "question": "How does SUM(Thành Tiền) vary by Loại Hàng?",
+      "reason": "Statistics-based analysis: SUM(Thành Tiền) grouped by Loại Hàng.",
+      "view_labels": [
+        "GL",
+        "PPGL"
+      ],
+      "view_values": [
+        26750409478.0,
+        58132992713.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Doanh_thu_trên_mm) vary by Độ M?",
+    "explanation": "Outstanding value: for overall data, one category in Độ M has a value much larger (or smaller) than the others when measuring SUM(Doanh_thu_trên_mm).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Độ M",
+      "measure": "SUM(Doanh_thu_trên_mm)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 2.1299987845202453,
+      "question": "How does SUM(Doanh_thu_trên_mm) vary by Độ M?",
+      "reason": "Statistics-based analysis: SUM(Doanh_thu_trên_mm) grouped by Độ M.",
+      "view_labels": [
+        "AZ030",
+        "AZ05",
+        "AZ050",
+        "AZ080",
+        "AZ100"
+      ],
+      "view_values": [
+        5434980.0,
+        75540.0,
+        42933640.0,
+        20156650.0,
+        2135351.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Thành Tiền) vary by Độ M?",
+    "explanation": "Outstanding value: for overall data, one category in Độ M has a value much larger (or smaller) than the others when measuring SUM(Thành Tiền).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Độ M",
+      "measure": "SUM(Thành Tiền)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 2.1299982084623035,
+      "question": "How does SUM(Thành Tiền) vary by Độ M?",
+      "reason": "Statistics-based analysis: SUM(Thành Tiền) grouped by Độ M.",
+      "view_labels": [
+        "AZ030",
+        "AZ05",
+        "AZ050",
+        "AZ080",
+        "AZ100"
+      ],
+      "view_values": [
+        6521976186.0,
+        90648162.0,
+        51520368365.0,
+        24187986713.0,
+        2562422765.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Khổ (mm)) vary by Loại Hàng?",
+    "explanation": "Outstanding value: for overall data, one category in Loại Hàng has a value much larger (or smaller) than the others when measuring SUM(Khổ (mm))).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Loại Hàng",
+      "measure": "SUM(Khổ (mm)))",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 2.1204819277108435,
+      "question": "How does SUM(Khổ (mm)) vary by Loại Hàng?",
+      "reason": "Statistics-based analysis: SUM(Khổ (mm)) grouped by Loại Hàng.",
+      "view_labels": [
+        "GL",
+        "PPGL"
+      ],
+      "view_values": [
+        398400.0,
+        844800.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Độ D) vary by Độ M?",
+    "explanation": "Outstanding value: for overall data, one category in Độ M has a value much larger (or smaller) than the others when measuring SUM(Độ D).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Độ M",
+      "measure": "SUM(Độ D)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 2.113294314381271,
+      "question": "How does SUM(Độ D) vary by Độ M?",
+      "reason": "Statistics-based analysis: SUM(Độ D) grouped by Độ M.",
+      "view_labels": [
+        "AZ030",
+        "AZ05",
+        "AZ050",
+        "AZ080",
+        "AZ100"
+      ],
+      "view_values": [
+        33.1,
+        0.5,
+        252.75,
+        119.6,
+        12.15
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Khổ (mm)) vary by Độ M?",
+    "explanation": "Outstanding value: for overall data, one category in Độ M has a value much larger (or smaller) than the others when measuring SUM(Khổ (mm))).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Độ M",
+      "measure": "SUM(Khổ (mm)))",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 2.0264026402640263,
+      "question": "How does SUM(Khổ (mm)) vary by Độ M?",
+      "reason": "Statistics-based analysis: SUM(Khổ (mm)) grouped by Độ M.",
+      "view_labels": [
+        "AZ030",
+        "AZ05",
+        "AZ050",
+        "AZ080",
+        "AZ100"
+      ],
+      "view_values": [
+        106800.0,
+        1200.0,
+        736800.0,
+        363600.0,
+        34800.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Met B) vary by Loại Hàng?",
+    "explanation": "Outstanding value: for overall data, one category in Loại Hàng has a value much larger (or smaller) than the others when measuring MEAN(Met B).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Loại Hàng",
+      "measure": "MEAN(Met B)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 1.9373259461202474,
+      "question": "How does MEAN(Met B) vary by Loại Hàng?",
+      "reason": "Statistics-based analysis: MEAN(Met B) grouped by Loại Hàng.",
+      "view_labels": [
+        "GL",
+        "PPGL"
+      ],
+      "view_values": [
+        18.096385542168676,
+        9.340909090909092
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Met A) vary by Phân loại?",
+    "explanation": "Outstanding value: for Doanh_thu_tb_mỗi_lần=76909294, one category in Phân loại has a value much larger (or smaller) than the others when measuring MEAN(Met A).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "MEAN(Met A)",
+      "subspace": [
+        [
+          "Doanh_thu_tb_mỗi_lần",
+          76909294
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.936069455406472,
+      "question": "How does MEAN(Met A) vary by Phân loại?",
+      "reason": "Statistics-based analysis: MEAN(Met A) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "2"
+      ],
+      "view_values": [
+        1635.3333333333333,
+        844.6666666666666
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Khối lượng) vary by Độ M?",
+    "explanation": "Outstanding value: for overall data, one category in Độ M has a value much larger (or smaller) than the others when measuring SUM(Khối lượng).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Độ M",
+      "measure": "SUM(Khối lượng)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 1.8998062064279062,
+      "question": "How does SUM(Khối lượng) vary by Độ M?",
+      "reason": "Statistics-based analysis: SUM(Khối lượng) grouped by Độ M.",
+      "view_labels": [
+        "AZ030",
+        "AZ05",
+        "AZ050",
+        "AZ080",
+        "AZ100"
+      ],
+      "view_values": [
+        288650.0,
+        4460.0,
+        2264550.0,
+        1191990.0,
+        125815.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Met A) vary by Độ M?",
+    "explanation": "Outstanding value: for overall data, one category in Độ M has a value much larger (or smaller) than the others when measuring SUM(Met A).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Độ M",
+      "measure": "SUM(Met A)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 1.735904879711206,
+      "question": "How does SUM(Met A) vary by Độ M?",
+      "reason": "Statistics-based analysis: SUM(Met A) grouped by Độ M.",
+      "view_labels": [
+        "AZ030",
+        "AZ05",
+        "AZ050",
+        "AZ080",
+        "AZ100"
+      ],
+      "view_values": [
+        104682.0,
+        1042.0,
+        687644.0,
+        396130.0,
+        36560.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Khối lượng) vary by Loại Hàng?",
+    "explanation": "Outstanding value: for Tỉnh / Thành Phố=Bà Rịa - Vũng Tàu, one category in Loại Hàng has a value much larger (or smaller) than the others when measuring MEAN(Khối lượng).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Loại Hàng",
+      "measure": "MEAN(Khối lượng)",
+      "subspace": [
+        [
+          "Tỉnh / Thành Phố",
+          "Bà Rịa - Vũng Tàu"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.5552736064895405,
+      "question": "How does MEAN(Khối lượng) vary by Loại Hàng?",
+      "reason": "Statistics-based analysis: MEAN(Khối lượng) grouped by Loại Hàng.",
+      "view_labels": [
+        "GL",
+        "PPGL"
+      ],
+      "view_values": [
+        3123.4615384615386,
+        2008.3035714285713
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Khối lượng) vary by Phân loại?",
+    "explanation": "Outstanding value: for Độ M=AZ080, one category in Phân loại has a value much larger (or smaller) than the others when measuring MEAN(Khối lượng).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "MEAN(Khối lượng)",
+      "subspace": [
+        [
+          "Độ M",
+          "AZ080"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.401173147130204,
+      "question": "How does MEAN(Khối lượng) vary by Phân loại?",
+      "reason": "Statistics-based analysis: MEAN(Khối lượng) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "2"
+      ],
+      "view_values": [
+        4005.8802816901407,
+        2858.9473684210525
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Met B) vary by Phân loại?",
+    "explanation": "Attribution: for Ngày=27, a single category in Phân loại accounts for a large share of total MEAN(Met B).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "MEAN(Met B)",
+      "subspace": [
+        [
+          "Ngày",
+          27
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 1.0,
+      "question": "How does MEAN(Met B) vary by Phân loại?",
+      "reason": "Statistics-based analysis: MEAN(Met B) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "2"
+      ],
+      "view_values": [
+        0.0,
+        146.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Khối lượng) vary by Độ MT?",
+    "explanation": "Attribution: for overall data, a single category in Độ MT accounts for a large share of total SUM(Khối lượng).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Độ MT",
+      "measure": "SUM(Khối lượng)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.9998155060102465,
+      "question": "How does SUM(Khối lượng) vary by Độ MT?",
+      "reason": "Statistics-based analysis: SUM(Khối lượng) grouped by Độ MT.",
+      "view_labels": [
+        "G350",
+        "G550"
+      ],
+      "view_values": [
+        715.0,
+        3874750.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Độ D) vary by Độ MT?",
+    "explanation": "Attribution: for overall data, a single category in Độ MT accounts for a large share of total SUM(Độ D).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Độ MT",
+      "measure": "SUM(Độ D)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.9990432910786894,
+      "question": "How does SUM(Độ D) vary by Độ MT?",
+      "reason": "Statistics-based analysis: SUM(Độ D) grouped by Độ MT.",
+      "view_labels": [
+        "G350",
+        "G550"
+      ],
+      "view_values": [
+        0.4,
+        417.7
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Met B) vary by Phân loại?",
+    "explanation": "Attribution: for Điểm_hài_lòng_khách_hàng=75, a single category in Phân loại accounts for a large share of total SUM(Met B).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "SUM(Met B)",
+      "subspace": [
+        [
+          "Điểm_hài_lòng_khách_hàng",
+          75
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.9959183673469387,
+      "question": "How does SUM(Met B) vary by Phân loại?",
+      "reason": "Statistics-based analysis: SUM(Met B) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "1A",
+        "1B",
+        "2"
+      ],
+      "view_values": [
+        0.0,
+        2.0,
+        0.0,
+        488.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Met A) vary by Phân loại?",
+    "explanation": "Attribution: for Tần_suất_bán=23, a single category in Phân loại accounts for a large share of total SUM(Met A).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "SUM(Met A)",
+      "subspace": [
+        [
+          "Tần_suất_bán",
+          23
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.9926093044966547,
+      "question": "How does SUM(Met A) vary by Phân loại?",
+      "reason": "Statistics-based analysis: SUM(Met A) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "2"
+      ],
+      "view_values": [
+        25518.0,
+        190.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Met C) vary by Phân loại?",
+    "explanation": "Attribution: for Doanh_thu_tb_mỗi_lần=89387462, a single category in Phân loại accounts for a large share of total SUM(Met C).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "SUM(Met C)",
+      "subspace": [
+        [
+          "Doanh_thu_tb_mỗi_lần",
+          89387462
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.9583333333333334,
+      "question": "How does SUM(Met C) vary by Phân loại?",
+      "reason": "Statistics-based analysis: SUM(Met C) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "1A"
+      ],
+      "view_values": [
+        46.0,
+        2.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Doanh_thu_trên_mm) vary by Phân loại?",
+    "explanation": "Attribution: for Số_lần_bán_sản_phẩm=28, a single category in Phân loại accounts for a large share of total SUM(Doanh_thu_trên_mm).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "SUM(Doanh_thu_trên_mm)",
+      "subspace": [
+        [
+          "Số_lần_bán_sản_phẩm",
+          28
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.9524259478337119,
+      "question": "How does SUM(Doanh_thu_trên_mm) vary by Phân loại?",
+      "reason": "Statistics-based analysis: SUM(Doanh_thu_trên_mm) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "2"
+      ],
+      "view_values": [
+        3779850.0,
+        188805.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Khổ (mm)) vary by Phân loại?",
+    "explanation": "Attribution: for Tỉnh / Thành Phố=Vĩnh Long, a single category in Phân loại accounts for a large share of total SUM(Khổ (mm))).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "SUM(Khổ (mm)))",
+      "subspace": [
+        [
+          "Tỉnh / Thành Phố",
+          "Vĩnh Long"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.9354838709677419,
+      "question": "How does SUM(Khổ (mm)) vary by Phân loại?",
+      "reason": "Statistics-based analysis: SUM(Khổ (mm)) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "1A",
+        "2"
+      ],
+      "view_values": [
+        104400.0,
+        1200.0,
+        6000.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Khối lượng) vary by Phân loại?",
+    "explanation": "Attribution: for Khu Vực (Quận/Huyện)=Huyện Cẩm Mỹ, a single category in Phân loại accounts for a large share of total SUM(Khối lượng).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "SUM(Khối lượng)",
+      "subspace": [
+        [
+          "Khu Vực (Quận/Huyện)",
+          "Huyện Cẩm Mỹ"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.9281073446327683,
+      "question": "How does SUM(Khối lượng) vary by Phân loại?",
+      "reason": "Statistics-based analysis: SUM(Khối lượng) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "1A",
+        "1B"
+      ],
+      "view_values": [
+        295695.0,
+        19405.0,
+        3500.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Khối lượng) vary by Loại Hàng?",
+    "explanation": "Attribution: for Khu Vực (Quận/Huyện)=TX. Bến Cát, a single category in Loại Hàng accounts for a large share of total SUM(Khối lượng).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Loại Hàng",
+      "measure": "SUM(Khối lượng)",
+      "subspace": [
+        [
+          "Khu Vực (Quận/Huyện)",
+          "TX. Bến Cát"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.9269591993841416,
+      "question": "How does SUM(Khối lượng) vary by Loại Hàng?",
+      "reason": "Statistics-based analysis: SUM(Khối lượng) grouped by Loại Hàng.",
+      "view_labels": [
+        "GL",
+        "PPGL"
+      ],
+      "view_values": [
+        11860.0,
+        150515.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Giá_trên_kg) vary by Phân loại?",
+    "explanation": "Attribution: for Mã_sản_phẩm=Tôn Màu_Trung bình_G550_WGRA01, a single category in Phân loại accounts for a large share of total SUM(Giá_trên_kg).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "SUM(Giá_trên_kg)",
+      "subspace": [
+        [
+          "Mã_sản_phẩm",
+          "Tôn Màu_Trung bình_G550_WGRA01"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.920972210815694,
+      "question": "How does SUM(Giá_trên_kg) vary by Phân loại?",
+      "reason": "Statistics-based analysis: SUM(Giá_trên_kg) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "1A"
+      ],
+      "view_values": [
+        1065330.0,
+        91415.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Thành Tiền) vary by Phân loại?",
+    "explanation": "Attribution: for Điểm_hài_lòng_khách_hàng=55, a single category in Phân loại accounts for a large share of total SUM(Thành Tiền).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "SUM(Thành Tiền)",
+      "subspace": [
+        [
+          "Điểm_hài_lòng_khách_hàng",
+          55
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.9126061528753129,
+      "question": "How does SUM(Thành Tiền) vary by Phân loại?",
+      "reason": "Statistics-based analysis: SUM(Thành Tiền) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "1A",
+        "2",
+        "3"
+      ],
+      "view_values": [
+        3612539898.0,
+        177105687.0,
+        159882250.0,
+        8959500.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Độ D) vary by Phân loại?",
+    "explanation": "Attribution: for Độ_phức_tạp_bảo_hành=Cao, a single category in Phân loại accounts for a large share of total SUM(Độ D).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "SUM(Độ D)",
+      "subspace": [
+        [
+          "Độ_phức_tạp_bảo_hành",
+          "Cao"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.8983818770226538,
+      "question": "How does SUM(Độ D) vary by Phân loại?",
+      "reason": "Statistics-based analysis: SUM(Độ D) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "1A",
+        "2",
+        "3"
+      ],
+      "view_values": [
+        69.4,
+        3.25,
+        4.2,
+        0.4
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Độ D) vary by Loại Hàng?",
+    "explanation": "Attribution: for Khối lượng=4000, a single category in Loại Hàng accounts for a large share of total SUM(Độ D).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Loại Hàng",
+      "measure": "SUM(Độ D)",
+      "subspace": [
+        [
+          "Khối lượng",
+          4000
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.8873239436619719,
+      "question": "How does SUM(Độ D) vary by Loại Hàng?",
+      "reason": "Statistics-based analysis: SUM(Độ D) grouped by Loại Hàng.",
+      "view_labels": [
+        "GL",
+        "PPGL"
+      ],
+      "view_values": [
+        0.4,
+        3.15
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Tỷ trọng thực tế) vary by Phân loại?",
+    "explanation": "Attribution: for Met B=0, a single category in Phân loại accounts for a large share of total SUM(Tỷ trọng thực tế).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "SUM(Tỷ trọng thực tế)",
+      "subspace": [
+        [
+          "Met B",
+          0
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.866049526229964,
+      "question": "How does SUM(Tỷ trọng thực tế) vary by Phân loại?",
+      "reason": "Statistics-based analysis: SUM(Tỷ trọng thực tế) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "1A",
+        "1B",
+        "2",
+        "3"
+      ],
+      "view_values": [
+        2785.449051601,
+        195.636539906,
+        32.7767447,
+        194.479435757,
+        7.928160919
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Khối lượng) vary by Độ MT?",
+    "explanation": "Attribution: for overall data, a single category in Độ MT accounts for a large share of total MEAN(Khối lượng).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Độ MT",
+      "measure": "MEAN(Khối lượng)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.8396400691257969,
+      "question": "How does MEAN(Khối lượng) vary by Độ MT?",
+      "reason": "Statistics-based analysis: MEAN(Khối lượng) grouped by Độ MT.",
+      "view_labels": [
+        "G350",
+        "G550"
+      ],
+      "view_values": [
+        715.0,
+        3743.719806763285
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Khối lượng) vary by Phân loại?",
+    "explanation": "Attribution: for Khoảng_cách_đơn_trước=15.0, a single category in Phân loại accounts for a large share of total MEAN(Khối lượng).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "MEAN(Khối lượng)",
+      "subspace": [
+        [
+          "Khoảng_cách_đơn_trước",
+          15.0
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.8089740225662556,
+      "question": "How does MEAN(Khối lượng) vary by Phân loại?",
+      "reason": "Statistics-based analysis: MEAN(Khối lượng) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "2"
+      ],
+      "view_values": [
+        3853.75,
+        910.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Met A) vary by Phân loại?",
+    "explanation": "Attribution: for Mã_sản_phẩm=Tôn Màu_Mỏng_G550_WRED02, a single category in Phân loại accounts for a large share of total MEAN(Met A).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "MEAN(Met A)",
+      "subspace": [
+        [
+          "Mã_sản_phẩm",
+          "Tôn Màu_Mỏng_G550_WRED02"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.7583974099554835,
+      "question": "How does MEAN(Met A) vary by Phân loại?",
+      "reason": "Statistics-based analysis: MEAN(Met A) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "2"
+      ],
+      "view_values": [
+        1249.3333333333333,
+        398.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Giá_trên_kg) vary by Loại Hàng?",
+    "explanation": "Attribution: for overall data, a single category in Loại Hàng accounts for a large share of total SUM(Giá_trên_kg).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Loại Hàng",
+      "measure": "SUM(Giá_trên_kg)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.7031812706974168,
+      "question": "How does SUM(Giá_trên_kg) vary by Loại Hàng?",
+      "reason": "Statistics-based analysis: SUM(Giá_trên_kg) grouped by Loại Hàng.",
+      "view_labels": [
+        "GL",
+        "PPGL"
+      ],
+      "view_values": [
+        6736708.0,
+        15959663.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Met C) vary by Loại Hàng?",
+    "explanation": "Attribution: for overall data, a single category in Loại Hàng accounts for a large share of total SUM(Met C).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Loại Hàng",
+      "measure": "SUM(Met C)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.7026116259477675,
+      "question": "How does SUM(Met C) vary by Loại Hàng?",
+      "reason": "Statistics-based analysis: SUM(Met C) grouped by Loại Hàng.",
+      "view_labels": [
+        "GL",
+        "PPGL"
+      ],
+      "view_values": [
+        706.0,
+        1668.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Met A) vary by Loại Hàng?",
+    "explanation": "Attribution: for Điểm_hài_lòng_khách_hàng=70, a single category in Loại Hàng accounts for a large share of total SUM(Met A).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Loại Hàng",
+      "measure": "SUM(Met A)",
+      "subspace": [
+        [
+          "Điểm_hài_lòng_khách_hàng",
+          70
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.6906974231538004,
+      "question": "How does SUM(Met A) vary by Loại Hàng?",
+      "reason": "Statistics-based analysis: SUM(Met A) grouped by Loại Hàng.",
+      "view_labels": [
+        "GL",
+        "PPGL"
+      ],
+      "view_values": [
+        45804.0,
+        102284.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Tỷ trọng thực tế) vary by Loại Hàng?",
+    "explanation": "Attribution: for overall data, a single category in Loại Hàng accounts for a large share of total SUM(Tỷ trọng thực tế).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Loại Hàng",
+      "measure": "SUM(Tỷ trọng thực tế)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.6904926677593317,
+      "question": "How does SUM(Tỷ trọng thực tế) vary by Loại Hàng?",
+      "reason": "Statistics-based analysis: SUM(Tỷ trọng thực tế) grouped by Loại Hàng.",
+      "view_labels": [
+        "GL",
+        "PPGL"
+      ],
+      "view_values": [
+        1033.630533932,
+        2305.968972319
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Doanh_thu_trên_mm) vary by Phân loại?",
+    "explanation": "Attribution: for Cờ_giao_dịch_bất_thường=1, a single category in Phân loại accounts for a large share of total MEAN(Doanh_thu_trên_mm).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "MEAN(Doanh_thu_trên_mm)",
+      "subspace": [
+        [
+          "Cờ_giao_dịch_bất_thường",
+          1
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.690300530812992,
+      "question": "How does MEAN(Doanh_thu_trên_mm) vary by Phân loại?",
+      "reason": "Statistics-based analysis: MEAN(Doanh_thu_trên_mm) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "2"
+      ],
+      "view_values": [
+        72695.65789473684,
+        32614.5
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Doanh_thu_trên_mm) vary by Loại Hàng?",
+    "explanation": "Attribution: for overall data, a single category in Loại Hàng accounts for a large share of total SUM(Doanh_thu_trên_mm).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Loại Hàng",
+      "measure": "SUM(Doanh_thu_trên_mm)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.684857070487611,
+      "question": "How does SUM(Doanh_thu_trên_mm) vary by Loại Hàng?",
+      "reason": "Statistics-based analysis: SUM(Doanh_thu_trên_mm) grouped by Loại Hàng.",
+      "view_labels": [
+        "GL",
+        "PPGL"
+      ],
+      "view_values": [
+        22292001.0,
+        48444160.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Thành Tiền) vary by Loại Hàng?",
+    "explanation": "Attribution: for overall data, a single category in Loại Hàng accounts for a large share of total SUM(Thành Tiền).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Loại Hàng",
+      "measure": "SUM(Thành Tiền)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.6848570063460971,
+      "question": "How does SUM(Thành Tiền) vary by Loại Hàng?",
+      "reason": "Statistics-based analysis: SUM(Thành Tiền) grouped by Loại Hàng.",
+      "view_labels": [
+        "GL",
+        "PPGL"
+      ],
+      "view_values": [
+        26750409478.0,
+        58132992713.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Khổ (mm)) vary by Loại Hàng?",
+    "explanation": "Attribution: for overall data, a single category in Loại Hàng accounts for a large share of total SUM(Khổ (mm))).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Loại Hàng",
+      "measure": "SUM(Khổ (mm)))",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.6795366795366795,
+      "question": "How does SUM(Khổ (mm)) vary by Loại Hàng?",
+      "reason": "Statistics-based analysis: SUM(Khổ (mm)) grouped by Loại Hàng.",
+      "view_labels": [
+        "GL",
+        "PPGL"
+      ],
+      "view_values": [
+        398400.0,
+        844800.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Met B) vary by Loại Hàng?",
+    "explanation": "Attribution: for overall data, a single category in Loại Hàng accounts for a large share of total MEAN(Met B).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Loại Hàng",
+      "measure": "MEAN(Met B)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.6595542958653107,
+      "question": "How does MEAN(Met B) vary by Loại Hàng?",
+      "reason": "Statistics-based analysis: MEAN(Met B) grouped by Loại Hàng.",
+      "view_labels": [
+        "GL",
+        "PPGL"
+      ],
+      "view_values": [
+        18.096385542168676,
+        9.340909090909092
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Thành Tiền) vary by Phân loại?",
+    "explanation": "Attribution: for Khoảng_cách_đơn_trước=31.0, a single category in Phân loại accounts for a large share of total MEAN(Thành Tiền).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "MEAN(Thành Tiền)",
+      "subspace": [
+        [
+          "Khoảng_cách_đơn_trước",
+          31.0
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.6373083975470454,
+      "question": "How does MEAN(Thành Tiền) vary by Phân loại?",
+      "reason": "Statistics-based analysis: MEAN(Thành Tiền) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "2"
+      ],
+      "view_values": [
+        94912125.0,
+        54014400.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Met C) vary by Độ M?",
+    "explanation": "Attribution: for overall data, a single category in Độ M accounts for a large share of total SUM(Met C).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Độ M",
+      "measure": "SUM(Met C)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.6225779275484414,
+      "question": "How does SUM(Met C) vary by Độ M?",
+      "reason": "Statistics-based analysis: SUM(Met C) grouped by Độ M.",
+      "view_labels": [
+        "AZ030",
+        "AZ05",
+        "AZ050",
+        "AZ080",
+        "AZ100"
+      ],
+      "view_values": [
+        188.0,
+        2.0,
+        1478.0,
+        618.0,
+        88.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Giá_trên_kg) vary by Độ M?",
+    "explanation": "Attribution: for overall data, a single category in Độ M accounts for a large share of total SUM(Giá_trên_kg).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Độ M",
+      "measure": "SUM(Giá_trên_kg)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.6146705568039931,
+      "question": "How does SUM(Giá_trên_kg) vary by Độ M?",
+      "reason": "Statistics-based analysis: SUM(Giá_trên_kg) grouped by Độ M.",
+      "view_labels": [
+        "AZ030",
+        "AZ05",
+        "AZ050",
+        "AZ080",
+        "AZ100"
+      ],
+      "view_values": [
+        1988547.0,
+        20325.0,
+        13950791.0,
+        6145613.0,
+        591095.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Tỷ trọng thực tế) vary by Độ M?",
+    "explanation": "Attribution: for overall data, a single category in Độ M accounts for a large share of total SUM(Tỷ trọng thực tế).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Độ M",
+      "measure": "SUM(Tỷ trọng thực tế)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.6129349031060592,
+      "question": "How does SUM(Tỷ trọng thực tế) vary by Độ M?",
+      "reason": "Statistics-based analysis: SUM(Tỷ trọng thực tế) grouped by Độ M.",
+      "view_labels": [
+        "AZ030",
+        "AZ05",
+        "AZ050",
+        "AZ080",
+        "AZ100"
+      ],
+      "view_values": [
+        254.739841891,
+        4.272030651,
+        2046.957099777,
+        932.483049084,
+        101.147484848
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Doanh_thu_trên_mm) vary by Độ M?",
+    "explanation": "Attribution: for overall data, a single category in Độ M accounts for a large share of total SUM(Doanh_thu_trên_mm).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Độ M",
+      "measure": "SUM(Doanh_thu_trên_mm)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.6069546239581761,
+      "question": "How does SUM(Doanh_thu_trên_mm) vary by Độ M?",
+      "reason": "Statistics-based analysis: SUM(Doanh_thu_trên_mm) grouped by Độ M.",
+      "view_labels": [
+        "AZ030",
+        "AZ05",
+        "AZ050",
+        "AZ080",
+        "AZ100"
+      ],
+      "view_values": [
+        5434980.0,
+        75540.0,
+        42933640.0,
+        20156650.0,
+        2135351.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Thành Tiền) vary by Độ M?",
+    "explanation": "Attribution: for overall data, a single category in Độ M accounts for a large share of total SUM(Thành Tiền).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Độ M",
+      "measure": "SUM(Thành Tiền)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.6069545639684856,
+      "question": "How does SUM(Thành Tiền) vary by Độ M?",
+      "reason": "Statistics-based analysis: SUM(Thành Tiền) grouped by Độ M.",
+      "view_labels": [
+        "AZ030",
+        "AZ05",
+        "AZ050",
+        "AZ080",
+        "AZ100"
+      ],
+      "view_values": [
+        6521976186.0,
+        90648162.0,
+        51520368365.0,
+        24187986713.0,
+        2562422765.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Độ D) vary by Độ M?",
+    "explanation": "Attribution: for overall data, a single category in Độ M accounts for a large share of total SUM(Độ D).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Độ M",
+      "measure": "SUM(Độ D)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.604520449653193,
+      "question": "How does SUM(Độ D) vary by Độ M?",
+      "reason": "Statistics-based analysis: SUM(Độ D) grouped by Độ M.",
+      "view_labels": [
+        "AZ030",
+        "AZ05",
+        "AZ050",
+        "AZ080",
+        "AZ100"
+      ],
+      "view_values": [
+        33.1,
+        0.5,
+        252.75,
+        119.6,
+        12.15
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Khổ (mm)) vary by Độ M?",
+    "explanation": "Attribution: for overall data, a single category in Độ M accounts for a large share of total SUM(Khổ (mm))).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Độ M",
+      "measure": "SUM(Khổ (mm)))",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5926640926640927,
+      "question": "How does SUM(Khổ (mm)) vary by Độ M?",
+      "reason": "Statistics-based analysis: SUM(Khổ (mm)) grouped by Độ M.",
+      "view_labels": [
+        "AZ030",
+        "AZ05",
+        "AZ050",
+        "AZ080",
+        "AZ100"
+      ],
+      "view_values": [
+        106800.0,
+        1200.0,
+        736800.0,
+        363600.0,
+        34800.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Khối lượng) vary by Độ M?",
+    "explanation": "Attribution: for overall data, a single category in Độ M accounts for a large share of total SUM(Khối lượng).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Độ M",
+      "measure": "SUM(Khối lượng)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5843298804143503,
+      "question": "How does SUM(Khối lượng) vary by Độ M?",
+      "reason": "Statistics-based analysis: SUM(Khối lượng) grouped by Độ M.",
+      "view_labels": [
+        "AZ030",
+        "AZ05",
+        "AZ050",
+        "AZ080",
+        "AZ100"
+      ],
+      "view_values": [
+        288650.0,
+        4460.0,
+        2264550.0,
+        1191990.0,
+        125815.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Met C) vary by Phân loại?",
+    "explanation": "Distribution difference: the distribution of Phân loại changes notably when filtering by Tên_khách_hàng=Công ty VLXD Minh - Vĩnh Long (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "MEAN(Met C)",
+      "subspace": [
+        [
+          "Tên_khách_hàng",
+          "Công ty VLXD Minh - Vĩnh Long"
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.5820632218964282,
+      "question": "How does MEAN(Met C) vary by Phân loại?",
+      "reason": "Statistics-based analysis: MEAN(Met C) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "1B"
+      ],
+      "view_values": [
+        2.0,
+        16.0
+      ],
+      "view_labels_baseline": [
+        "1",
+        "1A",
+        "1B",
+        "2",
+        "3"
+      ],
+      "view_values_baseline": [
+        2.189497716894977,
+        3.2580645161290325,
+        3.5555555555555554,
+        2.0,
+        5.666666666666667
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Met A) vary by Độ M?",
+    "explanation": "Attribution: for overall data, a single category in Độ M accounts for a large share of total SUM(Met A).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Độ M",
+      "measure": "SUM(Met A)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5608576429500073,
+      "question": "How does SUM(Met A) vary by Độ M?",
+      "reason": "Statistics-based analysis: SUM(Met A) grouped by Độ M.",
+      "view_labels": [
+        "AZ030",
+        "AZ05",
+        "AZ050",
+        "AZ080",
+        "AZ100"
+      ],
+      "view_values": [
+        104682.0,
+        1042.0,
+        687644.0,
+        396130.0,
+        36560.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Khối lượng) vary by Loại Hàng?",
+    "explanation": "Attribution: for Mã_khách_hàng=CUST_0118, a single category in Loại Hàng accounts for a large share of total MEAN(Khối lượng).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Loại Hàng",
+      "measure": "MEAN(Khối lượng)",
+      "subspace": [
+        [
+          "Mã_khách_hàng",
+          "CUST_0118"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5543193717277487,
+      "question": "How does MEAN(Khối lượng) vary by Loại Hàng?",
+      "reason": "Statistics-based analysis: MEAN(Khối lượng) grouped by Loại Hàng.",
+      "view_labels": [
+        "GL",
+        "PPGL"
+      ],
+      "view_values": [
+        4235.0,
+        3405.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Giá_trên_kg) vary by Phân loại?",
+    "explanation": "Attribution: for Khối lượng=2590, a single category in Phân loại accounts for a large share of total MEAN(Giá_trên_kg).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "MEAN(Giá_trên_kg)",
+      "subspace": [
+        [
+          "Khối lượng",
+          2590
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5386822646507008,
+      "question": "How does MEAN(Giá_trên_kg) vary by Phân loại?",
+      "reason": "Statistics-based analysis: MEAN(Giá_trên_kg) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "2"
+      ],
+      "view_values": [
+        24405.0,
+        20900.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Met A) vary by Loại Hàng?",
+    "explanation": "Attribution: for overall data, a single category in Loại Hàng accounts for a large share of total MEAN(Met A).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Loại Hàng",
+      "measure": "MEAN(Met A)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5362805615408758,
+      "question": "How does MEAN(Met A) vary by Loại Hàng?",
+      "reason": "Statistics-based analysis: MEAN(Met A) grouped by Loại Hàng.",
+      "view_labels": [
+        "GL",
+        "PPGL"
+      ],
+      "view_values": [
+        1303.2831325301204,
+        1126.9431818181818
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Tỷ trọng thực tế) vary by Phân loại?",
+    "explanation": "Distribution difference: the distribution of Phân loại changes notably when filtering by Mã_khách_hàng=CUST_0098 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "MEAN(Tỷ trọng thực tế)",
+      "subspace": [
+        [
+          "Mã_khách_hàng",
+          "CUST_0098"
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.5362292056011779,
+      "question": "How does MEAN(Tỷ trọng thực tế) vary by Phân loại?",
+      "reason": "Statistics-based analysis: MEAN(Tỷ trọng thực tế) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "2"
+      ],
+      "view_values": [
+        3.3655410652,
+        2.845744681
+      ],
+      "view_labels_baseline": [
+        "1",
+        "1A",
+        "1B",
+        "2",
+        "3"
+      ],
+      "view_values_baseline": [
+        3.216246890711187,
+        3.4158517596612903,
+        3.6418605222222222,
+        3.0977888164545453,
+        3.256494776833333
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Giá_trên_kg) vary by Loại Hàng?",
+    "explanation": "Attribution: for overall data, a single category in Loại Hàng accounts for a large share of total MEAN(Giá_trên_kg).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Loại Hàng",
+      "measure": "MEAN(Giá_trên_kg)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5276840858288679,
+      "question": "How does MEAN(Giá_trên_kg) vary by Loại Hàng?",
+      "reason": "Statistics-based analysis: MEAN(Giá_trên_kg) grouped by Loại Hàng.",
+      "view_labels": [
+        "GL",
+        "PPGL"
+      ],
+      "view_values": [
+        20291.289156626506,
+        22669.975852272728
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Met C) vary by Loại Hàng?",
+    "explanation": "Attribution: for overall data, a single category in Loại Hàng accounts for a large share of total MEAN(Met C).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Loại Hàng",
+      "measure": "MEAN(Met C)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5270041872858774,
+      "question": "How does MEAN(Met C) vary by Loại Hàng?",
+      "reason": "Statistics-based analysis: MEAN(Met C) grouped by Loại Hàng.",
+      "view_labels": [
+        "GL",
+        "PPGL"
+      ],
+      "view_values": [
+        2.1265060240963853,
+        2.3693181818181817
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Độ D) vary by Phân loại?",
+    "explanation": "Attribution: for Số_lần_bán_sản_phẩm=50, a single category in Phân loại accounts for a large share of total MEAN(Độ D).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "MEAN(Độ D)",
+      "subspace": [
+        [
+          "Số_lần_bán_sản_phẩm",
+          50
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5252403846153846,
+      "question": "How does MEAN(Độ D) vary by Phân loại?",
+      "reason": "Statistics-based analysis: MEAN(Độ D) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "1A"
+      ],
+      "view_values": [
+        0.42934782608695654,
+        0.475
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Tỷ trọng thực tế) vary by Phân loại?",
+    "explanation": "Attribution: for Điểm_hài_lòng_khách_hàng=65, a single category in Phân loại accounts for a large share of total MEAN(Tỷ trọng thực tế).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "MEAN(Tỷ trọng thực tế)",
+      "subspace": [
+        [
+          "Điểm_hài_lòng_khách_hàng",
+          65
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5252215577509043,
+      "question": "How does MEAN(Tỷ trọng thực tế) vary by Phân loại?",
+      "reason": "Statistics-based analysis: MEAN(Tỷ trọng thực tế) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "1A"
+      ],
+      "view_values": [
+        3.1365316131111114,
+        2.835294118
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Khổ (mm)) vary by Phân loại?",
+    "explanation": "Distribution difference: the distribution of Phân loại changes notably when filtering by Cờ_giao_dịch_bất_thường=1 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "MEAN(Khổ (mm)))",
+      "subspace": [
+        [
+          "Cờ_giao_dịch_bất_thường",
+          1
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.523792390695269,
+      "question": "How does MEAN(Khổ (mm)) vary by Phân loại?",
+      "reason": "Statistics-based analysis: MEAN(Khổ (mm)) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "2"
+      ],
+      "view_values": [
+        1200.0,
+        1200.0
+      ],
+      "view_labels_baseline": [
+        "1",
+        "1A",
+        "1B",
+        "2",
+        "3"
+      ],
+      "view_values_baseline": [
+        1200.0,
+        1200.0,
+        1200.0,
+        1200.0,
+        1200.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Met B) vary by Loại Hàng?",
+    "explanation": "Attribution: for overall data, a single category in Loại Hàng accounts for a large share of total SUM(Met B).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Loại Hàng",
+      "measure": "SUM(Met B)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5225683407501589,
+      "question": "How does SUM(Met B) vary by Loại Hàng?",
+      "reason": "Statistics-based analysis: SUM(Met B) grouped by Loại Hàng.",
+      "view_labels": [
+        "GL",
+        "PPGL"
+      ],
+      "view_values": [
+        6008.0,
+        6576.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Độ D) vary by Phân loại?",
+    "explanation": "Distribution difference: the distribution of Phân loại changes notably when filtering by Mã_sản_phẩm=Tôn Màu_Trung bình_G550_PRED24 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "MEAN(Độ D)",
+      "subspace": [
+        [
+          "Mã_sản_phẩm",
+          "Tôn Màu_Trung bình_G550_PRED24"
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.5225192894586472,
+      "question": "How does MEAN(Độ D) vary by Phân loại?",
+      "reason": "Statistics-based analysis: MEAN(Độ D) grouped by Phân loại.",
+      "view_labels": [
+        "1A",
+        "3"
+      ],
+      "view_values": [
+        0.4,
+        0.4
+      ],
+      "view_labels_baseline": [
+        "1",
+        "1A",
+        "1B",
+        "2",
+        "3"
+      ],
+      "view_values_baseline": [
+        0.40348173515981733,
+        0.4137096774193548,
+        0.43333333333333335,
+        0.39155844155844155,
+        0.41250000000000003
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Giá_trên_kg) vary by Phân loại?",
+    "explanation": "Distribution difference: the distribution of Phân loại changes notably when filtering by Doanh_thu_tb_mỗi_lần=94411501 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "MEAN(Giá_trên_kg)",
+      "subspace": [
+        [
+          "Doanh_thu_tb_mỗi_lần",
+          94411501
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.520441939833952,
+      "question": "How does MEAN(Giá_trên_kg) vary by Phân loại?",
+      "reason": "Statistics-based analysis: MEAN(Giá_trên_kg) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "2"
+      ],
+      "view_values": [
+        23836.666666666668,
+        23100.0
+      ],
+      "view_labels_baseline": [
+        "1",
+        "1A",
+        "1B",
+        "2",
+        "3"
+      ],
+      "view_values_baseline": [
+        22012.428082191782,
+        21687.451612903227,
+        21669.0,
+        21219.246753246753,
+        19996.583333333332
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Độ D) vary by Loại Hàng?",
+    "explanation": "Attribution: for Khoảng_cách_đơn_trước=5.0, a single category in Loại Hàng accounts for a large share of total MEAN(Độ D).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Loại Hàng",
+      "measure": "MEAN(Độ D)",
+      "subspace": [
+        [
+          "Khoảng_cách_đơn_trước",
+          5.0
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5128703254006799,
+      "question": "How does MEAN(Độ D) vary by Loại Hàng?",
+      "reason": "Statistics-based analysis: MEAN(Độ D) grouped by Loại Hàng.",
+      "view_labels": [
+        "GL",
+        "PPGL"
+      ],
+      "view_values": [
+        0.36875,
+        0.388235294117647
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Tỷ trọng thực tế) vary by Loại Hàng?",
+    "explanation": "Attribution: for overall data, a single category in Loại Hàng accounts for a large share of total MEAN(Tỷ trọng thực tế).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Loại Hàng",
+      "measure": "MEAN(Tỷ trọng thực tế)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5126923188123631,
+      "question": "How does MEAN(Tỷ trọng thực tế) vary by Loại Hàng?",
+      "reason": "Statistics-based analysis: MEAN(Tỷ trọng thực tế) grouped by Loại Hàng.",
+      "view_labels": [
+        "GL",
+        "PPGL"
+      ],
+      "view_values": [
+        3.1133449817228915,
+        3.2755241084076703
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Độ D) vary by Loại Hàng?",
+    "explanation": "Attribution: for Mã_khách_hàng=CUST_0053, a single category in Loại Hàng accounts for a large share of total MEAN(Độ D).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Loại Hàng",
+      "measure": "MEAN(Độ D)",
+      "subspace": [
+        [
+          "Mã_khách_hàng",
+          "CUST_0053"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5106382978723405,
+      "question": "How does MEAN(Độ D) vary by Loại Hàng?",
+      "reason": "Statistics-based analysis: MEAN(Độ D) grouped by Loại Hàng.",
+      "view_labels": [
+        "GL",
+        "PPGL"
+      ],
+      "view_values": [
+        0.3833333333333333,
+        0.39999999999999997
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Doanh_thu_trên_mm) vary by Loại Hàng?",
+    "explanation": "Attribution: for overall data, a single category in Loại Hàng accounts for a large share of total MEAN(Doanh_thu_trên_mm).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Loại Hàng",
+      "measure": "MEAN(Doanh_thu_trên_mm)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5061348152763089,
+      "question": "How does MEAN(Doanh_thu_trên_mm) vary by Loại Hàng?",
+      "reason": "Statistics-based analysis: MEAN(Doanh_thu_trên_mm) grouped by Loại Hàng.",
+      "view_labels": [
+        "GL",
+        "PPGL"
+      ],
+      "view_values": [
+        67144.5813253012,
+        68812.72727272728
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Thành Tiền) vary by Loại Hàng?",
+    "explanation": "Attribution: for overall data, a single category in Loại Hàng accounts for a large share of total MEAN(Thành Tiền).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Loại Hàng",
+      "measure": "MEAN(Thành Tiền)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5061347409904251,
+      "question": "How does MEAN(Thành Tiền) vary by Loại Hàng?",
+      "reason": "Statistics-based analysis: MEAN(Thành Tiền) grouped by Loại Hàng.",
+      "view_labels": [
+        "GL",
+        "PPGL"
+      ],
+      "view_values": [
+        80573522.52409638,
+        82575273.74005681
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Độ D) vary by Độ MT?",
+    "explanation": "Attribution: for overall data, a single category in Độ MT accounts for a large share of total MEAN(Độ D).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Độ MT",
+      "measure": "MEAN(Độ D)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5022243597451004,
+      "question": "How does MEAN(Độ D) vary by Độ MT?",
+      "reason": "Statistics-based analysis: MEAN(Độ D) grouped by Độ MT.",
+      "view_labels": [
+        "G350",
+        "G550"
+      ],
+      "view_values": [
+        0.4,
+        0.40357487922705315
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Khổ (mm)) vary by Phân loại?",
+    "explanation": "Attribution: for Giá_trên_kg=19298, a single category in Phân loại accounts for a large share of total MEAN(Khổ (mm))).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Phân loại",
+      "measure": "MEAN(Khổ (mm)))",
+      "subspace": [
+        [
+          "Giá_trên_kg",
+          19298
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5,
+      "question": "How does MEAN(Khổ (mm)) vary by Phân loại?",
+      "reason": "Statistics-based analysis: MEAN(Khổ (mm)) grouped by Phân loại.",
+      "view_labels": [
+        "1",
+        "1A"
+      ],
+      "view_values": [
+        1200.0,
+        1200.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Khổ (mm)) vary by Loại Hàng?",
+    "explanation": "Attribution: for overall data, a single category in Loại Hàng accounts for a large share of total MEAN(Khổ (mm))).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Loại Hàng",
+      "measure": "MEAN(Khổ (mm)))",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5,
+      "question": "How does MEAN(Khổ (mm)) vary by Loại Hàng?",
+      "reason": "Statistics-based analysis: MEAN(Khổ (mm)) grouped by Loại Hàng.",
+      "view_labels": [
+        "GL",
+        "PPGL"
+      ],
+      "view_values": [
+        1200.0,
+        1200.0
+      ]
+    }
+  }
+]

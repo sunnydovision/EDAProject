@@ -1,0 +1,11 @@
+{
+  "onlystats": {
+    "total": {
+      "total_tokens": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "requests": 0,
+      "model": "none"
+    }
+  }
+}
