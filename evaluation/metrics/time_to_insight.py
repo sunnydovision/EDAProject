@@ -18,7 +18,7 @@ def compute_time_to_insight(
     
     Args:
         timing_file: Path to timing.json file
-        system: System name (baseline or ifq)
+        system: System name (baseline or quis)
         
     Returns:
         Dictionary with timing metrics
@@ -40,9 +40,9 @@ def compute_time_to_insight(
         time_seconds = timing_data['baseline']['total_time_seconds']
         insights_generated = timing_data['baseline']['insights_generated']
         throughput = timing_data['baseline']['throughput_insights_per_second']
-    elif system.lower() == 'ifq':
-        time_seconds = timing_data['ifq']['total_time_seconds']
-        insights_generated = timing_data['ifq']['insights_generated']
+    elif system.lower() == 'quis':
+        time_seconds = timing_data['quis']['total_time_seconds']
+        insights_generated = timing_data['quis']['insights_generated']
         throughput = insights_generated / time_seconds if time_seconds and insights_generated else 0
     else:
         raise ValueError(f"Unknown system: {system}")

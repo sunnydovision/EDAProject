@@ -3,7 +3,7 @@ import numpy as np
 import os
 
 
-def plot_evaluation_results(results_a, results_b, output_path="evaluation_results", name_a="IFQ", name_b="Baseline"):
+def plot_evaluation_results(results_a, results_b, output_path="evaluation_results", name_a="QUIS", name_b="Baseline"):
     """
     Generate evaluation plots using results directly.
     

@@ -85,14 +85,14 @@ output/
 ├── step5_insights/
 │   ├── insights.json          # All insights with ISGEN scores
 │   └── insight_*.png          # Visualizations (26+ charts)
-├── ifq_format/               # ⭐ IFQ-compatible output (auto-generated)
+├── ifq_format/               # ⭐ QUIS-compatible output (auto-generated)
 │   ├── insight_cards.json     # InsightCards with (Question, Reason, Breakdown, Measure)
 │   └── insights.json          # Insights with (B, M, S, P, score, view_labels, view_values)
 └── summary/
     └── summary.txt            # Overall summary with ISGEN metrics
 ```
 
-**Note**: The `ifq_format/` directory is automatically generated at the end of the pipeline, converting baseline insights to IFQ-compatible format for fair comparison.
+**Note**: The `ifq_format/` directory is automatically generated at the end of the pipeline, converting baseline insights to QUIS-compatible format for fair comparison.
 
 ## 📁 File Structure
 
@@ -101,7 +101,7 @@ baseline/
 ├── __init__.py          # Package initialization
 ├── agent.py             # Core 5-step agentic workflow
 ├── scorer.py            # ISGEN scoring functions
-├── output_converter.py  # Converts output to IFQ-compatible format
+├── output_converter.py  # Converts output to QUIS-compatible format
 ├── run.py               # Main entry point
 └── README.md            # This file
 ```
@@ -199,7 +199,7 @@ For each category:
 
 #### **Step 5: Insight Extraction Agent** 💡
 
-**Iterative Generation Strategy** (like IFQ):
+**Iterative Generation Strategy** (like QUIS):
 
 1. **Multi-Prompt Extraction** - 5 insight batches:
    - **TREND** - temporal trends and directional changes
@@ -412,13 +412,13 @@ insight_categories = [
 ]
 ```
 
-## 🔄 IFQ-Compatible Output
+## 🔄 QUIS-Compatible Output
 
-The baseline automatically generates IFQ-compatible output for fair comparison:
+The baseline automatically generates QUIS-compatible output for fair comparison:
 
 ### Automatic Conversion
 
-After the 5-step pipeline completes, the baseline automatically converts its output to IFQ format:
+After the 5-step pipeline completes, the baseline automatically converts its output to QUIS format:
 
 ```
 output/ifq_format/
@@ -438,7 +438,7 @@ output/ifq_format/
 }
 ```
 
-**Insights** (IFQ-compatible):
+**Insights** (QUIS-compatible):
 ```json
 {
   "breakdown": "CategoryColumn",
@@ -464,9 +464,9 @@ python output_converter.py \
   --output output/ifq_format
 ```
 
-### Key Differences from IFQ
+### Key Differences from QUIS
 
-| Aspect | IFQ | Baseline |
+| Aspect | QUIS | Baseline |
 |--------|------|----------|
 | **Methodology** | Statistical search (QUGEN + ISGEN) | Expert-driven LLM analysis |
 | **Questions** | Generated first (QUGEN) | Backward-mapped from insights |
@@ -475,18 +475,18 @@ python output_converter.py \
 | **Scoring** | ISGEN scoring | Same ISGEN scoring |
 | **Output Format** | (B, M, S, P) | Converted to (B, M, S, P) |
 
-**Note**: Baseline doesn't explore subspaces (S = ∅), which is expected - this is a key differentiator showing IFQ's advantage in conditional pattern discovery.
+**Note**: Baseline doesn't explore subspaces (S = ∅), which is expected - this is a key differentiator showing QUIS's advantage in conditional pattern discovery.
 
-## 📊 Comparison with IFQ
+## 📊 Comparison with QUIS
 
-To compare this baseline with IFQ:
+To compare this baseline with QUIS:
 
 1. **Run baseline:**
    ```bash
    python run.py ../../data/your_data.csv output
    ```
 
-2. **Run IFQ** on same dataset
+2. **Run QUIS** on same dataset
 
 3. **Compare using evaluation metrics:**
    - Insight Yield: `|I| / |Q|`
@@ -494,7 +494,7 @@ To compare this baseline with IFQ:
    - Redundancy: Unique (B, M, S, P) tuples
    - Schema Coverage: Columns explored
    - Pattern Coverage: Pattern types found
-   - **Subspace Exploration**: Baseline = 0, IFQ > 0 ⭐
+   - **Subspace Exploration**: Baseline = 0, QUIS > 0 ⭐
    - Question Diversity: Semantic similarity
    - Downstream ML: Feature engineering performance
 

@@ -19,7 +19,7 @@ def compute_token_usage(
     
     Args:
         token_file: Path to token.json file
-        system: System name (baseline or ifq)
+        system: System name (baseline or quis)
         timing_file: Path to timing.json file (to get insights_generated)
         
     Returns:
@@ -54,12 +54,12 @@ def compute_token_usage(
         output_tokens = token_data['baseline']['output_tokens']
         requests = token_data['baseline']['requests']
         model = token_data['baseline']['model']
-    elif system.lower() == 'ifq':
-        total_tokens = token_data['ifq']['total']['total_tokens']
-        input_tokens = token_data['ifq']['total']['input_tokens']
-        output_tokens = token_data['ifq']['total']['output_tokens']
-        requests = token_data['ifq']['total']['requests']
-        model = token_data['ifq']['total']['model']
+    elif system.lower() == 'quis':
+        total_tokens = token_data['quis']['total']['total_tokens']
+        input_tokens = token_data['quis']['total']['input_tokens']
+        output_tokens = token_data['quis']['total']['output_tokens']
+        requests = token_data['quis']['total']['requests']
+        model = token_data['quis']['total']['model']
     else:
         raise ValueError(f"Unknown system: {system}")
     
@@ -67,7 +67,7 @@ def compute_token_usage(
     if insights_generated is None:
         if system.lower() == 'baseline':
             insights_generated = 133
-        elif system.lower() == 'ifq':
+        elif system.lower() == 'quis':
             insights_generated = 80
     
     # Compute tokens per insight

@@ -405,26 +405,32 @@ def create_comparison_table(
         })
 
         # 11d. Question Novelty (cross-system)
-        qn_a = (qa.get('question_novelty') or {}).get('question_novelty', 0) or 0
-        qn_b = (qb.get('question_novelty') or {}).get('question_novelty', 0) or 0
+        qn_a = (qa.get('question_novelty') or {}).get('question_novelty', None) or None
+        qn_b = (qb.get('question_novelty') or {}).get('question_novelty', None) or None
+        # Handle N/A for ONLYSTATS
+        qn_a_display = 'N/A' if qn_a is None and name_a == 'ONLYSTATS' else qn_a
+        qn_b_display = 'N/A' if qn_b is None and name_b == 'ONLYSTATS' else qn_b
         metrics.append({
             'Group': 'Intent Layer Quality',
             'Metric': '11d. Question Novelty (cross-system)',
-            name_a: format_metric_value(qn_a, 'percentage'),
-            name_b: format_metric_value(qn_b, 'percentage'),
-            'Winner': name_a if qn_a > qn_b else name_b if qn_b > qn_a else 'Tie',
+            name_a: format_metric_value(qn_a_display, 'percentage') if qn_a_display != 'N/A' else 'N/A',
+            name_b: format_metric_value(qn_b_display, 'percentage') if qn_b_display != 'N/A' else 'N/A',
+            'Winner': name_a if qn_a is not None and qn_b is not None and qn_a > qn_b else name_b if qn_b is not None and qn_a is not None and qn_b > qn_a else 'Tie',
             'Description': '% of questions with cross-system max cosine sim < 0.85'
         })
 
         # 11e. Reason–Insight Coherence
-        rc_a = (qa.get('reason_insight_coherence') or {}).get('reason_insight_coherence', 0) or 0
-        rc_b = (qb.get('reason_insight_coherence') or {}).get('reason_insight_coherence', 0) or 0
+        rc_a = (qa.get('reason_insight_coherence') or {}).get('reason_insight_coherence', None) or None
+        rc_b = (qb.get('reason_insight_coherence') or {}).get('reason_insight_coherence', None) or None
+        # Handle N/A for ONLYSTATS
+        rc_a_display = 'N/A' if rc_a is None and name_a == 'ONLYSTATS' else rc_a
+        rc_b_display = 'N/A' if rc_b is None and name_b == 'ONLYSTATS' else rc_b
         metrics.append({
             'Group': 'Intent Layer Quality',
             'Metric': '11e. Reason–Insight Coherence',
-            name_a: format_metric_value(rc_a, 'default'),
-            name_b: format_metric_value(rc_b, 'default'),
-            'Winner': name_a if rc_a > rc_b else name_b if rc_b > rc_a else 'Tie',
+            name_a: format_metric_value(rc_a_display, 'default') if rc_a_display != 'N/A' else 'N/A',
+            name_b: format_metric_value(rc_b_display, 'default') if rc_b_display != 'N/A' else 'N/A',
+            'Winner': name_a if rc_a is not None and rc_b is not None and rc_a > rc_b else name_b if rc_b is not None and rc_a is not None and rc_b > rc_a else 'Tie',
             'Description': 'Mean cosine(Embed(reason), Embed(insight)) — reason grounding'
         })
 
@@ -452,7 +458,7 @@ def generate_report(
     results_a: Dict[str, Any],
     results_b: Dict[str, Any],
     output_path: str = 'evaluation/results/comparison_report.md',
-    name_a: str = "IFQ",
+    name_a: str = "QUIS",
     name_b: str = "Baseline"
 ):
     """

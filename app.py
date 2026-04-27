@@ -14,10 +14,10 @@ import plotly.express as px
 import streamlit as st
 from dotenv import load_dotenv
 
-from ifq.qugen.models import schema_from_dataframe, InsightCard
-from ifq.qugen.pipeline import QUGENPipeline, QUGENConfig
-from ifq.qugen.llm_client import get_default_llm_client, BaseLLMClient
-from ifq.isgen.models import (
+from quis.qugen.models import schema_from_dataframe, InsightCard
+from quis.qugen.pipeline import QUGENPipeline, QUGENConfig
+from quis.qugen.llm_client import get_default_llm_client, BaseLLMClient
+from quis.isgen.models import (
     ATTRIBUTION,
     DISTRIBUTION_DIFFERENCE,
     Insight,
@@ -25,9 +25,9 @@ from ifq.isgen.models import (
     Subspace,
     TREND,
 )
-from ifq.isgen.nl_explanation import explain_insight
-from ifq.isgen.pipeline import ISGENPipeline, ISGENConfig
-from ifq.isgen.views import parse_measure
+from quis.isgen.nl_explanation import explain_insight
+from quis.isgen.pipeline import ISGENPipeline, ISGENConfig
+from quis.isgen.views import parse_measure
 
 # Insight tabs: Outstanding Value first, Trend second (grouping still uses PATTERNS in isgen).
 INSIGHT_PATTERN_TAB_ORDER = (
@@ -1590,7 +1590,7 @@ def _pager(key: str, total: int, per_page: int):
 
 def _canonical_pattern(pattern: str) -> str:
     """Map stored pattern strings to one of ISGEN PATTERNS, or Other."""
-    from ifq.isgen.models import (
+    from quis.isgen.models import (
         ATTRIBUTION,
         DISTRIBUTION_DIFFERENCE,
         OUTSTANDING_VALUE,
@@ -1619,7 +1619,7 @@ def _canonical_pattern(pattern: str) -> str:
 def _group_insights_by_pattern(
     summaries: list[dict],
 ) -> tuple[dict[str, list[tuple[int, dict]]], list[tuple[int, dict]]]:
-    from ifq.isgen.models import PATTERNS
+    from quis.isgen.models import PATTERNS
 
     buckets: dict[str, list[tuple[int, dict]]] = {p: [] for p in PATTERNS}
     other: list[tuple[int, dict]] = []

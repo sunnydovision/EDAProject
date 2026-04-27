@@ -27,7 +27,7 @@ import time
 warnings.filterwarnings('ignore')
 load_dotenv()
 
-# Token usage tracking (similar to IFQ)
+# Token usage tracking (similar to QUIS)
 _SESSION_USAGE = {
     "input_tokens": 0,
     "output_tokens": 0,
@@ -38,7 +38,7 @@ _LAST_MODEL_USED = None
 
 
 def _add_usage_from_response(resp) -> None:
-    """Extract and accumulate token usage from OpenAI response (similar to IFQ)"""
+    """Extract and accumulate token usage from OpenAI response (similar to QUIS)"""
     global _LAST_MODEL_USED
     u = getattr(resp, "usage", None)
     if u is None:
@@ -65,12 +65,12 @@ def get_session_usage() -> Dict[str, Any]:
 
 def _clean_dataframe_like_ifq(df: pd.DataFrame, csv_path: str = None) -> pd.DataFrame:
     """
-    Clean dataframe using same logic as IFQ (from run_isgen.py lines 71-82).
-    This ensures fair comparison between IFQ and Baseline.
+    Clean dataframe using same logic as QUIS (from run_isgen.py lines 71-82).
+    This ensures fair comparison between QUIS and Baseline.
     """
     df = df.copy()
     
-    # Detect separator from CSV file (same as IFQ)
+    # Detect separator from CSV file (same as QUIS)
     sep = ","
     if csv_path:
         try:
@@ -123,8 +123,8 @@ class AgenticAutoEDA:
         self.df = pd.read_csv(data_path, sep=None, engine='python')
         print(f"✓ Loaded raw: {self.df.shape[0]} rows × {self.df.shape[1]} columns")
         
-        # Apply IFQ-style cleaning for fair comparison
-        print("🧹 Applying IFQ-style data cleaning...")
+        # Apply QUIS-style cleaning for fair comparison
+        print("🧹 Applying QUIS-style data cleaning...")
         self.df = _clean_dataframe_like_ifq(self.df, data_path)
         print(f"✓ Cleaned: {self.df.shape[0]} rows × {self.df.shape[1]} columns")
         
@@ -252,7 +252,7 @@ class AgenticAutoEDA:
         with open(f"{output_dir}/timing.json", 'w') as f:
             json.dump(timing_info, f, indent=2)
         
-        # Save token usage to separate file (similar to IFQ)
+        # Save token usage to separate file (similar to QUIS)
         usage_output_path = os.getenv('BASELINE_USAGE_OUTPUT', f"{output_dir}/usage.json")
         with open(usage_output_path, 'w') as f:
             json.dump({**token_usage, 'model': self.model}, f, indent=2)
@@ -2076,7 +2076,7 @@ Return ONLY executable Python code."""
         return values
     
     def _generate_summary(self, output_dir: str):
-        """Generate final summary and IFQ-compatible output"""
+        """Generate final summary and QUIS-compatible output"""
         insights = self.step_outputs.get('step5', [])
         
         total = len(insights)
@@ -2140,8 +2140,8 @@ Return ONLY executable Python code."""
         
         print(f"✓ Summary saved: {output_dir}/summary.txt")
         
-        # Convert to IFQ-compatible format
-        print("\n🔄 Converting to IFQ-compatible format...")
+        # Convert to QUIS-compatible format
+        print("\n🔄 Converting to QUIS-compatible format...")
         try:
             from output_converter import OutputConverter
             converter = OutputConverter(self.df)
@@ -2152,11 +2152,11 @@ Return ONLY executable Python code."""
             
             result = converter.convert_insights(insights_path, ifq_output_dir)
             
-            print(f"✓ IFQ-compatible output saved:")
+            print(f"✓ QUIS-compatible output saved:")
             print(f"  📄 InsightCards: {ifq_output_dir}/insight_cards.json")
             print(f"  📄 Insights: {ifq_output_dir}/insights.json")
         except Exception as e:
-            print(f"⚠️  IFQ conversion failed: {e}")
+            print(f"⚠️  QUIS conversion failed: {e}")
             print(f"   You can manually convert using: python output_converter.py")
     
     # Fallback methods

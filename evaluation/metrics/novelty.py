@@ -6,6 +6,7 @@ Measures how many insights are novel compared to another system.
 
 import pandas as pd
 from typing import List, Dict, Any
+from evaluation.utils.model_singleton import get_embedding_model
 
 
 def compute_novelty(
@@ -35,15 +36,14 @@ def compute_novelty(
         }
     
     try:
-        from sentence_transformers import SentenceTransformer
         from sklearn.metrics.pairwise import cosine_similarity
         
         # Extract insight strings for comparison
         a_strings = [_insight_to_string(ins) for ins in insights_a]
         b_strings = [_insight_to_string(ins) for ins in insights_b]
         
-        # Embed insights
-        model = SentenceTransformer('all-MiniLM-L6-v2')
+        # Embed insights using singleton model
+        model = get_embedding_model()
         a_embeddings = model.encode(a_strings)
         b_embeddings = model.encode(b_strings)
         

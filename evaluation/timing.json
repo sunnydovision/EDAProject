@@ -11,7 +11,7 @@
     "insights_generated": 77,
     "throughput_insights_per_second": 0.1295764197602564
   },
-  "ifq": {
+  "quis": {
     "total_time_seconds": 613.299,
     "step_times": {
       "qugen": 452.448,

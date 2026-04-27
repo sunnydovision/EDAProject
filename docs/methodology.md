@@ -12,7 +12,7 @@ Hệ thống nhận **một bảng dữ liệu dạng CSV**, tự động:
 2. **Khai thác insight trên dữ liệu thật**: tính view (nhóm theo B, aggregate M), gán **pattern** (Trend, Outstanding Value, Attribution, Distribution Difference), có thể tìm **subspace** (lọc theo cột = giá trị).
 3. **Xuất báo cáo**: giải thích dạng văn, biểu đồ, khuyến nghị (và giao diện web tùy chọn làm giàu bằng LLM).
 
-Hai khối lõi trong code: **QUGEN** (`ifq/qugen/`) và **ISGEN** (`ifq/isgen/`).
+Hai khối lõi trong code: **QUGEN** (`quis/qugen/`) và **ISGEN** (`quis/isgen/`).
 
 ---
 
@@ -66,8 +66,8 @@ flowchart TB
 | Đường dẫn | Vai trò |
 |-----------|---------|
 | `data/` | Dataset CSV mẫu / làm việc |
-| `ifq/qugen/` | QUGEN: schema, stats, prompts, LLM client, parser, filters, pipeline |
-| `ifq/isgen/` | ISGEN: models, views, scoring, basic insight, subspace search, NL template, plotting, pipeline |
+| `quis/qugen/` | QUGEN: schema, stats, prompts, LLM client, parser, filters, pipeline |
+| `quis/isgen/` | ISGEN: models, views, scoring, basic insight, subspace search, NL template, plotting, pipeline |
 | `run_qugen.py` | CLI chạy QUGEN → `insight_cards.json` |
 | `run_isgen.py` | CLI chạy ISGEN → `insights_summary.json` + thư mục plot tùy chọn |
 | `app.py` | Giao diện Streamlit: Home / History / Settings; gọi QUGEN+ISGEN và hiển thị |
@@ -86,7 +86,7 @@ flowchart TB
 
 ### 4.2 `TableSchema`
 
-- Định nghĩa trong `ifq/qugen/models.py`: `table_name` + danh sách cột `{name, dtype, description?}`.
+- Định nghĩa trong `quis/qugen/models.py`: `table_name` + danh sách cột `{name, dtype, description?}`.
 - **`schema_from_dataframe`**: suy `INT` / `DOUBLE` / `CHAR` từ kiểu pandas.
 - Dùng để: prompt LLM QUGEN, text cho embedding lọc relevance.
 
@@ -97,14 +97,14 @@ flowchart TB
 
 ### 4.4 Insight ISGEN
 
-- `Insight(B, M, S, P)` trong `ifq/isgen/models.py`: thêm **Subspace S** (tập bộ lọc cột–giá trị) và **Pattern P**.
+- `Insight(B, M, S, P)` trong `quis/isgen/models.py`: thêm **Subspace S** (tập bộ lọc cột–giá trị) và **Pattern P**.
 - Đầu ra tóm tắt thường là dict JSON: `insight`, `explanation`, `plot_path`, `question`, …
 
 ---
 
 ## 5. Giai đoạn A — Thống kê cơ bản (Basic stats) phục vụ QUGEN
 
-**Module:** `ifq/qugen/stats.py` — lớp `BasicStatsGenerator`.
+**Module:** `quis/qugen/stats.py` — lớp `BasicStatsGenerator`.
 
 **Luồng:**
 
@@ -121,7 +121,7 @@ flowchart TB
 
 ## 6. Giai đoạn B — QUGEN (QUGEN)
 
-**Module chính:** `ifq/qugen/pipeline.py` — `QUGENPipeline`, `QUGENConfig`.
+**Module chính:** `quis/qugen/pipeline.py` — `QUGENPipeline`, `QUGENConfig`.
 
 ### 6.1 Cấu hình (`QUGENConfig`)
 
@@ -137,7 +137,7 @@ flowchart TB
 
 ### 6.2 Một vòng lặp (`run_one_iteration`)
 
-1. **Ghép prompt** (`ifq/qugen/prompts.py`): mô tả nhiệmụ + few-shot + schema + natural language stats + yêu cầu format `[INSIGHT]...[/INSIGHT]` với `REASON`, `QUESTION`, `BREAKDOWN`, `MEASURE`.
+1. **Ghép prompt** (`quis/qugen/prompts.py`): mô tả nhiệmụ + few-shot + schema + natural language stats + yêu cầu format `[INSIGHT]...[/INSIGHT]` với `REASON`, `QUESTION`, `BREAKDOWN`, `MEASURE`.
 2. **Few-shot động:** từ vòng 2, thêm block `(schema hiện tại, subset card từ pool)` — ưu tiên đa dạng **cột measure** khi chọn card.
 3. **Gọi LLM:** `complete_multi` — nhiều mẫu, mỗi mẫu parse riêng.
 4. **Parse** (`parser.py`): trích các Insight Card từ text; nếu 0 card có thể ghi `debug_llm_response.txt`.
@@ -154,7 +154,7 @@ flowchart TB
 
 ### 6.4 LLM client
 
-**File:** `ifq/qugen/llm_client.py`.
+**File:** `quis/qugen/llm_client.py`.
 
 - **`OpenAICompatibleClient`:** SDK `openai`, có thể dùng **Responses API** (`responses.create`) hoặc **Chat Completions**.
 - Biến môi trường: `OPENAI_API_KEY`, `OPENAI_API_BASE` (endpoint tương thích OpenAI), `QUGEN_LLM_MODEL`, `OPENAI_USE_RESPONSES_API`.
@@ -168,7 +168,7 @@ flowchart TB
 
 ## 7. Giai đoạn C — ISGEN (ISGEN)
 
-**Module chính:** `ifq/isgen/pipeline.py` — `ISGENPipeline`, `ISGENConfig`.
+**Module chính:** `quis/isgen/pipeline.py` — `ISGENPipeline`, `ISGENConfig`.
 
 ### 7.1 View
 
@@ -177,7 +177,7 @@ flowchart TB
 
 ### 7.2 Pattern và scoring
 
-**File:** `ifq/isgen/scoring.py` — khớp Appendix A trong bài báo.
+**File:** `quis/isgen/scoring.py` — khớp Appendix A trong bài báo.
 
 | Pattern | Hàm điểm (trên vector giá trị theo B) | Ngưỡng gốc |
 |---------|----------------------------------------|------------|
@@ -190,7 +190,7 @@ flowchart TB
 
 ### 7.3 Basic insight
 
-**File:** `ifq/isgen/basic_insight.py`.
+**File:** `quis/isgen/basic_insight.py`.
 
 - Với mỗi card đã resolve cột: tính view trên **toàn bộ dữ liệu** (S rỗng).
 - Với mỗi pattern phù hợp (Trend chỉ khi breakdown là thời gian / từ khóa temporal trong tên cột), nếu score ≥ ngưỡng → thêm candidate.
@@ -198,7 +198,7 @@ flowchart TB
 
 ### 7.4 Subspace search
 
-**File:** `ifq/isgen/subspace_search.py` — Algorithm 1 (beam).
+**File:** `quis/isgen/subspace_search.py` — Algorithm 1 (beam).
 
 - Bắt đầu S = ∅, mở rộng thêm bộ lọc (cột X, giá trị y) theo beam width, expansion factor, `max_depth`.
 - **LLM tùy chọn** (`llm_filter_columns.py`): gợi ý cột lọc ưu tiên; trộn xác suất với `w_llm`.

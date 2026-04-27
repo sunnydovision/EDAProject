@@ -39,7 +39,7 @@ Module **ISGEN** nhận **Insight Cards** (từ QUGEN) và **bảng dữ liệu 
 
 ## 4. Triển khai và cách chạy
 
-- **Code:** `ifq/isgen/` (models, views, scoring, basic_insight, subspace_search, llm_filter_columns, nl_explanation, plotting, pipeline).
+- **Code:** `quis/isgen/` (models, views, scoring, basic_insight, subspace_search, llm_filter_columns, nl_explanation, plotting, pipeline).
 - **CLI:**  
   `run_isgen.py --csv <CSV> --insight-cards insight_cards.json --output insights_summary.json [--plot-dir plots] [--no-subspace] [--max-overall-per-key 1] [--max-subspace-per-key 2] [--max-insights-per-question 2]`
 - **Input:** CSV + file JSON Insight Cards (output của QUGEN).

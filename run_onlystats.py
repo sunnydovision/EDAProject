@@ -32,8 +32,8 @@ try:
 except ImportError:
     pass
 
-from ifq.shared.data_loader import load_data
-from ifq.isgen.pipeline import ISGENPipeline, ISGENConfig
+from quis.shared.data_loader import load_data
+from quis.isgen.pipeline import ISGENPipeline, ISGENConfig
 
 _CATEGORICAL_CLASSES = {"Categorical"}
 _TEMPORAL_CLASSES = {"Temporal"}
@@ -143,7 +143,7 @@ def main():
             import importlib.util
             spec = importlib.util.spec_from_file_location(
                 "llm_client",
-                os.path.join(os.path.dirname(__file__), "ifq", "qugen", "llm_client.py")
+                os.path.join(os.path.dirname(__file__), "quis", "qugen", "llm_client.py")
             )
             mod = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(mod)

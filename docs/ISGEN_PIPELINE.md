@@ -50,7 +50,7 @@ Với view v = {v1, ..., vk} (các giá trị measure theo breakdown):
 | **Attribution** | max(v_i) / Σ v_i | T_Attr = 0.5 |
 | **Distribution Difference** | Chỉ khi measure = COUNT(); JSD | T_DD = 0.2 |
 
-Code: `ifq/isgen/scoring.py`.
+Code: `quis/isgen/scoring.py`.
 
 ---
 
@@ -63,7 +63,7 @@ Code: `ifq/isgen/scoring.py`.
 | Attribution | Pie chart (% đóng góp) |
 | Distribution Difference | Pie charts (trước / sau điều kiện) |
 
-Code: `ifq/isgen/plotting.py`.
+Code: `quis/isgen/plotting.py`.
 
 ---
 
@@ -115,15 +115,15 @@ python run_isgen.py --csv data/transactions.csv --insight-cards insight_cards.js
 
 | File | Chức năng |
 |------|-----------|
-| `ifq/isgen/models.py` | Insight(B,M,S,P), Subspace. |
-| `ifq/isgen/views.py` | view(D,B,M), parse measure, apply S, **resolve_column**, **resolve_card_columns**. |
-| `ifq/isgen/scoring.py` | SCOREFUNC và ngưỡng T cho từng pattern. |
-| `ifq/isgen/basic_insight.py` | Basic insight từ card. |
-| `ifq/isgen/subspace_search.py` | Algorithm 1 (beam search). |
-| `ifq/isgen/llm_filter_columns.py` | LLM gợi ý cột lọc (gọi API thật). |
-| `ifq/isgen/nl_explanation.py` | Mô tả NL theo template (không gọi LLM). |
-| `ifq/isgen/plotting.py` | Vẽ đồ thị theo pattern. |
-| `ifq/isgen/pipeline.py` | Luồng đầy đủ: collect → dedup → explain + plot. |
+| `quis/isgen/models.py` | Insight(B,M,S,P), Subspace. |
+| `quis/isgen/views.py` | view(D,B,M), parse measure, apply S, **resolve_column**, **resolve_card_columns**. |
+| `quis/isgen/scoring.py` | SCOREFUNC và ngưỡng T cho từng pattern. |
+| `quis/isgen/basic_insight.py` | Basic insight từ card. |
+| `quis/isgen/subspace_search.py` | Algorithm 1 (beam search). |
+| `quis/isgen/llm_filter_columns.py` | LLM gợi ý cột lọc (gọi API thật). |
+| `quis/isgen/nl_explanation.py` | Mô tả NL theo template (không gọi LLM). |
+| `quis/isgen/plotting.py` | Vẽ đồ thị theo pattern. |
+| `quis/isgen/pipeline.py` | Luồng đầy đủ: collect → dedup → explain + plot. |
 | `run_isgen.py` | CLI. |
 
 ---

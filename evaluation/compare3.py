@@ -17,6 +17,14 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from metrics.pattern_coverage import compute_structural_validity, compute_pattern_coverage
 from metrics.data_loader import load_and_clean_data
 from compare import format_metric_value
+from configs.eval_config import (
+    DATA_PATH,
+    PROFILE_PATH,
+    QUIS_INSIGHTS_PATH,
+    BASELINE_INSIGHTS_PATH,
+    ONLYSTATS_INSIGHTS_PATH,
+    RESULTS_DIR,
+)
 
 
 def _winner3(names, values, higher_better=True):
@@ -99,11 +107,13 @@ def create_comparison_table_3way(
     row('Core & Efficiency', '2b1. Uncovered Patterns',
         uncov_str, 'N/A', 'Patterns with 0 valid insights (breakdown type mismatch)')
 
-    # ── 3. Insight Novelty ────────────────────────────────────────────────
-    nov_vals = [r.get('insight_novelty', {}).get('novelty', 0) or 0 for r in results_list]
+    # ── 3. Insight Novelty (cross-system) ─────────────────────────────────
+    # Extract from results since they were computed in pairwise comparisons
+    nov_vals = [r.get('insight_novelty', {}).get('novelty', None) for r in results_list]
+    nov_str = [format_metric_value(v, 'percentage') if v is not None else 'N/A' for v in nov_vals]
+    winner_nov = _winner3(names, nov_vals)
     row('Core & Efficiency', '3. Insight Novelty',
-        [format_metric_value(v, 'percentage') for v in nov_vals],
-        _winner3(names, nov_vals), 'Usefulness - khác baseline')
+        nov_str, winner_nov, 'Usefulness - khác baseline (from pairwise comparison results)')
 
     # ── 4. Diversity ──────────────────────────────────────────────────────
     divs = [r.get('question_diversity', {}) for r in results_list]
@@ -212,16 +222,25 @@ def create_comparison_table_3way(
         al_winner,
         'Mean cosine(Embed(question), Embed(insight)) — control metric (Tie = both execute faithfully)')
 
-    qn = [(qq.get('question_novelty') or {}).get('question_novelty', 0) or 0 for qq in qqs]
+    # ── 11d. Question Novelty (cross-system) ───────────────────────────────
+    # Extract from results since they were computed in pairwise comparisons
+    qn_vals = [(qq.get('question_novelty') or {}).get('question_novelty', None) for qq in qqs]
+    qn_str = [format_metric_value(v, 'percentage') if v is not None else 'N/A' for v in qn_vals]
+    winner_qn = _winner3(names, qn_vals)
     row('Intent Layer Quality', '11d. Question Novelty (cross-system)',
-        [format_metric_value(v, 'percentage') for v in qn],
-        _winner3(names, qn),
-        '% of questions with cross-system max cosine sim < 0.85')
+        qn_str, winner_qn, '% of questions with cross-system max cosine sim < 0.85 (from pairwise comparison results)')
 
-    rc = [(qq.get('reason_insight_coherence') or {}).get('reason_insight_coherence', 0) or 0 for qq in qqs]
+    rc = [(qq.get('reason_insight_coherence') or {}).get('reason_insight_coherence') for qq in qqs]
+    # If ONLYSTATS has None for reason_insight_coherence, treat it as N/A
+    rc_display = []
+    for name, val in zip(names, rc):
+        if name == 'ONLYSTATS' and val is None:
+            rc_display.append('N/A')
+        else:
+            rc_display.append(val if val is not None else 0)
     row('Intent Layer Quality', '11e. Reason–Insight Coherence',
-        [format_metric_value(v, 'default') for v in rc],
-        _winner3(names, rc),
+        [format_metric_value(v, 'default') if v != 'N/A' else 'N/A' for v in rc_display],
+        _winner3(names, [v if v != 'N/A' else 0 for v in rc]),
         'Mean cosine(Embed(reason), Embed(insight)) — reason grounding')
 
     # ── 12. Structural Validity Rate ──────────────────────────────────────
@@ -255,38 +274,34 @@ def create_comparison_table_3way(
 
 def main():
     parser = argparse.ArgumentParser(description='3-way comparison: QUIS vs Baseline vs ONLYSTATS')
-    parser.add_argument('--data', required=True)
-    parser.add_argument('--system_a', required=True)
-    parser.add_argument('--path_a', required=True, help='Insights JSON for system A')
-    parser.add_argument('--results_a', required=True, help='Results JSON for system A')
-    parser.add_argument('--system_b', required=True)
-    parser.add_argument('--path_b', required=True)
-    parser.add_argument('--results_b', required=True)
-    parser.add_argument('--system_c', required=True)
-    parser.add_argument('--path_c', required=True)
-    parser.add_argument('--results_c', required=True)
-    parser.add_argument('--profile', default=None)
-    parser.add_argument('--output', default='evaluation_results', help='Output directory')
+    parser.add_argument('--output', default=RESULTS_DIR, help='Output directory')
     args = parser.parse_args()
 
-    _, df_cleaned = load_and_clean_data(args.data)
+    # Load data
+    print(f"Loading data: {DATA_PATH}")
+    _, df_cleaned = load_and_clean_data(DATA_PATH)
 
     def load_json(p):
         with open(p) as f:
             return json.load(f)
 
-    results_a = load_json(args.results_a)
-    results_b = load_json(args.results_b)
-    results_c = load_json(args.results_c)
-    insights_a = load_json(args.path_a)
-    insights_b = load_json(args.path_b)
-    insights_c = load_json(args.path_c)
+    # Load results
+    print("Loading results...")
+    results_quis = load_json(f"{RESULTS_DIR}/quis_results.json")
+    results_baseline = load_json(f"{RESULTS_DIR}/baseline_results.json")
+    results_onlystats = load_json(f"{RESULTS_DIR}/onlystats_results.json")
+
+    # Load insights
+    print("Loading insights...")
+    insights_quis = load_json(QUIS_INSIGHTS_PATH)
+    insights_baseline = load_json(BASELINE_INSIGHTS_PATH)
+    insights_onlystats = load_json(ONLYSTATS_INSIGHTS_PATH)
 
     df = create_comparison_table_3way(
-        results_a, results_b, results_c,
-        args.system_a, args.system_b, args.system_c,
-        insights_a, insights_b, insights_c,
-        df_cleaned, args.profile,
+        results_quis, results_baseline, results_onlystats,
+        'QUIS', 'Baseline', 'ONLYSTATS',
+        insights_quis, insights_baseline, insights_onlystats,
+        df_cleaned, PROFILE_PATH,
     )
 
     os.makedirs(args.output, exist_ok=True)

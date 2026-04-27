@@ -31,10 +31,10 @@ warnings.filterwarnings("ignore", category=UserWarning, module="urllib3")
 
 import pandas as pd
 
-from ifq.shared.data_loader import load_data
-from ifq.qugen.pipeline import QUGENPipeline, QUGENConfig
-from ifq.qugen.models import schema_from_dataframe, TableSchema, InsightCard
-from ifq.qugen.llm_client import get_default_llm_client
+from quis.shared.data_loader import load_data
+from quis.qugen.pipeline import QUGENPipeline, QUGENConfig
+from quis.qugen.models import schema_from_dataframe, TableSchema, InsightCard
+from quis.qugen.llm_client import get_default_llm_client
 
 
 def load_schema_from_json(path_or_json: str) -> TableSchema:
@@ -50,7 +50,7 @@ def load_schema_from_json(path_or_json: str) -> TableSchema:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="QUGEN: Question Generation for IFQ")
+    parser = argparse.ArgumentParser(description="QUGEN: Question Generation for QUIS")
     parser.add_argument("--csv", type=str, help="Path to CSV file (schema inferred from dataframe)")
     parser.add_argument("--schema", type=str, help="Path to JSON schema file or inline JSON object")
     parser.add_argument("--output", type=str, default="insight_cards.json", help="Output JSON path")

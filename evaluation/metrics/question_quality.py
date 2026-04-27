@@ -1,7 +1,7 @@
 """
 Question Quality (QuGen) metrics — Group 4.
 
-Đánh giá chất lượng question generation (QuGen) — thành phần cốt lõi của IFQ:
+Đánh giá chất lượng question generation (QuGen) — thành phần cốt lõi của QUIS:
 - 11a. Question Semantic Diversity        : đa dạng trong tập câu hỏi (within-system)
 - 11b. Question Specificity               : độ dài (mean ± std) — câu hỏi càng cụ thể càng có giá trị
 - 11c. Question-Insight Alignment         : câu hỏi có thực sự được trả lời bởi insight (cosine sim)
@@ -16,6 +16,7 @@ from __future__ import annotations
 from typing import List, Dict, Any, Optional
 
 import numpy as np
+from evaluation.utils.model_singleton import get_embedding_model
 
 
 # ───────────────────────── helpers ──────────────────────────
@@ -49,9 +50,8 @@ def _insight_string(ins: Dict) -> str:
 
 
 def _embed(texts: List[str]):
-    """Load model on demand and encode."""
-    from sentence_transformers import SentenceTransformer
-    model = SentenceTransformer('all-MiniLM-L6-v2')
+    """Load model from singleton and encode."""
+    model = get_embedding_model()
     return model.encode(texts, show_progress_bar=False)
 
 
@@ -157,6 +157,7 @@ def compute_question_novelty(
     insights_a: List[Dict],
     insights_b: List[Dict],
     tau: float = 0.85,
+    system_name: str = None,
 ) -> Dict[str, Any]:
     """
     Q-Novelty(A | B) = mean_i 1{ max_j cos(q_i^A, q_j^B) < tau }
@@ -164,7 +165,12 @@ def compute_question_novelty(
     Khác metric 3 (Insight Novelty) ở chỗ chỉ so trên *question text* — tách
     "ý tưởng phân tích" khỏi kết quả phân tích. Hai hệ có thể trùng (B,M,
     pattern) nhưng đặt câu hỏi khác nhau -> vẫn novel ở góc QuGen.
+
+    For ONLYSTATS, return None as it doesn't have proper questions.
     """
+    # Skip for ONLYSTATS as it doesn't have proper questions
+    if system_name == 'ONLYSTATS':
+        return {'question_novelty': None, 'novel_count': 0, 'total_count': 0, 'tau': tau}
     qs_a = [_get_question(i) for i in insights_a]
     qs_a = [q for q in qs_a if q]
     qs_b = [_get_question(i) for i in insights_b]
@@ -195,7 +201,7 @@ def compute_question_novelty(
 
 # ───────────────────── 11e. Reason–Insight Coherence ─────────────────
 
-def compute_reason_insight_coherence(insights: List[Dict]) -> Dict[str, Any]:
+def compute_reason_insight_coherence(insights: List[Dict], system_name: str = None) -> Dict[str, Any]:
     """
     Coh_{R-I} = mean_i cosine( Embed(reason_i), Embed(insight_string_i) )
 
@@ -203,7 +209,13 @@ def compute_reason_insight_coherence(insights: List[Dict]) -> Dict[str, Any]:
     Coherence cao -> reason không chỉ là template mà thực sự liên quan tới
     insight được trả về. Đo *grounding* của reason — khía cạnh QuGen mà các bộ
     metric trước hoàn toàn bỏ qua.
+
+    For ONLYSTATS, reason field is not available, so skip this metric.
     """
+    # Skip for ONLYSTATS as it doesn't have reason field
+    if system_name == 'ONLYSTATS':
+        return {'reason_insight_coherence': None, 'num_pairs': 0}
+
     rs, isos = [], []
     for ins in insights:
         r = _get_reason(ins)
@@ -232,7 +244,7 @@ def compute_reason_insight_coherence(insights: List[Dict]) -> Dict[str, Any]:
 
 # ───────────────────── public single-call wrapper ─────────────────
 
-def compute_question_quality(insights: List[Dict]) -> Dict[str, Any]:
+def compute_question_quality(insights: List[Dict], system_name: str = None) -> Dict[str, Any]:
     """
     Run all *single-system* QuGen metrics. Cross-system metric (Question
     Novelty) is computed separately in run_evaluation.py because it needs both
@@ -242,5 +254,5 @@ def compute_question_quality(insights: List[Dict]) -> Dict[str, Any]:
         'question_diversity': compute_question_diversity(insights),
         'question_specificity': compute_question_specificity(insights),
         'question_insight_alignment': compute_question_insight_alignment(insights),
-        'reason_insight_coherence': compute_reason_insight_coherence(insights),
+        'reason_insight_coherence': compute_reason_insight_coherence(insights, system_name),
     }

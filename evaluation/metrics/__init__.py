@@ -1,5 +1,5 @@
 """
-Evaluation metrics for IFQ vs Baseline comparison.
+Evaluation metrics for QUIS vs Baseline comparison.
 
 This package contains individual metric computation modules:
 - faithfulness: Correctness of insights

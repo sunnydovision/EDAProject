@@ -361,7 +361,7 @@ Trong đó:
 Quy trình tính time to insight cho mỗi system:
 
 1. Load timing data từ timing.json:
-   - Format JSON với keys: "baseline" và "ifq"
+   - Format JSON với keys: "baseline" và "quis"
    - Mỗi key chứa:
      * total_time_seconds: tổng thời gian pipeline
      * insights_generated: số insights được tạo
@@ -372,9 +372,9 @@ Quy trình tính time to insight cho mỗi system:
      * time_seconds = timing_data["baseline"]["total_time_seconds"]
      * insights_generated = timing_data["baseline"]["insights_generated"]
      * throughput = timing_data["baseline"]["throughput_insights_per_second"]
-   - Nếu system == "ifq":
-     * time_seconds = timing_data["ifq"]["total_time_seconds"]
-     * insights_generated = timing_data["ifq"]["insights_generated"]
+   - Nếu system == "quis":
+     * time_seconds = timing_data["quis"]["total_time_seconds"]
+     * insights_generated = timing_data["quis"]["insights_generated"]
      * throughput = insights_generated / time_seconds (nếu không có trong file)
 
 3. Compute time per insight:
@@ -432,7 +432,7 @@ Trong đó:
 Quy trình tính token usage cho mỗi system:
 
 1. Load token data từ token.json:
-   - Format JSON với keys: "baseline" và "ifq"
+   - Format JSON với keys: "baseline" và "quis"
    - Mỗi key chứa:
      * input_tokens: số tokens input
      * output_tokens: số tokens output
@@ -444,7 +444,7 @@ Quy trình tính token usage cho mỗi system:
    - insights_generated = timing_data[system]["insights_generated"]
    - Nếu không có timing.json → dùng hardcoded values:
      * baseline: 133 insights
-     * ifq: 80 insights
+     * quis: 80 insights
 
 3. Extract system-specific token data:
    - Nếu system == "baseline":
@@ -453,12 +453,12 @@ Quy trình tính token usage cho mỗi system:
      * output_tokens = token_data["baseline"]["output_tokens"]
      * requests = token_data["baseline"]["requests"]
      * model = token_data["baseline"]["model"]
-   - Nếu system == "ifq":
-     * total_tokens = token_data["ifq"]["total"]["total_tokens"]
-     * input_tokens = token_data["ifq"]["total"]["input_tokens"]
-     * output_tokens = token_data["ifq"]["total"]["output_tokens"]
-     * requests = token_data["ifq"]["total"]["requests"]
-     * model = token_data["ifq"]["total"]["model"]
+   - Nếu system == "quis":
+     * total_tokens = token_data["quis"]["total"]["total_tokens"]
+     * input_tokens = token_data["quis"]["total"]["input_tokens"]
+     * output_tokens = token_data["quis"]["total"]["output_tokens"]
+     * requests = token_data["quis"]["total"]["requests"]
+     * model = token_data["quis"]["total"]["model"]
 
 4. Compute tokens per insight:
    - tokens_per_insight = total_tokens / insights_generated

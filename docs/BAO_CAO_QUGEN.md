@@ -59,7 +59,7 @@ Breakdown và Measure sau này được ISGEN dùng để tính view (nhóm theo
 
 - **LLM:** OpenAI (Responses API mặc định, model `gpt-5-nano`; hoặc Chat Completions `gpt-4o-mini`). Cấu hình qua biến môi trường: `OPENAI_API_KEY`, `OPENAI_API_BASE`, `QUGEN_LLM_MODEL`, `OPENAI_USE_RESPONSES_API`.
 - **Semantic similarity:** Sentence Transformers `all-MiniLM-L6-v2` (embedding câu hỏi và schema cho lọc relevance và dedup).
-- **Cấu trúc code:** `ifq/qugen/` gồm `pipeline.py` (vòng lặp QUGEN), `prompts.py` (Figure 6, 7), `stats.py` (BasicStatsGenerator), `parser.py` (parse [INSIGHT]), `filters.py` (relevance, dedup, simple-question), `llm_client.py`, `models.py` (InsightCard, TableSchema), `examples.py` (few-shot mặc định). CLI: `run_qugen.py` (input CSV/schema, output JSON).
+- **Cấu trúc code:** `quis/qugen/` gồm `pipeline.py` (vòng lặp QUGEN), `prompts.py` (Figure 6, 7), `stats.py` (BasicStatsGenerator), `parser.py` (parse [INSIGHT]), `filters.py` (relevance, dedup, simple-question), `llm_client.py`, `models.py` (InsightCard, TableSchema), `examples.py` (few-shot mặc định). CLI: `run_qugen.py` (input CSV/schema, output JSON).
 
 Tham số mặc định: số iteration 10, số samples mỗi iteration 3, số in-context examples 6, số câu hỏi yêu cầu mỗi prompt 10; ngưỡng relevance 0,25, dedup 0,85.
 

@@ -23,12 +23,12 @@ except ImportError:
 
 import pandas as pd
 
-from ifq.shared.data_loader import load_data
-from ifq.isgen.pipeline import ISGENPipeline, ISGENConfig
+from quis.shared.data_loader import load_data
+from quis.isgen.pipeline import ISGENPipeline, ISGENConfig
 
 def _get_llm():
     try:
-        from ifq.qugen.llm_client import get_default_llm_client
+        from quis.qugen.llm_client import get_default_llm_client
         return get_default_llm_client(use_mock=False)
     except Exception:
         return None

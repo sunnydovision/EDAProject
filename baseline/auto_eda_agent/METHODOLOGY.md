@@ -58,7 +58,7 @@ Raw CSV
 
 ## 3. Preprocessing
 
-Before any agent runs, the dataset is cleaned to ensure consistent numeric types. The cleaning logic mirrors the IFQ preprocessing pipeline to ensure a fair comparison between the two systems:
+Before any agent runs, the dataset is cleaned to ensure consistent numeric types. The cleaning logic mirrors the QUIS preprocessing pipeline to ensure a fair comparison between the two systems:
 
 - **Separator detection** → auto-detects `,` vs `;` CSV formats
 - **Currency strings** (`$50.00`, `$1,200`) → parsed to float
@@ -193,7 +193,7 @@ Each insight includes a title, description with specific numbers, the variables 
 
 **Output:** `insights.json` — structured list of insights, each with title, description, type, variables involved, evidence, chart path, subspace condition, and `view_labels`.
 
-After Step 5 completes, the pipeline produces an IFQ-compatible output (insight cards and insight summaries) to enable direct evaluation against the IFQ system.
+After Step 5 completes, the pipeline produces an QUIS-compatible output (insight cards and insight summaries) to enable direct evaluation against the QUIS system.
 
 ---
 

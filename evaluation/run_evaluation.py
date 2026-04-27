@@ -32,6 +32,14 @@ from metrics.question_quality import (
 )
 from compare import create_comparison_table, generate_report
 from plot_evaluation import plot_evaluation_results
+from configs.eval_config import (
+    DATA_PATH,
+    PROFILE_PATH,
+    QUIS_INSIGHTS_PATH,
+    BASELINE_INSIGHTS_PATH,
+    ONLYSTATS_INSIGHTS_PATH,
+    RESULTS_DIR,
+)
 
 
 def load_insights(summary_path: str):
@@ -123,7 +131,7 @@ def evaluate_system(
         # GROUP 3 (sub-section 3.2) — QuGen text / reason metrics.
         # Stored under the same key for backward compatibility with downstream
         # consumers that parse `results['question_quality']`.
-        'question_quality': compute_question_quality(insights_data),
+        'question_quality': compute_question_quality(insights_data, system_name),
 
         # EFFICIENCY METRICS
         'time_to_insight': timing_data,
@@ -160,19 +168,23 @@ def evaluate_comparison(
     # Compute novelty
     print(f" Computing {results_a['system']} novelty vs {results_b['system']}...")
     novelty_a = compute_novelty(insights_a, insights_b)
+    novelty_a['compared_against'] = results_b['system']
     results_a['insight_novelty'] = novelty_a
-    
+
     print(f" Computing {results_b['system']} novelty vs {results_a['system']}...")
     novelty_b = compute_novelty(insights_b, insights_a)
+    novelty_b['compared_against'] = results_a['system']
     results_b['insight_novelty'] = novelty_b
 
     # Cross-system Question Novelty (Group 3 / 3.2 — QuGen text & reason)
     print(f" Computing {results_a['system']} question novelty vs {results_b['system']}...")
-    q_novelty_a = compute_question_novelty(insights_a, insights_b)
+    q_novelty_a = compute_question_novelty(insights_a, insights_b, system_name=results_a['system'])
+    q_novelty_a['compared_against'] = results_b['system']
     results_a.setdefault('question_quality', {})['question_novelty'] = q_novelty_a
 
     print(f" Computing {results_b['system']} question novelty vs {results_a['system']}...")
-    q_novelty_b = compute_question_novelty(insights_b, insights_a)
+    q_novelty_b = compute_question_novelty(insights_b, insights_a, system_name=results_b['system'])
+    q_novelty_b['compared_against'] = results_a['system']
     results_b.setdefault('question_quality', {})['question_novelty'] = q_novelty_b
 
     return {
@@ -182,32 +194,38 @@ def evaluate_comparison(
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Evaluate IFQ vs Baseline (v2)')
-    parser.add_argument('--data', type=str, required=True, help='Path to CSV data file')
-    parser.add_argument('--system_a', type=str, required=True, help='Name of system A (e.g., IFQ)')
-    parser.add_argument('--path_a', type=str, required=True, help='Path to system A insights_summary.json')
-    parser.add_argument('--timing_a', type=str, default=None, help='Path to system A timing file')
-    parser.add_argument('--token_a', type=str, default=None, help='Path to system A token usage file')
+    parser = argparse.ArgumentParser(description='Evaluate QUIS vs Baseline (v2)')
+    parser.add_argument('--system_a', type=str, required=True, help='Name of system A (e.g., QUIS)')
     parser.add_argument('--system_b', type=str, required=True, help='Name of system B (e.g., Baseline)')
-    parser.add_argument('--path_b', type=str, required=True, help='Path to system B insights_summary.json')
-    parser.add_argument('--timing_b', type=str, default=None, help='Path to system B timing file')
-    parser.add_argument('--token_b', type=str, default=None, help='Path to system B token usage file')
-    parser.add_argument('--output', type=str, default='evaluation/results', help='Output directory')
-    # profile.json is produced by the LLM column profiling step (baseline auto_eda_agent step1).
-    # Adidas dataset   : baseline/auto_eda_agent/output_adidas/step1_profiling/profile.json
-    # Transactions set : baseline/auto_eda_agent/output_transactions/step1_profiling/profile.json
-    parser.add_argument('--profile', type=str, default=None,
-                        help='Path to profile.json for BM Quality categorical detection')
+    parser.add_argument('--output', type=str, default=RESULTS_DIR, help='Output directory')
     
     args = parser.parse_args()
+    
+    # Map system names to paths
+    system_paths = {
+        'QUIS': QUIS_INSIGHTS_PATH,
+        'quis': QUIS_INSIGHTS_PATH,
+        'Baseline': BASELINE_INSIGHTS_PATH,
+        'baseline': BASELINE_INSIGHTS_PATH,
+        'ONLYSTATS': ONLYSTATS_INSIGHTS_PATH,
+        'onlystats': ONLYSTATS_INSIGHTS_PATH,
+    }
+    
+    path_a = system_paths.get(args.system_a)
+    path_b = system_paths.get(args.system_b)
+    
+    if path_a is None:
+        raise ValueError(f"Unknown system A: {args.system_a}. Valid options: {list(system_paths.keys())}")
+    if path_b is None:
+        raise ValueError(f"Unknown system B: {args.system_b}. Valid options: {list(system_paths.keys())}")
     
     print(f"{'='*70}")
     print(f"{args.system_a} vs {args.system_b} Evaluation (v2)")
     print(f"{'='*70}\n")
     
     # Load and clean data
-    print(f"Loading data: {args.data}")
-    df_raw, df_cleaned = load_and_clean_data(args.data)
+    print(f"Loading data: {DATA_PATH}")
+    df_raw, df_cleaned = load_and_clean_data(DATA_PATH)
     print(f"  Loaded {len(df_raw)} rows, {len(df_raw.columns)} columns")
     print(f"  Cleaned {len(df_cleaned)} rows, {len(df_cleaned.columns)} columns")
     print()
@@ -215,29 +233,29 @@ def main():
     # Evaluate both systems
     results_a = evaluate_system(
         system_name=args.system_a,
-        summary_path=args.path_a,
+        summary_path=path_a,
         df_raw=df_raw,
         df_cleaned=df_cleaned,
-        csv_path=args.data,
-        timing_file=args.timing_a,
-        token_file=args.token_a,
-        profile_path=args.profile,
+        csv_path=DATA_PATH,
+        timing_file=None,
+        token_file=None,
+        profile_path=PROFILE_PATH,
     )
     
     results_b = evaluate_system(
         system_name=args.system_b,
-        summary_path=args.path_b,
+        summary_path=path_b,
         df_raw=df_raw,
         df_cleaned=df_cleaned,
-        csv_path=args.data,
-        timing_file=args.timing_b,
-        token_file=args.token_b,
-        profile_path=args.profile,
+        csv_path=DATA_PATH,
+        timing_file=None,
+        token_file=None,
+        profile_path=PROFILE_PATH,
     )
     
     # Load insights for novelty computation
-    insights_a = load_insights(args.path_a)
-    insights_b = load_insights(args.path_b)
+    insights_a = load_insights(path_a)
+    insights_b = load_insights(path_b)
     
     # Compute comparative metrics (novelty)
     comparison_results = evaluate_comparison(results_a, results_b, insights_a, insights_b)
@@ -247,7 +265,7 @@ def main():
     print("Computing Subspace Metrics")
     print(f"{'='*70}\n")
     print(f" Subspace insights: {args.system_a}={len(filter_insights_with_subspace(insights_a))}, {args.system_b}={len(filter_insights_with_subspace(insights_b))}")
-    subspace_results = compute_subspace_metrics(insights_a, insights_b, df_raw, df_cleaned, args.data)
+    subspace_results = compute_subspace_metrics(insights_a, insights_b, df_raw, df_cleaned, DATA_PATH)
     results_a['subspace_metrics'] = subspace_results['system_a']
     results_b['subspace_metrics'] = subspace_results['system_b']
     

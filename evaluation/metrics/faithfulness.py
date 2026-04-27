@@ -19,7 +19,7 @@ def compute_faithfulness(
     Compute faithfulness for a list of insights.
     
     Faithfulness measures if the insights are grounded in the actual data.
-    Uses cleaned dataframe for recomputation (like IFQ does).
+    Uses cleaned dataframe for recomputation (like QUIS does).
     
     Args:
         insights: List of insight dictionaries
@@ -86,7 +86,7 @@ def compute_faithfulness(
             })
             continue
         
-        # Apply subspace filter using cleaned data (like IFQ does)
+        # Apply subspace filter using cleaned data (like QUIS does)
         df_filtered = df_cleaned.copy()
         for col_filter, val in subspace:
             if col_filter in df_filtered.columns:

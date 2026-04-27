@@ -1278,8 +1278,8 @@
   },
   "question_quality": {
     "question_diversity": {
-      "question_diversity": 0.4046642780303955,
-      "avg_similarity": 0.5953357219696045,
+      "question_diversity": 0.40466421842575073,
+      "avg_similarity": 0.5953357815742493,
       "num_questions": 93
     },
     "question_specificity": {
@@ -1288,31 +1288,31 @@
       "num_questions": 93
     },
     "question_insight_alignment": {
-      "question_insight_alignment": 0.7260711789131165,
-      "question_insight_alignment_std": 0.052373096346855164,
+      "question_insight_alignment": 0.7260711193084717,
+      "question_insight_alignment_std": 0.05237308144569397,
       "num_pairs": 93
     },
     "reason_insight_coherence": {
-      "reason_insight_coherence": 0.7004002928733826,
-      "reason_insight_coherence_std": 0.05440211668610573,
-      "num_pairs": 93
+      "reason_insight_coherence": null,
+      "num_pairs": 0
     },
     "question_novelty": {
-      "question_novelty": 0.6774193548387096,
-      "novel_count": 63,
-      "total_count": 93,
-      "avg_max_similarity": 0.7916336059570312,
-      "tau": 0.85
+      "question_novelty": null,
+      "novel_count": 0,
+      "total_count": 0,
+      "tau": 0.85,
+      "compared_against": "QUIS"
     }
   },
   "time_to_insight": null,
   "token_usage": null,
   "insight_novelty": {
-    "novelty": 0.6236559139784946,
-    "novel_count": 58,
+    "novelty": 0.3333333333333333,
+    "novel_count": 31,
     "total_count": 93,
-    "avg_max_similarity": 0.8160439133644104,
-    "tau": 0.85
+    "avg_max_similarity": 0.8817461133003235,
+    "tau": 0.85,
+    "compared_against": "QUIS"
   },
   "subspace_metrics": {
     "total_with_subspace": 33,
@@ -1326,33 +1326,18 @@
       "_failed_insights": []
     },
     "significance": {
-      "avg_effect_size": 0.46986969696969694,
-      "significant_count": 25,
-      "significant_rate": 0.7575757575757576,
-      "pattern_avg_significance": 0.9,
+      "avg_effect_size": 0.703065,
+      "significant_count": 12,
+      "significant_rate": 0.6,
+      "pattern_avg_significance": 0.15,
       "max_effect_size": 0.881,
-      "total_evaluated": 33,
+      "total_evaluated": 20,
       "by_pattern": {
         "TREND": {
-          "significant_count": 2,
-          "total_count": 2,
-          "significant_rate": 1.0,
-          "insights": [
-            {
-              "breakdown": "Invoice Date",
-              "col": "Operating Margin",
-              "p_value": 0.0,
-              "effect_size": 0.2228,
-              "significant": "True"
-            },
-            {
-              "breakdown": "Invoice Date",
-              "col": "Price per Unit",
-              "p_value": 0.0,
-              "effect_size": 0.2078,
-              "significant": "True"
-            }
-          ]
+          "significant_count": 0,
+          "total_count": 0,
+          "significant_rate": 0.0,
+          "insights": []
         },
         "OUTSTANDING_VALUE": {
           "significant_count": 12,
@@ -1502,108 +1487,29 @@
           ]
         },
         "ATTRIBUTION": {
-          "significant_count": 9,
-          "total_count": 9,
-          "significant_rate": 1.0,
-          "insights": [
-            {
-              "breakdown": "Retailer",
-              "col": "Total Sales",
-              "p_value": 0.0,
-              "effect_size": 0.0815,
-              "significant": "True"
-            },
-            {
-              "breakdown": "Retailer",
-              "col": "Price per Unit",
-              "p_value": 0.0,
-              "effect_size": 0.1106,
-              "significant": "True"
-            },
-            {
-              "breakdown": "Retailer",
-              "col": "Units Sold",
-              "p_value": 0.0,
-              "effect_size": 0.0812,
-              "significant": "True"
-            },
-            {
-              "breakdown": "Retailer",
-              "col": "Operating Margin",
-              "p_value": 0.0,
-              "effect_size": 0.099,
-              "significant": "True"
-            },
-            {
-              "breakdown": "Retailer",
-              "col": "Operating Profit",
-              "p_value": 0.0,
-              "effect_size": 0.0579,
-              "significant": "True"
-            },
-            {
-              "breakdown": "Retailer",
-              "col": "Units Sold",
-              "p_value": 0.0,
-              "effect_size": 0.0812,
-              "significant": "True"
-            },
-            {
-              "breakdown": "Retailer",
-              "col": "Total Sales",
-              "p_value": 0.0,
-              "effect_size": 0.0815,
-              "significant": "True"
-            },
-            {
-              "breakdown": "Region",
-              "col": "Price per Unit",
-              "p_value": 0.0,
-              "effect_size": 0.1824,
-              "significant": "True"
-            },
-            {
-              "breakdown": "Retailer",
-              "col": "Operating Profit",
-              "p_value": 0.0,
-              "effect_size": 0.0579,
-              "significant": "True"
-            }
-          ]
+          "significant_count": 0,
+          "total_count": 0,
+          "significant_rate": 0.0,
+          "insights": []
         },
         "DISTRIBUTION_DIFFERENCE": {
-          "significant_count": 2,
-          "total_count": 2,
-          "significant_rate": 1.0,
-          "insights": [
-            {
-              "breakdown": "Retailer",
-              "col": "Price per Unit",
-              "p_value": 1.7e-05,
-              "effect_size": 0.1068,
-              "significant": "True"
-            },
-            {
-              "breakdown": "Retailer",
-              "col": "Operating Margin",
-              "p_value": 0.007644,
-              "effect_size": 0.0738,
-              "significant": "True"
-            }
-          ]
+          "significant_count": 0,
+          "total_count": 0,
+          "significant_rate": 0.0,
+          "insights": []
         }
       }
     },
     "novelty": {
-      "novelty": 0.8787878787878788,
-      "novel_count": 29,
+      "novelty": 0.7272727272727273,
+      "novel_count": 24,
       "total_count": 33,
-      "avg_max_similarity": 0.7273785471916199,
+      "avg_max_similarity": 0.8110227584838867,
       "tau": 0.85
     },
     "diversity": {
-      "semantic_diversity": 0.4009290337562561,
-      "avg_similarity": 0.5990709662437439,
+      "semantic_diversity": 0.40092897415161133,
+      "avg_similarity": 0.5990710258483887,
       "num_insights": 33,
       "subspace_diversity": {
         "subspace_diversity_entropy": 1.5628819972344778,
