@@ -25,6 +25,7 @@ from configs.eval_config import (
     ONLYSTATS_INSIGHTS_PATH,
     RESULTS_DIR,
 )
+from utils.log_config import save_run_log, load_eval_config
 
 
 def _winner3(names, values, higher_better=True):
@@ -276,6 +277,11 @@ def main():
     parser = argparse.ArgumentParser(description='3-way comparison: QUIS vs Baseline vs ONLYSTATS')
     parser.add_argument('--output', default=RESULTS_DIR, help='Output directory')
     args = parser.parse_args()
+
+    # Save run log
+    args_dict = vars(args)
+    config_dict = load_eval_config()
+    save_run_log("compare3", args_dict, config_dict)
 
     # Load data
     print(f"Loading data: {DATA_PATH}")
