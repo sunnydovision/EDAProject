@@ -2,7 +2,7 @@
   {
     "question": "Which Mã_sản_phẩm has the highest number of repeat sales?",
     "explanation": "Outstanding value: for Tên màu=XN, one category in Mã_sản_phẩm has a value much larger (or smaller) than the others when measuring MEAN(Số_lần_bán_sản_phẩm).",
-    "plot_path": "plots_v2/insight_0_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_0_Outstanding_Value.png",
     "insight": {
       "breakdown": "Mã_sản_phẩm",
       "measure": "MEAN(Số_lần_bán_sản_phẩm)",
@@ -33,7 +33,7 @@
   {
     "question": "How does weekly revenue performance change across Tuần_trong_tháng?",
     "explanation": "Outstanding value: for Mã_sản_phẩm=Tôn Màu_Mỏng_G550_PBLU09, one category in Tuần_trong_tháng has a value much larger (or smaller) than the others when measuring MEAN(Doanh_thu_theo_tuan_trong_thang).",
-    "plot_path": "plots_v2/insight_1_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_1_Outstanding_Value.png",
     "insight": {
       "breakdown": "Tuần_trong_tháng",
       "measure": "MEAN(Doanh_thu_theo_tuan_trong_thang)",
@@ -62,7 +62,7 @@
   {
     "question": "Which SKU_Dòng shows the highest average sales frequency?",
     "explanation": "Outstanding value: for Phân loại=1A, one category in SKU_Dòng has a value much larger (or smaller) than the others when measuring MEAN(Tần_suất_bán).",
-    "plot_path": "plots_v2/insight_2_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_2_Outstanding_Value.png",
     "insight": {
       "breakdown": "SKU_Dòng",
       "measure": "MEAN(Tần_suất_bán)",
@@ -89,7 +89,7 @@
   {
     "question": "Do some Loại_khách_hàng show a higher rate of repeated complaints?",
     "explanation": "Outstanding value: for SKU_Màu=WGRE01, one category in Loại_khách_hàng has a value much larger (or smaller) than the others when measuring MEAN(Cờ_khiếu_nại_lặp_lại).",
-    "plot_path": "plots_v2/insight_3_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_3_Outstanding_Value.png",
     "insight": {
       "breakdown": "Loại_khách_hàng",
       "measure": "MEAN(Cờ_khiếu_nại_lặp_lại)",
@@ -118,7 +118,7 @@
   {
     "question": "Which Tỉnh / Thành Phố shows the highest average Doanh_thu_tỉnh?",
     "explanation": "Outstanding value: for overall data, one category in Tỉnh / Thành Phố has a value much larger (or smaller) than the others when measuring MEAN(Doanh_thu_tỉnh).",
-    "plot_path": "plots_v2/insight_4_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_4_Outstanding_Value.png",
     "insight": {
       "breakdown": "Tỉnh / Thành Phố",
       "measure": "MEAN(Doanh_thu_tỉnh)",
@@ -158,7 +158,7 @@
   {
     "question": "Which Tỉnh / Thành Phố has the highest number of transactions?",
     "explanation": "Outstanding value: for overall data, one category in Tỉnh / Thành Phố has a value much larger (or smaller) than the others when measuring COUNT(STT).",
-    "plot_path": "plots_v2/insight_5_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_5_Outstanding_Value.png",
     "insight": {
       "breakdown": "Tỉnh / Thành Phố",
       "measure": "COUNT(STT)",
@@ -198,7 +198,7 @@
   {
     "question": "How does Khoảng_cách_đơn_trước change across Thứ?",
     "explanation": "Outstanding value: for Doanh_thu_tb_mỗi_lần=96302529, one category in Thứ has a value much larger (or smaller) than the others when measuring MEAN(Khoảng_cách_đơn_trước).",
-    "plot_path": "plots_v2/insight_6_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_6_Outstanding_Value.png",
     "insight": {
       "breakdown": "Thứ",
       "measure": "MEAN(Khoảng_cách_đơn_trước)",
@@ -231,7 +231,7 @@
   {
     "question": "Are repeat complaints more common in higher Mức_rủi_ro_giao_dịch categories?",
     "explanation": "Outstanding value: for Độ_phức_tạp_bảo_hành=Trung bình, one category in Mức_rủi_ro_giao_dịch has a value much larger (or smaller) than the others when measuring MEAN(Cờ_khiếu_nại_lặp_lại).",
-    "plot_path": "plots_v2/insight_7_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_7_Outstanding_Value.png",
     "insight": {
       "breakdown": "Mức_rủi_ro_giao_dịch",
       "measure": "MEAN(Cờ_khiếu_nại_lặp_lại)",
@@ -260,7 +260,7 @@
   {
     "question": "In which week of the month are abnormal transactions most common?",
     "explanation": "Outstanding value: for Tháng=12, one category in Tuần_trong_tháng has a value much larger (or smaller) than the others when measuring MEAN(Cờ_giao_dịch_bất_thường).",
-    "plot_path": "plots_v2/insight_8_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_8_Outstanding_Value.png",
     "insight": {
       "breakdown": "Tuần_trong_tháng",
       "measure": "MEAN(Cờ_giao_dịch_bất_thường)",
@@ -293,7 +293,7 @@
   {
     "question": "Which Loại_khách_hàng records the highest transaction volume?",
     "explanation": "Outstanding value: for overall data, one category in Loại_khách_hàng has a value much larger (or smaller) than the others when measuring COUNT(STT).",
-    "plot_path": "plots_v2/insight_9_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_9_Outstanding_Value.png",
     "insight": {
       "breakdown": "Loại_khách_hàng",
       "measure": "COUNT(STT)",
@@ -317,7 +317,7 @@
   {
     "question": "In which Tỉnh / Thành Phố are late deliveries most common?",
     "explanation": "Outstanding value: for overall data, one category in Tỉnh / Thành Phố has a value much larger (or smaller) than the others when measuring MEAN(Cờ_giao_hàng_trễ).",
-    "plot_path": "plots_v2/insight_10_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_10_Outstanding_Value.png",
     "insight": {
       "breakdown": "Tỉnh / Thành Phố",
       "measure": "MEAN(Cờ_giao_hàng_trễ)",
@@ -357,7 +357,7 @@
   {
     "question": "How does average Khoảng_cách_vận_chuyển_km differ across Tỉnh / Thành Phố?",
     "explanation": "Outstanding value: for Ngày bán=2025-12-30, one category in Tỉnh / Thành Phố has a value much larger (or smaller) than the others when measuring MEAN(Khoảng_cách_vận_chuyển_km).",
-    "plot_path": "plots_v2/insight_11_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_11_Outstanding_Value.png",
     "insight": {
       "breakdown": "Tỉnh / Thành Phố",
       "measure": "MEAN(Khoảng_cách_vận_chuyển_km)",
@@ -386,7 +386,7 @@
   {
     "question": "Which Tỉnh / Thành Phố generates the highest sales value?",
     "explanation": "Outstanding value: for Giá_trên_kg=23852, one category in Tỉnh / Thành Phố has a value much larger (or smaller) than the others when measuring MEAN(Thành Tiền).",
-    "plot_path": "plots_v2/insight_12_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_12_Outstanding_Value.png",
     "insight": {
       "breakdown": "Tỉnh / Thành Phố",
       "measure": "MEAN(Thành Tiền)",
@@ -413,7 +413,7 @@
   {
     "question": "Which Khu Vực (Quận/Huyện) has the highest rate of delayed deliveries?",
     "explanation": "Outstanding value: for overall data, one category in Khu Vực (Quận/Huyện) has a value much larger (or smaller) than the others when measuring MEAN(Cờ_giao_hàng_trễ).",
-    "plot_path": "plots_v2/insight_13_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_13_Outstanding_Value.png",
     "insight": {
       "breakdown": "Khu Vực (Quận/Huyện)",
       "measure": "MEAN(Cờ_giao_hàng_trễ)",
@@ -475,7 +475,7 @@
   {
     "question": "How does Met B differ between Loại Hàng groups?",
     "explanation": "Outstanding value: for overall data, one category in Loại Hàng has a value much larger (or smaller) than the others when measuring MEAN(Met B).",
-    "plot_path": "plots_v2/insight_14_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_14_Outstanding_Value.png",
     "insight": {
       "breakdown": "Loại Hàng",
       "measure": "MEAN(Met B)",
@@ -497,7 +497,7 @@
   {
     "question": "Does Độ D vary meaningfully across Phân loại?",
     "explanation": "Outstanding value: for overall data, one category in Phân loại has a value much larger (or smaller) than the others when measuring MEAN(Độ D).",
-    "plot_path": "plots_v2/insight_15_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_15_Outstanding_Value.png",
     "insight": {
       "breakdown": "Phân loại",
       "measure": "MEAN(Độ D)",
@@ -525,7 +525,7 @@
   {
     "question": "Does Tỷ trọng thực tế differ across Mức_độ_dày categories?",
     "explanation": "Outstanding value: for Phân_khúc_sản_phẩm=Phổ thông, one category in Mức_độ_dày has a value much larger (or smaller) than the others when measuring MEAN(Tỷ trọng thực tế).",
-    "plot_path": "plots_v2/insight_16_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_16_Outstanding_Value.png",
     "insight": {
       "breakdown": "Mức_độ_dày",
       "measure": "MEAN(Tỷ trọng thực tế)",
@@ -552,7 +552,7 @@
   {
     "question": "How does Khoảng_cách_vận_chuyển_km vary across Mức_rủi_ro_giao_dịch levels?",
     "explanation": "Outstanding value: for Met C=18, one category in Mức_rủi_ro_giao_dịch has a value much larger (or smaller) than the others when measuring MEAN(Khoảng_cách_vận_chuyển_km).",
-    "plot_path": "plots_v2/insight_17_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_17_Outstanding_Value.png",
     "insight": {
       "breakdown": "Mức_rủi_ro_giao_dịch",
       "measure": "MEAN(Khoảng_cách_vận_chuyển_km)",
@@ -579,7 +579,7 @@
   {
     "question": "Does the rate of delayed delivery increase with Mức_độ_khiếu_nại?",
     "explanation": "Outstanding value: for Ngày=6, one category in Mức_độ_khiếu_nại has a value much larger (or smaller) than the others when measuring MEAN(Cờ_giao_hàng_trễ).",
-    "plot_path": "plots_v2/insight_18_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_18_Outstanding_Value.png",
     "insight": {
       "breakdown": "Mức_độ_khiếu_nại",
       "measure": "MEAN(Cờ_giao_hàng_trễ)",
@@ -608,7 +608,7 @@
   {
     "question": "Which Khu Vực (Quận/Huyện) has the highest rate of unusual transactions?",
     "explanation": "Outstanding value: for overall data, one category in Khu Vực (Quận/Huyện) has a value much larger (or smaller) than the others when measuring MEAN(Cờ_giao_dịch_bất_thường).",
-    "plot_path": "plots_v2/insight_19_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_19_Outstanding_Value.png",
     "insight": {
       "breakdown": "Khu Vực (Quận/Huyện)",
       "measure": "MEAN(Cờ_giao_dịch_bất_thường)",
@@ -670,7 +670,7 @@
   {
     "question": "Which Phân_khúc_sản_phẩm delivers the highest estimated profit margin?",
     "explanation": "Outstanding value: for Tháng=12, one category in Phân_khúc_sản_phẩm has a value much larger (or smaller) than the others when measuring MEAN(Ước_tính_biên_lợi_nhuận).",
-    "plot_path": "plots_v2/insight_20_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_20_Outstanding_Value.png",
     "insight": {
       "breakdown": "Phân_khúc_sản_phẩm",
       "measure": "MEAN(Ước_tính_biên_lợi_nhuận)",
@@ -699,7 +699,7 @@
   {
     "question": "In which Tỉnh / Thành Phố are repeat complaints most common?",
     "explanation": "Outstanding value: for overall data, one category in Tỉnh / Thành Phố has a value much larger (or smaller) than the others when measuring MEAN(Cờ_khiếu_nại_lặp_lại).",
-    "plot_path": "plots_v2/insight_21_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_21_Outstanding_Value.png",
     "insight": {
       "breakdown": "Tỉnh / Thành Phố",
       "measure": "MEAN(Cờ_khiếu_nại_lặp_lại)",
@@ -739,7 +739,7 @@
   {
     "question": "Does Tỷ_lệ_chi_phí increase for transactions with higher Mức_độ_khiếu_nại?",
     "explanation": "Outstanding value: for Tỉnh / Thành Phố=Bình Định, one category in Mức_độ_khiếu_nại has a value much larger (or smaller) than the others when measuring MEAN(Tỷ_lệ_chi_phí).",
-    "plot_path": "plots_v2/insight_22_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_22_Outstanding_Value.png",
     "insight": {
       "breakdown": "Mức_độ_khiếu_nại",
       "measure": "MEAN(Tỷ_lệ_chi_phí)",
@@ -768,7 +768,7 @@
   {
     "question": "Does Ước_tính_biên_lợi_nhuận change across Độ_phức_tạp_bảo_hành levels?",
     "explanation": "Outstanding value: for overall data, one category in Độ_phức_tạp_bảo_hành has a value much larger (or smaller) than the others when measuring MEAN(Ước_tính_biên_lợi_nhuận).",
-    "plot_path": "plots_v2/insight_23_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_23_Outstanding_Value.png",
     "insight": {
       "breakdown": "Độ_phức_tạp_bảo_hành",
       "measure": "MEAN(Ước_tính_biên_lợi_nhuận)",
@@ -792,7 +792,7 @@
   {
     "question": "Which Phân_khúc_sản_phẩm shows the highest repeat selling intensity?",
     "explanation": "Outstanding value: for Phân loại=2, one category in Phân_khúc_sản_phẩm has a value much larger (or smaller) than the others when measuring MEAN(Số_lần_bán_sản_phẩm).",
-    "plot_path": "plots_v2/insight_24_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_24_Outstanding_Value.png",
     "insight": {
       "breakdown": "Phân_khúc_sản_phẩm",
       "measure": "MEAN(Số_lần_bán_sản_phẩm)",
@@ -821,7 +821,7 @@
   {
     "question": "Does Tỷ trọng thực tế vary significantly by Tên màu?",
     "explanation": "Outstanding value: for Mã màu=PGRE02, one category in Tên màu has a value much larger (or smaller) than the others when measuring MEAN(Tỷ trọng thực tế).",
-    "plot_path": "plots_v2/insight_25_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_25_Outstanding_Value.png",
     "insight": {
       "breakdown": "Tên màu",
       "measure": "MEAN(Tỷ trọng thực tế)",
@@ -848,7 +848,7 @@
   {
     "question": "Does Ước_tính_biên_lợi_nhuận differ across Mức_rủi_ro_giao_dịch levels?",
     "explanation": "Outstanding value: for overall data, one category in Mức_rủi_ro_giao_dịch has a value much larger (or smaller) than the others when measuring MEAN(Ước_tính_biên_lợi_nhuận).",
-    "plot_path": "plots_v2/insight_26_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_26_Outstanding_Value.png",
     "insight": {
       "breakdown": "Mức_rủi_ro_giao_dịch",
       "measure": "MEAN(Ước_tính_biên_lợi_nhuận)",
@@ -872,7 +872,7 @@
   {
     "question": "Which Loại_khách_hàng has the highest customer satisfaction?",
     "explanation": "Outstanding value: for Phân loại=3, one category in Loại_khách_hàng has a value much larger (or smaller) than the others when measuring MEAN(Điểm_hài_lòng_khách_hàng).",
-    "plot_path": "plots_v2/insight_27_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_27_Outstanding_Value.png",
     "insight": {
       "breakdown": "Loại_khách_hàng",
       "measure": "MEAN(Điểm_hài_lòng_khách_hàng)",
@@ -899,7 +899,7 @@
   {
     "question": "Does Doanh_thu_trên_mm differ across Độ_phức_tạp_bảo_hành levels?",
     "explanation": "Outstanding value: for Phân loại=2, one category in Độ_phức_tạp_bảo_hành has a value much larger (or smaller) than the others when measuring MEAN(Doanh_thu_trên_mm).",
-    "plot_path": "plots_v2/insight_28_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_28_Outstanding_Value.png",
     "insight": {
       "breakdown": "Độ_phức_tạp_bảo_hành",
       "measure": "MEAN(Doanh_thu_trên_mm)",
@@ -928,7 +928,7 @@
   {
     "question": "Does Met C change across Mức_độ_cứng categories?",
     "explanation": "Outstanding value: for overall data, one category in Mức_độ_cứng has a value much larger (or smaller) than the others when measuring MEAN(Met C).",
-    "plot_path": "plots_v2/insight_29_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_29_Outstanding_Value.png",
     "insight": {
       "breakdown": "Mức_độ_cứng",
       "measure": "MEAN(Met C)",
@@ -950,7 +950,7 @@
   {
     "question": "How does Tỷ_trọng_doanh_thu_% change across Thứ?",
     "explanation": "Outstanding value: for Met B=474, one category in Thứ has a value much larger (or smaller) than the others when measuring MEAN(Tỷ_trọng_doanh_thu_%).",
-    "plot_path": "plots_v2/insight_30_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_30_Outstanding_Value.png",
     "insight": {
       "breakdown": "Thứ",
       "measure": "MEAN(Tỷ_trọng_doanh_thu_%)",
@@ -977,7 +977,7 @@
   {
     "question": "Does Giá_trên_kg differ across Mức_độ_dày categories?",
     "explanation": "Outstanding value: for Phân loại=1A, one category in Mức_độ_dày has a value much larger (or smaller) than the others when measuring MEAN(Giá_trên_kg).",
-    "plot_path": "plots_v2/insight_31_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_31_Outstanding_Value.png",
     "insight": {
       "breakdown": "Mức_độ_dày",
       "measure": "MEAN(Giá_trên_kg)",
@@ -1004,7 +1004,7 @@
   {
     "question": "How does Giá_trên_kg differ across SKU_Dòng?",
     "explanation": "Outstanding value: for overall data, one category in SKU_Dòng has a value much larger (or smaller) than the others when measuring MEAN(Giá_trên_kg).",
-    "plot_path": "plots_v2/insight_32_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_32_Outstanding_Value.png",
     "insight": {
       "breakdown": "SKU_Dòng",
       "measure": "MEAN(Giá_trên_kg)",
@@ -1026,7 +1026,7 @@
   {
     "question": "Which Phân_khúc_sản_phẩm has the highest average cost ratio?",
     "explanation": "Outstanding value: for overall data, one category in Phân_khúc_sản_phẩm has a value much larger (or smaller) than the others when measuring MEAN(Tỷ_lệ_chi_phí).",
-    "plot_path": "plots_v2/insight_33_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_33_Outstanding_Value.png",
     "insight": {
       "breakdown": "Phân_khúc_sản_phẩm",
       "measure": "MEAN(Tỷ_lệ_chi_phí)",
@@ -1050,7 +1050,7 @@
   {
     "question": "Are products with higher Độ_phức_tạp_bảo_hành associated with higher Tỷ_lệ_chi_phí?",
     "explanation": "Outstanding value: for overall data, one category in Độ_phức_tạp_bảo_hành has a value much larger (or smaller) than the others when measuring MEAN(Tỷ_lệ_chi_phí).",
-    "plot_path": "plots_v2/insight_34_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_34_Outstanding_Value.png",
     "insight": {
       "breakdown": "Độ_phức_tạp_bảo_hành",
       "measure": "MEAN(Tỷ_lệ_chi_phí)",
@@ -1074,7 +1074,7 @@
   {
     "question": "Are weekend transactions more likely to have Cờ_giao_hàng_trễ?",
     "explanation": "Outstanding value: for overall data, one category in Cuối_tuần has a value much larger (or smaller) than the others when measuring MEAN(Cờ_giao_hàng_trễ).",
-    "plot_path": "plots_v2/insight_35_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_35_Outstanding_Value.png",
     "insight": {
       "breakdown": "Cuối_tuần",
       "measure": "MEAN(Cờ_giao_hàng_trễ)",
@@ -1096,7 +1096,7 @@
   {
     "question": "In which Tuần_trong_tháng are late deliveries most common?",
     "explanation": "Outstanding value: for overall data, one category in Tuần_trong_tháng has a value much larger (or smaller) than the others when measuring MEAN(Cờ_giao_hàng_trễ).",
-    "plot_path": "plots_v2/insight_36_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_36_Outstanding_Value.png",
     "insight": {
       "breakdown": "Tuần_trong_tháng",
       "measure": "MEAN(Cờ_giao_hàng_trễ)",
@@ -1124,7 +1124,7 @@
   {
     "question": "Does Giá_trên_kg differ by Tỉnh / Thành Phố?",
     "explanation": "Outstanding value: for overall data, one category in Tỉnh / Thành Phố has a value much larger (or smaller) than the others when measuring MEAN(Giá_trên_kg).",
-    "plot_path": "plots_v2/insight_37_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_37_Outstanding_Value.png",
     "insight": {
       "breakdown": "Tỉnh / Thành Phố",
       "measure": "MEAN(Giá_trên_kg)",
@@ -1164,7 +1164,7 @@
   {
     "question": "How does the average Khối lượng sold vary by Mùa?",
     "explanation": "Outstanding value: for Phân_khúc_sản_phẩm=Phổ thông, one category in Mùa has a value much larger (or smaller) than the others when measuring MEAN(Khối lượng).",
-    "plot_path": "plots_v2/insight_38_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_38_Outstanding_Value.png",
     "insight": {
       "breakdown": "Mùa",
       "measure": "MEAN(Khối lượng)",
@@ -1191,7 +1191,7 @@
   {
     "question": "How does Met A vary across different Phân loại groups?",
     "explanation": "Outstanding value: for overall data, one category in Phân loại has a value much larger (or smaller) than the others when measuring MEAN(Met A).",
-    "plot_path": "plots_v2/insight_39_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_39_Outstanding_Value.png",
     "insight": {
       "breakdown": "Phân loại",
       "measure": "MEAN(Met A)",
@@ -1219,7 +1219,7 @@
   {
     "question": "Is customer satisfaction lower for transactions with higher Độ_phức_tạp_bảo_hành?",
     "explanation": "Outstanding value: for overall data, one category in Độ_phức_tạp_bảo_hành has a value much larger (or smaller) than the others when measuring MEAN(Điểm_hài_lòng_khách_hàng).",
-    "plot_path": "plots_v2/insight_40_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_40_Outstanding_Value.png",
     "insight": {
       "breakdown": "Độ_phức_tạp_bảo_hành",
       "measure": "MEAN(Điểm_hài_lòng_khách_hàng)",
@@ -1243,7 +1243,7 @@
   {
     "question": "How does Met A vary across different Phân_khúc_sản_phẩm?",
     "explanation": "Outstanding value: for overall data, one category in Phân_khúc_sản_phẩm has a value much larger (or smaller) than the others when measuring MEAN(Met A).",
-    "plot_path": "plots_v2/insight_41_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_41_Outstanding_Value.png",
     "insight": {
       "breakdown": "Phân_khúc_sản_phẩm",
       "measure": "MEAN(Met A)",
@@ -1267,7 +1267,7 @@
   {
     "question": "Does Thành Tiền vary across Mùa?",
     "explanation": "Outstanding value: for overall data, one category in Mùa has a value much larger (or smaller) than the others when measuring MEAN(Thành Tiền).",
-    "plot_path": "plots_v2/insight_42_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_42_Outstanding_Value.png",
     "insight": {
       "breakdown": "Mùa",
       "measure": "MEAN(Thành Tiền)",
@@ -1289,7 +1289,7 @@
   {
     "question": "How does Điểm_hài_lòng_khách_hàng vary by Mức_độ_khiếu_nại?",
     "explanation": "Outstanding value: for overall data, one category in Mức_độ_khiếu_nại has a value much larger (or smaller) than the others when measuring MEAN(Điểm_hài_lòng_khách_hàng).",
-    "plot_path": "plots_v2/insight_43_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_43_Outstanding_Value.png",
     "insight": {
       "breakdown": "Mức_độ_khiếu_nại",
       "measure": "MEAN(Điểm_hài_lòng_khách_hàng)",
@@ -1313,7 +1313,7 @@
   {
     "question": "Does Tổng_doanh_thu_sản_phẩm vary by Độ_phức_tạp_bảo_hành?",
     "explanation": "Outstanding value: for overall data, one category in Độ_phức_tạp_bảo_hành has a value much larger (or smaller) than the others when measuring MEAN(Tổng_doanh_thu_sản_phẩm).",
-    "plot_path": "plots_v2/insight_44_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_44_Outstanding_Value.png",
     "insight": {
       "breakdown": "Độ_phức_tạp_bảo_hành",
       "measure": "MEAN(Tổng_doanh_thu_sản_phẩm)",
@@ -1337,7 +1337,7 @@
   {
     "question": "Does transaction sequence position differ by Loại_khách_hàng?",
     "explanation": "Outstanding value: for overall data, one category in Loại_khách_hàng has a value much larger (or smaller) than the others when measuring MEAN(STT).",
-    "plot_path": "plots_v2/insight_45_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_45_Outstanding_Value.png",
     "insight": {
       "breakdown": "Loại_khách_hàng",
       "measure": "MEAN(STT)",
@@ -1361,7 +1361,7 @@
   {
     "question": "Does Tỷ_trọng_doanh_thu_% differ across Loại_khách_hàng?",
     "explanation": "Outstanding value: for overall data, one category in Loại_khách_hàng has a value much larger (or smaller) than the others when measuring MEAN(Tỷ_trọng_doanh_thu_%).",
-    "plot_path": "plots_v2/insight_46_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_46_Outstanding_Value.png",
     "insight": {
       "breakdown": "Loại_khách_hàng",
       "measure": "MEAN(Tỷ_trọng_doanh_thu_%)",
@@ -1385,7 +1385,7 @@
   {
     "question": "Does average order Khối lượng differ by Loại_khách_hàng?",
     "explanation": "Outstanding value: for overall data, one category in Loại_khách_hàng has a value much larger (or smaller) than the others when measuring MEAN(Khối lượng).",
-    "plot_path": "plots_v2/insight_47_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_47_Outstanding_Value.png",
     "insight": {
       "breakdown": "Loại_khách_hàng",
       "measure": "MEAN(Khối lượng)",
@@ -1409,7 +1409,7 @@
   {
     "question": "Do some Loại_khách_hàng show higher rates of abnormal transactions?",
     "explanation": "Outstanding value: for overall data, one category in Loại_khách_hàng has a value much larger (or smaller) than the others when measuring MEAN(Cờ_giao_dịch_bất_thường).",
-    "plot_path": "plots_v2/insight_48_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_48_Outstanding_Value.png",
     "insight": {
       "breakdown": "Loại_khách_hàng",
       "measure": "MEAN(Cờ_giao_dịch_bất_thường)",
@@ -1433,7 +1433,7 @@
   {
     "question": "How does Doanh_thu_tb_mỗi_lần change across Tuần_trong_tháng?",
     "explanation": "Outstanding value: for overall data, one category in Tuần_trong_tháng has a value much larger (or smaller) than the others when measuring MEAN(Doanh_thu_tb_mỗi_lần).",
-    "plot_path": "plots_v2/insight_49_Outstanding_Value.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_49_Outstanding_Value.png",
     "insight": {
       "breakdown": "Tuần_trong_tháng",
       "measure": "MEAN(Doanh_thu_tb_mỗi_lần)",
@@ -1461,7 +1461,7 @@
   {
     "question": "Do some Loại_khách_hàng show a higher rate of repeated complaints?",
     "explanation": "Attribution: for Khối lượng=3330, a single category in Loại_khách_hàng accounts for a large share of total MEAN(Cờ_khiếu_nại_lặp_lại).",
-    "plot_path": "plots_v2/insight_50_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_50_Attribution.png",
     "insight": {
       "breakdown": "Loại_khách_hàng",
       "measure": "MEAN(Cờ_khiếu_nại_lặp_lại)",
@@ -1490,7 +1490,7 @@
   {
     "question": "In which week of the month are abnormal transactions most common?",
     "explanation": "Attribution: for Khối lượng=4070, a single category in Tuần_trong_tháng accounts for a large share of total MEAN(Cờ_giao_dịch_bất_thường).",
-    "plot_path": "plots_v2/insight_51_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_51_Attribution.png",
     "insight": {
       "breakdown": "Tuần_trong_tháng",
       "measure": "MEAN(Cờ_giao_dịch_bất_thường)",
@@ -1523,7 +1523,7 @@
   {
     "question": "In which Tỉnh / Thành Phố are late deliveries most common?",
     "explanation": "Attribution: for Met C=6, a single category in Tỉnh / Thành Phố accounts for a large share of total MEAN(Cờ_giao_hàng_trễ).",
-    "plot_path": "plots_v2/insight_52_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_52_Attribution.png",
     "insight": {
       "breakdown": "Tỉnh / Thành Phố",
       "measure": "MEAN(Cờ_giao_hàng_trễ)",
@@ -1552,7 +1552,7 @@
   {
     "question": "Does the rate of delayed delivery increase with Mức_độ_khiếu_nại?",
     "explanation": "Attribution: for Tỉnh / Thành Phố=Long An, a single category in Mức_độ_khiếu_nại accounts for a large share of total MEAN(Cờ_giao_hàng_trễ).",
-    "plot_path": "plots_v2/insight_53_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_53_Attribution.png",
     "insight": {
       "breakdown": "Mức_độ_khiếu_nại",
       "measure": "MEAN(Cờ_giao_hàng_trễ)",
@@ -1581,7 +1581,7 @@
   {
     "question": "Does Met B differ across Mức_độ_cứng levels?",
     "explanation": "Attribution: for overall data, a single category in Mức_độ_cứng accounts for a large share of total MEAN(Met B).",
-    "plot_path": "plots_v2/insight_54_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_54_Attribution.png",
     "insight": {
       "breakdown": "Mức_độ_cứng",
       "measure": "MEAN(Met B)",
@@ -1603,7 +1603,7 @@
   {
     "question": "Are abnormal transaction flags more common in higher Mức_rủi_ro_giao_dịch groups?",
     "explanation": "Attribution: for overall data, a single category in Mức_rủi_ro_giao_dịch accounts for a large share of total MEAN(Cờ_giao_dịch_bất_thường).",
-    "plot_path": "plots_v2/insight_55_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_55_Attribution.png",
     "insight": {
       "breakdown": "Mức_rủi_ro_giao_dịch",
       "measure": "MEAN(Cờ_giao_dịch_bất_thường)",
@@ -1627,7 +1627,7 @@
   {
     "question": "In which Mức_độ_cứng groups are repeat complaints most common?",
     "explanation": "Attribution: for overall data, a single category in Mức_độ_cứng accounts for a large share of total MEAN(Cờ_khiếu_nại_lặp_lại).",
-    "plot_path": "plots_v2/insight_56_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_56_Attribution.png",
     "insight": {
       "breakdown": "Mức_độ_cứng",
       "measure": "MEAN(Cờ_khiếu_nại_lặp_lại)",
@@ -1649,7 +1649,7 @@
   {
     "question": "Does Tỷ trọng thực tế differ across Mức_độ_dày categories?",
     "explanation": "Attribution: for Phân loại=3, a single category in Mức_độ_dày accounts for a large share of total MEAN(Tỷ trọng thực tế).",
-    "plot_path": "plots_v2/insight_57_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_57_Attribution.png",
     "insight": {
       "breakdown": "Mức_độ_dày",
       "measure": "MEAN(Tỷ trọng thực tế)",
@@ -1676,7 +1676,7 @@
   {
     "question": "Does Tỷ trọng thực tế vary significantly by Tên màu?",
     "explanation": "Attribution: for Ngày bán=2025-08-15, a single category in Tên màu accounts for a large share of total MEAN(Tỷ trọng thực tế).",
-    "plot_path": "plots_v2/insight_58_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_58_Attribution.png",
     "insight": {
       "breakdown": "Tên màu",
       "measure": "MEAN(Tỷ trọng thực tế)",
@@ -1703,7 +1703,7 @@
   {
     "question": "Which SKU_Dòng shows the highest average sales frequency?",
     "explanation": "Attribution: for Ngày bán=2025-10-10, a single category in SKU_Dòng accounts for a large share of total MEAN(Tần_suất_bán).",
-    "plot_path": "plots_v2/insight_59_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_59_Attribution.png",
     "insight": {
       "breakdown": "SKU_Dòng",
       "measure": "MEAN(Tần_suất_bán)",
@@ -1730,7 +1730,7 @@
   {
     "question": "Which Mã_sản_phẩm has the highest number of repeat sales?",
     "explanation": "Attribution: for Ngày bán=2025-08-26, a single category in Mã_sản_phẩm accounts for a large share of total MEAN(Số_lần_bán_sản_phẩm).",
-    "plot_path": "plots_v2/insight_60_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_60_Attribution.png",
     "insight": {
       "breakdown": "Mã_sản_phẩm",
       "measure": "MEAN(Số_lần_bán_sản_phẩm)",
@@ -1757,7 +1757,7 @@
   {
     "question": "How does average Khoảng_cách_vận_chuyển_km differ across Tỉnh / Thành Phố?",
     "explanation": "Attribution: for Ngày bán=2025-11-27, a single category in Tỉnh / Thành Phố accounts for a large share of total MEAN(Khoảng_cách_vận_chuyển_km).",
-    "plot_path": "plots_v2/insight_61_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_61_Attribution.png",
     "insight": {
       "breakdown": "Tỉnh / Thành Phố",
       "measure": "MEAN(Khoảng_cách_vận_chuyển_km)",
@@ -1784,7 +1784,7 @@
   {
     "question": "How does weekly revenue performance change across Tuần_trong_tháng?",
     "explanation": "There is a notable trend in MEAN(Doanh_thu_theo_tuan_trong_thang) across Tuần_trong_tháng. For the segment overall data, the values show a monotonic trend.",
-    "plot_path": "plots_v2/insight_62_Trend.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_62_Trend.png",
     "insight": {
       "breakdown": "Tuần_trong_tháng",
       "measure": "MEAN(Doanh_thu_theo_tuan_trong_thang)",
@@ -1812,7 +1812,7 @@
   {
     "question": "How does Khoảng_cách_đơn_trước change across Thứ?",
     "explanation": "Attribution: for Met A=1270, a single category in Thứ accounts for a large share of total MEAN(Khoảng_cách_đơn_trước).",
-    "plot_path": "plots_v2/insight_63_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_63_Attribution.png",
     "insight": {
       "breakdown": "Thứ",
       "measure": "MEAN(Khoảng_cách_đơn_trước)",
@@ -1839,7 +1839,7 @@
   {
     "question": "How does Met B differ between Loại Hàng groups?",
     "explanation": "Attribution: for overall data, a single category in Loại Hàng accounts for a large share of total MEAN(Met B).",
-    "plot_path": "plots_v2/insight_64_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_64_Attribution.png",
     "insight": {
       "breakdown": "Loại Hàng",
       "measure": "MEAN(Met B)",
@@ -1861,7 +1861,7 @@
   {
     "question": "Are repeat complaints more common in higher Mức_rủi_ro_giao_dịch categories?",
     "explanation": "Distribution difference: the distribution of Mức_rủi_ro_giao_dịch changes notably when filtering by Mã_khách_hàng=CUST_0017 (compared to overall data).",
-    "plot_path": "plots_v2/insight_65_Distribution_Difference.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_65_Distribution_Difference.png",
     "insight": {
       "breakdown": "Mức_rủi_ro_giao_dịch",
       "measure": "MEAN(Cờ_khiếu_nại_lặp_lại)",
@@ -1900,7 +1900,7 @@
   {
     "question": "Which Loại_khách_hàng records the highest transaction volume?",
     "explanation": "Attribution: for overall data, a single category in Loại_khách_hàng accounts for a large share of total COUNT(STT).",
-    "plot_path": "plots_v2/insight_66_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_66_Attribution.png",
     "insight": {
       "breakdown": "Loại_khách_hàng",
       "measure": "COUNT(STT)",
@@ -1924,7 +1924,7 @@
   {
     "question": "Which Tỉnh / Thành Phố generates the highest sales value?",
     "explanation": "Distribution difference: the distribution of Tỉnh / Thành Phố changes notably when filtering by Tên màu=Màu nâu đất Granite (compared to overall data).",
-    "plot_path": "plots_v2/insight_67_Distribution_Difference.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_67_Distribution_Difference.png",
     "insight": {
       "breakdown": "Tỉnh / Thành Phố",
       "measure": "MEAN(Thành Tiền)",
@@ -1979,7 +1979,7 @@
   {
     "question": "Which Phân_khúc_sản_phẩm shows the highest repeat selling intensity?",
     "explanation": "Attribution: for Phân loại=3, a single category in Phân_khúc_sản_phẩm accounts for a large share of total MEAN(Số_lần_bán_sản_phẩm).",
-    "plot_path": "plots_v2/insight_68_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_68_Attribution.png",
     "insight": {
       "breakdown": "Phân_khúc_sản_phẩm",
       "measure": "MEAN(Số_lần_bán_sản_phẩm)",
@@ -2008,7 +2008,7 @@
   {
     "question": "Which Phân_khúc_sản_phẩm delivers the highest estimated profit margin?",
     "explanation": "Attribution: for Khu Vực (Quận/Huyện)=Huyện Tuy Phong, a single category in Phân_khúc_sản_phẩm accounts for a large share of total MEAN(Ước_tính_biên_lợi_nhuận).",
-    "plot_path": "plots_v2/insight_69_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_69_Attribution.png",
     "insight": {
       "breakdown": "Phân_khúc_sản_phẩm",
       "measure": "MEAN(Ước_tính_biên_lợi_nhuận)",
@@ -2035,7 +2035,7 @@
   {
     "question": "How does the average Khối lượng sold vary by Mùa?",
     "explanation": "Attribution: for Phân loại=1B, a single category in Mùa accounts for a large share of total MEAN(Khối lượng).",
-    "plot_path": "plots_v2/insight_70_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_70_Attribution.png",
     "insight": {
       "breakdown": "Mùa",
       "measure": "MEAN(Khối lượng)",
@@ -2062,7 +2062,7 @@
   {
     "question": "Does Tỷ_lệ_chi_phí increase for transactions with higher Mức_độ_khiếu_nại?",
     "explanation": "Attribution: for Tên màu=TS, a single category in Mức_độ_khiếu_nại accounts for a large share of total MEAN(Tỷ_lệ_chi_phí).",
-    "plot_path": "plots_v2/insight_71_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_71_Attribution.png",
     "insight": {
       "breakdown": "Mức_độ_khiếu_nại",
       "measure": "MEAN(Tỷ_lệ_chi_phí)",
@@ -2089,7 +2089,7 @@
   {
     "question": "Does Doanh_thu_trên_mm differ across Độ_phức_tạp_bảo_hành levels?",
     "explanation": "Attribution: for Tên_khách_hàng=Đại lý VLXD Nam - Tỉnh Khánh Hòa, a single category in Độ_phức_tạp_bảo_hành accounts for a large share of total MEAN(Doanh_thu_trên_mm).",
-    "plot_path": "plots_v2/insight_72_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_72_Attribution.png",
     "insight": {
       "breakdown": "Độ_phức_tạp_bảo_hành",
       "measure": "MEAN(Doanh_thu_trên_mm)",
@@ -2116,7 +2116,7 @@
   {
     "question": "Does Met C change across Mức_độ_cứng categories?",
     "explanation": "Attribution: for overall data, a single category in Mức_độ_cứng accounts for a large share of total MEAN(Met C).",
-    "plot_path": "plots_v2/insight_73_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_73_Attribution.png",
     "insight": {
       "breakdown": "Mức_độ_cứng",
       "measure": "MEAN(Met C)",
@@ -2138,7 +2138,7 @@
   {
     "question": "How does Giá_trên_kg differ across SKU_Dòng?",
     "explanation": "Attribution: for overall data, a single category in SKU_Dòng accounts for a large share of total MEAN(Giá_trên_kg).",
-    "plot_path": "plots_v2/insight_74_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_74_Attribution.png",
     "insight": {
       "breakdown": "SKU_Dòng",
       "measure": "MEAN(Giá_trên_kg)",
@@ -2160,7 +2160,7 @@
   {
     "question": "Does Giá_trên_kg differ across Mức_độ_dày categories?",
     "explanation": "Attribution: for Phân loại=1B, a single category in Mức_độ_dày accounts for a large share of total MEAN(Giá_trên_kg).",
-    "plot_path": "plots_v2/insight_75_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_75_Attribution.png",
     "insight": {
       "breakdown": "Mức_độ_dày",
       "measure": "MEAN(Giá_trên_kg)",
@@ -2187,7 +2187,7 @@
   {
     "question": "Are weekend transactions more likely to have Cờ_giao_hàng_trễ?",
     "explanation": "Attribution: for overall data, a single category in Cuối_tuần accounts for a large share of total MEAN(Cờ_giao_hàng_trễ).",
-    "plot_path": "plots_v2/insight_76_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_76_Attribution.png",
     "insight": {
       "breakdown": "Cuối_tuần",
       "measure": "MEAN(Cờ_giao_hàng_trễ)",
@@ -2209,7 +2209,7 @@
   {
     "question": "How does Tỷ_trọng_doanh_thu_% change across Thứ?",
     "explanation": "Attribution: for Tên màu=Màu nâu đất Granite, a single category in Thứ accounts for a large share of total MEAN(Tỷ_trọng_doanh_thu_%).",
-    "plot_path": "plots_v2/insight_77_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_77_Attribution.png",
     "insight": {
       "breakdown": "Thứ",
       "measure": "MEAN(Tỷ_trọng_doanh_thu_%)",
@@ -2236,7 +2236,7 @@
   {
     "question": "Does Thành Tiền vary across Mùa?",
     "explanation": "Attribution: for overall data, a single category in Mùa accounts for a large share of total MEAN(Thành Tiền).",
-    "plot_path": "plots_v2/insight_78_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_78_Attribution.png",
     "insight": {
       "breakdown": "Mùa",
       "measure": "MEAN(Thành Tiền)",
@@ -2258,7 +2258,7 @@
   {
     "question": "Which Tỉnh / Thành Phố shows the highest average Doanh_thu_tỉnh?",
     "explanation": "Attribution: for overall data, a single category in Tỉnh / Thành Phố accounts for a large share of total MEAN(Doanh_thu_tỉnh).",
-    "plot_path": "plots_v2/insight_79_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_79_Attribution.png",
     "insight": {
       "breakdown": "Tỉnh / Thành Phố",
       "measure": "MEAN(Doanh_thu_tỉnh)",
@@ -2298,7 +2298,7 @@
   {
     "question": "How does Khoảng_cách_vận_chuyển_km vary across Mức_rủi_ro_giao_dịch levels?",
     "explanation": "Attribution: for Khu Vực (Quận/Huyện)=Huyện Cần Giuộc, a single category in Mức_rủi_ro_giao_dịch accounts for a large share of total MEAN(Khoảng_cách_vận_chuyển_km).",
-    "plot_path": "plots_v2/insight_80_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_80_Attribution.png",
     "insight": {
       "breakdown": "Mức_rủi_ro_giao_dịch",
       "measure": "MEAN(Khoảng_cách_vận_chuyển_km)",
@@ -2325,7 +2325,7 @@
   {
     "question": "Which Tỉnh / Thành Phố has the highest number of transactions?",
     "explanation": "Attribution: for overall data, a single category in Tỉnh / Thành Phố accounts for a large share of total COUNT(STT).",
-    "plot_path": "plots_v2/insight_81_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_81_Attribution.png",
     "insight": {
       "breakdown": "Tỉnh / Thành Phố",
       "measure": "COUNT(STT)",
@@ -2365,7 +2365,7 @@
   {
     "question": "Do some Loại_khách_hàng show higher rates of abnormal transactions?",
     "explanation": "Attribution: for overall data, a single category in Loại_khách_hàng accounts for a large share of total MEAN(Cờ_giao_dịch_bất_thường).",
-    "plot_path": "plots_v2/insight_82_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_82_Attribution.png",
     "insight": {
       "breakdown": "Loại_khách_hàng",
       "measure": "MEAN(Cờ_giao_dịch_bất_thường)",
@@ -2389,7 +2389,7 @@
   {
     "question": "Does Ước_tính_biên_lợi_nhuận change across Độ_phức_tạp_bảo_hành levels?",
     "explanation": "Attribution: for overall data, a single category in Độ_phức_tạp_bảo_hành accounts for a large share of total MEAN(Ước_tính_biên_lợi_nhuận).",
-    "plot_path": "plots_v2/insight_83_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_83_Attribution.png",
     "insight": {
       "breakdown": "Độ_phức_tạp_bảo_hành",
       "measure": "MEAN(Ước_tính_biên_lợi_nhuận)",
@@ -2413,7 +2413,7 @@
   {
     "question": "Does Ước_tính_biên_lợi_nhuận differ across Mức_rủi_ro_giao_dịch levels?",
     "explanation": "Attribution: for overall data, a single category in Mức_rủi_ro_giao_dịch accounts for a large share of total MEAN(Ước_tính_biên_lợi_nhuận).",
-    "plot_path": "plots_v2/insight_84_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_84_Attribution.png",
     "insight": {
       "breakdown": "Mức_rủi_ro_giao_dịch",
       "measure": "MEAN(Ước_tính_biên_lợi_nhuận)",
@@ -2437,7 +2437,7 @@
   {
     "question": "Which Phân_khúc_sản_phẩm has the highest average cost ratio?",
     "explanation": "Attribution: for overall data, a single category in Phân_khúc_sản_phẩm accounts for a large share of total MEAN(Tỷ_lệ_chi_phí).",
-    "plot_path": "plots_v2/insight_85_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_85_Attribution.png",
     "insight": {
       "breakdown": "Phân_khúc_sản_phẩm",
       "measure": "MEAN(Tỷ_lệ_chi_phí)",
@@ -2461,7 +2461,7 @@
   {
     "question": "Are products with higher Độ_phức_tạp_bảo_hành associated with higher Tỷ_lệ_chi_phí?",
     "explanation": "Attribution: for overall data, a single category in Độ_phức_tạp_bảo_hành accounts for a large share of total MEAN(Tỷ_lệ_chi_phí).",
-    "plot_path": "plots_v2/insight_86_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_86_Attribution.png",
     "insight": {
       "breakdown": "Độ_phức_tạp_bảo_hành",
       "measure": "MEAN(Tỷ_lệ_chi_phí)",
@@ -2485,7 +2485,7 @@
   {
     "question": "How does Điểm_hài_lòng_khách_hàng vary by Mức_độ_khiếu_nại?",
     "explanation": "Attribution: for overall data, a single category in Mức_độ_khiếu_nại accounts for a large share of total MEAN(Điểm_hài_lòng_khách_hàng).",
-    "plot_path": "plots_v2/insight_87_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_87_Attribution.png",
     "insight": {
       "breakdown": "Mức_độ_khiếu_nại",
       "measure": "MEAN(Điểm_hài_lòng_khách_hàng)",
@@ -2509,7 +2509,7 @@
   {
     "question": "Is customer satisfaction lower for transactions with higher Độ_phức_tạp_bảo_hành?",
     "explanation": "Attribution: for overall data, a single category in Độ_phức_tạp_bảo_hành accounts for a large share of total MEAN(Điểm_hài_lòng_khách_hàng).",
-    "plot_path": "plots_v2/insight_88_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_88_Attribution.png",
     "insight": {
       "breakdown": "Độ_phức_tạp_bảo_hành",
       "measure": "MEAN(Điểm_hài_lòng_khách_hàng)",
@@ -2533,7 +2533,7 @@
   {
     "question": "Which Loại_khách_hàng has the highest customer satisfaction?",
     "explanation": "Attribution: for Tỉnh / Thành Phố=Vĩnh Long, a single category in Loại_khách_hàng accounts for a large share of total MEAN(Điểm_hài_lòng_khách_hàng).",
-    "plot_path": "plots_v2/insight_89_Attribution.png",
+    "plot_path": "quis_results/quis_20241201_000000_transactions_v2/plots_v2/insight_89_Attribution.png",
     "insight": {
       "breakdown": "Loại_khách_hàng",
       "measure": "MEAN(Điểm_hài_lòng_khách_hàng)",

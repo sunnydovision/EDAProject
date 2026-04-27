@@ -13,7 +13,7 @@ PROFILE_PATH = "baseline/auto_eda_agent/output_adidas/step1_profiling/profile.js
 # Insights paths
 QUIS_INSIGHTS_PATH = "insights_summary_adidas_v4.json"
 BASELINE_INSIGHTS_PATH = "baseline/auto_eda_agent/output_adidas/quis_format/insights_summary.json"
-ONLYSTATS_INSIGHTS_PATH = "onlystats_output_adidas/insights_summary.json"
+ONLYSTATS_INSIGHTS_PATH = "onlystats_results/onlystats_20241201_000000_Adidas_cleaned/insights_summary.json"
 
 # Results paths
 RESULTS_DIR = "evaluation/evaluation_results"

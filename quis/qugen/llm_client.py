@@ -10,12 +10,7 @@ import os
 from abc import ABC, abstractmethod
 from typing import Any
 
-# Optional: use OPENAI_API_BASE for local/vendor Llama endpoints
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
-OPENAI_API_BASE = os.getenv("OPENAI_API_BASE", None)  # e.g. "https://.../v1"
-# Default: gpt-5.4 khi dùng Responses API; hoặc gpt-4o-mini cho Chat Completions
-USE_RESPONSES_API = os.getenv("OPENAI_USE_RESPONSES_API", "1").strip().lower() in ("1", "true", "yes")
-MODEL_NAME = os.getenv("QUGEN_LLM_MODEL", "gpt-5.4" if USE_RESPONSES_API else "gpt-4o-mini")
+from ..configs.api_config import OPENAI_API_KEY, OPENAI_API_BASE, USE_RESPONSES_API, IFQ_USAGE_OUTPUT
 
 # Cumulative token usage per process (OpenAI-compatible usage on response objects).
 _SESSION_USAGE: dict[str, int] = {
@@ -51,13 +46,14 @@ def _add_usage_from_response(resp: Any) -> None:
 
 
 def _flush_usage_file() -> None:
-    path = os.getenv("IFQ_USAGE_OUTPUT", "").strip()
+    path = IFQ_USAGE_OUTPUT
     if not path or _SESSION_USAGE["requests"] <= 0:
         return
     try:
+        model_name = _LAST_MODEL_USED or "unknown"
         with open(path, "w", encoding="utf-8") as f:
             json.dump(
-                {**_SESSION_USAGE, "model": _LAST_MODEL_USED or MODEL_NAME},
+                {**_SESSION_USAGE, "model": model_name},
                 f,
                 indent=2,
             )
@@ -106,12 +102,12 @@ class OpenAICompatibleClient(BaseLLMClient):
 
     def __init__(
         self,
-        model: str | None = None,
+        model: str,
         api_key: str | None = None,
         base_url: str | None = None,
         use_responses_api: bool | None = None,
     ):
-        self.model = model or MODEL_NAME
+        self.model = model
         self._api_key = api_key or OPENAI_API_KEY
         self._base_url = base_url or OPENAI_API_BASE
         self._use_responses_api = use_responses_api if use_responses_api is not None else USE_RESPONSES_API
@@ -225,8 +221,11 @@ MEASURE: COUNT(*)
         return self.SAMPLE_INSIGHT_RESPONSE.strip()
 
 
-def get_default_llm_client(use_mock: bool = False) -> BaseLLMClient:
+def get_default_llm_client(use_mock: bool = False, model: str | None = None) -> BaseLLMClient:
     """Return default LLM client. use_mock=True for dry-run without API key."""
     if use_mock:
         return MockLLMClient()
-    return OpenAICompatibleClient()
+    if model is None:
+        from ..configs.qugen_config import DEFAULT_QUGEN_CONFIG
+        model = DEFAULT_QUGEN_CONFIG.model
+    return OpenAICompatibleClient(model=model)

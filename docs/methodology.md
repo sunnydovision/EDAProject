@@ -68,10 +68,10 @@ flowchart TB
 | `data/` | Dataset CSV mẫu / làm việc |
 | `quis/qugen/` | QUGEN: schema, stats, prompts, LLM client, parser, filters, pipeline |
 | `quis/isgen/` | ISGEN: models, views, scoring, basic insight, subspace search, NL template, plotting, pipeline |
-| `run_qugen.py` | CLI chạy QUGEN → `insight_cards.json` |
-| `run_isgen.py` | CLI chạy ISGEN → `insights_summary.json` + thư mục plot tùy chọn |
-| `app.py` | Giao diện Streamlit: Home / History / Settings; gọi QUGEN+ISGEN và hiển thị |
-| `csv_to_schema.py` | Tiện ích: CSV → file JSON schema |
+| `scripts/run_qugen.py` | CLI chạy QUGEN → `insight_cards.json` |
+| `scripts/run_isgen.py` | CLI chạy ISGEN → `insights_summary.json` + thư mục plot tùy chọn |
+| `quis/demo/app.py` | Giao diện Streamlit: Home / History / Settings; gọi QUGEN+ISGEN và hiển thị |
+| `quis/utils/csv_to_schema.py` | Tiện ích: CSV → file JSON schema |
 | `docs/` | Tài liệu pipeline chi tiết (`QUGEN_PIPELINE.md`, `ISGEN_PIPELINE.md`, …) |
 | `baseline/auto_eda_agent/` | Baseline khác (agent EDA), không phải luồng QUGEN/ISGEN chính |
 
@@ -240,14 +240,14 @@ flowchart TB
 
 ```bash
 # QUGEN (cần OPENAI_API_KEY)
-python run_qugen.py --csv data/transactions.csv --output insight_cards.json
+python scripts/run_qugen.py --csv data/transactions.csv --output insight_cards.json
 
 # ISGEN
-python run_isgen.py --csv data/transactions.csv --insight-cards insight_cards.json \
+python scripts/run_isgen.py --csv data/transactions.csv --insight-cards insight_cards.json \
   --output insights_summary.json --plot-dir plots
 
 # Web UI
-streamlit run app.py
+streamlit run quis/demo/app.py
 ```
 
 ---

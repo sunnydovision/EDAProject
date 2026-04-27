@@ -9,6 +9,7 @@ from typing import Callable
 
 from .models import Subspace
 from .views import compute_view
+from ..configs.isgen_config import DEFAULT_ISGEN_CONFIG
 
 
 def _sample_value_weights(series):
@@ -28,11 +29,11 @@ def subspace_search(
     measure: str,
     score_func: Callable[[list[float]], float],
     threshold: float,
-    beam_width: int = 20,
-    exp_factor: int = 20,
-    max_depth: int = 1,
+    beam_width: int = None,
+    exp_factor: int = None,
+    max_depth: int = None,
     llm_candidates_fn: Callable[[list[str]], list[str]] | None = None,
-    w_llm: float = 0.5,
+    w_llm: float = None,
     score_func_subspace: Callable[["Subspace"], float] | None = None,
 ) -> list[tuple[Subspace, float]]:
     """
@@ -40,6 +41,15 @@ def subspace_search(
     llm_candidates_fn(available_cols) returns preferred columns for filtering (get higher probability w_llm).
     Nếu score_func_subspace được truyền (vd. cho Distribution Difference), dùng nó thay vì score_func(values).
     """
+    # Use config defaults if not provided
+    if beam_width is None:
+        beam_width = DEFAULT_ISGEN_CONFIG.beam_width
+    if exp_factor is None:
+        exp_factor = DEFAULT_ISGEN_CONFIG.exp_factor
+    if max_depth is None:
+        max_depth = DEFAULT_ISGEN_CONFIG.max_depth
+    if w_llm is None:
+        w_llm = DEFAULT_ISGEN_CONFIG.w_llm
     all_cols = [c for c in df.columns if c != breakdown and str(c) != "nan"]
     if not all_cols:
         return []

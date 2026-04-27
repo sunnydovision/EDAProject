@@ -21,22 +21,7 @@ from .filters import (
 )
 from .stats import BasicStatsGenerator
 from .examples import get_default_few_shot_examples
-
-
-@dataclass
-class QUGENConfig:
-    """Parameters for QUGEN (paper Appendix D.2)."""
-
-    temperature: float = 1.1
-    num_samples_per_iteration: int = 3
-    num_iterations: int = 10
-    num_in_context_examples: int = 6
-    num_questions_per_prompt: int = 10
-    # Filter thresholds
-    schema_relevance_threshold: float = 0.25
-    dedup_similarity_threshold: float = 0.85
-    # Optional: callable(question) -> row_count for simple-question filter; None = heuristic only
-    run_query_fn: Callable[[str], int] | None = None
+from ..configs.qugen_config import QUGENConfig, DEFAULT_QUGEN_CONFIG
 
 
 class QUGENPipeline:
@@ -51,8 +36,11 @@ class QUGENPipeline:
         llm_client: BaseLLMClient | None = None,
         few_shot_examples: list[tuple[TableSchema, list[InsightCard]]] | None = None,
     ):
-        self.config = config or QUGENConfig()
-        self.llm = llm_client or get_default_llm_client()
+        self.config = config or DEFAULT_QUGEN_CONFIG
+        if llm_client is None:
+            from .llm_client import OpenAICompatibleClient
+            llm_client = OpenAICompatibleClient(model=self.config.model)
+        self.llm = llm_client
         self.few_shot = few_shot_examples or get_default_few_shot_examples()
         self.stats_generator = BasicStatsGenerator(llm_client=self.llm)
 

@@ -83,10 +83,10 @@ Code: `quis/isgen/plotting.py`.
 
 ---
 
-## 6. CLI (run_isgen.py)
+## 6. CLI (scripts/run_isgen.py)
 
 ```bash
-python run_isgen.py --csv <CSV> --insight-cards <JSON> --output <OUT> [--plot-dir <DIR>] [options]
+python scripts/run_isgen.py --csv <CSV> --insight-cards <JSON> --output <OUT> [--plot-dir <DIR>] [options]
 ```
 
 | Option | Mặc định | Mô tả |
@@ -106,7 +106,7 @@ python run_isgen.py --csv <CSV> --insight-cards <JSON> --output <OUT> [--plot-di
 **Ví dụ:** Chạy đầy đủ subspace (có gọi API), giảm trùng:
 
 ```bash
-python run_isgen.py --csv data/transactions.csv --insight-cards insight_cards.json --output insights_summary.json --plot-dir plots
+python scripts/run_isgen.py --csv data/transactions.csv --insight-cards insight_cards.json --output insights_summary.json --plot-dir plots
 ```
 
 ---
@@ -124,7 +124,7 @@ python run_isgen.py --csv data/transactions.csv --insight-cards insight_cards.js
 | `quis/isgen/nl_explanation.py` | Mô tả NL theo template (không gọi LLM). |
 | `quis/isgen/plotting.py` | Vẽ đồ thị theo pattern. |
 | `quis/isgen/pipeline.py` | Luồng đầy đủ: collect → dedup → explain + plot. |
-| `run_isgen.py` | CLI. |
+| `scripts/run_isgen.py` | CLI. |
 
 ---
 

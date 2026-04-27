@@ -5,9 +5,13 @@ import html
 import json
 import os
 import re
+import sys
 from datetime import datetime
 from functools import lru_cache
 from typing import List
+
+# Add project root to path
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
 import pandas as pd
 import plotly.express as px
@@ -28,6 +32,7 @@ from quis.isgen.models import (
 from quis.isgen.nl_explanation import explain_insight
 from quis.isgen.pipeline import ISGENPipeline, ISGENConfig
 from quis.isgen.views import parse_measure
+from quis.configs.demo_configs import get_demo_datasets, get_assets_dir, get_project_root
 
 # Insight tabs: Outstanding Value first, Trend second (grouping still uses PATTERNS in isgen).
 INSIGHT_PATTERN_TAB_ORDER = (
@@ -73,40 +78,13 @@ def _cached_load_insights_json(path: str) -> list | None:
 @st.cache_data(show_spinner=False, ttl=45)
 def _cached_discover_history(_project_root: str) -> tuple:
     """Return only curated datasets shown in History."""
-    root = _project_root
-    results = []
-    curated_history = (
-        {
-            "label": "Steel metal company",
-            "insights_path": os.path.join(root, "insights_summary_v2.json"),
-            "cards_path": os.path.join(root, "insight_cards_v2.json"),
-            "csv_path": os.path.join(root, "data", "transactions_cleaned.csv"),
-        },
-        {
-            "label": "Adidas",
-            "insights_path": os.path.join(root, "insights_summary_adidas_cleaned.json"),
-            "cards_path": os.path.join(root, "insight_cards_adidas_cleaned.json"),
-            "csv_path": os.path.join(root, "data", "Adidas_cleaned.csv"),
-        },
-    )
-
-    for item in curated_history:
-        if not os.path.isfile(item["insights_path"]):
-            continue
-        results.append({
-            "label": item["label"],
-            "insights_path": item["insights_path"],
-            "cards_path": item["cards_path"] if os.path.isfile(item["cards_path"]) else None,
-            "csv_path": item["csv_path"] if os.path.isfile(item["csv_path"]) else None,
-        })
-
-    return tuple(results)
+    return get_demo_datasets()
 
 
 # ---------------------------------------------------------------------------
 # Asset helpers
 # ---------------------------------------------------------------------------
-_ASSET_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets")
+_ASSET_DIR = get_assets_dir()
 
 
 @lru_cache(maxsize=16)

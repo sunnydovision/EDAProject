@@ -127,4 +127,4 @@ Schema bảng: **TableSchema** (`table_name` + `columns`: list dict `name`, `dty
 - **LLM**: Project dùng **OpenAI** (Responses API hoặc Chat Completions), không dùng Llama-3-70b trực tiếp; có thể dùng endpoint khác qua OPENAI_API_BASE.
 - **Debug**: Khi parse ra 0 card, ghi phản hồi thô vào `debug_llm_response.txt`.
 
-Document này phản ánh đúng code trong `quis/qugen/` và `run_qugen.py` tại thời điểm review.
+Document này phản ánh đúng code trong `quis/qugen/` và `scripts/run_qugen.py` tại thời điểm review.

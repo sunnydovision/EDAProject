@@ -13,8 +13,9 @@ Usage:
   python run_onlystats.py \\
     --csv data/Adidas_cleaned.csv \\
     --profile baseline/auto_eda_agent/output_adidas/step1_profiling/profile.json \\
-    --output onlystats_output_adidas/insights_summary.json \\
-    --cards-output onlystats_output_adidas/insight_cards.json
+    --suffix v4
+Outputs: onlystats_results/onlystats_{yyyymmdd_hhiiss}_{dataset}_{suffix}/insights_summary.json,
+         timing.json, usage.json
 """
 
 from __future__ import annotations
@@ -23,8 +24,11 @@ import argparse
 import json
 import os
 import sys
+import time
+from datetime import datetime
+from pathlib import Path
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 try:
     from dotenv import load_dotenv
@@ -39,6 +43,60 @@ _CATEGORICAL_CLASSES = {"Categorical"}
 _TEMPORAL_CLASSES = {"Temporal"}
 _NUMERICAL_CLASSES = {"Numerical"}
 _AGGREGATIONS = ["SUM", "MEAN"]
+
+
+def create_output_dir(csv_path: str, suffix: str, base_dir: str = "onlystats_results") -> Path:
+    """Create timestamped output directory: {base_dir}/onlystats_{yyyymmdd_hhiiss}_{dataset}_{suffix}"""
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    dataset_name = Path(csv_path).stem
+    dir_name = f"onlystats_{timestamp}_{dataset_name}_{suffix}"
+    output_dir = Path(base_dir) / dir_name
+    output_dir.mkdir(parents=True, exist_ok=True)
+    return output_dir
+
+
+def save_timing_json(output_dir: Path, total_time: float, insights_generated: int, 
+                     system: str = "onlystats") -> Path:
+    """Save timing.json in format compatible with evaluation/metrics/time_to_insight.py"""
+    throughput = insights_generated / total_time if total_time > 0 else 0
+    
+    timing_data = {
+        system: {
+            "total_time_seconds": total_time,
+            "insights_generated": insights_generated,
+            "throughput_insights_per_second": throughput,
+            "step_times": {
+                "card_generation": 0,  # ONLYSTATS doesn't have separate card generation step
+                "isgen": total_time
+            }
+        }
+    }
+    
+    timing_path = output_dir / "timing.json"
+    with open(timing_path, 'w', encoding='utf-8') as f:
+        json.dump(timing_data, f, indent=2)
+    return timing_path
+
+
+def save_usage_json(output_dir: Path, system: str = "onlystats") -> Path:
+    """Save usage.json in format compatible with evaluation/metrics/token_usage.py"""
+    # ONLYSTATS doesn't use LLM, so token usage is 0
+    usage_data = {
+        system: {
+            "total": {
+                "total_tokens": 0,
+                "input_tokens": 0,
+                "output_tokens": 0,
+                "requests": 0,
+                "model": "none"
+            }
+        }
+    }
+    
+    usage_path = output_dir / "usage.json"
+    with open(usage_path, 'w', encoding='utf-8') as f:
+        json.dump(usage_data, f, indent=2)
+    return usage_path
 
 
 def generate_cards_from_profile(df, profile_path: str) -> list[dict]:
@@ -93,10 +151,7 @@ def main():
     )
     parser.add_argument("--csv", required=True, help="Path to CSV dataset")
     parser.add_argument("--profile", required=True, help="Path to profile.json (column classifications)")
-    parser.add_argument("--output", default="onlystats_output_adidas/insights_summary.json",
-                        help="Output insights JSON path")
-    parser.add_argument("--cards-output", default=None,
-                        help="Optional: save generated insight cards JSON")
+    parser.add_argument("--suffix", default="v4", help="Output directory suffix, e.g. v4")
     parser.add_argument("--plot-dir", default=None, help="Directory to save plots")
     parser.add_argument("--beam-width", type=int, default=20)
     parser.add_argument("--exp-factor", type=int, default=20)
@@ -114,14 +169,18 @@ def main():
         print(f"Profile not found: {args.profile}", file=sys.stderr)
         sys.exit(1)
 
+    # Create timestamped output directory
+    output_dir = create_output_dir(args.csv, args.suffix)
+    print(f"Output directory: {output_dir}")
+
     df = load_data(args.csv)
     cards = generate_cards_from_profile(df, args.profile)
 
-    if args.cards_output:
-        os.makedirs(os.path.dirname(os.path.abspath(args.cards_output)), exist_ok=True)
-        with open(args.cards_output, "w", encoding="utf-8") as f:
-            json.dump(cards, f, indent=2, ensure_ascii=False)
-        print(f"Saved {len(cards)} cards → {args.cards_output}")
+    # Save insight cards
+    cards_path = output_dir / "insight_cards.json"
+    with open(cards_path, "w", encoding="utf-8") as f:
+        json.dump(cards, f, indent=2, ensure_ascii=False)
+    print(f"Saved {len(cards)} cards → {cards_path.name}")
 
     config = ISGENConfig(
         beam_width=args.beam_width,
@@ -151,11 +210,14 @@ def main():
         except Exception as e:
             print(f"Warning: LLM client unavailable ({e}), running subspace search without LLM guidance.")
 
+    t0 = time.perf_counter()
     pipeline = ISGENPipeline(config=config, llm_client=llm)
     summary = pipeline.run(df, cards, output_dir=args.plot_dir)
+    t1 = time.perf_counter()
+    total_time = t1 - t0
 
-    out_dir = os.path.dirname(os.path.abspath(args.output))
-    os.makedirs(out_dir, exist_ok=True)
+    # Save insights summary
+    summary_path = output_dir / "insights_summary.json"
     out_data = [
         {
             "question": s.get("question", ""),
@@ -165,9 +227,31 @@ def main():
         }
         for s in summary
     ]
-    with open(args.output, "w", encoding="utf-8") as f:
+    with open(summary_path, "w", encoding="utf-8") as f:
         json.dump(out_data, f, indent=2, ensure_ascii=False)
-    print(f"\nWrote {len(out_data)} insights → {args.output}")
+    print(f"Wrote {len(out_data)} insights → {summary_path.name}")
+
+    # Save timing.json in evaluation-compatible format
+    timing_path = save_timing_json(output_dir, total_time, len(out_data), system="onlystats")
+    print(f"Saved timing: {timing_path.name}")
+
+    # Save usage.json in evaluation-compatible format
+    usage_path = save_usage_json(output_dir, system="onlystats")
+    print(f"Saved usage: {usage_path.name}")
+
+    print(f"\n{'='*70}")
+    print("ONLYSTATS Pipeline Summary")
+    print(f"{'='*70}")
+    print(f"CSV: {args.csv}")
+    print(f"Profile: {args.profile}")
+    print(f"\nWall-clock seconds: {total_time:.3f}")
+    print(f"\nInsights generated: {len(out_data)}")
+    print(f"\nOutputs:")
+    print(f"  {cards_path.name}")
+    print(f"  {summary_path.name}")
+    print(f"  {timing_path.name}")
+    print(f"  {usage_path.name}")
+    print(f"{'='*70}\n")
 
 
 if __name__ == "__main__":
