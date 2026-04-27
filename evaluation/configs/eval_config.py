@@ -120,14 +120,14 @@ class EvalConfig:
         },
         "online_sales": {
             "data_path": "data/online_sales_cleaned.csv",
-            "profile_path": None,  # Run baseline to generate
-            "quis_insights_path": None,  # Will be determined when running QUIS
-            "baseline_insights_path": None,  # Run baseline to generate
-            "onlystats_insights_path": None,  # Doesn't exist yet
-            "quis_timing_path": None,
-            "quis_usage_path": None,
-            "baseline_timing_path": None,
-            "baseline_usage_path": None,
+            "profile_path": "baseline/auto_eda_agent/output_online_sales/step1_profiling/profile.json",
+            "quis_insights_path": "quis_results/quis_20260428_002212_online_sales_cleaned/insights_summary.json",
+            "baseline_insights_path": "baseline/auto_eda_agent/output_online_sales/ifq_format/insights_summary.json",
+            "onlystats_insights_path": "onlystats_results/onlystats_20260428_004154_online_sales_cleaned_v4/insights_summary.json",
+            "quis_timing_path": "quis_results/quis_20260428_002212_online_sales_cleaned/timing.json",
+            "quis_usage_path": "quis_results/quis_20260428_002212_online_sales_cleaned/usage.json",
+            "baseline_timing_path": "baseline/auto_eda_agent/output_online_sales/timing.json",
+            "baseline_usage_path": "baseline/auto_eda_agent/output_online_sales/usage.json",
         },
     }
     

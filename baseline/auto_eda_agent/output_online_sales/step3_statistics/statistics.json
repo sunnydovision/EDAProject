@@ -1,0 +1,171 @@
+{
+  "statistics": {
+    "numerical_stats": {
+      "Transaction ID": {
+        "count": 240,
+        "mean": 10120.5,
+        "median": 10120.5,
+        "std": 69.42621983083913,
+        "min": 10001.0,
+        "max": 10240.0,
+        "q25": 10060.75,
+        "q75": 10180.25,
+        "skewness": 0.0,
+        "kurtosis": -1.2
+      },
+      "Units Sold": {
+        "count": 240,
+        "mean": 2.158333333333333,
+        "median": 2.0,
+        "std": 1.3224538706088858,
+        "min": 1.0,
+        "max": 10.0,
+        "q25": 1.0,
+        "q75": 3.0,
+        "skewness": 1.6208946896061196,
+        "kurtosis": 4.775698955721063
+      },
+      "Unit Price": {
+        "count": 240,
+        "mean": 236.3955833333333,
+        "median": 89.99,
+        "std": 429.4466949104775,
+        "min": 6.5,
+        "max": 3899.99,
+        "q25": 29.5,
+        "q75": 249.99,
+        "skewness": 4.566664299804368,
+        "kurtosis": 28.234405217426797
+      },
+      "Total Revenue": {
+        "count": 240,
+        "mean": 335.699375,
+        "median": 179.97,
+        "std": 485.8044685651321,
+        "min": 6.5,
+        "max": 3899.99,
+        "q25": 62.965,
+        "q75": 399.225,
+        "skewness": 3.523182790060729,
+        "kurtosis": 16.681917853068853
+      }
+    },
+    "categorical_stats": {
+      "Date": {
+        "unique_count": 240,
+        "most_common": "2024-01-01",
+        "most_common_count": 1,
+        "distribution": {
+          "2024-01-01": 1,
+          "2024-01-02": 1,
+          "2024-01-03": 1,
+          "2024-01-04": 1,
+          "2024-01-05": 1,
+          "2024-01-06": 1,
+          "2024-01-07": 1,
+          "2024-01-08": 1,
+          "2024-01-09": 1,
+          "2024-01-10": 1
+        }
+      },
+      "Product Category": {
+        "unique_count": 6,
+        "most_common": "Electronics",
+        "most_common_count": 40,
+        "distribution": {
+          "Electronics": 40,
+          "Home Appliances": 40,
+          "Clothing": 40,
+          "Books": 40,
+          "Beauty Products": 40,
+          "Sports": 40
+        }
+      },
+      "Product Name": {
+        "unique_count": 232,
+        "most_common": "Dune by Frank Herbert",
+        "most_common_count": 2,
+        "distribution": {
+          "Dune by Frank Herbert": 2,
+          "Keurig K-Elite Coffee Maker": 2,
+          "Dyson Supersonic Hair Dryer": 2,
+          "Garmin Forerunner 945": 2,
+          "Sony WH-1000XM4 Headphones": 2,
+          "The Silent Patient by Alex Michaelides": 2,
+          "The Catcher in the Rye by J.D. Salinger": 2,
+          "The Girl with the Dragon Tattoo by Stieg Larsson": 2,
+          "iPhone 14 Pro": 1,
+          "Dyson V11 Vacuum": 1
+        }
+      },
+      "Region": {
+        "unique_count": 3,
+        "most_common": "North America",
+        "most_common_count": 80,
+        "distribution": {
+          "North America": 80,
+          "Europe": 80,
+          "Asia": 80
+        }
+      },
+      "Payment Method": {
+        "unique_count": 3,
+        "most_common": "Credit Card",
+        "most_common_count": 120,
+        "distribution": {
+          "Credit Card": 120,
+          "PayPal": 80,
+          "Debit Card": 40
+        }
+      }
+    },
+    "correlations": {
+      "strong_correlations": [
+        {
+          "var1": "Unit Price",
+          "var2": "Total Revenue",
+          "correlation": 0.9303496763917515
+        }
+      ]
+    }
+  },
+  "interpretation": {
+    "distribution_patterns": "Transaction ID is an identifier and should not be interpreted statistically. Units Sold shows a right-skewed distribution (skewness 1.62) with mean 2.16 slightly above median 2.0, indicating most transactions involve low quantities—typically 1 to 3 units—with a small number of larger-quantity purchases up to 10 units. In business terms, this looks like a retail-style order pattern where basket sizes are usually small, but occasional bulk or multi-item purchases occur. Because Units Sold is flagged for outliers, the mean is somewhat inflated by these larger orders, so the median is a better indicator of a typical transaction. Unit Price is extremely right-skewed (skewness 4.57) and highly leptokurtic (kurtosis 28.23), with mean 236.40 far above median 89.99. This indicates a product mix dominated by lower- to mid-priced items, with a small number of very expensive products—likely premium electronics or appliances—pulling the average upward. The very high kurtosis suggests heavy tails and a concentration of extreme values, so the mean price is not representative of a typical item sold. Total Revenue is also strongly right-skewed (skewness 3.52) with high kurtosis (16.68), and mean 335.70 well above median 179.97. This implies most transaction lines generate modest revenue, while a limited number of high-value sales contribute disproportionately to total sales. Given that Total Revenue is likely derived from Units Sold × Unit Price and is also flagged for outliers, its distribution is expected to inherit extremes from both quantity and price. On the categorical side, Product Category and Region are perfectly balanced across categories, which is unusual for organic business data and suggests the dataset may be curated, sampled, or intentionally structured rather than reflecting natural sales volume. Payment Method is unevenly distributed, with Credit Card accounting for half of transactions, suggesting it is the dominant payment channel.",
+    "strong_correlations": [
+      {
+        "variables": "Unit Price and Total Revenue",
+        "interpretation": "There is a very strong positive relationship (r = 0.93), meaning higher-priced items tend to generate higher transaction-line revenue. In business terms, revenue variation is being driven more by what product price tier was sold than by large variation in quantity purchased. This is likely a structural relationship rather than a behavioral one, because Total Revenue is likely mechanically calculated from Unit Price multiplied by Units Sold. The strength of the correlation is therefore expected and should not be over-interpreted as an independent customer behavior pattern.",
+        "strength": "strong"
+      }
+    ],
+    "key_findings": [
+      "Typical order sizes are small: the median Units Sold is 2 and the middle 50% of transactions fall between 1 and 3 units, indicating most sales are low-quantity retail purchases rather than bulk orders.",
+      "Price and revenue distributions are heavily influenced by a small number of high-value items, so mean Unit Price and mean Total Revenue overstate the typical transaction compared with the medians.",
+      "Category and regional counts are perfectly balanced, which is statistically unusual for real-world sales data and suggests the dataset may be designed, quota-sampled, or otherwise not fully representative of natural business demand."
+    ],
+    "statistical_anomalies": [
+      "Unit Price has extreme dispersion and a maximum of 3899.99 versus a median of 89.99, which may reflect legitimate premium products but could also include pricing-entry issues or a product mix that should be segmented before analysis.",
+      "The exact balance across Product Category (40 each) and Region (80 each) is unusually uniform for transactional sales data and may indicate synthetic structure, controlled sampling, or reporting constraints that could distort market-share interpretations.",
+      "Date has 240 unique values with one transaction per date, which is atypical for most retail transaction datasets and suggests this may be a daily sampled record set rather than a full transaction log.",
+      "Several product names appear exactly twice while most appear once, which may indicate repeated showcase items rather than naturally recurring SKU-level sales frequency."
+    ],
+    "recommendations": [
+      "Use robust statistics such as medians, interquartile ranges, and trimmed means when reporting Units Sold, Unit Price, and Total Revenue, because outliers materially affect averages.",
+      "Segment analysis by Product Category and price tier to separate premium-item effects from normal-volume sales patterns; this will make revenue drivers more interpretable.",
+      "Validate whether Total Revenue is exactly calculated as Units Sold × Unit Price and check high-value records for data-entry or currency-format issues.",
+      "Assess representativeness before making strategic decisions: confirm whether the balanced category/region structure reflects real operations or a sampled/demo dataset.",
+      "Run follow-up analyses on revenue contribution concentration, such as Pareto analysis by product and category, to quantify how much total revenue comes from the small number of high-value transactions.",
+      "Examine payment method usage by region and category to determine whether the observed payment mix reflects customer preference or simply the dataset design."
+    ]
+  },
+  "summary": {
+    "numerical_columns": 4,
+    "categorical_columns": 5,
+    "strong_correlations": 1,
+    "key_findings": [
+      "Typical order sizes are small: the median Units Sold is 2 and the middle 50% of transactions fall between 1 and 3 units, indicating most sales are low-quantity retail purchases rather than bulk orders.",
+      "Price and revenue distributions are heavily influenced by a small number of high-value items, so mean Unit Price and mean Total Revenue overstate the typical transaction compared with the medians.",
+      "Category and regional counts are perfectly balanced, which is statistically unusual for real-world sales data and suggests the dataset may be designed, quota-sampled, or otherwise not fully representative of natural business demand."
+    ]
+  }
+}

@@ -1,0 +1,360 @@
+{
+  "pattern_categories": [
+    "Temporal Patterns",
+    "Correlation Patterns",
+    "Grouping Patterns",
+    "Anomaly Patterns"
+  ],
+  "total_patterns": 31,
+  "patterns_by_category": {
+    "Temporal Patterns": [
+      {
+        "pattern_name": "Units sold rises through Q1, then declines from March to July",
+        "description": "Monthly sales volume increased from January to March, then generally fell through July, with only a small uptick in June before reaching the lowest level in August.",
+        "variables_involved": [
+          "Units Sold"
+        ],
+        "evidence": "Units Sold sum increased from 68 in 2024-01 to 77 in 2024-02 and 82 in 2024-03. After March, it dropped to 65 in 2024-04, 60 in 2024-05, rose slightly to 61 in 2024-06, then fell to 53 in 2024-07 and 52 in 2024-08. The monthly mean shows the same pattern: 2.19 in 2024-01, 2.66 in 2024-02, 2.65 in 2024-03, then 2.17 in 2024-04, 1.94 in 2024-05, 2.03 in 2024-06, 1.71 in 2024-07, and 1.93 in 2024-08.",
+        "strength": "strong",
+        "business_relevance": "This indicates demand was strongest in late Q1 and weakened across late spring and summer, which matters for inventory and sales planning."
+      },
+      {
+        "pattern_name": "Total revenue trends downward over time after January, with a small rebound in August",
+        "description": "Revenue was highest at the start of the period and generally declined across the following months, bottoming in July before recovering slightly in August.",
+        "variables_involved": [
+          "Total Revenue"
+        ],
+        "evidence": "Total Revenue sum was 14548.32 in 2024-01, then 10803.37 in 2024-02, 12849.24 in 2024-03, 12451.69 in 2024-04, 8455.49 in 2024-05, 7384.55 in 2024-06, and 6797.08 in 2024-07, before rising to 7278.11 in 2024-08. Mean revenue per transaction also declined from 469.30 in 2024-01 to 372.53 in 2024-02, stayed around 414.49 to 415.06 in 2024-03 to 2024-04, then dropped to 272.76 in 2024-05, 246.15 in 2024-06, 219.26 in 2024-07, and recovered to 269.56 in 2024-08.",
+        "strength": "strong",
+        "business_relevance": "This suggests weakening revenue generation through most of the observed period, relevant for forecasting and diagnosing whether lower revenue is driven by pricing, volume, or both."
+      },
+      {
+        "pattern_name": "Unit price is volatile, with peaks in January and April and a trough in July",
+        "description": "Average selling price does not follow a steady trend; instead it fluctuates substantially month to month, with notable highs early in the year and in April, followed by lower levels in May through July.",
+        "variables_involved": [
+          "Unit Price"
+        ],
+        "evidence": "Mean Unit Price was 288.51 in 2024-01, fell to 212.42 in 2024-02, rose to 260.89 in 2024-03, peaked at 302.54 in 2024-04, then dropped to 212.00 in 2024-05, 213.74 in 2024-06, and 177.44 in 2024-07 before recovering to 221.57 in 2024-08. The monthly sum also reflects this variation: 8943.69 in 2024-01, 6160.29 in 2024-02, 8087.74 in 2024-03, 9076.16 in 2024-04, 6571.95 in 2024-05, 6412.12 in 2024-06, 5500.54 in 2024-07, and 5982.45 in 2024-08.",
+        "strength": "moderate",
+        "business_relevance": "Price fluctuations can materially affect revenue trends and may indicate changing product mix or pricing levels across months."
+      },
+      {
+        "pattern_name": "Revenue decline from April to July coincides with both lower units sold and lower unit prices",
+        "description": "From April through July, revenue fell each month while both average units sold and average unit price were also lower than in April.",
+        "variables_involved": [
+          "Total Revenue",
+          "Units Sold",
+          "Unit Price"
+        ],
+        "evidence": "From 2024-04 to 2024-07, Total Revenue sum declined from 12451.69 to 8455.49 to 7384.55 to 6797.08. Over the same months, Units Sold sum moved from 65 to 60 to 61 to 53, and mean Unit Price fell from 302.54 in 2024-04 to 212.00 in 2024-05, 213.74 in 2024-06, and 177.44 in 2024-07.",
+        "strength": "strong",
+        "business_relevance": "This shows the mid-year revenue weakness aligns with simultaneous softness in both sales volume and pricing, which is important for identifying the drivers of decline."
+      },
+      {
+        "pattern_name": "Transaction counts are mostly stable by month, except for August",
+        "description": "The number of records per month stays close to the number of calendar days in each month, with limited variation from January through July, while August is lower.",
+        "variables_involved": [
+          "Transaction ID"
+        ],
+        "evidence": "Transaction count is 31 in 2024-01, 29 in 2024-02, 31 in 2024-03, 30 in 2024-04, 31 in 2024-05, 30 in 2024-06, and 31 in 2024-07, then drops to 27 in 2024-08. The Transaction ID mean rises steadily from 10016.0 in 2024-01 to 10227.0 in 2024-08, consistent with sequential IDs over time rather than a business performance change.",
+        "strength": "moderate",
+        "business_relevance": "Because monthly record counts are mostly stable through July, changes in units sold and revenue are less likely to be explained by large swings in transaction volume alone; August should be interpreted carefully because it has fewer records."
+      },
+      {
+        "pattern_name": "No clear recurring seasonal cycle is visible within the 8-month window",
+        "description": "The series shows rises and declines, but there is not enough repeated time coverage to demonstrate a recurring seasonal pattern.",
+        "variables_involved": [
+          "Units Sold",
+          "Unit Price",
+          "Total Revenue"
+        ],
+        "evidence": "Across 2024-01 to 2024-08, Units Sold peaks in 2024-03 at 82 and then declines, Total Revenue is highest in 2024-01 at 14548.32 and lowest in 2024-07 at 6797.08, and Unit Price peaks in 2024-04 at 302.54. These turning points do not repeat within the provided period, so no repeated seasonal cycle is directly observable from the numbers given.",
+        "strength": "weak",
+        "business_relevance": "This means the data supports short-term trend analysis more than seasonality-based planning."
+      }
+    ],
+    "Correlation Patterns": [
+      {
+        "pattern_name": "Unit Price and Total Revenue move together strongly",
+        "description": "There is a strong positive relationship between Unit Price and Total Revenue: transactions with higher unit prices tend to have higher total revenue. This is consistent with revenue increasing as the selling price per item increases.",
+        "variables_involved": [
+          "Unit Price",
+          "Total Revenue"
+        ],
+        "evidence": "Pearson correlation r = 0.9303496763917515, indicating a strong positive correlation. As Unit Price increases, Total Revenue also tends to increase.",
+        "strength": "strong",
+        "business_relevance": "This relationship is likely largely structural rather than purely behavioral, because Total Revenue is likely calculated from Unit Price multiplied by Units Sold. The very high positive correlation suggests price level is a major driver of transaction revenue in this dataset, especially given the wide spread in Unit Price (std 429.45, max 3899.99) and Total Revenue (std 485.80, max 3899.99)."
+      }
+    ],
+    "Grouping Patterns": [
+      {
+        "pattern_name": "Product category volumes are evenly distributed by transaction count",
+        "description": "All product categories have exactly the same number of transactions, so there is no category dominance by order count.",
+        "variables_involved": [
+          "Product Category",
+          "Transaction ID"
+        ],
+        "evidence": "Each product category has Transaction ID count = 40: Beauty Products 40, Books 40, Clothing 40, Electronics 40, Home Appliances 40, Sports 40.",
+        "strength": "strong",
+        "business_relevance": "This means category differences are not driven by more transactions. Business comparisons across categories should focus on units sold and pricing rather than order frequency."
+      },
+      {
+        "pattern_name": "Clothing is the dominant category by units sold",
+        "description": "Clothing has the highest total and average units sold among categories, clearly ahead of the lower-volume categories.",
+        "variables_involved": [
+          "Product Category",
+          "Units Sold"
+        ],
+        "evidence": "Units Sold sum by category: Clothing 145, Books 114, Sports 88, Electronics 66, Home Appliances 59, Beauty Products 46. Clothing's 145 units are 3.15× Beauty Products' 46, 2.20× Electronics' 66, and 1.27× Books' 114. Mean units sold are also highest for Clothing at 3.625 versus Books 2.85, Sports 2.2, Electronics 1.65, Home Appliances 1.475, Beauty Products 1.15.",
+        "strength": "strong",
+        "business_relevance": "This is meaningful for inventory and merchandising decisions because Clothing shows the strongest quantity movement despite the same transaction count as every other category."
+      },
+      {
+        "pattern_name": "Beauty Products and Home Appliances are the lowest-volume categories by units",
+        "description": "These two categories sit at the bottom of unit sales, with Beauty Products lowest overall.",
+        "variables_involved": [
+          "Product Category",
+          "Units Sold"
+        ],
+        "evidence": "Units Sold sums: Beauty Products 46, Home Appliances 59, Electronics 66, Sports 88, Books 114, Clothing 145. Beauty Products' mean units sold is 1.15 and Home Appliances is 1.475, both well below Clothing at 3.625 and Books at 2.85.",
+        "strength": "strong",
+        "business_relevance": "This is relevant for assortment and replenishment planning because these categories generate fewer units per transaction than the others."
+      },
+      {
+        "pattern_name": "Electronics dominates category pricing",
+        "description": "Electronics has by far the highest unit prices among product categories, creating a clear high-price segment.",
+        "variables_involved": [
+          "Product Category",
+          "Unit Price"
+        ],
+        "evidence": "Mean Unit Price by category: Electronics 691.5915, Home Appliances 320.1855, Sports 261.284, Clothing 67.5365, Beauty Products 61.623, Books 16.153. Electronics is 2.16× Home Appliances, 2.65× Sports, 10.24× Clothing, and 42.81× Books. Unit Price sum is also highest for Electronics at 27663.66 versus Home Appliances 12807.42 and Sports 10451.36.",
+        "strength": "strong",
+        "business_relevance": "This is highly relevant for pricing, margin, and risk management because Electronics is concentrated in much higher ticket items than the rest of the catalog."
+      },
+      {
+        "pattern_name": "Books form the lowest-price category segment",
+        "description": "Books are priced far below every other category, making them a distinct low-price group.",
+        "variables_involved": [
+          "Product Category",
+          "Unit Price"
+        ],
+        "evidence": "Books have mean Unit Price 16.153, compared with Beauty Products 61.623, Clothing 67.5365, Sports 261.284, Home Appliances 320.1855, and Electronics 691.5915. Books are about 3.82× lower than Beauty Products, 4.18× lower than Clothing, and 42.81× lower than Electronics.",
+        "strength": "strong",
+        "business_relevance": "This matters for basket-building and promotional strategy because Books occupy a very different price band from all other categories."
+      },
+      {
+        "pattern_name": "Regional transaction counts are perfectly balanced, but sales intensity is not",
+        "description": "All regions have the same number of transactions, yet units sold and prices differ substantially across regions.",
+        "variables_involved": [
+          "Region",
+          "Transaction ID",
+          "Units Sold",
+          "Unit Price"
+        ],
+        "evidence": "Transaction count by region is identical: Asia 80, Europe 80, North America 80. But Units Sold sums differ: Asia 233, North America 180, Europe 105. Mean Unit Price also differs: North America 353.87225, Europe 190.90425, Asia 164.41025.",
+        "strength": "strong",
+        "business_relevance": "This is important because regional performance differences are not due to transaction volume; they reflect differences in basket size and price mix."
+      },
+      {
+        "pattern_name": "Asia leads regions in unit volume",
+        "description": "Asia has the highest quantity sold per transaction and the highest total units sold among regions.",
+        "variables_involved": [
+          "Region",
+          "Units Sold"
+        ],
+        "evidence": "Asia Units Sold sum = 233 and mean = 2.9125, versus North America sum = 180 and mean = 2.25, and Europe sum = 105 and mean = 1.3125. Asia sells 2.22× as many units as Europe and 1.29× as many as North America.",
+        "strength": "strong",
+        "business_relevance": "This is meaningful for supply and fulfillment planning because Asia shows the strongest quantity throughput per order."
+      },
+      {
+        "pattern_name": "North America is the high-price regional segment",
+        "description": "North America has the highest average unit price by a wide margin, despite not leading in units sold.",
+        "variables_involved": [
+          "Region",
+          "Unit Price",
+          "Units Sold"
+        ],
+        "evidence": "Mean Unit Price: North America 353.87225, Europe 190.90425, Asia 164.41025. North America is 1.85× Europe and 2.15× Asia on average unit price. At the same time, North America Units Sold mean is 2.25, below Asia's 2.9125.",
+        "strength": "strong",
+        "business_relevance": "This is relevant for regional pricing and product mix strategy because North America appears concentrated in higher-ticket items rather than higher unit volume."
+      },
+      {
+        "pattern_name": "Europe is the weakest region by unit volume",
+        "description": "Europe has the lowest total and average units sold among the three regions.",
+        "variables_involved": [
+          "Region",
+          "Units Sold"
+        ],
+        "evidence": "Europe Units Sold sum = 105 and mean = 1.3125, compared with Asia 233 and 2.9125, and North America 180 and 2.25. Europe is less than half of Asia in total units sold (105 vs 233) and about 58% of North America's total (105 vs 180).",
+        "strength": "strong",
+        "business_relevance": "This is meaningful for regional demand evaluation because Europe materially underperforms the other regions on quantity sold."
+      },
+      {
+        "pattern_name": "Payment method usage is uneven, with Credit Card dominant by transaction count",
+        "description": "Credit Card is the dominant payment method by number of transactions, while Debit Card is the smallest group.",
+        "variables_involved": [
+          "Payment Method",
+          "Transaction ID"
+        ],
+        "evidence": "Transaction counts: Credit Card 120, PayPal 80, Debit Card 40. Credit Card has 3× the transactions of Debit Card and 1.5× PayPal.",
+        "strength": "strong",
+        "business_relevance": "This is useful for payment operations and checkout optimization because most transactions come through Credit Card."
+      },
+      {
+        "pattern_name": "Debit Card has the highest units per transaction despite the fewest transactions",
+        "description": "Debit Card is a smaller payment segment by count, but it has the highest average quantity sold per transaction.",
+        "variables_involved": [
+          "Payment Method",
+          "Transaction ID",
+          "Units Sold"
+        ],
+        "evidence": "Debit Card Transaction count = 40, the lowest among payment methods, but Units Sold mean = 3.625, higher than Credit Card 2.2333 and PayPal 1.3125. Debit Card total units sold = 145 versus PayPal 105, despite having half as many transactions as PayPal (40 vs 80).",
+        "strength": "strong",
+        "business_relevance": "This is meaningful for checkout and customer behavior analysis because Debit Card users appear to place larger-quantity orders."
+      },
+      {
+        "pattern_name": "Credit Card is the high-price payment segment",
+        "description": "Credit Card transactions carry the highest average unit price and the largest total price sum.",
+        "variables_involved": [
+          "Payment Method",
+          "Unit Price"
+        ],
+        "evidence": "Mean Unit Price by payment method: Credit Card 323.0095, PayPal 190.90425, Debit Card 67.5365. Credit Card is 1.69× PayPal and 4.78× Debit Card. Unit Price sum is also highest for Credit Card at 38761.14 versus PayPal 15272.34 and Debit Card 2701.46.",
+        "strength": "strong",
+        "business_relevance": "This matters for fraud controls, financing options, and premium product checkout flows because higher-priced items are concentrated in Credit Card transactions."
+      },
+      {
+        "pattern_name": "PayPal is the lowest-volume payment segment by units sold",
+        "description": "PayPal has a mid-sized transaction count but the lowest units sold per transaction.",
+        "variables_involved": [
+          "Payment Method",
+          "Units Sold"
+        ],
+        "evidence": "PayPal Transaction count = 80, but Units Sold sum = 105 and mean = 1.3125, lower than Credit Card mean 2.2333 and Debit Card mean 3.625. PayPal's mean is about 36% of Debit Card's mean (1.3125 vs 3.625).",
+        "strength": "strong",
+        "business_relevance": "This is relevant for channel and payment analysis because PayPal users appear to buy fewer units per order."
+      },
+      {
+        "pattern_name": "Monthly transaction counts are fairly even, with only moderate variation",
+        "description": "Monthly order counts stay within a relatively narrow band, without a single month dominating transaction volume.",
+        "variables_involved": [
+          "month",
+          "Transaction ID"
+        ],
+        "evidence": "Monthly transaction counts range from 27 in 2024-08 to 31 in 2024-01, 2024-03, 2024-05, and 2024-07. The spread is only 4 transactions across months.",
+        "strength": "moderate",
+        "business_relevance": "This suggests monthly differences in units sold or pricing are not mainly caused by large swings in transaction count."
+      },
+      {
+        "pattern_name": "Units sold are strongest early in the year and weaken later",
+        "description": "Monthly average units sold peak in February and March, then decline in later months, especially July and August.",
+        "variables_involved": [
+          "month",
+          "Units Sold"
+        ],
+        "evidence": "Mean Units Sold by month: 2024-02 = 2.6552, 2024-03 = 2.6452, 2024-01 = 2.1935, 2024-04 = 2.1667, 2024-06 = 2.0333, 2024-05 = 1.9355, 2024-08 = 1.9259, 2024-07 = 1.7097. Total units sold also fall from 82 in 2024-03 to 53 in 2024-07 and 52 in 2024-08.",
+        "strength": "moderate",
+        "business_relevance": "This is useful for demand planning because quantity movement appears stronger in the first part of the period than in the later months."
+      },
+      {
+        "pattern_name": "April and January are the highest-price months, while July is the lowest-price month",
+        "description": "Average unit price varies meaningfully by month, with a clear low point in July.",
+        "variables_involved": [
+          "month",
+          "Unit Price"
+        ],
+        "evidence": "Mean Unit Price by month: 2024-04 = 302.5387, 2024-01 = 288.5061, 2024-03 = 260.8948, 2024-08 = 221.5722, 2024-06 = 213.7373, 2024-02 = 212.4238, 2024-05 = 211.9984, 2024-07 = 177.4368. April's mean is 1.70× July's mean (302.54 vs 177.44).",
+        "strength": "moderate",
+        "business_relevance": "This matters for monthly merchandising and promotional planning because the product price mix shifts noticeably across months."
+      },
+      {
+        "pattern_name": "Most product names appear once, with only a small repeated-product subset",
+        "description": "At the product-name level, the distribution is highly concentrated in single-occurrence items, with only a few products appearing twice.",
+        "variables_involved": [
+          "Product Name",
+          "Transaction ID"
+        ],
+        "evidence": "Nearly all listed product names have Transaction ID count = 1. Only a small subset has count = 2, including Dune by Frank Herbert, Dyson Supersonic Hair Dryer, Garmin Forerunner 945, Keurig K-Elite Coffee Maker, Sony WH-1000XM4 Headphones, The Catcher in the Rye by J.D. Salinger, The Girl with the Dragon Tattoo by Stieg Larsson, and The Silent Patient by Alex Michaelides.",
+        "strength": "strong",
+        "business_relevance": "This limits how much product-level repetition can be used for stable trend decisions; category, region, and payment-level patterns are more decision-useful here."
+      },
+      {
+        "pattern_name": "A few individual products stand out with unusually high unit counts",
+        "description": "At the product level, a small number of items have much higher units sold than most others, indicating a skewed distribution.",
+        "variables_involved": [
+          "Product Name",
+          "Units Sold"
+        ],
+        "evidence": "Highest Units Sold sums include Hanes ComfortSoft T-Shirt 10, The Catcher in the Rye by J.D. Salinger 7, Gap Essential Crewneck T-Shirt 6, Nike Air Force 1 6, Spalding NBA Street Basketball 6, and Yeti Rambler Tumbler 6. Many products have only 1 or 2 units sold.",
+        "strength": "moderate",
+        "business_relevance": "This is relevant for SKU prioritization because a small subset of products contributes disproportionately more unit movement than the typical item."
+      }
+    ],
+    "Anomaly Patterns": [
+      {
+        "pattern_name": "Extreme right-tail outliers in Unit Price",
+        "description": "Unit Price shows a concentrated set of unusually high values relative to the bulk of the distribution, indicating a heavy upper tail.",
+        "variables_involved": [
+          "Unit Price"
+        ],
+        "evidence": "24 outliers were flagged in Unit Price (10.0% of 240 records) using an upper bound of 580.725. The median is 89.99 while the mean is much higher at 236.3956, showing strong upward pull from large values. The maximum is 3899.99 versus q75 of 249.99. Skewness is 4.5667 and kurtosis is 28.2344, both indicating an extreme right-skewed, heavy-tailed distribution.",
+        "strength": "strong",
+        "business_relevance": "This is more consistent with real business variation, such as a mix of low- and high-priced products, than a data quality issue, because prices are all positive and the lower bound is negative while the observed minimum is 6.5. In downstream analysis, use robust summaries (median, IQR), consider log-transforming price, and segment analyses by product category or price band so high-priced items do not dominate averages."
+      },
+      {
+        "pattern_name": "Extreme right-tail outliers in Total Revenue",
+        "description": "Total Revenue contains a notable group of unusually large transactions compared with the typical transaction size.",
+        "variables_involved": [
+          "Total Revenue"
+        ],
+        "evidence": "19 outliers were flagged in Total Revenue (7.9167% of 240 records) with an upper bound of 903.615. The mean is 335.6994 versus a median of 179.97, indicating substantial right-tail influence. The maximum is 3899.99, far above q75 of 399.225. Skewness is 3.5232 and kurtosis is 16.6819, confirming a heavy right tail with extreme high values.",
+        "strength": "strong",
+        "business_relevance": "This likely reflects real high-value sales events rather than obvious data errors, since revenue is strictly positive and the distribution is consistent with occasional large transactions. For downstream analysis, report both median and mean revenue, investigate top transactions separately, and consider winsorization or log-scaling when building models sensitive to extreme values."
+      },
+      {
+        "pattern_name": "Single high-quantity spike in Units Sold",
+        "description": "Units Sold is mostly concentrated at low counts, with one unusually large quantity transaction standing apart from the rest.",
+        "variables_involved": [
+          "Units Sold"
+        ],
+        "evidence": "Only 1 outlier was flagged in Units Sold (0.4167% of 240 records) above the upper bound of 6.0. The maximum is 10 while q75 is 3 and the median is 2. The mean is 2.1583, only slightly above the median, but skewness is 1.6209 and kurtosis is 4.7757, showing a right-skewed distribution with a tail driven by a small number of larger orders.",
+        "strength": "moderate",
+        "business_relevance": "This appears more like a real bulk-purchase event than a data quality issue, because the values are positive integers and only one record exceeds the outlier threshold. In downstream analysis, keep the record but use robust statistics for central tendency and consider separate treatment of bulk orders if modeling customer purchase behavior."
+      },
+      {
+        "pattern_name": "Strong mean-median gaps indicate non-normal transaction distributions",
+        "description": "Several numeric business measures have means far above medians, showing that typical transactions are much smaller than average values suggest.",
+        "variables_involved": [
+          "Unit Price",
+          "Total Revenue",
+          "Units Sold"
+        ],
+        "evidence": "Unit Price mean is 236.3956 versus median 89.99; Total Revenue mean is 335.6994 versus median 179.97; Units Sold mean is 2.1583 versus median 2.0. The largest gaps are in Unit Price and Total Revenue, which also have high skewness (4.5667 and 3.5232 respectively).",
+        "strength": "strong",
+        "business_relevance": "This is likely a real distributional feature rather than bad data, especially for price and revenue where a minority of expensive transactions inflate averages. Downstream reporting should avoid relying on means alone; medians, percentiles, and segmented summaries will better represent typical behavior."
+      },
+      {
+        "pattern_name": "No evidence of zero-inflation or zero-value anomalies in numeric sales fields",
+        "description": "The numeric sales measures do not show zero-heavy behavior and contain no zero values.",
+        "variables_involved": [
+          "Units Sold",
+          "Unit Price",
+          "Total Revenue"
+        ],
+        "evidence": "Minimum values are 1.0 for Units Sold, 6.5 for Unit Price, and 6.5 for Total Revenue. All counts are 240, with no indication of missing or zero entries in these fields.",
+        "strength": "strong",
+        "business_relevance": "This suggests there is no zero-inflation problem in the provided numeric transaction fields. Downstream analysis does not need zero-inflation-specific handling for these variables, but analysts should still verify whether returns, cancellations, or free items are excluded from the dataset."
+      },
+      {
+        "pattern_name": "Transaction ID is uniformly distributed and shows no anomaly signal",
+        "description": "Transaction ID behaves like a sequential identifier rather than a business measure, with no unusual distributional irregularities.",
+        "variables_involved": [
+          "Transaction ID"
+        ],
+        "evidence": "Transaction ID has mean 10120.5 equal to median 10120.5, skewness 0.0, kurtosis -1.2, min 10001, max 10240, and q25/q75 of 10060.75/10180.25. These values are consistent with an evenly spaced identifier sequence across 240 records.",
+        "strength": "strong",
+        "business_relevance": "This is not a data anomaly and should not be treated as a numeric feature in downstream statistical analysis or modeling. It should be used only as a record identifier."
+      }
+    ]
+  }
+}

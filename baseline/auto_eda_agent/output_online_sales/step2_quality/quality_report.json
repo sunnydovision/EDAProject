@@ -1,0 +1,61 @@
+{
+  "metrics": {
+    "missing_values": {},
+    "outliers": {
+      "Units Sold": {
+        "count": 1,
+        "percentage": 0.4166666666666667,
+        "lower_bound": -2.0,
+        "upper_bound": 6.0
+      },
+      "Unit Price": {
+        "count": 24,
+        "percentage": 10.0,
+        "lower_bound": -301.235,
+        "upper_bound": 580.725
+      },
+      "Total Revenue": {
+        "count": 19,
+        "percentage": 7.916666666666666,
+        "lower_bound": -441.42499999999995,
+        "upper_bound": 903.615
+      }
+    },
+    "duplicates": 0,
+    "total_issues": 3
+  },
+  "assessment": {
+    "critical_issues": [
+      {
+        "issue": "Outlier detected in 'Units Sold' (1 record, 0.42%) in a high-importance column. The value falls outside the expected range based on profiling bounds (-2.0 to 6.0).",
+        "severity": "medium",
+        "impact": "Because 'Units Sold' is a core transactional measure, even a small number of anomalous values can distort average sales volume, demand patterns, inventory planning, and product performance analysis. The low frequency limits overall impact, but the column's business importance makes it worth review.",
+        "recommendation": "Manually inspect the flagged record against source transactions. Confirm whether it reflects a legitimate bulk sale or a data entry/calculation issue. If invalid, correct or exclude it from analytical aggregates."
+      },
+      {
+        "issue": "High number of outliers in 'Unit Price' (24 records, 10.0%) in a high-importance column. Although the statistical lower bound is negative and therefore not inherently invalid, the proportion of unusual values is significant.",
+        "severity": "high",
+        "impact": "Unit price is a key driver of revenue, margin, pricing analysis, and product benchmarking. A 10% outlier rate can materially skew average selling price, pricing strategy assessments, discount analysis, and profitability reporting. If these values are errors, downstream financial insights may be misleading.",
+        "recommendation": "Validate outlier prices against product master data, pricing rules, and promotional/discount records. Separate legitimate premium/discounted transactions from erroneous entries. Apply business-rule validation such as non-negative price checks and expected price ranges by product category."
+      },
+      {
+        "issue": "Substantial outliers in 'Total Revenue' (19 records, 7.92%) in a high-importance column, indicating potentially inconsistent transaction totals or legitimate extreme sales values.",
+        "severity": "high",
+        "impact": "Total revenue is a primary financial metric. Outliers in this field can distort revenue trends, regional performance comparisons, forecasting, and executive reporting. They may also indicate inconsistency between 'Units Sold', 'Unit Price', and 'Total Revenue', which would undermine trust in the dataset.",
+        "recommendation": "Recalculate 'Total Revenue' from 'Units Sold × Unit Price' and compare against recorded values. Investigate mismatches, rounding issues, returns, bundled sales, or data entry errors. Establish reconciliation checks to ensure transactional consistency."
+      }
+    ],
+    "overall_quality_score": 78,
+    "priority_actions": [
+      "Audit all 'Unit Price' outliers against product pricing and promotion records, since this affects 10% of rows in a high-importance field.",
+      "Reconcile 'Total Revenue' with 'Units Sold × Unit Price' to identify calculation or recording inconsistencies in key financial data.",
+      "Review the anomalous 'Units Sold' record to determine whether it is a legitimate exceptional transaction or an input error."
+    ],
+    "detailed_analysis": "The dataset shows relatively strong baseline quality: no missing values were detected, and no duplicate records were found. This supports good structural completeness and uniqueness. However, quality concerns remain in three high-importance numeric fields due to outliers. The most significant issue is 'Unit Price', where 10% of records are statistically unusual; given the column's importance, this is a high-priority concern because it can materially affect pricing and profitability analysis. 'Total Revenue' also has a notable outlier rate (7.92%) in another critical financial field, raising the possibility of either legitimate high-value transactions or inconsistencies in revenue calculation. 'Units Sold' has only one outlier, so while it affects an important field, its limited frequency reduces severity. Overall, the dataset is usable, but financial and transactional analyses should not proceed without first validating price and revenue anomalies. The quality score reflects a dataset with solid completeness and no duplication issues, but with meaningful reliability risks in core business measures."
+  },
+  "summary": {
+    "total_issues": 3,
+    "critical_issues": 3,
+    "data_quality_score": 78
+  }
+}

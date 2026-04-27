@@ -26,6 +26,11 @@ from agent import _clean_dataframe_like_ifq
 class OutputConverter:
     """Convert Agentic AutoEDA output to ISGEN-compatible format"""
     
+    # Mapping from derived columns to original columns
+    DERIVED_COLUMN_MAP = {
+        'month': None,  # Will be set to the temporal column during initialization
+    }
+    
     # ISGEN pattern types (4 types from paper)
     ISGEN_PATTERN_TYPES = [
         'TREND',                    # Temporal trends
@@ -55,6 +60,26 @@ class OutputConverter:
             df: Original dataframe used in analysis
         """
         self.df = df
+        
+        # Initialize derived column mapping
+        # Find temporal columns and map 'month' to the first temporal column
+        temporal_cols = []
+        for col in df.columns:
+            if pd.api.types.is_datetime64_any_dtype(df[col]):
+                temporal_cols.append(col)
+            elif df[col].dtype == object or str(df[col].dtype).lower() == 'string':
+                # Try to parse as datetime
+                try:
+                    pd.to_datetime(df[col], errors='coerce')
+                    temporal_cols.append(col)
+                except:
+                    pass
+        
+        if temporal_cols:
+            self.DERIVED_COLUMN_MAP['month'] = temporal_cols[0]
+            print(f"Initialized derived column mapping: 'month' -> '{temporal_cols[0]}'")
+        else:
+            print("Warning: No temporal column found, 'month' mapping will not be set")
     
     def convert_insights(self, insights_path: str, output_dir: str):
         """
@@ -148,8 +173,17 @@ class OutputConverter:
         if not variables:
             return None, None
         
+        # Map derived columns to original columns
+        mapped_vars = []
+        for var in variables:
+            if var in self.DERIVED_COLUMN_MAP and self.DERIVED_COLUMN_MAP[var]:
+                mapped_vars.append(self.DERIVED_COLUMN_MAP[var])
+                print(f"    Mapped derived column '{var}' -> '{self.DERIVED_COLUMN_MAP[var]}'")
+            else:
+                mapped_vars.append(var)
+        
         # Filter to valid columns
-        valid_vars = [v for v in variables if v in self.df.columns]
+        valid_vars = [v for v in mapped_vars if v in self.df.columns]
         if not valid_vars:
             return None, None
         

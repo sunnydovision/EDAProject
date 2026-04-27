@@ -1,0 +1,380 @@
+[
+  {
+    "question": "Which product categories generate the highest average total revenue per transaction?",
+    "reason": "This helps identify which product categories drive the most sales value overall. Comparing average revenue across categories can reveal stronger-performing categories and highlight differences in customer spending patterns by category.",
+    "breakdown": "Product Category",
+    "measure": "MEAN(Total Revenue)"
+  },
+  {
+    "question": "How does the average number of units sold per transaction vary across regions?",
+    "reason": "Regional comparisons can uncover geographic differences in order volume. Looking at the average number of units sold by region helps reveal whether customers in some regions tend to purchase more items per transaction than others.",
+    "breakdown": "Region",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "Do customers using different payment methods tend to buy products with different average unit prices?",
+    "reason": "Payment method may be associated with different purchasing behavior. Comparing average unit price across payment methods can show whether certain methods are more commonly used for higher-priced products, indicating differences in transaction preferences.",
+    "breakdown": "Payment Method",
+    "measure": "MEAN(Unit Price)"
+  },
+  {
+    "question": "How does the number of transactions change across dates?",
+    "reason": "Transaction activity over time is useful for spotting demand cycles, spikes, or slower periods. Counting transaction IDs by date reveals temporal trends and possible anomalies in sales activity.",
+    "breakdown": "Date",
+    "measure": "COUNT(Transaction ID)"
+  },
+  {
+    "question": "Which product categories appear most frequently in transactions?",
+    "reason": "Although transaction IDs are identifiers, their count within each product category serves as a proxy for transaction frequency. This helps show which categories are purchased most often, independent of revenue size.",
+    "breakdown": "Product Category",
+    "measure": "COUNT(Transaction ID)"
+  },
+  {
+    "question": "Which product categories contain the highest-priced items?",
+    "reason": "Comparing the maximum unit price across categories helps identify where the most expensive products are concentrated. This is useful for detecting premium segments and understanding category price ceilings.",
+    "breakdown": "Product Category",
+    "measure": "MAX(Unit Price)"
+  },
+  {
+    "question": "Are some payment methods associated with larger single-transaction purchase quantities?",
+    "reason": "Looking at the maximum units sold by payment method can reveal whether certain payment methods are associated with unusually large-quantity purchases. This can help detect bulk-buying patterns or transaction outliers.",
+    "breakdown": "Payment Method",
+    "measure": "MAX(Units Sold)"
+  },
+  {
+    "question": "How do the smallest transaction revenues compare across regions?",
+    "reason": "The minimum revenue observed within each region can help uncover low-value transaction patterns and potential regional differences in basket size. It is also useful for spotting unusually small purchases or anomalies.",
+    "breakdown": "Region",
+    "measure": "MIN(Total Revenue)"
+  },
+  {
+    "question": "Which product names have the lowest observed unit prices?",
+    "reason": "Examining the minimum unit price by product name helps identify the least expensive items in the catalog and can surface products with unusually low pricing. This is useful for understanding entry-level offerings and possible pricing anomalies.",
+    "breakdown": "Product Name",
+    "measure": "MIN(Unit Price)"
+  },
+  {
+    "question": "Which product names appear most frequently in transactions?",
+    "reason": "Some products may be sold repeatedly while others rarely appear. Comparing transaction counts by product name helps identify bestsellers, niche items, and possible outliers in product popularity.",
+    "breakdown": "Product Name",
+    "measure": "COUNT(Transaction ID)"
+  },
+  {
+    "question": "Which regions have the highest peak transaction revenue?",
+    "reason": "The highest revenue reached within each region can expose standout transactions and help identify whether certain regions produce unusually large sales. This is valuable for finding outliers and understanding regional sales ceilings.",
+    "breakdown": "Region",
+    "measure": "MAX(Total Revenue)"
+  },
+  {
+    "question": "How do the lowest-priced items differ across product categories?",
+    "reason": "The minimum unit price within each category helps reveal entry-level pricing differences and whether some categories contain especially low-priced items. This can highlight pricing structure and anomalies in catalog setup.",
+    "breakdown": "Product Category",
+    "measure": "MIN(Unit Price)"
+  },
+  {
+    "question": "Which product categories have the widest variety of products being purchased?",
+    "reason": "Counting the number of products sold within each category can show assortment concentration and reveal whether sales are broadly distributed or dominated by a smaller set of items. This supports understanding category depth and product engagement.",
+    "breakdown": "Product Category",
+    "measure": "COUNT(Product Name)"
+  },
+  {
+    "question": "Which product categories have the highest average unit price?",
+    "reason": "Comparing average unit price across product categories can reveal pricing structure differences between categories and highlight premium versus low-priced segments.",
+    "breakdown": "Product Category",
+    "measure": "MEAN(Unit Price)"
+  },
+  {
+    "question": "Which payment methods are used most frequently in transactions?",
+    "reason": "Counting transactions by payment method helps identify customer payment preferences and can reveal whether certain methods dominate sales activity or are underused.",
+    "breakdown": "Payment Method",
+    "measure": "COUNT(Transaction ID)"
+  },
+  {
+    "question": "Which product categories reach the highest single-transaction unit sales?",
+    "reason": "Comparing the maximum number of units sold by product category can highlight categories that occasionally experience large-quantity purchases, which may indicate bulk buying behavior or standout demand spikes.",
+    "breakdown": "Product Category",
+    "measure": "MAX(Units Sold)"
+  },
+  {
+    "question": "How does transaction volume vary across different dates?",
+    "reason": "Comparing transaction counts across dates helps reveal sales momentum over time, including spikes, dips, and unusual days. This is useful for identifying temporal patterns and possible anomalies in customer activity.",
+    "breakdown": "Date",
+    "measure": "COUNT(Transaction ID)"
+  },
+  {
+    "question": "Which product categories tend to have the highest average number of units sold per transaction?",
+    "reason": "Looking at average units sold by product category helps identify which categories are typically purchased in larger quantities per transaction. This can reveal differences in buying behavior across categories.",
+    "breakdown": "Product Category",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "How does the average unit price differ across product categories?",
+    "reason": "Comparing average unit prices across product categories helps uncover pricing structure differences and highlights which categories are positioned as more premium or budget-oriented.",
+    "breakdown": "Product Category",
+    "measure": "MEAN(Unit Price)"
+  },
+  {
+    "question": "Which product categories contain the largest variety of product names?",
+    "reason": "Counting product names within each category shows how broadly products are distributed across categories. This can reveal whether certain categories dominate the catalog or have much wider product variety.",
+    "breakdown": "Product Category",
+    "measure": "COUNT(Product Name)"
+  },
+  {
+    "question": "Which regions record the highest-priced items sold?",
+    "reason": "Examining the maximum unit price by region can uncover where the most expensive items are being sold and highlight regional concentration of premium purchases or outlier-priced transactions.",
+    "breakdown": "Region",
+    "measure": "MAX(Unit Price)"
+  },
+  {
+    "question": "How does the average unit price of purchased products vary by region?",
+    "reason": "Average unit price across regions can reveal geographic differences in product mix or customer willingness to purchase higher-priced items. This is useful for identifying regional pricing patterns and potential market segmentation.",
+    "breakdown": "Region",
+    "measure": "MEAN(Unit Price)"
+  },
+  {
+    "question": "On which dates do the highest single-transaction revenues occur?",
+    "reason": "Looking at the maximum total revenue by date helps identify standout high-value transactions and unusual spikes in daily sales activity. This is valuable for detecting outlier purchases or days driven by exceptional orders.",
+    "breakdown": "Date",
+    "measure": "MAX(Total Revenue)"
+  },
+  {
+    "question": "Which regions show the largest single-transaction unit purchases?",
+    "reason": "Evaluating the maximum number of units sold by region helps identify where the largest-quantity transactions occur. This can reveal regional outliers in bulk purchasing behavior and differences in order size extremes.",
+    "breakdown": "Region",
+    "measure": "MAX(Units Sold)"
+  },
+  {
+    "question": "How does the average transaction revenue vary across product categories?",
+    "reason": "Comparing the average transaction revenue across product categories helps reveal which categories tend to generate higher-value purchases. This is useful for identifying category-level differences in customer spending behavior and spotting premium versus low-ticket segments.",
+    "breakdown": "Product Category",
+    "measure": "MEAN(Total Revenue)"
+  },
+  {
+    "question": "Which dates have the highest number of transactions?",
+    "reason": "Counting transactions by date helps identify temporal spikes and dips in sales activity. This is useful for finding unusually busy or slow days and detecting possible demand surges or anomalies.",
+    "breakdown": "Date",
+    "measure": "COUNT(Transaction ID)"
+  },
+  {
+    "question": "How does average transaction revenue differ by region?",
+    "reason": "Comparing the average transaction revenue across regions can uncover geographic differences in spending levels. This helps identify whether certain markets consistently generate larger purchases than others.",
+    "breakdown": "Region",
+    "measure": "MEAN(Total Revenue)"
+  },
+  {
+    "question": "Are higher-priced items more commonly purchased using certain payment methods?",
+    "reason": "Comparing the average unit price across payment methods can reveal whether certain payment options are more commonly used for higher-priced products. This may indicate customer preference differences for premium purchases.",
+    "breakdown": "Payment Method",
+    "measure": "MEAN(Unit Price)"
+  },
+  {
+    "question": "Which regions account for the most transaction activity?",
+    "reason": "Counting transactions across regions shows how sales activity is distributed geographically. This can reveal dominant markets, underperforming regions, and possible imbalances in transaction volume.",
+    "breakdown": "Region",
+    "measure": "COUNT(Transaction ID)"
+  },
+  {
+    "question": "Do customers using different payment methods tend to buy different numbers of units per transaction?",
+    "reason": "Looking at the average number of units sold by payment method can uncover whether certain payment preferences are associated with larger basket sizes. This can indicate behavioral differences in how customers purchase depending on how they pay.",
+    "breakdown": "Payment Method",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "Which payment methods are associated with the smallest transaction revenues?",
+    "reason": "Looking at the minimum total revenue by payment method can surface whether some payment methods are associated with especially small purchases. This is helpful for understanding low-value transaction patterns and identifying edge-case orders.",
+    "breakdown": "Payment Method",
+    "measure": "MIN(Total Revenue)"
+  },
+  {
+    "question": "How does payment method usage differ across regions?",
+    "reason": "Counting transactions by region and payment method combination can uncover regional differences in payment preference. This helps identify behavioral relationships between geography and payment usage, and may reveal underused or dominant payment methods in certain regions.",
+    "breakdown": "Region, Payment Method",
+    "measure": "COUNT(Transaction ID)"
+  },
+  {
+    "question": "How does the average number of units sold per transaction differ by payment method?",
+    "reason": "Examining the average number of units sold by payment method can show whether customers using different payment options tend to buy in different quantities. This may reveal behavioral relationships between payment preference and basket size.",
+    "breakdown": "Payment Method",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "On which dates do the largest single-transaction quantities occur?",
+    "reason": "Looking at the maximum units sold on each date helps identify days with unusually large-quantity purchases. This is useful for detecting outlier transactions and understanding when bulk buying behavior occurs.",
+    "breakdown": "Date",
+    "measure": "MAX(Units Sold)"
+  },
+  {
+    "question": "Which dates experienced the highest and lowest sales activity in terms of number of transactions?",
+    "reason": "Comparing transaction counts across dates can reveal demand spikes, slow periods, or unusual daily activity. This is useful for identifying temporal trends and spotting days that behave differently from the rest of the sales pattern.",
+    "breakdown": "Date",
+    "measure": "COUNT(Transaction ID)"
+  },
+  {
+    "question": "How does the average quantity purchased per transaction vary across product categories?",
+    "reason": "Average units sold by product category helps show whether some categories are typically purchased in larger quantities per transaction than others. This can reveal differences in buying behavior between everyday items and higher-value products.",
+    "breakdown": "Product Category",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "Does the average transaction revenue vary by payment method?",
+    "reason": "Comparing average total revenue across payment methods can reveal whether certain payment options are associated with larger transaction values. This may indicate behavioral differences in how customers complete higher-value purchases.",
+    "breakdown": "Payment Method",
+    "measure": "MEAN(Total Revenue)"
+  },
+  {
+    "question": "Which regions show the lowest-value individual transactions?",
+    "reason": "Measuring the smallest total revenue within each region can uncover unusually low-value purchases and show whether some regions have more very small transactions than others. This helps identify edge cases and potential anomalies in purchasing behavior.",
+    "breakdown": "Region",
+    "measure": "MIN(Total Revenue)"
+  },
+  {
+    "question": "How is transaction volume distributed across regions?",
+    "reason": "Counting transactions by region shows how sales activity is distributed geographically. This can reveal concentration of demand, market imbalance across regions, or regions that may need closer investigation due to unusually low or high activity.",
+    "breakdown": "Region",
+    "measure": "COUNT(Transaction ID)"
+  },
+  {
+    "question": "Which payment methods are associated with higher average transaction revenue?",
+    "reason": "Comparing average total revenue across payment methods can show whether certain payment choices are associated with higher-value transactions, which may reflect differences in customer segments or checkout behavior.",
+    "breakdown": "Payment Method",
+    "measure": "MEAN(Total Revenue)"
+  },
+  {
+    "question": "Which product names reach the highest single-transaction purchase quantities?",
+    "reason": "Looking at the maximum units sold by product name can identify products that occasionally experience unusually large purchase quantities, helping surface standout items, bulk-buy behavior, or possible outlier transactions.",
+    "breakdown": "Product Name",
+    "measure": "MAX(Units Sold)"
+  },
+  {
+    "question": "How is transaction volume distributed across payment methods?",
+    "reason": "Counting transaction IDs by payment method shows how customer payment preference is distributed. Large differences can reveal dominant payment channels and possible operational dependence on specific methods.",
+    "breakdown": "Payment Method",
+    "measure": "COUNT(Transaction ID)"
+  },
+  {
+    "question": "Which regions show the widest variety of products sold?",
+    "reason": "Counting product names by region can indicate how broadly the product catalog is represented across markets. Differences may reveal regional assortment concentration or uneven product availability.",
+    "breakdown": "Region",
+    "measure": "COUNT(Product Name)"
+  },
+  {
+    "question": "Which product categories show the largest single-transaction purchase quantities?",
+    "reason": "Looking at the maximum units sold by product category helps detect where bulk purchases are most likely to occur. This is useful for identifying unusually high-volume transactions and understanding whether some categories drive larger quantity purchases than others.",
+    "breakdown": "Product Category",
+    "measure": "MAX(Units Sold)"
+  },
+  {
+    "question": "Do some payment methods tend to be associated with the smallest purchase quantities?",
+    "reason": "Looking at the minimum units sold across payment methods helps check whether some methods are associated with very small purchases more often than others. This may reveal behavioral differences in how customers use payment options for low-quantity orders.",
+    "breakdown": "Payment Method",
+    "measure": "MIN(Units Sold)"
+  },
+  {
+    "question": "How is sales activity distributed across regions?",
+    "reason": "Counting transactions across regions helps show the geographic distribution of sales activity. This is valuable for identifying market concentration, regional imbalance, or locations with unexpectedly low engagement.",
+    "breakdown": "Region",
+    "measure": "COUNT(Transaction ID)"
+  },
+  {
+    "question": "Do some regions show sales activity across more dates than others?",
+    "reason": "Examining how many distinct dates appear by region can help reveal whether sales activity is consistently spread across the observed time period in all markets or concentrated in fewer days. This may indicate uneven market engagement or region-specific sales gaps.",
+    "breakdown": "Region",
+    "measure": "COUNT(Date)"
+  },
+  {
+    "question": "Are the lowest-priced purchased items similar across regions, or do some regions have cheaper entry-point products?",
+    "reason": "Comparing the minimum unit price across regions can reveal whether lower-priced products are equally available or purchased everywhere. This can help identify regional differences in entry-level product mix and possible assortment disparities.",
+    "breakdown": "Region",
+    "measure": "MIN(Unit Price)"
+  },
+  {
+    "question": "Do customers in different regions tend to buy different quantities per transaction?",
+    "reason": "Looking at the average number of units sold by region can uncover whether customers in some regions tend to purchase in larger quantities. This is useful for identifying regional differences in basket size and demand intensity.",
+    "breakdown": "Region",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "How does average revenue per transaction change over time?",
+    "reason": "Comparing average transaction revenue across dates can uncover time-based shifts in customer spending, such as high-value sales days or unusual dips. This is useful for finding temporal trends and anomalies in purchase value.",
+    "breakdown": "Date",
+    "measure": "MEAN(Total Revenue)"
+  },
+  {
+    "question": "How does the variety of products purchased change from date to date?",
+    "reason": "Counting products purchased by date helps reveal how product variety changes over time. Days with unusually high or low numbers of products sold may indicate promotions, assortment shifts, or concentrated demand around specific items.",
+    "breakdown": "Date",
+    "measure": "COUNT(Product Name)"
+  },
+  {
+    "question": "Which regions generate the highest volume of transactions?",
+    "reason": "Comparing transaction counts across regions can reveal whether sales activity is concentrated in certain markets or evenly distributed. This helps identify geographic demand patterns and possible regional imbalances in customer activity.",
+    "breakdown": "Region",
+    "measure": "COUNT(Transaction ID)"
+  },
+  {
+    "question": "Which payment methods are associated with the highest-priced items purchased?",
+    "reason": "Looking at the highest unit price reached under each payment method can reveal whether expensive products are more often associated with particular payment choices. This can help identify links between payment behavior and premium-item purchases.",
+    "breakdown": "Payment Method",
+    "measure": "MAX(Unit Price)"
+  },
+  {
+    "question": "Which payment methods are associated with the largest number of product purchases?",
+    "reason": "Counting the number of products purchased under each payment method can show whether certain payment types are associated with broader purchasing activity. This can indicate customer payment preferences and whether some methods are more common in product-heavy shopping behavior.",
+    "breakdown": "Payment Method",
+    "measure": "COUNT(Product Name)"
+  },
+  {
+    "question": "Do customers using different payment methods purchase different average quantities of items per transaction?",
+    "reason": "Comparing average units sold across payment methods can reveal whether some payment options are associated with larger basket sizes. This may indicate differences in customer purchasing behavior tied to payment preference.",
+    "breakdown": "Payment Method",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "In which regions do the largest individual transaction values occur?",
+    "reason": "Examining the highest transaction revenue by region can reveal where the biggest single-ticket purchases occur. This is useful for spotting potential outlier markets, premium demand pockets, or unusually large transactions.",
+    "breakdown": "Region",
+    "measure": "MAX(Total Revenue)"
+  },
+  {
+    "question": "Are some payment methods more associated with very low-priced item purchases than others?",
+    "reason": "Comparing the minimum unit price observed under each payment method can indicate whether certain payment types are more commonly used for low-cost purchases. This can reveal behavioral differences in payment choice by purchase size and surface unusual patterns.",
+    "breakdown": "Payment Method",
+    "measure": "MIN(Unit Price)"
+  },
+  {
+    "question": "Which product categories have the broadest product presence in the sales records?",
+    "reason": "Counting product names within each category shows how broad the observed product assortment is across categories. This can help identify whether some categories are driven by a wider variety of products than others.",
+    "breakdown": "Product Category",
+    "measure": "COUNT(Product Name)"
+  },
+  {
+    "question": "Do some regions tend to purchase higher-priced items on average than others?",
+    "reason": "Examining the average unit price across regions helps show whether customers in different regions tend to purchase more premium or lower-priced items. This can indicate regional differences in product mix or customer preference.",
+    "breakdown": "Region",
+    "measure": "MEAN(Unit Price)"
+  },
+  {
+    "question": "Which product categories are associated with the smallest purchase quantities?",
+    "reason": "Examining the minimum units sold across product categories helps identify categories that frequently appear in very small-quantity purchases. This can distinguish categories that are often bought as single-item purchases from those that tend to involve larger quantities.",
+    "breakdown": "Product Category",
+    "measure": "MIN(Units Sold)"
+  },
+  {
+    "question": "Which payment methods are associated with the highest-value individual transactions?",
+    "reason": "Looking at the highest transaction revenue by payment method helps identify whether certain payment types are associated with exceptionally large purchases. This is useful for spotting outlier high-value transactions and understanding whether payment behavior differs at the top end of spending.",
+    "breakdown": "Payment Method",
+    "measure": "MAX(Total Revenue)"
+  },
+  {
+    "question": "Which regions have the highest volume of sales activity?",
+    "reason": "Comparing average transaction counts across regions helps reveal where sales activity is most concentrated. Using transaction frequency as the measure highlights differences in market engagement, which can uncover stronger or weaker performing geographies.",
+    "breakdown": "Region",
+    "measure": "COUNT(Transaction ID)"
+  },
+  {
+    "question": "Do some payment methods appear in sales activity across more dates than others?",
+    "reason": "Counting sales dates by payment method helps assess whether activity tied to each payment type is consistently spread over time or concentrated on fewer days. This can highlight uneven usage patterns or temporal concentration in payment behavior.",
+    "breakdown": "Payment Method",
+    "measure": "COUNT(Date)"
+  }
+]

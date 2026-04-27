@@ -1,0 +1,2621 @@
+[
+  {
+    "question": "How does SUM(Unit Price) vary by Product Category?",
+    "explanation": "Outstanding value: for Region=North America, one category in Product Category has a value much larger (or smaller) than the others when measuring SUM(Unit Price).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Product Category",
+      "measure": "SUM(Unit Price)",
+      "subspace": [
+        [
+          "Region",
+          "North America"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 42.81504983594379,
+      "question": "How does SUM(Unit Price) vary by Product Category?",
+      "reason": "Statistics-based analysis: SUM(Unit Price) grouped by Product Category.",
+      "view_labels": [
+        "Books",
+        "Electronics"
+      ],
+      "view_values": [
+        646.12,
+        27663.66
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Unit Price) vary by Product Category?",
+    "explanation": "Outstanding value: for Region=North America, one category in Product Category has a value much larger (or smaller) than the others when measuring MEAN(Unit Price).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Product Category",
+      "measure": "MEAN(Unit Price)",
+      "subspace": [
+        [
+          "Region",
+          "North America"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 42.81504983594379,
+      "question": "How does MEAN(Unit Price) vary by Product Category?",
+      "reason": "Statistics-based analysis: MEAN(Unit Price) grouped by Product Category.",
+      "view_labels": [
+        "Books",
+        "Electronics"
+      ],
+      "view_values": [
+        16.153,
+        691.5915
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Total Revenue) vary by Product Category?",
+    "explanation": "Outstanding value: for Region=North America, one category in Product Category has a value much larger (or smaller) than the others when measuring SUM(Total Revenue).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Product Category",
+      "measure": "SUM(Total Revenue)",
+      "subspace": [
+        [
+          "Region",
+          "North America"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 18.788251975101108,
+      "question": "How does SUM(Total Revenue) vary by Product Category?",
+      "reason": "Statistics-based analysis: SUM(Total Revenue) grouped by Product Category.",
+      "view_labels": [
+        "Books",
+        "Electronics"
+      ],
+      "view_values": [
+        1861.9299999999998,
+        34982.41
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Total Revenue) vary by Product Category?",
+    "explanation": "Outstanding value: for Payment Method=PayPal, one category in Product Category has a value much larger (or smaller) than the others when measuring MEAN(Total Revenue).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Product Category",
+      "measure": "MEAN(Total Revenue)",
+      "subspace": [
+        [
+          "Payment Method",
+          "PayPal"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 7.111697623860559,
+      "question": "How does MEAN(Total Revenue) vary by Product Category?",
+      "reason": "Statistics-based analysis: MEAN(Total Revenue) grouped by Product Category.",
+      "view_labels": [
+        "Beauty Products",
+        "Home Appliances"
+      ],
+      "view_values": [
+        65.5475,
+        466.154
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Total Revenue) vary by Region?",
+    "explanation": "Outstanding value: for Unit Price=129.99, one category in Region has a value much larger (or smaller) than the others when measuring SUM(Total Revenue).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Region",
+      "measure": "SUM(Total Revenue)",
+      "subspace": [
+        [
+          "Unit Price",
+          129.99
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 4.5,
+      "question": "How does SUM(Total Revenue) vary by Region?",
+      "reason": "Statistics-based analysis: SUM(Total Revenue) grouped by Region.",
+      "view_labels": [
+        "Asia",
+        "Europe",
+        "North America"
+      ],
+      "view_values": [
+        1169.91,
+        129.99,
+        259.98
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Unit Price) vary by Payment Method?",
+    "explanation": "Outstanding value: for Units Sold=1, one category in Payment Method has a value much larger (or smaller) than the others when measuring MEAN(Unit Price).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Payment Method",
+      "measure": "MEAN(Unit Price)",
+      "subspace": [
+        [
+          "Units Sold",
+          1
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 4.482182864623537,
+      "question": "How does MEAN(Unit Price) vary by Payment Method?",
+      "reason": "Statistics-based analysis: MEAN(Unit Price) grouped by Payment Method.",
+      "view_labels": [
+        "Credit Card",
+        "PayPal"
+      ],
+      "view_values": [
+        753.84025,
+        168.1859649122807
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Unit Price) vary by Payment Method?",
+    "explanation": "Outstanding value: for Region=Asia, one category in Payment Method has a value much larger (or smaller) than the others when measuring SUM(Unit Price).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Payment Method",
+      "measure": "SUM(Unit Price)",
+      "subspace": [
+        [
+          "Region",
+          "Asia"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 3.868782065993944,
+      "question": "How does SUM(Unit Price) vary by Payment Method?",
+      "reason": "Statistics-based analysis: SUM(Unit Price) grouped by Payment Method.",
+      "view_labels": [
+        "Credit Card",
+        "Debit Card"
+      ],
+      "view_values": [
+        10451.36,
+        2701.46
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Total Revenue) vary by Payment Method?",
+    "explanation": "Outstanding value: for Units Sold=1, one category in Payment Method has a value much larger (or smaller) than the others when measuring SUM(Total Revenue).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Payment Method",
+      "measure": "SUM(Total Revenue)",
+      "subspace": [
+        [
+          "Units Sold",
+          1
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 3.1453914839463417,
+      "question": "How does SUM(Total Revenue) vary by Payment Method?",
+      "reason": "Statistics-based analysis: SUM(Total Revenue) grouped by Payment Method.",
+      "view_labels": [
+        "Credit Card",
+        "PayPal"
+      ],
+      "view_values": [
+        30153.61,
+        9586.6
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Units Sold) vary by Payment Method?",
+    "explanation": "Outstanding value: for Units Sold=5, one category in Payment Method has a value much larger (or smaller) than the others when measuring SUM(Units Sold).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Payment Method",
+      "measure": "SUM(Units Sold)",
+      "subspace": [
+        [
+          "Units Sold",
+          5
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 2.5,
+      "question": "How does SUM(Units Sold) vary by Payment Method?",
+      "reason": "Statistics-based analysis: SUM(Units Sold) grouped by Payment Method.",
+      "view_labels": [
+        "Credit Card",
+        "Debit Card"
+      ],
+      "view_values": [
+        10.0,
+        25.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Units Sold) vary by Payment Method?",
+    "explanation": "Outstanding value: for Unit Price=129.99, one category in Payment Method has a value much larger (or smaller) than the others when measuring MEAN(Units Sold).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Payment Method",
+      "measure": "MEAN(Units Sold)",
+      "subspace": [
+        [
+          "Unit Price",
+          129.99
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 2.2,
+      "question": "How does MEAN(Units Sold) vary by Payment Method?",
+      "reason": "Statistics-based analysis: MEAN(Units Sold) grouped by Payment Method.",
+      "view_labels": [
+        "Credit Card",
+        "PayPal"
+      ],
+      "view_values": [
+        2.2,
+        1.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Unit Price) vary by Region?",
+    "explanation": "Outstanding value: for Units Sold=4, one category in Region has a value much larger (or smaller) than the others when measuring SUM(Unit Price).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Region",
+      "measure": "SUM(Unit Price)",
+      "subspace": [
+        [
+          "Units Sold",
+          4
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 2.1247532270311313,
+      "question": "How does SUM(Unit Price) vary by Region?",
+      "reason": "Statistics-based analysis: SUM(Unit Price) grouped by Region.",
+      "view_labels": [
+        "Asia",
+        "North America"
+      ],
+      "view_values": [
+        559.66,
+        263.4
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Units Sold) vary by Region?",
+    "explanation": "Outstanding value: for Payment Method=Credit Card, one category in Region has a value much larger (or smaller) than the others when measuring SUM(Units Sold).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Region",
+      "measure": "SUM(Units Sold)",
+      "subspace": [
+        [
+          "Payment Method",
+          "Credit Card"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 2.0454545454545454,
+      "question": "How does SUM(Units Sold) vary by Region?",
+      "reason": "Statistics-based analysis: SUM(Units Sold) grouped by Region.",
+      "view_labels": [
+        "Asia",
+        "North America"
+      ],
+      "view_values": [
+        88.0,
+        180.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Unit Price) vary by Region?",
+    "explanation": "Outstanding value: for Units Sold=1, one category in Region has a value much larger (or smaller) than the others when measuring MEAN(Unit Price).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Region",
+      "measure": "MEAN(Unit Price)",
+      "subspace": [
+        [
+          "Units Sold",
+          1
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.9992927054587808,
+      "question": "How does MEAN(Unit Price) vary by Region?",
+      "reason": "Statistics-based analysis: MEAN(Unit Price) grouped by Region.",
+      "view_labels": [
+        "Asia",
+        "Europe",
+        "North America"
+      ],
+      "view_values": [
+        478.75235294117647,
+        168.1859649122807,
+        957.1660869565218
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Total Revenue) vary by Region?",
+    "explanation": "Outstanding value: for Units Sold=1, one category in Region has a value much larger (or smaller) than the others when measuring MEAN(Total Revenue).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Region",
+      "measure": "MEAN(Total Revenue)",
+      "subspace": [
+        [
+          "Units Sold",
+          1
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.9992927054587808,
+      "question": "How does MEAN(Total Revenue) vary by Region?",
+      "reason": "Statistics-based analysis: MEAN(Total Revenue) grouped by Region.",
+      "view_labels": [
+        "Asia",
+        "Europe",
+        "North America"
+      ],
+      "view_values": [
+        478.75235294117647,
+        168.1859649122807,
+        957.1660869565218
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Unit Price) vary by Date?",
+    "explanation": "Outstanding value: for Product Category=Sports, one category in Date has a value much larger (or smaller) than the others when measuring SUM(Unit Price).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Date",
+      "measure": "SUM(Unit Price)",
+      "subspace": [
+        [
+          "Product Category",
+          "Sports"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.8950189501895018,
+      "question": "How does SUM(Unit Price) vary by Date?",
+      "reason": "Statistics-based analysis: SUM(Unit Price) grouped by Date.",
+      "view_labels": [
+        "2024-03-08",
+        "2024-04-06",
+        "2024-04-07",
+        "2024-05-02",
+        "2024-05-04",
+        "2024-05-05",
+        "2024-06-01",
+        "2024-06-03",
+        "2024-09-08",
+        "2024-10-06",
+        "2024-10-07",
+        "2024-11-02",
+        "2024-11-04",
+        "2024-11-05",
+        "2024-12-01",
+        "2024-12-03"
+      ],
+      "view_values": [
+        349.99,
+        299.99,
+        499.95,
+        1895.0,
+        999.99,
+        199.99,
+        29.99,
+        299.99,
+        599.99,
+        34.99,
+        169.95,
+        129.99,
+        109.99,
+        39.95,
+        199.99,
+        129.99
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Units Sold) vary by Product Category?",
+    "explanation": "Outstanding value: for Region=North America, one category in Product Category has a value much larger (or smaller) than the others when measuring MEAN(Units Sold).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Product Category",
+      "measure": "MEAN(Units Sold)",
+      "subspace": [
+        [
+          "Region",
+          "North America"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.7272727272727275,
+      "question": "How does MEAN(Units Sold) vary by Product Category?",
+      "reason": "Statistics-based analysis: MEAN(Units Sold) grouped by Product Category.",
+      "view_labels": [
+        "Books",
+        "Electronics"
+      ],
+      "view_values": [
+        2.85,
+        1.65
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Units Sold) vary by Product Category?",
+    "explanation": "Outstanding value: for Region=North America, one category in Product Category has a value much larger (or smaller) than the others when measuring SUM(Units Sold).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Product Category",
+      "measure": "SUM(Units Sold)",
+      "subspace": [
+        [
+          "Region",
+          "North America"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.7272727272727273,
+      "question": "How does SUM(Units Sold) vary by Product Category?",
+      "reason": "Statistics-based analysis: SUM(Units Sold) grouped by Product Category.",
+      "view_labels": [
+        "Books",
+        "Electronics"
+      ],
+      "view_values": [
+        114.0,
+        66.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Total Revenue) vary by Date?",
+    "explanation": "Outstanding value: for Payment Method=Debit Card, one category in Date has a value much larger (or smaller) than the others when measuring SUM(Total Revenue).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Date",
+      "measure": "SUM(Total Revenue)",
+      "subspace": [
+        [
+          "Payment Method",
+          "Debit Card"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.687523440430054,
+      "question": "How does SUM(Total Revenue) vary by Date?",
+      "reason": "Statistics-based analysis: SUM(Total Revenue) grouped by Date.",
+      "view_labels": [
+        "2024-01-06",
+        "2024-01-07",
+        "2024-02-02",
+        "2024-02-04",
+        "2024-02-05",
+        "2024-03-01",
+        "2024-03-03",
+        "2024-06-08",
+        "2024-07-06",
+        "2024-07-07",
+        "2024-08-02",
+        "2024-08-04",
+        "2024-08-05",
+        "2024-09-01",
+        "2024-09-03",
+        "2024-12-08"
+      ],
+      "view_values": [
+        164.97,
+        179.97,
+        149.95,
+        319.96,
+        64.95,
+        209.97,
+        99.9,
+        149.97,
+        99.96,
+        139.96,
+        239.96,
+        119.94,
+        294.0,
+        539.94,
+        239.96,
+        89.98
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Total Revenue) vary by Date?",
+    "explanation": "Outstanding value: for Product Category=Clothing, one category in Date has a value much larger (or smaller) than the others when measuring MEAN(Total Revenue).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Date",
+      "measure": "MEAN(Total Revenue)",
+      "subspace": [
+        [
+          "Product Category",
+          "Clothing"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.687523440430054,
+      "question": "How does MEAN(Total Revenue) vary by Date?",
+      "reason": "Statistics-based analysis: MEAN(Total Revenue) grouped by Date.",
+      "view_labels": [
+        "2024-01-06",
+        "2024-01-07",
+        "2024-02-02",
+        "2024-02-04",
+        "2024-02-05",
+        "2024-03-01",
+        "2024-03-03",
+        "2024-06-08",
+        "2024-07-06",
+        "2024-07-07",
+        "2024-08-02",
+        "2024-08-04",
+        "2024-08-05",
+        "2024-09-01",
+        "2024-09-03",
+        "2024-12-08"
+      ],
+      "view_values": [
+        164.97,
+        179.97,
+        149.95,
+        319.96,
+        64.95,
+        209.97,
+        99.9,
+        149.97,
+        99.96,
+        139.96,
+        239.96,
+        119.94,
+        294.0,
+        539.94,
+        239.96,
+        89.98
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Units Sold) vary by Date?",
+    "explanation": "Outstanding value: for overall data, one category in Date has a value much larger (or smaller) than the others when measuring SUM(Units Sold).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Date",
+      "measure": "SUM(Units Sold)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 1.6666666666666667,
+      "question": "How does SUM(Units Sold) vary by Date?",
+      "reason": "Statistics-based analysis: SUM(Units Sold) grouped by Date.",
+      "view_labels": [
+        "2024-01-01",
+        "2024-01-02",
+        "2024-01-03",
+        "2024-01-04",
+        "2024-01-05",
+        "2024-01-06",
+        "2024-01-07",
+        "2024-01-08",
+        "2024-02-01",
+        "2024-02-02",
+        "2024-02-03",
+        "2024-02-04",
+        "2024-02-05",
+        "2024-02-06",
+        "2024-02-07",
+        "2024-02-08",
+        "2024-03-01",
+        "2024-03-02",
+        "2024-03-03",
+        "2024-03-04",
+        "2024-03-05",
+        "2024-03-06",
+        "2024-03-07",
+        "2024-03-08",
+        "2024-04-01",
+        "2024-04-02",
+        "2024-04-03",
+        "2024-04-04",
+        "2024-04-05",
+        "2024-04-06",
+        "2024-04-07",
+        "2024-04-08",
+        "2024-05-01",
+        "2024-05-02",
+        "2024-05-03",
+        "2024-05-04",
+        "2024-05-05",
+        "2024-05-06",
+        "2024-05-07",
+        "2024-05-08",
+        "2024-06-01",
+        "2024-06-02",
+        "2024-06-03",
+        "2024-06-04",
+        "2024-06-05",
+        "2024-06-06",
+        "2024-06-07",
+        "2024-06-08",
+        "2024-07-01",
+        "2024-07-02",
+        "2024-07-03",
+        "2024-07-04",
+        "2024-07-05",
+        "2024-07-06",
+        "2024-07-07",
+        "2024-07-08",
+        "2024-08-01",
+        "2024-08-02",
+        "2024-08-03",
+        "2024-08-04",
+        "2024-08-05",
+        "2024-08-06",
+        "2024-08-07",
+        "2024-08-08",
+        "2024-09-01",
+        "2024-09-02",
+        "2024-09-03",
+        "2024-09-04",
+        "2024-09-05",
+        "2024-09-06",
+        "2024-09-07",
+        "2024-09-08",
+        "2024-10-01",
+        "2024-10-02",
+        "2024-10-03",
+        "2024-10-04",
+        "2024-10-05",
+        "2024-10-06",
+        "2024-10-07",
+        "2024-10-08",
+        "2024-11-01",
+        "2024-11-02",
+        "2024-11-03",
+        "2024-11-04",
+        "2024-11-05",
+        "2024-11-06",
+        "2024-11-07",
+        "2024-11-08",
+        "2024-12-01",
+        "2024-12-02",
+        "2024-12-03",
+        "2024-12-04",
+        "2024-12-05",
+        "2024-12-06",
+        "2024-12-07",
+        "2024-12-08"
+      ],
+      "view_values": [
+        2.0,
+        3.0,
+        3.0,
+        1.0,
+        1.0,
+        3.0,
+        3.0,
+        3.0,
+        1.0,
+        5.0,
+        2.0,
+        4.0,
+        5.0,
+        2.0,
+        2.0,
+        2.0,
+        3.0,
+        4.0,
+        10.0,
+        3.0,
+        3.0,
+        1.0,
+        1.0,
+        1.0,
+        4.0,
+        2.0,
+        4.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        5.0,
+        3.0,
+        2.0,
+        3.0,
+        1.0,
+        1.0,
+        2.0,
+        3.0,
+        1.0,
+        2.0,
+        1.0,
+        1.0,
+        2.0,
+        4.0,
+        4.0,
+        2.0,
+        2.0,
+        4.0,
+        3.0,
+        6.0,
+        3.0,
+        3.0,
+        3.0,
+        1.0,
+        6.0,
+        3.0,
+        4.0,
+        2.0,
+        2.0,
+        1.0,
+        1.0,
+        1.0,
+        2.0,
+        1.0,
+        2.0,
+        1.0,
+        1.0,
+        2.0,
+        1.0,
+        4.0,
+        1.0,
+        2.0,
+        1.0,
+        2.0,
+        4.0,
+        1.0,
+        1.0,
+        2.0,
+        3.0,
+        3.0,
+        3.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        2.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Units Sold) vary by Date?",
+    "explanation": "Outstanding value: for overall data, one category in Date has a value much larger (or smaller) than the others when measuring MEAN(Units Sold).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Date",
+      "measure": "MEAN(Units Sold)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 1.6666666666666667,
+      "question": "How does MEAN(Units Sold) vary by Date?",
+      "reason": "Statistics-based analysis: MEAN(Units Sold) grouped by Date.",
+      "view_labels": [
+        "2024-01-01",
+        "2024-01-02",
+        "2024-01-03",
+        "2024-01-04",
+        "2024-01-05",
+        "2024-01-06",
+        "2024-01-07",
+        "2024-01-08",
+        "2024-02-01",
+        "2024-02-02",
+        "2024-02-03",
+        "2024-02-04",
+        "2024-02-05",
+        "2024-02-06",
+        "2024-02-07",
+        "2024-02-08",
+        "2024-03-01",
+        "2024-03-02",
+        "2024-03-03",
+        "2024-03-04",
+        "2024-03-05",
+        "2024-03-06",
+        "2024-03-07",
+        "2024-03-08",
+        "2024-04-01",
+        "2024-04-02",
+        "2024-04-03",
+        "2024-04-04",
+        "2024-04-05",
+        "2024-04-06",
+        "2024-04-07",
+        "2024-04-08",
+        "2024-05-01",
+        "2024-05-02",
+        "2024-05-03",
+        "2024-05-04",
+        "2024-05-05",
+        "2024-05-06",
+        "2024-05-07",
+        "2024-05-08",
+        "2024-06-01",
+        "2024-06-02",
+        "2024-06-03",
+        "2024-06-04",
+        "2024-06-05",
+        "2024-06-06",
+        "2024-06-07",
+        "2024-06-08",
+        "2024-07-01",
+        "2024-07-02",
+        "2024-07-03",
+        "2024-07-04",
+        "2024-07-05",
+        "2024-07-06",
+        "2024-07-07",
+        "2024-07-08",
+        "2024-08-01",
+        "2024-08-02",
+        "2024-08-03",
+        "2024-08-04",
+        "2024-08-05",
+        "2024-08-06",
+        "2024-08-07",
+        "2024-08-08",
+        "2024-09-01",
+        "2024-09-02",
+        "2024-09-03",
+        "2024-09-04",
+        "2024-09-05",
+        "2024-09-06",
+        "2024-09-07",
+        "2024-09-08",
+        "2024-10-01",
+        "2024-10-02",
+        "2024-10-03",
+        "2024-10-04",
+        "2024-10-05",
+        "2024-10-06",
+        "2024-10-07",
+        "2024-10-08",
+        "2024-11-01",
+        "2024-11-02",
+        "2024-11-03",
+        "2024-11-04",
+        "2024-11-05",
+        "2024-11-06",
+        "2024-11-07",
+        "2024-11-08",
+        "2024-12-01",
+        "2024-12-02",
+        "2024-12-03",
+        "2024-12-04",
+        "2024-12-05",
+        "2024-12-06",
+        "2024-12-07",
+        "2024-12-08"
+      ],
+      "view_values": [
+        2.0,
+        3.0,
+        3.0,
+        1.0,
+        1.0,
+        3.0,
+        3.0,
+        3.0,
+        1.0,
+        5.0,
+        2.0,
+        4.0,
+        5.0,
+        2.0,
+        2.0,
+        2.0,
+        3.0,
+        4.0,
+        10.0,
+        3.0,
+        3.0,
+        1.0,
+        1.0,
+        1.0,
+        4.0,
+        2.0,
+        4.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        5.0,
+        3.0,
+        2.0,
+        3.0,
+        1.0,
+        1.0,
+        2.0,
+        3.0,
+        1.0,
+        2.0,
+        1.0,
+        1.0,
+        2.0,
+        4.0,
+        4.0,
+        2.0,
+        2.0,
+        4.0,
+        3.0,
+        6.0,
+        3.0,
+        3.0,
+        3.0,
+        1.0,
+        6.0,
+        3.0,
+        4.0,
+        2.0,
+        2.0,
+        1.0,
+        1.0,
+        1.0,
+        2.0,
+        1.0,
+        2.0,
+        1.0,
+        1.0,
+        2.0,
+        1.0,
+        4.0,
+        1.0,
+        2.0,
+        1.0,
+        2.0,
+        4.0,
+        1.0,
+        1.0,
+        2.0,
+        3.0,
+        3.0,
+        3.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        2.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Total Revenue) vary by Payment Method?",
+    "explanation": "Outstanding value: for Units Sold=2, one category in Payment Method has a value much larger (or smaller) than the others when measuring MEAN(Total Revenue).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Payment Method",
+      "measure": "MEAN(Total Revenue)",
+      "subspace": [
+        [
+          "Units Sold",
+          2
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.6046335863370813,
+      "question": "How does MEAN(Total Revenue) vary by Payment Method?",
+      "reason": "Statistics-based analysis: MEAN(Total Revenue) grouped by Payment Method.",
+      "view_labels": [
+        "Credit Card",
+        "Debit Card",
+        "PayPal"
+      ],
+      "view_values": [
+        319.0617142857143,
+        270.235,
+        511.9771428571429
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Unit Price) vary by Date?",
+    "explanation": "Outstanding value: for overall data, one category in Date has a value much larger (or smaller) than the others when measuring MEAN(Unit Price).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Date",
+      "measure": "MEAN(Unit Price)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 1.5600022400089602,
+      "question": "How does MEAN(Unit Price) vary by Date?",
+      "reason": "Statistics-based analysis: MEAN(Unit Price) grouped by Date.",
+      "view_labels": [
+        "2024-01-01",
+        "2024-01-02",
+        "2024-01-03",
+        "2024-01-04",
+        "2024-01-05",
+        "2024-01-06",
+        "2024-01-07",
+        "2024-01-08",
+        "2024-02-01",
+        "2024-02-02",
+        "2024-02-03",
+        "2024-02-04",
+        "2024-02-05",
+        "2024-02-06",
+        "2024-02-07",
+        "2024-02-08",
+        "2024-03-01",
+        "2024-03-02",
+        "2024-03-03",
+        "2024-03-04",
+        "2024-03-05",
+        "2024-03-06",
+        "2024-03-07",
+        "2024-03-08",
+        "2024-04-01",
+        "2024-04-02",
+        "2024-04-03",
+        "2024-04-04",
+        "2024-04-05",
+        "2024-04-06",
+        "2024-04-07",
+        "2024-04-08",
+        "2024-05-01",
+        "2024-05-02",
+        "2024-05-03",
+        "2024-05-04",
+        "2024-05-05",
+        "2024-05-06",
+        "2024-05-07",
+        "2024-05-08",
+        "2024-06-01",
+        "2024-06-02",
+        "2024-06-03",
+        "2024-06-04",
+        "2024-06-05",
+        "2024-06-06",
+        "2024-06-07",
+        "2024-06-08",
+        "2024-07-01",
+        "2024-07-02",
+        "2024-07-03",
+        "2024-07-04",
+        "2024-07-05",
+        "2024-07-06",
+        "2024-07-07",
+        "2024-07-08",
+        "2024-08-01",
+        "2024-08-02",
+        "2024-08-03",
+        "2024-08-04",
+        "2024-08-05",
+        "2024-08-06",
+        "2024-08-07",
+        "2024-08-08",
+        "2024-09-01",
+        "2024-09-02",
+        "2024-09-03",
+        "2024-09-04",
+        "2024-09-05",
+        "2024-09-06",
+        "2024-09-07",
+        "2024-09-08",
+        "2024-10-01",
+        "2024-10-02",
+        "2024-10-03",
+        "2024-10-04",
+        "2024-10-05",
+        "2024-10-06",
+        "2024-10-07",
+        "2024-10-08",
+        "2024-11-01",
+        "2024-11-02",
+        "2024-11-03",
+        "2024-11-04",
+        "2024-11-05",
+        "2024-11-06",
+        "2024-11-07",
+        "2024-11-08",
+        "2024-12-01",
+        "2024-12-02",
+        "2024-12-03",
+        "2024-12-04",
+        "2024-12-05",
+        "2024-12-06",
+        "2024-12-07",
+        "2024-12-08"
+      ],
+      "view_values": [
+        999.99,
+        89.99,
+        299.99,
+        179.99,
+        89.99,
+        54.99,
+        59.99,
+        10.99,
+        499.99,
+        29.99,
+        199.99,
+        79.99,
+        12.99,
+        16.99,
+        12.99,
+        29.0,
+        69.99,
+        19.99,
+        9.99,
+        14.99,
+        14.99,
+        59.0,
+        190.0,
+        349.99,
+        15.99,
+        39.99,
+        18.99,
+        68.0,
+        30.0,
+        299.99,
+        499.95,
+        2399.0,
+        89.99,
+        1895.0,
+        102.0,
+        999.99,
+        199.99,
+        899.99,
+        399.0,
+        449.99,
+        29.99,
+        399.99,
+        299.99,
+        299.99,
+        499.99,
+        499.95,
+        199.0,
+        49.99,
+        2499.99,
+        799.99,
+        1199.99,
+        349.99,
+        399.99,
+        24.99,
+        34.99,
+        12.99,
+        599.99,
+        59.99,
+        219.99,
+        19.99,
+        98.0,
+        7.99,
+        10.99,
+        27.0,
+        89.99,
+        24.99,
+        59.99,
+        12.99,
+        8.99,
+        36.0,
+        18.0,
+        599.99,
+        25.99,
+        105.0,
+        10.99,
+        82.0,
+        36.0,
+        34.99,
+        169.95,
+        49.99,
+        129.99,
+        129.99,
+        78.0,
+        109.99,
+        39.95,
+        1199.99,
+        199.99,
+        229.99,
+        199.99,
+        399.99,
+        129.99,
+        3899.99,
+        1299.99,
+        199.99,
+        199.95,
+        44.99
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Units Sold) vary by Date?",
+    "explanation": "There is a notable trend in SUM(Units Sold) across Date. For the segment Product Category=Sports, the values show a monotonic trend.",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Date",
+      "measure": "SUM(Units Sold)",
+      "subspace": [
+        [
+          "Product Category",
+          "Sports"
+        ]
+      ],
+      "pattern": "Trend",
+      "score": 0.9938178040747139,
+      "question": "How does SUM(Units Sold) vary by Date?",
+      "reason": "Statistics-based analysis: SUM(Units Sold) grouped by Date.",
+      "view_labels": [
+        "2024-03-08",
+        "2024-04-06",
+        "2024-04-07",
+        "2024-05-02",
+        "2024-05-04",
+        "2024-05-05",
+        "2024-06-01",
+        "2024-06-03",
+        "2024-09-08",
+        "2024-10-06",
+        "2024-10-07",
+        "2024-11-02",
+        "2024-11-04",
+        "2024-11-05",
+        "2024-12-01",
+        "2024-12-03"
+      ],
+      "view_values": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        5.0,
+        2.0,
+        1.0,
+        2.0,
+        1.0,
+        2.0,
+        2.0,
+        4.0,
+        3.0,
+        3.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Unit Price) vary by Date?",
+    "explanation": "There is a notable trend in SUM(Unit Price) across Date. For the segment Product Category=Sports, the values show a monotonic trend.",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Date",
+      "measure": "SUM(Unit Price)",
+      "subspace": [
+        [
+          "Product Category",
+          "Sports"
+        ]
+      ],
+      "pattern": "Trend",
+      "score": 0.9622318126915714,
+      "question": "How does SUM(Unit Price) vary by Date?",
+      "reason": "Statistics-based analysis: SUM(Unit Price) grouped by Date.",
+      "view_labels": [
+        "2024-03-08",
+        "2024-04-06",
+        "2024-04-07",
+        "2024-05-02",
+        "2024-05-04",
+        "2024-05-05",
+        "2024-06-01",
+        "2024-06-03",
+        "2024-09-08",
+        "2024-10-06",
+        "2024-10-07",
+        "2024-11-02",
+        "2024-11-04",
+        "2024-11-05",
+        "2024-12-01",
+        "2024-12-03"
+      ],
+      "view_values": [
+        349.99,
+        299.99,
+        499.95,
+        1895.0,
+        999.99,
+        199.99,
+        29.99,
+        299.99,
+        599.99,
+        34.99,
+        169.95,
+        129.99,
+        109.99,
+        39.95,
+        199.99,
+        129.99
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Total Revenue) vary by Product Category?",
+    "explanation": "Attribution: for Region=North America, a single category in Product Category accounts for a large share of total SUM(Total Revenue).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Product Category",
+      "measure": "SUM(Total Revenue)",
+      "subspace": [
+        [
+          "Region",
+          "North America"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.9494649653108185,
+      "question": "How does SUM(Total Revenue) vary by Product Category?",
+      "reason": "Statistics-based analysis: SUM(Total Revenue) grouped by Product Category.",
+      "view_labels": [
+        "Books",
+        "Electronics"
+      ],
+      "view_values": [
+        1861.9299999999998,
+        34982.41
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Total Revenue) vary by Product Category?",
+    "explanation": "Attribution: for Region=North America, a single category in Product Category accounts for a large share of total MEAN(Total Revenue).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Product Category",
+      "measure": "MEAN(Total Revenue)",
+      "subspace": [
+        [
+          "Region",
+          "North America"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.9494649653108185,
+      "question": "How does MEAN(Total Revenue) vary by Product Category?",
+      "reason": "Statistics-based analysis: MEAN(Total Revenue) grouped by Product Category.",
+      "view_labels": [
+        "Books",
+        "Electronics"
+      ],
+      "view_values": [
+        46.548249999999996,
+        874.5602500000001
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Unit Price) vary by Product Category?",
+    "explanation": "Attribution: for Region=Europe, a single category in Product Category accounts for a large share of total SUM(Unit Price).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Product Category",
+      "measure": "SUM(Unit Price)",
+      "subspace": [
+        [
+          "Region",
+          "Europe"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.8386023359878054,
+      "question": "How does SUM(Unit Price) vary by Product Category?",
+      "reason": "Statistics-based analysis: SUM(Unit Price) grouped by Product Category.",
+      "view_labels": [
+        "Beauty Products",
+        "Home Appliances"
+      ],
+      "view_values": [
+        2464.92,
+        12807.42
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Unit Price) vary by Product Category?",
+    "explanation": "Attribution: for Region=Europe, a single category in Product Category accounts for a large share of total MEAN(Unit Price).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Product Category",
+      "measure": "MEAN(Unit Price)",
+      "subspace": [
+        [
+          "Region",
+          "Europe"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.8386023359878054,
+      "question": "How does MEAN(Unit Price) vary by Product Category?",
+      "reason": "Statistics-based analysis: MEAN(Unit Price) grouped by Product Category.",
+      "view_labels": [
+        "Beauty Products",
+        "Home Appliances"
+      ],
+      "view_values": [
+        61.623000000000005,
+        320.1855
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Unit Price) vary by Date?",
+    "explanation": "Distribution difference: the distribution of Date changes notably when filtering by Unit Price=19.99 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Date",
+      "measure": "MEAN(Unit Price)",
+      "subspace": [
+        [
+          "Unit Price",
+          19.99
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.8295263206525604,
+      "question": "How does MEAN(Unit Price) vary by Date?",
+      "reason": "Statistics-based analysis: MEAN(Unit Price) grouped by Date.",
+      "view_labels": [
+        "2024-03-02",
+        "2024-08-04"
+      ],
+      "view_values": [
+        19.99,
+        19.99
+      ],
+      "view_labels_baseline": [
+        "2024-01-01",
+        "2024-01-02",
+        "2024-01-03",
+        "2024-01-04",
+        "2024-01-05",
+        "2024-01-06",
+        "2024-01-07",
+        "2024-01-08",
+        "2024-02-01",
+        "2024-02-02",
+        "2024-02-03",
+        "2024-02-04",
+        "2024-02-05",
+        "2024-02-06",
+        "2024-02-07",
+        "2024-02-08",
+        "2024-03-01",
+        "2024-03-02",
+        "2024-03-03",
+        "2024-03-04",
+        "2024-03-05",
+        "2024-03-06",
+        "2024-03-07",
+        "2024-03-08",
+        "2024-04-01",
+        "2024-04-02",
+        "2024-04-03",
+        "2024-04-04",
+        "2024-04-05",
+        "2024-04-06",
+        "2024-04-07",
+        "2024-04-08",
+        "2024-05-01",
+        "2024-05-02",
+        "2024-05-03",
+        "2024-05-04",
+        "2024-05-05",
+        "2024-05-06",
+        "2024-05-07",
+        "2024-05-08",
+        "2024-06-01",
+        "2024-06-02",
+        "2024-06-03",
+        "2024-06-04",
+        "2024-06-05",
+        "2024-06-06",
+        "2024-06-07",
+        "2024-06-08",
+        "2024-07-01",
+        "2024-07-02",
+        "2024-07-03",
+        "2024-07-04",
+        "2024-07-05",
+        "2024-07-06",
+        "2024-07-07",
+        "2024-07-08",
+        "2024-08-01",
+        "2024-08-02",
+        "2024-08-03",
+        "2024-08-04",
+        "2024-08-05",
+        "2024-08-06",
+        "2024-08-07",
+        "2024-08-08",
+        "2024-09-01",
+        "2024-09-02",
+        "2024-09-03",
+        "2024-09-04",
+        "2024-09-05",
+        "2024-09-06",
+        "2024-09-07",
+        "2024-09-08",
+        "2024-10-01",
+        "2024-10-02",
+        "2024-10-03",
+        "2024-10-04",
+        "2024-10-05",
+        "2024-10-06",
+        "2024-10-07",
+        "2024-10-08",
+        "2024-11-01",
+        "2024-11-02",
+        "2024-11-03",
+        "2024-11-04",
+        "2024-11-05",
+        "2024-11-06",
+        "2024-11-07",
+        "2024-11-08",
+        "2024-12-01",
+        "2024-12-02",
+        "2024-12-03",
+        "2024-12-04",
+        "2024-12-05",
+        "2024-12-06",
+        "2024-12-07",
+        "2024-12-08"
+      ],
+      "view_values_baseline": [
+        999.99,
+        89.99,
+        299.99,
+        179.99,
+        89.99,
+        54.99,
+        59.99,
+        10.99,
+        499.99,
+        29.99,
+        199.99,
+        79.99,
+        12.99,
+        16.99,
+        12.99,
+        29.0,
+        69.99,
+        19.99,
+        9.99,
+        14.99,
+        14.99,
+        59.0,
+        190.0,
+        349.99,
+        15.99,
+        39.99,
+        18.99,
+        68.0,
+        30.0,
+        299.99,
+        499.95,
+        2399.0,
+        89.99,
+        1895.0,
+        102.0,
+        999.99,
+        199.99,
+        899.99,
+        399.0,
+        449.99,
+        29.99,
+        399.99,
+        299.99,
+        299.99,
+        499.99,
+        499.95,
+        199.0,
+        49.99,
+        2499.99,
+        799.99,
+        1199.99,
+        349.99,
+        399.99,
+        24.99,
+        34.99,
+        12.99,
+        599.99,
+        59.99,
+        219.99,
+        19.99,
+        98.0,
+        7.99,
+        10.99,
+        27.0,
+        89.99,
+        24.99,
+        59.99,
+        12.99,
+        8.99,
+        36.0,
+        18.0,
+        599.99,
+        25.99,
+        105.0,
+        10.99,
+        82.0,
+        36.0,
+        34.99,
+        169.95,
+        49.99,
+        129.99,
+        129.99,
+        78.0,
+        109.99,
+        39.95,
+        1199.99,
+        199.99,
+        229.99,
+        199.99,
+        399.99,
+        129.99,
+        3899.99,
+        1299.99,
+        199.99,
+        199.95,
+        44.99
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Total Revenue) vary by Date?",
+    "explanation": "Attribution: for Units Sold=6, a single category in Date accounts for a large share of total MEAN(Total Revenue).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Date",
+      "measure": "MEAN(Total Revenue)",
+      "subspace": [
+        [
+          "Units Sold",
+          6
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.8182396799418076,
+      "question": "How does MEAN(Total Revenue) vary by Date?",
+      "reason": "Statistics-based analysis: MEAN(Total Revenue) grouped by Date.",
+      "view_labels": [
+        "2024-08-04",
+        "2024-09-01"
+      ],
+      "view_values": [
+        119.94,
+        539.94
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Unit Price) vary by Payment Method?",
+    "explanation": "Attribution: for Units Sold=1, a single category in Payment Method accounts for a large share of total MEAN(Unit Price).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Payment Method",
+      "measure": "MEAN(Unit Price)",
+      "subspace": [
+        [
+          "Units Sold",
+          1
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.8175909077289288,
+      "question": "How does MEAN(Unit Price) vary by Payment Method?",
+      "reason": "Statistics-based analysis: MEAN(Unit Price) grouped by Payment Method.",
+      "view_labels": [
+        "Credit Card",
+        "PayPal"
+      ],
+      "view_values": [
+        753.84025,
+        168.1859649122807
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Total Revenue) vary by Payment Method?",
+    "explanation": "Attribution: for Units Sold=1, a single category in Payment Method accounts for a large share of total MEAN(Total Revenue).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Payment Method",
+      "measure": "MEAN(Total Revenue)",
+      "subspace": [
+        [
+          "Units Sold",
+          1
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.8175909077289288,
+      "question": "How does MEAN(Total Revenue) vary by Payment Method?",
+      "reason": "Statistics-based analysis: MEAN(Total Revenue) grouped by Payment Method.",
+      "view_labels": [
+        "Credit Card",
+        "PayPal"
+      ],
+      "view_values": [
+        753.84025,
+        168.1859649122807
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Unit Price) vary by Payment Method?",
+    "explanation": "Attribution: for Region=Asia, a single category in Payment Method accounts for a large share of total SUM(Unit Price).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Payment Method",
+      "measure": "SUM(Unit Price)",
+      "subspace": [
+        [
+          "Region",
+          "Asia"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.7946098251173513,
+      "question": "How does SUM(Unit Price) vary by Payment Method?",
+      "reason": "Statistics-based analysis: SUM(Unit Price) grouped by Payment Method.",
+      "view_labels": [
+        "Credit Card",
+        "Debit Card"
+      ],
+      "view_values": [
+        10451.36,
+        2701.46
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Units Sold) vary by Date?",
+    "explanation": "Distribution difference: the distribution of Date changes notably when filtering by Total Revenue=32.97 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Date",
+      "measure": "MEAN(Units Sold)",
+      "subspace": [
+        [
+          "Total Revenue",
+          32.97
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.7932818262069754,
+      "question": "How does MEAN(Units Sold) vary by Date?",
+      "reason": "Statistics-based analysis: MEAN(Units Sold) grouped by Date.",
+      "view_labels": [
+        "2024-01-08",
+        "2024-08-07"
+      ],
+      "view_values": [
+        3.0,
+        3.0
+      ],
+      "view_labels_baseline": [
+        "2024-01-01",
+        "2024-01-02",
+        "2024-01-03",
+        "2024-01-04",
+        "2024-01-05",
+        "2024-01-06",
+        "2024-01-07",
+        "2024-01-08",
+        "2024-02-01",
+        "2024-02-02",
+        "2024-02-03",
+        "2024-02-04",
+        "2024-02-05",
+        "2024-02-06",
+        "2024-02-07",
+        "2024-02-08",
+        "2024-03-01",
+        "2024-03-02",
+        "2024-03-03",
+        "2024-03-04",
+        "2024-03-05",
+        "2024-03-06",
+        "2024-03-07",
+        "2024-03-08",
+        "2024-04-01",
+        "2024-04-02",
+        "2024-04-03",
+        "2024-04-04",
+        "2024-04-05",
+        "2024-04-06",
+        "2024-04-07",
+        "2024-04-08",
+        "2024-05-01",
+        "2024-05-02",
+        "2024-05-03",
+        "2024-05-04",
+        "2024-05-05",
+        "2024-05-06",
+        "2024-05-07",
+        "2024-05-08",
+        "2024-06-01",
+        "2024-06-02",
+        "2024-06-03",
+        "2024-06-04",
+        "2024-06-05",
+        "2024-06-06",
+        "2024-06-07",
+        "2024-06-08",
+        "2024-07-01",
+        "2024-07-02",
+        "2024-07-03",
+        "2024-07-04",
+        "2024-07-05",
+        "2024-07-06",
+        "2024-07-07",
+        "2024-07-08",
+        "2024-08-01",
+        "2024-08-02",
+        "2024-08-03",
+        "2024-08-04",
+        "2024-08-05",
+        "2024-08-06",
+        "2024-08-07",
+        "2024-08-08",
+        "2024-09-01",
+        "2024-09-02",
+        "2024-09-03",
+        "2024-09-04",
+        "2024-09-05",
+        "2024-09-06",
+        "2024-09-07",
+        "2024-09-08",
+        "2024-10-01",
+        "2024-10-02",
+        "2024-10-03",
+        "2024-10-04",
+        "2024-10-05",
+        "2024-10-06",
+        "2024-10-07",
+        "2024-10-08",
+        "2024-11-01",
+        "2024-11-02",
+        "2024-11-03",
+        "2024-11-04",
+        "2024-11-05",
+        "2024-11-06",
+        "2024-11-07",
+        "2024-11-08",
+        "2024-12-01",
+        "2024-12-02",
+        "2024-12-03",
+        "2024-12-04",
+        "2024-12-05",
+        "2024-12-06",
+        "2024-12-07",
+        "2024-12-08"
+      ],
+      "view_values_baseline": [
+        2.0,
+        3.0,
+        3.0,
+        1.0,
+        1.0,
+        3.0,
+        3.0,
+        3.0,
+        1.0,
+        5.0,
+        2.0,
+        4.0,
+        5.0,
+        2.0,
+        2.0,
+        2.0,
+        3.0,
+        4.0,
+        10.0,
+        3.0,
+        3.0,
+        1.0,
+        1.0,
+        1.0,
+        4.0,
+        2.0,
+        4.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        5.0,
+        3.0,
+        2.0,
+        3.0,
+        1.0,
+        1.0,
+        2.0,
+        3.0,
+        1.0,
+        2.0,
+        1.0,
+        1.0,
+        2.0,
+        4.0,
+        4.0,
+        2.0,
+        2.0,
+        4.0,
+        3.0,
+        6.0,
+        3.0,
+        3.0,
+        3.0,
+        1.0,
+        6.0,
+        3.0,
+        4.0,
+        2.0,
+        2.0,
+        1.0,
+        1.0,
+        1.0,
+        2.0,
+        1.0,
+        2.0,
+        1.0,
+        1.0,
+        2.0,
+        1.0,
+        4.0,
+        1.0,
+        2.0,
+        1.0,
+        2.0,
+        4.0,
+        1.0,
+        1.0,
+        2.0,
+        3.0,
+        3.0,
+        3.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        2.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Total Revenue) vary by Date?",
+    "explanation": "Distribution difference: the distribution of Date changes notably when filtering by Product Category=Beauty Products (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Date",
+      "measure": "SUM(Total Revenue)",
+      "subspace": [
+        [
+          "Product Category",
+          "Beauty Products"
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.7923638549368576,
+      "question": "How does SUM(Total Revenue) vary by Date?",
+      "reason": "Statistics-based analysis: SUM(Total Revenue) grouped by Date.",
+      "view_labels": [
+        "2024-02-08",
+        "2024-03-06",
+        "2024-03-07",
+        "2024-04-02",
+        "2024-04-04",
+        "2024-04-05",
+        "2024-05-01",
+        "2024-05-03",
+        "2024-08-08",
+        "2024-09-06",
+        "2024-09-07",
+        "2024-10-02",
+        "2024-10-04",
+        "2024-10-05",
+        "2024-11-01",
+        "2024-11-03"
+      ],
+      "view_values": [
+        58.0,
+        59.0,
+        190.0,
+        79.98,
+        68.0,
+        30.0,
+        89.99,
+        102.0,
+        27.0,
+        36.0,
+        18.0,
+        105.0,
+        82.0,
+        36.0,
+        129.99,
+        78.0
+      ],
+      "view_labels_baseline": [
+        "2024-01-01",
+        "2024-01-02",
+        "2024-01-03",
+        "2024-01-04",
+        "2024-01-05",
+        "2024-01-06",
+        "2024-01-07",
+        "2024-01-08",
+        "2024-02-01",
+        "2024-02-02",
+        "2024-02-03",
+        "2024-02-04",
+        "2024-02-05",
+        "2024-02-06",
+        "2024-02-07",
+        "2024-02-08",
+        "2024-03-01",
+        "2024-03-02",
+        "2024-03-03",
+        "2024-03-04",
+        "2024-03-05",
+        "2024-03-06",
+        "2024-03-07",
+        "2024-03-08",
+        "2024-04-01",
+        "2024-04-02",
+        "2024-04-03",
+        "2024-04-04",
+        "2024-04-05",
+        "2024-04-06",
+        "2024-04-07",
+        "2024-04-08",
+        "2024-05-01",
+        "2024-05-02",
+        "2024-05-03",
+        "2024-05-04",
+        "2024-05-05",
+        "2024-05-06",
+        "2024-05-07",
+        "2024-05-08",
+        "2024-06-01",
+        "2024-06-02",
+        "2024-06-03",
+        "2024-06-04",
+        "2024-06-05",
+        "2024-06-06",
+        "2024-06-07",
+        "2024-06-08",
+        "2024-07-01",
+        "2024-07-02",
+        "2024-07-03",
+        "2024-07-04",
+        "2024-07-05",
+        "2024-07-06",
+        "2024-07-07",
+        "2024-07-08",
+        "2024-08-01",
+        "2024-08-02",
+        "2024-08-03",
+        "2024-08-04",
+        "2024-08-05",
+        "2024-08-06",
+        "2024-08-07",
+        "2024-08-08",
+        "2024-09-01",
+        "2024-09-02",
+        "2024-09-03",
+        "2024-09-04",
+        "2024-09-05",
+        "2024-09-06",
+        "2024-09-07",
+        "2024-09-08",
+        "2024-10-01",
+        "2024-10-02",
+        "2024-10-03",
+        "2024-10-04",
+        "2024-10-05",
+        "2024-10-06",
+        "2024-10-07",
+        "2024-10-08",
+        "2024-11-01",
+        "2024-11-02",
+        "2024-11-03",
+        "2024-11-04",
+        "2024-11-05",
+        "2024-11-06",
+        "2024-11-07",
+        "2024-11-08",
+        "2024-12-01",
+        "2024-12-02",
+        "2024-12-03",
+        "2024-12-04",
+        "2024-12-05",
+        "2024-12-06",
+        "2024-12-07",
+        "2024-12-08"
+      ],
+      "view_values_baseline": [
+        1999.98,
+        269.97,
+        899.97,
+        179.99,
+        89.99,
+        164.97,
+        179.97,
+        32.97,
+        499.99,
+        149.95,
+        399.98,
+        319.96,
+        64.95,
+        33.98,
+        25.98,
+        58.0,
+        209.97,
+        79.96,
+        99.9,
+        44.97,
+        44.97,
+        59.0,
+        190.0,
+        349.99,
+        63.96,
+        79.98,
+        75.96,
+        68.0,
+        30.0,
+        299.99,
+        499.95,
+        2399.0,
+        89.99,
+        1895.0,
+        102.0,
+        999.99,
+        199.99,
+        899.99,
+        399.0,
+        449.99,
+        149.95,
+        1199.97,
+        599.98,
+        899.97,
+        499.99,
+        499.95,
+        398.0,
+        149.97,
+        2499.99,
+        1599.98,
+        1199.99,
+        349.99,
+        799.98,
+        99.96,
+        139.96,
+        25.98,
+        1199.98,
+        239.96,
+        659.97,
+        119.94,
+        294.0,
+        23.97,
+        32.97,
+        27.0,
+        539.94,
+        74.97,
+        239.96,
+        25.98,
+        17.98,
+        36.0,
+        18.0,
+        599.99,
+        51.98,
+        105.0,
+        21.98,
+        82.0,
+        36.0,
+        69.98,
+        169.95,
+        199.96,
+        129.99,
+        259.98,
+        78.0,
+        219.98,
+        159.8,
+        1199.99,
+        199.99,
+        459.98,
+        599.97,
+        1199.97,
+        389.97,
+        3899.99,
+        1299.99,
+        199.99,
+        199.95,
+        89.98
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Total Revenue) vary by Payment Method?",
+    "explanation": "Attribution: for Units Sold=1, a single category in Payment Method accounts for a large share of total SUM(Total Revenue).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Payment Method",
+      "measure": "SUM(Total Revenue)",
+      "subspace": [
+        [
+          "Units Sold",
+          1
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.758768260157659,
+      "question": "How does SUM(Total Revenue) vary by Payment Method?",
+      "reason": "Statistics-based analysis: SUM(Total Revenue) grouped by Payment Method.",
+      "view_labels": [
+        "Credit Card",
+        "PayPal"
+      ],
+      "view_values": [
+        30153.61,
+        9586.6
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Units Sold) vary by Payment Method?",
+    "explanation": "Attribution: for Total Revenue=499.99, a single category in Payment Method accounts for a large share of total SUM(Units Sold).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Payment Method",
+      "measure": "SUM(Units Sold)",
+      "subspace": [
+        [
+          "Total Revenue",
+          499.99
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.75,
+      "question": "How does SUM(Units Sold) vary by Payment Method?",
+      "reason": "Statistics-based analysis: SUM(Units Sold) grouped by Payment Method.",
+      "view_labels": [
+        "Credit Card",
+        "PayPal"
+      ],
+      "view_values": [
+        1.0,
+        3.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Unit Price) vary by Region?",
+    "explanation": "Attribution: for Payment Method=Credit Card, a single category in Region accounts for a large share of total SUM(Unit Price).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Region",
+      "measure": "SUM(Unit Price)",
+      "subspace": [
+        [
+          "Payment Method",
+          "Credit Card"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.7303649995846355,
+      "question": "How does SUM(Unit Price) vary by Region?",
+      "reason": "Statistics-based analysis: SUM(Unit Price) grouped by Region.",
+      "view_labels": [
+        "Asia",
+        "North America"
+      ],
+      "view_values": [
+        10451.36,
+        28309.78
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Total Revenue) vary by Region?",
+    "explanation": "Attribution: for Payment Method=Credit Card, a single category in Region accounts for a large share of total SUM(Total Revenue).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Region",
+      "measure": "SUM(Total Revenue)",
+      "subspace": [
+        [
+          "Payment Method",
+          "Credit Card"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.7200258115654103,
+      "question": "How does SUM(Total Revenue) vary by Region?",
+      "reason": "Statistics-based analysis: SUM(Total Revenue) grouped by Region.",
+      "view_labels": [
+        "Asia",
+        "North America"
+      ],
+      "view_values": [
+        14326.52,
+        36844.34
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Units Sold) vary by Product Category?",
+    "explanation": "Attribution: for Units Sold=5, a single category in Product Category accounts for a large share of total SUM(Units Sold).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Product Category",
+      "measure": "SUM(Units Sold)",
+      "subspace": [
+        [
+          "Units Sold",
+          5
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.7142857142857143,
+      "question": "How does SUM(Units Sold) vary by Product Category?",
+      "reason": "Statistics-based analysis: SUM(Units Sold) grouped by Product Category.",
+      "view_labels": [
+        "Clothing",
+        "Sports"
+      ],
+      "view_values": [
+        25.0,
+        10.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Units Sold) vary by Region?",
+    "explanation": "Attribution: for Payment Method=Credit Card, a single category in Region accounts for a large share of total SUM(Units Sold).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Region",
+      "measure": "SUM(Units Sold)",
+      "subspace": [
+        [
+          "Payment Method",
+          "Credit Card"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.6716417910447762,
+      "question": "How does SUM(Units Sold) vary by Region?",
+      "reason": "Statistics-based analysis: SUM(Units Sold) grouped by Region.",
+      "view_labels": [
+        "Asia",
+        "North America"
+      ],
+      "view_values": [
+        88.0,
+        180.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Unit Price) vary by Region?",
+    "explanation": "Attribution: for Units Sold=4, a single category in Region accounts for a large share of total MEAN(Unit Price).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Region",
+      "measure": "MEAN(Unit Price)",
+      "subspace": [
+        [
+          "Units Sold",
+          4
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.6607513528945826,
+      "question": "How does MEAN(Unit Price) vary by Region?",
+      "reason": "Statistics-based analysis: MEAN(Unit Price) grouped by Region.",
+      "view_labels": [
+        "Asia",
+        "North America"
+      ],
+      "view_values": [
+        46.63833333333333,
+        23.94545454545454
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Units Sold) vary by Product Category?",
+    "explanation": "Attribution: for Region=Asia, a single category in Product Category accounts for a large share of total MEAN(Units Sold).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Product Category",
+      "measure": "MEAN(Units Sold)",
+      "subspace": [
+        [
+          "Region",
+          "Asia"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.6223175965665236,
+      "question": "How does MEAN(Units Sold) vary by Product Category?",
+      "reason": "Statistics-based analysis: MEAN(Units Sold) grouped by Product Category.",
+      "view_labels": [
+        "Clothing",
+        "Sports"
+      ],
+      "view_values": [
+        3.625,
+        2.2
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Units Sold) vary by Payment Method?",
+    "explanation": "Attribution: for Unit Price=399.99, a single category in Payment Method accounts for a large share of total MEAN(Units Sold).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Payment Method",
+      "measure": "MEAN(Units Sold)",
+      "subspace": [
+        [
+          "Unit Price",
+          399.99
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.6000000000000001,
+      "question": "How does MEAN(Units Sold) vary by Payment Method?",
+      "reason": "Statistics-based analysis: MEAN(Units Sold) grouped by Payment Method.",
+      "view_labels": [
+        "Credit Card",
+        "PayPal"
+      ],
+      "view_values": [
+        2.0,
+        1.3333333333333333
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Total Revenue) vary by Region?",
+    "explanation": "Attribution: for Payment Method=Credit Card, a single category in Region accounts for a large share of total MEAN(Total Revenue).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Region",
+      "measure": "MEAN(Total Revenue)",
+      "subspace": [
+        [
+          "Payment Method",
+          "Credit Card"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5625315088939435,
+      "question": "How does MEAN(Total Revenue) vary by Region?",
+      "reason": "Statistics-based analysis: MEAN(Total Revenue) grouped by Region.",
+      "view_labels": [
+        "Asia",
+        "North America"
+      ],
+      "view_values": [
+        358.163,
+        460.55424999999997
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Units Sold) vary by Region?",
+    "explanation": "Attribution: for Payment Method=Credit Card, a single category in Region accounts for a large share of total MEAN(Units Sold).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Region",
+      "measure": "MEAN(Units Sold)",
+      "subspace": [
+        [
+          "Payment Method",
+          "Credit Card"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5056179775280899,
+      "question": "How does MEAN(Units Sold) vary by Region?",
+      "reason": "Statistics-based analysis: MEAN(Units Sold) grouped by Region.",
+      "view_labels": [
+        "Asia",
+        "North America"
+      ],
+      "view_values": [
+        2.2,
+        2.25
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Units Sold) vary by Region?",
+    "explanation": "Distribution difference: the distribution of Region changes notably when filtering by Unit Price=99.99 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Region",
+      "measure": "MEAN(Units Sold)",
+      "subspace": [
+        [
+          "Unit Price",
+          99.99
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.4351642868475263,
+      "question": "How does MEAN(Units Sold) vary by Region?",
+      "reason": "Statistics-based analysis: MEAN(Units Sold) grouped by Region.",
+      "view_labels": [
+        "Europe",
+        "North America"
+      ],
+      "view_values": [
+        1.0,
+        1.5
+      ],
+      "view_labels_baseline": [
+        "Asia",
+        "Europe",
+        "North America"
+      ],
+      "view_values_baseline": [
+        2.9125,
+        1.3125,
+        2.25
+      ]
+    }
+  }
+]

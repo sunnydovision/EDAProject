@@ -1,0 +1,146 @@
+[
+  {
+    "question": "How does SUM(Units Sold) vary by Date?",
+    "reason": "Statistics-based analysis: SUM(Units Sold) grouped by Date.",
+    "breakdown": "Date",
+    "measure": "SUM(Units Sold)"
+  },
+  {
+    "question": "How does MEAN(Units Sold) vary by Date?",
+    "reason": "Statistics-based analysis: MEAN(Units Sold) grouped by Date.",
+    "breakdown": "Date",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "How does SUM(Unit Price) vary by Date?",
+    "reason": "Statistics-based analysis: SUM(Unit Price) grouped by Date.",
+    "breakdown": "Date",
+    "measure": "SUM(Unit Price)"
+  },
+  {
+    "question": "How does MEAN(Unit Price) vary by Date?",
+    "reason": "Statistics-based analysis: MEAN(Unit Price) grouped by Date.",
+    "breakdown": "Date",
+    "measure": "MEAN(Unit Price)"
+  },
+  {
+    "question": "How does SUM(Total Revenue) vary by Date?",
+    "reason": "Statistics-based analysis: SUM(Total Revenue) grouped by Date.",
+    "breakdown": "Date",
+    "measure": "SUM(Total Revenue)"
+  },
+  {
+    "question": "How does MEAN(Total Revenue) vary by Date?",
+    "reason": "Statistics-based analysis: MEAN(Total Revenue) grouped by Date.",
+    "breakdown": "Date",
+    "measure": "MEAN(Total Revenue)"
+  },
+  {
+    "question": "How does SUM(Units Sold) vary by Product Category?",
+    "reason": "Statistics-based analysis: SUM(Units Sold) grouped by Product Category.",
+    "breakdown": "Product Category",
+    "measure": "SUM(Units Sold)"
+  },
+  {
+    "question": "How does MEAN(Units Sold) vary by Product Category?",
+    "reason": "Statistics-based analysis: MEAN(Units Sold) grouped by Product Category.",
+    "breakdown": "Product Category",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "How does SUM(Unit Price) vary by Product Category?",
+    "reason": "Statistics-based analysis: SUM(Unit Price) grouped by Product Category.",
+    "breakdown": "Product Category",
+    "measure": "SUM(Unit Price)"
+  },
+  {
+    "question": "How does MEAN(Unit Price) vary by Product Category?",
+    "reason": "Statistics-based analysis: MEAN(Unit Price) grouped by Product Category.",
+    "breakdown": "Product Category",
+    "measure": "MEAN(Unit Price)"
+  },
+  {
+    "question": "How does SUM(Total Revenue) vary by Product Category?",
+    "reason": "Statistics-based analysis: SUM(Total Revenue) grouped by Product Category.",
+    "breakdown": "Product Category",
+    "measure": "SUM(Total Revenue)"
+  },
+  {
+    "question": "How does MEAN(Total Revenue) vary by Product Category?",
+    "reason": "Statistics-based analysis: MEAN(Total Revenue) grouped by Product Category.",
+    "breakdown": "Product Category",
+    "measure": "MEAN(Total Revenue)"
+  },
+  {
+    "question": "How does SUM(Units Sold) vary by Region?",
+    "reason": "Statistics-based analysis: SUM(Units Sold) grouped by Region.",
+    "breakdown": "Region",
+    "measure": "SUM(Units Sold)"
+  },
+  {
+    "question": "How does MEAN(Units Sold) vary by Region?",
+    "reason": "Statistics-based analysis: MEAN(Units Sold) grouped by Region.",
+    "breakdown": "Region",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "How does SUM(Unit Price) vary by Region?",
+    "reason": "Statistics-based analysis: SUM(Unit Price) grouped by Region.",
+    "breakdown": "Region",
+    "measure": "SUM(Unit Price)"
+  },
+  {
+    "question": "How does MEAN(Unit Price) vary by Region?",
+    "reason": "Statistics-based analysis: MEAN(Unit Price) grouped by Region.",
+    "breakdown": "Region",
+    "measure": "MEAN(Unit Price)"
+  },
+  {
+    "question": "How does SUM(Total Revenue) vary by Region?",
+    "reason": "Statistics-based analysis: SUM(Total Revenue) grouped by Region.",
+    "breakdown": "Region",
+    "measure": "SUM(Total Revenue)"
+  },
+  {
+    "question": "How does MEAN(Total Revenue) vary by Region?",
+    "reason": "Statistics-based analysis: MEAN(Total Revenue) grouped by Region.",
+    "breakdown": "Region",
+    "measure": "MEAN(Total Revenue)"
+  },
+  {
+    "question": "How does SUM(Units Sold) vary by Payment Method?",
+    "reason": "Statistics-based analysis: SUM(Units Sold) grouped by Payment Method.",
+    "breakdown": "Payment Method",
+    "measure": "SUM(Units Sold)"
+  },
+  {
+    "question": "How does MEAN(Units Sold) vary by Payment Method?",
+    "reason": "Statistics-based analysis: MEAN(Units Sold) grouped by Payment Method.",
+    "breakdown": "Payment Method",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "How does SUM(Unit Price) vary by Payment Method?",
+    "reason": "Statistics-based analysis: SUM(Unit Price) grouped by Payment Method.",
+    "breakdown": "Payment Method",
+    "measure": "SUM(Unit Price)"
+  },
+  {
+    "question": "How does MEAN(Unit Price) vary by Payment Method?",
+    "reason": "Statistics-based analysis: MEAN(Unit Price) grouped by Payment Method.",
+    "breakdown": "Payment Method",
+    "measure": "MEAN(Unit Price)"
+  },
+  {
+    "question": "How does SUM(Total Revenue) vary by Payment Method?",
+    "reason": "Statistics-based analysis: SUM(Total Revenue) grouped by Payment Method.",
+    "breakdown": "Payment Method",
+    "measure": "SUM(Total Revenue)"
+  },
+  {
+    "question": "How does MEAN(Total Revenue) vary by Payment Method?",
+    "reason": "Statistics-based analysis: MEAN(Total Revenue) grouped by Payment Method.",
+    "breakdown": "Payment Method",
+    "measure": "MEAN(Total Revenue)"
+  }
+]

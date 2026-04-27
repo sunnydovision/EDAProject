@@ -1,0 +1,1178 @@
+{
+  "system": "QUIS",
+  "num_cards": 106,
+  "num_insights": 106,
+  "score_uplift_from_subspace": {
+    "num_with_subspace_scored": 67,
+    "num_without_subspace_scored": 20,
+    "mean_score_with_subspace": 0.3941,
+    "mean_score_without_subspace": 0.5308,
+    "score_uplift_abs": -0.1367,
+    "score_uplift_ratio": 0.7424,
+    "score_uplift_direction": "down"
+  },
+  "faithfulness": {
+    "faithfulness": 1.0,
+    "verified_count": 106,
+    "total_count": 106,
+    "hallucination_count": 0,
+    "hallucination_rate": 0.0,
+    "_failed_insights": []
+  },
+  "insight_significance": {
+    "avg_effect_size": 0.42553333333333315,
+    "significant_count": 41,
+    "significant_rate": 0.47126436781609193,
+    "pattern_avg_significance": 0.3592708333333333,
+    "max_effect_size": 1.0,
+    "total_evaluated": 87,
+    "by_pattern": {
+      "TREND": {
+        "significant_count": 0,
+        "total_count": 0,
+        "significant_rate": 0.0,
+        "insights": []
+      },
+      "OUTSTANDING_VALUE": {
+        "significant_count": 11,
+        "total_count": 32,
+        "significant_rate": 0.34375,
+        "insights": [
+          {
+            "breakdown": "Product Category",
+            "col": "Unit Price",
+            "p_value": 0.024784,
+            "effect_size": 0.6626,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Product Category",
+            "col": "Total Revenue",
+            "p_value": 0.028642,
+            "effect_size": 0.6553,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Payment Method",
+            "col": "Total Revenue",
+            "p_value": 0.091894,
+            "effect_size": 0.5707,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Product Category",
+            "col": "Unit Price",
+            "p_value": 0.090325,
+            "effect_size": 0.5724,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Product Category",
+            "col": "Unit Price",
+            "p_value": 0.025216,
+            "effect_size": 0.6617,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Product Category",
+            "col": "Total Revenue",
+            "p_value": 0.028642,
+            "effect_size": 0.6553,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Date",
+            "col": "Total Revenue",
+            "p_value": 0.0,
+            "effect_size": 0.847,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Payment Method",
+            "col": "Unit Price",
+            "p_value": 0.107772,
+            "effect_size": 0.5533,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Region",
+            "col": "Total Revenue",
+            "p_value": 0.091894,
+            "effect_size": 0.5707,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Payment Method",
+            "col": "Unit Price",
+            "p_value": 0.087249,
+            "effect_size": 0.5759,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Region",
+            "col": "Units Sold",
+            "p_value": 0.080484,
+            "effect_size": 0.5837,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Payment Method",
+            "col": "Transaction ID",
+            "p_value": 0.110336,
+            "effect_size": 0.5505,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Region",
+            "col": "Unit Price",
+            "p_value": 0.083782,
+            "effect_size": 0.5798,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Region",
+            "col": "Total Revenue",
+            "p_value": 0.092325,
+            "effect_size": 0.5702,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Payment Method",
+            "col": "Units Sold",
+            "p_value": 0.07865,
+            "effect_size": 0.5858,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Product Category",
+            "col": "Units Sold",
+            "p_value": 0.023823,
+            "effect_size": 0.6645,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Product Name",
+            "col": "Unit Price",
+            "p_value": 0.0,
+            "effect_size": 0.894,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Region",
+            "col": "Unit Price",
+            "p_value": 0.080402,
+            "effect_size": 0.5837,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Product Category",
+            "col": "Units Sold",
+            "p_value": 0.042906,
+            "effect_size": 0.6321,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Payment Method",
+            "col": "Unit Price",
+            "p_value": 0.107772,
+            "effect_size": 0.5533,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Payment Method",
+            "col": "Unit Price",
+            "p_value": 0.107772,
+            "effect_size": 0.5533,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Payment Method",
+            "col": "Units Sold",
+            "p_value": 0.100497,
+            "effect_size": 0.5612,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Date",
+            "col": "Units Sold",
+            "p_value": 0.0,
+            "effect_size": 0.8378,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Product Name",
+            "col": "Units Sold",
+            "p_value": 0.0,
+            "effect_size": 0.8545,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Region",
+            "col": "Total Revenue",
+            "p_value": 0.079138,
+            "effect_size": 0.5852,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Payment Method",
+            "col": "Units Sold",
+            "p_value": 0.096985,
+            "effect_size": 0.565,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Payment Method",
+            "col": "Total Revenue",
+            "p_value": 0.086773,
+            "effect_size": 0.5764,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Date",
+            "col": "Total Revenue",
+            "p_value": 0.0,
+            "effect_size": 0.847,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Payment Method",
+            "col": "Total Revenue",
+            "p_value": 0.130747,
+            "effect_size": 0.5289,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Payment Method",
+            "col": "Product Name",
+            "p_value": 0.110336,
+            "effect_size": 0.5505,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Payment Method",
+            "col": "Date",
+            "p_value": 0.110336,
+            "effect_size": 0.5505,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Region",
+            "col": "Units Sold",
+            "p_value": 0.125292,
+            "effect_size": 0.5347,
+            "significant": "False"
+          }
+        ]
+      },
+      "ATTRIBUTION": {
+        "significant_count": 16,
+        "total_count": 30,
+        "significant_rate": 0.5333333333333333,
+        "insights": [
+          {
+            "breakdown": "Product Category",
+            "col": "Unit Price",
+            "p_value": 0.007445,
+            "effect_size": 0.2006,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Product Category",
+            "col": "Unit Price",
+            "p_value": 0.007445,
+            "effect_size": 0.2006,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Product Category",
+            "col": "Total Revenue",
+            "p_value": 1e-06,
+            "effect_size": 0.26,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Product Category",
+            "col": "Unit Price",
+            "p_value": 0.007445,
+            "effect_size": 0.2006,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Product Category",
+            "col": "Total Revenue",
+            "p_value": 1e-06,
+            "effect_size": 0.26,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Product Category",
+            "col": "Unit Price",
+            "p_value": 0.007445,
+            "effect_size": 0.2006,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Payment Method",
+            "col": "Unit Price",
+            "p_value": 0.443299,
+            "effect_size": 0.1283,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Product Category",
+            "col": "Transaction ID",
+            "p_value": 1.0,
+            "effect_size": 0.0,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Product Category",
+            "col": "Product Name",
+            "p_value": 0.243837,
+            "effect_size": 0.995,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Payment Method",
+            "col": "Unit Price",
+            "p_value": 0.443299,
+            "effect_size": 0.1283,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Product Category",
+            "col": "Product Name",
+            "p_value": 0.243837,
+            "effect_size": 0.995,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Region",
+            "col": "Total Revenue",
+            "p_value": 0.014205,
+            "effect_size": 0.1996,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Region",
+            "col": "Total Revenue",
+            "p_value": 0.014205,
+            "effect_size": 0.1996,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Payment Method",
+            "col": "Total Revenue",
+            "p_value": 0.216132,
+            "effect_size": 0.1497,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Region",
+            "col": "Transaction ID",
+            "p_value": 1.0,
+            "effect_size": 0.0,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Product Category",
+            "col": "Units Sold",
+            "p_value": 0.0,
+            "effect_size": 0.3961,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Payment Method",
+            "col": "Units Sold",
+            "p_value": 0.0,
+            "effect_size": 0.4163,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Region",
+            "col": "Total Revenue",
+            "p_value": 0.014205,
+            "effect_size": 0.1996,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Product Category",
+            "col": "Units Sold",
+            "p_value": 0.0,
+            "effect_size": 0.3961,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Payment Method",
+            "col": "Units Sold",
+            "p_value": 0.0,
+            "effect_size": 0.4163,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Region",
+            "col": "Units Sold",
+            "p_value": 0.0,
+            "effect_size": 0.3817,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Payment Method",
+            "col": "Total Revenue",
+            "p_value": 0.216132,
+            "effect_size": 0.1497,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Region",
+            "col": "Unit Price",
+            "p_value": 0.184921,
+            "effect_size": 0.1535,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Region",
+            "col": "Units Sold",
+            "p_value": 0.0,
+            "effect_size": 0.3817,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Date",
+            "col": "Total Revenue",
+            "p_value": 0.432995,
+            "effect_size": 1.0,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Payment Method",
+            "col": "Transaction ID",
+            "p_value": 1.0,
+            "effect_size": 0.0,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Payment Method",
+            "col": "Units Sold",
+            "p_value": 0.0,
+            "effect_size": 0.4163,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Region",
+            "col": "Unit Price",
+            "p_value": 0.184921,
+            "effect_size": 0.1535,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Payment Method",
+            "col": "Product Name",
+            "p_value": 0.272091,
+            "effect_size": 1.0,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Date",
+            "col": "Transaction ID",
+            "p_value": 0.432995,
+            "effect_size": 1.0,
+            "significant": "False"
+          }
+        ]
+      },
+      "DISTRIBUTION_DIFFERENCE": {
+        "significant_count": 14,
+        "total_count": 25,
+        "significant_rate": 0.56,
+        "insights": [
+          {
+            "breakdown": "Product Category",
+            "col": "Unit Price",
+            "p_value": 0.028603,
+            "effect_size": 0.325,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Product Category",
+            "col": "Units Sold",
+            "p_value": 0.918805,
+            "effect_size": 0.125,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Product Category",
+            "col": "Unit Price",
+            "p_value": 0.028603,
+            "effect_size": 0.325,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Product Category",
+            "col": "Units Sold",
+            "p_value": 0.918805,
+            "effect_size": 0.125,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Product Category",
+            "col": "Unit Price",
+            "p_value": 0.028603,
+            "effect_size": 0.325,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Product Category",
+            "col": "Unit Price",
+            "p_value": 0.028603,
+            "effect_size": 0.325,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Product Category",
+            "col": "Total Revenue",
+            "p_value": 0.014302,
+            "effect_size": 0.35,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Product Category",
+            "col": "Total Revenue",
+            "p_value": 0.014302,
+            "effect_size": 0.35,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Product Category",
+            "col": "Transaction ID",
+            "p_value": 1.0,
+            "effect_size": 0.025,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Payment Method",
+            "col": "Units Sold",
+            "p_value": 1e-06,
+            "effect_size": 0.3792,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Payment Method",
+            "col": "Unit Price",
+            "p_value": 0.084231,
+            "effect_size": 0.1792,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Payment Method",
+            "col": "Total Revenue",
+            "p_value": 0.084231,
+            "effect_size": 0.1792,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Payment Method",
+            "col": "Unit Price",
+            "p_value": 0.084231,
+            "effect_size": 0.1792,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Region",
+            "col": "Transaction ID",
+            "p_value": 1.0,
+            "effect_size": 0.0125,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Payment Method",
+            "col": "Transaction ID",
+            "p_value": 1.0,
+            "effect_size": 0.0083,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Region",
+            "col": "Unit Price",
+            "p_value": 0.000387,
+            "effect_size": 0.325,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Region",
+            "col": "Total Revenue",
+            "p_value": 0.17298,
+            "effect_size": 0.175,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Region",
+            "col": "Total Revenue",
+            "p_value": 0.17298,
+            "effect_size": 0.175,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Payment Method",
+            "col": "Units Sold",
+            "p_value": 1e-06,
+            "effect_size": 0.3792,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Region",
+            "col": "Units Sold",
+            "p_value": 1e-06,
+            "effect_size": 0.425,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Region",
+            "col": "Units Sold",
+            "p_value": 1e-06,
+            "effect_size": 0.425,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Region",
+            "col": "Unit Price",
+            "p_value": 0.000387,
+            "effect_size": 0.325,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Payment Method",
+            "col": "Units Sold",
+            "p_value": 1e-06,
+            "effect_size": 0.3792,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Payment Method",
+            "col": "Units Sold",
+            "p_value": 1e-06,
+            "effect_size": 0.3792,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Region",
+            "col": "Total Revenue",
+            "p_value": 0.17298,
+            "effect_size": 0.175,
+            "significant": "False"
+          }
+        ]
+      }
+    }
+  },
+  "question_diversity": {
+    "semantic_diversity": 0.48863303661346436,
+    "avg_similarity": 0.5113669633865356,
+    "num_insights": 106,
+    "subspace_diversity": {
+      "subspace_diversity_entropy": 1.5955628815811869,
+      "subspace_diversity_count_ratio": 0.0660377358490566,
+      "unique_columns": 7,
+      "total_columns": 84,
+      "column_distribution": {
+        "Region": 24,
+        "Units Sold": 14,
+        "Unit Price": 24,
+        "Payment Method": 15,
+        "Total Revenue": 5,
+        "Product Name": 1,
+        "Product Category": 1
+      }
+    },
+    "value_diversity": {
+      "value_diversity": 0.44047619047619047,
+      "unique_pairs": 37,
+      "total_pairs": 84
+    },
+    "dedup_rate": 0.0,
+    "unique_count": 106,
+    "total_count": 106,
+    "duplicate_count": 0
+  },
+  "bm_quality": {
+    "nmi_mean": 0.1793,
+    "int_mean": 0.2441,
+    "actionability": 0.9231,
+    "bm_diversity": 0.2453,
+    "total_evaluated": 26,
+    "total_categorical": 24,
+    "total_insights": 106,
+    "pairs": [
+      {
+        "breakdown": "Product Category",
+        "col": "Unit Price",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.1983,
+        "interestingness": 0.2926
+      },
+      {
+        "breakdown": "Product Category",
+        "col": "Total Revenue",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.2065,
+        "interestingness": 0.3418
+      },
+      {
+        "breakdown": "Payment Method",
+        "col": "Total Revenue",
+        "agg": "min",
+        "categorical_b": true,
+        "nmi": 0.0402,
+        "interestingness": 0.0369
+      },
+      {
+        "breakdown": "Product Category",
+        "col": "Unit Price",
+        "agg": "min",
+        "categorical_b": true,
+        "nmi": 0.1983,
+        "interestingness": 0.2926
+      },
+      {
+        "breakdown": "Product Category",
+        "col": "Unit Price",
+        "agg": "max",
+        "categorical_b": true,
+        "nmi": 0.1983,
+        "interestingness": 0.2926
+      },
+      {
+        "breakdown": "Date",
+        "col": "Total Revenue",
+        "agg": "max",
+        "categorical_b": true,
+        "nmi": 0.5086,
+        "interestingness": 0.6841
+      },
+      {
+        "breakdown": "Payment Method",
+        "col": "Unit Price",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.075,
+        "interestingness": 0.0501
+      },
+      {
+        "breakdown": "Region",
+        "col": "Total Revenue",
+        "agg": "min",
+        "categorical_b": true,
+        "nmi": 0.0542,
+        "interestingness": 0.0333
+      },
+      {
+        "breakdown": "Payment Method",
+        "col": "Unit Price",
+        "agg": "max",
+        "categorical_b": true,
+        "nmi": 0.075,
+        "interestingness": 0.0501
+      },
+      {
+        "breakdown": "Region",
+        "col": "Units Sold",
+        "agg": "max",
+        "categorical_b": true,
+        "nmi": 0.1577,
+        "interestingness": 0.2474
+      },
+      {
+        "breakdown": "Region",
+        "col": "Unit Price",
+        "agg": "max",
+        "categorical_b": true,
+        "nmi": 0.0495,
+        "interestingness": 0.0382
+      },
+      {
+        "breakdown": "Region",
+        "col": "Total Revenue",
+        "agg": "max",
+        "categorical_b": true,
+        "nmi": 0.0542,
+        "interestingness": 0.0333
+      },
+      {
+        "breakdown": "Payment Method",
+        "col": "Units Sold",
+        "agg": "min",
+        "categorical_b": true,
+        "nmi": 0.2006,
+        "interestingness": 0.3444
+      },
+      {
+        "breakdown": "Product Category",
+        "col": "Units Sold",
+        "agg": "max",
+        "categorical_b": true,
+        "nmi": 0.2365,
+        "interestingness": 0.4185
+      },
+      {
+        "breakdown": "Product Name",
+        "col": "Unit Price",
+        "agg": "min",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Region",
+        "col": "Unit Price",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.0495,
+        "interestingness": 0.0382
+      },
+      {
+        "breakdown": "Product Category",
+        "col": "Units Sold",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.2365,
+        "interestingness": 0.4185
+      },
+      {
+        "breakdown": "Payment Method",
+        "col": "Units Sold",
+        "agg": "max",
+        "categorical_b": true,
+        "nmi": 0.2006,
+        "interestingness": 0.3444
+      },
+      {
+        "breakdown": "Date",
+        "col": "Units Sold",
+        "agg": "max",
+        "categorical_b": true,
+        "nmi": 0.5633,
+        "interestingness": 0.5187
+      },
+      {
+        "breakdown": "Product Name",
+        "col": "Units Sold",
+        "agg": "max",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Region",
+        "col": "Total Revenue",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.0542,
+        "interestingness": 0.0333
+      },
+      {
+        "breakdown": "Payment Method",
+        "col": "Units Sold",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.2006,
+        "interestingness": 0.3444
+      },
+      {
+        "breakdown": "Payment Method",
+        "col": "Total Revenue",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.0402,
+        "interestingness": 0.0369
+      },
+      {
+        "breakdown": "Date",
+        "col": "Total Revenue",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.5086,
+        "interestingness": 0.6841
+      },
+      {
+        "breakdown": "Payment Method",
+        "col": "Total Revenue",
+        "agg": "max",
+        "categorical_b": true,
+        "nmi": 0.0402,
+        "interestingness": 0.0369
+      },
+      {
+        "breakdown": "Region",
+        "col": "Units Sold",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.1577,
+        "interestingness": 0.2474
+      }
+    ]
+  },
+  "question_quality": {
+    "question_diversity": {
+      "question_diversity": 0.5177358388900757,
+      "avg_similarity": 0.4822641611099243,
+      "num_questions": 106
+    },
+    "question_specificity": {
+      "question_specificity_mean": 9.99056603773585,
+      "question_specificity_std": 2.2127217211954915,
+      "num_questions": 106
+    },
+    "question_insight_alignment": {
+      "question_insight_alignment": 0.5426967144012451,
+      "question_insight_alignment_std": 0.07772041112184525,
+      "num_pairs": 106
+    },
+    "reason_insight_coherence": {
+      "reason_insight_coherence": 0.5570451021194458,
+      "reason_insight_coherence_std": 0.06830205023288727,
+      "num_pairs": 106
+    },
+    "question_novelty": {
+      "question_novelty": 0.9528301886792453,
+      "novel_count": 101,
+      "total_count": 106,
+      "avg_max_similarity": 0.6246084570884705,
+      "tau": 0.85,
+      "compared_against": "ONLYSTATS"
+    }
+  },
+  "time_to_insight": {
+    "total_time_seconds": 628.4831804999849,
+    "insights_generated": 106,
+    "time_per_insight_seconds": 5.929086608490423,
+    "throughput_insights_per_second": 0.16866004260555156
+  },
+  "token_usage": {
+    "total_tokens": 74545,
+    "input_tokens": 50322,
+    "output_tokens": 24223,
+    "requests": 136,
+    "insights_generated": 106,
+    "tokens_per_insight": 703.2547169811321,
+    "model": "gpt-5.4"
+  },
+  "insight_novelty": {
+    "novelty": 0.6415094339622641,
+    "novel_count": 68,
+    "total_count": 106,
+    "avg_max_similarity": 0.8201828002929688,
+    "tau": 0.85,
+    "compared_against": "ONLYSTATS"
+  },
+  "subspace_metrics": {
+    "total_with_subspace": 84,
+    "total_original": 84,
+    "faithfulness": {
+      "faithfulness": 1.0,
+      "verified_count": 84,
+      "total_count": 84,
+      "hallucination_count": 0,
+      "hallucination_rate": 0.0,
+      "_failed_insights": []
+    },
+    "significance": {
+      "avg_effect_size": 0.6276944444444443,
+      "significant_count": 8,
+      "significant_rate": 0.4444444444444444,
+      "pattern_avg_significance": 0.1111111111111111,
+      "max_effect_size": 0.894,
+      "total_evaluated": 18,
+      "by_pattern": {
+        "TREND": {
+          "significant_count": 0,
+          "total_count": 0,
+          "significant_rate": 0.0,
+          "insights": []
+        },
+        "OUTSTANDING_VALUE": {
+          "significant_count": 8,
+          "total_count": 18,
+          "significant_rate": 0.4444444444444444,
+          "insights": [
+            {
+              "breakdown": "Product Category",
+              "col": "Unit Price",
+              "p_value": 0.024784,
+              "effect_size": 0.6626,
+              "significant": "True"
+            },
+            {
+              "breakdown": "Product Category",
+              "col": "Total Revenue",
+              "p_value": 0.028642,
+              "effect_size": 0.6553,
+              "significant": "True"
+            },
+            {
+              "breakdown": "Payment Method",
+              "col": "Total Revenue",
+              "p_value": 0.091894,
+              "effect_size": 0.5707,
+              "significant": "False"
+            },
+            {
+              "breakdown": "Product Category",
+              "col": "Unit Price",
+              "p_value": 0.090325,
+              "effect_size": 0.5724,
+              "significant": "False"
+            },
+            {
+              "breakdown": "Product Category",
+              "col": "Unit Price",
+              "p_value": 0.025216,
+              "effect_size": 0.6617,
+              "significant": "True"
+            },
+            {
+              "breakdown": "Product Category",
+              "col": "Total Revenue",
+              "p_value": 0.028642,
+              "effect_size": 0.6553,
+              "significant": "True"
+            },
+            {
+              "breakdown": "Date",
+              "col": "Total Revenue",
+              "p_value": 0.0,
+              "effect_size": 0.847,
+              "significant": "True"
+            },
+            {
+              "breakdown": "Payment Method",
+              "col": "Unit Price",
+              "p_value": 0.107772,
+              "effect_size": 0.5533,
+              "significant": "False"
+            },
+            {
+              "breakdown": "Region",
+              "col": "Total Revenue",
+              "p_value": 0.091894,
+              "effect_size": 0.5707,
+              "significant": "False"
+            },
+            {
+              "breakdown": "Payment Method",
+              "col": "Transaction ID",
+              "p_value": 0.110336,
+              "effect_size": 0.5505,
+              "significant": "False"
+            },
+            {
+              "breakdown": "Region",
+              "col": "Total Revenue",
+              "p_value": 0.092325,
+              "effect_size": 0.5702,
+              "significant": "False"
+            },
+            {
+              "breakdown": "Product Category",
+              "col": "Units Sold",
+              "p_value": 0.023823,
+              "effect_size": 0.6645,
+              "significant": "True"
+            },
+            {
+              "breakdown": "Product Name",
+              "col": "Unit Price",
+              "p_value": 0.0,
+              "effect_size": 0.894,
+              "significant": "True"
+            },
+            {
+              "breakdown": "Product Category",
+              "col": "Units Sold",
+              "p_value": 0.042906,
+              "effect_size": 0.6321,
+              "significant": "True"
+            },
+            {
+              "breakdown": "Payment Method",
+              "col": "Unit Price",
+              "p_value": 0.107772,
+              "effect_size": 0.5533,
+              "significant": "False"
+            },
+            {
+              "breakdown": "Region",
+              "col": "Total Revenue",
+              "p_value": 0.079138,
+              "effect_size": 0.5852,
+              "significant": "False"
+            },
+            {
+              "breakdown": "Payment Method",
+              "col": "Units Sold",
+              "p_value": 0.096985,
+              "effect_size": 0.565,
+              "significant": "False"
+            },
+            {
+              "breakdown": "Region",
+              "col": "Units Sold",
+              "p_value": 0.125292,
+              "effect_size": 0.5347,
+              "significant": "False"
+            }
+          ]
+        },
+        "ATTRIBUTION": {
+          "significant_count": 0,
+          "total_count": 0,
+          "significant_rate": 0.0,
+          "insights": []
+        },
+        "DISTRIBUTION_DIFFERENCE": {
+          "significant_count": 0,
+          "total_count": 0,
+          "significant_rate": 0.0,
+          "insights": []
+        }
+      }
+    },
+    "novelty": {
+      "novelty": 0.6190476190476191,
+      "novel_count": 52,
+      "total_count": 84,
+      "avg_max_similarity": 0.8284412622451782,
+      "tau": 0.85
+    },
+    "diversity": {
+      "semantic_diversity": 0.46353691816329956,
+      "avg_similarity": 0.5364630818367004,
+      "num_insights": 84,
+      "subspace_diversity": {
+        "subspace_diversity_entropy": 1.5955628815811869,
+        "subspace_diversity_count_ratio": 0.08333333333333333,
+        "unique_columns": 7,
+        "total_columns": 84,
+        "column_distribution": {
+          "Region": 24,
+          "Units Sold": 14,
+          "Unit Price": 24,
+          "Payment Method": 15,
+          "Total Revenue": 5,
+          "Product Name": 1,
+          "Product Category": 1
+        }
+      },
+      "value_diversity": {
+        "value_diversity": 0.44047619047619047,
+        "unique_pairs": 37,
+        "total_pairs": 84
+      },
+      "dedup_rate": 0.0,
+      "unique_count": 84,
+      "total_count": 84,
+      "duplicate_count": 0
+    }
+  }
+}

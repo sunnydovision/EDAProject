@@ -1,0 +1,40 @@
+======================================================================
+AGENTIC AUTOEDA BASELINE - SUMMARY
+======================================================================
+
+Total Insights: 61
+Passed ISGEN Threshold: 0/61 (0.0%)
+Average Pattern Score: 0.000
+
+Insights by Type:
+  • PATTERN: 19
+  • OUTLIER, ANOMALY: 18
+  • DISTRIBUTION, COMPARISON: 13
+  • CORRELATION: 11
+
+Insights by ISGEN Pattern:
+  • UNKNOWN: 61
+
+Top 10 Insights:
+  1. insight_000: Units Sold has a single extreme transaction far above the normal order size
+     Type: OUTLIER, ANOMALY
+  2. insight_001: Unit Price shows a high concentration of unusual values across the dataset
+     Type: OUTLIER, ANOMALY
+  3. insight_002: Total Revenue contains 19 extreme transactions that can distort financial reporting
+     Type: OUTLIER, ANOMALY
+  4. insight_003: August transaction volume is anomalously low versus the otherwise stable monthly pattern
+     Type: OUTLIER, ANOMALY
+  5. insight_004: July is an anomalous low point for Unit Price within the 2024 monthly pattern
+     Type: OUTLIER, ANOMALY
+  6. insight_005: Home Appliances sits at the low end of unit volume despite being a premium-priced category
+     Type: OUTLIER, ANOMALY
+  7. insight_006: Beauty Products is an unusually low-volume segment in the category mix
+     Type: OUTLIER, ANOMALY
+  8. insight_007: The dataset itself shows an anomalously perfect balance in category and regional structure
+     Type: OUTLIER, ANOMALY
+  9. insight_008: Unit Price is a strong driver of Total Revenue across all transactions
+     Type: CORRELATION
+  10. insight_009: In Electronics, higher Unit Price is especially associated with higher Total Revenue
+     Type: CORRELATION
+
+======================================================================

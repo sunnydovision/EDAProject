@@ -1,0 +1,525 @@
+{
+  "system": "Baseline",
+  "num_cards": 61,
+  "num_insights": 61,
+  "score_uplift_from_subspace": {
+    "num_with_subspace_scored": 6,
+    "num_without_subspace_scored": 17,
+    "mean_score_with_subspace": 0.5382,
+    "mean_score_without_subspace": 0.5165,
+    "score_uplift_abs": 0.0217,
+    "score_uplift_ratio": 1.042,
+    "score_uplift_direction": "up"
+  },
+  "faithfulness": {
+    "faithfulness": 0.9672131147540983,
+    "verified_count": 59,
+    "total_count": 61,
+    "hallucination_count": 2,
+    "hallucination_rate": 0.032786885245901676,
+    "_failed_insights": [
+      {
+        "idx": 3,
+        "reason": "Breakdown column 'month' not found in data",
+        "pattern": "OUTSTANDING_VALUE"
+      },
+      {
+        "idx": 4,
+        "reason": "Breakdown column 'month' not found in data",
+        "pattern": "OUTSTANDING_VALUE"
+      }
+    ]
+  },
+  "insight_significance": {
+    "avg_effect_size": 0.4991523809523809,
+    "significant_count": 13,
+    "significant_rate": 0.6190476190476191,
+    "pattern_avg_significance": 0.4464285714285714,
+    "max_effect_size": 0.8576,
+    "total_evaluated": 21,
+    "by_pattern": {
+      "TREND": {
+        "significant_count": 2,
+        "total_count": 2,
+        "significant_rate": 1.0,
+        "insights": [
+          {
+            "breakdown": "Transaction ID",
+            "col": "Total Revenue",
+            "p_value": 0.00481,
+            "effect_size": 0.1222,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Transaction ID",
+            "col": "Units Sold",
+            "p_value": 0.008679,
+            "effect_size": 0.1084,
+            "significant": "True"
+          }
+        ]
+      },
+      "OUTSTANDING_VALUE": {
+        "significant_count": 11,
+        "total_count": 14,
+        "significant_rate": 0.7857142857142857,
+        "insights": [
+          {
+            "breakdown": "Units Sold",
+            "col": "Units Sold",
+            "p_value": 0.030201,
+            "effect_size": 0.6525,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Unit Price",
+            "col": "Unit Price",
+            "p_value": 4.1e-05,
+            "effect_size": 0.7976,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Total Revenue",
+            "col": "Total Revenue",
+            "p_value": 1e-06,
+            "effect_size": 0.824,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Product Category",
+            "col": "Units Sold",
+            "p_value": 0.042906,
+            "effect_size": 0.6321,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Product Category",
+            "col": "Units Sold",
+            "p_value": 0.042906,
+            "effect_size": 0.6321,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Unit Price",
+            "col": "Total Revenue",
+            "p_value": 0.0,
+            "effect_size": 0.8576,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Unit Price",
+            "col": "Total Revenue",
+            "p_value": 0.0,
+            "effect_size": 0.8576,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Units Sold",
+            "col": "Transaction ID",
+            "p_value": 0.096164,
+            "effect_size": 0.5659,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Unit Price",
+            "col": "Transaction ID",
+            "p_value": 0.040968,
+            "effect_size": 0.635,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Total Revenue",
+            "col": "Transaction ID",
+            "p_value": 0.03761,
+            "effect_size": 0.6402,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Unit Price",
+            "col": "Units Sold",
+            "p_value": 0.001983,
+            "effect_size": 0.7423,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Unit Price",
+            "col": "Total Revenue",
+            "p_value": 0.0,
+            "effect_size": 0.8576,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Product Category",
+            "col": "Transaction ID",
+            "p_value": 0.071617,
+            "effect_size": 0.5941,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Region",
+            "col": "Transaction ID",
+            "p_value": 0.110336,
+            "effect_size": 0.5505,
+            "significant": "False"
+          }
+        ]
+      },
+      "ATTRIBUTION": {
+        "significant_count": 0,
+        "total_count": 0,
+        "significant_rate": 0.0,
+        "insights": []
+      },
+      "DISTRIBUTION_DIFFERENCE": {
+        "significant_count": 0,
+        "total_count": 5,
+        "significant_rate": 0.0,
+        "insights": [
+          {
+            "breakdown": "Product Category",
+            "col": "Units Sold",
+            "p_value": 0.918805,
+            "effect_size": 0.125,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Product Category",
+            "col": "Transaction ID",
+            "p_value": 1.0,
+            "effect_size": 0.025,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Product Category",
+            "col": "Units Sold",
+            "p_value": 0.918805,
+            "effect_size": 0.125,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Region",
+            "col": "Transaction ID",
+            "p_value": 1.0,
+            "effect_size": 0.0125,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Product Category",
+            "col": "Units Sold",
+            "p_value": 0.918805,
+            "effect_size": 0.125,
+            "significant": "False"
+          }
+        ]
+      }
+    }
+  },
+  "question_diversity": {
+    "semantic_diversity": 0.44868457317352295,
+    "avg_similarity": 0.551315426826477,
+    "num_insights": 61,
+    "subspace_diversity": {
+      "subspace_diversity_entropy": 0.8427803021302687,
+      "subspace_diversity_count_ratio": 0.04918032786885246,
+      "unique_columns": 3,
+      "total_columns": 22,
+      "column_distribution": {
+        "Product Category": 15,
+        "Payment Method": 4,
+        "Region": 3
+      }
+    },
+    "value_diversity": {
+      "value_diversity": 0.5,
+      "unique_pairs": 11,
+      "total_pairs": 22
+    },
+    "dedup_rate": 0.0,
+    "unique_count": 61,
+    "total_count": 61,
+    "duplicate_count": 0
+  },
+  "bm_quality": {
+    "nmi_mean": 0.2449,
+    "int_mean": 0.4838,
+    "actionability": 0.3571,
+    "bm_diversity": 0.2295,
+    "total_evaluated": 14,
+    "total_categorical": 5,
+    "total_insights": 61,
+    "pairs": [
+      {
+        "breakdown": "Product Category",
+        "col": "Units Sold",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.2365,
+        "interestingness": 0.4185
+      },
+      {
+        "breakdown": "Unit Price",
+        "col": "Total Revenue",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Total Revenue",
+        "col": "Unit Price",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Total Revenue",
+        "col": "Units Sold",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Product Category",
+        "col": "Transaction ID",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.0075,
+        "interestingness": 0.0006
+      },
+      {
+        "breakdown": "Units Sold",
+        "col": "Total Revenue",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Unit Price",
+        "col": "Units Sold",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Region",
+        "col": "Transaction ID",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.0022,
+        "interestingness": 0.0001
+      },
+      {
+        "breakdown": "Transaction ID",
+        "col": "Total Revenue",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.4642,
+        "interestingness": 1.0
+      },
+      {
+        "breakdown": "Product Name",
+        "col": "Unit Price",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Transaction ID",
+        "col": "Units Sold",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.5141,
+        "interestingness": 1.0
+      },
+      {
+        "breakdown": "Units Sold",
+        "col": "Transaction ID",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Unit Price",
+        "col": "Transaction ID",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Total Revenue",
+        "col": "Transaction ID",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      }
+    ]
+  },
+  "question_quality": {
+    "question_diversity": {
+      "question_diversity": 0.5773693025112152,
+      "avg_similarity": 0.4226306974887848,
+      "num_questions": 61
+    },
+    "question_specificity": {
+      "question_specificity_mean": 13.475409836065573,
+      "question_specificity_std": 4.682042980513813,
+      "num_questions": 61
+    },
+    "question_insight_alignment": {
+      "question_insight_alignment": 0.5429077744483948,
+      "question_insight_alignment_std": 0.17658297717571259,
+      "num_pairs": 61
+    },
+    "reason_insight_coherence": {
+      "reason_insight_coherence": 0.5003358125686646,
+      "reason_insight_coherence_std": 0.09902746975421906,
+      "num_pairs": 61
+    },
+    "question_novelty": {
+      "question_novelty": 1.0,
+      "novel_count": 61,
+      "total_count": 61,
+      "avg_max_similarity": 0.6017985343933105,
+      "tau": 0.85,
+      "compared_against": "QUIS"
+    }
+  },
+  "time_to_insight": {
+    "total_time_seconds": 493.24167108535767,
+    "insights_generated": 61,
+    "time_per_insight_seconds": 8.085929034186192,
+    "throughput_insights_per_second": 0.12367162706624533
+  },
+  "token_usage": {
+    "total_tokens": 115409,
+    "input_tokens": 82914,
+    "output_tokens": 32495,
+    "requests": 22,
+    "insights_generated": 61,
+    "tokens_per_insight": 1891.950819672131,
+    "model": "gpt-5.4"
+  },
+  "insight_novelty": {
+    "novelty": 0.9508196721311475,
+    "novel_count": 58,
+    "total_count": 61,
+    "avg_max_similarity": 0.7572547197341919,
+    "tau": 0.85,
+    "compared_against": "QUIS"
+  },
+  "subspace_metrics": {
+    "total_with_subspace": 22,
+    "total_original": 22,
+    "faithfulness": {
+      "faithfulness": 1.0,
+      "verified_count": 22,
+      "total_count": 22,
+      "hallucination_count": 0,
+      "hallucination_rate": 0.0,
+      "_failed_insights": []
+    },
+    "significance": {
+      "avg_effect_size": 0.74485,
+      "significant_count": 4,
+      "significant_rate": 1.0,
+      "pattern_avg_significance": 0.25,
+      "max_effect_size": 0.8576,
+      "total_evaluated": 4,
+      "by_pattern": {
+        "TREND": {
+          "significant_count": 0,
+          "total_count": 0,
+          "significant_rate": 0.0,
+          "insights": []
+        },
+        "OUTSTANDING_VALUE": {
+          "significant_count": 4,
+          "total_count": 4,
+          "significant_rate": 1.0,
+          "insights": [
+            {
+              "breakdown": "Product Category",
+              "col": "Units Sold",
+              "p_value": 0.042906,
+              "effect_size": 0.6321,
+              "significant": "True"
+            },
+            {
+              "breakdown": "Product Category",
+              "col": "Units Sold",
+              "p_value": 0.042906,
+              "effect_size": 0.6321,
+              "significant": "True"
+            },
+            {
+              "breakdown": "Unit Price",
+              "col": "Total Revenue",
+              "p_value": 0.0,
+              "effect_size": 0.8576,
+              "significant": "True"
+            },
+            {
+              "breakdown": "Unit Price",
+              "col": "Total Revenue",
+              "p_value": 0.0,
+              "effect_size": 0.8576,
+              "significant": "True"
+            }
+          ]
+        },
+        "ATTRIBUTION": {
+          "significant_count": 0,
+          "total_count": 0,
+          "significant_rate": 0.0,
+          "insights": []
+        },
+        "DISTRIBUTION_DIFFERENCE": {
+          "significant_count": 0,
+          "total_count": 0,
+          "significant_rate": 0.0,
+          "insights": []
+        }
+      }
+    },
+    "novelty": {
+      "novelty": 0.9545454545454546,
+      "novel_count": 21,
+      "total_count": 22,
+      "avg_max_similarity": 0.7691625952720642,
+      "tau": 0.85
+    },
+    "diversity": {
+      "semantic_diversity": 0.3863740563392639,
+      "avg_similarity": 0.6136259436607361,
+      "num_insights": 22,
+      "subspace_diversity": {
+        "subspace_diversity_entropy": 0.8427803021302687,
+        "subspace_diversity_count_ratio": 0.13636363636363635,
+        "unique_columns": 3,
+        "total_columns": 22,
+        "column_distribution": {
+          "Product Category": 15,
+          "Payment Method": 4,
+          "Region": 3
+        }
+      },
+      "value_diversity": {
+        "value_diversity": 0.5,
+        "unique_pairs": 11,
+        "total_pairs": 22
+      },
+      "dedup_rate": 0.0,
+      "unique_count": 22,
+      "total_count": 22,
+      "duplicate_count": 0
+    }
+  }
+}
