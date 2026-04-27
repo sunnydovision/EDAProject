@@ -32,8 +32,11 @@ def run_baseline(dataset_name: str, max_iterations: int = 3):
         max_iterations: Max iterations per step (default: 3)
     """
     # Compute data file path and output directory from dataset name
-    data_file = f"../data/{dataset_name}_cleaned.csv"
-    output_dir = f"output_{dataset_name}"
+    import pathlib
+    script_dir = pathlib.Path(__file__).parent
+    project_root = script_dir.parent.parent
+    data_file = str(project_root / "data" / f"{dataset_name}_cleaned.csv")
+    output_dir = str(script_dir / f"output_{dataset_name}")
     
     os.makedirs(output_dir, exist_ok=True)
     

@@ -8,21 +8,21 @@
 
 ## Key Findings
 
-- Revenue and profit are highly concentrated in a relatively small number of large records, as shown by the extreme right skew and the large mean-median gaps for Total Sales and Operating Profit.
-- Operating Margin is much more stable than dollar-based measures, suggesting that differences in business performance are driven more by transaction size and volume than by large swings in percentage profitability.
-- The strongest correlations are largely structural: Units Sold drives Total Sales, and Total Sales drives Operating Profit, so raw correlations alone should not be overinterpreted as evidence of causal business behavior.
+- Revenue and profit distributions are highly concentrated in a minority of very large records, so mean sales and mean profit substantially overstate a typical transaction.
+- Operating Margin is comparatively stable around the low-40% range, suggesting profitability rates are more consistent than absolute sales or profit dollars.
+- The strongest relationships are structural: units drive sales, and sales drive profit, indicating transaction scale is the dominant statistical pattern in the dataset.
 
 ## Strong Correlations
 
 ### Units Sold and Total Sales
 - **Strength**: strong
-- **Interpretation**: This very strong positive relationship (r=0.91) means higher-volume records almost always generate higher revenue. In business terms, sales dollars are driven primarily by quantity sold, which is expected because Total Sales is mechanically influenced by Units Sold multiplied by price. This is mostly a structural relationship rather than a behavioral insight, although deviations from the pattern could still reveal pricing differences across products or channels.
+- **Interpretation**: This strong positive relationship (r=0.845) means higher-volume records generally produce higher revenue, which is expected because Total Sales is mechanically influenced by quantity sold. This is primarily structural rather than behavioral, since sales dollars are mathematically tied to units and price. Any deviation from this relationship would likely reflect pricing differences across products, channels, or discounting.
 
 ### Units Sold and Operating Profit
 - **Strength**: strong
-- **Interpretation**: This strong positive relationship (r=0.89) indicates that larger-volume sales tend to produce larger profit dollars. Business-wise, profit growth appears to come largely from selling more units rather than from unusually high margins on small orders. This is partly structural because more units generally create more revenue and therefore more profit, but it may also reflect behavioral patterns if certain channels or retailers are especially effective at converting volume into profit.
+- **Interpretation**: This strong positive relationship (r=0.814) indicates that larger-volume sales tend to generate more operating profit. This is partly structural because more units usually create more gross revenue and therefore more profit dollars, but it also has a behavioral component if certain channels or products scale more profitably than others. Follow-up should test whether high-volume records also have systematically higher or lower margins.
 
 ### Total Sales and Operating Profit
 - **Strength**: strong
-- **Interpretation**: This is the strongest relationship in the dataset (r=0.96), showing that profit scales very closely with revenue. That is highly expected because Operating Profit is derived from Total Sales through margin. This is overwhelmingly structural, not surprising evidence of business performance by itself. The more useful business question is where records sit above or below the expected profit-for-sales line, which would indicate unusually high or low margins by product, retailer, region, or sales method.
+- **Interpretation**: This very strong positive relationship (r=0.956) shows that profit dollars rise almost directly with revenue. This is largely structural because Operating Profit is derived from Total Sales after costs, and the relatively stable Operating Margin reinforces that profit is closely tied to sales size. From a business perspective, revenue growth appears to be the main driver of profit growth in this dataset.
 

@@ -1516,6 +1516,8 @@ Return JSON:
                 return bool(obj)
             elif isinstance(obj, (np.integer, np.floating)):
                 return float(obj)
+            elif hasattr(obj, 'isoformat'):  # Handle Timestamp and datetime objects
+                return obj.isoformat()
             elif isinstance(obj, dict):
                 return {k: convert_to_native(v) for k, v in obj.items()}
             elif isinstance(obj, list):

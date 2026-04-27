@@ -2,40 +2,40 @@
 AGENTIC AUTOEDA BASELINE - SUMMARY
 ======================================================================
 
-Total Insights: 77
-Passed ISGEN Threshold: 0/77 (0.0%)
+Total Insights: 75
+Passed ISGEN Threshold: 0/75 (0.0%)
 Average Pattern Score: 0.000
 
 Insights by Type:
-  • TREND: 17
-  • OUTLIER, ANOMALY: 16
-  • DISTRIBUTION, COMPARISON: 16
-  • CORRELATION: 14
-  • PATTERN: 14
+  • PATTERN: 17
+  • TREND: 16
+  • DISTRIBUTION, COMPARISON: 15
+  • OUTLIER, ANOMALY: 14
+  • CORRELATION: 13
 
 Insights by ISGEN Pattern:
-  • UNKNOWN: 77
+  • UNKNOWN: 75
 
 Top 10 Insights:
-  1. insight_000: Total Sales stepped up sharply in 2021 versus 2020 across matched months
+  1. insight_000: Business activity shows a clear step-change upward from 2020 into 2021
      Type: TREND
-  2. insight_001: Operating Profit followed the same year-over-year expansion pattern as sales
+  2. insight_001: Average selling price falls into early 2021, then climbs through year-end
      Type: TREND
-  3. insight_002: Units Sold rose materially in 2021, with every matched month above 2020
+  3. insight_002: Average units per record are stronger in late 2020 than in most of 2021
      Type: TREND
-  4. insight_003: 2021 unit volume built toward a late-summer peak before an autumn dip
+  4. insight_003: Average operating profit per record mirrors the same early-2021 dip and later recovery
      Type: TREND
-  5. insight_004: Average selling price fell to an early-2021 low, then climbed steadily into late 2021
+  5. insight_004: Online sales likely follow the broader 2021 level shift rather than a unique seasonal cycle
      Type: TREND
-  6. insight_005: Transaction activity expanded sharply in 2021, even as units per record became smaller on average
+  6. insight_005: Women's Apparel should be monitored for late-2021 price-led momentum
      Type: TREND
-  7. insight_006: Online channel likely participated in the broad 2021 sales step-up seen across the business
-     Type: TREND
-  8. insight_007: West region should be monitored for the same summer-peak and fall-softening sales pattern seen overall in 2021
-     Type: TREND
-  9. insight_008: Operating Profit has the largest concentration of extreme records
+  7. insight_006: Operating Profit contains the largest concentration of extreme records
      Type: OUTLIER, ANOMALY
-  10. insight_009: Total Sales contains an unusually high number of extreme revenue records
+  8. insight_007: Revenue anomalies are widespread in Total Sales, affecting more than 1 in 15 records
+     Type: OUTLIER, ANOMALY
+  9. insight_008: Units Sold has a high anomaly burden, pointing to irregular order sizes
+     Type: OUTLIER, ANOMALY
+  10. insight_009: Price per Unit is relatively stable, with anomalies concentrated in less than 1% of records
      Type: OUTLIER, ANOMALY
 
 ======================================================================

@@ -1,0 +1,750 @@
+{
+  "system": "Baseline",
+  "num_cards": 75,
+  "num_insights": 75,
+  "score_uplift_from_subspace": {
+    "num_with_subspace_scored": 0,
+    "num_without_subspace_scored": 0,
+    "mean_score_with_subspace": null,
+    "mean_score_without_subspace": null,
+    "score_uplift_abs": null,
+    "score_uplift_ratio": null,
+    "score_uplift_direction": null
+  },
+  "faithfulness": {
+    "faithfulness": 0.0,
+    "verified_count": 0,
+    "total_count": 75,
+    "hallucination_count": 75,
+    "hallucination_rate": 1.0,
+    "_failed_insights": [
+      {
+        "idx": 0,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 1,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 2,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 3,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 4,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 5,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 6,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 7,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 8,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 9,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 10,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 11,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 12,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 13,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 14,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 15,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 16,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 17,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 18,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 19,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 20,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 21,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 22,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 23,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 24,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 25,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 26,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 27,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 28,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 29,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 30,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 31,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 32,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 33,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 34,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 35,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 36,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 37,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 38,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 39,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 40,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 41,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 42,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 43,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 44,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 45,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 46,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 47,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 48,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 49,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 50,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 51,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 52,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 53,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 54,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 55,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 56,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 57,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 58,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 59,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 60,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 61,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 62,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 63,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 64,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 65,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 66,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 67,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 68,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 69,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 70,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 71,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 72,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 73,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      },
+      {
+        "idx": 74,
+        "reason": "Missing breakdown, measure, view_labels, or view_values",
+        "pattern": null
+      }
+    ]
+  },
+  "insight_significance": {
+    "avg_effect_size": 0.0,
+    "significant_count": 0,
+    "significant_rate": 0.0,
+    "max_effect_size": 0.0,
+    "total_evaluated": 0,
+    "by_pattern": {
+      "TREND": {
+        "significant_count": 0,
+        "total_count": 0,
+        "significant_rate": 0.0
+      },
+      "OUTSTANDING_VALUE": {
+        "significant_count": 0,
+        "total_count": 0,
+        "significant_rate": 0.0
+      },
+      "ATTRIBUTION": {
+        "significant_count": 0,
+        "total_count": 0,
+        "significant_rate": 0.0
+      },
+      "DISTRIBUTION_DIFFERENCE": {
+        "significant_count": 0,
+        "total_count": 0,
+        "significant_rate": 0.0
+      }
+    }
+  },
+  "question_diversity": {
+    "semantic_diversity": 0.3174120783805847,
+    "avg_similarity": 0.6825879216194153,
+    "num_insights": 75,
+    "subspace_diversity": {
+      "subspace_diversity_entropy": 1.3728782512617559,
+      "subspace_diversity_count_ratio": 0.06666666666666667,
+      "unique_columns": 5,
+      "total_columns": 32,
+      "column_distribution": {
+        "Sales Method": 15,
+        "Product": 3,
+        "Region": 7,
+        "State": 2,
+        "Retailer": 5
+      }
+    },
+    "value_diversity": {
+      "value_diversity": 0.3125,
+      "unique_pairs": 10,
+      "total_pairs": 32
+    },
+    "dedup_rate": 0.8533333333333333,
+    "unique_count": 11,
+    "total_count": 75,
+    "duplicate_count": 64
+  },
+  "bm_quality": {
+    "nmi_mean": 0.0,
+    "int_mean": 0.0,
+    "actionability": 0.0,
+    "bm_diversity": 0.0,
+    "total_evaluated": 0,
+    "total_categorical": 0,
+    "total_insights": 75,
+    "pairs": []
+  },
+  "question_quality": {
+    "question_diversity": {
+      "question_diversity": 0.0,
+      "avg_similarity": 0.0,
+      "num_questions": 0
+    },
+    "question_specificity": {
+      "question_specificity_mean": 0.0,
+      "question_specificity_std": 0.0,
+      "num_questions": 0
+    },
+    "question_insight_alignment": {
+      "question_insight_alignment": 0.0,
+      "num_pairs": 0
+    },
+    "reason_insight_coherence": {
+      "reason_insight_coherence": 0.0,
+      "num_pairs": 0
+    },
+    "question_novelty": {
+      "question_novelty": 0.0,
+      "novel_count": 0,
+      "total_count": 0,
+      "avg_max_similarity": 0.0,
+      "compared_against": "QUIS"
+    }
+  },
+  "time_to_insight": {
+    "total_time_seconds": 564.8557720184326,
+    "insights_generated": 75,
+    "time_per_insight_seconds": 7.531410293579102,
+    "throughput_insights_per_second": 0.13277725698366868
+  },
+  "token_usage": {
+    "total_tokens": 116055,
+    "input_tokens": 78837,
+    "output_tokens": 37218,
+    "requests": 22,
+    "insights_generated": 75,
+    "tokens_per_insight": 1547.4,
+    "model": "gpt-5.4"
+  },
+  "insight_novelty": {
+    "novelty": 1.0,
+    "novel_count": 75,
+    "total_count": 75,
+    "avg_max_similarity": 0.33759087324142456,
+    "tau": 0.85,
+    "compared_against": "QUIS"
+  },
+  "subspace_metrics": {
+    "total_with_subspace": 32,
+    "total_original": 32,
+    "faithfulness": {
+      "faithfulness": 0.0,
+      "verified_count": 0,
+      "total_count": 32,
+      "hallucination_count": 32,
+      "hallucination_rate": 1.0,
+      "_failed_insights": [
+        {
+          "idx": 0,
+          "reason": "Missing breakdown, measure, view_labels, or view_values",
+          "pattern": null
+        },
+        {
+          "idx": 1,
+          "reason": "Missing breakdown, measure, view_labels, or view_values",
+          "pattern": null
+        },
+        {
+          "idx": 2,
+          "reason": "Missing breakdown, measure, view_labels, or view_values",
+          "pattern": null
+        },
+        {
+          "idx": 3,
+          "reason": "Missing breakdown, measure, view_labels, or view_values",
+          "pattern": null
+        },
+        {
+          "idx": 4,
+          "reason": "Missing breakdown, measure, view_labels, or view_values",
+          "pattern": null
+        },
+        {
+          "idx": 5,
+          "reason": "Missing breakdown, measure, view_labels, or view_values",
+          "pattern": null
+        },
+        {
+          "idx": 6,
+          "reason": "Missing breakdown, measure, view_labels, or view_values",
+          "pattern": null
+        },
+        {
+          "idx": 7,
+          "reason": "Missing breakdown, measure, view_labels, or view_values",
+          "pattern": null
+        },
+        {
+          "idx": 8,
+          "reason": "Missing breakdown, measure, view_labels, or view_values",
+          "pattern": null
+        },
+        {
+          "idx": 9,
+          "reason": "Missing breakdown, measure, view_labels, or view_values",
+          "pattern": null
+        },
+        {
+          "idx": 10,
+          "reason": "Missing breakdown, measure, view_labels, or view_values",
+          "pattern": null
+        },
+        {
+          "idx": 11,
+          "reason": "Missing breakdown, measure, view_labels, or view_values",
+          "pattern": null
+        },
+        {
+          "idx": 12,
+          "reason": "Missing breakdown, measure, view_labels, or view_values",
+          "pattern": null
+        },
+        {
+          "idx": 13,
+          "reason": "Missing breakdown, measure, view_labels, or view_values",
+          "pattern": null
+        },
+        {
+          "idx": 14,
+          "reason": "Missing breakdown, measure, view_labels, or view_values",
+          "pattern": null
+        },
+        {
+          "idx": 15,
+          "reason": "Missing breakdown, measure, view_labels, or view_values",
+          "pattern": null
+        },
+        {
+          "idx": 16,
+          "reason": "Missing breakdown, measure, view_labels, or view_values",
+          "pattern": null
+        },
+        {
+          "idx": 17,
+          "reason": "Missing breakdown, measure, view_labels, or view_values",
+          "pattern": null
+        },
+        {
+          "idx": 18,
+          "reason": "Missing breakdown, measure, view_labels, or view_values",
+          "pattern": null
+        },
+        {
+          "idx": 19,
+          "reason": "Missing breakdown, measure, view_labels, or view_values",
+          "pattern": null
+        },
+        {
+          "idx": 20,
+          "reason": "Missing breakdown, measure, view_labels, or view_values",
+          "pattern": null
+        },
+        {
+          "idx": 21,
+          "reason": "Missing breakdown, measure, view_labels, or view_values",
+          "pattern": null
+        },
+        {
+          "idx": 22,
+          "reason": "Missing breakdown, measure, view_labels, or view_values",
+          "pattern": null
+        },
+        {
+          "idx": 23,
+          "reason": "Missing breakdown, measure, view_labels, or view_values",
+          "pattern": null
+        },
+        {
+          "idx": 24,
+          "reason": "Missing breakdown, measure, view_labels, or view_values",
+          "pattern": null
+        },
+        {
+          "idx": 25,
+          "reason": "Missing breakdown, measure, view_labels, or view_values",
+          "pattern": null
+        },
+        {
+          "idx": 26,
+          "reason": "Missing breakdown, measure, view_labels, or view_values",
+          "pattern": null
+        },
+        {
+          "idx": 27,
+          "reason": "Missing breakdown, measure, view_labels, or view_values",
+          "pattern": null
+        },
+        {
+          "idx": 28,
+          "reason": "Missing breakdown, measure, view_labels, or view_values",
+          "pattern": null
+        },
+        {
+          "idx": 29,
+          "reason": "Missing breakdown, measure, view_labels, or view_values",
+          "pattern": null
+        },
+        {
+          "idx": 30,
+          "reason": "Missing breakdown, measure, view_labels, or view_values",
+          "pattern": null
+        },
+        {
+          "idx": 31,
+          "reason": "Missing breakdown, measure, view_labels, or view_values",
+          "pattern": null
+        }
+      ]
+    },
+    "significance": {
+      "avg_effect_size": 0.0,
+      "significant_count": 0,
+      "significant_rate": 0.0,
+      "max_effect_size": 0.0,
+      "total_evaluated": 0,
+      "by_pattern": {
+        "TREND": {
+          "significant_count": 0,
+          "total_count": 0,
+          "significant_rate": 0.0
+        },
+        "OUTSTANDING_VALUE": {
+          "significant_count": 0,
+          "total_count": 0,
+          "significant_rate": 0.0
+        },
+        "ATTRIBUTION": {
+          "significant_count": 0,
+          "total_count": 0,
+          "significant_rate": 0.0
+        },
+        "DISTRIBUTION_DIFFERENCE": {
+          "significant_count": 0,
+          "total_count": 0,
+          "significant_rate": 0.0
+        }
+      }
+    },
+    "novelty": {
+      "novelty": 1.0,
+      "novel_count": 32,
+      "total_count": 32,
+      "avg_max_similarity": 0.5033930540084839,
+      "tau": 0.85
+    },
+    "diversity": {
+      "semantic_diversity": 0.42282634973526,
+      "avg_similarity": 0.57717365026474,
+      "num_insights": 32,
+      "subspace_diversity": {
+        "subspace_diversity_entropy": 1.3728782512617559,
+        "subspace_diversity_count_ratio": 0.15625,
+        "unique_columns": 5,
+        "total_columns": 32,
+        "column_distribution": {
+          "Sales Method": 15,
+          "Product": 3,
+          "Region": 7,
+          "State": 2,
+          "Retailer": 5
+        }
+      },
+      "value_diversity": {
+        "value_diversity": 0.3125,
+        "unique_pairs": 10,
+        "total_pairs": 32
+      },
+      "dedup_rate": 0.6875,
+      "unique_count": 10,
+      "total_count": 32,
+      "duplicate_count": 22
+    }
+  }
+}

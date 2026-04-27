@@ -1,0 +1,5873 @@
+[
+  {
+    "question": "Which sales methods have the lowest minimum transaction sales?",
+    "explanation": "Outstanding value: for Region=South, one category in Sales Method has a value much larger (or smaller) than the others when measuring MIN(Total Sales).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Sales Method",
+      "measure": "MIN(Total Sales)",
+      "subspace": [
+        [
+          "Region",
+          "South"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 153.50877192982455,
+      "question": "Which sales methods have the lowest minimum transaction sales?",
+      "reason": "The minimum total sales by sales method can highlight whether certain channels experience very weak or near-zero transactions, which may signal inefficiencies or inconsistent performance.",
+      "view_labels": [
+        "In-store",
+        "Online",
+        "Outlet"
+      ],
+      "view_values": [
+        78750.0,
+        513.0,
+        506.0
+      ]
+    }
+  },
+  {
+    "question": "Which sales methods generate the highest total sales?",
+    "explanation": "Outstanding value: for State=Georgia, one category in Sales Method has a value much larger (or smaller) than the others when measuring SUM(Total Sales).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Sales Method",
+      "measure": "SUM(Total Sales)",
+      "subspace": [
+        [
+          "State",
+          "Georgia"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 44.05538044857428,
+      "question": "Which sales methods generate the highest total sales?",
+      "reason": "Comparing total sales across sales methods helps evaluate which selling channel contributes most to revenue generation. This can reveal channel effectiveness and indicate whether certain sales methods are outperforming others commercially.",
+      "view_labels": [
+        "Online",
+        "Outlet"
+      ],
+      "view_values": [
+        18575819.0,
+        421647.0
+      ]
+    }
+  },
+  {
+    "question": "Which retailers account for the largest number of transactions?",
+    "explanation": "Outstanding value: for State=Vermont, one category in Retailer has a value much larger (or smaller) than the others when measuring COUNT(Invoice Date).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Retailer",
+      "measure": "COUNT(Invoice Date)",
+      "subspace": [
+        [
+          "State",
+          "Vermont"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 14.75,
+      "question": "Which retailers account for the largest number of transactions?",
+      "reason": "Counting transactions by retailer shows how sales activity is distributed across retail partners. This can reveal whether business volume is concentrated among a few retailers or more evenly spread, which is useful for dependency and partnership analysis.",
+      "view_labels": [
+        "Amazon",
+        "West Gear"
+      ],
+      "view_values": [
+        177.0,
+        12.0
+      ]
+    }
+  },
+  {
+    "question": "Which products show the lowest observed units sold in a transaction?",
+    "explanation": "Outstanding value: for Sales Method=Outlet, one category in Product has a value much larger (or smaller) than the others when measuring MIN(Units Sold).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Product",
+      "measure": "MIN(Units Sold)",
+      "subspace": [
+        [
+          "Sales Method",
+          "Outlet"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 13.636363636363635,
+      "question": "Which products show the lowest observed units sold in a transaction?",
+      "reason": "Examining the minimum units sold by product can help detect products that experience extremely weak demand or zero-sale transactions. This is useful for spotting potential stock, assortment, or demand issues.",
+      "view_labels": [
+        "Men's Apparel",
+        "Men's Athletic Footwear",
+        "Men's Street Footwear",
+        "Women's Apparel",
+        "Women's Athletic Footwear",
+        "Women's Street Footwear"
+      ],
+      "view_values": [
+        15.0,
+        1.0,
+        1.025,
+        1.0,
+        0.0,
+        1.1
+      ]
+    }
+  },
+  {
+    "question": "How widely is each sales method used across retailers?",
+    "explanation": "Outstanding value: for Units Sold=256.0, one category in Sales Method has a value much larger (or smaller) than the others when measuring COUNT(Retailer).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Sales Method",
+      "measure": "COUNT(Retailer)",
+      "subspace": [
+        [
+          "Units Sold",
+          256.0
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 10.0,
+      "question": "How widely is each sales method used across retailers?",
+      "reason": "Counting distinct retailers by sales method helps show whether certain selling methods are broadly adopted or concentrated among fewer retailers. This can reveal structural differences in channel participation and possible method specialization.",
+      "view_labels": [
+        "Online",
+        "Outlet"
+      ],
+      "view_values": [
+        2.0,
+        20.0
+      ]
+    }
+  },
+  {
+    "question": "Which states show the lowest recorded transaction-level total sales?",
+    "explanation": "Outstanding value: for City=Charleston, one category in State has a value much larger (or smaller) than the others when measuring MIN(Total Sales).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "State",
+      "measure": "MIN(Total Sales)",
+      "subspace": [
+        [
+          "City",
+          "Charleston"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 6.941071428571429,
+      "question": "Which states show the lowest recorded transaction-level total sales?",
+      "reason": "Examining the minimum total sales by state helps identify locations with extremely weak individual sales records or possible zero-sales anomalies. This can highlight underperforming markets or data points that may deserve further investigation.",
+      "view_labels": [
+        "South Carolina",
+        "West Virginia"
+      ],
+      "view_values": [
+        3887.0,
+        560.0
+      ]
+    }
+  },
+  {
+    "question": "Which sales methods account for the highest volume of transactions?",
+    "explanation": "Outstanding value: for Operating Margin=28, one category in Sales Method has a value much larger (or smaller) than the others when measuring COUNT(Retailer ID).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Sales Method",
+      "measure": "COUNT(Retailer ID)",
+      "subspace": [
+        [
+          "Operating Margin",
+          28
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 6.0,
+      "question": "Which sales methods account for the highest volume of transactions?",
+      "reason": "Comparing transaction counts across sales methods can reveal whether the business relies more heavily on in-store, online, or outlet channels. This is useful for identifying channel concentration, customer buying preferences, and possible operational imbalances.",
+      "view_labels": [
+        "Online",
+        "Outlet"
+      ],
+      "view_values": [
+        4.0,
+        24.0
+      ]
+    }
+  },
+  {
+    "question": "How does operating profit differ across regions?",
+    "explanation": "Outstanding value: for Retailer ID=1197831, one category in Region has a value much larger (or smaller) than the others when measuring SUM(Operating Profit).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Region",
+      "measure": "SUM(Operating Profit)",
+      "subspace": [
+        [
+          "Retailer ID",
+          1197831
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 5.928359531779353,
+      "question": "How does operating profit differ across regions?",
+      "reason": "Profitability can vary substantially by geography even when sales are strong. Looking at operating profit by region helps uncover where the company earns the most money and can highlight regions with weak profit conversion or unusually strong performance.",
+      "view_labels": [
+        "Midwest",
+        "Northeast",
+        "South",
+        "West"
+      ],
+      "view_values": [
+        3956235.0,
+        408007.0,
+        45337669.0,
+        7647591.0
+      ]
+    }
+  },
+  {
+    "question": "Which sales method tends to sell the highest average number of units?",
+    "explanation": "Outstanding value: for City=Anchorage, one category in Sales Method has a value much larger (or smaller) than the others when measuring MEAN(Units Sold).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Sales Method",
+      "measure": "MEAN(Units Sold)",
+      "subspace": [
+        [
+          "City",
+          "Anchorage"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 3.6303531179564237,
+      "question": "Which sales method tends to sell the highest average number of units?",
+      "reason": "Comparing average units sold across sales methods can reveal whether certain channels are better at driving transaction volume. This is useful for understanding channel effectiveness and whether some methods are associated with stronger product movement.",
+      "view_labels": [
+        "Online",
+        "Outlet"
+      ],
+      "view_values": [
+        92.43055555555556,
+        335.55555555555554
+      ]
+    }
+  },
+  {
+    "question": "Which products achieve the highest peak units sold in a single transaction?",
+    "explanation": "Outstanding value: for Operating Profit=1525, one category in Product has a value much larger (or smaller) than the others when measuring MAX(Units Sold).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Product",
+      "measure": "MAX(Units Sold)",
+      "subspace": [
+        [
+          "Operating Profit",
+          1525
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 3.442622950819672,
+      "question": "Which products achieve the highest peak units sold in a single transaction?",
+      "reason": "Comparing the maximum units sold across products can highlight whether certain product categories occasionally experience very large-volume transactions. This helps detect peak-demand products and possible outlier orders that differ from normal selling patterns.",
+      "view_labels": [
+        "Men's Athletic Footwear",
+        "Women's Apparel"
+      ],
+      "view_values": [
+        61.0,
+        210.0
+      ]
+    }
+  },
+  {
+    "question": "Which regions account for the highest total units sold?",
+    "explanation": "Outstanding value: for Retailer ID=1128299, one category in Region has a value much larger (or smaller) than the others when measuring SUM(Units Sold).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Region",
+      "measure": "SUM(Units Sold)",
+      "subspace": [
+        [
+          "Retailer ID",
+          1128299
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 3.0372341070778717,
+      "question": "Which regions account for the highest total units sold?",
+      "reason": "Total units sold by region helps identify where demand volume is concentrated geographically. This can reveal strong and weak markets and show whether some regions consistently drive higher sales quantities than others.",
+      "view_labels": [
+        "Northeast",
+        "South",
+        "Southeast",
+        "West"
+      ],
+      "view_values": [
+        4333.0,
+        54763.0,
+        140141.0,
+        425641.025
+      ]
+    }
+  },
+  {
+    "question": "How do average units sold vary by sales method?",
+    "explanation": "Outstanding value: for City=Fargo, one category in Sales Method has a value much larger (or smaller) than the others when measuring MEAN(Units Sold).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Sales Method",
+      "measure": "MEAN(Units Sold)",
+      "subspace": [
+        [
+          "City",
+          "Fargo"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 2.8405749357718655,
+      "question": "How do average units sold vary by sales method?",
+      "reason": "Looking at units sold by sales method helps uncover which channel is most effective at driving purchase volume and whether some methods are better suited for moving inventory.",
+      "view_labels": [
+        "In-store",
+        "Online"
+      ],
+      "view_values": [
+        256.1864406779661,
+        90.18823529411765
+      ]
+    }
+  },
+  {
+    "question": "Which products have the lowest observed transaction-level total sales?",
+    "explanation": "Outstanding value: for City=Providence, one category in Product has a value much larger (or smaller) than the others when measuring MIN(Total Sales).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Product",
+      "measure": "MIN(Total Sales)",
+      "subspace": [
+        [
+          "City",
+          "Providence"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 2.449655172413793,
+      "question": "Which products have the lowest observed transaction-level total sales?",
+      "reason": "The minimum total sales by product can reveal whether some products experience zero- or near-zero-value transactions more often, which may indicate returns, failed sales, promotional giveaways, or weak demand scenarios.",
+      "view_labels": [
+        "Men's Apparel",
+        "Men's Athletic Footwear",
+        "Men's Street Footwear",
+        "Women's Apparel",
+        "Women's Athletic Footwear",
+        "Women's Street Footwear"
+      ],
+      "view_values": [
+        495.0,
+        920.0,
+        3552.0,
+        1450.0,
+        160.0,
+        704.0
+      ]
+    }
+  },
+  {
+    "question": "Which products have the lowest observed transaction-level total sales?",
+    "explanation": "Outstanding value: for Retailer ID=1185732, one category in Product has a value much larger (or smaller) than the others when measuring MIN(Total Sales).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Product",
+      "measure": "MIN(Total Sales)",
+      "subspace": [
+        [
+          "Retailer ID",
+          1185732
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 2.413186813186813,
+      "question": "Which products have the lowest observed transaction-level total sales?",
+      "reason": "The minimum total sales by product can reveal whether some products experience zero- or near-zero-value transactions more often, which may indicate returns, failed sales, promotional giveaways, or weak demand scenarios.",
+      "view_labels": [
+        "Men's Apparel",
+        "Men's Athletic Footwear",
+        "Men's Street Footwear",
+        "Women's Apparel",
+        "Women's Athletic Footwear",
+        "Women's Street Footwear"
+      ],
+      "view_values": [
+        252.0,
+        736.0,
+        2196.0,
+        910.0,
+        0.0,
+        369.0
+      ]
+    }
+  },
+  {
+    "question": "Which sales methods are associated with the lowest observed price per unit?",
+    "explanation": "Outstanding value: for Units Sold=215.0, one category in Sales Method has a value much larger (or smaller) than the others when measuring MIN(Price per Unit).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Sales Method",
+      "measure": "MIN(Price per Unit)",
+      "subspace": [
+        [
+          "Units Sold",
+          215.0
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 2.4,
+      "question": "Which sales methods are associated with the lowest observed price per unit?",
+      "reason": "The lowest price per unit recorded by sales method can reveal discount-heavy channels or unusual pricing behavior. This is useful for detecting aggressive pricing strategies or potential anomalies in how products are sold across channels.",
+      "view_labels": [
+        "Online",
+        "Outlet"
+      ],
+      "view_values": [
+        36.0,
+        15.0
+      ]
+    }
+  },
+  {
+    "question": "Which product categories generate the highest total sales?",
+    "explanation": "Outstanding value: for Price per Unit=66, one category in Product has a value much larger (or smaller) than the others when measuring SUM(Total Sales).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Product",
+      "measure": "SUM(Total Sales)",
+      "subspace": [
+        [
+          "Price per Unit",
+          66
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 2.2229965156794425,
+      "question": "Which product categories generate the highest total sales?",
+      "reason": "Comparing total revenue across products helps identify which product categories drive the business most strongly. Using Product as the breakdown and Total Sales as the measure can reveal concentration of sales, product demand patterns, and possible standout or underperforming categories.",
+      "view_labels": [
+        "Men's Apparel",
+        "Men's Athletic Footwear",
+        "Men's Street Footwear",
+        "Women's Apparel",
+        "Women's Athletic Footwear",
+        "Women's Street Footwear"
+      ],
+      "view_values": [
+        37158.0,
+        37884.0,
+        17358.0,
+        84216.0,
+        20262.0,
+        22506.0
+      ]
+    }
+  },
+  {
+    "question": "Which retailer IDs account for the most transaction records?",
+    "explanation": "Outstanding value: for overall data, one category in Retailer ID has a value much larger (or smaller) than the others when measuring COUNT(Retailer).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Retailer ID",
+      "measure": "COUNT(Retailer)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 2.221518987341772,
+      "question": "Which retailer IDs account for the most transaction records?",
+      "reason": "Counting the number of records by retailer ID can reveal whether some retailer entities are much more active than others. Using Retailer ID as the breakdown and a record count measure helps detect highly active accounts, possible imbalance in partner contribution, or outlier retailer entities.",
+      "view_labels": [
+        "1128299",
+        "1185732",
+        "1189833",
+        "1197831"
+      ],
+      "view_values": [
+        2370.0,
+        5265.0,
+        360.0,
+        1653.0
+      ]
+    }
+  },
+  {
+    "question": "Which sales method has the lowest observed operating margin?",
+    "explanation": "Outstanding value: for State=California, one category in Sales Method has a value much larger (or smaller) than the others when measuring MIN(Operating Margin).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Sales Method",
+      "measure": "MIN(Operating Margin)",
+      "subspace": [
+        [
+          "State",
+          "California"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 2.1,
+      "question": "Which sales method has the lowest observed operating margin?",
+      "reason": "The lowest operating margin by sales method can reveal whether any selling channel is associated with especially weak profitability outcomes. This helps identify riskier methods, margin compression, or unusual transactions that may need operational review.",
+      "view_labels": [
+        "Online",
+        "Outlet"
+      ],
+      "view_values": [
+        21.0,
+        10.0
+      ]
+    }
+  },
+  {
+    "question": "How does average operating profit differ by sales method?",
+    "explanation": "Outstanding value: for overall data, one category in Sales Method has a value much larger (or smaller) than the others when measuring MEAN(Operating Profit).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Sales Method",
+      "measure": "MEAN(Operating Profit)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 2.050019950827923,
+      "question": "How does average operating profit differ by sales method?",
+      "reason": "Operating profit compared across sales methods shows whether some channels are more profitable than others. This can reveal differences in selling efficiency, customer mix, or channel economics.",
+      "view_labels": [
+        "In-store",
+        "Online",
+        "Outlet"
+      ],
+      "view_values": [
+        73328.38045977011,
+        19749.506443035385,
+        35769.59357403114
+      ]
+    }
+  },
+  {
+    "question": "Which states achieve the highest peak operating profit?",
+    "explanation": "Outstanding value: for City=Charleston, one category in State has a value much larger (or smaller) than the others when measuring MAX(Operating Profit).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "State",
+      "measure": "MAX(Operating Profit)",
+      "subspace": [
+        [
+          "City",
+          "Charleston"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 2.019230769230769,
+      "question": "Which states achieve the highest peak operating profit?",
+      "reason": "The maximum operating profit by state helps surface standout markets and potential outliers where individual transactions or market conditions generate unusually strong profitability.",
+      "view_labels": [
+        "South Carolina",
+        "West Virginia"
+      ],
+      "view_values": [
+        341250.0,
+        169000.0
+      ]
+    }
+  },
+  {
+    "question": "On which invoice dates was sales activity highest?",
+    "explanation": "Outstanding value: for State=Florida, one category in Invoice Date has a value much larger (or smaller) than the others when measuring COUNT(Retailer ID).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Invoice Date",
+      "measure": "COUNT(Retailer ID)",
+      "subspace": [
+        [
+          "State",
+          "Florida"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 2.0,
+      "question": "On which invoice dates was sales activity highest?",
+      "reason": "Examining the number of records by invoice date can reveal sales activity patterns over time, including spikes, dips, seasonality, and unusually active transaction days.",
+      "view_labels": [
+        "2020-01-10 00:00:00",
+        "2020-02-10 00:00:00",
+        "2020-03-10 00:00:00",
+        "2020-04-10 00:00:00",
+        "2020-05-10 00:00:00",
+        "2020-06-10 00:00:00",
+        "2020-07-09 00:00:00",
+        "2020-07-10 00:00:00",
+        "2020-08-09 00:00:00",
+        "2020-08-10 00:00:00",
+        "2020-09-09 00:00:00",
+        "2020-09-10 00:00:00",
+        "2020-10-08 00:00:00",
+        "2020-10-09 00:00:00",
+        "2020-10-10 00:00:00",
+        "2020-11-08 00:00:00",
+        "2020-11-09 00:00:00",
+        "2020-12-08 00:00:00",
+        "2020-12-09 00:00:00",
+        "2021-10-02 00:00:00",
+        "2021-12-01 00:00:00"
+      ],
+      "view_values": [
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        9.0,
+        18.0
+      ]
+    }
+  },
+  {
+    "question": "Which sales methods are active across the widest range of invoice dates?",
+    "explanation": "Outstanding value: for overall data, one category in Sales Method has a value much larger (or smaller) than the others when measuring COUNT(Invoice Date).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Sales Method",
+      "measure": "COUNT(Invoice Date)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 1.9925093632958801,
+      "question": "Which sales methods are active across the widest range of invoice dates?",
+      "reason": "Comparing the number of invoice dates represented within each sales method helps indicate which channels are used more consistently over time. This can reveal whether some methods are broadly active across many days while others are used more selectively.",
+      "view_labels": [
+        "In-store",
+        "Online",
+        "Outlet"
+      ],
+      "view_values": [
+        869.0,
+        2128.0,
+        1068.0
+      ]
+    }
+  },
+  {
+    "question": "Which retailers reach the highest product price points?",
+    "explanation": "Outstanding value: for City=Knoxville, one category in Retailer has a value much larger (or smaller) than the others when measuring MAX(Price per Unit).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Retailer",
+      "measure": "MAX(Price per Unit)",
+      "subspace": [
+        [
+          "City",
+          "Knoxville"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.8571428571428572,
+      "question": "Which retailers reach the highest product price points?",
+      "reason": "The highest observed price per unit by retailer can expose whether some retailers carry more premium-priced inventory or follow more aggressive pricing strategies than others.",
+      "view_labels": [
+        "Foot Locker",
+        "Sports Direct"
+      ],
+      "view_values": [
+        35.0,
+        65.0
+      ]
+    }
+  },
+  {
+    "question": "How does average operating profit vary across retailers?",
+    "explanation": "Outstanding value: for Sales Method=In-store, one category in Retailer has a value much larger (or smaller) than the others when measuring MEAN(Operating Profit).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Retailer",
+      "measure": "MEAN(Operating Profit)",
+      "subspace": [
+        [
+          "Sales Method",
+          "In-store"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.6935861166421147,
+      "question": "How does average operating profit vary across retailers?",
+      "reason": "Average operating profit by retailer can show whether some retailers are consistently more profitable than others, beyond just sales volume. This helps uncover differences in pricing power, customer mix, or execution quality across retail partners.",
+      "view_labels": [
+        "Amazon",
+        "Foot Locker",
+        "Kohl's",
+        "Sports Direct",
+        "Walmart",
+        "West Gear"
+      ],
+      "view_values": [
+        70839.81355932204,
+        62565.7416481069,
+        73590.77777777778,
+        70357.17406143344,
+        133253.4054054054,
+        78681.21030042919
+      ]
+    }
+  },
+  {
+    "question": "Which products achieve the highest peak units sold in a single transaction?",
+    "explanation": "Outstanding value: for Operating Profit=1799, one category in Product has a value much larger (or smaller) than the others when measuring MAX(Units Sold).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Product",
+      "measure": "MAX(Units Sold)",
+      "subspace": [
+        [
+          "Operating Profit",
+          1799
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.6911764705882353,
+      "question": "Which products achieve the highest peak units sold in a single transaction?",
+      "reason": "Comparing the maximum units sold across products can highlight whether certain product categories occasionally experience very large-volume transactions. This helps detect peak-demand products and possible outlier orders that differ from normal selling patterns.",
+      "view_labels": [
+        "Men's Apparel",
+        "Men's Street Footwear"
+      ],
+      "view_values": [
+        68.0,
+        115.0
+      ]
+    }
+  },
+  {
+    "question": "In which states are the most profitable single transactions occurring?",
+    "explanation": "Outstanding value: for Units Sold=44.0, one category in State has a value much larger (or smaller) than the others when measuring MAX(Operating Profit).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "State",
+      "measure": "MAX(Operating Profit)",
+      "subspace": [
+        [
+          "Units Sold",
+          44.0
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.6762132060461417,
+      "question": "In which states are the most profitable single transactions occurring?",
+      "reason": "Comparing the highest operating profit achieved in each state can highlight states that generate unusually large profitable deals. This helps identify top-performing markets and possible outlier transactions worth deeper review.",
+      "view_labels": [
+        "Alaska",
+        "Arizona",
+        "Colorado",
+        "Connecticut",
+        "Delaware",
+        "Florida",
+        "Illinois",
+        "Indiana",
+        "Iowa",
+        "Kansas",
+        "Kentucky",
+        "Maine",
+        "Maryland",
+        "Massachusetts",
+        "Minnesota",
+        "Nebraska",
+        "North Dakota",
+        "Oregon",
+        "Pennsylvania",
+        "Rhode Island",
+        "South Dakota",
+        "Utah",
+        "Vermont",
+        "West Virginia",
+        "Wisconsin"
+      ],
+      "view_values": [
+        1093.0,
+        813.0,
+        2107.0,
+        539.0,
+        1144.0,
+        886.0,
+        1034.0,
+        668.0,
+        957.0,
+        993.0,
+        1052.0,
+        776.0,
+        1013.0,
+        841.0,
+        974.0,
+        884.0,
+        1089.0,
+        992.0,
+        1257.0,
+        1123.0,
+        832.0,
+        1016.0,
+        792.0,
+        770.0,
+        591.0
+      ]
+    }
+  },
+  {
+    "question": "Which sales methods are associated with the broadest product coverage?",
+    "explanation": "Outstanding value: for overall data, one category in Sales Method has a value much larger (or smaller) than the others when measuring COUNT(Product).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Sales Method",
+      "measure": "COUNT(Product)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 1.6194104007949652,
+      "question": "Which sales methods are associated with the broadest product coverage?",
+      "reason": "Counting products by sales method helps show whether certain channels are associated with a broader assortment of items in the dataset. This can reveal channel specialization, assortment concentration, or potential limitations in product-channel mix.",
+      "view_labels": [
+        "In-store",
+        "Online",
+        "Outlet"
+      ],
+      "view_values": [
+        1740.0,
+        4889.0,
+        3019.0
+      ]
+    }
+  },
+  {
+    "question": "Which product categories generate the highest total sales?",
+    "explanation": "Outstanding value: for State=Illinois, one category in Product has a value much larger (or smaller) than the others when measuring SUM(Total Sales).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Product",
+      "measure": "SUM(Total Sales)",
+      "subspace": [
+        [
+          "State",
+          "Illinois"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.574766114452839,
+      "question": "Which product categories generate the highest total sales?",
+      "reason": "Comparing total revenue across products helps identify which product categories drive the business most strongly. Using Product as the breakdown and Total Sales as the measure can reveal concentration of sales, product demand patterns, and possible standout or underperforming categories.",
+      "view_labels": [
+        "Men's Apparel",
+        "Men's Athletic Footwear",
+        "Men's Street Footwear",
+        "Women's Apparel",
+        "Women's Athletic Footwear",
+        "Women's Street Footwear"
+      ],
+      "view_values": [
+        1102791.0,
+        1560270.0,
+        3087951.0,
+        1960895.0,
+        924799.0,
+        1160782.0
+      ]
+    }
+  },
+  {
+    "question": "Which regions generate the highest total sales?",
+    "explanation": "Outstanding value: for Operating Margin=60, one category in Region has a value much larger (or smaller) than the others when measuring MEAN(Total Sales).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Region",
+      "measure": "MEAN(Total Sales)",
+      "subspace": [
+        [
+          "Operating Margin",
+          60
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.5741921984760467,
+      "question": "Which regions generate the highest total sales?",
+      "reason": "Total sales compared across regions helps identify geographic revenue concentration, strong markets, and potential underperforming areas that may need strategic attention.",
+      "view_labels": [
+        "Midwest",
+        "Northeast",
+        "South",
+        "Southeast",
+        "West"
+      ],
+      "view_values": [
+        64102.3125,
+        8968.117647058823,
+        113377.6511627907,
+        12089.266666666666,
+        72022.75
+      ]
+    }
+  },
+  {
+    "question": "Which products have the highest average operating margin?",
+    "explanation": "Outstanding value: for Total Sales=4495, one category in Product has a value much larger (or smaller) than the others when measuring MEAN(Operating Margin).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Product",
+      "measure": "MEAN(Operating Margin)",
+      "subspace": [
+        [
+          "Total Sales",
+          4495
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.56,
+      "question": "Which products have the highest average operating margin?",
+      "reason": "Operating margin is a direct indicator of efficiency and profitability quality. Comparing average margin across products helps identify which products are structurally more profitable and whether high-selling products also maintain healthy margins.",
+      "view_labels": [
+        "Men's Athletic Footwear",
+        "Women's Street Footwear"
+      ],
+      "view_values": [
+        25.0,
+        39.0
+      ]
+    }
+  },
+  {
+    "question": "How does average operating margin differ across states?",
+    "explanation": "Outstanding value: for Operating Profit=2947, one category in State has a value much larger (or smaller) than the others when measuring MEAN(Operating Margin).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "State",
+      "measure": "MEAN(Operating Margin)",
+      "subspace": [
+        [
+          "Operating Profit",
+          2947
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.5161290322580645,
+      "question": "How does average operating margin differ across states?",
+      "reason": "Operating margin reflects profitability efficiency rather than absolute scale. Comparing average operating margin across states can highlight markets where sales are structurally more or less efficient, helping surface geographic differences in profitability quality.",
+      "view_labels": [
+        "Alabama",
+        "Texas"
+      ],
+      "view_values": [
+        47.0,
+        31.0
+      ]
+    }
+  },
+  {
+    "question": "How do average prices per unit vary across retailers?",
+    "explanation": "Outstanding value: for State=Alaska, one category in Retailer has a value much larger (or smaller) than the others when measuring MEAN(Price per Unit).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Retailer",
+      "measure": "MEAN(Price per Unit)",
+      "subspace": [
+        [
+          "State",
+          "Alaska"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.4119645216078505,
+      "question": "How do average prices per unit vary across retailers?",
+      "reason": "Pricing differences across retailers may reflect different market strategies, positioning, or customer segments. Comparing average price per unit by retailer helps identify premium vs. discount-oriented retailers and possible pricing anomalies.",
+      "view_labels": [
+        "Amazon",
+        "Foot Locker"
+      ],
+      "view_values": [
+        59.38095238095238,
+        42.05555555555556
+      ]
+    }
+  },
+  {
+    "question": "Which cities record the highest single operating profit values?",
+    "explanation": "Outstanding value: for Region=Northeast, one category in City has a value much larger (or smaller) than the others when measuring MAX(Operating Profit).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "City",
+      "measure": "MAX(Operating Profit)",
+      "subspace": [
+        [
+          "Region",
+          "Northeast"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.4035087719298245,
+      "question": "Which cities record the highest single operating profit values?",
+      "reason": "Looking at the maximum operating profit by city can reveal standout locations with exceptionally strong profitable transactions. This is useful for spotting outliers, flagship markets, or cities where specific deals or demand conditions created unusually high profitability.",
+      "view_labels": [
+        "Albany",
+        "Baltimore",
+        "Boston",
+        "Burlington",
+        "Charleston",
+        "Hartford",
+        "Manchester",
+        "New York",
+        "Newark",
+        "Philadelphia",
+        "Portland",
+        "Providence",
+        "Wilmington"
+      ],
+      "view_values": [
+        277875.0,
+        108000.0,
+        116438.0,
+        189000.0,
+        169000.0,
+        149500.0,
+        187500.0,
+        390000.0,
+        115500.0,
+        187688.0,
+        108063.0,
+        105000.0,
+        136500.0
+      ]
+    }
+  },
+  {
+    "question": "Which sales methods have the lowest minimum transaction sales?",
+    "explanation": "Attribution: for overall data, a single category in Sales Method accounts for a large share of total MIN(Total Sales).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Sales Method",
+      "measure": "MIN(Total Sales)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 1.0,
+      "question": "Which sales methods have the lowest minimum transaction sales?",
+      "reason": "The minimum total sales by sales method can highlight whether certain channels experience very weak or near-zero transactions, which may signal inefficiencies or inconsistent performance.",
+      "view_labels": [
+        "In-store",
+        "Online",
+        "Outlet"
+      ],
+      "view_values": [
+        7500.0,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  {
+    "question": "On which invoice dates was sales activity highest?",
+    "explanation": "There is a notable trend in COUNT(Retailer ID) across Invoice Date. For the segment overall data, the values show a monotonic trend.",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Invoice Date",
+      "measure": "COUNT(Retailer ID)",
+      "subspace": [],
+      "pattern": "Trend",
+      "score": 1.0,
+      "question": "On which invoice dates was sales activity highest?",
+      "reason": "Examining the number of records by invoice date can reveal sales activity patterns over time, including spikes, dips, seasonality, and unusually active transaction days.",
+      "view_labels": [
+        "2020-01-01 00:00:00",
+        "2020-01-02 00:00:00",
+        "2020-01-03 00:00:00",
+        "2020-01-04 00:00:00",
+        "2020-01-05 00:00:00",
+        "2020-01-06 00:00:00",
+        "2020-01-07 00:00:00",
+        "2020-01-08 00:00:00",
+        "2020-01-09 00:00:00",
+        "2020-01-10 00:00:00",
+        "2020-01-11 00:00:00",
+        "2020-01-12 00:00:00",
+        "2020-02-01 00:00:00",
+        "2020-02-02 00:00:00",
+        "2020-02-03 00:00:00",
+        "2020-02-04 00:00:00",
+        "2020-02-05 00:00:00",
+        "2020-02-06 00:00:00",
+        "2020-02-07 00:00:00",
+        "2020-02-08 00:00:00",
+        "2020-02-09 00:00:00",
+        "2020-02-10 00:00:00",
+        "2020-02-11 00:00:00",
+        "2020-02-12 00:00:00",
+        "2020-03-01 00:00:00",
+        "2020-03-02 00:00:00",
+        "2020-03-03 00:00:00",
+        "2020-03-04 00:00:00",
+        "2020-03-05 00:00:00",
+        "2020-03-06 00:00:00",
+        "2020-03-07 00:00:00",
+        "2020-03-08 00:00:00",
+        "2020-03-09 00:00:00",
+        "2020-03-10 00:00:00",
+        "2020-03-11 00:00:00",
+        "2020-03-12 00:00:00",
+        "2020-04-01 00:00:00",
+        "2020-04-02 00:00:00",
+        "2020-04-03 00:00:00",
+        "2020-04-04 00:00:00",
+        "2020-04-05 00:00:00",
+        "2020-04-06 00:00:00",
+        "2020-04-07 00:00:00",
+        "2020-04-08 00:00:00",
+        "2020-04-09 00:00:00",
+        "2020-04-10 00:00:00",
+        "2020-04-11 00:00:00",
+        "2020-04-12 00:00:00",
+        "2020-05-01 00:00:00",
+        "2020-05-02 00:00:00",
+        "2020-05-03 00:00:00",
+        "2020-05-04 00:00:00",
+        "2020-05-05 00:00:00",
+        "2020-05-06 00:00:00",
+        "2020-05-07 00:00:00",
+        "2020-05-08 00:00:00",
+        "2020-05-09 00:00:00",
+        "2020-05-10 00:00:00",
+        "2020-05-11 00:00:00",
+        "2020-05-12 00:00:00",
+        "2020-06-01 00:00:00",
+        "2020-06-02 00:00:00",
+        "2020-06-03 00:00:00",
+        "2020-06-04 00:00:00",
+        "2020-06-05 00:00:00",
+        "2020-06-06 00:00:00",
+        "2020-06-07 00:00:00",
+        "2020-06-08 00:00:00",
+        "2020-06-09 00:00:00",
+        "2020-06-10 00:00:00",
+        "2020-06-11 00:00:00",
+        "2020-06-12 00:00:00",
+        "2020-07-01 00:00:00",
+        "2020-07-02 00:00:00",
+        "2020-07-03 00:00:00",
+        "2020-07-04 00:00:00",
+        "2020-07-05 00:00:00",
+        "2020-07-06 00:00:00",
+        "2020-07-07 00:00:00",
+        "2020-07-08 00:00:00",
+        "2020-07-09 00:00:00",
+        "2020-07-10 00:00:00",
+        "2020-07-11 00:00:00",
+        "2020-07-12 00:00:00",
+        "2020-08-01 00:00:00",
+        "2020-08-02 00:00:00",
+        "2020-08-03 00:00:00",
+        "2020-08-04 00:00:00",
+        "2020-08-05 00:00:00",
+        "2020-08-06 00:00:00",
+        "2020-08-07 00:00:00",
+        "2020-08-08 00:00:00",
+        "2020-08-09 00:00:00",
+        "2020-08-10 00:00:00",
+        "2020-08-11 00:00:00",
+        "2020-08-12 00:00:00",
+        "2020-09-01 00:00:00",
+        "2020-09-02 00:00:00",
+        "2020-09-03 00:00:00",
+        "2020-09-04 00:00:00",
+        "2020-09-05 00:00:00",
+        "2020-09-06 00:00:00",
+        "2020-09-07 00:00:00",
+        "2020-09-08 00:00:00",
+        "2020-09-09 00:00:00",
+        "2020-09-10 00:00:00",
+        "2020-09-11 00:00:00",
+        "2020-09-12 00:00:00",
+        "2020-10-01 00:00:00",
+        "2020-10-02 00:00:00",
+        "2020-10-03 00:00:00",
+        "2020-10-04 00:00:00",
+        "2020-10-05 00:00:00",
+        "2020-10-06 00:00:00",
+        "2020-10-07 00:00:00",
+        "2020-10-08 00:00:00",
+        "2020-10-09 00:00:00",
+        "2020-10-10 00:00:00",
+        "2020-10-11 00:00:00",
+        "2020-10-12 00:00:00",
+        "2020-11-01 00:00:00",
+        "2020-11-02 00:00:00",
+        "2020-11-03 00:00:00",
+        "2020-11-04 00:00:00",
+        "2020-11-05 00:00:00",
+        "2020-11-06 00:00:00",
+        "2020-11-07 00:00:00",
+        "2020-11-08 00:00:00",
+        "2020-11-09 00:00:00",
+        "2020-11-11 00:00:00",
+        "2020-11-12 00:00:00",
+        "2020-12-01 00:00:00",
+        "2020-12-02 00:00:00",
+        "2020-12-03 00:00:00",
+        "2020-12-04 00:00:00",
+        "2020-12-05 00:00:00",
+        "2020-12-06 00:00:00",
+        "2020-12-07 00:00:00",
+        "2020-12-08 00:00:00",
+        "2020-12-09 00:00:00",
+        "2020-12-11 00:00:00",
+        "2020-12-12 00:00:00",
+        "2021-01-01 00:00:00",
+        "2021-01-02 00:00:00",
+        "2021-01-03 00:00:00",
+        "2021-01-04 00:00:00",
+        "2021-01-05 00:00:00",
+        "2021-01-06 00:00:00",
+        "2021-01-07 00:00:00",
+        "2021-01-08 00:00:00",
+        "2021-01-09 00:00:00",
+        "2021-01-10 00:00:00",
+        "2021-01-11 00:00:00",
+        "2021-01-12 00:00:00",
+        "2021-02-01 00:00:00",
+        "2021-02-02 00:00:00",
+        "2021-02-03 00:00:00",
+        "2021-02-04 00:00:00",
+        "2021-02-05 00:00:00",
+        "2021-02-06 00:00:00",
+        "2021-02-07 00:00:00",
+        "2021-02-08 00:00:00",
+        "2021-02-09 00:00:00",
+        "2021-02-10 00:00:00",
+        "2021-02-11 00:00:00",
+        "2021-02-12 00:00:00",
+        "2021-03-01 00:00:00",
+        "2021-03-02 00:00:00",
+        "2021-03-03 00:00:00",
+        "2021-03-04 00:00:00",
+        "2021-03-05 00:00:00",
+        "2021-03-06 00:00:00",
+        "2021-03-07 00:00:00",
+        "2021-03-08 00:00:00",
+        "2021-03-09 00:00:00",
+        "2021-03-10 00:00:00",
+        "2021-03-11 00:00:00",
+        "2021-03-12 00:00:00",
+        "2021-04-01 00:00:00",
+        "2021-04-02 00:00:00",
+        "2021-04-03 00:00:00",
+        "2021-04-04 00:00:00",
+        "2021-04-05 00:00:00",
+        "2021-04-06 00:00:00",
+        "2021-04-07 00:00:00",
+        "2021-04-08 00:00:00",
+        "2021-04-09 00:00:00",
+        "2021-04-10 00:00:00",
+        "2021-04-11 00:00:00",
+        "2021-04-12 00:00:00",
+        "2021-05-01 00:00:00",
+        "2021-05-02 00:00:00",
+        "2021-05-03 00:00:00",
+        "2021-05-04 00:00:00",
+        "2021-05-05 00:00:00",
+        "2021-05-06 00:00:00",
+        "2021-05-07 00:00:00",
+        "2021-05-08 00:00:00",
+        "2021-05-09 00:00:00",
+        "2021-05-10 00:00:00",
+        "2021-05-11 00:00:00",
+        "2021-05-12 00:00:00",
+        "2021-06-01 00:00:00",
+        "2021-06-02 00:00:00",
+        "2021-06-03 00:00:00",
+        "2021-06-04 00:00:00",
+        "2021-06-05 00:00:00",
+        "2021-06-06 00:00:00",
+        "2021-06-07 00:00:00",
+        "2021-06-08 00:00:00",
+        "2021-06-09 00:00:00",
+        "2021-06-10 00:00:00",
+        "2021-06-11 00:00:00",
+        "2021-06-12 00:00:00",
+        "2021-07-01 00:00:00",
+        "2021-07-02 00:00:00",
+        "2021-07-03 00:00:00",
+        "2021-07-04 00:00:00",
+        "2021-07-05 00:00:00",
+        "2021-07-06 00:00:00",
+        "2021-07-07 00:00:00",
+        "2021-07-08 00:00:00",
+        "2021-07-09 00:00:00",
+        "2021-07-10 00:00:00",
+        "2021-07-11 00:00:00",
+        "2021-07-12 00:00:00",
+        "2021-08-01 00:00:00",
+        "2021-08-02 00:00:00",
+        "2021-08-03 00:00:00",
+        "2021-08-04 00:00:00",
+        "2021-08-05 00:00:00",
+        "2021-08-06 00:00:00",
+        "2021-08-07 00:00:00",
+        "2021-08-08 00:00:00",
+        "2021-08-09 00:00:00",
+        "2021-08-10 00:00:00",
+        "2021-08-11 00:00:00",
+        "2021-08-12 00:00:00",
+        "2021-09-01 00:00:00",
+        "2021-09-02 00:00:00",
+        "2021-09-03 00:00:00",
+        "2021-09-04 00:00:00",
+        "2021-09-05 00:00:00",
+        "2021-09-06 00:00:00",
+        "2021-09-07 00:00:00",
+        "2021-09-08 00:00:00",
+        "2021-09-09 00:00:00",
+        "2021-09-10 00:00:00",
+        "2021-09-11 00:00:00",
+        "2021-09-12 00:00:00",
+        "2021-10-01 00:00:00",
+        "2021-10-02 00:00:00",
+        "2021-10-03 00:00:00",
+        "2021-10-04 00:00:00",
+        "2021-10-05 00:00:00",
+        "2021-10-06 00:00:00",
+        "2021-10-07 00:00:00",
+        "2021-10-08 00:00:00",
+        "2021-10-09 00:00:00",
+        "2021-10-10 00:00:00",
+        "2021-10-11 00:00:00",
+        "2021-10-12 00:00:00",
+        "2021-11-01 00:00:00",
+        "2021-11-02 00:00:00",
+        "2021-11-03 00:00:00",
+        "2021-11-04 00:00:00",
+        "2021-11-05 00:00:00",
+        "2021-11-06 00:00:00",
+        "2021-11-07 00:00:00",
+        "2021-11-08 00:00:00",
+        "2021-11-09 00:00:00",
+        "2021-11-10 00:00:00",
+        "2021-11-11 00:00:00",
+        "2021-11-12 00:00:00",
+        "2021-12-01 00:00:00",
+        "2021-12-02 00:00:00",
+        "2021-12-03 00:00:00",
+        "2021-12-04 00:00:00",
+        "2021-12-05 00:00:00",
+        "2021-12-06 00:00:00",
+        "2021-12-07 00:00:00",
+        "2021-12-08 00:00:00",
+        "2021-12-09 00:00:00",
+        "2021-12-10 00:00:00",
+        "2021-12-11 00:00:00",
+        "2021-12-12 00:00:00"
+      ],
+      "view_values": [
+        6.0,
+        6.0,
+        3.0,
+        2.0,
+        5.0,
+        2.0,
+        2.0,
+        5.0,
+        3.0,
+        2.0,
+        5.0,
+        2.0,
+        6.0,
+        6.0,
+        3.0,
+        2.0,
+        5.0,
+        2.0,
+        2.0,
+        5.0,
+        3.0,
+        2.0,
+        5.0,
+        2.0,
+        6.0,
+        6.0,
+        6.0,
+        2.0,
+        5.0,
+        2.0,
+        2.0,
+        5.0,
+        3.0,
+        2.0,
+        5.0,
+        2.0,
+        6.0,
+        6.0,
+        6.0,
+        2.0,
+        5.0,
+        2.0,
+        2.0,
+        5.0,
+        3.0,
+        2.0,
+        5.0,
+        2.0,
+        6.0,
+        6.0,
+        6.0,
+        2.0,
+        5.0,
+        2.0,
+        2.0,
+        5.0,
+        3.0,
+        2.0,
+        5.0,
+        2.0,
+        6.0,
+        6.0,
+        6.0,
+        2.0,
+        5.0,
+        2.0,
+        2.0,
+        5.0,
+        3.0,
+        2.0,
+        5.0,
+        2.0,
+        6.0,
+        6.0,
+        6.0,
+        2.0,
+        5.0,
+        2.0,
+        2.0,
+        5.0,
+        5.0,
+        2.0,
+        5.0,
+        2.0,
+        6.0,
+        6.0,
+        6.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        5.0,
+        5.0,
+        2.0,
+        5.0,
+        2.0,
+        3.0,
+        6.0,
+        6.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        5.0,
+        5.0,
+        2.0,
+        5.0,
+        2.0,
+        3.0,
+        6.0,
+        6.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        5.0,
+        5.0,
+        2.0,
+        5.0,
+        2.0,
+        3.0,
+        3.0,
+        6.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        5.0,
+        5.0,
+        5.0,
+        2.0,
+        3.0,
+        3.0,
+        6.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        5.0,
+        5.0,
+        5.0,
+        2.0,
+        5.0,
+        5.0,
+        2.0,
+        3.0,
+        6.0,
+        5.0,
+        4.0,
+        4.0,
+        6.0,
+        6.0,
+        5.0,
+        3.0,
+        5.0,
+        5.0,
+        26.0,
+        3.0,
+        18.0,
+        5.0,
+        28.0,
+        4.0,
+        18.0,
+        6.0,
+        5.0,
+        27.0,
+        17.0,
+        17.0,
+        20.0,
+        27.0,
+        24.0,
+        17.0,
+        22.0,
+        28.0,
+        24.0,
+        18.0,
+        29.0,
+        21.0,
+        5.0,
+        35.0,
+        2.0,
+        21.0,
+        18.0,
+        34.0,
+        4.0,
+        22.0,
+        18.0,
+        36.0,
+        23.0,
+        21.0,
+        23.0,
+        20.0,
+        26.0,
+        21.0,
+        36.0,
+        22.0,
+        28.0,
+        5.0,
+        36.0,
+        24.0,
+        23.0,
+        27.0,
+        29.0,
+        17.0,
+        50.0,
+        30.0,
+        36.0,
+        16.0,
+        52.0,
+        29.0,
+        36.0,
+        18.0,
+        29.0,
+        33.0,
+        17.0,
+        20.0,
+        2.0,
+        36.0,
+        18.0,
+        16.0,
+        4.0,
+        35.0,
+        18.0,
+        18.0,
+        35.0,
+        3.0,
+        5.0,
+        35.0,
+        26.0,
+        6.0,
+        18.0,
+        34.0,
+        28.0,
+        23.0,
+        18.0,
+        36.0,
+        5.0,
+        27.0,
+        35.0,
+        17.0,
+        41.0,
+        30.0,
+        18.0,
+        16.0,
+        40.0,
+        29.0,
+        18.0,
+        18.0,
+        29.0,
+        39.0,
+        67.0,
+        44.0,
+        53.0,
+        42.0,
+        48.0,
+        40.0,
+        52.0,
+        41.0,
+        48.0,
+        42.0,
+        41.0,
+        51.0,
+        17.0,
+        32.0,
+        17.0,
+        54.0,
+        30.0,
+        34.0,
+        16.0,
+        53.0,
+        30.0,
+        36.0,
+        53.0,
+        15.0,
+        35.0,
+        47.0,
+        35.0,
+        18.0,
+        36.0,
+        46.0,
+        34.0,
+        17.0,
+        36.0,
+        48.0,
+        17.0,
+        33.0
+      ]
+    }
+  },
+  {
+    "question": "On which invoice dates did the highest single-record units sold occur?",
+    "explanation": "There is a notable trend in MAX(Units Sold) across Invoice Date. For the segment overall data, the values show a monotonic trend.",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Invoice Date",
+      "measure": "MAX(Units Sold)",
+      "subspace": [],
+      "pattern": "Trend",
+      "score": 0.9998464393696653,
+      "question": "On which invoice dates did the highest single-record units sold occur?",
+      "reason": "Maximum units sold by invoice date can highlight unusually large-volume selling days and reveal demand spikes or event-driven surges. This is especially useful for detecting outlier dates that may correspond to promotions, seasonality, or bulk purchases.",
+      "view_labels": [
+        "2020-01-01 00:00:00",
+        "2020-01-02 00:00:00",
+        "2020-01-03 00:00:00",
+        "2020-01-04 00:00:00",
+        "2020-01-05 00:00:00",
+        "2020-01-06 00:00:00",
+        "2020-01-07 00:00:00",
+        "2020-01-08 00:00:00",
+        "2020-01-09 00:00:00",
+        "2020-01-10 00:00:00",
+        "2020-01-11 00:00:00",
+        "2020-01-12 00:00:00",
+        "2020-02-01 00:00:00",
+        "2020-02-02 00:00:00",
+        "2020-02-03 00:00:00",
+        "2020-02-04 00:00:00",
+        "2020-02-05 00:00:00",
+        "2020-02-06 00:00:00",
+        "2020-02-07 00:00:00",
+        "2020-02-08 00:00:00",
+        "2020-02-09 00:00:00",
+        "2020-02-10 00:00:00",
+        "2020-02-11 00:00:00",
+        "2020-02-12 00:00:00",
+        "2020-03-01 00:00:00",
+        "2020-03-02 00:00:00",
+        "2020-03-03 00:00:00",
+        "2020-03-04 00:00:00",
+        "2020-03-05 00:00:00",
+        "2020-03-06 00:00:00",
+        "2020-03-07 00:00:00",
+        "2020-03-08 00:00:00",
+        "2020-03-09 00:00:00",
+        "2020-03-10 00:00:00",
+        "2020-03-11 00:00:00",
+        "2020-03-12 00:00:00",
+        "2020-04-01 00:00:00",
+        "2020-04-02 00:00:00",
+        "2020-04-03 00:00:00",
+        "2020-04-04 00:00:00",
+        "2020-04-05 00:00:00",
+        "2020-04-06 00:00:00",
+        "2020-04-07 00:00:00",
+        "2020-04-08 00:00:00",
+        "2020-04-09 00:00:00",
+        "2020-04-10 00:00:00",
+        "2020-04-11 00:00:00",
+        "2020-04-12 00:00:00",
+        "2020-05-01 00:00:00",
+        "2020-05-02 00:00:00",
+        "2020-05-03 00:00:00",
+        "2020-05-04 00:00:00",
+        "2020-05-05 00:00:00",
+        "2020-05-06 00:00:00",
+        "2020-05-07 00:00:00",
+        "2020-05-08 00:00:00",
+        "2020-05-09 00:00:00",
+        "2020-05-10 00:00:00",
+        "2020-05-11 00:00:00",
+        "2020-05-12 00:00:00",
+        "2020-06-01 00:00:00",
+        "2020-06-02 00:00:00",
+        "2020-06-03 00:00:00",
+        "2020-06-04 00:00:00",
+        "2020-06-05 00:00:00",
+        "2020-06-06 00:00:00",
+        "2020-06-07 00:00:00",
+        "2020-06-08 00:00:00",
+        "2020-06-09 00:00:00",
+        "2020-06-10 00:00:00",
+        "2020-06-11 00:00:00",
+        "2020-06-12 00:00:00",
+        "2020-07-01 00:00:00",
+        "2020-07-02 00:00:00",
+        "2020-07-03 00:00:00",
+        "2020-07-04 00:00:00",
+        "2020-07-05 00:00:00",
+        "2020-07-06 00:00:00",
+        "2020-07-07 00:00:00",
+        "2020-07-08 00:00:00",
+        "2020-07-09 00:00:00",
+        "2020-07-10 00:00:00",
+        "2020-07-11 00:00:00",
+        "2020-07-12 00:00:00",
+        "2020-08-01 00:00:00",
+        "2020-08-02 00:00:00",
+        "2020-08-03 00:00:00",
+        "2020-08-04 00:00:00",
+        "2020-08-05 00:00:00",
+        "2020-08-06 00:00:00",
+        "2020-08-07 00:00:00",
+        "2020-08-08 00:00:00",
+        "2020-08-09 00:00:00",
+        "2020-08-10 00:00:00",
+        "2020-08-11 00:00:00",
+        "2020-08-12 00:00:00",
+        "2020-09-01 00:00:00",
+        "2020-09-02 00:00:00",
+        "2020-09-03 00:00:00",
+        "2020-09-04 00:00:00",
+        "2020-09-05 00:00:00",
+        "2020-09-06 00:00:00",
+        "2020-09-07 00:00:00",
+        "2020-09-08 00:00:00",
+        "2020-09-09 00:00:00",
+        "2020-09-10 00:00:00",
+        "2020-09-11 00:00:00",
+        "2020-09-12 00:00:00",
+        "2020-10-01 00:00:00",
+        "2020-10-02 00:00:00",
+        "2020-10-03 00:00:00",
+        "2020-10-04 00:00:00",
+        "2020-10-05 00:00:00",
+        "2020-10-06 00:00:00",
+        "2020-10-07 00:00:00",
+        "2020-10-08 00:00:00",
+        "2020-10-09 00:00:00",
+        "2020-10-10 00:00:00",
+        "2020-10-11 00:00:00",
+        "2020-10-12 00:00:00",
+        "2020-11-01 00:00:00",
+        "2020-11-02 00:00:00",
+        "2020-11-03 00:00:00",
+        "2020-11-04 00:00:00",
+        "2020-11-05 00:00:00",
+        "2020-11-06 00:00:00",
+        "2020-11-07 00:00:00",
+        "2020-11-08 00:00:00",
+        "2020-11-09 00:00:00",
+        "2020-11-11 00:00:00",
+        "2020-11-12 00:00:00",
+        "2020-12-01 00:00:00",
+        "2020-12-02 00:00:00",
+        "2020-12-03 00:00:00",
+        "2020-12-04 00:00:00",
+        "2020-12-05 00:00:00",
+        "2020-12-06 00:00:00",
+        "2020-12-07 00:00:00",
+        "2020-12-08 00:00:00",
+        "2020-12-09 00:00:00",
+        "2020-12-11 00:00:00",
+        "2020-12-12 00:00:00",
+        "2021-01-01 00:00:00",
+        "2021-01-02 00:00:00",
+        "2021-01-03 00:00:00",
+        "2021-01-04 00:00:00",
+        "2021-01-05 00:00:00",
+        "2021-01-06 00:00:00",
+        "2021-01-07 00:00:00",
+        "2021-01-08 00:00:00",
+        "2021-01-09 00:00:00",
+        "2021-01-10 00:00:00",
+        "2021-01-11 00:00:00",
+        "2021-01-12 00:00:00",
+        "2021-02-01 00:00:00",
+        "2021-02-02 00:00:00",
+        "2021-02-03 00:00:00",
+        "2021-02-04 00:00:00",
+        "2021-02-05 00:00:00",
+        "2021-02-06 00:00:00",
+        "2021-02-07 00:00:00",
+        "2021-02-08 00:00:00",
+        "2021-02-09 00:00:00",
+        "2021-02-10 00:00:00",
+        "2021-02-11 00:00:00",
+        "2021-02-12 00:00:00",
+        "2021-03-01 00:00:00",
+        "2021-03-02 00:00:00",
+        "2021-03-03 00:00:00",
+        "2021-03-04 00:00:00",
+        "2021-03-05 00:00:00",
+        "2021-03-06 00:00:00",
+        "2021-03-07 00:00:00",
+        "2021-03-08 00:00:00",
+        "2021-03-09 00:00:00",
+        "2021-03-10 00:00:00",
+        "2021-03-11 00:00:00",
+        "2021-03-12 00:00:00",
+        "2021-04-01 00:00:00",
+        "2021-04-02 00:00:00",
+        "2021-04-03 00:00:00",
+        "2021-04-04 00:00:00",
+        "2021-04-05 00:00:00",
+        "2021-04-06 00:00:00",
+        "2021-04-07 00:00:00",
+        "2021-04-08 00:00:00",
+        "2021-04-09 00:00:00",
+        "2021-04-10 00:00:00",
+        "2021-04-11 00:00:00",
+        "2021-04-12 00:00:00",
+        "2021-05-01 00:00:00",
+        "2021-05-02 00:00:00",
+        "2021-05-03 00:00:00",
+        "2021-05-04 00:00:00",
+        "2021-05-05 00:00:00",
+        "2021-05-06 00:00:00",
+        "2021-05-07 00:00:00",
+        "2021-05-08 00:00:00",
+        "2021-05-09 00:00:00",
+        "2021-05-10 00:00:00",
+        "2021-05-11 00:00:00",
+        "2021-05-12 00:00:00",
+        "2021-06-01 00:00:00",
+        "2021-06-02 00:00:00",
+        "2021-06-03 00:00:00",
+        "2021-06-04 00:00:00",
+        "2021-06-05 00:00:00",
+        "2021-06-06 00:00:00",
+        "2021-06-07 00:00:00",
+        "2021-06-08 00:00:00",
+        "2021-06-09 00:00:00",
+        "2021-06-10 00:00:00",
+        "2021-06-11 00:00:00",
+        "2021-06-12 00:00:00",
+        "2021-07-01 00:00:00",
+        "2021-07-02 00:00:00",
+        "2021-07-03 00:00:00",
+        "2021-07-04 00:00:00",
+        "2021-07-05 00:00:00",
+        "2021-07-06 00:00:00",
+        "2021-07-07 00:00:00",
+        "2021-07-08 00:00:00",
+        "2021-07-09 00:00:00",
+        "2021-07-10 00:00:00",
+        "2021-07-11 00:00:00",
+        "2021-07-12 00:00:00",
+        "2021-08-01 00:00:00",
+        "2021-08-02 00:00:00",
+        "2021-08-03 00:00:00",
+        "2021-08-04 00:00:00",
+        "2021-08-05 00:00:00",
+        "2021-08-06 00:00:00",
+        "2021-08-07 00:00:00",
+        "2021-08-08 00:00:00",
+        "2021-08-09 00:00:00",
+        "2021-08-10 00:00:00",
+        "2021-08-11 00:00:00",
+        "2021-08-12 00:00:00",
+        "2021-09-01 00:00:00",
+        "2021-09-02 00:00:00",
+        "2021-09-03 00:00:00",
+        "2021-09-04 00:00:00",
+        "2021-09-05 00:00:00",
+        "2021-09-06 00:00:00",
+        "2021-09-07 00:00:00",
+        "2021-09-08 00:00:00",
+        "2021-09-09 00:00:00",
+        "2021-09-10 00:00:00",
+        "2021-09-11 00:00:00",
+        "2021-09-12 00:00:00",
+        "2021-10-01 00:00:00",
+        "2021-10-02 00:00:00",
+        "2021-10-03 00:00:00",
+        "2021-10-04 00:00:00",
+        "2021-10-05 00:00:00",
+        "2021-10-06 00:00:00",
+        "2021-10-07 00:00:00",
+        "2021-10-08 00:00:00",
+        "2021-10-09 00:00:00",
+        "2021-10-10 00:00:00",
+        "2021-10-11 00:00:00",
+        "2021-10-12 00:00:00",
+        "2021-11-01 00:00:00",
+        "2021-11-02 00:00:00",
+        "2021-11-03 00:00:00",
+        "2021-11-04 00:00:00",
+        "2021-11-05 00:00:00",
+        "2021-11-06 00:00:00",
+        "2021-11-07 00:00:00",
+        "2021-11-08 00:00:00",
+        "2021-11-09 00:00:00",
+        "2021-11-10 00:00:00",
+        "2021-11-11 00:00:00",
+        "2021-11-12 00:00:00",
+        "2021-12-01 00:00:00",
+        "2021-12-02 00:00:00",
+        "2021-12-03 00:00:00",
+        "2021-12-04 00:00:00",
+        "2021-12-05 00:00:00",
+        "2021-12-06 00:00:00",
+        "2021-12-07 00:00:00",
+        "2021-12-08 00:00:00",
+        "2021-12-09 00:00:00",
+        "2021-12-10 00:00:00",
+        "2021-12-11 00:00:00",
+        "2021-12-12 00:00:00"
+      ],
+      "view_values": [
+        384.0,
+        900.0,
+        325.0,
+        350.0,
+        875.0,
+        550.0,
+        825.0,
+        875.0,
+        374.0,
+        725.0,
+        775.0,
+        175.0,
+        450.0,
+        900.0,
+        375.0,
+        525.0,
+        975.0,
+        450.0,
+        675.0,
+        700.0,
+        650.0,
+        700.0,
+        775.0,
+        150.0,
+        450.0,
+        825.0,
+        575.0,
+        325.0,
+        600.0,
+        450.0,
+        625.0,
+        600.0,
+        650.0,
+        700.0,
+        775.0,
+        325.0,
+        850.0,
+        825.0,
+        575.0,
+        375.0,
+        450.0,
+        300.0,
+        525.0,
+        500.0,
+        900.0,
+        825.0,
+        625.0,
+        450.0,
+        900.0,
+        950.0,
+        425.0,
+        275.0,
+        950.0,
+        225.0,
+        575.0,
+        650.0,
+        850.0,
+        975.0,
+        575.0,
+        250.0,
+        330.0,
+        600.0,
+        925.0,
+        175.0,
+        900.0,
+        425.0,
+        575.0,
+        900.0,
+        850.0,
+        800.0,
+        775.0,
+        150.0,
+        475.0,
+        925.0,
+        900.0,
+        325.0,
+        900.0,
+        575.0,
+        775.0,
+        900.0,
+        900.0,
+        745.0,
+        825.0,
+        125.0,
+        900.0,
+        900.0,
+        900.0,
+        525.0,
+        525.0,
+        425.0,
+        750.0,
+        850.0,
+        775.0,
+        775.0,
+        725.0,
+        125.0,
+        425.0,
+        850.0,
+        675.0,
+        375.0,
+        525.0,
+        425.0,
+        625.0,
+        700.0,
+        775.0,
+        750.0,
+        725.0,
+        200.0,
+        425.0,
+        875.0,
+        675.0,
+        375.0,
+        350.0,
+        325.0,
+        575.0,
+        750.0,
+        925.0,
+        850.0,
+        575.0,
+        375.0,
+        275.0,
+        500.0,
+        475.0,
+        275.0,
+        325.0,
+        175.0,
+        575.0,
+        850.0,
+        800.0,
+        500.0,
+        200.0,
+        200.0,
+        500.0,
+        950.0,
+        175.0,
+        300.0,
+        375.0,
+        400.0,
+        925.0,
+        900.0,
+        700.0,
+        100.0,
+        750.0,
+        700.0,
+        425.0,
+        300.0,
+        900.0,
+        275.0,
+        350.0,
+        675.0,
+        750.0,
+        625.0,
+        150.0,
+        200.0,
+        750.0,
+        750.0,
+        920.0,
+        575.0,
+        945.0,
+        420.0,
+        875.0,
+        675.0,
+        925.0,
+        575.0,
+        225.0,
+        975.0,
+        650.0,
+        650.0,
+        520.0,
+        875.0,
+        725.0,
+        550.0,
+        650.0,
+        825.0,
+        600.0,
+        675.0,
+        825.0,
+        575.0,
+        550.0,
+        975.0,
+        675.0,
+        750.0,
+        675.0,
+        950.0,
+        200.0,
+        625.0,
+        750.0,
+        875.0,
+        425.0,
+        775.0,
+        725.0,
+        875.0,
+        725.0,
+        650.0,
+        800.0,
+        625.0,
+        975.0,
+        500.0,
+        875.0,
+        625.0,
+        675.0,
+        875.0,
+        975.0,
+        875.0,
+        625.0,
+        975.0,
+        650.0,
+        525.0,
+        925.0,
+        925.0,
+        825.0,
+        775.0,
+        925.0,
+        550.0,
+        825.0,
+        800.0,
+        475.0,
+        800.0,
+        850.0,
+        925.0,
+        325.0,
+        625.0,
+        825.0,
+        975.0,
+        400.0,
+        175.0,
+        825.0,
+        700.0,
+        870.0,
+        775.0,
+        870.0,
+        600.0,
+        950.0,
+        925.0,
+        975.0,
+        700.0,
+        175.0,
+        875.0,
+        825.0,
+        650.0,
+        770.0,
+        825.0,
+        795.0,
+        500.0,
+        900.0,
+        925.0,
+        800.0,
+        575.0,
+        775.0,
+        825.0,
+        575.0,
+        900.0,
+        820.0,
+        775.0,
+        820.0,
+        875.0,
+        875.0,
+        875.0,
+        800.0,
+        800.0,
+        675.0,
+        800.0,
+        875.0,
+        975.0,
+        700.0,
+        800.0,
+        650.0,
+        800.0,
+        550.0,
+        850.0,
+        800.0,
+        750.0,
+        750.0,
+        500.0,
+        850.0,
+        975.0,
+        700.0,
+        600.0,
+        700.0,
+        850.0,
+        725.0,
+        725.0,
+        750.0,
+        775.0,
+        400.0,
+        675.0
+      ]
+    }
+  },
+  {
+    "question": "Which sales methods generate the highest total sales?",
+    "explanation": "Attribution: for City=Baltimore, a single category in Sales Method accounts for a large share of total SUM(Total Sales).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Sales Method",
+      "measure": "SUM(Total Sales)",
+      "subspace": [
+        [
+          "City",
+          "Baltimore"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.9748894665534252,
+      "question": "Which sales methods generate the highest total sales?",
+      "reason": "Comparing total sales across sales methods helps evaluate which selling channel contributes most to revenue generation. This can reveal channel effectiveness and indicate whether certain sales methods are outperforming others commercially.",
+      "view_labels": [
+        "In-store",
+        "Online"
+      ],
+      "view_values": [
+        7563250.0,
+        194809.0
+      ]
+    }
+  },
+  {
+    "question": "Which sales methods account for the highest volume of transactions?",
+    "explanation": "Attribution: for Operating Margin=70, a single category in Sales Method accounts for a large share of total COUNT(Retailer ID).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Sales Method",
+      "measure": "COUNT(Retailer ID)",
+      "subspace": [
+        [
+          "Operating Margin",
+          70
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.9473684210526315,
+      "question": "Which sales methods account for the highest volume of transactions?",
+      "reason": "Comparing transaction counts across sales methods can reveal whether the business relies more heavily on in-store, online, or outlet channels. This is useful for identifying channel concentration, customer buying preferences, and possible operational imbalances.",
+      "view_labels": [
+        "Online",
+        "Outlet"
+      ],
+      "view_values": [
+        18.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "question": "Which retailers account for the largest number of transactions?",
+    "explanation": "Attribution: for State=Washington, a single category in Retailer accounts for a large share of total COUNT(Invoice Date).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Retailer",
+      "measure": "COUNT(Invoice Date)",
+      "subspace": [
+        [
+          "State",
+          "Washington"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.8787878787878788,
+      "question": "Which retailers account for the largest number of transactions?",
+      "reason": "Counting transactions by retailer shows how sales activity is distributed across retail partners. This can reveal whether business volume is concentrated among a few retailers or more evenly spread, which is useful for dependency and partnership analysis.",
+      "view_labels": [
+        "Foot Locker",
+        "West Gear"
+      ],
+      "view_values": [
+        8.0,
+        58.0
+      ]
+    }
+  },
+  {
+    "question": "Which sales methods have the lowest minimum transaction sales?",
+    "explanation": "Distribution difference: the distribution of Sales Method changes notably when filtering by City=Houston (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Sales Method",
+      "measure": "MIN(Total Sales)",
+      "subspace": [
+        [
+          "City",
+          "Houston"
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.8325546111576978,
+      "question": "Which sales methods have the lowest minimum transaction sales?",
+      "reason": "The minimum total sales by sales method can highlight whether certain channels experience very weak or near-zero transactions, which may signal inefficiencies or inconsistent performance.",
+      "view_labels": [
+        "Online",
+        "Outlet"
+      ],
+      "view_values": [
+        4750.0,
+        4480.0
+      ],
+      "view_labels_baseline": [
+        "In-store",
+        "Online",
+        "Outlet"
+      ],
+      "view_values_baseline": [
+        7500.0,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  {
+    "question": "On which invoice dates was sales activity highest?",
+    "explanation": "Distribution difference: the distribution of Invoice Date changes notably when filtering by Total Sales=2800 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Invoice Date",
+      "measure": "COUNT(Retailer ID)",
+      "subspace": [
+        [
+          "Total Sales",
+          2800
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.8229216518730433,
+      "question": "On which invoice dates was sales activity highest?",
+      "reason": "Examining the number of records by invoice date can reveal sales activity patterns over time, including spikes, dips, seasonality, and unusually active transaction days.",
+      "view_labels": [
+        "2021-01-10 00:00:00",
+        "2021-11-12 00:00:00"
+      ],
+      "view_values": [
+        1.0,
+        1.0
+      ],
+      "view_labels_baseline": [
+        "2020-01-01 00:00:00",
+        "2020-01-02 00:00:00",
+        "2020-01-03 00:00:00",
+        "2020-01-04 00:00:00",
+        "2020-01-05 00:00:00",
+        "2020-01-06 00:00:00",
+        "2020-01-07 00:00:00",
+        "2020-01-08 00:00:00",
+        "2020-01-09 00:00:00",
+        "2020-01-10 00:00:00",
+        "2020-01-11 00:00:00",
+        "2020-01-12 00:00:00",
+        "2020-02-01 00:00:00",
+        "2020-02-02 00:00:00",
+        "2020-02-03 00:00:00",
+        "2020-02-04 00:00:00",
+        "2020-02-05 00:00:00",
+        "2020-02-06 00:00:00",
+        "2020-02-07 00:00:00",
+        "2020-02-08 00:00:00",
+        "2020-02-09 00:00:00",
+        "2020-02-10 00:00:00",
+        "2020-02-11 00:00:00",
+        "2020-02-12 00:00:00",
+        "2020-03-01 00:00:00",
+        "2020-03-02 00:00:00",
+        "2020-03-03 00:00:00",
+        "2020-03-04 00:00:00",
+        "2020-03-05 00:00:00",
+        "2020-03-06 00:00:00",
+        "2020-03-07 00:00:00",
+        "2020-03-08 00:00:00",
+        "2020-03-09 00:00:00",
+        "2020-03-10 00:00:00",
+        "2020-03-11 00:00:00",
+        "2020-03-12 00:00:00",
+        "2020-04-01 00:00:00",
+        "2020-04-02 00:00:00",
+        "2020-04-03 00:00:00",
+        "2020-04-04 00:00:00",
+        "2020-04-05 00:00:00",
+        "2020-04-06 00:00:00",
+        "2020-04-07 00:00:00",
+        "2020-04-08 00:00:00",
+        "2020-04-09 00:00:00",
+        "2020-04-10 00:00:00",
+        "2020-04-11 00:00:00",
+        "2020-04-12 00:00:00",
+        "2020-05-01 00:00:00",
+        "2020-05-02 00:00:00",
+        "2020-05-03 00:00:00",
+        "2020-05-04 00:00:00",
+        "2020-05-05 00:00:00",
+        "2020-05-06 00:00:00",
+        "2020-05-07 00:00:00",
+        "2020-05-08 00:00:00",
+        "2020-05-09 00:00:00",
+        "2020-05-10 00:00:00",
+        "2020-05-11 00:00:00",
+        "2020-05-12 00:00:00",
+        "2020-06-01 00:00:00",
+        "2020-06-02 00:00:00",
+        "2020-06-03 00:00:00",
+        "2020-06-04 00:00:00",
+        "2020-06-05 00:00:00",
+        "2020-06-06 00:00:00",
+        "2020-06-07 00:00:00",
+        "2020-06-08 00:00:00",
+        "2020-06-09 00:00:00",
+        "2020-06-10 00:00:00",
+        "2020-06-11 00:00:00",
+        "2020-06-12 00:00:00",
+        "2020-07-01 00:00:00",
+        "2020-07-02 00:00:00",
+        "2020-07-03 00:00:00",
+        "2020-07-04 00:00:00",
+        "2020-07-05 00:00:00",
+        "2020-07-06 00:00:00",
+        "2020-07-07 00:00:00",
+        "2020-07-08 00:00:00",
+        "2020-07-09 00:00:00",
+        "2020-07-10 00:00:00",
+        "2020-07-11 00:00:00",
+        "2020-07-12 00:00:00",
+        "2020-08-01 00:00:00",
+        "2020-08-02 00:00:00",
+        "2020-08-03 00:00:00",
+        "2020-08-04 00:00:00",
+        "2020-08-05 00:00:00",
+        "2020-08-06 00:00:00",
+        "2020-08-07 00:00:00",
+        "2020-08-08 00:00:00",
+        "2020-08-09 00:00:00",
+        "2020-08-10 00:00:00",
+        "2020-08-11 00:00:00",
+        "2020-08-12 00:00:00",
+        "2020-09-01 00:00:00",
+        "2020-09-02 00:00:00",
+        "2020-09-03 00:00:00",
+        "2020-09-04 00:00:00",
+        "2020-09-05 00:00:00",
+        "2020-09-06 00:00:00",
+        "2020-09-07 00:00:00",
+        "2020-09-08 00:00:00",
+        "2020-09-09 00:00:00",
+        "2020-09-10 00:00:00",
+        "2020-09-11 00:00:00",
+        "2020-09-12 00:00:00",
+        "2020-10-01 00:00:00",
+        "2020-10-02 00:00:00",
+        "2020-10-03 00:00:00",
+        "2020-10-04 00:00:00",
+        "2020-10-05 00:00:00",
+        "2020-10-06 00:00:00",
+        "2020-10-07 00:00:00",
+        "2020-10-08 00:00:00",
+        "2020-10-09 00:00:00",
+        "2020-10-10 00:00:00",
+        "2020-10-11 00:00:00",
+        "2020-10-12 00:00:00",
+        "2020-11-01 00:00:00",
+        "2020-11-02 00:00:00",
+        "2020-11-03 00:00:00",
+        "2020-11-04 00:00:00",
+        "2020-11-05 00:00:00",
+        "2020-11-06 00:00:00",
+        "2020-11-07 00:00:00",
+        "2020-11-08 00:00:00",
+        "2020-11-09 00:00:00",
+        "2020-11-11 00:00:00",
+        "2020-11-12 00:00:00",
+        "2020-12-01 00:00:00",
+        "2020-12-02 00:00:00",
+        "2020-12-03 00:00:00",
+        "2020-12-04 00:00:00",
+        "2020-12-05 00:00:00",
+        "2020-12-06 00:00:00",
+        "2020-12-07 00:00:00",
+        "2020-12-08 00:00:00",
+        "2020-12-09 00:00:00",
+        "2020-12-11 00:00:00",
+        "2020-12-12 00:00:00",
+        "2021-01-01 00:00:00",
+        "2021-01-02 00:00:00",
+        "2021-01-03 00:00:00",
+        "2021-01-04 00:00:00",
+        "2021-01-05 00:00:00",
+        "2021-01-06 00:00:00",
+        "2021-01-07 00:00:00",
+        "2021-01-08 00:00:00",
+        "2021-01-09 00:00:00",
+        "2021-01-10 00:00:00",
+        "2021-01-11 00:00:00",
+        "2021-01-12 00:00:00",
+        "2021-02-01 00:00:00",
+        "2021-02-02 00:00:00",
+        "2021-02-03 00:00:00",
+        "2021-02-04 00:00:00",
+        "2021-02-05 00:00:00",
+        "2021-02-06 00:00:00",
+        "2021-02-07 00:00:00",
+        "2021-02-08 00:00:00",
+        "2021-02-09 00:00:00",
+        "2021-02-10 00:00:00",
+        "2021-02-11 00:00:00",
+        "2021-02-12 00:00:00",
+        "2021-03-01 00:00:00",
+        "2021-03-02 00:00:00",
+        "2021-03-03 00:00:00",
+        "2021-03-04 00:00:00",
+        "2021-03-05 00:00:00",
+        "2021-03-06 00:00:00",
+        "2021-03-07 00:00:00",
+        "2021-03-08 00:00:00",
+        "2021-03-09 00:00:00",
+        "2021-03-10 00:00:00",
+        "2021-03-11 00:00:00",
+        "2021-03-12 00:00:00",
+        "2021-04-01 00:00:00",
+        "2021-04-02 00:00:00",
+        "2021-04-03 00:00:00",
+        "2021-04-04 00:00:00",
+        "2021-04-05 00:00:00",
+        "2021-04-06 00:00:00",
+        "2021-04-07 00:00:00",
+        "2021-04-08 00:00:00",
+        "2021-04-09 00:00:00",
+        "2021-04-10 00:00:00",
+        "2021-04-11 00:00:00",
+        "2021-04-12 00:00:00",
+        "2021-05-01 00:00:00",
+        "2021-05-02 00:00:00",
+        "2021-05-03 00:00:00",
+        "2021-05-04 00:00:00",
+        "2021-05-05 00:00:00",
+        "2021-05-06 00:00:00",
+        "2021-05-07 00:00:00",
+        "2021-05-08 00:00:00",
+        "2021-05-09 00:00:00",
+        "2021-05-10 00:00:00",
+        "2021-05-11 00:00:00",
+        "2021-05-12 00:00:00",
+        "2021-06-01 00:00:00",
+        "2021-06-02 00:00:00",
+        "2021-06-03 00:00:00",
+        "2021-06-04 00:00:00",
+        "2021-06-05 00:00:00",
+        "2021-06-06 00:00:00",
+        "2021-06-07 00:00:00",
+        "2021-06-08 00:00:00",
+        "2021-06-09 00:00:00",
+        "2021-06-10 00:00:00",
+        "2021-06-11 00:00:00",
+        "2021-06-12 00:00:00",
+        "2021-07-01 00:00:00",
+        "2021-07-02 00:00:00",
+        "2021-07-03 00:00:00",
+        "2021-07-04 00:00:00",
+        "2021-07-05 00:00:00",
+        "2021-07-06 00:00:00",
+        "2021-07-07 00:00:00",
+        "2021-07-08 00:00:00",
+        "2021-07-09 00:00:00",
+        "2021-07-10 00:00:00",
+        "2021-07-11 00:00:00",
+        "2021-07-12 00:00:00",
+        "2021-08-01 00:00:00",
+        "2021-08-02 00:00:00",
+        "2021-08-03 00:00:00",
+        "2021-08-04 00:00:00",
+        "2021-08-05 00:00:00",
+        "2021-08-06 00:00:00",
+        "2021-08-07 00:00:00",
+        "2021-08-08 00:00:00",
+        "2021-08-09 00:00:00",
+        "2021-08-10 00:00:00",
+        "2021-08-11 00:00:00",
+        "2021-08-12 00:00:00",
+        "2021-09-01 00:00:00",
+        "2021-09-02 00:00:00",
+        "2021-09-03 00:00:00",
+        "2021-09-04 00:00:00",
+        "2021-09-05 00:00:00",
+        "2021-09-06 00:00:00",
+        "2021-09-07 00:00:00",
+        "2021-09-08 00:00:00",
+        "2021-09-09 00:00:00",
+        "2021-09-10 00:00:00",
+        "2021-09-11 00:00:00",
+        "2021-09-12 00:00:00",
+        "2021-10-01 00:00:00",
+        "2021-10-02 00:00:00",
+        "2021-10-03 00:00:00",
+        "2021-10-04 00:00:00",
+        "2021-10-05 00:00:00",
+        "2021-10-06 00:00:00",
+        "2021-10-07 00:00:00",
+        "2021-10-08 00:00:00",
+        "2021-10-09 00:00:00",
+        "2021-10-10 00:00:00",
+        "2021-10-11 00:00:00",
+        "2021-10-12 00:00:00",
+        "2021-11-01 00:00:00",
+        "2021-11-02 00:00:00",
+        "2021-11-03 00:00:00",
+        "2021-11-04 00:00:00",
+        "2021-11-05 00:00:00",
+        "2021-11-06 00:00:00",
+        "2021-11-07 00:00:00",
+        "2021-11-08 00:00:00",
+        "2021-11-09 00:00:00",
+        "2021-11-10 00:00:00",
+        "2021-11-11 00:00:00",
+        "2021-11-12 00:00:00",
+        "2021-12-01 00:00:00",
+        "2021-12-02 00:00:00",
+        "2021-12-03 00:00:00",
+        "2021-12-04 00:00:00",
+        "2021-12-05 00:00:00",
+        "2021-12-06 00:00:00",
+        "2021-12-07 00:00:00",
+        "2021-12-08 00:00:00",
+        "2021-12-09 00:00:00",
+        "2021-12-10 00:00:00",
+        "2021-12-11 00:00:00",
+        "2021-12-12 00:00:00"
+      ],
+      "view_values_baseline": [
+        6.0,
+        6.0,
+        3.0,
+        2.0,
+        5.0,
+        2.0,
+        2.0,
+        5.0,
+        3.0,
+        2.0,
+        5.0,
+        2.0,
+        6.0,
+        6.0,
+        3.0,
+        2.0,
+        5.0,
+        2.0,
+        2.0,
+        5.0,
+        3.0,
+        2.0,
+        5.0,
+        2.0,
+        6.0,
+        6.0,
+        6.0,
+        2.0,
+        5.0,
+        2.0,
+        2.0,
+        5.0,
+        3.0,
+        2.0,
+        5.0,
+        2.0,
+        6.0,
+        6.0,
+        6.0,
+        2.0,
+        5.0,
+        2.0,
+        2.0,
+        5.0,
+        3.0,
+        2.0,
+        5.0,
+        2.0,
+        6.0,
+        6.0,
+        6.0,
+        2.0,
+        5.0,
+        2.0,
+        2.0,
+        5.0,
+        3.0,
+        2.0,
+        5.0,
+        2.0,
+        6.0,
+        6.0,
+        6.0,
+        2.0,
+        5.0,
+        2.0,
+        2.0,
+        5.0,
+        3.0,
+        2.0,
+        5.0,
+        2.0,
+        6.0,
+        6.0,
+        6.0,
+        2.0,
+        5.0,
+        2.0,
+        2.0,
+        5.0,
+        5.0,
+        2.0,
+        5.0,
+        2.0,
+        6.0,
+        6.0,
+        6.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        5.0,
+        5.0,
+        2.0,
+        5.0,
+        2.0,
+        3.0,
+        6.0,
+        6.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        5.0,
+        5.0,
+        2.0,
+        5.0,
+        2.0,
+        3.0,
+        6.0,
+        6.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        5.0,
+        5.0,
+        2.0,
+        5.0,
+        2.0,
+        3.0,
+        3.0,
+        6.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        5.0,
+        5.0,
+        5.0,
+        2.0,
+        3.0,
+        3.0,
+        6.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        5.0,
+        5.0,
+        5.0,
+        2.0,
+        5.0,
+        5.0,
+        2.0,
+        3.0,
+        6.0,
+        5.0,
+        4.0,
+        4.0,
+        6.0,
+        6.0,
+        5.0,
+        3.0,
+        5.0,
+        5.0,
+        26.0,
+        3.0,
+        18.0,
+        5.0,
+        28.0,
+        4.0,
+        18.0,
+        6.0,
+        5.0,
+        27.0,
+        17.0,
+        17.0,
+        20.0,
+        27.0,
+        24.0,
+        17.0,
+        22.0,
+        28.0,
+        24.0,
+        18.0,
+        29.0,
+        21.0,
+        5.0,
+        35.0,
+        2.0,
+        21.0,
+        18.0,
+        34.0,
+        4.0,
+        22.0,
+        18.0,
+        36.0,
+        23.0,
+        21.0,
+        23.0,
+        20.0,
+        26.0,
+        21.0,
+        36.0,
+        22.0,
+        28.0,
+        5.0,
+        36.0,
+        24.0,
+        23.0,
+        27.0,
+        29.0,
+        17.0,
+        50.0,
+        30.0,
+        36.0,
+        16.0,
+        52.0,
+        29.0,
+        36.0,
+        18.0,
+        29.0,
+        33.0,
+        17.0,
+        20.0,
+        2.0,
+        36.0,
+        18.0,
+        16.0,
+        4.0,
+        35.0,
+        18.0,
+        18.0,
+        35.0,
+        3.0,
+        5.0,
+        35.0,
+        26.0,
+        6.0,
+        18.0,
+        34.0,
+        28.0,
+        23.0,
+        18.0,
+        36.0,
+        5.0,
+        27.0,
+        35.0,
+        17.0,
+        41.0,
+        30.0,
+        18.0,
+        16.0,
+        40.0,
+        29.0,
+        18.0,
+        18.0,
+        29.0,
+        39.0,
+        67.0,
+        44.0,
+        53.0,
+        42.0,
+        48.0,
+        40.0,
+        52.0,
+        41.0,
+        48.0,
+        42.0,
+        41.0,
+        51.0,
+        17.0,
+        32.0,
+        17.0,
+        54.0,
+        30.0,
+        34.0,
+        16.0,
+        53.0,
+        30.0,
+        36.0,
+        53.0,
+        15.0,
+        35.0,
+        47.0,
+        35.0,
+        18.0,
+        36.0,
+        46.0,
+        34.0,
+        17.0,
+        36.0,
+        48.0,
+        17.0,
+        33.0
+      ]
+    }
+  },
+  {
+    "question": "Which states achieve the highest peak operating profit?",
+    "explanation": "Attribution: for Operating Margin=72, a single category in State accounts for a large share of total MAX(Operating Profit).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "State",
+      "measure": "MAX(Operating Profit)",
+      "subspace": [
+        [
+          "Operating Margin",
+          72
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.8164881648816488,
+      "question": "Which states achieve the highest peak operating profit?",
+      "reason": "The maximum operating profit by state helps surface standout markets and potential outliers where individual transactions or market conditions generate unusually strong profitability.",
+      "view_labels": [
+        "Alabama",
+        "Montana"
+      ],
+      "view_values": [
+        9072.0,
+        2039.0
+      ]
+    }
+  },
+  {
+    "question": "Which states achieve the highest peak operating profit?",
+    "explanation": "Distribution difference: the distribution of State changes notably when filtering by Operating Profit=1034 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "State",
+      "measure": "MAX(Operating Profit)",
+      "subspace": [
+        [
+          "Operating Profit",
+          1034
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.800054049298655,
+      "question": "Which states achieve the highest peak operating profit?",
+      "reason": "The maximum operating profit by state helps surface standout markets and potential outliers where individual transactions or market conditions generate unusually strong profitability.",
+      "view_labels": [
+        "Illinois",
+        "Iowa"
+      ],
+      "view_values": [
+        1034.0,
+        1034.0
+      ],
+      "view_labels_baseline": [
+        "Alabama",
+        "Alaska",
+        "Arizona",
+        "Arkansas",
+        "California",
+        "Colorado",
+        "Connecticut",
+        "Delaware",
+        "Florida",
+        "Georgia",
+        "Hawaii",
+        "Idaho",
+        "Illinois",
+        "Indiana",
+        "Iowa",
+        "Kansas",
+        "Kentucky",
+        "Louisiana",
+        "Maine",
+        "Maryland",
+        "Massachusetts",
+        "Michigan",
+        "Minnesota",
+        "Mississippi",
+        "Missouri",
+        "Montana",
+        "Nebraska",
+        "Nevada",
+        "New Hampshire",
+        "New Jersey",
+        "New Mexico",
+        "New York",
+        "North Carolina",
+        "North Dakota",
+        "Ohio",
+        "Oklahoma",
+        "Oregon",
+        "Pennsylvania",
+        "Rhode Island",
+        "South Carolina",
+        "South Dakota",
+        "Tennessee",
+        "Texas",
+        "Utah",
+        "Vermont",
+        "Virginia",
+        "Washington",
+        "West Virginia",
+        "Wisconsin",
+        "Wyoming"
+      ],
+      "view_values_baseline": [
+        341250.0,
+        157500.0,
+        138000.0,
+        196000.0,
+        281250.0,
+        228375.0,
+        149500.0,
+        136500.0,
+        371250.0,
+        193500.0,
+        260000.0,
+        286000.0,
+        120000.0,
+        144000.0,
+        94500.0,
+        147000.0,
+        136500.0,
+        324000.0,
+        108063.0,
+        108000.0,
+        116438.0,
+        270000.0,
+        96250.0,
+        219375.0,
+        123750.0,
+        140250.0,
+        99000.0,
+        195938.0,
+        187500.0,
+        115500.0,
+        182000.0,
+        390000.0,
+        306250.0,
+        105000.0,
+        253750.0,
+        175000.0,
+        252875.0,
+        187688.0,
+        105000.0,
+        341250.0,
+        105000.0,
+        292500.0,
+        298375.0,
+        120000.0,
+        189000.0,
+        252875.0,
+        212625.0,
+        169000.0,
+        99000.0,
+        220000.0
+      ]
+    }
+  },
+  {
+    "question": "Which cities show the highest peak units sold in a transaction?",
+    "explanation": "Distribution difference: the distribution of City changes notably when filtering by Operating Profit=462 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "City",
+      "measure": "MAX(Units Sold)",
+      "subspace": [
+        [
+          "Operating Profit",
+          462
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.7924763434669326,
+      "question": "Which cities show the highest peak units sold in a transaction?",
+      "reason": "The maximum units sold by city helps identify exceptional high-volume markets and outlier locations where demand peaks far above typical levels.",
+      "view_labels": [
+        "Indianapolis",
+        "Milwaukee"
+      ],
+      "view_values": [
+        41.0,
+        47.0
+      ],
+      "view_labels_baseline": [
+        "Albany",
+        "Albuquerque",
+        "Anchorage",
+        "Atlanta",
+        "Baltimore",
+        "Billings",
+        "Birmingham",
+        "Boise",
+        "Boston",
+        "Burlington",
+        "Charleston",
+        "Charlotte",
+        "Cheyenne",
+        "Chicago",
+        "Columbus",
+        "Dallas",
+        "Denver",
+        "Des Moines",
+        "Detroit",
+        "Fargo",
+        "Hartford",
+        "Honolulu",
+        "Houston",
+        "Indianapolis",
+        "Jackson",
+        "Knoxville",
+        "Las Vegas",
+        "Little Rock",
+        "Los Angeles",
+        "Louisville",
+        "Manchester",
+        "Miami",
+        "Milwaukee",
+        "Minneapolis",
+        "New Orleans",
+        "New York",
+        "Newark",
+        "Oklahoma City",
+        "Omaha",
+        "Orlando",
+        "Philadelphia",
+        "Phoenix",
+        "Portland",
+        "Providence",
+        "Richmond",
+        "Salt Lake City",
+        "San Francisco",
+        "Seattle",
+        "Sioux Falls",
+        "St. Louis",
+        "Wichita",
+        "Wilmington"
+      ],
+      "view_values_baseline": [
+        950.0,
+        750.0,
+        675.0,
+        825.0,
+        575.0,
+        750.0,
+        975.0,
+        925.0,
+        600.0,
+        675.0,
+        975.0,
+        975.0,
+        875.0,
+        725.0,
+        900.0,
+        975.0,
+        775.0,
+        550.0,
+        900.0,
+        550.0,
+        650.0,
+        800.0,
+        975.0,
+        600.0,
+        850.0,
+        975.0,
+        750.0,
+        775.0,
+        950.0,
+        775.0,
+        700.0,
+        975.0,
+        550.0,
+        550.0,
+        900.0,
+        975.0,
+        625.0,
+        700.0,
+        675.0,
+        900.0,
+        525.0,
+        675.0,
+        850.0,
+        575.0,
+        850.0,
+        800.0,
+        975.0,
+        850.0,
+        550.0,
+        750.0,
+        675.0,
+        675.0
+      ]
+    }
+  },
+  {
+    "question": "How do average units sold vary by sales method?",
+    "explanation": "Attribution: for City=Denver, a single category in Sales Method accounts for a large share of total MEAN(Units Sold).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Sales Method",
+      "measure": "MEAN(Units Sold)",
+      "subspace": [
+        [
+          "City",
+          "Denver"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.7860457247812846,
+      "question": "How do average units sold vary by sales method?",
+      "reason": "Looking at units sold by sales method helps uncover which channel is most effective at driving purchase volume and whether some methods are better suited for moving inventory.",
+      "view_labels": [
+        "In-store",
+        "Online"
+      ],
+      "view_values": [
+        451.7361111111111,
+        122.95833333333333
+      ]
+    }
+  },
+  {
+    "question": "In which states are the most profitable single transactions occurring?",
+    "explanation": "Distribution difference: the distribution of State changes notably when filtering by Operating Profit=827 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "State",
+      "measure": "MAX(Operating Profit)",
+      "subspace": [
+        [
+          "Operating Profit",
+          827
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.7849166773027015,
+      "question": "In which states are the most profitable single transactions occurring?",
+      "reason": "Comparing the highest operating profit achieved in each state can highlight states that generate unusually large profitable deals. This helps identify top-performing markets and possible outlier transactions worth deeper review.",
+      "view_labels": [
+        "Maryland",
+        "Massachusetts",
+        "Utah"
+      ],
+      "view_values": [
+        827.0,
+        827.0,
+        827.0
+      ],
+      "view_labels_baseline": [
+        "Alabama",
+        "Alaska",
+        "Arizona",
+        "Arkansas",
+        "California",
+        "Colorado",
+        "Connecticut",
+        "Delaware",
+        "Florida",
+        "Georgia",
+        "Hawaii",
+        "Idaho",
+        "Illinois",
+        "Indiana",
+        "Iowa",
+        "Kansas",
+        "Kentucky",
+        "Louisiana",
+        "Maine",
+        "Maryland",
+        "Massachusetts",
+        "Michigan",
+        "Minnesota",
+        "Mississippi",
+        "Missouri",
+        "Montana",
+        "Nebraska",
+        "Nevada",
+        "New Hampshire",
+        "New Jersey",
+        "New Mexico",
+        "New York",
+        "North Carolina",
+        "North Dakota",
+        "Ohio",
+        "Oklahoma",
+        "Oregon",
+        "Pennsylvania",
+        "Rhode Island",
+        "South Carolina",
+        "South Dakota",
+        "Tennessee",
+        "Texas",
+        "Utah",
+        "Vermont",
+        "Virginia",
+        "Washington",
+        "West Virginia",
+        "Wisconsin",
+        "Wyoming"
+      ],
+      "view_values_baseline": [
+        341250.0,
+        157500.0,
+        138000.0,
+        196000.0,
+        281250.0,
+        228375.0,
+        149500.0,
+        136500.0,
+        371250.0,
+        193500.0,
+        260000.0,
+        286000.0,
+        120000.0,
+        144000.0,
+        94500.0,
+        147000.0,
+        136500.0,
+        324000.0,
+        108063.0,
+        108000.0,
+        116438.0,
+        270000.0,
+        96250.0,
+        219375.0,
+        123750.0,
+        140250.0,
+        99000.0,
+        195938.0,
+        187500.0,
+        115500.0,
+        182000.0,
+        390000.0,
+        306250.0,
+        105000.0,
+        253750.0,
+        175000.0,
+        252875.0,
+        187688.0,
+        105000.0,
+        341250.0,
+        105000.0,
+        292500.0,
+        298375.0,
+        120000.0,
+        189000.0,
+        252875.0,
+        212625.0,
+        169000.0,
+        99000.0,
+        220000.0
+      ]
+    }
+  },
+  {
+    "question": "How does average operating margin differ across states?",
+    "explanation": "Distribution difference: the distribution of State changes notably when filtering by Operating Profit=442 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "State",
+      "measure": "MEAN(Operating Margin)",
+      "subspace": [
+        [
+          "Operating Profit",
+          442
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.7844032667520933,
+      "question": "How does average operating margin differ across states?",
+      "reason": "Operating margin reflects profitability efficiency rather than absolute scale. Comparing average operating margin across states can highlight markets where sales are structurally more or less efficient, helping surface geographic differences in profitability quality.",
+      "view_labels": [
+        "Massachusetts",
+        "Rhode Island"
+      ],
+      "view_values": [
+        32.0,
+        46.0
+      ],
+      "view_labels_baseline": [
+        "Alabama",
+        "Alaska",
+        "Arizona",
+        "Arkansas",
+        "California",
+        "Colorado",
+        "Connecticut",
+        "Delaware",
+        "Florida",
+        "Georgia",
+        "Hawaii",
+        "Idaho",
+        "Illinois",
+        "Indiana",
+        "Iowa",
+        "Kansas",
+        "Kentucky",
+        "Louisiana",
+        "Maine",
+        "Maryland",
+        "Massachusetts",
+        "Michigan",
+        "Minnesota",
+        "Mississippi",
+        "Missouri",
+        "Montana",
+        "Nebraska",
+        "Nevada",
+        "New Hampshire",
+        "New Jersey",
+        "New Mexico",
+        "New York",
+        "North Carolina",
+        "North Dakota",
+        "Ohio",
+        "Oklahoma",
+        "Oregon",
+        "Pennsylvania",
+        "Rhode Island",
+        "South Carolina",
+        "South Dakota",
+        "Tennessee",
+        "Texas",
+        "Utah",
+        "Vermont",
+        "Virginia",
+        "Washington",
+        "West Virginia",
+        "Wisconsin",
+        "Wyoming"
+      ],
+      "view_values_baseline": [
+        55.35648148148148,
+        34.986111111111114,
+        38.98148148148148,
+        44.050925925925924,
+        38.68518518518518,
+        42.708333333333336,
+        40.16203703703704,
+        42.798611111111114,
+        39.022222222222226,
+        41.370370370370374,
+        31.958333333333332,
+        45.89351851851852,
+        44.951388888888886,
+        43.388888888888886,
+        42.09027777777778,
+        41.166666666666664,
+        44.861111111111114,
+        44.68518518518518,
+        39.888888888888886,
+        40.74305555555556,
+        34.71296296296296,
+        47.576388888888886,
+        40.8125,
+        45.43055555555556,
+        45.31944444444444,
+        47.104166666666664,
+        45.791666666666664,
+        40.592592592592595,
+        39.101851851851855,
+        42.708333333333336,
+        39.291666666666664,
+        40.833333333333336,
+        46.354166666666664,
+        39.861111111111114,
+        45.90277777777778,
+        43.50925925925926,
+        41.361111111111114,
+        42.58796296296296,
+        41.236111111111114,
+        43.30555555555556,
+        39.46527777777778,
+        50.657407407407405,
+        44.914351851851855,
+        44.467592592592595,
+        44.425925925925924,
+        41.43981481481482,
+        32.50694444444444,
+        45.68055555555556,
+        42.423611111111114,
+        40.27777777777778
+      ]
+    }
+  },
+  {
+    "question": "How does average operating profit vary across retailers?",
+    "explanation": "Attribution: for City=Birmingham, a single category in Retailer accounts for a large share of total MEAN(Operating Profit).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Retailer",
+      "measure": "MEAN(Operating Profit)",
+      "subspace": [
+        [
+          "City",
+          "Birmingham"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.7827500647245222,
+      "question": "How does average operating profit vary across retailers?",
+      "reason": "Average operating profit by retailer can show whether some retailers are consistently more profitable than others, beyond just sales volume. This helps uncover differences in pricing power, customer mix, or execution quality across retail partners.",
+      "view_labels": [
+        "Amazon",
+        "Sports Direct"
+      ],
+      "view_values": [
+        12245.583333333334,
+        44120.75490196078
+      ]
+    }
+  },
+  {
+    "question": "How does average operating margin differ across states?",
+    "explanation": "Distribution difference: the distribution of State changes notably when filtering by Operating Profit=2956 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "State",
+      "measure": "MEAN(Operating Margin)",
+      "subspace": [
+        [
+          "Operating Profit",
+          2956
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.7820236655688403,
+      "question": "How does average operating margin differ across states?",
+      "reason": "Operating margin reflects profitability efficiency rather than absolute scale. Comparing average operating margin across states can highlight markets where sales are structurally more or less efficient, helping surface geographic differences in profitability quality.",
+      "view_labels": [
+        "Connecticut",
+        "Nevada"
+      ],
+      "view_values": [
+        42.0,
+        54.0
+      ],
+      "view_labels_baseline": [
+        "Alabama",
+        "Alaska",
+        "Arizona",
+        "Arkansas",
+        "California",
+        "Colorado",
+        "Connecticut",
+        "Delaware",
+        "Florida",
+        "Georgia",
+        "Hawaii",
+        "Idaho",
+        "Illinois",
+        "Indiana",
+        "Iowa",
+        "Kansas",
+        "Kentucky",
+        "Louisiana",
+        "Maine",
+        "Maryland",
+        "Massachusetts",
+        "Michigan",
+        "Minnesota",
+        "Mississippi",
+        "Missouri",
+        "Montana",
+        "Nebraska",
+        "Nevada",
+        "New Hampshire",
+        "New Jersey",
+        "New Mexico",
+        "New York",
+        "North Carolina",
+        "North Dakota",
+        "Ohio",
+        "Oklahoma",
+        "Oregon",
+        "Pennsylvania",
+        "Rhode Island",
+        "South Carolina",
+        "South Dakota",
+        "Tennessee",
+        "Texas",
+        "Utah",
+        "Vermont",
+        "Virginia",
+        "Washington",
+        "West Virginia",
+        "Wisconsin",
+        "Wyoming"
+      ],
+      "view_values_baseline": [
+        55.35648148148148,
+        34.986111111111114,
+        38.98148148148148,
+        44.050925925925924,
+        38.68518518518518,
+        42.708333333333336,
+        40.16203703703704,
+        42.798611111111114,
+        39.022222222222226,
+        41.370370370370374,
+        31.958333333333332,
+        45.89351851851852,
+        44.951388888888886,
+        43.388888888888886,
+        42.09027777777778,
+        41.166666666666664,
+        44.861111111111114,
+        44.68518518518518,
+        39.888888888888886,
+        40.74305555555556,
+        34.71296296296296,
+        47.576388888888886,
+        40.8125,
+        45.43055555555556,
+        45.31944444444444,
+        47.104166666666664,
+        45.791666666666664,
+        40.592592592592595,
+        39.101851851851855,
+        42.708333333333336,
+        39.291666666666664,
+        40.833333333333336,
+        46.354166666666664,
+        39.861111111111114,
+        45.90277777777778,
+        43.50925925925926,
+        41.361111111111114,
+        42.58796296296296,
+        41.236111111111114,
+        43.30555555555556,
+        39.46527777777778,
+        50.657407407407405,
+        44.914351851851855,
+        44.467592592592595,
+        44.425925925925924,
+        41.43981481481482,
+        32.50694444444444,
+        45.68055555555556,
+        42.423611111111114,
+        40.27777777777778
+      ]
+    }
+  },
+  {
+    "question": "Which cities show the highest peak units sold in a transaction?",
+    "explanation": "Distribution difference: the distribution of City changes notably when filtering by Price per Unit=12 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "City",
+      "measure": "MAX(Units Sold)",
+      "subspace": [
+        [
+          "Price per Unit",
+          12
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.7601359005958889,
+      "question": "Which cities show the highest peak units sold in a transaction?",
+      "reason": "The maximum units sold by city helps identify exceptional high-volume markets and outlier locations where demand peaks far above typical levels.",
+      "view_labels": [
+        "Knoxville",
+        "Little Rock",
+        "Oklahoma City"
+      ],
+      "view_values": [
+        247.0,
+        104.0,
+        116.0
+      ],
+      "view_labels_baseline": [
+        "Albany",
+        "Albuquerque",
+        "Anchorage",
+        "Atlanta",
+        "Baltimore",
+        "Billings",
+        "Birmingham",
+        "Boise",
+        "Boston",
+        "Burlington",
+        "Charleston",
+        "Charlotte",
+        "Cheyenne",
+        "Chicago",
+        "Columbus",
+        "Dallas",
+        "Denver",
+        "Des Moines",
+        "Detroit",
+        "Fargo",
+        "Hartford",
+        "Honolulu",
+        "Houston",
+        "Indianapolis",
+        "Jackson",
+        "Knoxville",
+        "Las Vegas",
+        "Little Rock",
+        "Los Angeles",
+        "Louisville",
+        "Manchester",
+        "Miami",
+        "Milwaukee",
+        "Minneapolis",
+        "New Orleans",
+        "New York",
+        "Newark",
+        "Oklahoma City",
+        "Omaha",
+        "Orlando",
+        "Philadelphia",
+        "Phoenix",
+        "Portland",
+        "Providence",
+        "Richmond",
+        "Salt Lake City",
+        "San Francisco",
+        "Seattle",
+        "Sioux Falls",
+        "St. Louis",
+        "Wichita",
+        "Wilmington"
+      ],
+      "view_values_baseline": [
+        950.0,
+        750.0,
+        675.0,
+        825.0,
+        575.0,
+        750.0,
+        975.0,
+        925.0,
+        600.0,
+        675.0,
+        975.0,
+        975.0,
+        875.0,
+        725.0,
+        900.0,
+        975.0,
+        775.0,
+        550.0,
+        900.0,
+        550.0,
+        650.0,
+        800.0,
+        975.0,
+        600.0,
+        850.0,
+        975.0,
+        750.0,
+        775.0,
+        950.0,
+        775.0,
+        700.0,
+        975.0,
+        550.0,
+        550.0,
+        900.0,
+        975.0,
+        625.0,
+        700.0,
+        675.0,
+        900.0,
+        525.0,
+        675.0,
+        850.0,
+        575.0,
+        850.0,
+        800.0,
+        975.0,
+        850.0,
+        550.0,
+        750.0,
+        675.0,
+        675.0
+      ]
+    }
+  },
+  {
+    "question": "Which cities record the highest single operating profit values?",
+    "explanation": "Distribution difference: the distribution of City changes notably when filtering by Retailer ID=1189833 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "City",
+      "measure": "MAX(Operating Profit)",
+      "subspace": [
+        [
+          "Retailer ID",
+          1189833
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.7522923457708249,
+      "question": "Which cities record the highest single operating profit values?",
+      "reason": "Looking at the maximum operating profit by city can reveal standout locations with exceptionally strong profitable transactions. This is useful for spotting outliers, flagship markets, or cities where specific deals or demand conditions created unusually high profitability.",
+      "view_labels": [
+        "Billings",
+        "Los Angeles",
+        "Minneapolis",
+        "San Francisco"
+      ],
+      "view_values": [
+        140250.0,
+        222750.0,
+        96188.0,
+        126000.0
+      ],
+      "view_labels_baseline": [
+        "Albany",
+        "Albuquerque",
+        "Anchorage",
+        "Atlanta",
+        "Baltimore",
+        "Billings",
+        "Birmingham",
+        "Boise",
+        "Boston",
+        "Burlington",
+        "Charleston",
+        "Charlotte",
+        "Cheyenne",
+        "Chicago",
+        "Columbus",
+        "Dallas",
+        "Denver",
+        "Des Moines",
+        "Detroit",
+        "Fargo",
+        "Hartford",
+        "Honolulu",
+        "Houston",
+        "Indianapolis",
+        "Jackson",
+        "Knoxville",
+        "Las Vegas",
+        "Little Rock",
+        "Los Angeles",
+        "Louisville",
+        "Manchester",
+        "Miami",
+        "Milwaukee",
+        "Minneapolis",
+        "New Orleans",
+        "New York",
+        "Newark",
+        "Oklahoma City",
+        "Omaha",
+        "Orlando",
+        "Philadelphia",
+        "Phoenix",
+        "Portland",
+        "Providence",
+        "Richmond",
+        "Salt Lake City",
+        "San Francisco",
+        "Seattle",
+        "Sioux Falls",
+        "St. Louis",
+        "Wichita",
+        "Wilmington"
+      ],
+      "view_values_baseline": [
+        277875.0,
+        182000.0,
+        157500.0,
+        193500.0,
+        108000.0,
+        140250.0,
+        341250.0,
+        286000.0,
+        116438.0,
+        189000.0,
+        341250.0,
+        306250.0,
+        220000.0,
+        120000.0,
+        253750.0,
+        298375.0,
+        228375.0,
+        94500.0,
+        270000.0,
+        105000.0,
+        149500.0,
+        260000.0,
+        250000.0,
+        144000.0,
+        219375.0,
+        292500.0,
+        195938.0,
+        196000.0,
+        222750.0,
+        136500.0,
+        187500.0,
+        341250.0,
+        99000.0,
+        96250.0,
+        324000.0,
+        390000.0,
+        115500.0,
+        175000.0,
+        99000.0,
+        371250.0,
+        187688.0,
+        138000.0,
+        252875.0,
+        105000.0,
+        252875.0,
+        120000.0,
+        281250.0,
+        212625.0,
+        105000.0,
+        123750.0,
+        147000.0,
+        136500.0
+      ]
+    }
+  },
+  {
+    "question": "Which states show the lowest recorded transaction-level total sales?",
+    "explanation": "Distribution difference: the distribution of State changes notably when filtering by Units Sold=254.0 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "State",
+      "measure": "MIN(Total Sales)",
+      "subspace": [
+        [
+          "Units Sold",
+          254.0
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.7167904564123605,
+      "question": "Which states show the lowest recorded transaction-level total sales?",
+      "reason": "Examining the minimum total sales by state helps identify locations with extremely weak individual sales records or possible zero-sales anomalies. This can highlight underperforming markets or data points that may deserve further investigation.",
+      "view_labels": [
+        "Alabama",
+        "California",
+        "Florida",
+        "New York",
+        "Texas"
+      ],
+      "view_values": [
+        10414.0,
+        11684.0,
+        12954.0,
+        16256.0,
+        7366.0
+      ],
+      "view_labels_baseline": [
+        "Alabama",
+        "Alaska",
+        "Arizona",
+        "Arkansas",
+        "California",
+        "Colorado",
+        "Connecticut",
+        "Delaware",
+        "Florida",
+        "Georgia",
+        "Hawaii",
+        "Idaho",
+        "Illinois",
+        "Indiana",
+        "Iowa",
+        "Kansas",
+        "Kentucky",
+        "Louisiana",
+        "Maine",
+        "Maryland",
+        "Massachusetts",
+        "Michigan",
+        "Minnesota",
+        "Mississippi",
+        "Missouri",
+        "Montana",
+        "Nebraska",
+        "Nevada",
+        "New Hampshire",
+        "New Jersey",
+        "New Mexico",
+        "New York",
+        "North Carolina",
+        "North Dakota",
+        "Ohio",
+        "Oklahoma",
+        "Oregon",
+        "Pennsylvania",
+        "Rhode Island",
+        "South Carolina",
+        "South Dakota",
+        "Tennessee",
+        "Texas",
+        "Utah",
+        "Vermont",
+        "Virginia",
+        "Washington",
+        "West Virginia",
+        "Wisconsin",
+        "Wyoming"
+      ],
+      "view_values_baseline": [
+        750.0,
+        1764.0,
+        1599.0,
+        880.0,
+        1107.0,
+        2184.0,
+        576.0,
+        992.0,
+        754.0,
+        1845.0,
+        1786.0,
+        2320.0,
+        779.0,
+        589.0,
+        392.0,
+        520.0,
+        972.0,
+        1749.0,
+        416.0,
+        203.0,
+        897.0,
+        1848.0,
+        224.0,
+        1275.0,
+        1050.0,
+        2464.0,
+        0.0,
+        2392.0,
+        1485.0,
+        594.0,
+        2108.0,
+        4134.0,
+        2880.0,
+        528.0,
+        1428.0,
+        581.0,
+        1290.0,
+        256.0,
+        160.0,
+        3887.0,
+        680.0,
+        506.0,
+        644.0,
+        735.0,
+        1170.0,
+        1131.0,
+        3120.0,
+        560.0,
+        280.0,
+        1890.0
+      ]
+    }
+  },
+  {
+    "question": "Which sales method tends to sell the highest average number of units?",
+    "explanation": "Attribution: for State=Alabama, a single category in Sales Method accounts for a large share of total MEAN(Units Sold).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Sales Method",
+      "measure": "MEAN(Units Sold)",
+      "subspace": [
+        [
+          "State",
+          "Alabama"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.7044004844570045,
+      "question": "Which sales method tends to sell the highest average number of units?",
+      "reason": "Comparing average units sold across sales methods can reveal whether certain channels are better at driving transaction volume. This is useful for understanding channel effectiveness and whether some methods are associated with stronger product movement.",
+      "view_labels": [
+        "Online",
+        "Outlet"
+      ],
+      "view_values": [
+        152.54166666666666,
+        363.5
+      ]
+    }
+  },
+  {
+    "question": "In which states are the most profitable single transactions occurring?",
+    "explanation": "Distribution difference: the distribution of State changes notably when filtering by Retailer=Amazon (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "State",
+      "measure": "MAX(Operating Profit)",
+      "subspace": [
+        [
+          "Retailer",
+          "Amazon"
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.6689766528776799,
+      "question": "In which states are the most profitable single transactions occurring?",
+      "reason": "Comparing the highest operating profit achieved in each state can highlight states that generate unusually large profitable deals. This helps identify top-performing markets and possible outlier transactions worth deeper review.",
+      "view_labels": [
+        "Alabama",
+        "Alaska",
+        "Kentucky",
+        "Maine",
+        "Massachusetts",
+        "New Hampshire",
+        "North Carolina",
+        "Ohio",
+        "Vermont"
+      ],
+      "view_values": [
+        63000.0,
+        157500.0,
+        120000.0,
+        108063.0,
+        116438.0,
+        182000.0,
+        290625.0,
+        253750.0,
+        189000.0
+      ],
+      "view_labels_baseline": [
+        "Alabama",
+        "Alaska",
+        "Arizona",
+        "Arkansas",
+        "California",
+        "Colorado",
+        "Connecticut",
+        "Delaware",
+        "Florida",
+        "Georgia",
+        "Hawaii",
+        "Idaho",
+        "Illinois",
+        "Indiana",
+        "Iowa",
+        "Kansas",
+        "Kentucky",
+        "Louisiana",
+        "Maine",
+        "Maryland",
+        "Massachusetts",
+        "Michigan",
+        "Minnesota",
+        "Mississippi",
+        "Missouri",
+        "Montana",
+        "Nebraska",
+        "Nevada",
+        "New Hampshire",
+        "New Jersey",
+        "New Mexico",
+        "New York",
+        "North Carolina",
+        "North Dakota",
+        "Ohio",
+        "Oklahoma",
+        "Oregon",
+        "Pennsylvania",
+        "Rhode Island",
+        "South Carolina",
+        "South Dakota",
+        "Tennessee",
+        "Texas",
+        "Utah",
+        "Vermont",
+        "Virginia",
+        "Washington",
+        "West Virginia",
+        "Wisconsin",
+        "Wyoming"
+      ],
+      "view_values_baseline": [
+        341250.0,
+        157500.0,
+        138000.0,
+        196000.0,
+        281250.0,
+        228375.0,
+        149500.0,
+        136500.0,
+        371250.0,
+        193500.0,
+        260000.0,
+        286000.0,
+        120000.0,
+        144000.0,
+        94500.0,
+        147000.0,
+        136500.0,
+        324000.0,
+        108063.0,
+        108000.0,
+        116438.0,
+        270000.0,
+        96250.0,
+        219375.0,
+        123750.0,
+        140250.0,
+        99000.0,
+        195938.0,
+        187500.0,
+        115500.0,
+        182000.0,
+        390000.0,
+        306250.0,
+        105000.0,
+        253750.0,
+        175000.0,
+        252875.0,
+        187688.0,
+        105000.0,
+        341250.0,
+        105000.0,
+        292500.0,
+        298375.0,
+        120000.0,
+        189000.0,
+        252875.0,
+        212625.0,
+        169000.0,
+        99000.0,
+        220000.0
+      ]
+    }
+  },
+  {
+    "question": "How widely is each sales method used across retailers?",
+    "explanation": "Attribution: for State=Texas, a single category in Sales Method accounts for a large share of total COUNT(Retailer).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Sales Method",
+      "measure": "COUNT(Retailer)",
+      "subspace": [
+        [
+          "State",
+          "Texas"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.6666666666666666,
+      "question": "How widely is each sales method used across retailers?",
+      "reason": "Counting distinct retailers by sales method helps show whether certain selling methods are broadly adopted or concentrated among fewer retailers. This can reveal structural differences in channel participation and possible method specialization.",
+      "view_labels": [
+        "Online",
+        "Outlet"
+      ],
+      "view_values": [
+        144.0,
+        288.0
+      ]
+    }
+  },
+  {
+    "question": "How does the average price per unit differ by region?",
+    "explanation": "Attribution: for Operating Profit=1827, a single category in Region accounts for a large share of total MEAN(Price per Unit).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Region",
+      "measure": "MEAN(Price per Unit)",
+      "subspace": [
+        [
+          "Operating Profit",
+          1827
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.6666666666666666,
+      "question": "How does the average price per unit differ by region?",
+      "reason": "Price differences by region can indicate regional pricing strategies, market positioning, or competitive conditions. Looking at the average price per unit across regions helps identify whether pricing varies systematically by geography.",
+      "view_labels": [
+        "Midwest",
+        "West"
+      ],
+      "view_values": [
+        36.0,
+        18.0
+      ]
+    }
+  },
+  {
+    "question": "Which retailers reach the highest product price points?",
+    "explanation": "Attribution: for City=Knoxville, a single category in Retailer accounts for a large share of total MAX(Price per Unit).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Retailer",
+      "measure": "MAX(Price per Unit)",
+      "subspace": [
+        [
+          "City",
+          "Knoxville"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.65,
+      "question": "Which retailers reach the highest product price points?",
+      "reason": "The highest observed price per unit by retailer can expose whether some retailers carry more premium-priced inventory or follow more aggressive pricing strategies than others.",
+      "view_labels": [
+        "Foot Locker",
+        "Sports Direct"
+      ],
+      "view_values": [
+        35.0,
+        65.0
+      ]
+    }
+  },
+  {
+    "question": "How do average prices per unit vary across retailers?",
+    "explanation": "Attribution: for State=Illinois, a single category in Retailer accounts for a large share of total MEAN(Price per Unit).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Retailer",
+      "measure": "MEAN(Price per Unit)",
+      "subspace": [
+        [
+          "State",
+          "Illinois"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.6359116550339421,
+      "question": "How do average prices per unit vary across retailers?",
+      "reason": "Pricing differences across retailers may reflect different market strategies, positioning, or customer segments. Comparing average price per unit by retailer helps identify premium vs. discount-oriented retailers and possible pricing anomalies.",
+      "view_labels": [
+        "Foot Locker",
+        "Sports Direct"
+      ],
+      "view_values": [
+        48.904411764705884,
+        28.0
+      ]
+    }
+  },
+  {
+    "question": "Which sales method has the lowest observed operating margin?",
+    "explanation": "Attribution: for State=Hawaii, a single category in Sales Method accounts for a large share of total MIN(Operating Margin).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Sales Method",
+      "measure": "MIN(Operating Margin)",
+      "subspace": [
+        [
+          "State",
+          "Hawaii"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.6341463414634146,
+      "question": "Which sales method has the lowest observed operating margin?",
+      "reason": "The lowest operating margin by sales method can reveal whether any selling channel is associated with especially weak profitability outcomes. This helps identify riskier methods, margin compression, or unusual transactions that may need operational review.",
+      "view_labels": [
+        "Online",
+        "Outlet"
+      ],
+      "view_values": [
+        26.0,
+        15.0
+      ]
+    }
+  },
+  {
+    "question": "Which products show the lowest observed units sold in a transaction?",
+    "explanation": "Attribution: for Sales Method=In-store, a single category in Product accounts for a large share of total MIN(Units Sold).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Product",
+      "measure": "MIN(Units Sold)",
+      "subspace": [
+        [
+          "Sales Method",
+          "In-store"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.6329113924050633,
+      "question": "Which products show the lowest observed units sold in a transaction?",
+      "reason": "Examining the minimum units sold by product can help detect products that experience extremely weak demand or zero-sale transactions. This is useful for spotting potential stock, assortment, or demand issues.",
+      "view_labels": [
+        "Men's Apparel",
+        "Men's Athletic Footwear",
+        "Men's Street Footwear",
+        "Women's Apparel",
+        "Women's Athletic Footwear",
+        "Women's Street Footwear"
+      ],
+      "view_values": [
+        50.0,
+        1.0,
+        1.0,
+        1.0,
+        25.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "question": "Which sales methods are associated with the lowest observed price per unit?",
+    "explanation": "Attribution: for Operating Margin=54, a single category in Sales Method accounts for a large share of total MIN(Price per Unit).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Sales Method",
+      "measure": "MIN(Price per Unit)",
+      "subspace": [
+        [
+          "Operating Margin",
+          54
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.6296296296296297,
+      "question": "Which sales methods are associated with the lowest observed price per unit?",
+      "reason": "The lowest price per unit recorded by sales method can reveal discount-heavy channels or unusual pricing behavior. This is useful for detecting aggressive pricing strategies or potential anomalies in how products are sold across channels.",
+      "view_labels": [
+        "Online",
+        "Outlet"
+      ],
+      "view_values": [
+        10.0,
+        17.0
+      ]
+    }
+  },
+  {
+    "question": "Which retailers account for the largest number of transactions?",
+    "explanation": "Distribution difference: the distribution of Retailer changes notably when filtering by State=Maine (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Retailer",
+      "measure": "COUNT(Invoice Date)",
+      "subspace": [
+        [
+          "State",
+          "Maine"
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.6127541770786421,
+      "question": "Which retailers account for the largest number of transactions?",
+      "reason": "Counting transactions by retailer shows how sales activity is distributed across retail partners. This can reveal whether business volume is concentrated among a few retailers or more evenly spread, which is useful for dependency and partnership analysis.",
+      "view_labels": [
+        "Amazon",
+        "West Gear"
+      ],
+      "view_values": [
+        24.0,
+        8.0
+      ],
+      "view_labels_baseline": [
+        "Amazon",
+        "Foot Locker",
+        "Kohl's",
+        "Sports Direct",
+        "Walmart",
+        "West Gear"
+      ],
+      "view_values_baseline": [
+        345.0,
+        1141.0,
+        433.0,
+        933.0,
+        110.0,
+        1103.0
+      ]
+    }
+  },
+  {
+    "question": "How does operating margin differ across products?",
+    "explanation": "Attribution: for Total Sales=1855, a single category in Product accounts for a large share of total MEAN(Operating Margin).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Product",
+      "measure": "MEAN(Operating Margin)",
+      "subspace": [
+        [
+          "Total Sales",
+          1855
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5897435897435898,
+      "question": "How does operating margin differ across products?",
+      "reason": "Operating margin by product shows which products are relatively more efficient or lucrative, helping identify high-margin categories and products that may suffer from weaker profitability.",
+      "view_labels": [
+        "Men's Apparel",
+        "Women's Athletic Footwear"
+      ],
+      "view_values": [
+        46.0,
+        32.0
+      ]
+    }
+  },
+  {
+    "question": "Which retailers deliver the highest average operating profit?",
+    "explanation": "Distribution difference: the distribution of Retailer changes notably when filtering by City=Knoxville (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Retailer",
+      "measure": "MEAN(Operating Profit)",
+      "subspace": [
+        [
+          "City",
+          "Knoxville"
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.5894034150655593,
+      "question": "Which retailers deliver the highest average operating profit?",
+      "reason": "Comparing operating profit across retailers can reveal which retail partners are most profitable, not just in terms of sales volume but in actual earnings contribution.",
+      "view_labels": [
+        "Foot Locker",
+        "Sports Direct"
+      ],
+      "view_values": [
+        10220.25,
+        41034.44607843137
+      ],
+      "view_labels_baseline": [
+        "Amazon",
+        "Foot Locker",
+        "Kohl's",
+        "Sports Direct",
+        "Walmart",
+        "West Gear"
+      ],
+      "view_values_baseline": [
+        30367.263435194942,
+        30611.3894577171,
+        35739.12815533981,
+        36581.211614173226,
+        41185.40415335463,
+        36085.91743892165
+      ]
+    }
+  },
+  {
+    "question": "Which retailers reach the highest product price points?",
+    "explanation": "Distribution difference: the distribution of Retailer changes notably when filtering by City=Newark (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Retailer",
+      "measure": "MAX(Price per Unit)",
+      "subspace": [
+        [
+          "City",
+          "Newark"
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.5878436760132272,
+      "question": "Which retailers reach the highest product price points?",
+      "reason": "The highest observed price per unit by retailer can expose whether some retailers carry more premium-priced inventory or follow more aggressive pricing strategies than others.",
+      "view_labels": [
+        "Kohl's",
+        "Sports Direct"
+      ],
+      "view_values": [
+        60.0,
+        65.0
+      ],
+      "view_labels_baseline": [
+        "Amazon",
+        "Foot Locker",
+        "Kohl's",
+        "Sports Direct",
+        "Walmart",
+        "West Gear"
+      ],
+      "view_values_baseline": [
+        80.0,
+        105.0,
+        75.0,
+        95.0,
+        110.0,
+        110.0
+      ]
+    }
+  },
+  {
+    "question": "Which regions generate the highest total sales?",
+    "explanation": "Attribution: for Units Sold=270.0, a single category in Region accounts for a large share of total MEAN(Total Sales).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Region",
+      "measure": "MEAN(Total Sales)",
+      "subspace": [
+        [
+          "Units Sold",
+          270.0
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5818786367414797,
+      "question": "Which regions generate the highest total sales?",
+      "reason": "Total sales compared across regions helps identify geographic revenue concentration, strong markets, and potential underperforming areas that may need strategic attention.",
+      "view_labels": [
+        "Midwest",
+        "Northeast",
+        "South",
+        "Southeast",
+        "West"
+      ],
+      "view_values": [
+        94500.0,
+        26325.0,
+        14310.0,
+        15390.0,
+        11880.0
+      ]
+    }
+  },
+  {
+    "question": "Which retailers deliver the highest average operating profit?",
+    "explanation": "Distribution difference: the distribution of Retailer changes notably when filtering by State=Kansas (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Retailer",
+      "measure": "MEAN(Operating Profit)",
+      "subspace": [
+        [
+          "State",
+          "Kansas"
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.5770718470978704,
+      "question": "Which retailers deliver the highest average operating profit?",
+      "reason": "Comparing operating profit across retailers can reveal which retail partners are most profitable, not just in terms of sales volume but in actual earnings contribution.",
+      "view_labels": [
+        "Foot Locker",
+        "Kohl's"
+      ],
+      "view_values": [
+        27963.113636363636,
+        22797.82
+      ],
+      "view_labels_baseline": [
+        "Amazon",
+        "Foot Locker",
+        "Kohl's",
+        "Sports Direct",
+        "Walmart",
+        "West Gear"
+      ],
+      "view_values_baseline": [
+        30367.263435194942,
+        30611.3894577171,
+        35739.12815533981,
+        36581.211614173226,
+        41185.40415335463,
+        36085.91743892165
+      ]
+    }
+  },
+  {
+    "question": "How does average operating profit vary across retailers?",
+    "explanation": "Distribution difference: the distribution of Retailer changes notably when filtering by State=Michigan (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Retailer",
+      "measure": "MEAN(Operating Profit)",
+      "subspace": [
+        [
+          "State",
+          "Michigan"
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.5738127365058747,
+      "question": "How does average operating profit vary across retailers?",
+      "reason": "Average operating profit by retailer can show whether some retailers are consistently more profitable than others, beyond just sales volume. This helps uncover differences in pricing power, customer mix, or execution quality across retail partners.",
+      "view_labels": [
+        "Foot Locker",
+        "Sports Direct"
+      ],
+      "view_values": [
+        38855.5,
+        60386.9406779661
+      ],
+      "view_labels_baseline": [
+        "Amazon",
+        "Foot Locker",
+        "Kohl's",
+        "Sports Direct",
+        "Walmart",
+        "West Gear"
+      ],
+      "view_values_baseline": [
+        30367.263435194942,
+        30611.3894577171,
+        35739.12815533981,
+        36581.211614173226,
+        41185.40415335463,
+        36085.91743892165
+      ]
+    }
+  },
+  {
+    "question": "Which retailers deliver the highest average operating profit?",
+    "explanation": "Attribution: for State=Louisiana, a single category in Retailer accounts for a large share of total MEAN(Operating Profit).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Retailer",
+      "measure": "MEAN(Operating Profit)",
+      "subspace": [
+        [
+          "State",
+          "Louisiana"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5725923280332141,
+      "question": "Which retailers deliver the highest average operating profit?",
+      "reason": "Comparing operating profit across retailers can reveal which retail partners are most profitable, not just in terms of sales volume but in actual earnings contribution.",
+      "view_labels": [
+        "Foot Locker",
+        "West Gear"
+      ],
+      "view_values": [
+        33979.63888888889,
+        45522.066666666666
+      ]
+    }
+  },
+  {
+    "question": "How does operating margin differ across products?",
+    "explanation": "Distribution difference: the distribution of Product changes notably when filtering by Operating Profit=7073 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Product",
+      "measure": "MEAN(Operating Margin)",
+      "subspace": [
+        [
+          "Operating Profit",
+          7073
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.5714212496355388,
+      "question": "How does operating margin differ across products?",
+      "reason": "Operating margin by product shows which products are relatively more efficient or lucrative, helping identify high-margin categories and products that may suffer from weaker profitability.",
+      "view_labels": [
+        "Men's Apparel",
+        "Women's Street Footwear"
+      ],
+      "view_values": [
+        67.0,
+        46.0
+      ],
+      "view_labels_baseline": [
+        "Men's Apparel",
+        "Men's Athletic Footwear",
+        "Men's Street Footwear",
+        "Women's Apparel",
+        "Women's Athletic Footwear",
+        "Women's Street Footwear"
+      ],
+      "view_values_baseline": [
+        41.3225404732254,
+        40.27018633540373,
+        44.61304347826087,
+        44.1318407960199,
+        42.43586550435865,
+        41.01990049751244
+      ]
+    }
+  },
+  {
+    "question": "Which products achieve the highest peak units sold in a single transaction?",
+    "explanation": "Distribution difference: the distribution of Product changes notably when filtering by Units Sold=7.0 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Product",
+      "measure": "MAX(Units Sold)",
+      "subspace": [
+        [
+          "Units Sold",
+          7.0
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.5712882843788561,
+      "question": "Which products achieve the highest peak units sold in a single transaction?",
+      "reason": "Comparing the maximum units sold across products can highlight whether certain product categories occasionally experience very large-volume transactions. This helps detect peak-demand products and possible outlier orders that differ from normal selling patterns.",
+      "view_labels": [
+        "Men's Apparel",
+        "Women's Athletic Footwear"
+      ],
+      "view_values": [
+        7.0,
+        7.0
+      ],
+      "view_labels_baseline": [
+        "Men's Apparel",
+        "Men's Athletic Footwear",
+        "Men's Street Footwear",
+        "Women's Apparel",
+        "Women's Athletic Footwear",
+        "Women's Street Footwear"
+      ],
+      "view_values_baseline": [
+        925.0,
+        975.0,
+        975.0,
+        975.0,
+        925.0,
+        975.0
+      ]
+    }
+  },
+  {
+    "question": "How does operating margin differ across products?",
+    "explanation": "Attribution: for Total Sales=2325, a single category in Product accounts for a large share of total MEAN(Operating Margin).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Product",
+      "measure": "MEAN(Operating Margin)",
+      "subspace": [
+        [
+          "Total Sales",
+          2325
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5692307692307692,
+      "question": "How does operating margin differ across products?",
+      "reason": "Operating margin by product shows which products are relatively more efficient or lucrative, helping identify high-margin categories and products that may suffer from weaker profitability.",
+      "view_labels": [
+        "Men's Apparel",
+        "Women's Athletic Footwear"
+      ],
+      "view_values": [
+        37.0,
+        28.0
+      ]
+    }
+  },
+  {
+    "question": "How does average operating profit differ by sales method?",
+    "explanation": "Attribution: for overall data, a single category in Sales Method accounts for a large share of total MEAN(Operating Profit).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Sales Method",
+      "measure": "MEAN(Operating Profit)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5691099289516384,
+      "question": "How does average operating profit differ by sales method?",
+      "reason": "Operating profit compared across sales methods shows whether some channels are more profitable than others. This can reveal differences in selling efficiency, customer mix, or channel economics.",
+      "view_labels": [
+        "In-store",
+        "Online",
+        "Outlet"
+      ],
+      "view_values": [
+        73328.38045977011,
+        19749.506443035385,
+        35769.59357403114
+      ]
+    }
+  },
+  {
+    "question": "How do average prices per unit vary across retailers?",
+    "explanation": "Distribution difference: the distribution of Retailer changes notably when filtering by State=Minnesota (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Retailer",
+      "measure": "MEAN(Price per Unit)",
+      "subspace": [
+        [
+          "State",
+          "Minnesota"
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.5685894873458652,
+      "question": "How do average prices per unit vary across retailers?",
+      "reason": "Pricing differences across retailers may reflect different market strategies, positioning, or customer segments. Comparing average price per unit by retailer helps identify premium vs. discount-oriented retailers and possible pricing anomalies.",
+      "view_labels": [
+        "Foot Locker",
+        "Kohl's"
+      ],
+      "view_values": [
+        41.375,
+        41.25
+      ],
+      "view_labels_baseline": [
+        "Amazon",
+        "Foot Locker",
+        "Kohl's",
+        "Sports Direct",
+        "Walmart",
+        "West Gear"
+      ],
+      "view_values_baseline": [
+        48.759747102212856,
+        44.784982935153586,
+        44.60873786407767,
+        42.04675196850393,
+        47.18370607028754,
+        46.737994945240104
+      ]
+    }
+  },
+  {
+    "question": "Which sales methods generate the highest total sales?",
+    "explanation": "Distribution difference: the distribution of Sales Method changes notably when filtering by City=Atlanta (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Sales Method",
+      "measure": "SUM(Total Sales)",
+      "subspace": [
+        [
+          "City",
+          "Atlanta"
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.5674031595548015,
+      "question": "Which sales methods generate the highest total sales?",
+      "reason": "Comparing total sales across sales methods helps evaluate which selling channel contributes most to revenue generation. This can reveal channel effectiveness and indicate whether certain sales methods are outperforming others commercially.",
+      "view_labels": [
+        "Online",
+        "Outlet"
+      ],
+      "view_values": [
+        18575819.0,
+        421647.0
+      ],
+      "view_labels_baseline": [
+        "In-store",
+        "Online",
+        "Outlet"
+      ],
+      "view_values_baseline": [
+        356643750.0,
+        247672882.0,
+        295585493.0
+      ]
+    }
+  },
+  {
+    "question": "How does the average price per unit differ by region?",
+    "explanation": "Distribution difference: the distribution of Region changes notably when filtering by Operating Margin=71 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Region",
+      "measure": "MEAN(Price per Unit)",
+      "subspace": [
+        [
+          "Operating Margin",
+          71
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.5548615728757726,
+      "question": "How does the average price per unit differ by region?",
+      "reason": "Price differences by region can indicate regional pricing strategies, market positioning, or competitive conditions. Looking at the average price per unit across regions helps identify whether pricing varies systematically by geography.",
+      "view_labels": [
+        "Midwest",
+        "South"
+      ],
+      "view_values": [
+        48.0,
+        49.666666666666664
+      ],
+      "view_labels_baseline": [
+        "Midwest",
+        "Northeast",
+        "South",
+        "Southeast",
+        "West"
+      ],
+      "view_values_baseline": [
+        40.36217948717949,
+        46.69149831649832,
+        38.23668981481482,
+        50.18300653594771,
+        49.94117647058823
+      ]
+    }
+  },
+  {
+    "question": "Which product categories generate the highest total sales?",
+    "explanation": "Distribution difference: the distribution of Product changes notably when filtering by Total Sales=55000 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Product",
+      "measure": "SUM(Total Sales)",
+      "subspace": [
+        [
+          "Total Sales",
+          55000
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.5496199570902853,
+      "question": "Which product categories generate the highest total sales?",
+      "reason": "Comparing total revenue across products helps identify which product categories drive the business most strongly. Using Product as the breakdown and Total Sales as the measure can reveal concentration of sales, product demand patterns, and possible standout or underperforming categories.",
+      "view_labels": [
+        "Men's Apparel",
+        "Women's Athletic Footwear",
+        "Women's Street Footwear"
+      ],
+      "view_values": [
+        110000.0,
+        330000.0,
+        110000.0
+      ],
+      "view_labels_baseline": [
+        "Men's Apparel",
+        "Men's Athletic Footwear",
+        "Men's Street Footwear",
+        "Women's Apparel",
+        "Women's Athletic Footwear",
+        "Women's Street Footwear"
+      ],
+      "view_values_baseline": [
+        123728632.0,
+        153673680.0,
+        208826244.0,
+        179038860.0,
+        106631896.0,
+        128002813.0
+      ]
+    }
+  },
+  {
+    "question": "Which retailer IDs account for the most transaction records?",
+    "explanation": "Attribution: for overall data, a single category in Retailer ID accounts for a large share of total COUNT(Retailer).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Retailer ID",
+      "measure": "COUNT(Retailer)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5457089552238806,
+      "question": "Which retailer IDs account for the most transaction records?",
+      "reason": "Counting the number of records by retailer ID can reveal whether some retailer entities are much more active than others. Using Retailer ID as the breakdown and a record count measure helps detect highly active accounts, possible imbalance in partner contribution, or outlier retailer entities.",
+      "view_labels": [
+        "1128299",
+        "1185732",
+        "1189833",
+        "1197831"
+      ],
+      "view_values": [
+        2370.0,
+        5265.0,
+        360.0,
+        1653.0
+      ]
+    }
+  },
+  {
+    "question": "Which regions generate the highest total sales?",
+    "explanation": "Distribution difference: the distribution of Region changes notably when filtering by Retailer ID=1189833 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Region",
+      "measure": "MEAN(Total Sales)",
+      "subspace": [
+        [
+          "Retailer ID",
+          1189833
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.535981797389018,
+      "question": "Which regions generate the highest total sales?",
+      "reason": "Total sales compared across regions helps identify geographic revenue concentration, strong markets, and potential underperforming areas that may need strategic attention.",
+      "view_labels": [
+        "Midwest",
+        "West"
+      ],
+      "view_values": [
+        109565.97916666667,
+        121786.95833333333
+      ],
+      "view_labels_baseline": [
+        "Midwest",
+        "Northeast",
+        "South",
+        "Southeast",
+        "West"
+      ],
+      "view_values_baseline": [
+        72542.98023504273,
+        78419.22011784512,
+        83717.11863425926,
+        133309.83333333334,
+        110270.90767973856
+      ]
+    }
+  },
+  {
+    "question": "Which sales methods are active across the widest range of invoice dates?",
+    "explanation": "Attribution: for overall data, a single category in Sales Method accounts for a large share of total COUNT(Invoice Date).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Sales Method",
+      "measure": "COUNT(Invoice Date)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5234932349323493,
+      "question": "Which sales methods are active across the widest range of invoice dates?",
+      "reason": "Comparing the number of invoice dates represented within each sales method helps indicate which channels are used more consistently over time. This can reveal whether some methods are broadly active across many days while others are used more selectively.",
+      "view_labels": [
+        "In-store",
+        "Online",
+        "Outlet"
+      ],
+      "view_values": [
+        869.0,
+        2128.0,
+        1068.0
+      ]
+    }
+  },
+  {
+    "question": "Which products have the highest average operating margin?",
+    "explanation": "Attribution: for Total Sales=7622, a single category in Product accounts for a large share of total MEAN(Operating Margin).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Product",
+      "measure": "MEAN(Operating Margin)",
+      "subspace": [
+        [
+          "Total Sales",
+          7622
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5172413793103449,
+      "question": "Which products have the highest average operating margin?",
+      "reason": "Operating margin is a direct indicator of efficiency and profitability quality. Comparing average margin across products helps identify which products are structurally more profitable and whether high-selling products also maintain healthy margins.",
+      "view_labels": [
+        "Men's Athletic Footwear",
+        "Men's Street Footwear"
+      ],
+      "view_values": [
+        45.0,
+        42.0
+      ]
+    }
+  },
+  {
+    "question": "Which sales methods are associated with the broadest product coverage?",
+    "explanation": "Attribution: for overall data, a single category in Sales Method accounts for a large share of total COUNT(Product).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Sales Method",
+      "measure": "COUNT(Product)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5067371475953566,
+      "question": "Which sales methods are associated with the broadest product coverage?",
+      "reason": "Counting products by sales method helps show whether certain channels are associated with a broader assortment of items in the dataset. This can reveal channel specialization, assortment concentration, or potential limitations in product-channel mix.",
+      "view_labels": [
+        "In-store",
+        "Online",
+        "Outlet"
+      ],
+      "view_values": [
+        1740.0,
+        4889.0,
+        3019.0
+      ]
+    }
+  },
+  {
+    "question": "How does operating profit differ across regions?",
+    "explanation": "Attribution: for Retailer=Walmart, a single category in Region accounts for a large share of total SUM(Operating Profit).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Region",
+      "measure": "SUM(Operating Profit)",
+      "subspace": [
+        [
+          "Retailer",
+          "Walmart"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5050419355503087,
+      "question": "How does operating profit differ across regions?",
+      "reason": "Profitability can vary substantially by geography even when sales are strong. Looking at operating profit by region helps uncover where the company earns the most money and can highlight regions with weak profit conversion or unusually strong performance.",
+      "view_labels": [
+        "Northeast",
+        "South",
+        "Southeast",
+        "West"
+      ],
+      "view_values": [
+        4617140.0,
+        13021023.0,
+        6446692.0,
+        1697208.0
+      ]
+    }
+  },
+  {
+    "question": "Which states show the lowest recorded transaction-level total sales?",
+    "explanation": "Attribution: for Total Sales=6045, a single category in State accounts for a large share of total MIN(Total Sales).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "State",
+      "measure": "MIN(Total Sales)",
+      "subspace": [
+        [
+          "Total Sales",
+          6045
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5,
+      "question": "Which states show the lowest recorded transaction-level total sales?",
+      "reason": "Examining the minimum total sales by state helps identify locations with extremely weak individual sales records or possible zero-sales anomalies. This can highlight underperforming markets or data points that may deserve further investigation.",
+      "view_labels": [
+        "Oregon",
+        "Tennessee"
+      ],
+      "view_values": [
+        6045.0,
+        6045.0
+      ]
+    }
+  },
+  {
+    "question": "Which regions account for the highest total units sold?",
+    "explanation": "Attribution: for Total Sales=4116, a single category in Region accounts for a large share of total SUM(Units Sold).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Region",
+      "measure": "SUM(Units Sold)",
+      "subspace": [
+        [
+          "Total Sales",
+          4116
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5,
+      "question": "Which regions account for the highest total units sold?",
+      "reason": "Total units sold by region helps identify where demand volume is concentrated geographically. This can reveal strong and weak markets and show whether some regions consistently drive higher sales quantities than others.",
+      "view_labels": [
+        "Midwest",
+        "Northeast",
+        "South",
+        "West"
+      ],
+      "view_values": [
+        84.0,
+        98.0,
+        98.0,
+        280.0
+      ]
+    }
+  },
+  {
+    "question": "Which cities record the highest single operating profit values?",
+    "explanation": "Attribution: for Operating Profit=3720, a single category in City accounts for a large share of total MAX(Operating Profit).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "City",
+      "measure": "MAX(Operating Profit)",
+      "subspace": [
+        [
+          "Operating Profit",
+          3720
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5,
+      "question": "Which cities record the highest single operating profit values?",
+      "reason": "Looking at the maximum operating profit by city can reveal standout locations with exceptionally strong profitable transactions. This is useful for spotting outliers, flagship markets, or cities where specific deals or demand conditions created unusually high profitability.",
+      "view_labels": [
+        "Indianapolis",
+        "Los Angeles"
+      ],
+      "view_values": [
+        3720.0,
+        3720.0
+      ]
+    }
+  },
+  {
+    "question": "Which products show the lowest observed units sold in a transaction?",
+    "explanation": "Distribution difference: the distribution of Product changes notably when filtering by Operating Margin=63 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Product",
+      "measure": "MIN(Units Sold)",
+      "subspace": [
+        [
+          "Operating Margin",
+          63
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.4953203196556793,
+      "question": "Which products show the lowest observed units sold in a transaction?",
+      "reason": "Examining the minimum units sold by product can help detect products that experience extremely weak demand or zero-sale transactions. This is useful for spotting potential stock, assortment, or demand issues.",
+      "view_labels": [
+        "Men's Apparel",
+        "Men's Athletic Footwear",
+        "Men's Street Footwear",
+        "Women's Apparel",
+        "Women's Athletic Footwear",
+        "Women's Street Footwear"
+      ],
+      "view_values": [
+        33.0,
+        144.0,
+        122.0,
+        38.0,
+        116.0,
+        188.0
+      ],
+      "view_labels_baseline": [
+        "Men's Apparel",
+        "Men's Athletic Footwear",
+        "Men's Street Footwear",
+        "Women's Apparel",
+        "Women's Athletic Footwear",
+        "Women's Street Footwear"
+      ],
+      "view_values_baseline": [
+        6.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "question": "How does operating profit differ across regions?",
+    "explanation": "Distribution difference: the distribution of Region changes notably when filtering by Retailer ID=1197831 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Region",
+      "measure": "SUM(Operating Profit)",
+      "subspace": [
+        [
+          "Retailer ID",
+          1197831
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.49356773659499453,
+      "question": "How does operating profit differ across regions?",
+      "reason": "Profitability can vary substantially by geography even when sales are strong. Looking at operating profit by region helps uncover where the company earns the most money and can highlight regions with weak profit conversion or unusually strong performance.",
+      "view_labels": [
+        "Midwest",
+        "Northeast",
+        "South",
+        "West"
+      ],
+      "view_values": [
+        3956235.0,
+        408007.0,
+        45337669.0,
+        7647591.0
+      ],
+      "view_labels_baseline": [
+        "Midwest",
+        "Northeast",
+        "South",
+        "Southeast",
+        "West"
+      ],
+      "view_values_baseline": [
+        52811412.0,
+        68020688.0,
+        61138044.0,
+        60555462.0,
+        89609516.0
+      ]
+    }
+  },
+  {
+    "question": "Which products have the highest average price per unit?",
+    "explanation": "Distribution difference: the distribution of Product changes notably when filtering by Price per Unit=10 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Product",
+      "measure": "MEAN(Price per Unit)",
+      "subspace": [
+        [
+          "Price per Unit",
+          10
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.4865327206775288,
+      "question": "Which products have the highest average price per unit?",
+      "reason": "Comparing average selling price across products can reveal pricing strategy differences, premium versus budget product positioning, and whether certain product categories are consistently sold at higher price points.",
+      "view_labels": [
+        "Men's Street Footwear",
+        "Women's Athletic Footwear",
+        "Women's Street Footwear"
+      ],
+      "view_values": [
+        10.0,
+        10.0,
+        10.0
+      ],
+      "view_labels_baseline": [
+        "Men's Apparel",
+        "Men's Athletic Footwear",
+        "Men's Street Footwear",
+        "Women's Apparel",
+        "Women's Athletic Footwear",
+        "Women's Street Footwear"
+      ],
+      "view_values_baseline": [
+        50.321917808219176,
+        43.77950310559006,
+        44.23664596273292,
+        51.600746268656714,
+        41.112702366127024,
+        40.25248756218905
+      ]
+    }
+  },
+  {
+    "question": "How do average units sold vary by sales method?",
+    "explanation": "Distribution difference: the distribution of Sales Method changes notably when filtering by State=Hawaii (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Sales Method",
+      "measure": "MEAN(Units Sold)",
+      "subspace": [
+        [
+          "State",
+          "Hawaii"
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.45628205801041505,
+      "question": "How do average units sold vary by sales method?",
+      "reason": "Looking at units sold by sales method helps uncover which channel is most effective at driving purchase volume and whether some methods are better suited for moving inventory.",
+      "view_labels": [
+        "Online",
+        "Outlet"
+      ],
+      "view_values": [
+        120.83333333333333,
+        439.93055555555554
+      ],
+      "view_labels_baseline": [
+        "In-store",
+        "Online",
+        "Outlet"
+      ],
+      "view_values_baseline": [
+        386.6478390804598,
+        189.69925649417058,
+        272.05745776747267
+      ]
+    }
+  },
+  {
+    "question": "Which sales method tends to sell the highest average number of units?",
+    "explanation": "Distribution difference: the distribution of Sales Method changes notably when filtering by State=Montana (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Sales Method",
+      "measure": "MEAN(Units Sold)",
+      "subspace": [
+        [
+          "State",
+          "Montana"
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.4560030741848265,
+      "question": "Which sales method tends to sell the highest average number of units?",
+      "reason": "Comparing average units sold across sales methods can reveal whether certain channels are better at driving transaction volume. This is useful for understanding channel effectiveness and whether some methods are associated with stronger product movement.",
+      "view_labels": [
+        "Online",
+        "Outlet"
+      ],
+      "view_values": [
+        128.65277777777777,
+        464.5833333333333
+      ],
+      "view_labels_baseline": [
+        "In-store",
+        "Online",
+        "Outlet"
+      ],
+      "view_values_baseline": [
+        386.6478390804598,
+        189.69925649417058,
+        272.05745776747267
+      ]
+    }
+  },
+  {
+    "question": "Which sales methods account for the highest volume of transactions?",
+    "explanation": "Distribution difference: the distribution of Sales Method changes notably when filtering by Units Sold=280.0 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Sales Method",
+      "measure": "COUNT(Retailer ID)",
+      "subspace": [
+        [
+          "Units Sold",
+          280.0
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.4505725530913405,
+      "question": "Which sales methods account for the highest volume of transactions?",
+      "reason": "Comparing transaction counts across sales methods can reveal whether the business relies more heavily on in-store, online, or outlet channels. This is useful for identifying channel concentration, customer buying preferences, and possible operational imbalances.",
+      "view_labels": [
+        "Online",
+        "Outlet"
+      ],
+      "view_values": [
+        1.0,
+        8.0
+      ],
+      "view_labels_baseline": [
+        "In-store",
+        "Online",
+        "Outlet"
+      ],
+      "view_values_baseline": [
+        1740.0,
+        4889.0,
+        3019.0
+      ]
+    }
+  },
+  {
+    "question": "Which sales methods are associated with the lowest observed price per unit?",
+    "explanation": "Distribution difference: the distribution of Sales Method changes notably when filtering by Units Sold=60.0 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Sales Method",
+      "measure": "MIN(Price per Unit)",
+      "subspace": [
+        [
+          "Units Sold",
+          60.0
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.4116738837120939,
+      "question": "Which sales methods are associated with the lowest observed price per unit?",
+      "reason": "The lowest price per unit recorded by sales method can reveal discount-heavy channels or unusual pricing behavior. This is useful for detecting aggressive pricing strategies or potential anomalies in how products are sold across channels.",
+      "view_labels": [
+        "Online",
+        "Outlet"
+      ],
+      "view_values": [
+        14.0,
+        23.0
+      ],
+      "view_labels_baseline": [
+        "In-store",
+        "Online",
+        "Outlet"
+      ],
+      "view_values_baseline": [
+        10.0,
+        9.0,
+        7.0
+      ]
+    }
+  },
+  {
+    "question": "Which regions account for the highest total units sold?",
+    "explanation": "Distribution difference: the distribution of Region changes notably when filtering by Retailer ID=1128299 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Region",
+      "measure": "SUM(Units Sold)",
+      "subspace": [
+        [
+          "Retailer ID",
+          1128299
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.40942253538558354,
+      "question": "Which regions account for the highest total units sold?",
+      "reason": "Total units sold by region helps identify where demand volume is concentrated geographically. This can reveal strong and weak markets and show whether some regions consistently drive higher sales quantities than others.",
+      "view_labels": [
+        "Northeast",
+        "South",
+        "Southeast",
+        "West"
+      ],
+      "view_values": [
+        4333.0,
+        54763.0,
+        140141.0,
+        425641.025
+      ],
+      "view_labels_baseline": [
+        "Midwest",
+        "Northeast",
+        "South",
+        "Southeast",
+        "West"
+      ],
+      "view_values_baseline": [
+        391337.0,
+        471618.69,
+        489063.2,
+        384617.405,
+        684912.075
+      ]
+    }
+  },
+  {
+    "question": "Which products have the lowest observed transaction-level total sales?",
+    "explanation": "Distribution difference: the distribution of Product changes notably when filtering by Units Sold=675.0 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Product",
+      "measure": "MIN(Total Sales)",
+      "subspace": [
+        [
+          "Units Sold",
+          675.0
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.39228929081976777,
+      "question": "Which products have the lowest observed transaction-level total sales?",
+      "reason": "The minimum total sales by product can reveal whether some products experience zero- or near-zero-value transactions more often, which may indicate returns, failed sales, promotional giveaways, or weak demand scenarios.",
+      "view_labels": [
+        "Men's Apparel",
+        "Men's Athletic Footwear",
+        "Men's Street Footwear",
+        "Women's Apparel",
+        "Women's Athletic Footwear",
+        "Women's Street Footwear"
+      ],
+      "view_values": [
+        371250.0,
+        168750.0,
+        135000.0,
+        236250.0,
+        236250.0,
+        168750.0
+      ],
+      "view_labels_baseline": [
+        "Men's Apparel",
+        "Men's Athletic Footwear",
+        "Men's Street Footwear",
+        "Women's Apparel",
+        "Women's Athletic Footwear",
+        "Women's Street Footwear"
+      ],
+      "view_values_baseline": [
+        252.0,
+        736.0,
+        1568.0,
+        910.0,
+        0.0,
+        369.0
+      ]
+    }
+  },
+  {
+    "question": "How widely is each sales method used across retailers?",
+    "explanation": "Distribution difference: the distribution of Sales Method changes notably when filtering by City=Seattle (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Sales Method",
+      "measure": "COUNT(Retailer)",
+      "subspace": [
+        [
+          "City",
+          "Seattle"
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.3840901147788818,
+      "question": "How widely is each sales method used across retailers?",
+      "reason": "Counting distinct retailers by sales method helps show whether certain selling methods are broadly adopted or concentrated among fewer retailers. This can reveal structural differences in channel participation and possible method specialization.",
+      "view_labels": [
+        "In-store",
+        "Online"
+      ],
+      "view_values": [
+        72.0,
+        72.0
+      ],
+      "view_labels_baseline": [
+        "In-store",
+        "Online",
+        "Outlet"
+      ],
+      "view_values_baseline": [
+        1740.0,
+        4889.0,
+        3019.0
+      ]
+    }
+  },
+  {
+    "question": "Which sales method has the lowest observed operating margin?",
+    "explanation": "Distribution difference: the distribution of Sales Method changes notably when filtering by City=Jackson (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Sales Method",
+      "measure": "MIN(Operating Margin)",
+      "subspace": [
+        [
+          "City",
+          "Jackson"
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.3797130396516934,
+      "question": "Which sales method has the lowest observed operating margin?",
+      "reason": "The lowest operating margin by sales method can reveal whether any selling channel is associated with especially weak profitability outcomes. This helps identify riskier methods, margin compression, or unusual transactions that may need operational review.",
+      "view_labels": [
+        "Online",
+        "Outlet"
+      ],
+      "view_values": [
+        35.0,
+        37.0
+      ],
+      "view_labels_baseline": [
+        "In-store",
+        "Online",
+        "Outlet"
+      ],
+      "view_values_baseline": [
+        15.0,
+        21.0,
+        10.0
+      ]
+    }
+  },
+  {
+    "question": "Which products have the highest average price per unit?",
+    "explanation": "Distribution difference: the distribution of Product changes notably when filtering by Operating Profit=147000 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Product",
+      "measure": "MEAN(Price per Unit)",
+      "subspace": [
+        [
+          "Operating Profit",
+          147000
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.2699955831978143,
+      "question": "Which products have the highest average price per unit?",
+      "reason": "Comparing average selling price across products can reveal pricing strategy differences, premium versus budget product positioning, and whether certain product categories are consistently sold at higher price points.",
+      "view_labels": [
+        "Men's Apparel",
+        "Men's Athletic Footwear",
+        "Men's Street Footwear",
+        "Women's Athletic Footwear",
+        "Women's Street Footwear"
+      ],
+      "view_values": [
+        60.0,
+        60.0,
+        63.333333333333336,
+        73.33333333333333,
+        60.0
+      ],
+      "view_labels_baseline": [
+        "Men's Apparel",
+        "Men's Athletic Footwear",
+        "Men's Street Footwear",
+        "Women's Apparel",
+        "Women's Athletic Footwear",
+        "Women's Street Footwear"
+      ],
+      "view_values_baseline": [
+        50.321917808219176,
+        43.77950310559006,
+        44.23664596273292,
+        51.600746268656714,
+        41.112702366127024,
+        40.25248756218905
+      ]
+    }
+  }
+]

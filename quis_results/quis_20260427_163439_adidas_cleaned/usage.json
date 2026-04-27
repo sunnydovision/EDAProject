@@ -1,0 +1,7 @@
+{
+  "input_tokens": 54699,
+  "output_tokens": 25230,
+  "total_tokens": 79929,
+  "requests": 129,
+  "model": "gpt-4o-mini"
+}

@@ -4,7 +4,7 @@
 
 - **Total Issues**: 5
 - **Critical Issues**: 5
-- **Quality Score**: 78/100
+- **Quality Score**: 82/100
 
 ## Missing Values
 
@@ -14,34 +14,34 @@ No missing values detected.
 
 - **Operating Profit**: 7.3% (706 outliers)
 - **Total Sales**: 6.8% (653 outliers)
-- **Units Sold**: 5.3% (508 outliers)
+- **Units Sold**: 6.5% (627 outliers)
 - **Price per Unit**: 0.8% (81 outliers)
 - **Operating Margin**: 0.5% (44 outliers)
 
 ## Critical Issues
 
-### Outliers detected in Operating Profit (706 records, 7.32%) in a high-importance financial column.
+### Outliers detected in Operating Profit (706 records, 7.32%). This is a high-importance financial metric, and the outlier rate is the highest among all flagged columns.
 - **Severity**: high
-- **Impact**: Operating Profit is a core profitability measure used for margin analysis, product performance evaluation, and retailer/state-level financial reporting. A relatively high proportion of outliers can materially distort profit trends, skew averages, and lead to incorrect conclusions about business performance or underperforming segments.
-- **Recommendation**: Validate extreme profit values against source transactions and business rules. Confirm whether these represent legitimate high-value sales, returns, discounts, or data entry/calculation errors. Apply targeted treatment such as correction, exclusion, or winsorization only after business review.
+- **Impact**: Operating Profit is central to profitability analysis, margin tracking, retailer performance comparisons, and financial reporting. Extreme values can distort average profit, trend analysis, benchmarking, and profitability-based decision-making. If these values are data errors rather than true business events, they may lead to incorrect conclusions about product, retailer, or regional performance.
+- **Recommendation**: Validate extreme Operating Profit values against source transactions and business rules. Reconcile with Total Sales, Units Sold, and Operating Margin to confirm whether values are legitimate high-profit events or calculation/data-entry errors. Apply correction, exclusion, or capping rules only after business validation.
 
-### Outliers detected in Total Sales (653 records, 6.77%) in a high-importance revenue column.
+### Outliers detected in Total Sales (653 records, 6.77%). This affects a high-importance revenue field with a substantial proportion of records flagged.
 - **Severity**: high
-- **Impact**: Total Sales drives revenue reporting, forecasting, and performance benchmarking. Outliers at this level can significantly bias sales KPIs, inflate or suppress regional/product comparisons, and reduce trust in executive dashboards and financial summaries.
-- **Recommendation**: Reconcile extreme sales values with invoice-level records and verify consistency with Price per Unit × Units Sold. Investigate whether outliers are caused by bulk orders, returns, aggregation issues, or calculation errors. Flag validated exceptional transactions separately from erroneous records.
+- **Impact**: Total Sales drives revenue reporting, sales forecasting, product performance analysis, and retailer ranking. Unchecked outliers can skew revenue aggregates, inflate or suppress sales trends, and mislead strategic decisions such as inventory planning, pricing, and territory management.
+- **Recommendation**: Review flagged Total Sales records for transaction validity, especially unusually large orders, returns, or aggregation errors. Cross-check against Price per Unit × Units Sold and invoice-level business logic. Correct calculation issues and document any legitimate exceptional sales events.
 
-### Outliers detected in Units Sold (508 records, 5.27%) in a high-importance volume column.
+### Outliers detected in Units Sold (627 records, 6.50%). This is a high-importance operational measure with a meaningful concentration of extreme values.
 - **Severity**: high
-- **Impact**: Units Sold is central to demand analysis, inventory planning, and product performance measurement. Outliers can distort demand forecasts, create misleading sales velocity patterns, and affect derived metrics such as average selling price and profit per unit.
-- **Recommendation**: Review extreme unit quantities for bulk purchases, returns, or input errors. Cross-check against invoice date, product, and total sales values. Establish business thresholds by product category and sales channel to distinguish valid operational extremes from bad data.
+- **Impact**: Units Sold affects demand analysis, inventory planning, product performance measurement, and sales productivity metrics. Extreme values may indicate bulk orders, returns, duplication, or entry errors. If not reviewed, they can distort demand forecasts and operational planning.
+- **Recommendation**: Investigate extreme Units Sold values by invoice, product, and retailer. Distinguish between valid bulk transactions and anomalies such as duplicate loads, return postings, or unit-entry mistakes. Introduce validation thresholds and exception reporting for future loads.
 
-### Outliers detected in Price per Unit (81 records, 0.84%) in a high-importance pricing column.
+### Outliers detected in Price per Unit (81 records, 0.84%). Although the percentage is relatively low, this affects a high-importance pricing field.
 - **Severity**: medium
-- **Impact**: Although the percentage is relatively low, Price per Unit is a critical driver of revenue and margin calculations. Abnormal prices can indicate discounting anomalies, unit-of-measure inconsistencies, or entry errors, which may propagate into Total Sales and Operating Profit analysis.
-- **Recommendation**: Audit price outliers against product master data, promotion schedules, and contract pricing. Confirm whether values outside the expected range reflect premium products, pricing exceptions, or incorrect unit pricing. Standardize unit definitions where necessary.
+- **Impact**: Price per Unit influences revenue calculations, margin analysis, pricing strategy, and product profitability. Even a small number of incorrect prices can materially affect Total Sales and Operating Profit, especially for high-volume transactions.
+- **Recommendation**: Audit flagged price records against product price lists, discount policies, and promotional pricing. Confirm whether values reflect valid premium/discounted sales or pricing errors. Add product-level price range validation rules.
 
-### Outliers detected in Operating Margin (44 records, 0.46%) in a high-importance profitability ratio column.
+### Outliers detected in Operating Margin (44 records, 0.46%). The proportion is low, but the field is high importance and directly tied to profitability interpretation.
 - **Severity**: medium
-- **Impact**: Operating Margin is used to assess efficiency and profitability across products, retailers, and geographies. Even a small number of abnormal ratios can mislead comparative profitability analysis, especially in segment-level reporting where sample sizes are smaller.
-- **Recommendation**: Check whether margin outliers are mathematically consistent with Total Sales and Operating Profit. Investigate potential causes such as incorrect profit allocation, unusual discount structures, or formula inconsistencies. Recalculate margins from validated base measures where possible.
+- **Impact**: Operating Margin is used to assess efficiency and profitability across products, retailers, and regions. Extreme margin values may indicate incorrect profit or sales calculations, unusual discounting, or inconsistent cost treatment. This can mislead margin-based comparisons and strategic decisions.
+- **Recommendation**: Recalculate Operating Margin for flagged records using validated Operating Profit and Total Sales values. Investigate whether extreme margins are caused by legitimate business scenarios, rounding issues, or upstream calculation defects.
 

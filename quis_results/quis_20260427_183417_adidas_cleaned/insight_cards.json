@@ -1,0 +1,482 @@
+[
+  {
+    "question": "Which products have the highest average price per unit?",
+    "reason": "Comparing average selling price across products can reveal pricing strategy differences, premium versus budget product positioning, and whether certain product categories are consistently sold at higher price points.",
+    "breakdown": "Product",
+    "measure": "MEAN(Price per Unit)"
+  },
+  {
+    "question": "How do average units sold vary by sales method?",
+    "reason": "Looking at units sold by sales method helps uncover which channel is most effective at driving purchase volume and whether some methods are better suited for moving inventory.",
+    "breakdown": "Sales Method",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "Which regions generate the highest total sales?",
+    "reason": "Total sales compared across regions helps identify geographic revenue concentration, strong markets, and potential underperforming areas that may need strategic attention.",
+    "breakdown": "Region",
+    "measure": "MEAN(Total Sales)"
+  },
+  {
+    "question": "Which retailers deliver the highest average operating profit?",
+    "reason": "Comparing operating profit across retailers can reveal which retail partners are most profitable, not just in terms of sales volume but in actual earnings contribution.",
+    "breakdown": "Retailer",
+    "measure": "MEAN(Operating Profit)"
+  },
+  {
+    "question": "How does operating margin differ across products?",
+    "reason": "Operating margin by product shows which products are relatively more efficient or lucrative, helping identify high-margin categories and products that may suffer from weaker profitability.",
+    "breakdown": "Product",
+    "measure": "MEAN(Operating Margin)"
+  },
+  {
+    "question": "On which invoice dates was sales activity highest?",
+    "reason": "Examining the number of records by invoice date can reveal sales activity patterns over time, including spikes, dips, seasonality, and unusually active transaction days.",
+    "breakdown": "Invoice Date",
+    "measure": "COUNT(Retailer ID)"
+  },
+  {
+    "question": "Which retailers reach the highest product price points?",
+    "reason": "The highest observed price per unit by retailer can expose whether some retailers carry more premium-priced inventory or follow more aggressive pricing strategies than others.",
+    "breakdown": "Retailer",
+    "measure": "MAX(Price per Unit)"
+  },
+  {
+    "question": "Which cities show the highest peak units sold in a transaction?",
+    "reason": "The maximum units sold by city helps identify exceptional high-volume markets and outlier locations where demand peaks far above typical levels.",
+    "breakdown": "City",
+    "measure": "MAX(Units Sold)"
+  },
+  {
+    "question": "Which sales methods have the lowest minimum transaction sales?",
+    "reason": "The minimum total sales by sales method can highlight whether certain channels experience very weak or near-zero transactions, which may signal inefficiencies or inconsistent performance.",
+    "breakdown": "Sales Method",
+    "measure": "MIN(Total Sales)"
+  },
+  {
+    "question": "Which states achieve the highest peak operating profit?",
+    "reason": "The maximum operating profit by state helps surface standout markets and potential outliers where individual transactions or market conditions generate unusually strong profitability.",
+    "breakdown": "State",
+    "measure": "MAX(Operating Profit)"
+  },
+  {
+    "question": "Which product categories generate the highest total sales?",
+    "reason": "Comparing total revenue across products helps identify which product categories drive the business most strongly. Using Product as the breakdown and Total Sales as the measure can reveal concentration of sales, product demand patterns, and possible standout or underperforming categories.",
+    "breakdown": "Product",
+    "measure": "SUM(Total Sales)"
+  },
+  {
+    "question": "How does average operating profit vary across retailers?",
+    "reason": "Average operating profit by retailer can show whether some retailers are consistently more profitable than others, beyond just sales volume. This helps uncover differences in pricing power, customer mix, or execution quality across retail partners.",
+    "breakdown": "Retailer",
+    "measure": "MEAN(Operating Profit)"
+  },
+  {
+    "question": "Which sales method tends to sell the highest average number of units?",
+    "reason": "Comparing average units sold across sales methods can reveal whether certain channels are better at driving transaction volume. This is useful for understanding channel effectiveness and whether some methods are associated with stronger product movement.",
+    "breakdown": "Sales Method",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "How does the average price per unit differ by region?",
+    "reason": "Price differences by region can indicate regional pricing strategies, market positioning, or competitive conditions. Looking at the average price per unit across regions helps identify whether pricing varies systematically by geography.",
+    "breakdown": "Region",
+    "measure": "MEAN(Price per Unit)"
+  },
+  {
+    "question": "Which products have the highest average operating margin?",
+    "reason": "Operating margin is a direct indicator of efficiency and profitability quality. Comparing average margin across products helps identify which products are structurally more profitable and whether high-selling products also maintain healthy margins.",
+    "breakdown": "Product",
+    "measure": "MEAN(Operating Margin)"
+  },
+  {
+    "question": "Which states show the lowest recorded transaction-level total sales?",
+    "reason": "Examining the minimum total sales by state helps identify locations with extremely weak individual sales records or possible zero-sales anomalies. This can highlight underperforming markets or data points that may deserve further investigation.",
+    "breakdown": "State",
+    "measure": "MIN(Total Sales)"
+  },
+  {
+    "question": "Which cities record the highest single operating profit values?",
+    "reason": "Looking at the maximum operating profit by city can reveal standout locations with exceptionally strong profitable transactions. This is useful for spotting outliers, flagship markets, or cities where specific deals or demand conditions created unusually high profitability.",
+    "breakdown": "City",
+    "measure": "MAX(Operating Profit)"
+  },
+  {
+    "question": "Which products achieve the highest peak units sold in a single transaction?",
+    "reason": "Comparing the maximum units sold across products can highlight whether certain product categories occasionally experience very large-volume transactions. This helps detect peak-demand products and possible outlier orders that differ from normal selling patterns.",
+    "breakdown": "Product",
+    "measure": "MAX(Units Sold)"
+  },
+  {
+    "question": "Which sales method has the lowest observed operating margin?",
+    "reason": "The lowest operating margin by sales method can reveal whether any selling channel is associated with especially weak profitability outcomes. This helps identify riskier methods, margin compression, or unusual transactions that may need operational review.",
+    "breakdown": "Sales Method",
+    "measure": "MIN(Operating Margin)"
+  },
+  {
+    "question": "How does operating profit differ across regions?",
+    "reason": "Profitability can vary substantially by geography even when sales are strong. Looking at operating profit by region helps uncover where the company earns the most money and can highlight regions with weak profit conversion or unusually strong performance.",
+    "breakdown": "Region",
+    "measure": "SUM(Operating Profit)"
+  },
+  {
+    "question": "How do average prices per unit vary across retailers?",
+    "reason": "Pricing differences across retailers may reflect different market strategies, positioning, or customer segments. Comparing average price per unit by retailer helps identify premium vs. discount-oriented retailers and possible pricing anomalies.",
+    "breakdown": "Retailer",
+    "measure": "MEAN(Price per Unit)"
+  },
+  {
+    "question": "Which products show the lowest observed units sold in a transaction?",
+    "reason": "Examining the minimum units sold by product can help detect products that experience extremely weak demand or zero-sale transactions. This is useful for spotting potential stock, assortment, or demand issues.",
+    "breakdown": "Product",
+    "measure": "MIN(Units Sold)"
+  },
+  {
+    "question": "In which states are the most profitable single transactions occurring?",
+    "reason": "Comparing the highest operating profit achieved in each state can highlight states that generate unusually large profitable deals. This helps identify top-performing markets and possible outlier transactions worth deeper review.",
+    "breakdown": "State",
+    "measure": "MAX(Operating Profit)"
+  },
+  {
+    "question": "Which sales methods are associated with the lowest observed price per unit?",
+    "reason": "The lowest price per unit recorded by sales method can reveal discount-heavy channels or unusual pricing behavior. This is useful for detecting aggressive pricing strategies or potential anomalies in how products are sold across channels.",
+    "breakdown": "Sales Method",
+    "measure": "MIN(Price per Unit)"
+  },
+  {
+    "question": "Which regions account for the highest total units sold?",
+    "reason": "Total units sold by region helps identify where demand volume is concentrated geographically. This can reveal strong and weak markets and show whether some regions consistently drive higher sales quantities than others.",
+    "breakdown": "Region",
+    "measure": "SUM(Units Sold)"
+  },
+  {
+    "question": "Which sales methods generate the highest total sales?",
+    "reason": "Comparing total sales across sales methods helps evaluate which selling channel contributes most to revenue generation. This can reveal channel effectiveness and indicate whether certain sales methods are outperforming others commercially.",
+    "breakdown": "Sales Method",
+    "measure": "SUM(Total Sales)"
+  },
+  {
+    "question": "How does average operating margin differ across states?",
+    "reason": "Operating margin reflects profitability efficiency rather than absolute scale. Comparing average operating margin across states can highlight markets where sales are structurally more or less efficient, helping surface geographic differences in profitability quality.",
+    "breakdown": "State",
+    "measure": "MEAN(Operating Margin)"
+  },
+  {
+    "question": "Which products have the lowest observed transaction-level total sales?",
+    "reason": "The minimum total sales by product can reveal whether some products experience zero- or near-zero-value transactions more often, which may indicate returns, failed sales, promotional giveaways, or weak demand scenarios.",
+    "breakdown": "Product",
+    "measure": "MIN(Total Sales)"
+  },
+  {
+    "question": "How widely is each sales method used across retailers?",
+    "reason": "Counting distinct retailers by sales method helps show whether certain selling methods are broadly adopted or concentrated among fewer retailers. This can reveal structural differences in channel participation and possible method specialization.",
+    "breakdown": "Sales Method",
+    "measure": "COUNT(Retailer)"
+  },
+  {
+    "question": "Which retailers account for the largest number of transactions?",
+    "reason": "Counting transactions by retailer shows how sales activity is distributed across retail partners. This can reveal whether business volume is concentrated among a few retailers or more evenly spread, which is useful for dependency and partnership analysis.",
+    "breakdown": "Retailer",
+    "measure": "COUNT(Invoice Date)"
+  },
+  {
+    "question": "Which sales methods account for the highest volume of transactions?",
+    "reason": "Comparing transaction counts across sales methods can reveal whether the business relies more heavily on in-store, online, or outlet channels. This is useful for identifying channel concentration, customer buying preferences, and possible operational imbalances.",
+    "breakdown": "Sales Method",
+    "measure": "COUNT(Retailer ID)"
+  },
+  {
+    "question": "How does average total sales vary across regions?",
+    "reason": "Average total sales by region helps show whether some geographic markets consistently generate larger revenue per record than others. This can uncover regional demand strength, pricing power, or market maturity differences.",
+    "breakdown": "Region",
+    "measure": "MEAN(Total Sales)"
+  },
+  {
+    "question": "Which products sell the highest average number of units per transaction?",
+    "reason": "Examining average units sold by product highlights which products tend to move in higher volumes. This helps distinguish high-demand items from slower-moving ones and can reveal whether some products are volume drivers.",
+    "breakdown": "Product",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "Which regions have sales occurring across the widest range of invoice dates?",
+    "reason": "Counting the number of distinct invoice dates by region helps indicate how consistently active each region is over time. Regions with fewer active dates may have more sporadic sales patterns, while others may show steadier business activity.",
+    "breakdown": "Region",
+    "measure": "COUNT(Invoice Date)"
+  },
+  {
+    "question": "Which cities show the lowest observed transaction sales?",
+    "reason": "The minimum total sales by city helps identify locations where transactions occasionally fall to extremely low or zero revenue. This is useful for spotting anomalous sales records, weak local demand, or potential operational issues.",
+    "breakdown": "City",
+    "measure": "MIN(Total Sales)"
+  },
+  {
+    "question": "On which invoice dates did the highest single-record units sold occur?",
+    "reason": "Maximum units sold by invoice date can highlight unusually large-volume selling days and reveal demand spikes or event-driven surges. This is especially useful for detecting outlier dates that may correspond to promotions, seasonality, or bulk purchases.",
+    "breakdown": "Invoice Date",
+    "measure": "MAX(Units Sold)"
+  },
+  {
+    "question": "How does operating margin differ across retailers?",
+    "reason": "Average operating margin by retailer can uncover differences in profitability efficiency across retail partners. This helps identify which retailers are better at converting sales into profit and where margin performance may be weak or anomalous.",
+    "breakdown": "Retailer",
+    "measure": "MEAN(Operating Margin)"
+  },
+  {
+    "question": "Which cities account for the highest number of transactions?",
+    "reason": "Counting invoice dates by city helps show where transaction activity is most concentrated. This can identify high-activity markets and cities with unusually low or high sales frequency.",
+    "breakdown": "City",
+    "measure": "COUNT(Invoice Date)"
+  },
+  {
+    "question": "How is retailer activity distributed across regions?",
+    "reason": "Counting retailer IDs across regions indicates how sales records are distributed geographically by retailer presence or activity. This helps reveal whether some regions are dominated by more retailer participation or concentration.",
+    "breakdown": "Region",
+    "measure": "COUNT(Retailer ID)"
+  },
+  {
+    "question": "Which sales methods are used most frequently?",
+    "reason": "Counting retailer records by sales method shows whether certain channels are used more heavily than others. This can reveal channel adoption patterns and whether some methods are more central to the business.",
+    "breakdown": "Sales Method",
+    "measure": "COUNT(Retailer)"
+  },
+  {
+    "question": "Which sales methods involve the broadest volume of retailer-linked records?",
+    "reason": "Average retailer ID by sales method is not business-meaningful because retailer ID is an identifier rather than a quantitative metric, but using it as a count proxy across sales methods can still surface whether activity is concentrated in specific channels. This may help identify uneven channel participation patterns.",
+    "breakdown": "Sales Method",
+    "measure": "COUNT(Retailer ID)"
+  },
+  {
+    "question": "Which retailers account for the largest share of recorded sales activity?",
+    "reason": "Counting records by retailer indicates how sales activity is distributed across retail partners. This helps uncover whether the dataset is dominated by a few retailers, which is useful for dependency analysis and identifying partner concentration.",
+    "breakdown": "Retailer",
+    "measure": "COUNT(Retailer ID)"
+  },
+  {
+    "question": "How does average operating profit differ by sales method?",
+    "reason": "Operating profit compared across sales methods shows whether some channels are more profitable than others. This can reveal differences in selling efficiency, customer mix, or channel economics.",
+    "breakdown": "Sales Method",
+    "measure": "MEAN(Operating Profit)"
+  },
+  {
+    "question": "Which retailers have the highest average operating margin?",
+    "reason": "Average operating margin by retailer helps identify which retailers consistently achieve better profitability rates. This can reveal differences in pricing power, discounting behavior, or operational effectiveness.",
+    "breakdown": "Retailer",
+    "measure": "MEAN(Operating Margin)"
+  },
+  {
+    "question": "How does the average price per unit vary across product categories?",
+    "reason": "Comparing average selling price across product categories can reveal product positioning and pricing strategy differences. Using Product as the breakdown and Price per Unit as the measure helps identify which products are sold at premium versus lower price points, and whether the catalog is segmented by value tier.",
+    "breakdown": "Product",
+    "measure": "MEAN(Price per Unit)"
+  },
+  {
+    "question": "Which cities show the highest concentration of sales records?",
+    "reason": "Counting transaction records by city helps identify where business activity is most concentrated at the local level. Using City as the breakdown with a count-based measure can highlight core urban markets, uneven market penetration, or cities with unusually high sales presence.",
+    "breakdown": "City",
+    "measure": "COUNT(Invoice Date)"
+  },
+  {
+    "question": "Which retailer IDs account for the most transaction records?",
+    "reason": "Counting the number of records by retailer ID can reveal whether some retailer entities are much more active than others. Using Retailer ID as the breakdown and a record count measure helps detect highly active accounts, possible imbalance in partner contribution, or outlier retailer entities.",
+    "breakdown": "Retailer ID",
+    "measure": "COUNT(Retailer)"
+  },
+  {
+    "question": "In which regions do retailers appear most frequently in the sales data?",
+    "reason": "Comparing sales presence across retailers within each region can help identify whether geographic coverage is balanced or dominated by specific partners. Using Region as the breakdown and count of retailer occurrences as the measure provides a view of retailer activity intensity by geography.",
+    "breakdown": "Region",
+    "measure": "COUNT(Retailer)"
+  },
+  {
+    "question": "Which product categories appear most frequently in the sales records?",
+    "reason": "Counting records by product helps show which products appear most often in the dataset, which can indicate assortment emphasis, sustained demand, or operational focus. Using Product as the breakdown and a transaction count measure can reveal whether the portfolio is balanced or concentrated in a few products.",
+    "breakdown": "Product",
+    "measure": "COUNT(Invoice Date)"
+  },
+  {
+    "question": "Which product categories appear across the broadest retailer presence in the dataset?",
+    "reason": "Looking at the maximum recorded retailer name count by product is not a classic business performance measure, but under the measure diversity constraint it can still help reveal whether some products are sold through a broader retailer presence in the dataset. This may indicate product distribution breadth or data concentration patterns.",
+    "breakdown": "Product",
+    "measure": "COUNT(Retailer)"
+  },
+  {
+    "question": "Which cities reach the highest product price points?",
+    "reason": "Comparing the highest price per unit reached in each city helps identify markets where premium pricing is strongest. This can uncover geographic pricing outliers, city-level willingness to pay, or locations where high-end products are more prevalent.",
+    "breakdown": "City",
+    "measure": "MAX(Price per Unit)"
+  },
+  {
+    "question": "Which retailers have the greatest number of recorded sales transactions?",
+    "reason": "Counting records by retailer helps reveal whether transaction activity is concentrated among a few major partners or more evenly distributed. This is useful for understanding partner dependence and identifying retailers with unusually high or low activity levels.",
+    "breakdown": "Retailer",
+    "measure": "COUNT(Retailer ID)"
+  },
+  {
+    "question": "Which cities have the highest retailer presence?",
+    "reason": "Counting retailer IDs by city helps show which cities have the broadest retailer presence in the dataset. This can reveal market concentration, identify cities served by multiple retailer entities, and surface geographic differences in retail network coverage.",
+    "breakdown": "City",
+    "measure": "COUNT(Retailer ID)"
+  },
+  {
+    "question": "Which products generate the highest average sales volume per transaction?",
+    "reason": "Comparing average units sold across products helps reveal demand concentration and product preference. This is useful for identifying which product categories move the most volume and whether some products consistently underperform in customer demand.",
+    "breakdown": "Product",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "How does average revenue per transaction vary across regions?",
+    "reason": "Average total sales by region shows how revenue generation differs geographically. This can uncover strong and weak markets, indicate regional purchasing power differences, and highlight where commercial performance is most concentrated.",
+    "breakdown": "Region",
+    "measure": "MEAN(Total Sales)"
+  },
+  {
+    "question": "Which sales methods are associated with the broadest retailer participation?",
+    "reason": "Counting retailer IDs by sales method helps show whether channel activity is concentrated among a smaller set of retailer entities or broadly used across the retailer base. This can reveal channel dependence and structural adoption patterns.",
+    "breakdown": "Sales Method",
+    "measure": "COUNT(Retailer ID)"
+  },
+  {
+    "question": "Which regions have the greatest concentration of recorded retailer transactions?",
+    "reason": "Comparing average retailer ID values across regions is not business-meaningful because retailer ID is an identifier rather than a true analytical measure. However, if forced to use a remaining available measure column, counting retailer IDs by region can still help approximate transaction concentration and identify regions with unusually high or low recorded activity.",
+    "breakdown": "Region",
+    "measure": "COUNT(Retailer ID)"
+  },
+  {
+    "question": "Which retailers appear most consistently across the sales timeline?",
+    "reason": "Average invoice-date record counts by retailer can indicate how regularly each retailer appears across the sales history. This helps identify whether business is evenly distributed over time among retailers or dominated by a few consistently active partners.",
+    "breakdown": "Retailer",
+    "measure": "COUNT(Invoice Date)"
+  },
+  {
+    "question": "Which regions have the broadest retailer presence?",
+    "reason": "Counting retailers by region helps indicate how broadly retailer participation is distributed geographically. Regions with fewer participating retailers may represent concentration risk, while those with more may suggest stronger market coverage.",
+    "breakdown": "Region",
+    "measure": "COUNT(Retailer)"
+  },
+  {
+    "question": "Which retailers appear to offer the widest product assortment?",
+    "reason": "Counting distinct products by retailer helps uncover assortment breadth and possible specialization. Retailers carrying fewer product types may be more focused, while those covering more products may follow a broader portfolio strategy.",
+    "breakdown": "Retailer",
+    "measure": "COUNT(Product)"
+  },
+  {
+    "question": "Which states have the highest average price per unit?",
+    "reason": "Comparing average price per unit across states helps identify geographic pricing differences, regional positioning, and potential pricing anomalies. It can also indicate where products are sold at more premium or discounted rates.",
+    "breakdown": "State",
+    "measure": "MEAN(Price per Unit)"
+  },
+  {
+    "question": "Which products appear most frequently across retailer transaction records?",
+    "reason": "Counting retailer records by product helps identify whether sales activity is evenly distributed across products or concentrated among a few offerings. This can surface products with unusually broad or narrow retailer participation.",
+    "breakdown": "Product",
+    "measure": "COUNT(Retailer)"
+  },
+  {
+    "question": "Which states have the highest average units sold per transaction?",
+    "reason": "Comparing average units sold across states can reveal where product movement is strongest and where sales volume is weaker. This is useful for identifying geographic demand differences and potential market expansion opportunities.",
+    "breakdown": "State",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "Which retailers show the broadest concentration of product records?",
+    "reason": "Counting products by retailer helps show how broadly each retailer appears across product records and can indicate assortment spread or participation across categories. This can highlight whether some retailers are more diversified in the data than others.",
+    "breakdown": "Retailer",
+    "measure": "COUNT(Product)"
+  },
+  {
+    "question": "Which sales methods contain the highest concentration of retailer transaction records?",
+    "reason": "Counting distinct or repeated retailer IDs across sales methods can reveal where transaction activity is most concentrated by channel. Since retailer ID is an identifier, using it as a count proxy helps assess activity distribution rather than numeric magnitude.",
+    "breakdown": "Sales Method",
+    "measure": "COUNT(Retailer ID)"
+  },
+  {
+    "question": "Which products have the highest concentration of retailer-linked sales records?",
+    "reason": "Counting retailer records by product helps identify which product categories are most actively represented in the dataset through retailer-linked transactions. This can highlight commercially prominent product lines and show where retailer activity is concentrated.",
+    "breakdown": "Product",
+    "measure": "COUNT(Retailer)"
+  },
+  {
+    "question": "Which states have the highest volume of retailer-linked transaction records?",
+    "reason": "Examining retailer ID counts across states helps identify where retailer-linked sales records are most concentrated geographically. Even though retailer ID is an identifier, its count is useful as an activity measure and can surface strong markets, sparse coverage, or unusual state-level concentration.",
+    "breakdown": "State",
+    "measure": "COUNT(Retailer ID)"
+  },
+  {
+    "question": "How does average operating margin vary by sales method?",
+    "reason": "Comparing average operating margin across sales methods can reveal whether some channels are structurally more efficient or profitable than others. This is useful for identifying channel-level differences in business quality, not just sales scale, and may surface methods that consistently convert revenue into profit more effectively.",
+    "breakdown": "Sales Method",
+    "measure": "MEAN(Operating Margin)"
+  },
+  {
+    "question": "Which products deliver the highest average operating profit per transaction?",
+    "reason": "Looking at average operating profit by product helps identify which products generate stronger profit contribution per record. This can uncover whether high-selling products are also high-profit products, or whether some items underperform despite likely demand.",
+    "breakdown": "Product",
+    "measure": "MEAN(Operating Profit)"
+  },
+  {
+    "question": "Which states show the highest average total sales per sales record?",
+    "reason": "Comparing average total sales across states helps surface geographic differences in revenue generation at the transaction level. This can highlight stronger markets, higher-value transaction environments, or states that may deserve deeper market analysis.",
+    "breakdown": "State",
+    "measure": "MEAN(Total Sales)"
+  },
+  {
+    "question": "Which products involve the highest concentration of retailer activity?",
+    "reason": "Counting retailer records by product helps reveal which products are associated with the greatest concentration of retailer activity. This can indicate where the assortment is most broadly carried or where retailer participation is especially strong.",
+    "breakdown": "Product",
+    "measure": "COUNT(Retailer)"
+  },
+  {
+    "question": "Which states have the broadest retailer-associated sales presence?",
+    "reason": "Counting retailer records by state helps reveal where retailer-associated sales presence is densest. This is useful for understanding market coverage, spotting concentration patterns, and identifying states that may be over- or under-represented in the data.",
+    "breakdown": "State",
+    "measure": "COUNT(Retailer)"
+  },
+  {
+    "question": "Which sales methods are associated with the broadest product coverage?",
+    "reason": "Counting products by sales method helps show whether certain channels are associated with a broader assortment of items in the dataset. This can reveal channel specialization, assortment concentration, or potential limitations in product-channel mix.",
+    "breakdown": "Sales Method",
+    "measure": "COUNT(Product)"
+  },
+  {
+    "question": "Which sales methods cover the broadest range of product records?",
+    "reason": "Counting products by sales method can show whether certain channels are associated with broader product assortment or a narrower mix. This is useful for understanding channel specialization and whether some sales methods focus on a limited set of offerings.",
+    "breakdown": "Sales Method",
+    "measure": "COUNT(Product)"
+  },
+  {
+    "question": "Which cities show the most consistent sales activity across invoice dates?",
+    "reason": "Looking at the number of active invoice dates by city helps reveal how consistently sales occur over time in each location. Cities with many active dates may have steadier demand, while those with fewer may be more seasonal or intermittent.",
+    "breakdown": "City",
+    "measure": "COUNT(Invoice Date)"
+  },
+  {
+    "question": "Which sales methods show the lowest observed transaction sales?",
+    "reason": "The minimum total sales observed by sales method helps identify whether certain channels produce especially low-value or zero-value transactions more often. This is useful for spotting anomalies, weak channel performance, or operational irregularities.",
+    "breakdown": "Sales Method",
+    "measure": "MIN(Total Sales)"
+  },
+  {
+    "question": "Which cities show the broadest recorded product activity?",
+    "reason": "Counting product records by city can indicate which cities have broader recorded product activity or stronger assortment presence. This helps identify local markets with more diverse selling patterns versus more limited ones.",
+    "breakdown": "City",
+    "measure": "COUNT(Product)"
+  },
+  {
+    "question": "Which states show the strongest average operating margin?",
+    "reason": "Comparing average operating margin across states can highlight geographic variation in profitability efficiency, not just absolute profit. This is useful for identifying states where sales are completed under healthier or weaker margin conditions.",
+    "breakdown": "State",
+    "measure": "MEAN(Operating Margin)"
+  },
+  {
+    "question": "Which states appear to have the sparsest retailer-linked transaction presence?",
+    "reason": "Comparing the minimum recorded retailer name count proxy across states can help surface states with very sparse retailer-linked activity and identify potential coverage gaps or anomalies in representation. This is useful for detecting underrepresented markets.",
+    "breakdown": "State",
+    "measure": "COUNT(Retailer)"
+  },
+  {
+    "question": "Which sales methods are active across the widest range of invoice dates?",
+    "reason": "Comparing the number of invoice dates represented within each sales method helps indicate which channels are used more consistently over time. This can reveal whether some methods are broadly active across many days while others are used more selectively.",
+    "breakdown": "Sales Method",
+    "measure": "COUNT(Invoice Date)"
+  }
+]

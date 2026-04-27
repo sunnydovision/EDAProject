@@ -27,15 +27,15 @@
       },
       "Units Sold": {
         "count": 9648,
-        "mean": 256.9300373134328,
-        "median": 176.0,
-        "std": 214.25203007420504,
+        "mean": 250.9896735074627,
+        "median": 175.0,
+        "std": 206.02755355382004,
         "min": 0.0,
-        "max": 1275.0,
-        "q25": 106.0,
-        "q75": 350.0,
-        "skewness": 1.462257213604973,
-        "kurtosis": 1.6996987658612142
+        "max": 975.0,
+        "q25": 105.0,
+        "q75": 325.0,
+        "skewness": 1.356242554453118,
+        "kurtosis": 1.1552121642361604
       },
       "Total Sales": {
         "count": 9648,
@@ -180,12 +180,12 @@
         {
           "var1": "Units Sold",
           "var2": "Total Sales",
-          "correlation": 0.9134314656070663
+          "correlation": 0.844936119178483
         },
         {
           "var1": "Units Sold",
           "var2": "Operating Profit",
-          "correlation": 0.8923794236295555
+          "correlation": 0.8138708043211902
         },
         {
           "var1": "Total Sales",
@@ -196,42 +196,42 @@
     }
   },
   "interpretation": {
-    "distribution_patterns": "Price per Unit is centered around $45 (mean 45.2, median 45) with only mild right skew, so pricing appears fairly standardized across products and channels, though a small number of premium-priced records up to $110 pull the average upward slightly. Because this column was flagged for outliers, those high-price transactions should not be treated as typical without checking whether they reflect premium product mixes, bundled pricing, or data entry issues. Units Sold is strongly right-skewed (mean 256.9 vs median 176, skew 1.46), indicating that most transactions are relatively modest in volume but a smaller set of very large orders drives a meaningful share of unit volume. In business terms, this suggests a mix of ordinary retail transactions and bulk-like or unusually large sales records; the presence of zero-unit records also warrants validation because they may represent cancellations, placeholders, or data quality problems. Total Sales is extremely right-skewed (mean 93.3k vs median 9.6k, skew 1.84) with high kurtosis, meaning revenue is concentrated in a relatively small number of very large sales records. The very large gap between median and upper quartile (9.6k vs 150k) suggests the dataset may combine different transaction granularities, such as small retail invoices and aggregated sales entries, rather than a single consistent transaction type. Operating Profit shows the same pattern even more strongly (mean 34.4k vs median 4.4k, skew 2.23, kurtosis 5.82), implying profit is heavily concentrated in a limited number of high-value records. This is consistent with profit being structurally tied to sales, but the extreme tail also suggests possible aggregation effects or unusually profitable channel/product combinations. Operating Margin is much more stable than sales and profit (mean 42.3, median 41, mild skew), which implies that while revenue and profit dollars vary dramatically by order size, the percentage profitability is comparatively standardized across records. That stability is business-plausible if margins are set by product/channel pricing rules, though the wide range from 10 to 80 still deserves review for exceptional promotions, accounting treatment differences, or inconsistent margin definitions.",
+    "distribution_patterns": "Price per Unit is centered around a typical selling price of about $45 (mean 45.2, median 45), with only mild right skew and limited excess kurtosis. In business terms, pricing appears fairly standardized across products and channels, though the flagged outliers and wide range ($7 to $110) suggest some records reflect unusually low-priced promotions, clearance activity, or premium-priced items. Units Sold is strongly right-skewed (mean 251 vs median 175) with elevated kurtosis, meaning most transactions involve relatively modest volumes but a smaller number of very large-volume records pull the average upward. This is consistent with a mix of ordinary sales and bulk/high-throughput transactions, but the presence of zero-unit records should be reviewed because they may indicate cancellations, placeholders, or data entry issues. Total Sales is extremely right-skewed (mean $93.3K vs median $9.6K) with high kurtosis, showing that revenue is concentrated in a relatively small number of very large sales records. The very large gap between median and upper quartile ($150K) suggests the dataset may combine very different transaction scales, such as small retail invoices and large aggregated/channel-level sales entries. Operating Profit shows the same pattern even more strongly (mean $34.4K vs median $4.4K, high skewness 2.23 and kurtosis 5.82), indicating profit is heavily concentrated in a small set of large records and that average profit is not representative of a typical sale. Operating Margin is much more stable than sales and profit dollars (mean 42.3%, median 41%), with only slight right skew, implying profitability rates are relatively consistent even though transaction sizes vary widely; however, the 10% to 80% range is broad enough to warrant checking whether margin is driven by product mix, channel mix, or inconsistent calculation rules. Retailer ID is an identifier and should not be interpreted statistically.",
     "strong_correlations": [
       {
         "variables": "Units Sold and Total Sales",
-        "interpretation": "This very strong positive relationship (r=0.91) means higher-volume records almost always generate higher revenue. In business terms, sales dollars are driven primarily by quantity sold, which is expected because Total Sales is mechanically influenced by Units Sold multiplied by price. This is mostly a structural relationship rather than a behavioral insight, although deviations from the pattern could still reveal pricing differences across products or channels.",
+        "interpretation": "This strong positive relationship (r=0.845) means higher-volume records generally produce higher revenue, which is expected because Total Sales is mechanically influenced by quantity sold. This is primarily structural rather than behavioral, since sales dollars are mathematically tied to units and price. Any deviation from this relationship would likely reflect pricing differences across products, channels, or discounting.",
         "strength": "strong"
       },
       {
         "variables": "Units Sold and Operating Profit",
-        "interpretation": "This strong positive relationship (r=0.89) indicates that larger-volume sales tend to produce larger profit dollars. Business-wise, profit growth appears to come largely from selling more units rather than from unusually high margins on small orders. This is partly structural because more units generally create more revenue and therefore more profit, but it may also reflect behavioral patterns if certain channels or retailers are especially effective at converting volume into profit.",
+        "interpretation": "This strong positive relationship (r=0.814) indicates that larger-volume sales tend to generate more operating profit. This is partly structural because more units usually create more gross revenue and therefore more profit dollars, but it also has a behavioral component if certain channels or products scale more profitably than others. Follow-up should test whether high-volume records also have systematically higher or lower margins.",
         "strength": "strong"
       },
       {
         "variables": "Total Sales and Operating Profit",
-        "interpretation": "This is the strongest relationship in the dataset (r=0.96), showing that profit scales very closely with revenue. That is highly expected because Operating Profit is derived from Total Sales through margin. This is overwhelmingly structural, not surprising evidence of business performance by itself. The more useful business question is where records sit above or below the expected profit-for-sales line, which would indicate unusually high or low margins by product, retailer, region, or sales method.",
+        "interpretation": "This very strong positive relationship (r=0.956) shows that profit dollars rise almost directly with revenue. This is largely structural because Operating Profit is derived from Total Sales after costs, and the relatively stable Operating Margin reinforces that profit is closely tied to sales size. From a business perspective, revenue growth appears to be the main driver of profit growth in this dataset.",
         "strength": "strong"
       }
     ],
     "key_findings": [
-      "Revenue and profit are highly concentrated in a relatively small number of large records, as shown by the extreme right skew and the large mean-median gaps for Total Sales and Operating Profit.",
-      "Operating Margin is much more stable than dollar-based measures, suggesting that differences in business performance are driven more by transaction size and volume than by large swings in percentage profitability.",
-      "The strongest correlations are largely structural: Units Sold drives Total Sales, and Total Sales drives Operating Profit, so raw correlations alone should not be overinterpreted as evidence of causal business behavior."
+      "Revenue and profit distributions are highly concentrated in a minority of very large records, so mean sales and mean profit substantially overstate a typical transaction.",
+      "Operating Margin is comparatively stable around the low-40% range, suggesting profitability rates are more consistent than absolute sales or profit dollars.",
+      "The strongest relationships are structural: units drive sales, and sales drive profit, indicating transaction scale is the dominant statistical pattern in the dataset."
     ],
     "statistical_anomalies": [
-      "Zero values in Units Sold, Total Sales, and Operating Profit are unusual for invoice-level sales data and may indicate returns, cancellations, placeholder records, or incomplete transactions.",
-      "The very large jump from median to upper quartile in Total Sales and Operating Profit suggests inconsistent record granularity or aggregation, meaning some rows may represent individual transactions while others may represent summarized batches.",
-      "Operating Margin ranges from 10 to 80, which is wide for retail operating margin and may reflect inconsistent calculation logic, different accounting allocations, or exceptional promotional/product scenarios.",
-      "Retailer, region, state, and product distributions look highly patterned and somewhat balanced in places, which may indicate a designed reporting extract rather than naturally occurring raw transaction data."
+      "Zero values in Units Sold, Total Sales, and Operating Profit are unusual for completed sales records and may represent returns, cancellations, placeholders, or incomplete records.",
+      "The very large gap between median and upper-quartile Total Sales, along with extreme maxima in sales and profit, suggests possible mixing of granular transactions with aggregated records or unusually large wholesale-like invoices.",
+      "Operating Margin ranges from 10% to 80%, which is wide for a retail dataset and may indicate major product/channel differences, promotional effects, or inconsistent margin calculation logic.",
+      "Retailer distribution is uneven, with Foot Locker and West Gear contributing disproportionately more records than Walmart or Amazon, so overall statistics may reflect partner mix rather than the full market."
     ],
     "recommendations": [
-      "Validate record granularity by confirming whether each row is a single invoice line, a summarized invoice, or an aggregated reporting record; this is critical before interpreting averages for sales and profit.",
-      "Investigate zero-unit and zero-sales records separately to determine whether they are valid business events such as returns or data quality issues that should be excluded from performance analysis.",
-      "Use robust summaries such as medians, IQRs, and segmented distributions instead of relying on means for Price per Unit, Units Sold, Total Sales, and Operating Profit because outliers materially affect averages.",
-      "Analyze margin, sales, and profit by Product, Sales Method, Retailer, and Region to identify which segments systematically outperform after controlling for transaction size.",
-      "Model expected Operating Profit from Total Sales and then examine residuals to find unusually high- or low-profit records, which is more informative than the raw sales-profit correlation.",
-      "Review extreme high-value records manually to determine whether they represent legitimate bulk orders, channel-specific reporting practices, or data entry errors."
+      "Segment the analysis by Sales Method, Product, Retailer, and Region to determine whether outliers and margin variation are concentrated in specific business segments.",
+      "Validate zero-unit and zero-sales records and confirm whether they are legitimate returns/cancellations or data quality issues that should be excluded from performance analysis.",
+      "Use robust statistics such as medians, IQRs, trimmed means, and percentile-based reporting instead of relying on averages for sales and profit.",
+      "Check whether Total Sales approximately equals Price per Unit multiplied by Units Sold, and whether Operating Margin is consistently derived from Operating Profit divided by Total Sales.",
+      "Investigate the largest sales and profit records individually to determine whether they are true high-value transactions, batch uploads, or aggregated summaries.",
+      "Model profit drivers after controlling for transaction size, especially by testing whether certain products or channels deliver systematically higher margins at similar sales levels."
     ]
   },
   "summary": {
@@ -239,9 +239,9 @@
     "categorical_columns": 7,
     "strong_correlations": 3,
     "key_findings": [
-      "Revenue and profit are highly concentrated in a relatively small number of large records, as shown by the extreme right skew and the large mean-median gaps for Total Sales and Operating Profit.",
-      "Operating Margin is much more stable than dollar-based measures, suggesting that differences in business performance are driven more by transaction size and volume than by large swings in percentage profitability.",
-      "The strongest correlations are largely structural: Units Sold drives Total Sales, and Total Sales drives Operating Profit, so raw correlations alone should not be overinterpreted as evidence of causal business behavior."
+      "Revenue and profit distributions are highly concentrated in a minority of very large records, so mean sales and mean profit substantially overstate a typical transaction.",
+      "Operating Margin is comparatively stable around the low-40% range, suggesting profitability rates are more consistent than absolute sales or profit dollars.",
+      "The strongest relationships are structural: units drive sales, and sales drive profit, indicating transaction scale is the dominant statistical pattern in the dataset."
     ]
   }
 }
