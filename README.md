@@ -51,7 +51,7 @@ Từ thư mục gốc project:
 
 ```bash
 source venv/bin/activate
-streamlit run app.py
+streamlit run quis/demo/app.py
 ```
 
 Sau đó mở URL Streamlit (thường là `http://localhost:8501`).
@@ -68,7 +68,7 @@ Trong app:
 Chạy với API key:
 
 ```bash
-python run_qugen.py \
+python scripts/run_qugen.py \
   --csv data/transactions.csv \
   --output insight_cards.json
 ```
@@ -76,7 +76,7 @@ python run_qugen.py \
 #### B2. Sinh Insight Summary (ISGEN)
 
 ```bash
-python run_isgen.py \
+python scripts/run_isgen.py \
   --csv data/transactions.csv \
   --insight-cards insight_cards.json \
   --output insights_summary.json \

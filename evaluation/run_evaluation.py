@@ -40,6 +40,7 @@ from configs.eval_config import (
     ONLYSTATS_INSIGHTS_PATH,
     RESULTS_DIR,
 )
+from utils.log_config import save_run_log, load_eval_config
 
 
 def load_insights(summary_path: str):
@@ -222,6 +223,11 @@ def main():
     print(f"{'='*70}")
     print(f"{args.system_a} vs {args.system_b} Evaluation (v2)")
     print(f"{'='*70}\n")
+    
+    # Save run log
+    args_dict = vars(args)
+    config_dict = load_eval_config()
+    save_run_log("run_evaluation", args_dict, config_dict)
     
     # Load and clean data
     print(f"Loading data: {DATA_PATH}")

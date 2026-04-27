@@ -14,6 +14,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 from compare import create_comparison_table, generate_report
 from configs.eval_config import RESULTS_DIR
+from utils.log_config import save_run_log, load_eval_config
 
 def load_results(system_name: str) -> dict:
     """Load evaluation results for a system."""
@@ -32,6 +33,11 @@ def main():
     print(f"{'='*70}")
     print(f"Comparing {args.system_a} vs {args.system_b}")
     print(f"{'='*70}\n")
+    
+    # Save run log
+    args_dict = vars(args)
+    config_dict = load_eval_config()
+    save_run_log("compare_results", args_dict, config_dict)
     
     # Load results
     print(f"Loading {args.system_a} results...")

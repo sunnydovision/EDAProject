@@ -18,8 +18,8 @@
 
 ```bash
 # Chỉ basic insights, không subspace search
-python run_isgen.py --csv data/transactions.csv --insight-cards insight_cards.json --output insights_summary.json --no-subspace
+python scripts/run_isgen.py --csv data/transactions.csv --insight-cards insight_cards.json --output insights_summary.json --no-subspace
 
 # Đầy đủ (basic + subspace search), có vẽ đồ thị
-python run_isgen.py --csv data/transactions.csv --insight-cards insight_cards.json --output insights_summary.json --plot-dir plots
+python scripts/run_isgen.py --csv data/transactions.csv --insight-cards insight_cards.json --output insights_summary.json --plot-dir plots
 ```

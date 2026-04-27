@@ -16,7 +16,7 @@ import os
 import sys
 
 # Add project root
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # Load .env (OPENAI_API_KEY, OPENAI_API_BASE, QUGEN_LLM_MODEL) nếu có
 try:

@@ -17,6 +17,7 @@ from .subspace_search import subspace_search
 from .nl_explanation import explain_insight
 from .plotting import plot_insight
 from .llm_filter_columns import get_filter_column_candidates
+from ..configs.isgen_config import ISGENConfig, DEFAULT_ISGEN_CONFIG
 
 
 def _deduplicate_insight_candidates(
@@ -106,32 +107,13 @@ def _limit_per_question(
     return out
 
 
-@dataclass
-class ISGENConfig:
-    """Parameters (paper Appendix D.2)."""
-    beam_width: int = 20
-    exp_factor: int = 20
-    max_depth: int = 1
-    w_llm: float = 1.0
-    run_subspace_search: bool = True
-    max_insights_per_card: int = 3
-    plot_dir: str | None = None
-    # Giới hạn trùng: mỗi (question, breakdown, measure, pattern) giữ tối đa 1 overall + 2 subspace
-    max_overall_per_key: int = 1
-    max_subspace_per_key: int = 2
-    # Mỗi question chỉ xuất tối đa N insight (ưu tiên đa dạng pattern: 1 OV + 1 Attr + 1 Trend...)
-    max_insights_per_question: int = 3
-    # UI demo: relax thresholds to avoid returning empty insights
-    threshold_scale: float = 0.7
-
-
 class ISGENPipeline:
     """
     Full ISGEN: for each Insight Card → basic insights + subspace insights → filter interesting → NL + plot → summary.
     """
 
     def __init__(self, config: ISGENConfig | None = None, llm_client=None):
-        self.config = config or ISGENConfig()
+        self.config = config or DEFAULT_ISGEN_CONFIG
         self.llm = llm_client
 
     def _llm_candidates(self, breakdown: str, measure: str, available: list[str]) -> list[str]:
@@ -145,7 +127,7 @@ class ISGENPipeline:
         Thu thập hết candidate → deduplicate → chỉ với insight được giữ mới ghi plot và đưa vào summary.
         Returns list of insight summary dicts: { insight, explanation, plot_path, card_question }.
         """
-        plot_dir = output_dir or self.config.plot_dir
+        plot_dir = output_dir
         if plot_dir:
             os.makedirs(plot_dir, exist_ok=True)
         candidates: list[tuple[Any, str]] = []

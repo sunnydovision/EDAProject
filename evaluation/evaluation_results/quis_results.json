@@ -1143,23 +1143,23 @@
       "num_pairs": 97
     },
     "question_novelty": {
-      "question_novelty": 0.8969072164948454,
-      "novel_count": 87,
+      "question_novelty": 0.979381443298969,
+      "novel_count": 95,
       "total_count": 97,
-      "avg_max_similarity": 0.665340781211853,
+      "avg_max_similarity": 0.6660487651824951,
       "tau": 0.85,
-      "compared_against": "ONLYSTATS"
+      "compared_against": "Baseline"
     }
   },
   "time_to_insight": null,
   "token_usage": null,
   "insight_novelty": {
-    "novelty": 0.6185567010309279,
-    "novel_count": 60,
+    "novelty": 0.8350515463917526,
+    "novel_count": 81,
     "total_count": 97,
-    "avg_max_similarity": 0.8364590406417847,
+    "avg_max_similarity": 0.7587788105010986,
     "tau": 0.85,
-    "compared_against": "ONLYSTATS"
+    "compared_against": "Baseline"
   },
   "subspace_metrics": {
     "total_with_subspace": 45,
@@ -1397,10 +1397,10 @@
       }
     },
     "novelty": {
-      "novelty": 0.7777777777777778,
-      "novel_count": 35,
+      "novelty": 0.9111111111111111,
+      "novel_count": 41,
       "total_count": 45,
-      "avg_max_similarity": 0.785943865776062,
+      "avg_max_similarity": 0.708821713924408,
       "tau": 0.85
     },
     "diversity": {
