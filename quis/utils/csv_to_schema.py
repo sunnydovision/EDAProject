@@ -11,8 +11,8 @@ Cách suy schema:
 - Tên cột giữ nguyên (pandas có thể đổi tên cột trùng thành "cột.1", "cột.2").
 
 Usage:
-  python csv_to_schema.py data/transactions.csv
-  python csv_to_schema.py data/transactions.csv -o data/my_schema.json -n transactions
+  python csv_to_schema.py data/transactions_cleaned.csv
+  python csv_to_schema.py data/transactions_cleaned.csv -o data/my_schema.json -n transactions
 """
 
 from __future__ import annotations

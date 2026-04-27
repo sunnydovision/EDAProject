@@ -11,7 +11,7 @@ column profile. IsGen then runs unchanged.
 
 Usage:
   python run_onlystats.py \\
-    --csv data/Adidas_cleaned.csv \\
+    --csv data/adidas_cleaned.csv \\
     --profile baseline/auto_eda_agent/output_adidas/step1_profiling/profile.json \\
     --suffix v4
 Outputs: onlystats_results/onlystats_{yyyymmdd_hhiiss}_{dataset}_{suffix}/insights_summary.json,

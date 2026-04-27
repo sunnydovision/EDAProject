@@ -45,33 +45,17 @@ def compute_token_usage(
     if timing_file and os.path.exists(timing_file):
         with open(timing_file, 'r', encoding='utf-8') as f:
             timing_data = json.load(f)
-        insights_generated = timing_data.get(system.lower(), {}).get('insights_generated')
+        insights_generated = timing_data.get('insights_generated')
     
-    # Extract system-specific data
-    if system.lower() == 'baseline':
-        total_tokens = token_data['baseline']['total_tokens']
-        input_tokens = token_data['baseline']['input_tokens']
-        output_tokens = token_data['baseline']['output_tokens']
-        requests = token_data['baseline']['requests']
-        model = token_data['baseline']['model']
-    elif system.lower() == 'quis':
-        total_tokens = token_data['quis']['total']['total_tokens']
-        input_tokens = token_data['quis']['total']['input_tokens']
-        output_tokens = token_data['quis']['total']['output_tokens']
-        requests = token_data['quis']['total']['requests']
-        model = token_data['quis']['total']['model']
-    else:
-        raise ValueError(f"Unknown system: {system}")
-    
-    # Use hardcoded values if timing data not available
-    if insights_generated is None:
-        if system.lower() == 'baseline':
-            insights_generated = 133
-        elif system.lower() == 'quis':
-            insights_generated = 80
+    # Extract data (flat format for both baseline and quis)
+    total_tokens = token_data.get('total_tokens')
+    input_tokens = token_data.get('input_tokens')
+    output_tokens = token_data.get('output_tokens')
+    requests = token_data.get('requests')
+    model = token_data.get('model')
     
     # Compute tokens per insight
-    tokens_per_insight = total_tokens / insights_generated if insights_generated > 0 else 0
+    tokens_per_insight = total_tokens / insights_generated if insights_generated and insights_generated > 0 else 0
     
     return {
         'total_tokens': total_tokens,

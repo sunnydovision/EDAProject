@@ -1,0 +1,11 @@
+{
+  "quis": {
+    "total_time_seconds": 513.1238852920069,
+    "insights_generated": 12,
+    "throughput_insights_per_second": 0.023386165298407573,
+    "step_times": {
+      "qugen": 471.9013449170161,
+      "isgen": 41.222540374990785
+    }
+  }
+}

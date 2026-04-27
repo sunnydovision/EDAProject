@@ -1,0 +1,295 @@
+{
+  "system": "QUIS",
+  "num_cards": 12,
+  "num_insights": 12,
+  "score_uplift_from_subspace": {
+    "num_with_subspace_scored": 3,
+    "num_without_subspace_scored": 0,
+    "mean_score_with_subspace": 0.2012,
+    "mean_score_without_subspace": null,
+    "score_uplift_abs": null,
+    "score_uplift_ratio": null,
+    "score_uplift_direction": null
+  },
+  "faithfulness": {
+    "faithfulness": 1.0,
+    "verified_count": 12,
+    "total_count": 12,
+    "hallucination_count": 0,
+    "hallucination_rate": 0.0,
+    "_failed_insights": []
+  },
+  "insight_significance": {
+    "avg_effect_size": 0.20123333333333335,
+    "significant_count": 0,
+    "significant_rate": 0.0,
+    "pattern_avg_significance": 0.0,
+    "max_effect_size": 0.5677,
+    "total_evaluated": 3,
+    "by_pattern": {
+      "TREND": {
+        "significant_count": 0,
+        "total_count": 0,
+        "significant_rate": 0.0,
+        "insights": []
+      },
+      "OUTSTANDING_VALUE": {
+        "significant_count": 0,
+        "total_count": 1,
+        "significant_rate": 0.0,
+        "insights": [
+          {
+            "breakdown": "Qu\u00fd",
+            "col": "C\u1edd_giao_d\u1ecbch_b\u1ea5t_th\u01b0\u1eddng",
+            "p_value": 0.094558,
+            "effect_size": 0.5677,
+            "significant": "False"
+          }
+        ]
+      },
+      "ATTRIBUTION": {
+        "significant_count": 0,
+        "total_count": 1,
+        "significant_rate": 0.0,
+        "insights": [
+          {
+            "breakdown": "Qu\u00fd",
+            "col": "C\u1edd_giao_d\u1ecbch_b\u1ea5t_th\u01b0\u1eddng",
+            "p_value": 0.56451,
+            "effect_size": 0.0332,
+            "significant": "False"
+          }
+        ]
+      },
+      "DISTRIBUTION_DIFFERENCE": {
+        "significant_count": 0,
+        "total_count": 1,
+        "significant_rate": 0.0,
+        "insights": [
+          {
+            "breakdown": "Qu\u00fd",
+            "col": "C\u1edd_giao_d\u1ecbch_b\u1ea5t_th\u01b0\u1eddng",
+            "p_value": 1.0,
+            "effect_size": 0.0028,
+            "significant": "False"
+          }
+        ]
+      }
+    }
+  },
+  "question_diversity": {
+    "semantic_diversity": 0.43264371156692505,
+    "avg_similarity": 0.567356288433075,
+    "num_insights": 12,
+    "subspace_diversity": {
+      "subspace_diversity_entropy": 1.7481554572476763,
+      "subspace_diversity_count_ratio": 0.5833333333333334,
+      "unique_columns": 7,
+      "total_columns": 12,
+      "column_distribution": {
+        "Ng\u00e0y b\u00e1n": 1,
+        "Ph\u00e2n lo\u1ea1i": 3,
+        "Khu V\u1ef1c (Qu\u1eadn/Huy\u1ec7n)": 4,
+        "Lo\u1ea1i H\u00e0ng": 1,
+        "Doanh_thu_t\u1ec9nh": 1,
+        "M\u00e3_kh\u00e1ch_h\u00e0ng": 1,
+        "Ng\u00e0y": 1
+      }
+    },
+    "value_diversity": {
+      "value_diversity": 0.9166666666666666,
+      "unique_pairs": 11,
+      "total_pairs": 12
+    },
+    "dedup_rate": 0.0,
+    "unique_count": 12,
+    "total_count": 12,
+    "duplicate_count": 0
+  },
+  "bm_quality": {
+    "nmi_mean": 0.0015,
+    "int_mean": 0.0011,
+    "actionability": 0.25,
+    "bm_diversity": 0.3333,
+    "total_evaluated": 4,
+    "total_categorical": 1,
+    "total_insights": 12,
+    "pairs": [
+      {
+        "breakdown": "SKU_D\u00f2ng",
+        "col": "T\u1ea7n_su\u1ea5t_b\u00e1n",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "SKU_D\u00f2ng",
+        "col": "C\u1edd_khi\u1ebfu_n\u1ea1i_l\u1eb7p_l\u1ea1i",
+        "agg": "sum",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Qu\u00fd",
+        "col": "C\u1edd_giao_d\u1ecbch_b\u1ea5t_th\u01b0\u1eddng",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0015,
+        "interestingness": 0.0011
+      },
+      {
+        "breakdown": "SKU_D\u00f2ng",
+        "col": "Th\u00e0nh Ti\u1ec1n",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      }
+    ]
+  },
+  "question_quality": {
+    "question_diversity": {
+      "question_diversity": 0.4057283401489258,
+      "avg_similarity": 0.5942716598510742,
+      "num_questions": 12
+    },
+    "question_specificity": {
+      "question_specificity_mean": 9.5,
+      "question_specificity_std": 0.8660254037844386,
+      "num_questions": 12
+    },
+    "question_insight_alignment": {
+      "question_insight_alignment": 0.2622646391391754,
+      "question_insight_alignment_std": 0.1150612011551857,
+      "num_pairs": 12
+    },
+    "reason_insight_coherence": {
+      "reason_insight_coherence": 0.20329056680202484,
+      "reason_insight_coherence_std": 0.09225975722074509,
+      "num_pairs": 12
+    },
+    "question_novelty": {
+      "question_novelty": 1.0,
+      "novel_count": 12,
+      "total_count": 12,
+      "avg_max_similarity": 0.2699887156486511,
+      "tau": 0.85,
+      "compared_against": "Baseline"
+    }
+  },
+  "time_to_insight": {
+    "total_time_seconds": null,
+    "insights_generated": null,
+    "time_per_insight_seconds": 0,
+    "throughput_insights_per_second": 0
+  },
+  "token_usage": {
+    "total_tokens": null,
+    "input_tokens": null,
+    "output_tokens": null,
+    "requests": null,
+    "insights_generated": null,
+    "tokens_per_insight": 0,
+    "model": null
+  },
+  "insight_novelty": {
+    "novelty": 1.0,
+    "novel_count": 12,
+    "total_count": 12,
+    "avg_max_similarity": 0.5965495109558105,
+    "tau": 0.85,
+    "compared_against": "Baseline"
+  },
+  "subspace_metrics": {
+    "total_with_subspace": 12,
+    "total_original": 12,
+    "faithfulness": {
+      "faithfulness": 1.0,
+      "verified_count": 12,
+      "total_count": 12,
+      "hallucination_count": 0,
+      "hallucination_rate": 0.0,
+      "_failed_insights": []
+    },
+    "significance": {
+      "avg_effect_size": 0.5677,
+      "significant_count": 0,
+      "significant_rate": 0.0,
+      "pattern_avg_significance": 0.0,
+      "max_effect_size": 0.5677,
+      "total_evaluated": 1,
+      "by_pattern": {
+        "TREND": {
+          "significant_count": 0,
+          "total_count": 0,
+          "significant_rate": 0.0,
+          "insights": []
+        },
+        "OUTSTANDING_VALUE": {
+          "significant_count": 0,
+          "total_count": 1,
+          "significant_rate": 0.0,
+          "insights": [
+            {
+              "breakdown": "Qu\u00fd",
+              "col": "C\u1edd_giao_d\u1ecbch_b\u1ea5t_th\u01b0\u1eddng",
+              "p_value": 0.094558,
+              "effect_size": 0.5677,
+              "significant": "False"
+            }
+          ]
+        },
+        "ATTRIBUTION": {
+          "significant_count": 0,
+          "total_count": 0,
+          "significant_rate": 0.0,
+          "insights": []
+        },
+        "DISTRIBUTION_DIFFERENCE": {
+          "significant_count": 0,
+          "total_count": 0,
+          "significant_rate": 0.0,
+          "insights": []
+        }
+      }
+    },
+    "novelty": {
+      "novelty": 1.0,
+      "novel_count": 12,
+      "total_count": 12,
+      "avg_max_similarity": 0.5751801133155823,
+      "tau": 0.85
+    },
+    "diversity": {
+      "semantic_diversity": 0.43264371156692505,
+      "avg_similarity": 0.567356288433075,
+      "num_insights": 12,
+      "subspace_diversity": {
+        "subspace_diversity_entropy": 1.7481554572476763,
+        "subspace_diversity_count_ratio": 0.5833333333333334,
+        "unique_columns": 7,
+        "total_columns": 12,
+        "column_distribution": {
+          "Ng\u00e0y b\u00e1n": 1,
+          "Ph\u00e2n lo\u1ea1i": 3,
+          "Khu V\u1ef1c (Qu\u1eadn/Huy\u1ec7n)": 4,
+          "Lo\u1ea1i H\u00e0ng": 1,
+          "Doanh_thu_t\u1ec9nh": 1,
+          "M\u00e3_kh\u00e1ch_h\u00e0ng": 1,
+          "Ng\u00e0y": 1
+        }
+      },
+      "value_diversity": {
+        "value_diversity": 0.9166666666666666,
+        "unique_pairs": 11,
+        "total_pairs": 12
+      },
+      "dedup_rate": 0.0,
+      "unique_count": 12,
+      "total_count": 12,
+      "duplicate_count": 0
+    }
+  }
+}

@@ -2,8 +2,8 @@
 """
 Run ISGEN: input = CSV + Insight Cards (JSON from QUGEN), output = Insight Summary (JSON + optional plots).
 Usage:
-  python run_isgen.py --csv data/transactions.csv --insight-cards insight_cards.json --output insights_summary.json
-  python run_isgen.py --csv data/transactions.csv --insight-cards insight_cards.json --output insights_summary.json --plot-dir plots
+  python run_isgen.py --csv data/transactions_cleaned.csv --insight-cards insight_cards.json --output insights_summary.json
+  python run_isgen.py --csv data/transactions_cleaned.csv --insight-cards insight_cards.json --output insights_summary.json --plot-dir plots
 """
 
 from __future__ import annotations

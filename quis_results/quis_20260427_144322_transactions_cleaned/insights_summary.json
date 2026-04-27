@@ -1,0 +1,348 @@
+[
+  {
+    "question": "Which SKU lines show the highest average sales frequency?",
+    "explanation": "Outstanding value: for Ngày bán=2025-10-09, one category in SKU_Dòng has a value much larger (or smaller) than the others when measuring MEAN(Tần_suất_bán).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "SKU_Dòng",
+      "measure": "MEAN(Tần_suất_bán)",
+      "subspace": [
+        [
+          "Ngày bán",
+          "2025-10-09"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 10.583333333333334,
+      "question": "Which SKU lines show the highest average sales frequency?",
+      "reason": "Product-level sales frequency can indicate which product lines are repeatedly purchased and which are more occasional. Comparing average sales frequency across SKU lines helps identify sticky product groups and possible assortment priorities.",
+      "view_labels": [
+        "Tôn Kẽm",
+        "Tôn Màu"
+      ],
+      "view_values": [
+        42.333333333333336,
+        4.0
+      ]
+    }
+  },
+  {
+    "question": "Which SKU lines show the highest average sales frequency?",
+    "explanation": "Outstanding value: for Phân loại=1A, one category in SKU_Dòng has a value much larger (or smaller) than the others when measuring MEAN(Tần_suất_bán).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "SKU_Dòng",
+      "measure": "MEAN(Tần_suất_bán)",
+      "subspace": [
+        [
+          "Phân loại",
+          "1A"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 6.531304347826087,
+      "question": "Which SKU lines show the highest average sales frequency?",
+      "reason": "Product-level sales frequency can indicate which product lines are repeatedly purchased and which are more occasional. Comparing average sales frequency across SKU lines helps identify sticky product groups and possible assortment priorities.",
+      "view_labels": [
+        "Tôn Kẽm",
+        "Tôn Màu"
+      ],
+      "view_values": [
+        32.48,
+        4.972972972972973
+      ]
+    }
+  },
+  {
+    "question": "Which SKU lines show the highest number of repeated complaint cases?",
+    "explanation": "Outstanding value: for Khu Vực (Quận/Huyện)=TP. Thủ Đức, one category in SKU_Dòng has a value much larger (or smaller) than the others when measuring SUM(Cờ_khiếu_nại_lặp_lại).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "SKU_Dòng",
+      "measure": "SUM(Cờ_khiếu_nại_lặp_lại)",
+      "subspace": [
+        [
+          "Khu Vực (Quận/Huyện)",
+          "TP. Thủ Đức"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 4.5,
+      "question": "Which SKU lines show the highest number of repeated complaint cases?",
+      "reason": "Repeated complaints concentrated in certain product lines may indicate product quality, service, or expectation mismatch issues. Comparing complaint-repeat flags across SKU lines helps detect problematic product families.",
+      "view_labels": [
+        "Tôn Kẽm",
+        "Tôn Màu"
+      ],
+      "view_values": [
+        2.0,
+        9.0
+      ]
+    }
+  },
+  {
+    "question": "In which quarters do unusual transactions occur most frequently?",
+    "explanation": "Outstanding value: for Loại Hàng=PPGL, one category in Quý has a value much larger (or smaller) than the others when measuring SUM(Cờ_giao_dịch_bất_thường).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Quý",
+      "measure": "SUM(Cờ_giao_dịch_bất_thường)",
+      "subspace": [
+        [
+          "Loại Hàng",
+          "PPGL"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 2.5,
+      "question": "In which quarters do unusual transactions occur most frequently?",
+      "reason": "To detect whether transaction risk is concentrated in certain time periods. Comparing the number of unusual transaction flags by quarter can reveal temporal spikes, anomalies, or changing risk patterns over time.",
+      "view_labels": [
+        "2025Q3",
+        "2025Q4",
+        "2026Q1"
+      ],
+      "view_values": [
+        6.0,
+        15.0,
+        3.0
+      ]
+    }
+  },
+  {
+    "question": "Which SKU lines generate the highest average transaction revenue?",
+    "explanation": "Outstanding value: for Phân loại=2, one category in SKU_Dòng has a value much larger (or smaller) than the others when measuring MEAN(Thành Tiền).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "SKU_Dòng",
+      "measure": "MEAN(Thành Tiền)",
+      "subspace": [
+        [
+          "Phân loại",
+          "2"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.5153631689042908,
+      "question": "Which SKU lines generate the highest average transaction revenue?",
+      "reason": "Comparing transaction value across product lines helps reveal which SKU groups drive the most revenue per sale, not just volume. This can uncover premium product lines, pricing differences, or product groups with unusually high-value transactions.",
+      "view_labels": [
+        "Tôn Kẽm",
+        "Tôn Màu"
+      ],
+      "view_values": [
+        57227283.85,
+        37764731.92982456
+      ]
+    }
+  },
+  {
+    "question": "Which SKU lines show the highest number of repeated complaint cases?",
+    "explanation": "Attribution: for Khu Vực (Quận/Huyện)=TX. Bến Cát, a single category in SKU_Dòng accounts for a large share of total SUM(Cờ_khiếu_nại_lặp_lại).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "SKU_Dòng",
+      "measure": "SUM(Cờ_khiếu_nại_lặp_lại)",
+      "subspace": [
+        [
+          "Khu Vực (Quận/Huyện)",
+          "TX. Bến Cát"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 1.0,
+      "question": "Which SKU lines show the highest number of repeated complaint cases?",
+      "reason": "Repeated complaints concentrated in certain product lines may indicate product quality, service, or expectation mismatch issues. Comparing complaint-repeat flags across SKU lines helps detect problematic product families.",
+      "view_labels": [
+        "Tôn Kẽm",
+        "Tôn Màu"
+      ],
+      "view_values": [
+        0.0,
+        11.0
+      ]
+    }
+  },
+  {
+    "question": "In which quarters do unusual transactions occur most frequently?",
+    "explanation": "Attribution: for Doanh_thu_tỉnh=229802364, a single category in Quý accounts for a large share of total SUM(Cờ_giao_dịch_bất_thường).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Quý",
+      "measure": "SUM(Cờ_giao_dịch_bất_thường)",
+      "subspace": [
+        [
+          "Doanh_thu_tỉnh",
+          229802364
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 1.0,
+      "question": "In which quarters do unusual transactions occur most frequently?",
+      "reason": "To detect whether transaction risk is concentrated in certain time periods. Comparing the number of unusual transaction flags by quarter can reveal temporal spikes, anomalies, or changing risk patterns over time.",
+      "view_labels": [
+        "2025Q4",
+        "2026Q1"
+      ],
+      "view_values": [
+        1.0,
+        0.0
+      ]
+    }
+  },
+  {
+    "question": "Which SKU lines show the highest average sales frequency?",
+    "explanation": "Attribution: for Phân loại=1A, a single category in SKU_Dòng accounts for a large share of total MEAN(Tần_suất_bán).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "SKU_Dòng",
+      "measure": "MEAN(Tần_suất_bán)",
+      "subspace": [
+        [
+          "Phân loại",
+          "1A"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.8672208751876226,
+      "question": "Which SKU lines show the highest average sales frequency?",
+      "reason": "Product-level sales frequency can indicate which product lines are repeatedly purchased and which are more occasional. Comparing average sales frequency across SKU lines helps identify sticky product groups and possible assortment priorities.",
+      "view_labels": [
+        "Tôn Kẽm",
+        "Tôn Màu"
+      ],
+      "view_values": [
+        32.48,
+        4.972972972972973
+      ]
+    }
+  },
+  {
+    "question": "Which SKU lines generate the highest average transaction revenue?",
+    "explanation": "Attribution: for Mã_khách_hàng=CUST_0097, a single category in SKU_Dòng accounts for a large share of total MEAN(Thành Tiền).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "SKU_Dòng",
+      "measure": "MEAN(Thành Tiền)",
+      "subspace": [
+        [
+          "Mã_khách_hàng",
+          "CUST_0097"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5549246727842558,
+      "question": "Which SKU lines generate the highest average transaction revenue?",
+      "reason": "Comparing transaction value across product lines helps reveal which SKU groups drive the most revenue per sale, not just volume. This can uncover premium product lines, pricing differences, or product groups with unusually high-value transactions.",
+      "view_labels": [
+        "Tôn Kẽm",
+        "Tôn Màu"
+      ],
+      "view_values": [
+        88064922.0,
+        70632152.25
+      ]
+    }
+  },
+  {
+    "question": "Which SKU lines generate the highest average transaction revenue?",
+    "explanation": "Attribution: for Khu Vực (Quận/Huyện)=Huyện Xuyên Mộc, a single category in SKU_Dòng accounts for a large share of total MEAN(Thành Tiền).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "SKU_Dòng",
+      "measure": "MEAN(Thành Tiền)",
+      "subspace": [
+        [
+          "Khu Vực (Quận/Huyện)",
+          "Huyện Xuyên Mộc"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5367402956471399,
+      "question": "Which SKU lines generate the highest average transaction revenue?",
+      "reason": "Comparing transaction value across product lines helps reveal which SKU groups drive the most revenue per sale, not just volume. This can uncover premium product lines, pricing differences, or product groups with unusually high-value transactions.",
+      "view_labels": [
+        "Tôn Kẽm",
+        "Tôn Màu"
+      ],
+      "view_values": [
+        89344255.0,
+        103515720.0
+      ]
+    }
+  },
+  {
+    "question": "In which quarters do unusual transactions occur most frequently?",
+    "explanation": "Distribution difference: the distribution of Quý changes notably when filtering by Khu Vực (Quận/Huyện)=TP. Quy Nhơn (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Quý",
+      "measure": "SUM(Cờ_giao_dịch_bất_thường)",
+      "subspace": [
+        [
+          "Khu Vực (Quận/Huyện)",
+          "TP. Quy Nhơn"
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.43484989810336205,
+      "question": "In which quarters do unusual transactions occur most frequently?",
+      "reason": "To detect whether transaction risk is concentrated in certain time periods. Comparing the number of unusual transaction flags by quarter can reveal temporal spikes, anomalies, or changing risk patterns over time.",
+      "view_labels": [
+        "2025Q3",
+        "2025Q4",
+        "2026Q1"
+      ],
+      "view_values": [
+        0.0,
+        2.0,
+        0.0
+      ],
+      "view_labels_baseline": [
+        "2025Q3",
+        "2025Q4",
+        "2026Q1"
+      ],
+      "view_values_baseline": [
+        12.0,
+        22.0,
+        6.0
+      ]
+    }
+  },
+  {
+    "question": "Which SKU lines show the highest number of repeated complaint cases?",
+    "explanation": "Distribution difference: the distribution of SKU_Dòng changes notably when filtering by Ngày=8 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "SKU_Dòng",
+      "measure": "SUM(Cờ_khiếu_nại_lặp_lại)",
+      "subspace": [
+        [
+          "Ngày",
+          8
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.3707287931279198,
+      "question": "Which SKU lines show the highest number of repeated complaint cases?",
+      "reason": "Repeated complaints concentrated in certain product lines may indicate product quality, service, or expectation mismatch issues. Comparing complaint-repeat flags across SKU lines helps detect problematic product families.",
+      "view_labels": [
+        "Tôn Kẽm",
+        "Tôn Màu"
+      ],
+      "view_values": [
+        0.0,
+        2.0
+      ],
+      "view_labels_baseline": [
+        "Tôn Kẽm",
+        "Tôn Màu"
+      ],
+      "view_values_baseline": [
+        103.0,
+        196.0
+      ]
+    }
+  }
+]

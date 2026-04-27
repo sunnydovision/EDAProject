@@ -2,7 +2,7 @@
 """
 Run QUGEN pipeline: input = schema (or CSV path), output = list of Insight Cards (JSON).
 Usage:
-  python run_qugen.py --csv data/transactions.csv --output insight_cards.json
+  python run_qugen.py --csv data/transactions_cleaned.csv --output insight_cards.json
   python run_qugen.py --schema data/transactions_schema.json --output insight_cards.json
 
 Requires: OPENAI_API_KEY (or OPENAI_API_BASE) for real LLM calls; sentence-transformers for filters.

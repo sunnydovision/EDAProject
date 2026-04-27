@@ -7,7 +7,7 @@ sys.path.append(os.path.dirname(__file__))
 
 from agent import AgenticAutoEDA
 
-data_file = "../../data/Adidas_cleaned.csv"
+data_file = "../../data/adidas_cleaned.csv"
 output_dir = "output_adidas_cleaned"
 
 # Initialize agent

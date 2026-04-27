@@ -31,15 +31,7 @@ from metrics.question_quality import (
     compute_question_novelty,
 )
 from compare import create_comparison_table, generate_report
-from plot_evaluation import plot_evaluation_results
-from configs.eval_config import (
-    DATA_PATH,
-    PROFILE_PATH,
-    QUIS_INSIGHTS_PATH,
-    BASELINE_INSIGHTS_PATH,
-    ONLYSTATS_INSIGHTS_PATH,
-    RESULTS_DIR,
-)
+from configs.eval_config import EvalConfig, DatasetConfig
 from utils.log_config import save_run_log, load_eval_config
 
 
@@ -55,25 +47,17 @@ def evaluate_system(
     summary_path: str,
     df_raw: pd.DataFrame,
     df_cleaned: pd.DataFrame,
-    csv_path: str = None,
-    timing_file: str = None,
-    token_file: str = None,
-    profile_path: str = None,
+    config: DatasetConfig,
 ) -> dict:
     """
     Evaluate a single system across all metrics.
     
     Args:
-        system_name: Name of the system
+        system_name: Name of the system (QUIS, Baseline, ONLYSTATS)
         summary_path: Path to insights_summary.json
         df_raw: Raw dataframe
         df_cleaned: Cleaned dataframe
-        csv_path: Path to CSV file
-        timing_file: Path to timing file (optional)
-        token_file: Path to token usage file (optional)
-        profile_path: Path to profile.json from LLM column profiling step.
-            Adidas dataset : baseline/auto_eda_agent/output_adidas/step1_profiling/profile.json
-            Transactions   : baseline/auto_eda_agent/output_transactions/step1_profiling/profile.json
+        config: DatasetConfig object with dataset-specific paths
         
     Returns:
         Dictionary with all evaluation results
@@ -101,6 +85,22 @@ def evaluate_system(
     # Compute metrics
     print(f"\nComputing metrics...")
     
+    # Get timing and usage paths from config based on system name
+    system_lower = system_name.lower()
+    timing_file = None
+    token_file = None
+    
+    if system_lower == "quis":
+        timing_file = config.quis_timing_path
+        token_file = config.quis_usage_path
+    elif system_lower == "baseline":
+        timing_file = config.baseline_timing_path
+        token_file = config.baseline_usage_path
+    elif system_lower == "onlystats":
+        # Onlystats uses same structure as QUIS
+        timing_file = None  # Onlystats timing path not tracked yet
+        token_file = None
+    
     # Load timing and token data
     timing_data = None
     token_data = None
@@ -121,13 +121,13 @@ def evaluate_system(
         'system': system_name,
         'num_cards': len(cards),
         'num_insights': len(insights_data),
-        'score_uplift_from_subspace': compute_score_uplift_from_subspace(insights_data, df_cleaned, profile_path),
+        'score_uplift_from_subspace': compute_score_uplift_from_subspace(insights_data, df_cleaned, config.profile_path),
         
         # 4 CORE METRICS for Defense
-        'faithfulness': compute_faithfulness(insights_data, df_raw, df_cleaned, csv_path),
-        'insight_significance': compute_significance(insights_data, df_cleaned, csv_path, profile_path),
+        'faithfulness': compute_faithfulness(insights_data, df_raw, df_cleaned, config.data_path),
+        'insight_significance': compute_significance(insights_data, df_cleaned, config.data_path, config.profile_path),
         'question_diversity': compute_diversity(insights_data),
-        'bm_quality': compute_bm_quality(insights_data, df_cleaned, profile_path) if profile_path else None,
+        'bm_quality': compute_bm_quality(insights_data, df_cleaned, config.profile_path) if config.profile_path else None,
 
         # GROUP 3 (sub-section 3.2) — QuGen text / reason metrics.
         # Stored under the same key for backward compatibility with downstream
@@ -196,42 +196,50 @@ def evaluate_comparison(
 
 def main():
     parser = argparse.ArgumentParser(description='Evaluate QUIS vs Baseline (v2)')
+    parser.add_argument('--dataset', type=str, required=True, 
+                        help=f'Dataset name: {", ".join(EvalConfig.list_datasets())}')
     parser.add_argument('--system_a', type=str, required=True, help='Name of system A (e.g., QUIS)')
     parser.add_argument('--system_b', type=str, required=True, help='Name of system B (e.g., Baseline)')
-    parser.add_argument('--output', type=str, default=RESULTS_DIR, help='Output directory')
+    parser.add_argument('--output', type=str, default=None, help='Output directory (default: dataset-specific)')
     
     args = parser.parse_args()
     
+    # Get dataset configuration
+    config = EvalConfig.get_dataset_config(args.dataset)
+    
+    # Use dataset-specific output directory if not provided
+    output_dir = args.output or config.results_dir
+    
     # Map system names to paths
     system_paths = {
-        'QUIS': QUIS_INSIGHTS_PATH,
-        'quis': QUIS_INSIGHTS_PATH,
-        'Baseline': BASELINE_INSIGHTS_PATH,
-        'baseline': BASELINE_INSIGHTS_PATH,
-        'ONLYSTATS': ONLYSTATS_INSIGHTS_PATH,
-        'onlystats': ONLYSTATS_INSIGHTS_PATH,
+        'QUIS': config.quis_insights_path,
+        'quis': config.quis_insights_path,
+        'Baseline': config.baseline_insights_path,
+        'baseline': config.baseline_insights_path,
+        'ONLYSTATS': config.onlystats_insights_path,
+        'onlystats': config.onlystats_insights_path,
     }
     
     path_a = system_paths.get(args.system_a)
     path_b = system_paths.get(args.system_b)
     
     if path_a is None:
-        raise ValueError(f"Unknown system A: {args.system_a}. Valid options: {list(system_paths.keys())}")
+        raise ValueError(f"Unknown system A: {args.system_a} or path not set for this dataset. Valid options: {list(system_paths.keys())}")
     if path_b is None:
-        raise ValueError(f"Unknown system B: {args.system_b}. Valid options: {list(system_paths.keys())}")
+        raise ValueError(f"Unknown system B: {args.system_b} or path not set for this dataset. Valid options: {list(system_paths.keys())}")
     
     print(f"{'='*70}")
-    print(f"{args.system_a} vs {args.system_b} Evaluation (v2)")
+    print(f"{args.system_a} vs {args.system_b} Evaluation (v2) - Dataset: {args.dataset}")
     print(f"{'='*70}\n")
     
     # Save run log
     args_dict = vars(args)
-    config_dict = load_eval_config()
+    config_dict = load_eval_config(args.dataset)
     save_run_log("run_evaluation", args_dict, config_dict)
     
     # Load and clean data
-    print(f"Loading data: {DATA_PATH}")
-    df_raw, df_cleaned = load_and_clean_data(DATA_PATH)
+    print(f"Loading data: {config.data_path}")
+    df_raw, df_cleaned = load_and_clean_data(config.data_path)
     print(f"  Loaded {len(df_raw)} rows, {len(df_raw.columns)} columns")
     print(f"  Cleaned {len(df_cleaned)} rows, {len(df_cleaned.columns)} columns")
     print()
@@ -242,10 +250,7 @@ def main():
         summary_path=path_a,
         df_raw=df_raw,
         df_cleaned=df_cleaned,
-        csv_path=DATA_PATH,
-        timing_file=None,
-        token_file=None,
-        profile_path=PROFILE_PATH,
+        config=config,
     )
     
     results_b = evaluate_system(
@@ -253,10 +258,7 @@ def main():
         summary_path=path_b,
         df_raw=df_raw,
         df_cleaned=df_cleaned,
-        csv_path=DATA_PATH,
-        timing_file=None,
-        token_file=None,
-        profile_path=PROFILE_PATH,
+        config=config,
     )
     
     # Load insights for novelty computation
@@ -271,23 +273,20 @@ def main():
     print("Computing Subspace Metrics")
     print(f"{'='*70}\n")
     print(f" Subspace insights: {args.system_a}={len(filter_insights_with_subspace(insights_a))}, {args.system_b}={len(filter_insights_with_subspace(insights_b))}")
-    subspace_results = compute_subspace_metrics(insights_a, insights_b, df_raw, df_cleaned, DATA_PATH)
+    subspace_results = compute_subspace_metrics(insights_a, insights_b, df_raw, df_cleaned, config.data_path)
     results_a['subspace_metrics'] = subspace_results['system_a']
     results_b['subspace_metrics'] = subspace_results['system_b']
     
     # Save individual results
-    os.makedirs(args.output, exist_ok=True)
+    os.makedirs(output_dir, exist_ok=True)
     
-    with open(f"{args.output}/{args.system_a.lower()}_results.json", 'w') as f:
+    with open(f"{output_dir}/{args.system_a.lower()}_results.json", 'w') as f:
         json.dump(results_a, f, indent=2)
-    print(f"Saved: {args.output}/{args.system_a.lower()}_results.json")
+    print(f"Saved: {output_dir}/{args.system_a.lower()}_results.json")
     
-    with open(f"{args.output}/{args.system_b.lower()}_results.json", 'w') as f:
+    with open(f"{output_dir}/{args.system_b.lower()}_results.json", 'w') as f:
         json.dump(results_b, f, indent=2)
-    print(f"Saved: {args.output}/{args.system_b.lower()}_results.json")
-    
-    # Generate plots
-    plot_evaluation_results(results_a, results_b, args.output, args.system_a, args.system_b)
+    print(f"Saved: {output_dir}/{args.system_b.lower()}_results.json")
     
     # Generate comparison table
     print(f"\n{'='*70}")
@@ -295,8 +294,8 @@ def main():
     print(f"{'='*70}\n")
     
     comparison_df = create_comparison_table(results_a, results_b, args.system_a, args.system_b)
-    comparison_df.to_csv(f"{args.output}/comparison_table.csv", index=False)
-    print(f"Saved: {args.output}/comparison_table.csv")
+    comparison_df.to_csv(f"{output_dir}/comparison_table.csv", index=False)
+    print(f"Saved: {output_dir}/comparison_table.csv")
     
     # Print comparison table
     print(f"\n{comparison_df.to_string(index=False)}\n")
@@ -305,7 +304,7 @@ def main():
     generate_report(
         results_a, 
         results_b, 
-        output_path=f"{args.output}/comparison_report.md",
+        output_path=f"{output_dir}/comparison_report.md",
         name_a=args.system_a,
         name_b=args.system_b
     )
@@ -488,7 +487,7 @@ def main():
     print(f"  • {args.system_a}: {rc_a:.4f}")
     print(f"  • {args.system_b}: {rc_b:.4f}")
 
-    print(f"\nEvaluation complete! Results saved to: {args.output}/")
+    print(f"\nEvaluation complete! Results saved to: {output_dir}/")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,23 @@
+{
+  "quis": {
+    "total": {
+      "total_tokens": 105717,
+      "input_tokens": 76719,
+      "output_tokens": 28998,
+      "requests": 44,
+      "model": "gpt-4o-mini"
+    },
+    "qugen": {
+      "total_tokens": 99184,
+      "input_tokens": 71638,
+      "output_tokens": 27546,
+      "requests": 31
+    },
+    "isgen": {
+      "total_tokens": 6533,
+      "input_tokens": 5081,
+      "output_tokens": 1452,
+      "requests": 13
+    }
+  }
+}

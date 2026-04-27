@@ -44,6 +44,22 @@ def load_data(csv_path: str) -> pd.DataFrame:
     print(f"Loaded data from: {csv_path}")
     print(f"  Shape: {len(df)} rows, {len(df.columns)} columns")
     
+    # Parse date columns automatically
+    date_columns = []
+    for col in df.columns:
+        col_lower = col.lower()
+        # Check for common date column names
+        if any(date_keyword in col_lower for date_keyword in ['date', 'ngày', 'ngay', 'time']):
+            if df[col].dtype == object or 'str' in str(df[col].dtype).lower():
+                try:
+                    # Try parsing with dayfirst=True for European format
+                    df[col] = pd.to_datetime(df[col], dayfirst=True, errors="coerce")
+                    if df[col].notna().sum() > 0:
+                        date_columns.append(col)
+                        print(f"  Parsed {col} as datetime")
+                except Exception:
+                    pass
+    
     # Validate that data is preprocessed (no string columns that look numeric)
     string_numeric_cols = []
     for col in df.columns:

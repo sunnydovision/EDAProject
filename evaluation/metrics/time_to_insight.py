@@ -35,20 +35,19 @@ def compute_time_to_insight(
     with open(timing_file, 'r', encoding='utf-8') as f:
         timing_data = json.load(f)
     
-    # Extract system-specific data
-    if system.lower() == 'baseline':
-        time_seconds = timing_data['baseline']['total_time_seconds']
-        insights_generated = timing_data['baseline']['insights_generated']
-        throughput = timing_data['baseline']['throughput_insights_per_second']
-    elif system.lower() == 'quis':
-        time_seconds = timing_data['quis']['total_time_seconds']
-        insights_generated = timing_data['quis']['insights_generated']
-        throughput = insights_generated / time_seconds if time_seconds and insights_generated else 0
-    else:
-        raise ValueError(f"Unknown system: {system}")
+    # Extract data (flat format for both baseline and quis)
+    time_seconds = timing_data.get('total_time')
+    insights_generated = timing_data.get('insights_generated')
+    throughput = timing_data.get('throughput')
+    
+    # Compute throughput if not provided
+    if throughput is None and time_seconds and insights_generated:
+        throughput = insights_generated / time_seconds
+    elif throughput is None:
+        throughput = 0
     
     # Compute time per insight
-    time_per_insight = time_seconds / insights_generated if insights_generated > 0 else 0
+    time_per_insight = time_seconds / insights_generated if insights_generated and insights_generated > 0 else 0
     
     return {
         'total_time_seconds': time_seconds,

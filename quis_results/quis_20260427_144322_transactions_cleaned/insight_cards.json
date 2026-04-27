@@ -1,0 +1,26 @@
+[
+  {
+    "question": "In which quarters do unusual transactions occur most frequently?",
+    "reason": "To detect whether transaction risk is concentrated in certain time periods. Comparing the number of unusual transaction flags by quarter can reveal temporal spikes, anomalies, or changing risk patterns over time.",
+    "breakdown": "Quý",
+    "measure": "SUM(Cờ_giao_dịch_bất_thường)"
+  },
+  {
+    "question": "Which SKU lines show the highest average sales frequency?",
+    "reason": "Product-level sales frequency can indicate which product lines are repeatedly purchased and which are more occasional. Comparing average sales frequency across SKU lines helps identify sticky product groups and possible assortment priorities.",
+    "breakdown": "SKU_Dòng",
+    "measure": "MEAN(Tần_suất_bán)"
+  },
+  {
+    "question": "Which SKU lines generate the highest average transaction revenue?",
+    "reason": "Comparing transaction value across product lines helps reveal which SKU groups drive the most revenue per sale, not just volume. This can uncover premium product lines, pricing differences, or product groups with unusually high-value transactions.",
+    "breakdown": "SKU_Dòng",
+    "measure": "MEAN(Thành Tiền)"
+  },
+  {
+    "question": "Which SKU lines show the highest number of repeated complaint cases?",
+    "reason": "Repeated complaints concentrated in certain product lines may indicate product quality, service, or expectation mismatch issues. Comparing complaint-repeat flags across SKU lines helps detect problematic product families.",
+    "breakdown": "SKU_Dòng",
+    "measure": "SUM(Cờ_khiếu_nại_lặp_lại)"
+  }
+]

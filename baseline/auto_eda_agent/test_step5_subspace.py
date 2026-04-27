@@ -10,7 +10,7 @@ from agent import AgenticAutoEDA
 import json
 
 # Use existing output_adidas (Steps 1-4 completed)
-data_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../data/Adidas_cleaned.csv"))
+data_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../data/adidas_cleaned.csv"))
 existing_output_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "output_adidas"))
 step5_dir = f"{existing_output_dir}/step5_insights"
 

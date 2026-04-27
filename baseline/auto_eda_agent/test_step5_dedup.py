@@ -10,7 +10,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from agent import AgenticAutoEDA
 import json
 
-data_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../data/Adidas_cleaned.csv"))
+data_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../data/adidas_cleaned.csv"))
 output_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "output_adidas"))
 step5_dir = f"{output_dir}/step5_dedup_test"
 

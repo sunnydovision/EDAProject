@@ -30,9 +30,9 @@ def get_demo_datasets() -> tuple:
         },
         {
             "label": "Adidas (v4)",
-            "insights_path": os.path.join(root, "quis_results", "quis_20241201_000000_Adidas_cleaned_v4", "insights_summary_adidas_v4.json"),
-            "cards_path": os.path.join(root, "quis_results", "quis_20241201_000000_Adidas_cleaned_v4", "insight_cards_adidas_v4.json"),
-            "csv_path": os.path.join(root, "data", "Adidas_cleaned.csv"),
+            "insights_path": os.path.join(root, "quis_results", "quis_20241201_000000_adidas_cleaned_v4", "insights_summary_adidas_v4.json"),
+            "cards_path": os.path.join(root, "quis_results", "quis_20241201_000000_adidas_cleaned_v4", "insight_cards_adidas_v4.json"),
+            "csv_path": os.path.join(root, "data", "adidas_cleaned.csv"),
         },
     )
     

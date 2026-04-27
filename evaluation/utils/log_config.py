@@ -48,22 +48,27 @@ def save_run_log(
     return log_path
 
 
-def load_eval_config() -> Dict[str, Any]:
-    """Load and return the evaluation configuration."""
-    from configs.eval_config import (
-        DATA_PATH,
-        PROFILE_PATH,
-        QUIS_INSIGHTS_PATH,
-        BASELINE_INSIGHTS_PATH,
-        ONLYSTATS_INSIGHTS_PATH,
-        RESULTS_DIR,
-    )
+def load_eval_config(dataset_name: str = None) -> Dict[str, Any]:
+    """Load and return the evaluation configuration.
     
-    return {
-        "DATA_PATH": DATA_PATH,
-        "PROFILE_PATH": PROFILE_PATH,
-        "QUIS_INSIGHTS_PATH": QUIS_INSIGHTS_PATH,
-        "BASELINE_INSIGHTS_PATH": BASELINE_INSIGHTS_PATH,
-        "ONLYSTATS_INSIGHTS_PATH": ONLYSTATS_INSIGHTS_PATH,
-        "RESULTS_DIR": RESULTS_DIR,
-    }
+    Args:
+        dataset_name: Optional dataset name to get specific config. If None, returns available datasets.
+    """
+    from configs.eval_config import EvalConfig
+    
+    if dataset_name:
+        config = EvalConfig.get_dataset_config(dataset_name)
+        return {
+            "dataset": dataset_name,
+            "data_path": config.data_path,
+            "profile_path": config.profile_path,
+            "quis_insights_path": config.quis_insights_path,
+            "baseline_insights_path": config.baseline_insights_path,
+            "onlystats_insights_path": config.onlystats_insights_path,
+            "results_dir": config.results_dir,
+        }
+    else:
+        return {
+            "available_datasets": EvalConfig.list_datasets(),
+            "aggregated_results_dir": EvalConfig.AGGREGATED_RESULTS_DIR,
+        }

@@ -9,7 +9,7 @@ Run complete agentic AutoEDA workflow where each step:
 
 Usage:
     cd baseline
-    python run.py ../data/transactions.csv output
+    python run.py ../data/transactions_cleaned.csv output
 """
 
 import sys
@@ -83,8 +83,8 @@ def run_baseline(data_file: str, output_dir: str = 'output', max_iterations: int
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("Usage: python run.py <data_file> [output_dir] [--skip-step5]")
-        print("Example: python run.py ../data/transactions.csv output")
-        print("         python run.py ../data/transactions.csv output --skip-step5")
+        print("Example: python run.py ../data/transactions_cleaned.csv output")
+        print("         python run.py ../data/transactions_cleaned.csv output --skip-step5")
         sys.exit(1)
     
     data_file = sys.argv[1]
