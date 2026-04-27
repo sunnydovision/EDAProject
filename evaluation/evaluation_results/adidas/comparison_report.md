@@ -1,6 +1,6 @@
 # ONLYSTATS vs QUIS: Evaluation Report
 
-**Generated**: 2026-04-27 18:46:45
+**Generated**: 2026-04-27 23:55:37
 
 ---
 
@@ -8,7 +8,7 @@
 
 | | ONLYSTATS | QUIS |
 |---|---|---|
-| **Metrics Won** | 6 | 18 |
+| **Metrics Won** | 6 | 15 |
 | **Overall Winner** |  | ✓ |
 
 ---
@@ -17,35 +17,35 @@
 
 | Metric                                     | ONLYSTATS   | QUIS       | Winner    | Description                                             |
 |:-------------------------------------------|:------------|:-----------|:----------|:--------------------------------------------------------|
-| 0. Total insights                          | 62          | 98         | N/A       | Total insight cards generated                           |
-| 1. Faithfulness                            | 67.7%       | 90.8%      | QUIS      | Correctness - đúng dữ liệu                              |
-| 2. Statistical Significance (Overall)      | 71.1%       | 71.5%      | QUIS      | Validity - pattern-averaged (fair comparison)           |
-| 2a. Significance — TREND                   | 100.0% (10) | 50.0% (2)  | ONLYSTATS | Validity - TREND pattern                                |
-| 2a. Significance — OUTSTANDING_VALUE       | 40.0% (25)  | 42.4% (33) | QUIS      | Validity - OUTSTANDING_VALUE pattern                    |
-| 2a. Significance — ATTRIBUTION             | 100.0% (18) | 96.4% (28) | ONLYSTATS | Validity - ATTRIBUTION pattern                          |
-| 2a. Significance — DISTRIBUTION_DIFFERENCE | 44.4% (9)   | 97.0% (33) | QUIS      | Validity - DISTRIBUTION_DIFFERENCE pattern              |
-| 3. Insight Novelty                         | 67.7%       | 84.7%      | QUIS      | Usefulness - khác baseline                              |
-| 4a. Diversity — Semantic                   | 0.451       | 0.480      | QUIS      | Semantic diversity (breakdown|measure|pattern|subspace) |
-| 4b. Diversity — Subspace Entropy           | 2.101       | 2.176      | QUIS      | Entropy of subspace filter columns used                 |
-| 4c. Diversity — Value                      | 0.822       | 0.897      | QUIS      | Unique (column, value) pairs in subspace / total        |
+| 0. Total insights                          | 60          | 99         | N/A       | Total insight cards generated                           |
+| 1. Faithfulness                            | 100.0%      | 100.0%     | Tie       | Correctness - đúng dữ liệu                              |
+| 2. Statistical Significance (Overall)      | 79.0%       | 83.4%      | QUIS      | Validity - pattern-averaged (fair comparison)           |
+| 2a. Significance — TREND                   | 100.0% (10) | 100.0% (2) | N/A       | Validity - TREND pattern                                |
+| 2a. Significance — OUTSTANDING_VALUE       | 44.4% (27)  | 40.0% (30) | ONLYSTATS | Validity - OUTSTANDING_VALUE pattern                    |
+| 2a. Significance — ATTRIBUTION             | 100.0% (16) | 96.0% (25) | ONLYSTATS | Validity - ATTRIBUTION pattern                          |
+| 2a. Significance — DISTRIBUTION_DIFFERENCE | 71.4% (7)   | 97.4% (39) | QUIS      | Validity - DISTRIBUTION_DIFFERENCE pattern              |
+| 3. Insight Novelty                         | 73.3%       | 84.8%      | QUIS      | Usefulness - khác baseline                              |
+| 4a. Diversity — Semantic                   | 0.435       | 0.479      | QUIS      | Semantic diversity (breakdown|measure|pattern|subspace) |
+| 4b. Diversity — Subspace Entropy           | 2.143       | 2.259      | QUIS      | Entropy of subspace filter columns used                 |
+| 4c. Diversity — Value                      | 0.810       | 0.872      | QUIS      | Unique (column, value) pairs in subspace / total        |
 | 4d. Diversity — Dedup Rate                 | 0           | 0          | Tie       | Duplicate rate — lower is better                        |
 
 ---
 
 ## Group 2 — Subspace Deep-dive
 
-| Metric                                        | ONLYSTATS         | QUIS              | Winner   | Description                                                          |
-|:----------------------------------------------|:------------------|:------------------|:---------|:---------------------------------------------------------------------|
-| 7. Subspace Rate                              | 45/62 (72.6%)     | 87/98 (88.8%)     | QUIS     | Insights with subspace filter / total                                |
-| 7a. Subspace Faithfulness                     | 71.1%             | 94.3%             | QUIS     | Faithfulness restricted to subspace insights                         |
-| 7b. Subspace Significance                     | 47.4%             | 48.3%             | QUIS     | Significance restricted to subspace insights                         |
-| 7c. Subspace Novelty                          | 71.1%             | 86.2%             | QUIS     | Novelty restricted to subspace insights                              |
-| 7d.1. Diversity — Semantic (Subspace)         | 0.439             | 0.463             | QUIS     | Semantic diversity restricted to subspace insights                   |
-| 7d.2. Diversity — Subspace Entropy (Subspace) | 2.101             | 2.176             | QUIS     | Entropy of subspace filter columns used (subspace insights)          |
-| 7d.3. Diversity — Value (Subspace)            | 0.822             | 0.897             | QUIS     | Unique (column, value) pairs in subspace / total (subspace insights) |
-| 7d.4. Diversity — Dedup Rate (Subspace)       | 0                 | 0                 | Tie      | Duplicate rate restricted to subspace insights - lower is better     |
-| 8. Score Uplift from Subspace                 | Δ=-0.051, x=0.885 | Δ=-0.012, x=0.966 | QUIS     | Δ = mean(score|subspace) - mean(score|no-subspace)                   |
-| 9. Direction Uplift                           | down              | down              | Tie      | Direction of Δ score uplift: up/down/flat                            |
+| Metric                                        | ONLYSTATS         | QUIS              | Winner    | Description                                                          |
+|:----------------------------------------------|:------------------|:------------------|:----------|:---------------------------------------------------------------------|
+| 7. Subspace Rate                              | 42/60 (70.0%)     | 86/99 (86.9%)     | QUIS      | Insights with subspace filter / total                                |
+| 7a. Subspace Faithfulness                     | 100.0%            | 100.0%            | Tie       | Faithfulness restricted to subspace insights                         |
+| 7b. Subspace Significance                     | 52.4%             | 44.0%             | ONLYSTATS | Significance restricted to subspace insights                         |
+| 7c. Subspace Novelty                          | 78.6%             | 87.2%             | QUIS      | Novelty restricted to subspace insights                              |
+| 7d.1. Diversity — Semantic (Subspace)         | 0.420             | 0.459             | QUIS      | Semantic diversity restricted to subspace insights                   |
+| 7d.2. Diversity — Subspace Entropy (Subspace) | 2.143             | 2.259             | QUIS      | Entropy of subspace filter columns used (subspace insights)          |
+| 7d.3. Diversity — Value (Subspace)            | 0.810             | 0.872             | QUIS      | Unique (column, value) pairs in subspace / total (subspace insights) |
+| 7d.4. Diversity — Dedup Rate (Subspace)       | 0                 | 0                 | Tie       | Duplicate rate restricted to subspace insights - lower is better     |
+| 8. Score Uplift from Subspace                 | Δ=-0.044, x=0.904 | Δ=-0.043, x=0.885 | QUIS      | Δ = mean(score|subspace) - mean(score|no-subspace)                   |
+| 9. Direction Uplift                           | down              | down              | Tie       | Direction of Δ score uplift: up/down/flat                            |
 
 ---
 
@@ -57,25 +57,25 @@
 
 | Metric                          | ONLYSTATS   | QUIS   | Winner    | Description                                                                                |
 |:--------------------------------|:------------|:-------|:----------|:-------------------------------------------------------------------------------------------|
-| 10. Total (B,M) pairs evaluated | 32/32       | 25/25  | N/A       | Total unique breakdown-measure pairs (categorical breakdowns only for NMI/Interestingness) |
-| 10a. BM — NMI mean              | 0.112       | 0.081  | ONLYSTATS | Mean NMI over categorical-B pairs                                                          |
-| 10b. BM — Interestingness       | 0.102       | 0.080  | ONLYSTATS | Mean Coverage×EffectSize over categorical-B pairs                                          |
+| 10. Total (B,M) pairs evaluated | 31/31       | 26/26  | N/A       | Total unique breakdown-measure pairs (categorical breakdowns only for NMI/Interestingness) |
+| 10a. BM — NMI mean              | 0.217       | 0.094  | ONLYSTATS | Mean NMI over categorical-B pairs                                                          |
+| 10b. BM — Interestingness       | 0.068       | 0.077  | QUIS      | Mean Coverage×EffectSize over categorical-B pairs                                          |
 | 10c. BM — Actionability         | 1.000       | 1.000  | Tie       | % pairs with categorical breakdown                                                         |
-| 10d. BM — Diversity             | 0.516       | 0.255  | ONLYSTATS | Unique (B,M) pairs / total insights                                                        |
+| 10d. BM — Diversity             | 0.517       | 0.263  | ONLYSTATS | Unique (B,M) pairs / total insights                                                        |
 
 ### 3.2 Question text & reason
 
 | Metric                               | ONLYSTATS   | QUIS        | Winner    | Description                                                          |
 |:-------------------------------------|:------------|:------------|:----------|:---------------------------------------------------------------------|
-| 11a. Question Semantic Diversity     | 0.371       | 0.501       | QUIS      | 1 - mean cosine sim of question embeddings (within-system)           |
-| 11b. Question Specificity            | 7.71 ± 0.63 | 9.11 ± 1.41 | QUIS      | Avg word count per question (mean ± std) — higher = more specific    |
-| 11c. Question–Insight Alignment      | 0.714       | 0.575       | ONLYSTATS | Mean cosine(Embed(question), Embed(insight)) — semantic faithfulness |
-| 11d. Question Novelty (cross-system) | N/A         | 86.7%       | Tie       | % of questions with cross-system max cosine sim < 0.85               |
-| 11e. Reason–Insight Coherence        | N/A         | 0.557       | Tie       | Mean cosine(Embed(reason), Embed(insight)) — reason grounding        |
+| 11a. Question Semantic Diversity     | 0.371       | 0.493       | QUIS      | 1 - mean cosine sim of question embeddings (within-system)           |
+| 11b. Question Specificity            | 7.73 ± 0.63 | 9.15 ± 1.40 | QUIS      | Avg word count per question (mean ± std) — higher = more specific    |
+| 11c. Question–Insight Alignment      | 0.720       | 0.583       | ONLYSTATS | Mean cosine(Embed(question), Embed(insight)) — semantic faithfulness |
+| 11d. Question Novelty (cross-system) | N/A         | 84.8%       | Tie       | % of questions with cross-system max cosine sim < 0.85               |
+| 11e. Reason–Insight Coherence        | N/A         | 0.553       | Tie       | Mean cosine(Embed(reason), Embed(insight)) — reason grounding        |
 
 ---
 
 ## Conclusion
 
-**Overall Winner**: QUIS (6 vs 18 metrics won)
+**Overall Winner**: QUIS (6 vs 15 metrics won)
 

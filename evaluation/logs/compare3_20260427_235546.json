@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-04-27T23:55:46.129057",
+  "script": "compare3",
+  "arguments": {
+    "dataset": "adidas",
+    "output": null
+  },
+  "config": {
+    "dataset": "adidas",
+    "data_path": "data/adidas_cleaned.csv",
+    "profile_path": "baseline/auto_eda_agent/output_adidas/step1_profiling/profile.json",
+    "quis_insights_path": "quis_results/quis_20260427_183417_adidas_cleaned/insights_summary.json",
+    "baseline_insights_path": "baseline/auto_eda_agent/output_adidas/quis_format/insights_summary.json",
+    "onlystats_insights_path": "onlystats_results/onlystats_20260427_235046_adidas_cleaned_v5/insights_summary.json",
+    "results_dir": "evaluation/evaluation_results/adidas"
+  }
+}

@@ -1737,7 +1737,12 @@ Extract as many valuable insights as possible."""
                         continue
 
                 # 4. Compute view_labels
-                view_labels = sorted(filtered_df[breakdown_col].dropna().unique().tolist())
+                # Convert datetime columns to YYYY-MM-DD string format to match evaluation format
+                breakdown_series = filtered_df[breakdown_col].dropna()
+                if pd.api.types.is_datetime64_any_dtype(breakdown_series):
+                    view_labels = sorted(breakdown_series.dt.strftime('%Y-%m-%d').unique().tolist())
+                else:
+                    view_labels = sorted(breakdown_series.astype(str).unique().tolist())
 
                 # If view_labels is empty: drop insight
                 if not view_labels:

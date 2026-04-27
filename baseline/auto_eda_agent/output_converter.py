@@ -289,6 +289,7 @@ class OutputConverter:
         """
         Convert string labels back to original data types to match cleaned data.
         QUIS compute_view returns strings, but we need original types for faithfulness.
+        Also handles datetime label conversion from ISO format to YYYY-MM-DD.
         """
         if breakdown not in self.df.columns:
             return labels
@@ -299,32 +300,26 @@ class OutputConverter:
         if len(sample_values) == 0:
             return labels
         
-        # Determine target type from first non-null value
-        first_val = sample_values.iloc[0]
-        target_type = type(first_val)
+        # Check if breakdown is datetime column
+        if pd.api.types.is_datetime64_any_dtype(self.df[breakdown]):
+            # Convert ISO datetime format to YYYY-MM-DD
+            fixed_labels = []
+            for label in labels:
+                try:
+                    # Handle ISO format: "2020-01-01T00:00:00" -> "2020-01-01"
+                    if isinstance(label, str) and "T" in label:
+                        fixed_labels.append(label.split("T")[0])
+                    else:
+                        fixed_labels.append(str(label))
+                except:
+                    fixed_labels.append(str(label))
+            return fixed_labels
         
-        # Convert labels to target type
+        # For non-datetime columns, keep labels as strings to match evaluation behavior
+        # Evaluation converts labels to strings before comparison, so we should too
         fixed_labels = []
         for label in labels:
-            try:
-                if target_type == int:
-                    fixed_labels.append(int(float(label)))
-                elif target_type == float:
-                    fixed_labels.append(float(label))
-                elif target_type == str:
-                    fixed_labels.append(str(label))
-                else:
-                    # For other types, try to convert to int/float first
-                    try:
-                        fixed_labels.append(int(float(label)))
-                    except:
-                        try:
-                            fixed_labels.append(float(label))
-                        except:
-                            fixed_labels.append(str(label))
-            except:
-                # If conversion fails, keep original
-                fixed_labels.append(label)
+            fixed_labels.append(str(label))
         
         return fixed_labels
 
@@ -361,6 +356,7 @@ class OutputConverter:
         # Compute view (labels and values) with actual subspace
         try:
             labels, values = compute_view(self.df, breakdown, measure, ifq_subspace)
+            print(f"      Computed with compute_view: {len(labels)} labels, first value: {values[0] if values else 'N/A'}")
             # Convert string labels back to original data types to match cleaned data
             labels = self._fix_label_types(labels, breakdown)
             # Remove duplicates to avoid faithfulness errors
@@ -373,7 +369,11 @@ class OutputConverter:
                     unique_labels.append(label)
                     unique_values.append(value)
             labels, values = unique_labels, unique_values
-        except:
+            print(f"      After dedup: {len(labels)} labels, first value: {values[0] if values else 'N/A'}")
+        except Exception as e:
+            print(f"      compute_view failed: {e}, using fallback")
+            import traceback
+            traceback.print_exc()
             # Fallback: compute manually
             labels, values = self._compute_view_fallback(breakdown, measure)
         
@@ -381,7 +381,7 @@ class OutputConverter:
         question = self._generate_question(baseline_type, breakdown, measure, baseline_insight.get('title', ''))
         reason = baseline_insight.get('description', '')
         
-        return {
+        result = {
             'insight': {
                 'breakdown': breakdown,
                 'measure': measure,
@@ -394,6 +394,12 @@ class OutputConverter:
                 'view_values': values
             }
         }
+        
+        # Debug: print first value to verify
+        if values and len(values) > 0:
+            print(f"      Writing to file: first value = {values[0]}")
+        
+        return result
     
     def _generate_explanation(self, insight: Dict) -> str:
         """
@@ -495,6 +501,18 @@ def convert_baseline_output(data_path: str, insights_path: str, output_dir: str)
     # Load data with same cleaning as baseline agent
     df = pd.read_csv(data_path, sep=None, engine='python')
     df = _clean_dataframe_like_ifq(df, data_path)
+    
+    # Parse datetime columns (same as evaluation data_loader)
+    for col in df.columns:
+        col_lower = col.lower()
+        if any(date_keyword in col_lower for date_keyword in ['date', 'ngày', 'ngay', 'time']):
+            if df[col].dtype == object or 'str' in str(df[col].dtype).lower():
+                try:
+                    df[col] = pd.to_datetime(df[col], dayfirst=True, errors="coerce")
+                    if df[col].notna().sum() > 0:
+                        print(f"Parsed {col} as datetime")
+                except Exception:
+                    pass
     
     # Convert
     converter = OutputConverter(df)

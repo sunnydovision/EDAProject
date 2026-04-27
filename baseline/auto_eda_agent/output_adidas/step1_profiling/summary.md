@@ -12,13 +12,8 @@
 ### High Importance Columns
 
 **Retailer**
-- Meaning: Name of the retail chain or sales partner responsible for the sale record.
+- Meaning: Name of the retail chain or sales partner responsible for the sale.
 - Type: Categorical
-- Missing: 0.0%
-
-**Retailer ID**
-- Meaning: Identifier assigned to the retailer or retail account.
-- Type: ID
 - Missing: 0.0%
 
 **Invoice Date**
@@ -27,7 +22,7 @@
 - Missing: 0.0%
 
 **State**
-- Meaning: U.S. state where the sale, customer, or retail location is associated.
+- Meaning: U.S. state where the sale, customer, or store is located.
 - Type: Categorical
 - Missing: 0.0%
 
@@ -42,22 +37,17 @@
 - Missing: 0.0%
 
 **Units Sold**
-- Meaning: Quantity of product units sold in the record.
+- Meaning: Quantity of product units sold in the transaction or aggregated sales record.
 - Type: Numerical
 - Missing: 0.0%
 
 **Total Sales**
-- Meaning: Gross sales revenue generated for the record before deducting operating costs.
+- Meaning: Gross sales revenue generated for the transaction or aggregated record before deducting costs.
 - Type: Numerical
 - Missing: 0.0%
 
 **Operating Profit**
-- Meaning: Profit from operations for the sale record after operating costs, likely before taxes and non-operating items.
-- Type: Numerical
-- Missing: 0.0%
-
-**Operating Margin**
-- Meaning: Operating profit margin for the record, likely expressed as a percentage of Total Sales.
+- Meaning: Profit from operations for the sale record after operating costs, likely at transaction aggregate or reporting-line level.
 - Type: Numerical
 - Missing: 0.0%
 

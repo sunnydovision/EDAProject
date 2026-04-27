@@ -210,7 +210,7 @@ def _recompute_values(df: pd.DataFrame, breakdown: str, col: str, agg: str):
             # Handle COUNT(*) wildcard
             if col == "*":
                 return df.groupby(breakdown).size()
-            return df.groupby(breakdown)[col].size()
+            return df.groupby(breakdown)[col].count()
         elif agg.upper() == 'MAX':
             return df.groupby(breakdown)[col].max()
         elif agg.upper() == 'MIN':
@@ -259,8 +259,9 @@ def _compare_values(view_labels, view_values, recomputed, sep: str, pattern: str
         """Normalize label to handle integer vs float string mismatch."""
         try:
             as_float = float(label)
-            if as_float == int(as_float):
-                return str(int(as_float))
+            # Only convert if very close to integer (e.g., 1.0 -> 1, not 1.025 -> 1)
+            if abs(as_float - round(as_float)) < 0.001:  # Very strict threshold
+                return str(int(round(as_float)))
             return label
         except:
             return label
@@ -275,6 +276,9 @@ def _compare_values(view_labels, view_values, recomputed, sep: str, pattern: str
         if conv_label in recomputed.index:
             reported = reported_values[orig_label]
             recomputed_val = recomputed[conv_label]
+            # Handle case where recomputed_val is a Series (duplicate labels)
+            if isinstance(recomputed_val, pd.Series):
+                recomputed_val = recomputed_val.iloc[0]  # Take first value
             delta = abs(reported - recomputed_val)
             if delta <= epsilon:
                 continue  # Matched
@@ -343,12 +347,31 @@ def _get_failure_reason(view_labels, view_values, recomputed, sep: str, pattern:
     # Convert recomputed index to strings
     recomputed.index = recomputed.index.astype(str)
     
+    # Normalize labels to handle integer vs float string mismatch (same as _compare_values)
+    def normalize_label(label: str) -> str:
+        """Normalize label to handle integer vs float string mismatch."""
+        try:
+            as_float = float(label)
+            # Only convert if very close to integer (e.g., 1.0 -> 1, not 1.025 -> 1)
+            if abs(as_float - round(as_float)) < 0.001:  # Very strict threshold
+                return str(int(round(as_float)))
+            return label
+        except:
+            return label
+    
+    # Normalize both converted labels and recomputed index
+    converted_labels = [normalize_label(l) for l in converted_labels]
+    recomputed.index = [normalize_label(str(i)) for i in recomputed.index]
+    
     # Find first mismatch - use same 3-case comparison logic
     for orig_label, conv_label in zip(view_labels, converted_labels):
         # Case 1: Direct string match
         if conv_label in recomputed.index:
             reported = reported_values[orig_label]
             recomputed_val = recomputed[conv_label]
+            # Handle case where recomputed_val is a Series (duplicate labels)
+            if isinstance(recomputed_val, pd.Series):
+                recomputed_val = recomputed_val.iloc[0]  # Take first value
             delta = abs(reported - recomputed_val)
             if delta > epsilon:
                 return f'Value mismatch for "{orig_label}": reported={reported}, recomputed={recomputed_val}, delta={delta:.2e}'

@@ -3,430 +3,300 @@
   "num_cards": 75,
   "num_insights": 75,
   "score_uplift_from_subspace": {
-    "num_with_subspace_scored": 0,
-    "num_without_subspace_scored": 0,
-    "mean_score_with_subspace": null,
-    "mean_score_without_subspace": null,
-    "score_uplift_abs": null,
-    "score_uplift_ratio": null,
-    "score_uplift_direction": null
+    "num_with_subspace_scored": 18,
+    "num_without_subspace_scored": 16,
+    "mean_score_with_subspace": 0.525,
+    "mean_score_without_subspace": 0.6596,
+    "score_uplift_abs": -0.1346,
+    "score_uplift_ratio": 0.796,
+    "score_uplift_direction": "down"
   },
   "faithfulness": {
-    "faithfulness": 0.0,
-    "verified_count": 0,
+    "faithfulness": 1.0,
+    "verified_count": 75,
     "total_count": 75,
-    "hallucination_count": 75,
-    "hallucination_rate": 1.0,
-    "_failed_insights": [
-      {
-        "idx": 0,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 1,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 2,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 3,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 4,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 5,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 6,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 7,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 8,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 9,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 10,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 11,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 12,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 13,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 14,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 15,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 16,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 17,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 18,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 19,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 20,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 21,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 22,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 23,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 24,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 25,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 26,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 27,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 28,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 29,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 30,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 31,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 32,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 33,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 34,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 35,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 36,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 37,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 38,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 39,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 40,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 41,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 42,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 43,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 44,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 45,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 46,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 47,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 48,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 49,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 50,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 51,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 52,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 53,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 54,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 55,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 56,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 57,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 58,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 59,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 60,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 61,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 62,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 63,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 64,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 65,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 66,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 67,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 68,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 69,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 70,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 71,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 72,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 73,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      },
-      {
-        "idx": 74,
-        "reason": "Missing breakdown, measure, view_labels, or view_values",
-        "pattern": null
-      }
-    ]
+    "hallucination_count": 0,
+    "hallucination_rate": 0.0,
+    "_failed_insights": []
   },
   "insight_significance": {
-    "avg_effect_size": 0.0,
-    "significant_count": 0,
-    "significant_rate": 0.0,
-    "max_effect_size": 0.0,
-    "total_evaluated": 0,
+    "avg_effect_size": 0.5883294117647059,
+    "significant_count": 33,
+    "significant_rate": 0.9705882352941176,
+    "pattern_avg_significance": 0.7321428571428572,
+    "max_effect_size": 0.9208,
+    "total_evaluated": 34,
     "by_pattern": {
       "TREND": {
-        "significant_count": 0,
-        "total_count": 0,
-        "significant_rate": 0.0
+        "significant_count": 16,
+        "total_count": 16,
+        "significant_rate": 1.0,
+        "insights": [
+          {
+            "breakdown": "Invoice Date",
+            "col": "Total Sales",
+            "p_value": 0.0,
+            "effect_size": 0.5919,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Invoice Date",
+            "col": "Price per Unit",
+            "p_value": 0.0,
+            "effect_size": 0.201,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Invoice Date",
+            "col": "Units Sold",
+            "p_value": 0.0,
+            "effect_size": 0.4635,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Invoice Date",
+            "col": "Operating Profit",
+            "p_value": 0.0,
+            "effect_size": 0.5925,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Invoice Date",
+            "col": "Total Sales",
+            "p_value": 0.0,
+            "effect_size": 0.5919,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Invoice Date",
+            "col": "Price per Unit",
+            "p_value": 0.0,
+            "effect_size": 0.201,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Invoice Date",
+            "col": "Total Sales",
+            "p_value": 0.0,
+            "effect_size": 0.5919,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Invoice Date",
+            "col": "Operating Profit",
+            "p_value": 0.0,
+            "effect_size": 0.5925,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Invoice Date",
+            "col": "Retailer ID",
+            "p_value": 1.1e-05,
+            "effect_size": 0.0376,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Invoice Date",
+            "col": "Units Sold",
+            "p_value": 0.0,
+            "effect_size": 0.4635,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Invoice Date",
+            "col": "Total Sales",
+            "p_value": 0.0,
+            "effect_size": 0.5919,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Invoice Date",
+            "col": "Operating Profit",
+            "p_value": 0.0,
+            "effect_size": 0.5925,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Invoice Date",
+            "col": "Operating Margin",
+            "p_value": 0.0,
+            "effect_size": 0.2753,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Invoice Date",
+            "col": "Total Sales",
+            "p_value": 0.0,
+            "effect_size": 0.5919,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Invoice Date",
+            "col": "Price per Unit",
+            "p_value": 0.0,
+            "effect_size": 0.201,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Invoice Date",
+            "col": "Total Sales",
+            "p_value": 0.0,
+            "effect_size": 0.5919,
+            "significant": "True"
+          }
+        ]
       },
       "OUTSTANDING_VALUE": {
-        "significant_count": 0,
-        "total_count": 0,
-        "significant_rate": 0.0
+        "significant_count": 13,
+        "total_count": 14,
+        "significant_rate": 0.9285714285714286,
+        "insights": [
+          {
+            "breakdown": "Operating Profit",
+            "col": "Operating Profit",
+            "p_value": 0.0,
+            "effect_size": 0.9173,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Total Sales",
+            "col": "Total Sales",
+            "p_value": 0.0,
+            "effect_size": 0.9208,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Units Sold",
+            "col": "Units Sold",
+            "p_value": 1e-06,
+            "effect_size": 0.8283,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Price per Unit",
+            "col": "Price per Unit",
+            "p_value": 1.7e-05,
+            "effect_size": 0.8058,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Operating Margin",
+            "col": "Operating Margin",
+            "p_value": 2e-06,
+            "effect_size": 0.8211,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Units Sold",
+            "col": "Total Sales",
+            "p_value": 5e-06,
+            "effect_size": 0.8158,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Region",
+            "col": "Operating Profit",
+            "p_value": 0.036471,
+            "effect_size": 0.642,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Sales Method",
+            "col": "Units Sold",
+            "p_value": 0.099251,
+            "effect_size": 0.5625,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Operating Margin",
+            "col": "Operating Profit",
+            "p_value": 0.002317,
+            "effect_size": 0.739,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Total Sales",
+            "col": "Operating Profit",
+            "p_value": 0.0,
+            "effect_size": 0.8924,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Price per Unit",
+            "col": "Total Sales",
+            "p_value": 5e-06,
+            "effect_size": 0.8154,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Total Sales",
+            "col": "Units Sold",
+            "p_value": 0.0,
+            "effect_size": 0.8355,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Units Sold",
+            "col": "Price per Unit",
+            "p_value": 0.001885,
+            "effect_size": 0.7434,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Operating Profit",
+            "col": "Total Sales",
+            "p_value": 0.0,
+            "effect_size": 0.8507,
+            "significant": "True"
+          }
+        ]
       },
       "ATTRIBUTION": {
         "significant_count": 0,
         "total_count": 0,
-        "significant_rate": 0.0
+        "significant_rate": 0.0,
+        "insights": []
       },
       "DISTRIBUTION_DIFFERENCE": {
-        "significant_count": 0,
-        "total_count": 0,
-        "significant_rate": 0.0
+        "significant_count": 4,
+        "total_count": 4,
+        "significant_rate": 1.0,
+        "insights": [
+          {
+            "breakdown": "Sales Method",
+            "col": "Price per Unit",
+            "p_value": 0.0,
+            "effect_size": 0.225,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Sales Method",
+            "col": "Total Sales",
+            "p_value": 0.0,
+            "effect_size": 0.6149,
+            "significant": "True"
+          },
+          {
+            "breakdown": "State",
+            "col": "Units Sold",
+            "p_value": 2e-06,
+            "effect_size": 0.1866,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Sales Method",
+            "col": "Total Sales",
+            "p_value": 0.0,
+            "effect_size": 0.6149,
+            "significant": "True"
+          }
+        ]
       }
     }
   },
   "question_diversity": {
-    "semantic_diversity": 0.3174120783805847,
-    "avg_similarity": 0.6825879216194153,
+    "semantic_diversity": 0.38805538415908813,
+    "avg_similarity": 0.6119446158409119,
     "num_insights": 75,
     "subspace_diversity": {
       "subspace_diversity_entropy": 1.3728782512617559,
@@ -446,45 +316,241 @@
       "unique_pairs": 10,
       "total_pairs": 32
     },
-    "dedup_rate": 0.8533333333333333,
-    "unique_count": 11,
+    "dedup_rate": 0.0,
+    "unique_count": 75,
     "total_count": 75,
-    "duplicate_count": 64
+    "duplicate_count": 0
   },
   "bm_quality": {
-    "nmi_mean": 0.0,
-    "int_mean": 0.0,
-    "actionability": 0.0,
-    "bm_diversity": 0.0,
-    "total_evaluated": 0,
-    "total_categorical": 0,
+    "nmi_mean": 0.3314,
+    "int_mean": 0.0899,
+    "actionability": 0.4583,
+    "bm_diversity": 0.32,
+    "total_evaluated": 24,
+    "total_categorical": 11,
     "total_insights": 75,
-    "pairs": []
+    "pairs": [
+      {
+        "breakdown": "Invoice Date",
+        "col": "Total Sales",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.5119,
+        "interestingness": 0.0381
+      },
+      {
+        "breakdown": "Invoice Date",
+        "col": "Price per Unit",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.6152,
+        "interestingness": 0.1674
+      },
+      {
+        "breakdown": "Invoice Date",
+        "col": "Units Sold",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.6111,
+        "interestingness": 0.0546
+      },
+      {
+        "breakdown": "Invoice Date",
+        "col": "Operating Profit",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.4963,
+        "interestingness": 0.037
+      },
+      {
+        "breakdown": "Units Sold",
+        "col": "Total Sales",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Region",
+        "col": "Operating Profit",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.0348,
+        "interestingness": 0.0156
+      },
+      {
+        "breakdown": "Sales Method",
+        "col": "Units Sold",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.0864,
+        "interestingness": 0.1263
+      },
+      {
+        "breakdown": "Total Sales",
+        "col": "Operating Profit",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Units Sold",
+        "col": "Operating Profit",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Operating Margin",
+        "col": "Total Sales",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Price per Unit",
+        "col": "Units Sold",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Sales Method",
+        "col": "Price per Unit",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.1172,
+        "interestingness": 0.0266
+      },
+      {
+        "breakdown": "Invoice Date",
+        "col": "Retailer ID",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.3785,
+        "interestingness": 0.1396
+      },
+      {
+        "breakdown": "Operating Margin",
+        "col": "Operating Profit",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Price per Unit",
+        "col": "Total Sales",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Total Sales",
+        "col": "Operating Margin",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Total Sales",
+        "col": "Price per Unit",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Sales Method",
+        "col": "Total Sales",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.1309,
+        "interestingness": 0.1578
+      },
+      {
+        "breakdown": "State",
+        "col": "Units Sold",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.114,
+        "interestingness": 0.163
+      },
+      {
+        "breakdown": "Price per Unit",
+        "col": "Operating Profit",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Invoice Date",
+        "col": "Operating Margin",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.5496,
+        "interestingness": 0.0632
+      },
+      {
+        "breakdown": "Total Sales",
+        "col": "Units Sold",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Units Sold",
+        "col": "Price per Unit",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Operating Profit",
+        "col": "Total Sales",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      }
+    ]
   },
   "question_quality": {
     "question_diversity": {
-      "question_diversity": 0.0,
-      "avg_similarity": 0.0,
-      "num_questions": 0
+      "question_diversity": 0.5476856827735901,
+      "avg_similarity": 0.4523143172264099,
+      "num_questions": 75
     },
     "question_specificity": {
-      "question_specificity_mean": 0.0,
-      "question_specificity_std": 0.0,
-      "num_questions": 0
+      "question_specificity_mean": 12.746666666666666,
+      "question_specificity_std": 5.028169536609608,
+      "num_questions": 75
     },
     "question_insight_alignment": {
-      "question_insight_alignment": 0.0,
-      "num_pairs": 0
+      "question_insight_alignment": 0.5792601108551025,
+      "question_insight_alignment_std": 0.19771306216716766,
+      "num_pairs": 75
     },
     "reason_insight_coherence": {
-      "reason_insight_coherence": 0.0,
-      "num_pairs": 0
+      "reason_insight_coherence": 0.5268006920814514,
+      "reason_insight_coherence_std": 0.10347648710012436,
+      "num_pairs": 75
     },
     "question_novelty": {
-      "question_novelty": 0.0,
-      "novel_count": 0,
-      "total_count": 0,
-      "avg_max_similarity": 0.0,
+      "question_novelty": 1.0,
+      "novel_count": 75,
+      "total_count": 75,
+      "avg_max_similarity": 0.6587510704994202,
+      "tau": 0.85,
       "compared_against": "QUIS"
     }
   },
@@ -504,10 +570,10 @@
     "model": "gpt-5.4"
   },
   "insight_novelty": {
-    "novelty": 1.0,
-    "novel_count": 75,
+    "novelty": 0.8,
+    "novel_count": 60,
     "total_count": 75,
-    "avg_max_similarity": 0.33759087324142456,
+    "avg_max_similarity": 0.7935463190078735,
     "tau": 0.85,
     "compared_against": "QUIS"
   },
@@ -515,213 +581,86 @@
     "total_with_subspace": 32,
     "total_original": 32,
     "faithfulness": {
-      "faithfulness": 0.0,
-      "verified_count": 0,
+      "faithfulness": 1.0,
+      "verified_count": 32,
       "total_count": 32,
-      "hallucination_count": 32,
-      "hallucination_rate": 1.0,
-      "_failed_insights": [
-        {
-          "idx": 0,
-          "reason": "Missing breakdown, measure, view_labels, or view_values",
-          "pattern": null
-        },
-        {
-          "idx": 1,
-          "reason": "Missing breakdown, measure, view_labels, or view_values",
-          "pattern": null
-        },
-        {
-          "idx": 2,
-          "reason": "Missing breakdown, measure, view_labels, or view_values",
-          "pattern": null
-        },
-        {
-          "idx": 3,
-          "reason": "Missing breakdown, measure, view_labels, or view_values",
-          "pattern": null
-        },
-        {
-          "idx": 4,
-          "reason": "Missing breakdown, measure, view_labels, or view_values",
-          "pattern": null
-        },
-        {
-          "idx": 5,
-          "reason": "Missing breakdown, measure, view_labels, or view_values",
-          "pattern": null
-        },
-        {
-          "idx": 6,
-          "reason": "Missing breakdown, measure, view_labels, or view_values",
-          "pattern": null
-        },
-        {
-          "idx": 7,
-          "reason": "Missing breakdown, measure, view_labels, or view_values",
-          "pattern": null
-        },
-        {
-          "idx": 8,
-          "reason": "Missing breakdown, measure, view_labels, or view_values",
-          "pattern": null
-        },
-        {
-          "idx": 9,
-          "reason": "Missing breakdown, measure, view_labels, or view_values",
-          "pattern": null
-        },
-        {
-          "idx": 10,
-          "reason": "Missing breakdown, measure, view_labels, or view_values",
-          "pattern": null
-        },
-        {
-          "idx": 11,
-          "reason": "Missing breakdown, measure, view_labels, or view_values",
-          "pattern": null
-        },
-        {
-          "idx": 12,
-          "reason": "Missing breakdown, measure, view_labels, or view_values",
-          "pattern": null
-        },
-        {
-          "idx": 13,
-          "reason": "Missing breakdown, measure, view_labels, or view_values",
-          "pattern": null
-        },
-        {
-          "idx": 14,
-          "reason": "Missing breakdown, measure, view_labels, or view_values",
-          "pattern": null
-        },
-        {
-          "idx": 15,
-          "reason": "Missing breakdown, measure, view_labels, or view_values",
-          "pattern": null
-        },
-        {
-          "idx": 16,
-          "reason": "Missing breakdown, measure, view_labels, or view_values",
-          "pattern": null
-        },
-        {
-          "idx": 17,
-          "reason": "Missing breakdown, measure, view_labels, or view_values",
-          "pattern": null
-        },
-        {
-          "idx": 18,
-          "reason": "Missing breakdown, measure, view_labels, or view_values",
-          "pattern": null
-        },
-        {
-          "idx": 19,
-          "reason": "Missing breakdown, measure, view_labels, or view_values",
-          "pattern": null
-        },
-        {
-          "idx": 20,
-          "reason": "Missing breakdown, measure, view_labels, or view_values",
-          "pattern": null
-        },
-        {
-          "idx": 21,
-          "reason": "Missing breakdown, measure, view_labels, or view_values",
-          "pattern": null
-        },
-        {
-          "idx": 22,
-          "reason": "Missing breakdown, measure, view_labels, or view_values",
-          "pattern": null
-        },
-        {
-          "idx": 23,
-          "reason": "Missing breakdown, measure, view_labels, or view_values",
-          "pattern": null
-        },
-        {
-          "idx": 24,
-          "reason": "Missing breakdown, measure, view_labels, or view_values",
-          "pattern": null
-        },
-        {
-          "idx": 25,
-          "reason": "Missing breakdown, measure, view_labels, or view_values",
-          "pattern": null
-        },
-        {
-          "idx": 26,
-          "reason": "Missing breakdown, measure, view_labels, or view_values",
-          "pattern": null
-        },
-        {
-          "idx": 27,
-          "reason": "Missing breakdown, measure, view_labels, or view_values",
-          "pattern": null
-        },
-        {
-          "idx": 28,
-          "reason": "Missing breakdown, measure, view_labels, or view_values",
-          "pattern": null
-        },
-        {
-          "idx": 29,
-          "reason": "Missing breakdown, measure, view_labels, or view_values",
-          "pattern": null
-        },
-        {
-          "idx": 30,
-          "reason": "Missing breakdown, measure, view_labels, or view_values",
-          "pattern": null
-        },
-        {
-          "idx": 31,
-          "reason": "Missing breakdown, measure, view_labels, or view_values",
-          "pattern": null
-        }
-      ]
+      "hallucination_count": 0,
+      "hallucination_rate": 0.0,
+      "_failed_insights": []
     },
     "significance": {
-      "avg_effect_size": 0.0,
-      "significant_count": 0,
-      "significant_rate": 0.0,
-      "max_effect_size": 0.0,
-      "total_evaluated": 0,
+      "avg_effect_size": 0.6996499999999999,
+      "significant_count": 3,
+      "significant_rate": 0.75,
+      "pattern_avg_significance": 0.1875,
+      "max_effect_size": 0.8507,
+      "total_evaluated": 4,
       "by_pattern": {
         "TREND": {
           "significant_count": 0,
           "total_count": 0,
-          "significant_rate": 0.0
+          "significant_rate": 0.0,
+          "insights": []
         },
         "OUTSTANDING_VALUE": {
-          "significant_count": 0,
-          "total_count": 0,
-          "significant_rate": 0.0
+          "significant_count": 3,
+          "total_count": 4,
+          "significant_rate": 0.75,
+          "insights": [
+            {
+              "breakdown": "Region",
+              "col": "Operating Profit",
+              "p_value": 0.036471,
+              "effect_size": 0.642,
+              "significant": "True"
+            },
+            {
+              "breakdown": "Sales Method",
+              "col": "Units Sold",
+              "p_value": 0.099251,
+              "effect_size": 0.5625,
+              "significant": "False"
+            },
+            {
+              "breakdown": "Units Sold",
+              "col": "Price per Unit",
+              "p_value": 0.001885,
+              "effect_size": 0.7434,
+              "significant": "True"
+            },
+            {
+              "breakdown": "Operating Profit",
+              "col": "Total Sales",
+              "p_value": 0.0,
+              "effect_size": 0.8507,
+              "significant": "True"
+            }
+          ]
         },
         "ATTRIBUTION": {
           "significant_count": 0,
           "total_count": 0,
-          "significant_rate": 0.0
+          "significant_rate": 0.0,
+          "insights": []
         },
         "DISTRIBUTION_DIFFERENCE": {
           "significant_count": 0,
           "total_count": 0,
-          "significant_rate": 0.0
+          "significant_rate": 0.0,
+          "insights": []
         }
       }
     },
     "novelty": {
-      "novelty": 1.0,
-      "novel_count": 32,
+      "novelty": 0.96875,
+      "novel_count": 31,
       "total_count": 32,
-      "avg_max_similarity": 0.5033930540084839,
+      "avg_max_similarity": 0.7403258085250854,
       "tau": 0.85
     },
     "diversity": {
-      "semantic_diversity": 0.42282634973526,
-      "avg_similarity": 0.57717365026474,
+      "semantic_diversity": 0.3644419312477112,
+      "avg_similarity": 0.6355580687522888,
       "num_insights": 32,
       "subspace_diversity": {
         "subspace_diversity_entropy": 1.3728782512617559,
@@ -741,10 +680,10 @@
         "unique_pairs": 10,
         "total_pairs": 32
       },
-      "dedup_rate": 0.6875,
-      "unique_count": 10,
+      "dedup_rate": 0.0,
+      "unique_count": 32,
       "total_count": 32,
-      "duplicate_count": 22
+      "duplicate_count": 0
     }
   }
 }

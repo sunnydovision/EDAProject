@@ -1,0 +1,422 @@
+[
+  {
+    "question": "How does SUM(Price per Unit) vary by Retailer?",
+    "reason": "Statistics-based analysis: SUM(Price per Unit) grouped by Retailer.",
+    "breakdown": "Retailer",
+    "measure": "SUM(Price per Unit)"
+  },
+  {
+    "question": "How does MEAN(Price per Unit) vary by Retailer?",
+    "reason": "Statistics-based analysis: MEAN(Price per Unit) grouped by Retailer.",
+    "breakdown": "Retailer",
+    "measure": "MEAN(Price per Unit)"
+  },
+  {
+    "question": "How does SUM(Units Sold) vary by Retailer?",
+    "reason": "Statistics-based analysis: SUM(Units Sold) grouped by Retailer.",
+    "breakdown": "Retailer",
+    "measure": "SUM(Units Sold)"
+  },
+  {
+    "question": "How does MEAN(Units Sold) vary by Retailer?",
+    "reason": "Statistics-based analysis: MEAN(Units Sold) grouped by Retailer.",
+    "breakdown": "Retailer",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "How does SUM(Total Sales) vary by Retailer?",
+    "reason": "Statistics-based analysis: SUM(Total Sales) grouped by Retailer.",
+    "breakdown": "Retailer",
+    "measure": "SUM(Total Sales)"
+  },
+  {
+    "question": "How does MEAN(Total Sales) vary by Retailer?",
+    "reason": "Statistics-based analysis: MEAN(Total Sales) grouped by Retailer.",
+    "breakdown": "Retailer",
+    "measure": "MEAN(Total Sales)"
+  },
+  {
+    "question": "How does SUM(Operating Profit) vary by Retailer?",
+    "reason": "Statistics-based analysis: SUM(Operating Profit) grouped by Retailer.",
+    "breakdown": "Retailer",
+    "measure": "SUM(Operating Profit)"
+  },
+  {
+    "question": "How does MEAN(Operating Profit) vary by Retailer?",
+    "reason": "Statistics-based analysis: MEAN(Operating Profit) grouped by Retailer.",
+    "breakdown": "Retailer",
+    "measure": "MEAN(Operating Profit)"
+  },
+  {
+    "question": "How does SUM(Operating Margin) vary by Retailer?",
+    "reason": "Statistics-based analysis: SUM(Operating Margin) grouped by Retailer.",
+    "breakdown": "Retailer",
+    "measure": "SUM(Operating Margin)"
+  },
+  {
+    "question": "How does MEAN(Operating Margin) vary by Retailer?",
+    "reason": "Statistics-based analysis: MEAN(Operating Margin) grouped by Retailer.",
+    "breakdown": "Retailer",
+    "measure": "MEAN(Operating Margin)"
+  },
+  {
+    "question": "How does SUM(Price per Unit) vary by Invoice Date?",
+    "reason": "Statistics-based analysis: SUM(Price per Unit) grouped by Invoice Date.",
+    "breakdown": "Invoice Date",
+    "measure": "SUM(Price per Unit)"
+  },
+  {
+    "question": "How does MEAN(Price per Unit) vary by Invoice Date?",
+    "reason": "Statistics-based analysis: MEAN(Price per Unit) grouped by Invoice Date.",
+    "breakdown": "Invoice Date",
+    "measure": "MEAN(Price per Unit)"
+  },
+  {
+    "question": "How does SUM(Units Sold) vary by Invoice Date?",
+    "reason": "Statistics-based analysis: SUM(Units Sold) grouped by Invoice Date.",
+    "breakdown": "Invoice Date",
+    "measure": "SUM(Units Sold)"
+  },
+  {
+    "question": "How does MEAN(Units Sold) vary by Invoice Date?",
+    "reason": "Statistics-based analysis: MEAN(Units Sold) grouped by Invoice Date.",
+    "breakdown": "Invoice Date",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "How does SUM(Total Sales) vary by Invoice Date?",
+    "reason": "Statistics-based analysis: SUM(Total Sales) grouped by Invoice Date.",
+    "breakdown": "Invoice Date",
+    "measure": "SUM(Total Sales)"
+  },
+  {
+    "question": "How does MEAN(Total Sales) vary by Invoice Date?",
+    "reason": "Statistics-based analysis: MEAN(Total Sales) grouped by Invoice Date.",
+    "breakdown": "Invoice Date",
+    "measure": "MEAN(Total Sales)"
+  },
+  {
+    "question": "How does SUM(Operating Profit) vary by Invoice Date?",
+    "reason": "Statistics-based analysis: SUM(Operating Profit) grouped by Invoice Date.",
+    "breakdown": "Invoice Date",
+    "measure": "SUM(Operating Profit)"
+  },
+  {
+    "question": "How does MEAN(Operating Profit) vary by Invoice Date?",
+    "reason": "Statistics-based analysis: MEAN(Operating Profit) grouped by Invoice Date.",
+    "breakdown": "Invoice Date",
+    "measure": "MEAN(Operating Profit)"
+  },
+  {
+    "question": "How does SUM(Operating Margin) vary by Invoice Date?",
+    "reason": "Statistics-based analysis: SUM(Operating Margin) grouped by Invoice Date.",
+    "breakdown": "Invoice Date",
+    "measure": "SUM(Operating Margin)"
+  },
+  {
+    "question": "How does MEAN(Operating Margin) vary by Invoice Date?",
+    "reason": "Statistics-based analysis: MEAN(Operating Margin) grouped by Invoice Date.",
+    "breakdown": "Invoice Date",
+    "measure": "MEAN(Operating Margin)"
+  },
+  {
+    "question": "How does SUM(Price per Unit) vary by Region?",
+    "reason": "Statistics-based analysis: SUM(Price per Unit) grouped by Region.",
+    "breakdown": "Region",
+    "measure": "SUM(Price per Unit)"
+  },
+  {
+    "question": "How does MEAN(Price per Unit) vary by Region?",
+    "reason": "Statistics-based analysis: MEAN(Price per Unit) grouped by Region.",
+    "breakdown": "Region",
+    "measure": "MEAN(Price per Unit)"
+  },
+  {
+    "question": "How does SUM(Units Sold) vary by Region?",
+    "reason": "Statistics-based analysis: SUM(Units Sold) grouped by Region.",
+    "breakdown": "Region",
+    "measure": "SUM(Units Sold)"
+  },
+  {
+    "question": "How does MEAN(Units Sold) vary by Region?",
+    "reason": "Statistics-based analysis: MEAN(Units Sold) grouped by Region.",
+    "breakdown": "Region",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "How does SUM(Total Sales) vary by Region?",
+    "reason": "Statistics-based analysis: SUM(Total Sales) grouped by Region.",
+    "breakdown": "Region",
+    "measure": "SUM(Total Sales)"
+  },
+  {
+    "question": "How does MEAN(Total Sales) vary by Region?",
+    "reason": "Statistics-based analysis: MEAN(Total Sales) grouped by Region.",
+    "breakdown": "Region",
+    "measure": "MEAN(Total Sales)"
+  },
+  {
+    "question": "How does SUM(Operating Profit) vary by Region?",
+    "reason": "Statistics-based analysis: SUM(Operating Profit) grouped by Region.",
+    "breakdown": "Region",
+    "measure": "SUM(Operating Profit)"
+  },
+  {
+    "question": "How does MEAN(Operating Profit) vary by Region?",
+    "reason": "Statistics-based analysis: MEAN(Operating Profit) grouped by Region.",
+    "breakdown": "Region",
+    "measure": "MEAN(Operating Profit)"
+  },
+  {
+    "question": "How does SUM(Operating Margin) vary by Region?",
+    "reason": "Statistics-based analysis: SUM(Operating Margin) grouped by Region.",
+    "breakdown": "Region",
+    "measure": "SUM(Operating Margin)"
+  },
+  {
+    "question": "How does MEAN(Operating Margin) vary by Region?",
+    "reason": "Statistics-based analysis: MEAN(Operating Margin) grouped by Region.",
+    "breakdown": "Region",
+    "measure": "MEAN(Operating Margin)"
+  },
+  {
+    "question": "How does SUM(Price per Unit) vary by State?",
+    "reason": "Statistics-based analysis: SUM(Price per Unit) grouped by State.",
+    "breakdown": "State",
+    "measure": "SUM(Price per Unit)"
+  },
+  {
+    "question": "How does MEAN(Price per Unit) vary by State?",
+    "reason": "Statistics-based analysis: MEAN(Price per Unit) grouped by State.",
+    "breakdown": "State",
+    "measure": "MEAN(Price per Unit)"
+  },
+  {
+    "question": "How does SUM(Units Sold) vary by State?",
+    "reason": "Statistics-based analysis: SUM(Units Sold) grouped by State.",
+    "breakdown": "State",
+    "measure": "SUM(Units Sold)"
+  },
+  {
+    "question": "How does MEAN(Units Sold) vary by State?",
+    "reason": "Statistics-based analysis: MEAN(Units Sold) grouped by State.",
+    "breakdown": "State",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "How does SUM(Total Sales) vary by State?",
+    "reason": "Statistics-based analysis: SUM(Total Sales) grouped by State.",
+    "breakdown": "State",
+    "measure": "SUM(Total Sales)"
+  },
+  {
+    "question": "How does MEAN(Total Sales) vary by State?",
+    "reason": "Statistics-based analysis: MEAN(Total Sales) grouped by State.",
+    "breakdown": "State",
+    "measure": "MEAN(Total Sales)"
+  },
+  {
+    "question": "How does SUM(Operating Profit) vary by State?",
+    "reason": "Statistics-based analysis: SUM(Operating Profit) grouped by State.",
+    "breakdown": "State",
+    "measure": "SUM(Operating Profit)"
+  },
+  {
+    "question": "How does MEAN(Operating Profit) vary by State?",
+    "reason": "Statistics-based analysis: MEAN(Operating Profit) grouped by State.",
+    "breakdown": "State",
+    "measure": "MEAN(Operating Profit)"
+  },
+  {
+    "question": "How does SUM(Operating Margin) vary by State?",
+    "reason": "Statistics-based analysis: SUM(Operating Margin) grouped by State.",
+    "breakdown": "State",
+    "measure": "SUM(Operating Margin)"
+  },
+  {
+    "question": "How does MEAN(Operating Margin) vary by State?",
+    "reason": "Statistics-based analysis: MEAN(Operating Margin) grouped by State.",
+    "breakdown": "State",
+    "measure": "MEAN(Operating Margin)"
+  },
+  {
+    "question": "How does SUM(Price per Unit) vary by City?",
+    "reason": "Statistics-based analysis: SUM(Price per Unit) grouped by City.",
+    "breakdown": "City",
+    "measure": "SUM(Price per Unit)"
+  },
+  {
+    "question": "How does MEAN(Price per Unit) vary by City?",
+    "reason": "Statistics-based analysis: MEAN(Price per Unit) grouped by City.",
+    "breakdown": "City",
+    "measure": "MEAN(Price per Unit)"
+  },
+  {
+    "question": "How does SUM(Units Sold) vary by City?",
+    "reason": "Statistics-based analysis: SUM(Units Sold) grouped by City.",
+    "breakdown": "City",
+    "measure": "SUM(Units Sold)"
+  },
+  {
+    "question": "How does MEAN(Units Sold) vary by City?",
+    "reason": "Statistics-based analysis: MEAN(Units Sold) grouped by City.",
+    "breakdown": "City",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "How does SUM(Total Sales) vary by City?",
+    "reason": "Statistics-based analysis: SUM(Total Sales) grouped by City.",
+    "breakdown": "City",
+    "measure": "SUM(Total Sales)"
+  },
+  {
+    "question": "How does MEAN(Total Sales) vary by City?",
+    "reason": "Statistics-based analysis: MEAN(Total Sales) grouped by City.",
+    "breakdown": "City",
+    "measure": "MEAN(Total Sales)"
+  },
+  {
+    "question": "How does SUM(Operating Profit) vary by City?",
+    "reason": "Statistics-based analysis: SUM(Operating Profit) grouped by City.",
+    "breakdown": "City",
+    "measure": "SUM(Operating Profit)"
+  },
+  {
+    "question": "How does MEAN(Operating Profit) vary by City?",
+    "reason": "Statistics-based analysis: MEAN(Operating Profit) grouped by City.",
+    "breakdown": "City",
+    "measure": "MEAN(Operating Profit)"
+  },
+  {
+    "question": "How does SUM(Operating Margin) vary by City?",
+    "reason": "Statistics-based analysis: SUM(Operating Margin) grouped by City.",
+    "breakdown": "City",
+    "measure": "SUM(Operating Margin)"
+  },
+  {
+    "question": "How does MEAN(Operating Margin) vary by City?",
+    "reason": "Statistics-based analysis: MEAN(Operating Margin) grouped by City.",
+    "breakdown": "City",
+    "measure": "MEAN(Operating Margin)"
+  },
+  {
+    "question": "How does SUM(Price per Unit) vary by Product?",
+    "reason": "Statistics-based analysis: SUM(Price per Unit) grouped by Product.",
+    "breakdown": "Product",
+    "measure": "SUM(Price per Unit)"
+  },
+  {
+    "question": "How does MEAN(Price per Unit) vary by Product?",
+    "reason": "Statistics-based analysis: MEAN(Price per Unit) grouped by Product.",
+    "breakdown": "Product",
+    "measure": "MEAN(Price per Unit)"
+  },
+  {
+    "question": "How does SUM(Units Sold) vary by Product?",
+    "reason": "Statistics-based analysis: SUM(Units Sold) grouped by Product.",
+    "breakdown": "Product",
+    "measure": "SUM(Units Sold)"
+  },
+  {
+    "question": "How does MEAN(Units Sold) vary by Product?",
+    "reason": "Statistics-based analysis: MEAN(Units Sold) grouped by Product.",
+    "breakdown": "Product",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "How does SUM(Total Sales) vary by Product?",
+    "reason": "Statistics-based analysis: SUM(Total Sales) grouped by Product.",
+    "breakdown": "Product",
+    "measure": "SUM(Total Sales)"
+  },
+  {
+    "question": "How does MEAN(Total Sales) vary by Product?",
+    "reason": "Statistics-based analysis: MEAN(Total Sales) grouped by Product.",
+    "breakdown": "Product",
+    "measure": "MEAN(Total Sales)"
+  },
+  {
+    "question": "How does SUM(Operating Profit) vary by Product?",
+    "reason": "Statistics-based analysis: SUM(Operating Profit) grouped by Product.",
+    "breakdown": "Product",
+    "measure": "SUM(Operating Profit)"
+  },
+  {
+    "question": "How does MEAN(Operating Profit) vary by Product?",
+    "reason": "Statistics-based analysis: MEAN(Operating Profit) grouped by Product.",
+    "breakdown": "Product",
+    "measure": "MEAN(Operating Profit)"
+  },
+  {
+    "question": "How does SUM(Operating Margin) vary by Product?",
+    "reason": "Statistics-based analysis: SUM(Operating Margin) grouped by Product.",
+    "breakdown": "Product",
+    "measure": "SUM(Operating Margin)"
+  },
+  {
+    "question": "How does MEAN(Operating Margin) vary by Product?",
+    "reason": "Statistics-based analysis: MEAN(Operating Margin) grouped by Product.",
+    "breakdown": "Product",
+    "measure": "MEAN(Operating Margin)"
+  },
+  {
+    "question": "How does SUM(Price per Unit) vary by Sales Method?",
+    "reason": "Statistics-based analysis: SUM(Price per Unit) grouped by Sales Method.",
+    "breakdown": "Sales Method",
+    "measure": "SUM(Price per Unit)"
+  },
+  {
+    "question": "How does MEAN(Price per Unit) vary by Sales Method?",
+    "reason": "Statistics-based analysis: MEAN(Price per Unit) grouped by Sales Method.",
+    "breakdown": "Sales Method",
+    "measure": "MEAN(Price per Unit)"
+  },
+  {
+    "question": "How does SUM(Units Sold) vary by Sales Method?",
+    "reason": "Statistics-based analysis: SUM(Units Sold) grouped by Sales Method.",
+    "breakdown": "Sales Method",
+    "measure": "SUM(Units Sold)"
+  },
+  {
+    "question": "How does MEAN(Units Sold) vary by Sales Method?",
+    "reason": "Statistics-based analysis: MEAN(Units Sold) grouped by Sales Method.",
+    "breakdown": "Sales Method",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "How does SUM(Total Sales) vary by Sales Method?",
+    "reason": "Statistics-based analysis: SUM(Total Sales) grouped by Sales Method.",
+    "breakdown": "Sales Method",
+    "measure": "SUM(Total Sales)"
+  },
+  {
+    "question": "How does MEAN(Total Sales) vary by Sales Method?",
+    "reason": "Statistics-based analysis: MEAN(Total Sales) grouped by Sales Method.",
+    "breakdown": "Sales Method",
+    "measure": "MEAN(Total Sales)"
+  },
+  {
+    "question": "How does SUM(Operating Profit) vary by Sales Method?",
+    "reason": "Statistics-based analysis: SUM(Operating Profit) grouped by Sales Method.",
+    "breakdown": "Sales Method",
+    "measure": "SUM(Operating Profit)"
+  },
+  {
+    "question": "How does MEAN(Operating Profit) vary by Sales Method?",
+    "reason": "Statistics-based analysis: MEAN(Operating Profit) grouped by Sales Method.",
+    "breakdown": "Sales Method",
+    "measure": "MEAN(Operating Profit)"
+  },
+  {
+    "question": "How does SUM(Operating Margin) vary by Sales Method?",
+    "reason": "Statistics-based analysis: SUM(Operating Margin) grouped by Sales Method.",
+    "breakdown": "Sales Method",
+    "measure": "SUM(Operating Margin)"
+  },
+  {
+    "question": "How does MEAN(Operating Margin) vary by Sales Method?",
+    "reason": "Statistics-based analysis: MEAN(Operating Margin) grouped by Sales Method.",
+    "breakdown": "Sales Method",
+    "measure": "MEAN(Operating Margin)"
+  }
+]

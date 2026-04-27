@@ -1,103 +1,57 @@
 {
   "system": "QUIS",
-  "num_cards": 98,
-  "num_insights": 98,
+  "num_cards": 99,
+  "num_insights": 99,
   "score_uplift_from_subspace": {
-    "num_with_subspace_scored": 85,
-    "num_without_subspace_scored": 11,
-    "mean_score_with_subspace": 0.3505,
-    "mean_score_without_subspace": 0.3629,
-    "score_uplift_abs": -0.0123,
-    "score_uplift_ratio": 0.966,
+    "num_with_subspace_scored": 84,
+    "num_without_subspace_scored": 12,
+    "mean_score_with_subspace": 0.3329,
+    "mean_score_without_subspace": 0.3762,
+    "score_uplift_abs": -0.0433,
+    "score_uplift_ratio": 0.8848,
     "score_uplift_direction": "down"
   },
   "faithfulness": {
-    "faithfulness": 0.9081632653061225,
-    "verified_count": 89,
-    "total_count": 98,
-    "hallucination_count": 9,
-    "hallucination_rate": 0.09183673469387754,
-    "_failed_insights": [
-      {
-        "idx": 2,
-        "reason": "Value mismatch for \"Amazon\": reported=177.0, recomputed=204, delta=2.70e+01",
-        "pattern": "Outstanding Value"
-      },
-      {
-        "idx": 20,
-        "reason": "Label \"2020-01-10 00:00:00\" not found in recomputed values (converted: 2020-01-10 00:00:00)",
-        "pattern": "Outstanding Value"
-      },
-      {
-        "idx": 21,
-        "reason": "Value mismatch for \"In-store\": reported=869.0, recomputed=1740, delta=8.71e+02",
-        "pattern": "Outstanding Value"
-      },
-      {
-        "idx": 34,
-        "reason": "Label \"2020-01-01 00:00:00\" not found in recomputed values (converted: 2020-01-01 00:00:00)",
-        "pattern": "Trend"
-      },
-      {
-        "idx": 35,
-        "reason": "Label \"2020-01-01 00:00:00\" not found in recomputed values (converted: 2020-01-01 00:00:00)",
-        "pattern": "Trend"
-      },
-      {
-        "idx": 38,
-        "reason": "Value mismatch for \"West Gear\": reported=58.0, recomputed=136, delta=7.80e+01",
-        "pattern": "Attribution"
-      },
-      {
-        "idx": 40,
-        "reason": "Label \"2021-01-10 00:00:00\" not found in recomputed values (converted: 2021-01-10 00:00:00)",
-        "pattern": "Distribution Difference"
-      },
-      {
-        "idx": 61,
-        "reason": "Value mismatch for \"Amazon\": reported=24.0, recomputed=136, delta=1.12e+02",
-        "pattern": "Distribution Difference"
-      },
-      {
-        "idx": 79,
-        "reason": "Value mismatch for \"In-store\": reported=869.0, recomputed=1740, delta=8.71e+02",
-        "pattern": "Attribution"
-      }
-    ]
+    "faithfulness": 1.0,
+    "verified_count": 99,
+    "total_count": 99,
+    "hallucination_count": 0,
+    "hallucination_rate": 0.0,
+    "_failed_insights": []
   },
   "insight_significance": {
-    "avg_effect_size": 0.3519520833333334,
-    "significant_count": 74,
-    "significant_rate": 0.7708333333333334,
-    "pattern_avg_significance": 0.7145562770562771,
-    "max_effect_size": 0.8052,
+    "avg_effect_size": 0.3382697916666666,
+    "significant_count": 76,
+    "significant_rate": 0.7916666666666666,
+    "pattern_avg_significance": 0.8335897435897436,
+    "max_effect_size": 0.7829,
     "total_evaluated": 96,
     "by_pattern": {
       "TREND": {
-        "significant_count": 1,
+        "significant_count": 2,
         "total_count": 2,
-        "significant_rate": 0.5,
+        "significant_rate": 1.0,
         "insights": [
           {
             "breakdown": "Invoice Date",
             "col": "Retailer ID",
-            "p_value": 0.073624,
-            "effect_size": 0.011,
-            "significant": "False"
+            "p_value": 1.1e-05,
+            "effect_size": 0.0376,
+            "significant": "True"
           },
           {
             "breakdown": "Invoice Date",
             "col": "Units Sold",
             "p_value": 0.0,
-            "effect_size": 0.4483,
+            "effect_size": 0.4635,
             "significant": "True"
           }
         ]
       },
       "OUTSTANDING_VALUE": {
-        "significant_count": 14,
-        "total_count": 33,
-        "significant_rate": 0.42424242424242425,
+        "significant_count": 12,
+        "total_count": 30,
+        "significant_rate": 0.4,
         "insights": [
           {
             "breakdown": "Sales Method",
@@ -114,10 +68,10 @@
             "significant": "False"
           },
           {
-            "breakdown": "Retailer",
-            "col": "Invoice Date",
-            "p_value": 0.090736,
-            "effect_size": 0.572,
+            "breakdown": "Sales Method",
+            "col": "Retailer ID",
+            "p_value": 0.097869,
+            "effect_size": 0.564,
             "significant": "False"
           },
           {
@@ -128,27 +82,6 @@
             "significant": "True"
           },
           {
-            "breakdown": "Sales Method",
-            "col": "Retailer",
-            "p_value": 0.097869,
-            "effect_size": 0.564,
-            "significant": "False"
-          },
-          {
-            "breakdown": "State",
-            "col": "Total Sales",
-            "p_value": 0.000969,
-            "effect_size": 0.7561,
-            "significant": "True"
-          },
-          {
-            "breakdown": "Sales Method",
-            "col": "Retailer ID",
-            "p_value": 0.097869,
-            "effect_size": 0.564,
-            "significant": "False"
-          },
-          {
             "breakdown": "Region",
             "col": "Operating Profit",
             "p_value": 0.032383,
@@ -156,6 +89,13 @@
             "significant": "True"
           },
           {
+            "breakdown": "Retailer",
+            "col": "Invoice Date",
+            "p_value": 0.090736,
+            "effect_size": 0.572,
+            "significant": "False"
+          },
+          {
             "breakdown": "Sales Method",
             "col": "Units Sold",
             "p_value": 0.099251,
@@ -163,10 +103,10 @@
             "significant": "False"
           },
           {
-            "breakdown": "Product",
+            "breakdown": "Sales Method",
             "col": "Units Sold",
-            "p_value": 0.23975,
-            "effect_size": 0.4142,
+            "p_value": 0.099251,
+            "effect_size": 0.5625,
             "significant": "False"
           },
           {
@@ -174,27 +114,6 @@
             "col": "Units Sold",
             "p_value": 0.032404,
             "effect_size": 0.6487,
-            "significant": "True"
-          },
-          {
-            "breakdown": "Sales Method",
-            "col": "Units Sold",
-            "p_value": 0.099251,
-            "effect_size": 0.5625,
-            "significant": "False"
-          },
-          {
-            "breakdown": "Product",
-            "col": "Total Sales",
-            "p_value": 0.035007,
-            "effect_size": 0.6444,
-            "significant": "True"
-          },
-          {
-            "breakdown": "Product",
-            "col": "Total Sales",
-            "p_value": 0.035007,
-            "effect_size": 0.6444,
             "significant": "True"
           },
           {
@@ -207,8 +126,15 @@
           {
             "breakdown": "Product",
             "col": "Total Sales",
-            "p_value": 0.046606,
-            "effect_size": 0.6267,
+            "p_value": 0.035007,
+            "effect_size": 0.6444,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Product",
+            "col": "Total Sales",
+            "p_value": 0.035007,
+            "effect_size": 0.6444,
             "significant": "True"
           },
           {
@@ -226,13 +152,6 @@
             "significant": "False"
           },
           {
-            "breakdown": "Sales Method",
-            "col": "Operating Profit",
-            "p_value": 0.088044,
-            "effect_size": 0.575,
-            "significant": "False"
-          },
-          {
             "breakdown": "State",
             "col": "Operating Profit",
             "p_value": 0.008055,
@@ -240,17 +159,10 @@
             "significant": "True"
           },
           {
-            "breakdown": "Invoice Date",
-            "col": "Retailer ID",
-            "p_value": 1.8e-05,
-            "effect_size": 0.8052,
-            "significant": "True"
-          },
-          {
             "breakdown": "Sales Method",
-            "col": "Invoice Date",
-            "p_value": 0.097869,
-            "effect_size": 0.564,
+            "col": "Operating Profit",
+            "p_value": 0.088044,
+            "effect_size": 0.575,
             "significant": "False"
           },
           {
@@ -261,6 +173,34 @@
             "significant": "False"
           },
           {
+            "breakdown": "Sales Method",
+            "col": "Retailer",
+            "p_value": 0.097869,
+            "effect_size": 0.564,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Sales Method",
+            "col": "Invoice Date",
+            "p_value": 0.097869,
+            "effect_size": 0.564,
+            "significant": "False"
+          },
+          {
+            "breakdown": "State",
+            "col": "Operating Margin",
+            "p_value": 0.000704,
+            "effect_size": 0.7615,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Product",
+            "col": "Units Sold",
+            "p_value": 0.033337,
+            "effect_size": 0.6471,
+            "significant": "True"
+          },
+          {
             "breakdown": "Retailer",
             "col": "Operating Profit",
             "p_value": 0.050921,
@@ -269,16 +209,16 @@
           },
           {
             "breakdown": "Product",
-            "col": "Units Sold",
-            "p_value": 0.23975,
-            "effect_size": 0.4142,
+            "col": "Operating Margin",
+            "p_value": 0.074558,
+            "effect_size": 0.5906,
             "significant": "False"
           },
           {
-            "breakdown": "State",
-            "col": "Operating Profit",
-            "p_value": 0.008055,
-            "effect_size": 0.7064,
+            "breakdown": "Product",
+            "col": "Total Sales",
+            "p_value": 0.046606,
+            "effect_size": 0.6267,
             "significant": "True"
           },
           {
@@ -289,10 +229,10 @@
             "significant": "False"
           },
           {
-            "breakdown": "Product",
-            "col": "Total Sales",
-            "p_value": 0.046606,
-            "effect_size": 0.6267,
+            "breakdown": "Invoice Date",
+            "col": "Retailer ID",
+            "p_value": 0.000156,
+            "effect_size": 0.7829,
             "significant": "True"
           },
           {
@@ -304,23 +244,16 @@
           },
           {
             "breakdown": "Product",
-            "col": "Operating Margin",
-            "p_value": 0.074558,
-            "effect_size": 0.5906,
+            "col": "Units Sold",
+            "p_value": 0.23975,
+            "effect_size": 0.4142,
             "significant": "False"
           },
           {
-            "breakdown": "State",
-            "col": "Operating Margin",
-            "p_value": 0.000704,
-            "effect_size": 0.7615,
-            "significant": "True"
-          },
-          {
-            "breakdown": "Retailer",
+            "breakdown": "Product",
             "col": "Price per Unit",
-            "p_value": 0.077506,
-            "effect_size": 0.5871,
+            "p_value": 0.069183,
+            "effect_size": 0.5971,
             "significant": "False"
           },
           {
@@ -333,9 +266,9 @@
         ]
       },
       "ATTRIBUTION": {
-        "significant_count": 27,
-        "total_count": 28,
-        "significant_rate": 0.9642857142857143,
+        "significant_count": 24,
+        "total_count": 25,
+        "significant_rate": 0.96,
         "insights": [
           {
             "breakdown": "Sales Method",
@@ -360,27 +293,6 @@
           },
           {
             "breakdown": "Retailer",
-            "col": "Invoice Date",
-            "p_value": 0.0,
-            "effect_size": 0.6439,
-            "significant": "True"
-          },
-          {
-            "breakdown": "State",
-            "col": "Operating Profit",
-            "p_value": 0.0,
-            "effect_size": 0.1792,
-            "significant": "True"
-          },
-          {
-            "breakdown": "Sales Method",
-            "col": "Units Sold",
-            "p_value": 0.0,
-            "effect_size": 0.3015,
-            "significant": "True"
-          },
-          {
-            "breakdown": "Retailer",
             "col": "Operating Profit",
             "p_value": 0.0,
             "effect_size": 0.0579,
@@ -395,6 +307,20 @@
           },
           {
             "breakdown": "Sales Method",
+            "col": "Units Sold",
+            "p_value": 0.0,
+            "effect_size": 0.3015,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Product",
+            "col": "Units Sold",
+            "p_value": 0.0,
+            "effect_size": 0.1229,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Sales Method",
             "col": "Retailer",
             "p_value": 0.0,
             "effect_size": 0.145,
@@ -402,9 +328,16 @@
           },
           {
             "breakdown": "Region",
+            "col": "Total Sales",
+            "p_value": 0.0,
+            "effect_size": 0.0989,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Sales Method",
             "col": "Price per Unit",
             "p_value": 0.0,
-            "effect_size": 0.1824,
+            "effect_size": 0.1243,
             "significant": "True"
           },
           {
@@ -429,6 +362,13 @@
             "significant": "True"
           },
           {
+            "breakdown": "Retailer",
+            "col": "Price per Unit",
+            "p_value": 0.0,
+            "effect_size": 0.1106,
+            "significant": "True"
+          },
+          {
             "breakdown": "Product",
             "col": "Units Sold",
             "p_value": 0.0,
@@ -436,24 +376,24 @@
             "significant": "True"
           },
           {
-            "breakdown": "Sales Method",
-            "col": "Price per Unit",
-            "p_value": 0.0,
-            "effect_size": 0.1243,
-            "significant": "True"
-          },
-          {
             "breakdown": "Product",
-            "col": "Operating Margin",
+            "col": "Total Sales",
             "p_value": 0.0,
-            "effect_size": 0.1464,
+            "effect_size": 0.0919,
             "significant": "True"
           },
           {
             "breakdown": "Region",
-            "col": "Total Sales",
+            "col": "Units Sold",
             "p_value": 0.0,
-            "effect_size": 0.0989,
+            "effect_size": 0.1132,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Region",
+            "col": "Operating Profit",
+            "p_value": 0.0,
+            "effect_size": 0.0849,
             "significant": "True"
           },
           {
@@ -461,13 +401,6 @@
             "col": "Operating Profit",
             "p_value": 0.0,
             "effect_size": 0.0579,
-            "significant": "True"
-          },
-          {
-            "breakdown": "Product",
-            "col": "Operating Margin",
-            "p_value": 0.0,
-            "effect_size": 0.1464,
             "significant": "True"
           },
           {
@@ -485,17 +418,10 @@
             "significant": "True"
           },
           {
-            "breakdown": "Sales Method",
-            "col": "Invoice Date",
+            "breakdown": "State",
+            "col": "Operating Profit",
             "p_value": 0.0,
-            "effect_size": 0.3294,
-            "significant": "True"
-          },
-          {
-            "breakdown": "Product",
-            "col": "Operating Margin",
-            "p_value": 0.0,
-            "effect_size": 0.1464,
+            "effect_size": 0.1792,
             "significant": "True"
           },
           {
@@ -506,10 +432,10 @@
             "significant": "False"
           },
           {
-            "breakdown": "Region",
-            "col": "Operating Profit",
+            "breakdown": "State",
+            "col": "Operating Margin",
             "p_value": 0.0,
-            "effect_size": 0.0849,
+            "effect_size": 0.2822,
             "significant": "True"
           },
           {
@@ -518,27 +444,13 @@
             "p_value": 0.0,
             "effect_size": 0.2074,
             "significant": "True"
-          },
-          {
-            "breakdown": "Region",
-            "col": "Units Sold",
-            "p_value": 0.0,
-            "effect_size": 0.1132,
-            "significant": "True"
-          },
-          {
-            "breakdown": "City",
-            "col": "Operating Profit",
-            "p_value": 0.0,
-            "effect_size": 0.1839,
-            "significant": "True"
           }
         ]
       },
       "DISTRIBUTION_DIFFERENCE": {
-        "significant_count": 32,
-        "total_count": 33,
-        "significant_rate": 0.9696969696969697,
+        "significant_count": 38,
+        "total_count": 39,
+        "significant_rate": 0.9743589743589743,
         "insights": [
           {
             "breakdown": "Sales Method",
@@ -555,52 +467,24 @@
             "significant": "False"
           },
           {
-            "breakdown": "State",
-            "col": "Operating Profit",
-            "p_value": 0.0,
-            "effect_size": 0.2384,
-            "significant": "True"
-          },
-          {
-            "breakdown": "City",
-            "col": "Units Sold",
-            "p_value": 0.00081,
-            "effect_size": 0.1898,
-            "significant": "True"
-          },
-          {
-            "breakdown": "State",
-            "col": "Operating Profit",
-            "p_value": 0.0,
-            "effect_size": 0.2384,
-            "significant": "True"
-          },
-          {
-            "breakdown": "State",
-            "col": "Operating Margin",
-            "p_value": 0.0,
-            "effect_size": 0.2046,
-            "significant": "True"
-          },
-          {
-            "breakdown": "State",
-            "col": "Operating Margin",
-            "p_value": 0.0,
-            "effect_size": 0.2046,
-            "significant": "True"
-          },
-          {
-            "breakdown": "City",
-            "col": "Units Sold",
-            "p_value": 0.00081,
-            "effect_size": 0.1898,
-            "significant": "True"
-          },
-          {
             "breakdown": "City",
             "col": "Operating Profit",
             "p_value": 0.0,
             "effect_size": 0.2778,
+            "significant": "True"
+          },
+          {
+            "breakdown": "State",
+            "col": "Operating Margin",
+            "p_value": 0.0,
+            "effect_size": 0.2046,
+            "significant": "True"
+          },
+          {
+            "breakdown": "State",
+            "col": "Operating Profit",
+            "p_value": 0.0,
+            "effect_size": 0.2384,
             "significant": "True"
           },
           {
@@ -611,6 +495,20 @@
             "significant": "True"
           },
           {
+            "breakdown": "City",
+            "col": "Units Sold",
+            "p_value": 0.00081,
+            "effect_size": 0.1898,
+            "significant": "True"
+          },
+          {
+            "breakdown": "City",
+            "col": "Units Sold",
+            "p_value": 0.00081,
+            "effect_size": 0.1898,
+            "significant": "True"
+          },
+          {
             "breakdown": "State",
             "col": "Operating Profit",
             "p_value": 0.0,
@@ -618,10 +516,31 @@
             "significant": "True"
           },
           {
-            "breakdown": "Retailer",
+            "breakdown": "State",
+            "col": "Total Sales",
+            "p_value": 0.0,
+            "effect_size": 0.3329,
+            "significant": "True"
+          },
+          {
+            "breakdown": "City",
             "col": "Operating Profit",
             "p_value": 0.0,
-            "effect_size": 0.1639,
+            "effect_size": 0.2778,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Retailer",
+            "col": "Invoice Date",
+            "p_value": 0.0,
+            "effect_size": 0.3074,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Product",
+            "col": "Units Sold",
+            "p_value": 0.0,
+            "effect_size": 0.2205,
             "significant": "True"
           },
           {
@@ -629,6 +548,20 @@
             "col": "Price per Unit",
             "p_value": 1.7e-05,
             "effect_size": 0.1068,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Retailer",
+            "col": "Price per Unit",
+            "p_value": 1.7e-05,
+            "effect_size": 0.1068,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Retailer",
+            "col": "Operating Profit",
+            "p_value": 0.0,
+            "effect_size": 0.1639,
             "significant": "True"
           },
           {
@@ -653,20 +586,6 @@
             "significant": "True"
           },
           {
-            "breakdown": "Product",
-            "col": "Units Sold",
-            "p_value": 0.0,
-            "effect_size": 0.2205,
-            "significant": "True"
-          },
-          {
-            "breakdown": "Retailer",
-            "col": "Price per Unit",
-            "p_value": 1.7e-05,
-            "effect_size": 0.1068,
-            "significant": "True"
-          },
-          {
             "breakdown": "Sales Method",
             "col": "Total Sales",
             "p_value": 0.0,
@@ -674,17 +593,38 @@
             "significant": "True"
           },
           {
-            "breakdown": "Region",
-            "col": "Price per Unit",
+            "breakdown": "Product",
+            "col": "Operating Margin",
             "p_value": 0.0,
-            "effect_size": 0.2911,
+            "effect_size": 0.2106,
             "significant": "True"
           },
           {
             "breakdown": "Product",
-            "col": "Total Sales",
+            "col": "Units Sold",
             "p_value": 0.0,
-            "effect_size": 0.1584,
+            "effect_size": 0.2205,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Region",
+            "col": "Units Sold",
+            "p_value": 0.0,
+            "effect_size": 0.2637,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Region",
+            "col": "Total Sales",
+            "p_value": 3e-06,
+            "effect_size": 0.0821,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Region",
+            "col": "Price per Unit",
+            "p_value": 0.0,
+            "effect_size": 0.2911,
             "significant": "True"
           },
           {
@@ -696,9 +636,44 @@
           },
           {
             "breakdown": "Product",
+            "col": "Total Sales",
+            "p_value": 0.0,
+            "effect_size": 0.1584,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Product",
+            "col": "Total Sales",
+            "p_value": 0.0,
+            "effect_size": 0.1584,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Product",
+            "col": "Operating Margin",
+            "p_value": 0.0,
+            "effect_size": 0.2106,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Sales Method",
+            "col": "Units Sold",
+            "p_value": 0.0,
+            "effect_size": 0.3817,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Product",
             "col": "Units Sold",
             "p_value": 0.0,
             "effect_size": 0.2205,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Sales Method",
+            "col": "Units Sold",
+            "p_value": 0.0,
+            "effect_size": 0.3817,
             "significant": "True"
           },
           {
@@ -706,34 +681,6 @@
             "col": "Operating Profit",
             "p_value": 0.0,
             "effect_size": 0.1054,
-            "significant": "True"
-          },
-          {
-            "breakdown": "Product",
-            "col": "Price per Unit",
-            "p_value": 0.041436,
-            "effect_size": 0.0491,
-            "significant": "True"
-          },
-          {
-            "breakdown": "Sales Method",
-            "col": "Units Sold",
-            "p_value": 0.0,
-            "effect_size": 0.3817,
-            "significant": "True"
-          },
-          {
-            "breakdown": "Sales Method",
-            "col": "Units Sold",
-            "p_value": 0.0,
-            "effect_size": 0.3817,
-            "significant": "True"
-          },
-          {
-            "breakdown": "Sales Method",
-            "col": "Retailer ID",
-            "p_value": 0.0,
-            "effect_size": 0.3329,
             "significant": "True"
           },
           {
@@ -745,16 +692,9 @@
           },
           {
             "breakdown": "Region",
-            "col": "Units Sold",
+            "col": "Price per Unit",
             "p_value": 0.0,
-            "effect_size": 0.2637,
-            "significant": "True"
-          },
-          {
-            "breakdown": "Product",
-            "col": "Total Sales",
-            "p_value": 0.0,
-            "effect_size": 0.1584,
+            "effect_size": 0.2911,
             "significant": "True"
           },
           {
@@ -765,10 +705,24 @@
             "significant": "True"
           },
           {
+            "breakdown": "Sales Method",
+            "col": "Retailer ID",
+            "p_value": 0.0,
+            "effect_size": 0.3329,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Region",
+            "col": "Total Sales",
+            "p_value": 3e-06,
+            "effect_size": 0.0821,
+            "significant": "True"
+          },
+          {
             "breakdown": "Product",
-            "col": "Price per Unit",
-            "p_value": 0.041436,
-            "effect_size": 0.0491,
+            "col": "Operating Margin",
+            "p_value": 0.0,
+            "effect_size": 0.2106,
             "significant": "True"
           }
         ]
@@ -776,46 +730,47 @@
     }
   },
   "question_diversity": {
-    "semantic_diversity": 0.4796870946884155,
-    "avg_similarity": 0.5203129053115845,
-    "num_insights": 98,
+    "semantic_diversity": 0.47911137342453003,
+    "avg_similarity": 0.52088862657547,
+    "num_insights": 99,
     "subspace_diversity": {
-      "subspace_diversity_entropy": 2.1759707730694,
-      "subspace_diversity_count_ratio": 0.11224489795918367,
-      "unique_columns": 11,
-      "total_columns": 87,
+      "subspace_diversity_entropy": 2.2594280108100038,
+      "subspace_diversity_count_ratio": 0.12121212121212122,
+      "unique_columns": 12,
+      "total_columns": 86,
       "column_distribution": {
-        "Region": 2,
-        "State": 18,
+        "Product": 1,
+        "City": 10,
+        "Operating Margin": 8,
+        "Retailer ID": 4,
+        "State": 17,
+        "Retailer": 3,
+        "Region": 8,
         "Sales Method": 3,
-        "Units Sold": 9,
-        "City": 16,
-        "Operating Margin": 7,
-        "Retailer ID": 7,
-        "Operating Profit": 12,
-        "Price per Unit": 3,
-        "Total Sales": 8,
-        "Retailer": 2
+        "Operating Profit": 11,
+        "Total Sales": 14,
+        "Units Sold": 4,
+        "Price per Unit": 3
       }
     },
     "value_diversity": {
-      "value_diversity": 0.896551724137931,
-      "unique_pairs": 78,
-      "total_pairs": 87
+      "value_diversity": 0.872093023255814,
+      "unique_pairs": 75,
+      "total_pairs": 86
     },
     "dedup_rate": 0.0,
-    "unique_count": 98,
-    "total_count": 98,
+    "unique_count": 99,
+    "total_count": 99,
     "duplicate_count": 0
   },
   "bm_quality": {
-    "nmi_mean": 0.0812,
-    "int_mean": 0.0802,
+    "nmi_mean": 0.0937,
+    "int_mean": 0.0768,
     "actionability": 1.0,
-    "bm_diversity": 0.2551,
-    "total_evaluated": 25,
-    "total_categorical": 25,
-    "total_insights": 98,
+    "bm_diversity": 0.2626,
+    "total_evaluated": 26,
+    "total_categorical": 26,
+    "total_insights": 99,
     "pairs": [
       {
         "breakdown": "Sales Method",
@@ -842,14 +797,6 @@
         "interestingness": 0.062
       },
       {
-        "breakdown": "State",
-        "col": "Total Sales",
-        "agg": "min",
-        "categorical_b": true,
-        "nmi": 0.1221,
-        "interestingness": 0.0859
-      },
-      {
         "breakdown": "Region",
         "col": "Operating Profit",
         "agg": "sum",
@@ -866,28 +813,12 @@
         "interestingness": 0.1263
       },
       {
-        "breakdown": "Product",
-        "col": "Units Sold",
-        "agg": "max",
-        "categorical_b": true,
-        "nmi": 0.0483,
-        "interestingness": 0.062
-      },
-      {
         "breakdown": "Region",
         "col": "Units Sold",
         "agg": "sum",
         "categorical_b": true,
         "nmi": 0.0461,
         "interestingness": 0.0453
-      },
-      {
-        "breakdown": "Product",
-        "col": "Total Sales",
-        "agg": "min",
-        "categorical_b": true,
-        "nmi": 0.0371,
-        "interestingness": 0.0234
       },
       {
         "breakdown": "Sales Method",
@@ -900,7 +831,7 @@
       {
         "breakdown": "Product",
         "col": "Total Sales",
-        "agg": "sum",
+        "agg": "min",
         "categorical_b": true,
         "nmi": 0.0371,
         "interestingness": 0.0234
@@ -914,20 +845,20 @@
         "interestingness": 0.2024
       },
       {
-        "breakdown": "Sales Method",
-        "col": "Operating Profit",
-        "agg": "mean",
-        "categorical_b": true,
-        "nmi": 0.1306,
-        "interestingness": 0.1303
-      },
-      {
         "breakdown": "State",
         "col": "Operating Profit",
         "agg": "max",
         "categorical_b": true,
         "nmi": 0.1029,
         "interestingness": 0.0751
+      },
+      {
+        "breakdown": "Sales Method",
+        "col": "Operating Profit",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.1306,
+        "interestingness": 0.1303
       },
       {
         "breakdown": "Retailer",
@@ -938,12 +869,44 @@
         "interestingness": 0.0197
       },
       {
+        "breakdown": "State",
+        "col": "Operating Margin",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.115,
+        "interestingness": 0.1706
+      },
+      {
+        "breakdown": "Product",
+        "col": "Units Sold",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.0483,
+        "interestingness": 0.062
+      },
+      {
         "breakdown": "Retailer",
         "col": "Operating Profit",
         "agg": "mean",
         "categorical_b": true,
         "nmi": 0.022,
         "interestingness": 0.0035
+      },
+      {
+        "breakdown": "Product",
+        "col": "Operating Margin",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.0432,
+        "interestingness": 0.0273
+      },
+      {
+        "breakdown": "Product",
+        "col": "Total Sales",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0371,
+        "interestingness": 0.0234
       },
       {
         "breakdown": "Region",
@@ -955,27 +918,19 @@
       },
       {
         "breakdown": "Product",
-        "col": "Operating Margin",
-        "agg": "mean",
+        "col": "Units Sold",
+        "agg": "max",
         "categorical_b": true,
-        "nmi": 0.0432,
-        "interestingness": 0.0273
+        "nmi": 0.0483,
+        "interestingness": 0.062
       },
       {
-        "breakdown": "State",
-        "col": "Operating Margin",
-        "agg": "mean",
-        "categorical_b": true,
-        "nmi": 0.115,
-        "interestingness": 0.1706
-      },
-      {
-        "breakdown": "Retailer",
+        "breakdown": "Product",
         "col": "Price per Unit",
         "agg": "mean",
         "categorical_b": true,
-        "nmi": 0.024,
-        "interestingness": 0.0197
+        "nmi": 0.0324,
+        "interestingness": 0.0858
       },
       {
         "breakdown": "City",
@@ -990,8 +945,16 @@
         "col": "Units Sold",
         "agg": "max",
         "categorical_b": true,
-        "nmi": 0.2554,
-        "interestingness": 0.1241
+        "nmi": 0.6111,
+        "interestingness": 0.0546
+      },
+      {
+        "breakdown": "State",
+        "col": "Total Sales",
+        "agg": "min",
+        "categorical_b": true,
+        "nmi": 0.1221,
+        "interestingness": 0.0859
       },
       {
         "breakdown": "City",
@@ -1002,49 +965,49 @@
         "interestingness": 0.1586
       },
       {
+        "breakdown": "Retailer",
+        "col": "Price per Unit",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.024,
+        "interestingness": 0.0197
+      },
+      {
         "breakdown": "Region",
         "col": "Price per Unit",
         "agg": "mean",
         "categorical_b": true,
         "nmi": 0.0452,
         "interestingness": 0.1046
-      },
-      {
-        "breakdown": "Product",
-        "col": "Price per Unit",
-        "agg": "mean",
-        "categorical_b": true,
-        "nmi": 0.0324,
-        "interestingness": 0.0858
       }
     ]
   },
   "question_quality": {
     "question_diversity": {
-      "question_diversity": 0.5009354650974274,
-      "avg_similarity": 0.49906453490257263,
-      "num_questions": 98
+      "question_diversity": 0.49259811639785767,
+      "avg_similarity": 0.5074018836021423,
+      "num_questions": 99
     },
     "question_specificity": {
-      "question_specificity_mean": 9.112244897959183,
-      "question_specificity_std": 1.4061283729622551,
-      "num_questions": 98
+      "question_specificity_mean": 9.151515151515152,
+      "question_specificity_std": 1.3952562949359197,
+      "num_questions": 99
     },
     "question_insight_alignment": {
-      "question_insight_alignment": 0.5748847723007202,
-      "question_insight_alignment_std": 0.07868549227714539,
-      "num_pairs": 98
+      "question_insight_alignment": 0.5828225612640381,
+      "question_insight_alignment_std": 0.0857597067952156,
+      "num_pairs": 99
     },
     "reason_insight_coherence": {
-      "reason_insight_coherence": 0.5567500591278076,
-      "reason_insight_coherence_std": 0.07268600165843964,
-      "num_pairs": 98
+      "reason_insight_coherence": 0.5532293319702148,
+      "reason_insight_coherence_std": 0.08292058110237122,
+      "num_pairs": 99
     },
     "question_novelty": {
-      "question_novelty": 0.8673469387755102,
-      "novel_count": 85,
-      "total_count": 98,
-      "avg_max_similarity": 0.6323988437652588,
+      "question_novelty": 0.8484848484848485,
+      "novel_count": 84,
+      "total_count": 99,
+      "avg_max_similarity": 0.6406707167625427,
       "tau": 0.85,
       "compared_against": "ONLYSTATS"
     }
@@ -1065,57 +1028,31 @@
     "model": "gpt-5.4"
   },
   "insight_novelty": {
-    "novelty": 0.8469387755102041,
-    "novel_count": 83,
-    "total_count": 98,
-    "avg_max_similarity": 0.7748651504516602,
+    "novelty": 0.8484848484848485,
+    "novel_count": 84,
+    "total_count": 99,
+    "avg_max_similarity": 0.7794633507728577,
     "tau": 0.85,
     "compared_against": "ONLYSTATS"
   },
   "subspace_metrics": {
-    "total_with_subspace": 87,
-    "total_original": 87,
+    "total_with_subspace": 86,
+    "total_original": 86,
     "faithfulness": {
-      "faithfulness": 0.9425287356321839,
-      "verified_count": 82,
-      "total_count": 87,
-      "hallucination_count": 5,
-      "hallucination_rate": 0.05747126436781613,
-      "_failed_insights": [
-        {
-          "idx": 2,
-          "reason": "Value mismatch for \"Amazon\": reported=177.0, recomputed=204, delta=2.70e+01",
-          "pattern": "Outstanding Value"
-        },
-        {
-          "idx": 18,
-          "reason": "Label \"2020-01-10 00:00:00\" not found in recomputed values (converted: 2020-01-10 00:00:00)",
-          "pattern": "Outstanding Value"
-        },
-        {
-          "idx": 31,
-          "reason": "Value mismatch for \"West Gear\": reported=58.0, recomputed=136, delta=7.80e+01",
-          "pattern": "Attribution"
-        },
-        {
-          "idx": 33,
-          "reason": "Label \"2021-01-10 00:00:00\" not found in recomputed values (converted: 2021-01-10 00:00:00)",
-          "pattern": "Distribution Difference"
-        },
-        {
-          "idx": 54,
-          "reason": "Value mismatch for \"Amazon\": reported=24.0, recomputed=136, delta=1.12e+02",
-          "pattern": "Distribution Difference"
-        }
-      ]
+      "faithfulness": 1.0,
+      "verified_count": 86,
+      "total_count": 86,
+      "hallucination_count": 0,
+      "hallucination_rate": 0.0,
+      "_failed_insights": []
     },
     "significance": {
-      "avg_effect_size": 0.612241379310345,
-      "significant_count": 14,
-      "significant_rate": 0.4827586206896552,
-      "pattern_avg_significance": 0.1206896551724138,
-      "max_effect_size": 0.8052,
-      "total_evaluated": 29,
+      "avg_effect_size": 0.6079680000000001,
+      "significant_count": 11,
+      "significant_rate": 0.44,
+      "pattern_avg_significance": 0.11,
+      "max_effect_size": 0.7829,
+      "total_evaluated": 25,
       "by_pattern": {
         "TREND": {
           "significant_count": 0,
@@ -1124,9 +1061,9 @@
           "insights": []
         },
         "OUTSTANDING_VALUE": {
-          "significant_count": 14,
-          "total_count": 29,
-          "significant_rate": 0.4827586206896552,
+          "significant_count": 11,
+          "total_count": 25,
+          "significant_rate": 0.44,
           "insights": [
             {
               "breakdown": "Sales Method",
@@ -1143,34 +1080,6 @@
               "significant": "False"
             },
             {
-              "breakdown": "Retailer",
-              "col": "Invoice Date",
-              "p_value": 0.090736,
-              "effect_size": 0.572,
-              "significant": "False"
-            },
-            {
-              "breakdown": "Product",
-              "col": "Units Sold",
-              "p_value": 0.013996,
-              "effect_size": 0.6872,
-              "significant": "True"
-            },
-            {
-              "breakdown": "Sales Method",
-              "col": "Retailer",
-              "p_value": 0.097869,
-              "effect_size": 0.564,
-              "significant": "False"
-            },
-            {
-              "breakdown": "State",
-              "col": "Total Sales",
-              "p_value": 0.000969,
-              "effect_size": 0.7561,
-              "significant": "True"
-            },
-            {
               "breakdown": "Sales Method",
               "col": "Retailer ID",
               "p_value": 0.097869,
@@ -1185,6 +1094,13 @@
               "significant": "True"
             },
             {
+              "breakdown": "Retailer",
+              "col": "Invoice Date",
+              "p_value": 0.090736,
+              "effect_size": 0.572,
+              "significant": "False"
+            },
+            {
               "breakdown": "Sales Method",
               "col": "Units Sold",
               "p_value": 0.099251,
@@ -1192,10 +1108,10 @@
               "significant": "False"
             },
             {
-              "breakdown": "Product",
+              "breakdown": "Sales Method",
               "col": "Units Sold",
-              "p_value": 0.23975,
-              "effect_size": 0.4142,
+              "p_value": 0.099251,
+              "effect_size": 0.5625,
               "significant": "False"
             },
             {
@@ -1203,27 +1119,6 @@
               "col": "Units Sold",
               "p_value": 0.032404,
               "effect_size": 0.6487,
-              "significant": "True"
-            },
-            {
-              "breakdown": "Sales Method",
-              "col": "Units Sold",
-              "p_value": 0.099251,
-              "effect_size": 0.5625,
-              "significant": "False"
-            },
-            {
-              "breakdown": "Product",
-              "col": "Total Sales",
-              "p_value": 0.035007,
-              "effect_size": 0.6444,
-              "significant": "True"
-            },
-            {
-              "breakdown": "Product",
-              "col": "Total Sales",
-              "p_value": 0.035007,
-              "effect_size": 0.6444,
               "significant": "True"
             },
             {
@@ -1236,8 +1131,15 @@
             {
               "breakdown": "Product",
               "col": "Total Sales",
-              "p_value": 0.046606,
-              "effect_size": 0.6267,
+              "p_value": 0.035007,
+              "effect_size": 0.6444,
+              "significant": "True"
+            },
+            {
+              "breakdown": "Product",
+              "col": "Total Sales",
+              "p_value": 0.035007,
+              "effect_size": 0.6444,
               "significant": "True"
             },
             {
@@ -1255,18 +1157,32 @@
               "significant": "True"
             },
             {
-              "breakdown": "Invoice Date",
-              "col": "Retailer ID",
-              "p_value": 1.8e-05,
-              "effect_size": 0.8052,
-              "significant": "True"
-            },
-            {
               "breakdown": "Retailer",
               "col": "Price per Unit",
               "p_value": 0.155259,
               "effect_size": 0.5035,
               "significant": "False"
+            },
+            {
+              "breakdown": "Sales Method",
+              "col": "Retailer",
+              "p_value": 0.097869,
+              "effect_size": 0.564,
+              "significant": "False"
+            },
+            {
+              "breakdown": "State",
+              "col": "Operating Margin",
+              "p_value": 0.000704,
+              "effect_size": 0.7615,
+              "significant": "True"
+            },
+            {
+              "breakdown": "Product",
+              "col": "Units Sold",
+              "p_value": 0.033337,
+              "effect_size": 0.6471,
+              "significant": "True"
             },
             {
               "breakdown": "Retailer",
@@ -1277,23 +1193,23 @@
             },
             {
               "breakdown": "Product",
-              "col": "Units Sold",
-              "p_value": 0.23975,
-              "effect_size": 0.4142,
+              "col": "Operating Margin",
+              "p_value": 0.074558,
+              "effect_size": 0.5906,
               "significant": "False"
-            },
-            {
-              "breakdown": "State",
-              "col": "Operating Profit",
-              "p_value": 0.008055,
-              "effect_size": 0.7064,
-              "significant": "True"
             },
             {
               "breakdown": "Product",
               "col": "Total Sales",
               "p_value": 0.046606,
               "effect_size": 0.6267,
+              "significant": "True"
+            },
+            {
+              "breakdown": "Invoice Date",
+              "col": "Retailer ID",
+              "p_value": 0.000156,
+              "effect_size": 0.7829,
               "significant": "True"
             },
             {
@@ -1305,23 +1221,16 @@
             },
             {
               "breakdown": "Product",
-              "col": "Operating Margin",
-              "p_value": 0.074558,
-              "effect_size": 0.5906,
+              "col": "Units Sold",
+              "p_value": 0.23975,
+              "effect_size": 0.4142,
               "significant": "False"
             },
             {
-              "breakdown": "State",
-              "col": "Operating Margin",
-              "p_value": 0.000704,
-              "effect_size": 0.7615,
-              "significant": "True"
-            },
-            {
-              "breakdown": "Retailer",
+              "breakdown": "Product",
               "col": "Price per Unit",
-              "p_value": 0.077506,
-              "effect_size": 0.5871,
+              "p_value": 0.069183,
+              "effect_size": 0.5971,
               "significant": "False"
             },
             {
@@ -1348,43 +1257,44 @@
       }
     },
     "novelty": {
-      "novelty": 0.8620689655172413,
+      "novelty": 0.872093023255814,
       "novel_count": 75,
-      "total_count": 87,
-      "avg_max_similarity": 0.7577248215675354,
+      "total_count": 86,
+      "avg_max_similarity": 0.7670237421989441,
       "tau": 0.85
     },
     "diversity": {
-      "semantic_diversity": 0.46293044090270996,
-      "avg_similarity": 0.53706955909729,
-      "num_insights": 87,
+      "semantic_diversity": 0.45947784185409546,
+      "avg_similarity": 0.5405221581459045,
+      "num_insights": 86,
       "subspace_diversity": {
-        "subspace_diversity_entropy": 2.1759707730694,
-        "subspace_diversity_count_ratio": 0.12643678160919541,
-        "unique_columns": 11,
-        "total_columns": 87,
+        "subspace_diversity_entropy": 2.2594280108100038,
+        "subspace_diversity_count_ratio": 0.13953488372093023,
+        "unique_columns": 12,
+        "total_columns": 86,
         "column_distribution": {
-          "Region": 2,
-          "State": 18,
+          "Product": 1,
+          "City": 10,
+          "Operating Margin": 8,
+          "Retailer ID": 4,
+          "State": 17,
+          "Retailer": 3,
+          "Region": 8,
           "Sales Method": 3,
-          "Units Sold": 9,
-          "City": 16,
-          "Operating Margin": 7,
-          "Retailer ID": 7,
-          "Operating Profit": 12,
-          "Price per Unit": 3,
-          "Total Sales": 8,
-          "Retailer": 2
+          "Operating Profit": 11,
+          "Total Sales": 14,
+          "Units Sold": 4,
+          "Price per Unit": 3
         }
       },
       "value_diversity": {
-        "value_diversity": 0.896551724137931,
-        "unique_pairs": 78,
-        "total_pairs": 87
+        "value_diversity": 0.872093023255814,
+        "unique_pairs": 75,
+        "total_pairs": 86
       },
       "dedup_rate": 0.0,
-      "unique_count": 87,
-      "total_count": 87,
+      "unique_count": 86,
+      "total_count": 86,
       "duplicate_count": 0
     }
   }

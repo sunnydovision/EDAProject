@@ -123,7 +123,11 @@ def compute_view(df, breakdown: str, measure_str: str, subspace: Subspace | None
     if not valid.any():
         return [], []
     v = v[valid]
-    labels = [str(x) for x in v.index.tolist()]
+    # Convert datetime index to YYYY-MM-DD string format to match evaluation format
+    if pd.api.types.is_datetime64_any_dtype(ser.index):
+        labels = [str(x.date()) for x in ser.index.tolist()]
+    else:
+        labels = [str(x) for x in v.index.tolist()]
     values = v.astype(float).tolist()
     return labels, values
 

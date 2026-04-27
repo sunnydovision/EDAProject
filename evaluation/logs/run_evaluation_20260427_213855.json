@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-04-27T21:38:55.258943",
+  "script": "run_evaluation",
+  "arguments": {
+    "dataset": "adidas",
+    "system_a": "QUIS",
+    "system_b": "Baseline",
+    "output": null
+  },
+  "config": {
+    "dataset": "adidas",
+    "data_path": "data/adidas_cleaned.csv",
+    "profile_path": "baseline/auto_eda_agent/output_adidas/step1_profiling/profile.json",
+    "quis_insights_path": "quis_results/quis_20260427_183417_adidas_cleaned/insights_summary.json",
+    "baseline_insights_path": "baseline/auto_eda_agent/output_adidas/ifq_format/insights_summary.json",
+    "onlystats_insights_path": "onlystats_results/onlystats_20260427_182607_adidas_cleaned_v4/insights_summary.json",
+    "results_dir": "evaluation/evaluation_results/adidas"
+  }
+}
