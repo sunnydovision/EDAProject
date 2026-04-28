@@ -194,27 +194,37 @@ def create_comparison_table_3way(
     # ── 11. Question Quality ──────────────────────────────────────────────
     qqs = [r.get('question_quality') or {} for r in results_list]
 
-    qd = [(qq.get('question_diversity') or {}).get('question_diversity', 0) or 0 for qq in qqs]
+    # 11a — None for ONLYSTATS (single fixed template, not real questions)
+    qd_raw = [(qq.get('question_diversity') or {}).get('question_diversity') for qq in qqs]
+    qd_str = ['N/A' if (n == 'ONLYSTATS' or v is None) else format_metric_value(v, 'default')
+              for n, v in zip(names, qd_raw)]
     row('Intent Layer Quality', '11a. Question Semantic Diversity',
-        [format_metric_value(v, 'default') for v in qd],
-        _winner3(names, qd),
-        '1 - mean cosine sim of question embeddings (within-system)')
+        qd_str,
+        _winner3(names, [v if v is not None and n != 'ONLYSTATS' else None for n, v in zip(names, qd_raw)]),
+        '1 - mean cosine sim of question embeddings (within-system); N/A for ONLYSTATS (template)')
 
+    # 11b — None for ONLYSTATS
     sp = [qq.get('question_specificity') or {} for qq in qqs]
-    sp_m = [s.get('question_specificity_mean', 0) or 0 for s in sp]
-    sp_s = [s.get('question_specificity_std', 0) or 0 for s in sp]
+    sp_m_raw = [s.get('question_specificity_mean') for s in sp]
+    sp_s_raw = [s.get('question_specificity_std') for s in sp]
+    sp_str = ['N/A' if (n == 'ONLYSTATS' or m is None) else f"{m:.2f} ± {(s or 0):.2f}"
+              for n, m, s in zip(names, sp_m_raw, sp_s_raw)]
     row('Intent Layer Quality', '11b. Question Specificity',
-        [f"{m:.2f} ± {s:.2f}" for m, s in zip(sp_m, sp_s)],
-        _winner3(names, sp_m),
-        'Avg word count per question (mean ± std) — higher = more specific')
+        sp_str,
+        _winner3(names, [v if v is not None and n != 'ONLYSTATS' else None for n, v in zip(names, sp_m_raw)]),
+        'Avg word count per question (mean ± std) — higher = more specific; N/A for ONLYSTATS (template)')
 
-    al = [(qq.get('question_insight_alignment') or {}).get('question_insight_alignment', 0) or 0 for qq in qqs]
-    al_gap = abs(al[0] - al[1])  # QUIS vs Baseline gap
-    al_winner = 'Tie' if al_gap < 0.005 else _winner3(names, al)
+    # 11c — None for ONLYSTATS
+    al_raw = [(qq.get('question_insight_alignment') or {}).get('question_insight_alignment') for qq in qqs]
+    al_str = ['N/A' if (n == 'ONLYSTATS' or v is None) else format_metric_value(v, 'default')
+              for n, v in zip(names, al_raw)]
+    al_valid = [v for n, v in zip(names, al_raw) if n != 'ONLYSTATS' and v is not None]
+    al_winner = 'Tie' if (len(al_valid) == 2 and abs(al_valid[0] - al_valid[1]) < 0.005) else \
+        _winner3(names, [v if v is not None and n != 'ONLYSTATS' else None for n, v in zip(names, al_raw)])
     row('Intent Layer Quality', '11c. Question–Insight Alignment',
-        [format_metric_value(v, 'default') for v in al],
+        al_str,
         al_winner,
-        'Mean cosine(Embed(question), Embed(insight)) — control metric (Tie = both execute faithfully)')
+        'Mean cosine(Embed(question), Embed(insight)) — control metric; N/A for ONLYSTATS (template)')
 
     # ── 11d. Question Novelty (cross-system) ───────────────────────────────
     # Extract from results since they were computed in pairwise comparisons

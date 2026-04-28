@@ -3,12 +3,12 @@
   "num_cards": 133,
   "num_insights": 133,
   "score_uplift_from_subspace": {
-    "num_with_subspace_scored": 80,
-    "num_without_subspace_scored": 6,
-    "mean_score_with_subspace": 0.2449,
-    "mean_score_without_subspace": 0.2162,
-    "score_uplift_abs": 0.0287,
-    "score_uplift_ratio": 1.1329,
+    "num_with_subspace_scored": 105,
+    "num_without_subspace_scored": 14,
+    "mean_score_with_subspace": 0.2266,
+    "mean_score_without_subspace": 0.144,
+    "score_uplift_abs": 0.0827,
+    "score_uplift_ratio": 1.5741,
     "score_uplift_direction": "up"
   },
   "faithfulness": {
@@ -20,12 +20,12 @@
     "_failed_insights": []
   },
   "insight_significance": {
-    "avg_effect_size": 0.2428988372093023,
-    "significant_count": 19,
-    "significant_rate": 0.22093023255813954,
-    "pattern_avg_significance": 0.1683177933177933,
-    "max_effect_size": 0.774,
-    "total_evaluated": 86,
+    "avg_effect_size": 0.21691764705882352,
+    "significant_count": 33,
+    "significant_rate": 0.2773109243697479,
+    "pattern_avg_significance": 0.19971787164478197,
+    "max_effect_size": 0.8756,
+    "total_evaluated": 119,
     "by_pattern": {
       "TREND": {
         "significant_count": 0,
@@ -230,10 +230,24 @@
         ]
       },
       "ATTRIBUTION": {
-        "significant_count": 7,
-        "total_count": 26,
-        "significant_rate": 0.2692307692307692,
+        "significant_count": 18,
+        "total_count": 49,
+        "significant_rate": 0.3673469387755102,
         "insights": [
+          {
+            "breakdown": "Attrition",
+            "col": "DistanceFromHome",
+            "p_value": 0.021403,
+            "effect_size": 0.0885,
+            "significant": "True"
+          },
+          {
+            "breakdown": "JobLevel",
+            "col": "StockOptionLevel",
+            "p_value": 0.000884,
+            "effect_size": 0.0868,
+            "significant": "True"
+          },
           {
             "breakdown": "Department",
             "col": "EmployeeNumber",
@@ -242,11 +256,32 @@
             "significant": "True"
           },
           {
+            "breakdown": "Attrition",
+            "col": "StockOptionLevel",
+            "p_value": 0.0,
+            "effect_size": 0.203,
+            "significant": "True"
+          },
+          {
             "breakdown": "MaritalStatus",
             "col": "DistanceFromHome",
             "p_value": 0.279185,
             "effect_size": 0.0577,
             "significant": "False"
+          },
+          {
+            "breakdown": "JobLevel",
+            "col": "TrainingTimesLastYear",
+            "p_value": 0.683679,
+            "effect_size": 0.0467,
+            "significant": "False"
+          },
+          {
+            "breakdown": "JobLevel",
+            "col": "MonthlyIncome",
+            "p_value": 0.0,
+            "effect_size": 0.7117,
+            "significant": "True"
           },
           {
             "breakdown": "JobRole",
@@ -263,6 +298,13 @@
             "significant": "False"
           },
           {
+            "breakdown": "Attrition",
+            "col": "YearsWithCurrManager",
+            "p_value": 5.7e-05,
+            "effect_size": 0.1297,
+            "significant": "True"
+          },
+          {
             "breakdown": "Gender",
             "col": "EmployeeNumber",
             "p_value": 0.545893,
@@ -270,10 +312,31 @@
             "significant": "False"
           },
           {
+            "breakdown": "OverTime",
+            "col": "MonthlyIncome",
+            "p_value": 0.348563,
+            "effect_size": 0.055,
+            "significant": "False"
+          },
+          {
             "breakdown": "Department",
             "col": "DailyRate",
             "p_value": 0.705074,
             "effect_size": 0.0432,
+            "significant": "False"
+          },
+          {
+            "breakdown": "OverTime",
+            "col": "YearsAtCompany",
+            "p_value": 0.233237,
+            "effect_size": 0.0616,
+            "significant": "False"
+          },
+          {
+            "breakdown": "OverTime",
+            "col": "MonthlyIncome",
+            "p_value": 0.348563,
+            "effect_size": 0.055,
             "significant": "False"
           },
           {
@@ -291,6 +354,13 @@
             "significant": "False"
           },
           {
+            "breakdown": "Attrition",
+            "col": "Age",
+            "p_value": 0.0,
+            "effect_size": 0.208,
+            "significant": "True"
+          },
+          {
             "breakdown": "Gender",
             "col": "JobSatisfaction",
             "p_value": 0.466735,
@@ -303,6 +373,13 @@
             "p_value": 0.608822,
             "effect_size": 0.0465,
             "significant": "False"
+          },
+          {
+            "breakdown": "Attrition",
+            "col": "Age",
+            "p_value": 0.0,
+            "effect_size": 0.208,
+            "significant": "True"
           },
           {
             "breakdown": "Department",
@@ -319,10 +396,31 @@
             "significant": "True"
           },
           {
+            "breakdown": "JobLevel",
+            "col": "PercentSalaryHike",
+            "p_value": 0.915571,
+            "effect_size": 0.039,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Attrition",
+            "col": "Age",
+            "p_value": 0.0,
+            "effect_size": 0.208,
+            "significant": "True"
+          },
+          {
             "breakdown": "Department",
             "col": "JobLevel",
             "p_value": 0.0,
             "effect_size": 0.2185,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Attrition",
+            "col": "NumCompaniesWorked",
+            "p_value": 0.013571,
+            "effect_size": 0.0925,
             "significant": "True"
           },
           {
@@ -331,6 +429,27 @@
             "p_value": 0.705074,
             "effect_size": 0.0432,
             "significant": "False"
+          },
+          {
+            "breakdown": "OverTime",
+            "col": "RelationshipSatisfaction",
+            "p_value": 0.267049,
+            "effect_size": 0.0518,
+            "significant": "False"
+          },
+          {
+            "breakdown": "OverTime",
+            "col": "RelationshipSatisfaction",
+            "p_value": 0.267049,
+            "effect_size": 0.0518,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Attrition",
+            "col": "JobInvolvement",
+            "p_value": 3e-06,
+            "effect_size": 0.1392,
+            "significant": "True"
           },
           {
             "breakdown": "JobRole",
@@ -368,6 +487,13 @@
             "significant": "False"
           },
           {
+            "breakdown": "OverTime",
+            "col": "RelationshipSatisfaction",
+            "p_value": 0.267049,
+            "effect_size": 0.0518,
+            "significant": "False"
+          },
+          {
             "breakdown": "JobRole",
             "col": "WorkLifeBalance",
             "p_value": 0.271736,
@@ -389,6 +515,20 @@
             "significant": "False"
           },
           {
+            "breakdown": "OverTime",
+            "col": "WorkLifeBalance",
+            "p_value": 0.496706,
+            "effect_size": 0.0403,
+            "significant": "False"
+          },
+          {
+            "breakdown": "OverTime",
+            "col": "MonthlyIncome",
+            "p_value": 0.348563,
+            "effect_size": 0.055,
+            "significant": "False"
+          },
+          {
             "breakdown": "Department",
             "col": "JobLevel",
             "p_value": 0.0,
@@ -396,10 +536,24 @@
             "significant": "True"
           },
           {
+            "breakdown": "JobLevel",
+            "col": "TotalWorkingYears",
+            "p_value": 0.0,
+            "effect_size": 0.4741,
+            "significant": "True"
+          },
+          {
             "breakdown": "Gender",
             "col": "PercentSalaryHike",
             "p_value": 0.885676,
             "effect_size": 0.028,
+            "significant": "False"
+          },
+          {
+            "breakdown": "OverTime",
+            "col": "PerformanceRating",
+            "p_value": 0.930471,
+            "effect_size": 0.0023,
             "significant": "False"
           },
           {
@@ -415,14 +569,28 @@
             "p_value": 0.0,
             "effect_size": 0.1084,
             "significant": "True"
+          },
+          {
+            "breakdown": "JobLevel",
+            "col": "PerformanceRating",
+            "p_value": 0.731656,
+            "effect_size": 0.0371,
+            "significant": "False"
           }
         ]
       },
       "DISTRIBUTION_DIFFERENCE": {
-        "significant_count": 6,
-        "total_count": 33,
-        "significant_rate": 0.18181818181818182,
+        "significant_count": 9,
+        "total_count": 43,
+        "significant_rate": 0.20930232558139536,
         "insights": [
+          {
+            "breakdown": "JobLevel",
+            "col": "MonthlyIncome",
+            "p_value": 0.0,
+            "effect_size": 0.8756,
+            "significant": "True"
+          },
           {
             "breakdown": "JobRole",
             "col": "YearsInCurrentRole",
@@ -480,6 +648,13 @@
             "significant": "False"
           },
           {
+            "breakdown": "JobLevel",
+            "col": "TrainingTimesLastYear",
+            "p_value": 1.0,
+            "effect_size": 0.0086,
+            "significant": "False"
+          },
+          {
             "breakdown": "JobRole",
             "col": "Education",
             "p_value": 0.834737,
@@ -513,6 +688,55 @@
             "p_value": 0.995768,
             "effect_size": 0.0462,
             "significant": "False"
+          },
+          {
+            "breakdown": "JobLevel",
+            "col": "StockOptionLevel",
+            "p_value": 0.219327,
+            "effect_size": 0.0632,
+            "significant": "False"
+          },
+          {
+            "breakdown": "JobLevel",
+            "col": "PercentSalaryHike",
+            "p_value": 0.993173,
+            "effect_size": 0.0252,
+            "significant": "False"
+          },
+          {
+            "breakdown": "JobLevel",
+            "col": "StockOptionLevel",
+            "p_value": 0.219327,
+            "effect_size": 0.0632,
+            "significant": "False"
+          },
+          {
+            "breakdown": "JobLevel",
+            "col": "PerformanceRating",
+            "p_value": 1.0,
+            "effect_size": 0.0122,
+            "significant": "False"
+          },
+          {
+            "breakdown": "JobLevel",
+            "col": "PerformanceRating",
+            "p_value": 1.0,
+            "effect_size": 0.0122,
+            "significant": "False"
+          },
+          {
+            "breakdown": "JobLevel",
+            "col": "PercentSalaryHike",
+            "p_value": 0.993173,
+            "effect_size": 0.0252,
+            "significant": "False"
+          },
+          {
+            "breakdown": "JobLevel",
+            "col": "TotalWorkingYears",
+            "p_value": 0.0,
+            "effect_size": 0.4787,
+            "significant": "True"
           },
           {
             "breakdown": "EducationField",
@@ -634,6 +858,13 @@
             "significant": "False"
           },
           {
+            "breakdown": "Attrition",
+            "col": "StockOptionLevel",
+            "p_value": 0.0,
+            "effect_size": 0.2629,
+            "significant": "True"
+          },
+          {
             "breakdown": "EducationField",
             "col": "MonthlyRate",
             "p_value": 0.144096,
@@ -659,8 +890,8 @@
     }
   },
   "question_diversity": {
-    "semantic_diversity": 0.4985213875770569,
-    "avg_similarity": 0.5014786124229431,
+    "semantic_diversity": 0.49852144718170166,
+    "avg_similarity": 0.5014785528182983,
     "num_insights": 133,
     "subspace_diversity": {
       "subspace_diversity_entropy": 2.9376849479621656,
@@ -706,12 +937,12 @@
     "duplicate_count": 0
   },
   "bm_quality": {
-    "nmi_mean": 0.0241,
-    "int_mean": 0.04,
-    "actionability": 0.6078,
+    "nmi_mean": 0.0351,
+    "int_mean": 0.0905,
+    "actionability": 0.9608,
     "bm_diversity": 0.3835,
     "total_evaluated": 51,
-    "total_categorical": 31,
+    "total_categorical": 49,
     "total_insights": 133,
     "pairs": [
       {
@@ -758,25 +989,25 @@
         "breakdown": "Attrition",
         "col": "StockOptionLevel",
         "agg": "mean",
-        "categorical_b": false,
-        "nmi": null,
-        "interestingness": null
+        "categorical_b": true,
+        "nmi": 0.0297,
+        "interestingness": 0.2734
       },
       {
         "breakdown": "OverTime",
         "col": "YearsAtCompany",
         "agg": "mean",
-        "categorical_b": false,
-        "nmi": null,
-        "interestingness": null
+        "categorical_b": true,
+        "nmi": 0.0092,
+        "interestingness": 0.0253
       },
       {
         "breakdown": "JobLevel",
         "col": "TotalWorkingYears",
         "agg": "mean",
-        "categorical_b": false,
-        "nmi": null,
-        "interestingness": null
+        "categorical_b": true,
+        "nmi": 0.2655,
+        "interestingness": 0.6347
       },
       {
         "breakdown": "Department",
@@ -798,9 +1029,9 @@
         "breakdown": "Attrition",
         "col": "DistanceFromHome",
         "agg": "mean",
-        "categorical_b": false,
-        "nmi": null,
-        "interestingness": null
+        "categorical_b": true,
+        "nmi": 0.0097,
+        "interestingness": 0.1752
       },
       {
         "breakdown": "Department",
@@ -822,9 +1053,9 @@
         "breakdown": "JobInvolvement",
         "col": "TrainingTimesLastYear",
         "agg": "mean",
-        "categorical_b": false,
-        "nmi": null,
-        "interestingness": null
+        "categorical_b": true,
+        "nmi": 0.0057,
+        "interestingness": 0.0018
       },
       {
         "breakdown": "Department",
@@ -862,17 +1093,17 @@
         "breakdown": "Attrition",
         "col": "YearsWithCurrManager",
         "agg": "mean",
-        "categorical_b": false,
-        "nmi": null,
-        "interestingness": null
+        "categorical_b": true,
+        "nmi": 0.0251,
+        "interestingness": 0.3006
       },
       {
         "breakdown": "JobLevel",
         "col": "TrainingTimesLastYear",
         "agg": "mean",
-        "categorical_b": false,
-        "nmi": null,
-        "interestingness": null
+        "categorical_b": true,
+        "nmi": 0.0065,
+        "interestingness": 0.0029
       },
       {
         "breakdown": "JobRole",
@@ -894,9 +1125,9 @@
         "breakdown": "JobLevel",
         "col": "MonthlyIncome",
         "agg": "mean",
-        "categorical_b": false,
-        "nmi": null,
-        "interestingness": null
+        "categorical_b": true,
+        "nmi": 0.538,
+        "interestingness": 0.9252
       },
       {
         "breakdown": "TrainingTimesLastYear",
@@ -910,9 +1141,9 @@
         "breakdown": "JobLevel",
         "col": "StockOptionLevel",
         "agg": "mean",
-        "categorical_b": false,
-        "nmi": null,
-        "interestingness": null
+        "categorical_b": true,
+        "nmi": 0.009,
+        "interestingness": 0.0026
       },
       {
         "breakdown": "NumCompaniesWorked",
@@ -934,9 +1165,9 @@
         "breakdown": "OverTime",
         "col": "MonthlyIncome",
         "agg": "mean",
-        "categorical_b": false,
-        "nmi": null,
-        "interestingness": null
+        "categorical_b": true,
+        "nmi": 0.0068,
+        "interestingness": 0.0133
       },
       {
         "breakdown": "Department",
@@ -974,17 +1205,17 @@
         "breakdown": "Attrition",
         "col": "Age",
         "agg": "mean",
-        "categorical_b": false,
-        "nmi": null,
-        "interestingness": null
+        "categorical_b": true,
+        "nmi": 0.0312,
+        "interestingness": 0.3047
       },
       {
         "breakdown": "JobLevel",
         "col": "PercentSalaryHike",
         "agg": "mean",
-        "categorical_b": false,
-        "nmi": null,
-        "interestingness": null
+        "categorical_b": true,
+        "nmi": 0.0102,
+        "interestingness": 0.0026
       },
       {
         "breakdown": "Department",
@@ -998,25 +1229,25 @@
         "breakdown": "Attrition",
         "col": "NumCompaniesWorked",
         "agg": "mean",
-        "categorical_b": false,
-        "nmi": null,
-        "interestingness": null
+        "categorical_b": true,
+        "nmi": 0.0093,
+        "interestingness": 0.1058
       },
       {
         "breakdown": "OverTime",
         "col": "RelationshipSatisfaction",
         "agg": "mean",
-        "categorical_b": false,
-        "nmi": null,
-        "interestingness": null
+        "categorical_b": true,
+        "nmi": 0.0015,
+        "interestingness": 0.0972
       },
       {
         "breakdown": "Attrition",
         "col": "JobInvolvement",
         "agg": "mean",
-        "categorical_b": false,
-        "nmi": null,
-        "interestingness": null
+        "categorical_b": true,
+        "nmi": 0.0128,
+        "interestingness": 0.2627
       },
       {
         "breakdown": "Gender",
@@ -1054,9 +1285,9 @@
         "breakdown": "OverTime",
         "col": "WorkLifeBalance",
         "agg": "mean",
-        "categorical_b": false,
-        "nmi": null,
-        "interestingness": null
+        "categorical_b": true,
+        "nmi": 0.0011,
+        "interestingness": 0.0567
       },
       {
         "breakdown": "Gender",
@@ -1070,9 +1301,9 @@
         "breakdown": "OverTime",
         "col": "PerformanceRating",
         "agg": "mean",
-        "categorical_b": false,
-        "nmi": null,
-        "interestingness": null
+        "categorical_b": true,
+        "nmi": 0.0,
+        "interestingness": 0.0096
       },
       {
         "breakdown": "EducationField",
@@ -1086,9 +1317,9 @@
         "breakdown": "JobLevel",
         "col": "PerformanceRating",
         "agg": "mean",
-        "categorical_b": false,
-        "nmi": null,
-        "interestingness": null
+        "categorical_b": true,
+        "nmi": 0.001,
+        "interestingness": 0.0014
       },
       {
         "breakdown": "JobRole",
@@ -1126,8 +1357,8 @@
   },
   "question_quality": {
     "question_diversity": {
-      "question_diversity": 0.5973422825336456,
-      "avg_similarity": 0.40265771746635437,
+      "question_diversity": 0.597342312335968,
+      "avg_similarity": 0.402657687664032,
       "num_questions": 133
     },
     "question_specificity": {
@@ -1141,7 +1372,7 @@
       "num_pairs": 133
     },
     "reason_insight_coherence": {
-      "reason_insight_coherence": 0.46830520033836365,
+      "reason_insight_coherence": 0.46830523014068604,
       "reason_insight_coherence_std": 0.09001261740922928,
       "num_pairs": 133
     },
@@ -1149,7 +1380,7 @@
       "question_novelty": 1.0,
       "novel_count": 133,
       "total_count": 133,
-      "avg_max_similarity": 0.5415278673171997,
+      "avg_max_similarity": 0.4532465636730194,
       "tau": 0.85,
       "compared_against": "ONLYSTATS"
     }
@@ -1170,10 +1401,10 @@
     "model": "gpt-5.4"
   },
   "insight_novelty": {
-    "novelty": 0.8421052631578947,
-    "novel_count": 112,
+    "novelty": 0.9022556390977443,
+    "novel_count": 120,
     "total_count": 133,
-    "avg_max_similarity": 0.7245146036148071,
+    "avg_max_similarity": 0.7315792441368103,
     "tau": 0.85,
     "compared_against": "ONLYSTATS"
   },
@@ -1189,12 +1420,12 @@
       "_failed_insights": []
     },
     "significance": {
-      "avg_effect_size": 0.24490375000000003,
-      "significant_count": 19,
-      "significant_rate": 0.2375,
-      "pattern_avg_significance": 0.185,
-      "max_effect_size": 0.774,
-      "total_evaluated": 80,
+      "avg_effect_size": 0.573316,
+      "significant_count": 6,
+      "significant_rate": 0.24,
+      "pattern_avg_significance": 0.06,
+      "max_effect_size": 0.6918,
+      "total_evaluated": 25,
       "by_pattern": {
         "TREND": {
           "significant_count": 0,
@@ -1385,412 +1616,25 @@
           ]
         },
         "ATTRIBUTION": {
-          "significant_count": 7,
-          "total_count": 22,
-          "significant_rate": 0.3181818181818182,
-          "insights": [
-            {
-              "breakdown": "Department",
-              "col": "EmployeeNumber",
-              "p_value": 0.049113,
-              "effect_size": 0.0728,
-              "significant": "True"
-            },
-            {
-              "breakdown": "MaritalStatus",
-              "col": "DistanceFromHome",
-              "p_value": 0.279185,
-              "effect_size": 0.0577,
-              "significant": "False"
-            },
-            {
-              "breakdown": "JobRole",
-              "col": "MonthlyIncome",
-              "p_value": 0.0,
-              "effect_size": 0.5727,
-              "significant": "True"
-            },
-            {
-              "breakdown": "Department",
-              "col": "NumCompaniesWorked",
-              "p_value": 0.472662,
-              "effect_size": 0.0509,
-              "significant": "False"
-            },
-            {
-              "breakdown": "Department",
-              "col": "DailyRate",
-              "p_value": 0.705074,
-              "effect_size": 0.0432,
-              "significant": "False"
-            },
-            {
-              "breakdown": "JobRole",
-              "col": "DailyRate",
-              "p_value": 0.813905,
-              "effect_size": 0.0649,
-              "significant": "False"
-            },
-            {
-              "breakdown": "Gender",
-              "col": "JobSatisfaction",
-              "p_value": 0.466735,
-              "effect_size": 0.0416,
-              "significant": "False"
-            },
-            {
-              "breakdown": "Gender",
-              "col": "JobSatisfaction",
-              "p_value": 0.466735,
-              "effect_size": 0.0416,
-              "significant": "False"
-            },
-            {
-              "breakdown": "Department",
-              "col": "YearsSinceLastPromotion",
-              "p_value": 0.608822,
-              "effect_size": 0.0465,
-              "significant": "False"
-            },
-            {
-              "breakdown": "Department",
-              "col": "EnvironmentSatisfaction",
-              "p_value": 0.32684,
-              "effect_size": 0.0486,
-              "significant": "False"
-            },
-            {
-              "breakdown": "JobRole",
-              "col": "Education",
-              "p_value": 0.038064,
-              "effect_size": 0.0899,
-              "significant": "True"
-            },
-            {
-              "breakdown": "Department",
-              "col": "JobLevel",
-              "p_value": 0.0,
-              "effect_size": 0.2185,
-              "significant": "True"
-            },
-            {
-              "breakdown": "Department",
-              "col": "DailyRate",
-              "p_value": 0.705074,
-              "effect_size": 0.0432,
-              "significant": "False"
-            },
-            {
-              "breakdown": "JobRole",
-              "col": "YearsInCurrentRole",
-              "p_value": 0.0,
-              "effect_size": 0.1906,
-              "significant": "True"
-            },
-            {
-              "breakdown": "Gender",
-              "col": "EnvironmentSatisfaction",
-              "p_value": 0.835171,
-              "effect_size": 0.0242,
-              "significant": "False"
-            },
-            {
-              "breakdown": "Department",
-              "col": "PercentSalaryHike",
-              "p_value": 0.759914,
-              "effect_size": 0.0411,
-              "significant": "False"
-            },
-            {
-              "breakdown": "Gender",
-              "col": "EnvironmentSatisfaction",
-              "p_value": 0.835171,
-              "effect_size": 0.0242,
-              "significant": "False"
-            },
-            {
-              "breakdown": "JobRole",
-              "col": "WorkLifeBalance",
-              "p_value": 0.271736,
-              "effect_size": 0.0793,
-              "significant": "False"
-            },
-            {
-              "breakdown": "Department",
-              "col": "TotalWorkingYears",
-              "p_value": 0.267432,
-              "effect_size": 0.0582,
-              "significant": "False"
-            },
-            {
-              "breakdown": "Department",
-              "col": "TotalWorkingYears",
-              "p_value": 0.267432,
-              "effect_size": 0.0582,
-              "significant": "False"
-            },
-            {
-              "breakdown": "Department",
-              "col": "JobLevel",
-              "p_value": 0.0,
-              "effect_size": 0.2185,
-              "significant": "True"
-            },
-            {
-              "breakdown": "EducationField",
-              "col": "JobLevel",
-              "p_value": 0.0,
-              "effect_size": 0.1084,
-              "significant": "True"
-            }
-          ]
+          "significant_count": 0,
+          "total_count": 0,
+          "significant_rate": 0.0,
+          "insights": []
         },
         "DISTRIBUTION_DIFFERENCE": {
-          "significant_count": 6,
-          "total_count": 33,
-          "significant_rate": 0.18181818181818182,
-          "insights": [
-            {
-              "breakdown": "JobRole",
-              "col": "YearsInCurrentRole",
-              "p_value": 0.0,
-              "effect_size": 0.2391,
-              "significant": "True"
-            },
-            {
-              "breakdown": "JobRole",
-              "col": "YearsSinceLastPromotion",
-              "p_value": 0.002251,
-              "effect_size": 0.1469,
-              "significant": "True"
-            },
-            {
-              "breakdown": "JobRole",
-              "col": "Education",
-              "p_value": 0.834737,
-              "effect_size": 0.0487,
-              "significant": "False"
-            },
-            {
-              "breakdown": "JobRole",
-              "col": "MonthlyIncome",
-              "p_value": 0.0,
-              "effect_size": 0.774,
-              "significant": "True"
-            },
-            {
-              "breakdown": "EducationField",
-              "col": "MonthlyRate",
-              "p_value": 0.144096,
-              "effect_size": 0.1324,
-              "significant": "False"
-            },
-            {
-              "breakdown": "EducationField",
-              "col": "PercentSalaryHike",
-              "p_value": 0.969501,
-              "effect_size": 0.0554,
-              "significant": "False"
-            },
-            {
-              "breakdown": "JobRole",
-              "col": "DailyRate",
-              "p_value": 0.998612,
-              "effect_size": 0.0294,
-              "significant": "False"
-            },
-            {
-              "breakdown": "JobRole",
-              "col": "WorkLifeBalance",
-              "p_value": 0.267114,
-              "effect_size": 0.0794,
-              "significant": "False"
-            },
-            {
-              "breakdown": "JobRole",
-              "col": "Education",
-              "p_value": 0.834737,
-              "effect_size": 0.0487,
-              "significant": "False"
-            },
-            {
-              "breakdown": "JobRole",
-              "col": "EnvironmentSatisfaction",
-              "p_value": 0.999634,
-              "effect_size": 0.0271,
-              "significant": "False"
-            },
-            {
-              "breakdown": "JobRole",
-              "col": "WorkLifeBalance",
-              "p_value": 0.267114,
-              "effect_size": 0.0794,
-              "significant": "False"
-            },
-            {
-              "breakdown": "EducationField",
-              "col": "PercentSalaryHike",
-              "p_value": 0.969501,
-              "effect_size": 0.0554,
-              "significant": "False"
-            },
-            {
-              "breakdown": "EducationField",
-              "col": "JobLevel",
-              "p_value": 0.995768,
-              "effect_size": 0.0462,
-              "significant": "False"
-            },
-            {
-              "breakdown": "EducationField",
-              "col": "JobLevel",
-              "p_value": 0.995768,
-              "effect_size": 0.0462,
-              "significant": "False"
-            },
-            {
-              "breakdown": "EducationField",
-              "col": "NumCompaniesWorked",
-              "p_value": 0.834973,
-              "effect_size": 0.0707,
-              "significant": "False"
-            },
-            {
-              "breakdown": "EducationField",
-              "col": "TotalWorkingYears",
-              "p_value": 0.556726,
-              "effect_size": 0.0908,
-              "significant": "False"
-            },
-            {
-              "breakdown": "Department",
-              "col": "TotalWorkingYears",
-              "p_value": 0.616299,
-              "effect_size": 0.0427,
-              "significant": "False"
-            },
-            {
-              "breakdown": "MaritalStatus",
-              "col": "YearsInCurrentRole",
-              "p_value": 0.022887,
-              "effect_size": 0.0891,
-              "significant": "True"
-            },
-            {
-              "breakdown": "Department",
-              "col": "Education",
-              "p_value": 0.992292,
-              "effect_size": 0.0241,
-              "significant": "False"
-            },
-            {
-              "breakdown": "Department",
-              "col": "YearsAtCompany",
-              "p_value": 0.304448,
-              "effect_size": 0.0549,
-              "significant": "False"
-            },
-            {
-              "breakdown": "Department",
-              "col": "YearsAtCompany",
-              "p_value": 0.304448,
-              "effect_size": 0.0549,
-              "significant": "False"
-            },
-            {
-              "breakdown": "Department",
-              "col": "Education",
-              "p_value": 0.992292,
-              "effect_size": 0.0241,
-              "significant": "False"
-            },
-            {
-              "breakdown": "Department",
-              "col": "EnvironmentSatisfaction",
-              "p_value": 0.862531,
-              "effect_size": 0.0338,
-              "significant": "False"
-            },
-            {
-              "breakdown": "MaritalStatus",
-              "col": "JobInvolvement",
-              "p_value": 0.904189,
-              "effect_size": 0.0334,
-              "significant": "False"
-            },
-            {
-              "breakdown": "Department",
-              "col": "PercentSalaryHike",
-              "p_value": 0.984842,
-              "effect_size": 0.0256,
-              "significant": "False"
-            },
-            {
-              "breakdown": "Department",
-              "col": "PercentSalaryHike",
-              "p_value": 0.984842,
-              "effect_size": 0.0256,
-              "significant": "False"
-            },
-            {
-              "breakdown": "Department",
-              "col": "JobLevel",
-              "p_value": 0.0,
-              "effect_size": 0.2812,
-              "significant": "True"
-            },
-            {
-              "breakdown": "Department",
-              "col": "DailyRate",
-              "p_value": 0.799084,
-              "effect_size": 0.0363,
-              "significant": "False"
-            },
-            {
-              "breakdown": "MaritalStatus",
-              "col": "YearsInCurrentRole",
-              "p_value": 0.022887,
-              "effect_size": 0.0891,
-              "significant": "True"
-            },
-            {
-              "breakdown": "Department",
-              "col": "YearsSinceLastPromotion",
-              "p_value": 0.64174,
-              "effect_size": 0.0418,
-              "significant": "False"
-            },
-            {
-              "breakdown": "EducationField",
-              "col": "MonthlyRate",
-              "p_value": 0.144096,
-              "effect_size": 0.1324,
-              "significant": "False"
-            },
-            {
-              "breakdown": "MaritalStatus",
-              "col": "YearsSinceLastPromotion",
-              "p_value": 0.06078,
-              "effect_size": 0.0787,
-              "significant": "False"
-            },
-            {
-              "breakdown": "JobRole",
-              "col": "EnvironmentSatisfaction",
-              "p_value": 0.999634,
-              "effect_size": 0.0271,
-              "significant": "False"
-            }
-          ]
+          "significant_count": 0,
+          "total_count": 0,
+          "significant_rate": 0.0,
+          "insights": []
         }
       }
     },
     "novelty": {
-      "novelty": 0.0,
-      "novel_count": 0,
+      "novelty": 0.9568965517241379,
+      "novel_count": 111,
       "total_count": 116,
-      "avg_max_similarity": 0.0,
-      "error": "Expected 2D array, got 1D array instead:\narray=[].\nReshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample."
+      "avg_max_similarity": 0.7118247747421265,
+      "tau": 0.85
     },
     "diversity": {
       "semantic_diversity": 0.47785019874572754,

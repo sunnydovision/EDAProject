@@ -1,18 +1,18 @@
 {
-  "total_time": 30.019101858139038,
+  "total_time": 531.5946378707886,
   "step_times": {
-    "profiling": 1.428971767425537,
-    "quality": 1.425243854522705,
-    "statistics": 1.4259390830993652,
-    "patterns": 5.31583309173584,
-    "insights": 20.38900923728943
+    "profiling": 27.36727476119995,
+    "quality": 25.12128210067749,
+    "statistics": 35.56507182121277,
+    "patterns": 87.9497652053833,
+    "insights": 355.3444516658783
   },
-  "insights_generated": 0,
-  "throughput": 0.0,
+  "insights_generated": 81,
+  "throughput": 0.15237174009962112,
   "token_usage": {
-    "input_tokens": 0,
-    "output_tokens": 0,
-    "total_tokens": 0,
-    "requests": 0
+    "input_tokens": 78410,
+    "output_tokens": 35530,
+    "total_tokens": 113940,
+    "requests": 22
   }
 }

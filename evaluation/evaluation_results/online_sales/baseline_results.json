@@ -6,37 +6,26 @@
     "num_with_subspace_scored": 6,
     "num_without_subspace_scored": 17,
     "mean_score_with_subspace": 0.5382,
-    "mean_score_without_subspace": 0.5165,
-    "score_uplift_abs": 0.0217,
-    "score_uplift_ratio": 1.042,
+    "mean_score_without_subspace": 0.5135,
+    "score_uplift_abs": 0.0248,
+    "score_uplift_ratio": 1.0482,
     "score_uplift_direction": "up"
   },
   "faithfulness": {
-    "faithfulness": 0.9672131147540983,
-    "verified_count": 59,
+    "faithfulness": 1.0,
+    "verified_count": 61,
     "total_count": 61,
-    "hallucination_count": 2,
-    "hallucination_rate": 0.032786885245901676,
-    "_failed_insights": [
-      {
-        "idx": 3,
-        "reason": "Breakdown column 'month' not found in data",
-        "pattern": "OUTSTANDING_VALUE"
-      },
-      {
-        "idx": 4,
-        "reason": "Breakdown column 'month' not found in data",
-        "pattern": "OUTSTANDING_VALUE"
-      }
-    ]
+    "hallucination_count": 0,
+    "hallucination_rate": 0.0,
+    "_failed_insights": []
   },
   "insight_significance": {
-    "avg_effect_size": 0.4991523809523809,
-    "significant_count": 13,
-    "significant_rate": 0.6190476190476191,
-    "pattern_avg_significance": 0.4464285714285714,
-    "max_effect_size": 0.8576,
-    "total_evaluated": 21,
+    "avg_effect_size": 0.5199260869565216,
+    "significant_count": 14,
+    "significant_rate": 0.6086956521739131,
+    "pattern_avg_significance": 0.4375,
+    "max_effect_size": 0.8592,
+    "total_evaluated": 23,
     "by_pattern": {
       "TREND": {
         "significant_count": 2,
@@ -60,9 +49,9 @@
         ]
       },
       "OUTSTANDING_VALUE": {
-        "significant_count": 11,
-        "total_count": 14,
-        "significant_rate": 0.7857142857142857,
+        "significant_count": 12,
+        "total_count": 16,
+        "significant_rate": 0.75,
         "insights": [
           {
             "breakdown": "Units Sold",
@@ -83,6 +72,20 @@
             "col": "Total Revenue",
             "p_value": 1e-06,
             "effect_size": 0.824,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Date",
+            "col": "Transaction ID",
+            "p_value": 0.053643,
+            "effect_size": 0.6169,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Date",
+            "col": "Unit Price",
+            "p_value": 0.0,
+            "effect_size": 0.8592,
             "significant": "True"
           },
           {
@@ -215,8 +218,8 @@
     }
   },
   "question_diversity": {
-    "semantic_diversity": 0.44868457317352295,
-    "avg_similarity": 0.551315426826477,
+    "semantic_diversity": 0.4485372304916382,
+    "avg_similarity": 0.5514627695083618,
     "num_insights": 61,
     "subspace_diversity": {
       "subspace_diversity_entropy": 0.8427803021302687,
@@ -240,14 +243,30 @@
     "duplicate_count": 0
   },
   "bm_quality": {
-    "nmi_mean": 0.2449,
-    "int_mean": 0.4838,
-    "actionability": 0.3571,
-    "bm_diversity": 0.2295,
-    "total_evaluated": 14,
-    "total_categorical": 5,
+    "nmi_mean": 0.3485,
+    "int_mean": 0.5134,
+    "actionability": 0.4375,
+    "bm_diversity": 0.2623,
+    "total_evaluated": 16,
+    "total_categorical": 7,
     "total_insights": 61,
     "pairs": [
+      {
+        "breakdown": "Date",
+        "col": "Transaction ID",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.7703,
+        "interestingness": 0.4098
+      },
+      {
+        "breakdown": "Date",
+        "col": "Unit Price",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.4446,
+        "interestingness": 0.7646
+      },
       {
         "breakdown": "Product Category",
         "col": "Units Sold",
@@ -374,13 +393,13 @@
       "num_questions": 61
     },
     "question_insight_alignment": {
-      "question_insight_alignment": 0.5429077744483948,
-      "question_insight_alignment_std": 0.17658297717571259,
+      "question_insight_alignment": 0.5388885140419006,
+      "question_insight_alignment_std": 0.18226128816604614,
       "num_pairs": 61
     },
     "reason_insight_coherence": {
-      "reason_insight_coherence": 0.5003358125686646,
-      "reason_insight_coherence_std": 0.09902746975421906,
+      "reason_insight_coherence": 0.4971877634525299,
+      "reason_insight_coherence_std": 0.10376199334859848,
       "num_pairs": 61
     },
     "question_novelty": {
@@ -408,10 +427,10 @@
     "model": "gpt-5.4"
   },
   "insight_novelty": {
-    "novelty": 0.9508196721311475,
-    "novel_count": 58,
+    "novelty": 0.9344262295081968,
+    "novel_count": 57,
     "total_count": 61,
-    "avg_max_similarity": 0.7572547197341919,
+    "avg_max_similarity": 0.7593787908554077,
     "tau": 0.85,
     "compared_against": "QUIS"
   },

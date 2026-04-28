@@ -1,129 +1,675 @@
 {
   "system": "Baseline",
-  "num_cards": 0,
-  "num_insights": 0,
+  "num_cards": 81,
+  "num_insights": 81,
   "score_uplift_from_subspace": {
-    "num_with_subspace_scored": 0,
-    "num_without_subspace_scored": 0,
-    "mean_score_with_subspace": null,
-    "mean_score_without_subspace": null,
-    "score_uplift_abs": null,
-    "score_uplift_ratio": null,
-    "score_uplift_direction": null
+    "num_with_subspace_scored": 10,
+    "num_without_subspace_scored": 17,
+    "mean_score_with_subspace": 0.6377,
+    "mean_score_without_subspace": 0.5912,
+    "score_uplift_abs": 0.0464,
+    "score_uplift_ratio": 1.0785,
+    "score_uplift_direction": "up"
   },
   "faithfulness": {
-    "faithfulness": 0,
-    "verified_count": 0,
-    "total_count": 0,
+    "faithfulness": 1.0,
+    "verified_count": 81,
+    "total_count": 81,
     "hallucination_count": 0,
-    "hallucination_rate": 1,
+    "hallucination_rate": 0.0,
     "_failed_insights": []
   },
   "insight_significance": {
-    "avg_effect_size": 0.0,
-    "significant_count": 0,
-    "significant_rate": 0.0,
-    "max_effect_size": 0.0,
-    "total_evaluated": 0,
+    "avg_effect_size": 0.6084407407407407,
+    "significant_count": 16,
+    "significant_rate": 0.5925925925925926,
+    "pattern_avg_significance": 0.5583333333333333,
+    "max_effect_size": 1.0,
+    "total_evaluated": 27,
     "by_pattern": {
       "TREND": {
         "significant_count": 0,
-        "total_count": 0,
-        "significant_rate": 0.0
+        "total_count": 4,
+        "significant_rate": 0.0,
+        "insights": [
+          {
+            "breakdown": "JobLevel",
+            "col": "MonthlyIncome",
+            "p_value": 0.964355,
+            "effect_size": 0.0008,
+            "significant": "False"
+          },
+          {
+            "breakdown": "JobLevel",
+            "col": "TotalWorkingYears",
+            "p_value": 0.878402,
+            "effect_size": 0.0027,
+            "significant": "False"
+          },
+          {
+            "breakdown": "JobLevel",
+            "col": "MonthlyIncome",
+            "p_value": 0.964355,
+            "effect_size": 0.0008,
+            "significant": "False"
+          },
+          {
+            "breakdown": "JobLevel",
+            "col": "NumCompaniesWorked",
+            "p_value": 0.788467,
+            "effect_size": 0.0046,
+            "significant": "False"
+          }
+        ]
       },
       "OUTSTANDING_VALUE": {
-        "significant_count": 0,
-        "total_count": 0,
-        "significant_rate": 0.0
+        "significant_count": 4,
+        "total_count": 10,
+        "significant_rate": 0.4,
+        "insights": [
+          {
+            "breakdown": "MonthlyIncome",
+            "col": "JobLevel",
+            "p_value": 0.005135,
+            "effect_size": 0.7196,
+            "significant": "True"
+          },
+          {
+            "breakdown": "TotalWorkingYears",
+            "col": "Age",
+            "p_value": 0.056662,
+            "effect_size": 0.6129,
+            "significant": "False"
+          },
+          {
+            "breakdown": "PercentSalaryHike",
+            "col": "PerformanceRating",
+            "p_value": 0.110336,
+            "effect_size": 0.5505,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "TotalWorkingYears",
+            "p_value": 0.114559,
+            "effect_size": 0.546,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "MonthlyIncome",
+            "p_value": 0.080995,
+            "effect_size": 0.5831,
+            "significant": "False"
+          },
+          {
+            "breakdown": "JobLevel",
+            "col": "MonthlyIncome",
+            "p_value": 0.078231,
+            "effect_size": 0.5863,
+            "significant": "False"
+          },
+          {
+            "breakdown": "MonthlyIncome",
+            "col": "MonthlyIncome",
+            "p_value": 0.0,
+            "effect_size": 0.9016,
+            "significant": "True"
+          },
+          {
+            "breakdown": "TotalWorkingYears",
+            "col": "TotalWorkingYears",
+            "p_value": 2.2e-05,
+            "effect_size": 0.8034,
+            "significant": "True"
+          },
+          {
+            "breakdown": "MonthlyIncome",
+            "col": "TotalWorkingYears",
+            "p_value": 0.000146,
+            "effect_size": 0.7837,
+            "significant": "True"
+          },
+          {
+            "breakdown": "JobLevel",
+            "col": "TotalWorkingYears",
+            "p_value": 0.115504,
+            "effect_size": 0.545,
+            "significant": "False"
+          }
+        ]
       },
       "ATTRIBUTION": {
-        "significant_count": 0,
-        "total_count": 0,
-        "significant_rate": 0.0
+        "significant_count": 7,
+        "total_count": 7,
+        "significant_rate": 1.0,
+        "insights": [
+          {
+            "breakdown": "JobLevel",
+            "col": "MonthlyIncome",
+            "p_value": 0.0,
+            "effect_size": 0.7117,
+            "significant": "True"
+          },
+          {
+            "breakdown": "JobLevel",
+            "col": "TotalWorkingYears",
+            "p_value": 0.0,
+            "effect_size": 0.4741,
+            "significant": "True"
+          },
+          {
+            "breakdown": "JobLevel",
+            "col": "MonthlyIncome",
+            "p_value": 0.0,
+            "effect_size": 0.7117,
+            "significant": "True"
+          },
+          {
+            "breakdown": "PerformanceRating",
+            "col": "PercentSalaryHike",
+            "p_value": 0.0,
+            "effect_size": 1.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "PerformanceRating",
+            "col": "PercentSalaryHike",
+            "p_value": 0.0,
+            "effect_size": 1.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "JobLevel",
+            "col": "MonthlyIncome",
+            "p_value": 0.0,
+            "effect_size": 0.7117,
+            "significant": "True"
+          },
+          {
+            "breakdown": "PerformanceRating",
+            "col": "PercentSalaryHike",
+            "p_value": 0.0,
+            "effect_size": 1.0,
+            "significant": "True"
+          }
+        ]
       },
       "DISTRIBUTION_DIFFERENCE": {
-        "significant_count": 0,
-        "total_count": 0,
-        "significant_rate": 0.0
+        "significant_count": 5,
+        "total_count": 6,
+        "significant_rate": 0.8333333333333334,
+        "insights": [
+          {
+            "breakdown": "JobLevel",
+            "col": "MonthlyIncome",
+            "p_value": 0.0,
+            "effect_size": 0.8756,
+            "significant": "True"
+          },
+          {
+            "breakdown": "JobLevel",
+            "col": "TotalWorkingYears",
+            "p_value": 0.0,
+            "effect_size": 0.4787,
+            "significant": "True"
+          },
+          {
+            "breakdown": "PerformanceRating",
+            "col": "PercentSalaryHike",
+            "p_value": 0.0,
+            "effect_size": 1.0,
+            "significant": "True"
+          },
+          {
+            "breakdown": "JobLevel",
+            "col": "MonthlyIncome",
+            "p_value": 0.0,
+            "effect_size": 0.8756,
+            "significant": "True"
+          },
+          {
+            "breakdown": "JobLevel",
+            "col": "MonthlyIncome",
+            "p_value": 0.0,
+            "effect_size": 0.8756,
+            "significant": "True"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "MonthlyIncome",
+            "p_value": 0.192888,
+            "effect_size": 0.0722,
+            "significant": "False"
+          }
+        ]
       }
     }
   },
   "question_diversity": {
-    "semantic_diversity": 0.0,
-    "avg_similarity": 0.0,
-    "num_insights": 0,
-    "subspace_diversity": null,
-    "value_diversity": null,
-    "dedup_rate": 0.0,
-    "unique_count": 0,
-    "total_count": 0,
-    "duplicate_count": 0
+    "semantic_diversity": 0.49703705310821533,
+    "avg_similarity": 0.5029629468917847,
+    "num_insights": 81,
+    "subspace_diversity": {
+      "subspace_diversity_entropy": 1.3049930113064903,
+      "subspace_diversity_count_ratio": 0.06172839506172839,
+      "unique_columns": 5,
+      "total_columns": 27,
+      "column_distribution": {
+        "Department": 12,
+        "BusinessTravel": 9,
+        "MaritalStatus": 2,
+        "JobRole": 2,
+        "Gender": 2
+      }
+    },
+    "value_diversity": {
+      "value_diversity": 0.4074074074074074,
+      "unique_pairs": 11,
+      "total_pairs": 27
+    },
+    "dedup_rate": 0.03703703703703709,
+    "unique_count": 78,
+    "total_count": 81,
+    "duplicate_count": 3
   },
   "bm_quality": {
-    "nmi_mean": 0.0,
-    "int_mean": 0.0,
-    "actionability": 0.0,
-    "bm_diversity": 0.0,
-    "total_evaluated": 0,
-    "total_categorical": 0,
-    "total_insights": 0,
-    "pairs": []
+    "nmi_mean": 0.0861,
+    "int_mean": 0.1566,
+    "actionability": 0.8,
+    "bm_diversity": 0.3704,
+    "total_evaluated": 30,
+    "total_categorical": 24,
+    "total_insights": 81,
+    "pairs": [
+      {
+        "breakdown": "JobRole",
+        "col": "MonthlyIncome",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.3146,
+        "interestingness": 0.8161
+      },
+      {
+        "breakdown": "Department",
+        "col": "TotalWorkingYears",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.0125,
+        "interestingness": 0.0002
+      },
+      {
+        "breakdown": "BusinessTravel",
+        "col": "MonthlyIncome",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.0183,
+        "interestingness": 0.0015
+      },
+      {
+        "breakdown": "JobRole",
+        "col": "PercentSalaryHike",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.0183,
+        "interestingness": 0.006
+      },
+      {
+        "breakdown": "EducationField",
+        "col": "TotalWorkingYears",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.0286,
+        "interestingness": 0.0034
+      },
+      {
+        "breakdown": "MonthlyIncome",
+        "col": "JobLevel",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "TotalWorkingYears",
+        "col": "Age",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "PercentSalaryHike",
+        "col": "PerformanceRating",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "JobLevel",
+        "col": "MonthlyIncome",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.538,
+        "interestingness": 0.9252
+      },
+      {
+        "breakdown": "JobLevel",
+        "col": "TotalWorkingYears",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.2655,
+        "interestingness": 0.6347
+      },
+      {
+        "breakdown": "MonthlyIncome",
+        "col": "TotalWorkingYears",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "TotalWorkingYears",
+        "col": "MonthlyIncome",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Department",
+        "col": "MonthlyIncome",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.0476,
+        "interestingness": 0.0043
+      },
+      {
+        "breakdown": "BusinessTravel",
+        "col": "TotalWorkingYears",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.0184,
+        "interestingness": 0.0012
+      },
+      {
+        "breakdown": "Department",
+        "col": "PercentSalaryHike",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.009,
+        "interestingness": 0.0013
+      },
+      {
+        "breakdown": "EducationField",
+        "col": "MonthlyIncome",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.0442,
+        "interestingness": 0.0067
+      },
+      {
+        "breakdown": "PerformanceRating",
+        "col": "PercentSalaryHike",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.4168,
+        "interestingness": 0.7718
+      },
+      {
+        "breakdown": "TotalWorkingYears",
+        "col": "JobLevel",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "JobLevel",
+        "col": "NumCompaniesWorked",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.0227,
+        "interestingness": 0.023
+      },
+      {
+        "breakdown": "JobRole",
+        "col": "TotalWorkingYears",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.153,
+        "interestingness": 0.4356
+      },
+      {
+        "breakdown": "MaritalStatus",
+        "col": "TotalWorkingYears",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.0193,
+        "interestingness": 0.008
+      },
+      {
+        "breakdown": "Gender",
+        "col": "TotalWorkingYears",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.0087,
+        "interestingness": 0.0874
+      },
+      {
+        "breakdown": "Gender",
+        "col": "PercentSalaryHike",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.0047,
+        "interestingness": 0.0055
+      },
+      {
+        "breakdown": "BusinessTravel",
+        "col": "JobLevel",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.0026,
+        "interestingness": 0.0006
+      },
+      {
+        "breakdown": "Department",
+        "col": "EmployeeNumber",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.0163,
+        "interestingness": 0.0046
+      },
+      {
+        "breakdown": "MaritalStatus",
+        "col": "EmployeeNumber",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.0079,
+        "interestingness": 0.0029
+      },
+      {
+        "breakdown": "JobRole",
+        "col": "EmployeeNumber",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.0356,
+        "interestingness": 0.0075
+      },
+      {
+        "breakdown": "BusinessTravel",
+        "col": "EmployeeNumber",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.0132,
+        "interestingness": 0.0005
+      },
+      {
+        "breakdown": "EducationField",
+        "col": "EmployeeNumber",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.033,
+        "interestingness": 0.0016
+      },
+      {
+        "breakdown": "MaritalStatus",
+        "col": "MonthlyIncome",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.0184,
+        "interestingness": 0.008
+      }
+    ]
   },
   "question_quality": {
     "question_diversity": {
-      "question_diversity": 0.0,
-      "avg_similarity": 0.0,
-      "num_questions": 0
+      "question_diversity": 0.6301380395889282,
+      "avg_similarity": 0.3698619604110718,
+      "num_questions": 81
     },
     "question_specificity": {
-      "question_specificity_mean": 0.0,
-      "question_specificity_std": 0.0,
-      "num_questions": 0
+      "question_specificity_mean": 10.11111111111111,
+      "question_specificity_std": 5.171145012542265,
+      "num_questions": 81
     },
     "question_insight_alignment": {
-      "question_insight_alignment": 0.0,
-      "num_pairs": 0
+      "question_insight_alignment": 0.5875633358955383,
+      "question_insight_alignment_std": 0.1863963007926941,
+      "num_pairs": 81
     },
     "reason_insight_coherence": {
-      "reason_insight_coherence": 0.0,
-      "num_pairs": 0
+      "reason_insight_coherence": 0.5187830328941345,
+      "reason_insight_coherence_std": 0.11707209050655365,
+      "num_pairs": 81
     },
     "question_novelty": {
-      "question_novelty": 0.0,
-      "novel_count": 0,
-      "total_count": 0,
-      "avg_max_similarity": 0.0,
+      "question_novelty": 0.9753086419753086,
+      "novel_count": 79,
+      "total_count": 81,
+      "avg_max_similarity": 0.6056904792785645,
+      "tau": 0.85,
       "compared_against": "QUIS"
     }
   },
   "time_to_insight": {
-    "total_time_seconds": 30.019101858139038,
-    "insights_generated": 0,
-    "time_per_insight_seconds": 0,
-    "throughput_insights_per_second": 0.0
+    "total_time_seconds": 531.5946378707886,
+    "insights_generated": 81,
+    "time_per_insight_seconds": 6.562896763836896,
+    "throughput_insights_per_second": 0.15237174009962112
   },
   "token_usage": {
-    "total_tokens": 0,
-    "input_tokens": 0,
-    "output_tokens": 0,
-    "requests": 0,
-    "insights_generated": 0,
-    "tokens_per_insight": 0,
-    "model": "gpt-4o-mini"
+    "total_tokens": 113940,
+    "input_tokens": 78410,
+    "output_tokens": 35530,
+    "requests": 22,
+    "insights_generated": 81,
+    "tokens_per_insight": 1406.6666666666667,
+    "model": "gpt-5.4"
   },
   "insight_novelty": {
-    "novelty": 0.0,
-    "novel_count": 0,
-    "total_count": 0,
-    "avg_max_similarity": 0.0,
+    "novelty": 0.8518518518518519,
+    "novel_count": 69,
+    "total_count": 81,
+    "avg_max_similarity": 0.7451239228248596,
+    "tau": 0.85,
     "compared_against": "QUIS"
   },
   "subspace_metrics": {
-    "total_with_subspace": 0,
-    "total_original": 0,
-    "faithfulness": null,
-    "significance": null,
-    "novelty": null,
-    "diversity": null
+    "total_with_subspace": 27,
+    "total_original": 27,
+    "faithfulness": {
+      "faithfulness": 1.0,
+      "verified_count": 27,
+      "total_count": 27,
+      "hallucination_count": 0,
+      "hallucination_rate": 0.0,
+      "_failed_insights": []
+    },
+    "significance": {
+      "avg_effect_size": 0.56455,
+      "significant_count": 0,
+      "significant_rate": 0.0,
+      "pattern_avg_significance": 0.0,
+      "max_effect_size": 0.5831,
+      "total_evaluated": 2,
+      "by_pattern": {
+        "TREND": {
+          "significant_count": 0,
+          "total_count": 0,
+          "significant_rate": 0.0,
+          "insights": []
+        },
+        "OUTSTANDING_VALUE": {
+          "significant_count": 0,
+          "total_count": 2,
+          "significant_rate": 0.0,
+          "insights": [
+            {
+              "breakdown": "Department",
+              "col": "TotalWorkingYears",
+              "p_value": 0.114559,
+              "effect_size": 0.546,
+              "significant": "False"
+            },
+            {
+              "breakdown": "BusinessTravel",
+              "col": "MonthlyIncome",
+              "p_value": 0.080995,
+              "effect_size": 0.5831,
+              "significant": "False"
+            }
+          ]
+        },
+        "ATTRIBUTION": {
+          "significant_count": 0,
+          "total_count": 0,
+          "significant_rate": 0.0,
+          "insights": []
+        },
+        "DISTRIBUTION_DIFFERENCE": {
+          "significant_count": 0,
+          "total_count": 0,
+          "significant_rate": 0.0,
+          "insights": []
+        }
+      }
+    },
+    "novelty": {
+      "novelty": 0.8148148148148148,
+      "novel_count": 22,
+      "total_count": 27,
+      "avg_max_similarity": 0.7397461533546448,
+      "tau": 0.85
+    },
+    "diversity": {
+      "semantic_diversity": 0.4473091959953308,
+      "avg_similarity": 0.5526908040046692,
+      "num_insights": 27,
+      "subspace_diversity": {
+        "subspace_diversity_entropy": 1.3049930113064903,
+        "subspace_diversity_count_ratio": 0.18518518518518517,
+        "unique_columns": 5,
+        "total_columns": 27,
+        "column_distribution": {
+          "Department": 12,
+          "BusinessTravel": 9,
+          "MaritalStatus": 2,
+          "JobRole": 2,
+          "Gender": 2
+        }
+      },
+      "value_diversity": {
+        "value_diversity": 0.4074074074074074,
+        "unique_pairs": 11,
+        "total_pairs": 27
+      },
+      "dedup_rate": 0.0,
+      "unique_count": 27,
+      "total_count": 27,
+      "duplicate_count": 0
+    }
   }
 }

@@ -1,0 +1,3470 @@
+[
+  {
+    "question": "How does SUM(Age) vary by Attrition?",
+    "reason": "Statistics-based analysis: SUM(Age) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "SUM(Age)"
+  },
+  {
+    "question": "How does MEAN(Age) vary by Attrition?",
+    "reason": "Statistics-based analysis: MEAN(Age) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "MEAN(Age)"
+  },
+  {
+    "question": "How does SUM(DailyRate) vary by Attrition?",
+    "reason": "Statistics-based analysis: SUM(DailyRate) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "SUM(DailyRate)"
+  },
+  {
+    "question": "How does MEAN(DailyRate) vary by Attrition?",
+    "reason": "Statistics-based analysis: MEAN(DailyRate) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "MEAN(DailyRate)"
+  },
+  {
+    "question": "How does SUM(DistanceFromHome) vary by Attrition?",
+    "reason": "Statistics-based analysis: SUM(DistanceFromHome) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "SUM(DistanceFromHome)"
+  },
+  {
+    "question": "How does MEAN(DistanceFromHome) vary by Attrition?",
+    "reason": "Statistics-based analysis: MEAN(DistanceFromHome) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "MEAN(DistanceFromHome)"
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by Attrition?",
+    "reason": "Statistics-based analysis: SUM(EmployeeCount) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "SUM(EmployeeCount)"
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by Attrition?",
+    "reason": "Statistics-based analysis: MEAN(EmployeeCount) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "MEAN(EmployeeCount)"
+  },
+  {
+    "question": "How does SUM(HourlyRate) vary by Attrition?",
+    "reason": "Statistics-based analysis: SUM(HourlyRate) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "SUM(HourlyRate)"
+  },
+  {
+    "question": "How does MEAN(HourlyRate) vary by Attrition?",
+    "reason": "Statistics-based analysis: MEAN(HourlyRate) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "MEAN(HourlyRate)"
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by Attrition?",
+    "reason": "Statistics-based analysis: SUM(MonthlyIncome) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "SUM(MonthlyIncome)"
+  },
+  {
+    "question": "How does MEAN(MonthlyIncome) vary by Attrition?",
+    "reason": "Statistics-based analysis: MEAN(MonthlyIncome) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does SUM(MonthlyRate) vary by Attrition?",
+    "reason": "Statistics-based analysis: SUM(MonthlyRate) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "SUM(MonthlyRate)"
+  },
+  {
+    "question": "How does MEAN(MonthlyRate) vary by Attrition?",
+    "reason": "Statistics-based analysis: MEAN(MonthlyRate) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "MEAN(MonthlyRate)"
+  },
+  {
+    "question": "How does SUM(NumCompaniesWorked) vary by Attrition?",
+    "reason": "Statistics-based analysis: SUM(NumCompaniesWorked) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "SUM(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MEAN(NumCompaniesWorked) vary by Attrition?",
+    "reason": "Statistics-based analysis: MEAN(NumCompaniesWorked) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "MEAN(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does SUM(PercentSalaryHike) vary by Attrition?",
+    "reason": "Statistics-based analysis: SUM(PercentSalaryHike) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "SUM(PercentSalaryHike)"
+  },
+  {
+    "question": "How does MEAN(PercentSalaryHike) vary by Attrition?",
+    "reason": "Statistics-based analysis: MEAN(PercentSalaryHike) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "MEAN(PercentSalaryHike)"
+  },
+  {
+    "question": "How does SUM(StandardHours) vary by Attrition?",
+    "reason": "Statistics-based analysis: SUM(StandardHours) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "SUM(StandardHours)"
+  },
+  {
+    "question": "How does MEAN(StandardHours) vary by Attrition?",
+    "reason": "Statistics-based analysis: MEAN(StandardHours) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "MEAN(StandardHours)"
+  },
+  {
+    "question": "How does SUM(TotalWorkingYears) vary by Attrition?",
+    "reason": "Statistics-based analysis: SUM(TotalWorkingYears) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "SUM(TotalWorkingYears)"
+  },
+  {
+    "question": "How does MEAN(TotalWorkingYears) vary by Attrition?",
+    "reason": "Statistics-based analysis: MEAN(TotalWorkingYears) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "How does SUM(TrainingTimesLastYear) vary by Attrition?",
+    "reason": "Statistics-based analysis: SUM(TrainingTimesLastYear) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "SUM(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does MEAN(TrainingTimesLastYear) vary by Attrition?",
+    "reason": "Statistics-based analysis: MEAN(TrainingTimesLastYear) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "MEAN(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does SUM(WorkLifeBalance) vary by Attrition?",
+    "reason": "Statistics-based analysis: SUM(WorkLifeBalance) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "SUM(WorkLifeBalance)"
+  },
+  {
+    "question": "How does MEAN(WorkLifeBalance) vary by Attrition?",
+    "reason": "Statistics-based analysis: MEAN(WorkLifeBalance) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "MEAN(WorkLifeBalance)"
+  },
+  {
+    "question": "How does SUM(YearsAtCompany) vary by Attrition?",
+    "reason": "Statistics-based analysis: SUM(YearsAtCompany) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "SUM(YearsAtCompany)"
+  },
+  {
+    "question": "How does MEAN(YearsAtCompany) vary by Attrition?",
+    "reason": "Statistics-based analysis: MEAN(YearsAtCompany) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "MEAN(YearsAtCompany)"
+  },
+  {
+    "question": "How does SUM(YearsInCurrentRole) vary by Attrition?",
+    "reason": "Statistics-based analysis: SUM(YearsInCurrentRole) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "SUM(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does MEAN(YearsInCurrentRole) vary by Attrition?",
+    "reason": "Statistics-based analysis: MEAN(YearsInCurrentRole) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "MEAN(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does SUM(YearsSinceLastPromotion) vary by Attrition?",
+    "reason": "Statistics-based analysis: SUM(YearsSinceLastPromotion) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "SUM(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does MEAN(YearsSinceLastPromotion) vary by Attrition?",
+    "reason": "Statistics-based analysis: MEAN(YearsSinceLastPromotion) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "MEAN(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does SUM(YearsWithCurrManager) vary by Attrition?",
+    "reason": "Statistics-based analysis: SUM(YearsWithCurrManager) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "SUM(YearsWithCurrManager)"
+  },
+  {
+    "question": "How does MEAN(YearsWithCurrManager) vary by Attrition?",
+    "reason": "Statistics-based analysis: MEAN(YearsWithCurrManager) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "MEAN(YearsWithCurrManager)"
+  },
+  {
+    "question": "How does SUM(Age) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis: SUM(Age) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "SUM(Age)"
+  },
+  {
+    "question": "How does MEAN(Age) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis: MEAN(Age) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "MEAN(Age)"
+  },
+  {
+    "question": "How does SUM(DailyRate) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis: SUM(DailyRate) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "SUM(DailyRate)"
+  },
+  {
+    "question": "How does MEAN(DailyRate) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis: MEAN(DailyRate) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "MEAN(DailyRate)"
+  },
+  {
+    "question": "How does SUM(DistanceFromHome) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis: SUM(DistanceFromHome) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "SUM(DistanceFromHome)"
+  },
+  {
+    "question": "How does MEAN(DistanceFromHome) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis: MEAN(DistanceFromHome) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "MEAN(DistanceFromHome)"
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis: SUM(EmployeeCount) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "SUM(EmployeeCount)"
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis: MEAN(EmployeeCount) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "MEAN(EmployeeCount)"
+  },
+  {
+    "question": "How does SUM(HourlyRate) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis: SUM(HourlyRate) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "SUM(HourlyRate)"
+  },
+  {
+    "question": "How does MEAN(HourlyRate) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis: MEAN(HourlyRate) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "MEAN(HourlyRate)"
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis: SUM(MonthlyIncome) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "SUM(MonthlyIncome)"
+  },
+  {
+    "question": "How does MEAN(MonthlyIncome) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis: MEAN(MonthlyIncome) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does SUM(MonthlyRate) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis: SUM(MonthlyRate) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "SUM(MonthlyRate)"
+  },
+  {
+    "question": "How does MEAN(MonthlyRate) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis: MEAN(MonthlyRate) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "MEAN(MonthlyRate)"
+  },
+  {
+    "question": "How does SUM(NumCompaniesWorked) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis: SUM(NumCompaniesWorked) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "SUM(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MEAN(NumCompaniesWorked) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis: MEAN(NumCompaniesWorked) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "MEAN(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does SUM(PercentSalaryHike) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis: SUM(PercentSalaryHike) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "SUM(PercentSalaryHike)"
+  },
+  {
+    "question": "How does MEAN(PercentSalaryHike) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis: MEAN(PercentSalaryHike) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "MEAN(PercentSalaryHike)"
+  },
+  {
+    "question": "How does SUM(StandardHours) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis: SUM(StandardHours) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "SUM(StandardHours)"
+  },
+  {
+    "question": "How does MEAN(StandardHours) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis: MEAN(StandardHours) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "MEAN(StandardHours)"
+  },
+  {
+    "question": "How does SUM(TotalWorkingYears) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis: SUM(TotalWorkingYears) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "SUM(TotalWorkingYears)"
+  },
+  {
+    "question": "How does MEAN(TotalWorkingYears) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis: MEAN(TotalWorkingYears) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "How does SUM(TrainingTimesLastYear) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis: SUM(TrainingTimesLastYear) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "SUM(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does MEAN(TrainingTimesLastYear) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis: MEAN(TrainingTimesLastYear) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "MEAN(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does SUM(WorkLifeBalance) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis: SUM(WorkLifeBalance) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "SUM(WorkLifeBalance)"
+  },
+  {
+    "question": "How does MEAN(WorkLifeBalance) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis: MEAN(WorkLifeBalance) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "MEAN(WorkLifeBalance)"
+  },
+  {
+    "question": "How does SUM(YearsAtCompany) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis: SUM(YearsAtCompany) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "SUM(YearsAtCompany)"
+  },
+  {
+    "question": "How does MEAN(YearsAtCompany) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis: MEAN(YearsAtCompany) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "MEAN(YearsAtCompany)"
+  },
+  {
+    "question": "How does SUM(YearsInCurrentRole) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis: SUM(YearsInCurrentRole) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "SUM(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does MEAN(YearsInCurrentRole) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis: MEAN(YearsInCurrentRole) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "MEAN(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does SUM(YearsSinceLastPromotion) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis: SUM(YearsSinceLastPromotion) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "SUM(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does MEAN(YearsSinceLastPromotion) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis: MEAN(YearsSinceLastPromotion) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "MEAN(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does SUM(YearsWithCurrManager) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis: SUM(YearsWithCurrManager) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "SUM(YearsWithCurrManager)"
+  },
+  {
+    "question": "How does MEAN(YearsWithCurrManager) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis: MEAN(YearsWithCurrManager) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "MEAN(YearsWithCurrManager)"
+  },
+  {
+    "question": "How does SUM(Age) vary by Department?",
+    "reason": "Statistics-based analysis: SUM(Age) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "SUM(Age)"
+  },
+  {
+    "question": "How does MEAN(Age) vary by Department?",
+    "reason": "Statistics-based analysis: MEAN(Age) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "MEAN(Age)"
+  },
+  {
+    "question": "How does SUM(DailyRate) vary by Department?",
+    "reason": "Statistics-based analysis: SUM(DailyRate) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "SUM(DailyRate)"
+  },
+  {
+    "question": "How does MEAN(DailyRate) vary by Department?",
+    "reason": "Statistics-based analysis: MEAN(DailyRate) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "MEAN(DailyRate)"
+  },
+  {
+    "question": "How does SUM(DistanceFromHome) vary by Department?",
+    "reason": "Statistics-based analysis: SUM(DistanceFromHome) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "SUM(DistanceFromHome)"
+  },
+  {
+    "question": "How does MEAN(DistanceFromHome) vary by Department?",
+    "reason": "Statistics-based analysis: MEAN(DistanceFromHome) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "MEAN(DistanceFromHome)"
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by Department?",
+    "reason": "Statistics-based analysis: SUM(EmployeeCount) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "SUM(EmployeeCount)"
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by Department?",
+    "reason": "Statistics-based analysis: MEAN(EmployeeCount) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "MEAN(EmployeeCount)"
+  },
+  {
+    "question": "How does SUM(HourlyRate) vary by Department?",
+    "reason": "Statistics-based analysis: SUM(HourlyRate) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "SUM(HourlyRate)"
+  },
+  {
+    "question": "How does MEAN(HourlyRate) vary by Department?",
+    "reason": "Statistics-based analysis: MEAN(HourlyRate) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "MEAN(HourlyRate)"
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by Department?",
+    "reason": "Statistics-based analysis: SUM(MonthlyIncome) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "SUM(MonthlyIncome)"
+  },
+  {
+    "question": "How does MEAN(MonthlyIncome) vary by Department?",
+    "reason": "Statistics-based analysis: MEAN(MonthlyIncome) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does SUM(MonthlyRate) vary by Department?",
+    "reason": "Statistics-based analysis: SUM(MonthlyRate) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "SUM(MonthlyRate)"
+  },
+  {
+    "question": "How does MEAN(MonthlyRate) vary by Department?",
+    "reason": "Statistics-based analysis: MEAN(MonthlyRate) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "MEAN(MonthlyRate)"
+  },
+  {
+    "question": "How does SUM(NumCompaniesWorked) vary by Department?",
+    "reason": "Statistics-based analysis: SUM(NumCompaniesWorked) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "SUM(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MEAN(NumCompaniesWorked) vary by Department?",
+    "reason": "Statistics-based analysis: MEAN(NumCompaniesWorked) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "MEAN(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does SUM(PercentSalaryHike) vary by Department?",
+    "reason": "Statistics-based analysis: SUM(PercentSalaryHike) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "SUM(PercentSalaryHike)"
+  },
+  {
+    "question": "How does MEAN(PercentSalaryHike) vary by Department?",
+    "reason": "Statistics-based analysis: MEAN(PercentSalaryHike) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "MEAN(PercentSalaryHike)"
+  },
+  {
+    "question": "How does SUM(StandardHours) vary by Department?",
+    "reason": "Statistics-based analysis: SUM(StandardHours) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "SUM(StandardHours)"
+  },
+  {
+    "question": "How does MEAN(StandardHours) vary by Department?",
+    "reason": "Statistics-based analysis: MEAN(StandardHours) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "MEAN(StandardHours)"
+  },
+  {
+    "question": "How does SUM(TotalWorkingYears) vary by Department?",
+    "reason": "Statistics-based analysis: SUM(TotalWorkingYears) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "SUM(TotalWorkingYears)"
+  },
+  {
+    "question": "How does MEAN(TotalWorkingYears) vary by Department?",
+    "reason": "Statistics-based analysis: MEAN(TotalWorkingYears) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "How does SUM(TrainingTimesLastYear) vary by Department?",
+    "reason": "Statistics-based analysis: SUM(TrainingTimesLastYear) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "SUM(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does MEAN(TrainingTimesLastYear) vary by Department?",
+    "reason": "Statistics-based analysis: MEAN(TrainingTimesLastYear) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "MEAN(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does SUM(WorkLifeBalance) vary by Department?",
+    "reason": "Statistics-based analysis: SUM(WorkLifeBalance) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "SUM(WorkLifeBalance)"
+  },
+  {
+    "question": "How does MEAN(WorkLifeBalance) vary by Department?",
+    "reason": "Statistics-based analysis: MEAN(WorkLifeBalance) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "MEAN(WorkLifeBalance)"
+  },
+  {
+    "question": "How does SUM(YearsAtCompany) vary by Department?",
+    "reason": "Statistics-based analysis: SUM(YearsAtCompany) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "SUM(YearsAtCompany)"
+  },
+  {
+    "question": "How does MEAN(YearsAtCompany) vary by Department?",
+    "reason": "Statistics-based analysis: MEAN(YearsAtCompany) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "MEAN(YearsAtCompany)"
+  },
+  {
+    "question": "How does SUM(YearsInCurrentRole) vary by Department?",
+    "reason": "Statistics-based analysis: SUM(YearsInCurrentRole) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "SUM(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does MEAN(YearsInCurrentRole) vary by Department?",
+    "reason": "Statistics-based analysis: MEAN(YearsInCurrentRole) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "MEAN(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does SUM(YearsSinceLastPromotion) vary by Department?",
+    "reason": "Statistics-based analysis: SUM(YearsSinceLastPromotion) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "SUM(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does MEAN(YearsSinceLastPromotion) vary by Department?",
+    "reason": "Statistics-based analysis: MEAN(YearsSinceLastPromotion) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "MEAN(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does SUM(YearsWithCurrManager) vary by Department?",
+    "reason": "Statistics-based analysis: SUM(YearsWithCurrManager) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "SUM(YearsWithCurrManager)"
+  },
+  {
+    "question": "How does MEAN(YearsWithCurrManager) vary by Department?",
+    "reason": "Statistics-based analysis: MEAN(YearsWithCurrManager) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "MEAN(YearsWithCurrManager)"
+  },
+  {
+    "question": "How does SUM(Age) vary by Education?",
+    "reason": "Statistics-based analysis: SUM(Age) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "SUM(Age)"
+  },
+  {
+    "question": "How does MEAN(Age) vary by Education?",
+    "reason": "Statistics-based analysis: MEAN(Age) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "MEAN(Age)"
+  },
+  {
+    "question": "How does SUM(DailyRate) vary by Education?",
+    "reason": "Statistics-based analysis: SUM(DailyRate) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "SUM(DailyRate)"
+  },
+  {
+    "question": "How does MEAN(DailyRate) vary by Education?",
+    "reason": "Statistics-based analysis: MEAN(DailyRate) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "MEAN(DailyRate)"
+  },
+  {
+    "question": "How does SUM(DistanceFromHome) vary by Education?",
+    "reason": "Statistics-based analysis: SUM(DistanceFromHome) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "SUM(DistanceFromHome)"
+  },
+  {
+    "question": "How does MEAN(DistanceFromHome) vary by Education?",
+    "reason": "Statistics-based analysis: MEAN(DistanceFromHome) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "MEAN(DistanceFromHome)"
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by Education?",
+    "reason": "Statistics-based analysis: SUM(EmployeeCount) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "SUM(EmployeeCount)"
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by Education?",
+    "reason": "Statistics-based analysis: MEAN(EmployeeCount) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "MEAN(EmployeeCount)"
+  },
+  {
+    "question": "How does SUM(HourlyRate) vary by Education?",
+    "reason": "Statistics-based analysis: SUM(HourlyRate) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "SUM(HourlyRate)"
+  },
+  {
+    "question": "How does MEAN(HourlyRate) vary by Education?",
+    "reason": "Statistics-based analysis: MEAN(HourlyRate) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "MEAN(HourlyRate)"
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by Education?",
+    "reason": "Statistics-based analysis: SUM(MonthlyIncome) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "SUM(MonthlyIncome)"
+  },
+  {
+    "question": "How does MEAN(MonthlyIncome) vary by Education?",
+    "reason": "Statistics-based analysis: MEAN(MonthlyIncome) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does SUM(MonthlyRate) vary by Education?",
+    "reason": "Statistics-based analysis: SUM(MonthlyRate) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "SUM(MonthlyRate)"
+  },
+  {
+    "question": "How does MEAN(MonthlyRate) vary by Education?",
+    "reason": "Statistics-based analysis: MEAN(MonthlyRate) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "MEAN(MonthlyRate)"
+  },
+  {
+    "question": "How does SUM(NumCompaniesWorked) vary by Education?",
+    "reason": "Statistics-based analysis: SUM(NumCompaniesWorked) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "SUM(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MEAN(NumCompaniesWorked) vary by Education?",
+    "reason": "Statistics-based analysis: MEAN(NumCompaniesWorked) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "MEAN(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does SUM(PercentSalaryHike) vary by Education?",
+    "reason": "Statistics-based analysis: SUM(PercentSalaryHike) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "SUM(PercentSalaryHike)"
+  },
+  {
+    "question": "How does MEAN(PercentSalaryHike) vary by Education?",
+    "reason": "Statistics-based analysis: MEAN(PercentSalaryHike) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "MEAN(PercentSalaryHike)"
+  },
+  {
+    "question": "How does SUM(StandardHours) vary by Education?",
+    "reason": "Statistics-based analysis: SUM(StandardHours) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "SUM(StandardHours)"
+  },
+  {
+    "question": "How does MEAN(StandardHours) vary by Education?",
+    "reason": "Statistics-based analysis: MEAN(StandardHours) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "MEAN(StandardHours)"
+  },
+  {
+    "question": "How does SUM(TotalWorkingYears) vary by Education?",
+    "reason": "Statistics-based analysis: SUM(TotalWorkingYears) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "SUM(TotalWorkingYears)"
+  },
+  {
+    "question": "How does MEAN(TotalWorkingYears) vary by Education?",
+    "reason": "Statistics-based analysis: MEAN(TotalWorkingYears) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "How does SUM(TrainingTimesLastYear) vary by Education?",
+    "reason": "Statistics-based analysis: SUM(TrainingTimesLastYear) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "SUM(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does MEAN(TrainingTimesLastYear) vary by Education?",
+    "reason": "Statistics-based analysis: MEAN(TrainingTimesLastYear) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "MEAN(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does SUM(WorkLifeBalance) vary by Education?",
+    "reason": "Statistics-based analysis: SUM(WorkLifeBalance) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "SUM(WorkLifeBalance)"
+  },
+  {
+    "question": "How does MEAN(WorkLifeBalance) vary by Education?",
+    "reason": "Statistics-based analysis: MEAN(WorkLifeBalance) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "MEAN(WorkLifeBalance)"
+  },
+  {
+    "question": "How does SUM(YearsAtCompany) vary by Education?",
+    "reason": "Statistics-based analysis: SUM(YearsAtCompany) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "SUM(YearsAtCompany)"
+  },
+  {
+    "question": "How does MEAN(YearsAtCompany) vary by Education?",
+    "reason": "Statistics-based analysis: MEAN(YearsAtCompany) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "MEAN(YearsAtCompany)"
+  },
+  {
+    "question": "How does SUM(YearsInCurrentRole) vary by Education?",
+    "reason": "Statistics-based analysis: SUM(YearsInCurrentRole) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "SUM(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does MEAN(YearsInCurrentRole) vary by Education?",
+    "reason": "Statistics-based analysis: MEAN(YearsInCurrentRole) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "MEAN(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does SUM(YearsSinceLastPromotion) vary by Education?",
+    "reason": "Statistics-based analysis: SUM(YearsSinceLastPromotion) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "SUM(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does MEAN(YearsSinceLastPromotion) vary by Education?",
+    "reason": "Statistics-based analysis: MEAN(YearsSinceLastPromotion) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "MEAN(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does SUM(YearsWithCurrManager) vary by Education?",
+    "reason": "Statistics-based analysis: SUM(YearsWithCurrManager) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "SUM(YearsWithCurrManager)"
+  },
+  {
+    "question": "How does MEAN(YearsWithCurrManager) vary by Education?",
+    "reason": "Statistics-based analysis: MEAN(YearsWithCurrManager) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "MEAN(YearsWithCurrManager)"
+  },
+  {
+    "question": "How does SUM(Age) vary by EducationField?",
+    "reason": "Statistics-based analysis: SUM(Age) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "SUM(Age)"
+  },
+  {
+    "question": "How does MEAN(Age) vary by EducationField?",
+    "reason": "Statistics-based analysis: MEAN(Age) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(Age)"
+  },
+  {
+    "question": "How does SUM(DailyRate) vary by EducationField?",
+    "reason": "Statistics-based analysis: SUM(DailyRate) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "SUM(DailyRate)"
+  },
+  {
+    "question": "How does MEAN(DailyRate) vary by EducationField?",
+    "reason": "Statistics-based analysis: MEAN(DailyRate) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(DailyRate)"
+  },
+  {
+    "question": "How does SUM(DistanceFromHome) vary by EducationField?",
+    "reason": "Statistics-based analysis: SUM(DistanceFromHome) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "SUM(DistanceFromHome)"
+  },
+  {
+    "question": "How does MEAN(DistanceFromHome) vary by EducationField?",
+    "reason": "Statistics-based analysis: MEAN(DistanceFromHome) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(DistanceFromHome)"
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by EducationField?",
+    "reason": "Statistics-based analysis: SUM(EmployeeCount) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "SUM(EmployeeCount)"
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by EducationField?",
+    "reason": "Statistics-based analysis: MEAN(EmployeeCount) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(EmployeeCount)"
+  },
+  {
+    "question": "How does SUM(HourlyRate) vary by EducationField?",
+    "reason": "Statistics-based analysis: SUM(HourlyRate) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "SUM(HourlyRate)"
+  },
+  {
+    "question": "How does MEAN(HourlyRate) vary by EducationField?",
+    "reason": "Statistics-based analysis: MEAN(HourlyRate) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(HourlyRate)"
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by EducationField?",
+    "reason": "Statistics-based analysis: SUM(MonthlyIncome) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "SUM(MonthlyIncome)"
+  },
+  {
+    "question": "How does MEAN(MonthlyIncome) vary by EducationField?",
+    "reason": "Statistics-based analysis: MEAN(MonthlyIncome) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does SUM(MonthlyRate) vary by EducationField?",
+    "reason": "Statistics-based analysis: SUM(MonthlyRate) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "SUM(MonthlyRate)"
+  },
+  {
+    "question": "How does MEAN(MonthlyRate) vary by EducationField?",
+    "reason": "Statistics-based analysis: MEAN(MonthlyRate) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(MonthlyRate)"
+  },
+  {
+    "question": "How does SUM(NumCompaniesWorked) vary by EducationField?",
+    "reason": "Statistics-based analysis: SUM(NumCompaniesWorked) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "SUM(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MEAN(NumCompaniesWorked) vary by EducationField?",
+    "reason": "Statistics-based analysis: MEAN(NumCompaniesWorked) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does SUM(PercentSalaryHike) vary by EducationField?",
+    "reason": "Statistics-based analysis: SUM(PercentSalaryHike) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "SUM(PercentSalaryHike)"
+  },
+  {
+    "question": "How does MEAN(PercentSalaryHike) vary by EducationField?",
+    "reason": "Statistics-based analysis: MEAN(PercentSalaryHike) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(PercentSalaryHike)"
+  },
+  {
+    "question": "How does SUM(StandardHours) vary by EducationField?",
+    "reason": "Statistics-based analysis: SUM(StandardHours) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "SUM(StandardHours)"
+  },
+  {
+    "question": "How does MEAN(StandardHours) vary by EducationField?",
+    "reason": "Statistics-based analysis: MEAN(StandardHours) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(StandardHours)"
+  },
+  {
+    "question": "How does SUM(TotalWorkingYears) vary by EducationField?",
+    "reason": "Statistics-based analysis: SUM(TotalWorkingYears) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "SUM(TotalWorkingYears)"
+  },
+  {
+    "question": "How does MEAN(TotalWorkingYears) vary by EducationField?",
+    "reason": "Statistics-based analysis: MEAN(TotalWorkingYears) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "How does SUM(TrainingTimesLastYear) vary by EducationField?",
+    "reason": "Statistics-based analysis: SUM(TrainingTimesLastYear) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "SUM(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does MEAN(TrainingTimesLastYear) vary by EducationField?",
+    "reason": "Statistics-based analysis: MEAN(TrainingTimesLastYear) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does SUM(WorkLifeBalance) vary by EducationField?",
+    "reason": "Statistics-based analysis: SUM(WorkLifeBalance) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "SUM(WorkLifeBalance)"
+  },
+  {
+    "question": "How does MEAN(WorkLifeBalance) vary by EducationField?",
+    "reason": "Statistics-based analysis: MEAN(WorkLifeBalance) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(WorkLifeBalance)"
+  },
+  {
+    "question": "How does SUM(YearsAtCompany) vary by EducationField?",
+    "reason": "Statistics-based analysis: SUM(YearsAtCompany) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "SUM(YearsAtCompany)"
+  },
+  {
+    "question": "How does MEAN(YearsAtCompany) vary by EducationField?",
+    "reason": "Statistics-based analysis: MEAN(YearsAtCompany) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(YearsAtCompany)"
+  },
+  {
+    "question": "How does SUM(YearsInCurrentRole) vary by EducationField?",
+    "reason": "Statistics-based analysis: SUM(YearsInCurrentRole) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "SUM(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does MEAN(YearsInCurrentRole) vary by EducationField?",
+    "reason": "Statistics-based analysis: MEAN(YearsInCurrentRole) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does SUM(YearsSinceLastPromotion) vary by EducationField?",
+    "reason": "Statistics-based analysis: SUM(YearsSinceLastPromotion) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "SUM(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does MEAN(YearsSinceLastPromotion) vary by EducationField?",
+    "reason": "Statistics-based analysis: MEAN(YearsSinceLastPromotion) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does SUM(YearsWithCurrManager) vary by EducationField?",
+    "reason": "Statistics-based analysis: SUM(YearsWithCurrManager) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "SUM(YearsWithCurrManager)"
+  },
+  {
+    "question": "How does MEAN(YearsWithCurrManager) vary by EducationField?",
+    "reason": "Statistics-based analysis: MEAN(YearsWithCurrManager) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(YearsWithCurrManager)"
+  },
+  {
+    "question": "How does SUM(Age) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(Age) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "SUM(Age)"
+  },
+  {
+    "question": "How does MEAN(Age) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(Age) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "MEAN(Age)"
+  },
+  {
+    "question": "How does SUM(DailyRate) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(DailyRate) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "SUM(DailyRate)"
+  },
+  {
+    "question": "How does MEAN(DailyRate) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(DailyRate) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "MEAN(DailyRate)"
+  },
+  {
+    "question": "How does SUM(DistanceFromHome) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(DistanceFromHome) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "SUM(DistanceFromHome)"
+  },
+  {
+    "question": "How does MEAN(DistanceFromHome) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(DistanceFromHome) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "MEAN(DistanceFromHome)"
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(EmployeeCount) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "SUM(EmployeeCount)"
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(EmployeeCount) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "MEAN(EmployeeCount)"
+  },
+  {
+    "question": "How does SUM(HourlyRate) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(HourlyRate) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "SUM(HourlyRate)"
+  },
+  {
+    "question": "How does MEAN(HourlyRate) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(HourlyRate) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "MEAN(HourlyRate)"
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(MonthlyIncome) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "SUM(MonthlyIncome)"
+  },
+  {
+    "question": "How does MEAN(MonthlyIncome) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(MonthlyIncome) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does SUM(MonthlyRate) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(MonthlyRate) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "SUM(MonthlyRate)"
+  },
+  {
+    "question": "How does MEAN(MonthlyRate) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(MonthlyRate) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "MEAN(MonthlyRate)"
+  },
+  {
+    "question": "How does SUM(NumCompaniesWorked) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(NumCompaniesWorked) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "SUM(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MEAN(NumCompaniesWorked) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(NumCompaniesWorked) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "MEAN(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does SUM(PercentSalaryHike) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(PercentSalaryHike) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "SUM(PercentSalaryHike)"
+  },
+  {
+    "question": "How does MEAN(PercentSalaryHike) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(PercentSalaryHike) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "MEAN(PercentSalaryHike)"
+  },
+  {
+    "question": "How does SUM(StandardHours) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(StandardHours) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "SUM(StandardHours)"
+  },
+  {
+    "question": "How does MEAN(StandardHours) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(StandardHours) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "MEAN(StandardHours)"
+  },
+  {
+    "question": "How does SUM(TotalWorkingYears) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(TotalWorkingYears) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "SUM(TotalWorkingYears)"
+  },
+  {
+    "question": "How does MEAN(TotalWorkingYears) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(TotalWorkingYears) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "How does SUM(TrainingTimesLastYear) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(TrainingTimesLastYear) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "SUM(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does MEAN(TrainingTimesLastYear) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(TrainingTimesLastYear) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "MEAN(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does SUM(WorkLifeBalance) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(WorkLifeBalance) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "SUM(WorkLifeBalance)"
+  },
+  {
+    "question": "How does MEAN(WorkLifeBalance) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(WorkLifeBalance) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "MEAN(WorkLifeBalance)"
+  },
+  {
+    "question": "How does SUM(YearsAtCompany) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(YearsAtCompany) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "SUM(YearsAtCompany)"
+  },
+  {
+    "question": "How does MEAN(YearsAtCompany) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(YearsAtCompany) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "MEAN(YearsAtCompany)"
+  },
+  {
+    "question": "How does SUM(YearsInCurrentRole) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(YearsInCurrentRole) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "SUM(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does MEAN(YearsInCurrentRole) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(YearsInCurrentRole) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "MEAN(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does SUM(YearsSinceLastPromotion) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(YearsSinceLastPromotion) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "SUM(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does MEAN(YearsSinceLastPromotion) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(YearsSinceLastPromotion) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "MEAN(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does SUM(YearsWithCurrManager) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(YearsWithCurrManager) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "SUM(YearsWithCurrManager)"
+  },
+  {
+    "question": "How does MEAN(YearsWithCurrManager) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(YearsWithCurrManager) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "MEAN(YearsWithCurrManager)"
+  },
+  {
+    "question": "How does SUM(Age) vary by Gender?",
+    "reason": "Statistics-based analysis: SUM(Age) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "SUM(Age)"
+  },
+  {
+    "question": "How does MEAN(Age) vary by Gender?",
+    "reason": "Statistics-based analysis: MEAN(Age) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "MEAN(Age)"
+  },
+  {
+    "question": "How does SUM(DailyRate) vary by Gender?",
+    "reason": "Statistics-based analysis: SUM(DailyRate) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "SUM(DailyRate)"
+  },
+  {
+    "question": "How does MEAN(DailyRate) vary by Gender?",
+    "reason": "Statistics-based analysis: MEAN(DailyRate) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "MEAN(DailyRate)"
+  },
+  {
+    "question": "How does SUM(DistanceFromHome) vary by Gender?",
+    "reason": "Statistics-based analysis: SUM(DistanceFromHome) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "SUM(DistanceFromHome)"
+  },
+  {
+    "question": "How does MEAN(DistanceFromHome) vary by Gender?",
+    "reason": "Statistics-based analysis: MEAN(DistanceFromHome) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "MEAN(DistanceFromHome)"
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by Gender?",
+    "reason": "Statistics-based analysis: SUM(EmployeeCount) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "SUM(EmployeeCount)"
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by Gender?",
+    "reason": "Statistics-based analysis: MEAN(EmployeeCount) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "MEAN(EmployeeCount)"
+  },
+  {
+    "question": "How does SUM(HourlyRate) vary by Gender?",
+    "reason": "Statistics-based analysis: SUM(HourlyRate) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "SUM(HourlyRate)"
+  },
+  {
+    "question": "How does MEAN(HourlyRate) vary by Gender?",
+    "reason": "Statistics-based analysis: MEAN(HourlyRate) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "MEAN(HourlyRate)"
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by Gender?",
+    "reason": "Statistics-based analysis: SUM(MonthlyIncome) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "SUM(MonthlyIncome)"
+  },
+  {
+    "question": "How does MEAN(MonthlyIncome) vary by Gender?",
+    "reason": "Statistics-based analysis: MEAN(MonthlyIncome) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does SUM(MonthlyRate) vary by Gender?",
+    "reason": "Statistics-based analysis: SUM(MonthlyRate) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "SUM(MonthlyRate)"
+  },
+  {
+    "question": "How does MEAN(MonthlyRate) vary by Gender?",
+    "reason": "Statistics-based analysis: MEAN(MonthlyRate) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "MEAN(MonthlyRate)"
+  },
+  {
+    "question": "How does SUM(NumCompaniesWorked) vary by Gender?",
+    "reason": "Statistics-based analysis: SUM(NumCompaniesWorked) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "SUM(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MEAN(NumCompaniesWorked) vary by Gender?",
+    "reason": "Statistics-based analysis: MEAN(NumCompaniesWorked) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "MEAN(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does SUM(PercentSalaryHike) vary by Gender?",
+    "reason": "Statistics-based analysis: SUM(PercentSalaryHike) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "SUM(PercentSalaryHike)"
+  },
+  {
+    "question": "How does MEAN(PercentSalaryHike) vary by Gender?",
+    "reason": "Statistics-based analysis: MEAN(PercentSalaryHike) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "MEAN(PercentSalaryHike)"
+  },
+  {
+    "question": "How does SUM(StandardHours) vary by Gender?",
+    "reason": "Statistics-based analysis: SUM(StandardHours) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "SUM(StandardHours)"
+  },
+  {
+    "question": "How does MEAN(StandardHours) vary by Gender?",
+    "reason": "Statistics-based analysis: MEAN(StandardHours) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "MEAN(StandardHours)"
+  },
+  {
+    "question": "How does SUM(TotalWorkingYears) vary by Gender?",
+    "reason": "Statistics-based analysis: SUM(TotalWorkingYears) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "SUM(TotalWorkingYears)"
+  },
+  {
+    "question": "How does MEAN(TotalWorkingYears) vary by Gender?",
+    "reason": "Statistics-based analysis: MEAN(TotalWorkingYears) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "How does SUM(TrainingTimesLastYear) vary by Gender?",
+    "reason": "Statistics-based analysis: SUM(TrainingTimesLastYear) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "SUM(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does MEAN(TrainingTimesLastYear) vary by Gender?",
+    "reason": "Statistics-based analysis: MEAN(TrainingTimesLastYear) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "MEAN(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does SUM(WorkLifeBalance) vary by Gender?",
+    "reason": "Statistics-based analysis: SUM(WorkLifeBalance) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "SUM(WorkLifeBalance)"
+  },
+  {
+    "question": "How does MEAN(WorkLifeBalance) vary by Gender?",
+    "reason": "Statistics-based analysis: MEAN(WorkLifeBalance) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "MEAN(WorkLifeBalance)"
+  },
+  {
+    "question": "How does SUM(YearsAtCompany) vary by Gender?",
+    "reason": "Statistics-based analysis: SUM(YearsAtCompany) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "SUM(YearsAtCompany)"
+  },
+  {
+    "question": "How does MEAN(YearsAtCompany) vary by Gender?",
+    "reason": "Statistics-based analysis: MEAN(YearsAtCompany) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "MEAN(YearsAtCompany)"
+  },
+  {
+    "question": "How does SUM(YearsInCurrentRole) vary by Gender?",
+    "reason": "Statistics-based analysis: SUM(YearsInCurrentRole) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "SUM(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does MEAN(YearsInCurrentRole) vary by Gender?",
+    "reason": "Statistics-based analysis: MEAN(YearsInCurrentRole) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "MEAN(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does SUM(YearsSinceLastPromotion) vary by Gender?",
+    "reason": "Statistics-based analysis: SUM(YearsSinceLastPromotion) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "SUM(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does MEAN(YearsSinceLastPromotion) vary by Gender?",
+    "reason": "Statistics-based analysis: MEAN(YearsSinceLastPromotion) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "MEAN(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does SUM(YearsWithCurrManager) vary by Gender?",
+    "reason": "Statistics-based analysis: SUM(YearsWithCurrManager) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "SUM(YearsWithCurrManager)"
+  },
+  {
+    "question": "How does MEAN(YearsWithCurrManager) vary by Gender?",
+    "reason": "Statistics-based analysis: MEAN(YearsWithCurrManager) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "MEAN(YearsWithCurrManager)"
+  },
+  {
+    "question": "How does SUM(Age) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis: SUM(Age) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "SUM(Age)"
+  },
+  {
+    "question": "How does MEAN(Age) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis: MEAN(Age) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "MEAN(Age)"
+  },
+  {
+    "question": "How does SUM(DailyRate) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis: SUM(DailyRate) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "SUM(DailyRate)"
+  },
+  {
+    "question": "How does MEAN(DailyRate) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis: MEAN(DailyRate) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "MEAN(DailyRate)"
+  },
+  {
+    "question": "How does SUM(DistanceFromHome) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis: SUM(DistanceFromHome) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "SUM(DistanceFromHome)"
+  },
+  {
+    "question": "How does MEAN(DistanceFromHome) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis: MEAN(DistanceFromHome) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "MEAN(DistanceFromHome)"
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis: SUM(EmployeeCount) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "SUM(EmployeeCount)"
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis: MEAN(EmployeeCount) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "MEAN(EmployeeCount)"
+  },
+  {
+    "question": "How does SUM(HourlyRate) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis: SUM(HourlyRate) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "SUM(HourlyRate)"
+  },
+  {
+    "question": "How does MEAN(HourlyRate) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis: MEAN(HourlyRate) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "MEAN(HourlyRate)"
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis: SUM(MonthlyIncome) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "SUM(MonthlyIncome)"
+  },
+  {
+    "question": "How does MEAN(MonthlyIncome) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis: MEAN(MonthlyIncome) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does SUM(MonthlyRate) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis: SUM(MonthlyRate) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "SUM(MonthlyRate)"
+  },
+  {
+    "question": "How does MEAN(MonthlyRate) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis: MEAN(MonthlyRate) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "MEAN(MonthlyRate)"
+  },
+  {
+    "question": "How does SUM(NumCompaniesWorked) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis: SUM(NumCompaniesWorked) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "SUM(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MEAN(NumCompaniesWorked) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis: MEAN(NumCompaniesWorked) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "MEAN(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does SUM(PercentSalaryHike) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis: SUM(PercentSalaryHike) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "SUM(PercentSalaryHike)"
+  },
+  {
+    "question": "How does MEAN(PercentSalaryHike) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis: MEAN(PercentSalaryHike) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "MEAN(PercentSalaryHike)"
+  },
+  {
+    "question": "How does SUM(StandardHours) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis: SUM(StandardHours) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "SUM(StandardHours)"
+  },
+  {
+    "question": "How does MEAN(StandardHours) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis: MEAN(StandardHours) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "MEAN(StandardHours)"
+  },
+  {
+    "question": "How does SUM(TotalWorkingYears) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis: SUM(TotalWorkingYears) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "SUM(TotalWorkingYears)"
+  },
+  {
+    "question": "How does MEAN(TotalWorkingYears) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis: MEAN(TotalWorkingYears) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "How does SUM(TrainingTimesLastYear) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis: SUM(TrainingTimesLastYear) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "SUM(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does MEAN(TrainingTimesLastYear) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis: MEAN(TrainingTimesLastYear) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "MEAN(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does SUM(WorkLifeBalance) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis: SUM(WorkLifeBalance) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "SUM(WorkLifeBalance)"
+  },
+  {
+    "question": "How does MEAN(WorkLifeBalance) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis: MEAN(WorkLifeBalance) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "MEAN(WorkLifeBalance)"
+  },
+  {
+    "question": "How does SUM(YearsAtCompany) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis: SUM(YearsAtCompany) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "SUM(YearsAtCompany)"
+  },
+  {
+    "question": "How does MEAN(YearsAtCompany) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis: MEAN(YearsAtCompany) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "MEAN(YearsAtCompany)"
+  },
+  {
+    "question": "How does SUM(YearsInCurrentRole) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis: SUM(YearsInCurrentRole) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "SUM(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does MEAN(YearsInCurrentRole) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis: MEAN(YearsInCurrentRole) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "MEAN(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does SUM(YearsSinceLastPromotion) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis: SUM(YearsSinceLastPromotion) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "SUM(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does MEAN(YearsSinceLastPromotion) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis: MEAN(YearsSinceLastPromotion) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "MEAN(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does SUM(YearsWithCurrManager) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis: SUM(YearsWithCurrManager) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "SUM(YearsWithCurrManager)"
+  },
+  {
+    "question": "How does MEAN(YearsWithCurrManager) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis: MEAN(YearsWithCurrManager) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "MEAN(YearsWithCurrManager)"
+  },
+  {
+    "question": "How does SUM(Age) vary by JobLevel?",
+    "reason": "Statistics-based analysis: SUM(Age) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "SUM(Age)"
+  },
+  {
+    "question": "How does MEAN(Age) vary by JobLevel?",
+    "reason": "Statistics-based analysis: MEAN(Age) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(Age)"
+  },
+  {
+    "question": "How does SUM(DailyRate) vary by JobLevel?",
+    "reason": "Statistics-based analysis: SUM(DailyRate) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "SUM(DailyRate)"
+  },
+  {
+    "question": "How does MEAN(DailyRate) vary by JobLevel?",
+    "reason": "Statistics-based analysis: MEAN(DailyRate) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(DailyRate)"
+  },
+  {
+    "question": "How does SUM(DistanceFromHome) vary by JobLevel?",
+    "reason": "Statistics-based analysis: SUM(DistanceFromHome) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "SUM(DistanceFromHome)"
+  },
+  {
+    "question": "How does MEAN(DistanceFromHome) vary by JobLevel?",
+    "reason": "Statistics-based analysis: MEAN(DistanceFromHome) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(DistanceFromHome)"
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by JobLevel?",
+    "reason": "Statistics-based analysis: SUM(EmployeeCount) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "SUM(EmployeeCount)"
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by JobLevel?",
+    "reason": "Statistics-based analysis: MEAN(EmployeeCount) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(EmployeeCount)"
+  },
+  {
+    "question": "How does SUM(HourlyRate) vary by JobLevel?",
+    "reason": "Statistics-based analysis: SUM(HourlyRate) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "SUM(HourlyRate)"
+  },
+  {
+    "question": "How does MEAN(HourlyRate) vary by JobLevel?",
+    "reason": "Statistics-based analysis: MEAN(HourlyRate) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(HourlyRate)"
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by JobLevel?",
+    "reason": "Statistics-based analysis: SUM(MonthlyIncome) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "SUM(MonthlyIncome)"
+  },
+  {
+    "question": "How does MEAN(MonthlyIncome) vary by JobLevel?",
+    "reason": "Statistics-based analysis: MEAN(MonthlyIncome) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does SUM(MonthlyRate) vary by JobLevel?",
+    "reason": "Statistics-based analysis: SUM(MonthlyRate) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "SUM(MonthlyRate)"
+  },
+  {
+    "question": "How does MEAN(MonthlyRate) vary by JobLevel?",
+    "reason": "Statistics-based analysis: MEAN(MonthlyRate) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(MonthlyRate)"
+  },
+  {
+    "question": "How does SUM(NumCompaniesWorked) vary by JobLevel?",
+    "reason": "Statistics-based analysis: SUM(NumCompaniesWorked) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "SUM(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MEAN(NumCompaniesWorked) vary by JobLevel?",
+    "reason": "Statistics-based analysis: MEAN(NumCompaniesWorked) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does SUM(PercentSalaryHike) vary by JobLevel?",
+    "reason": "Statistics-based analysis: SUM(PercentSalaryHike) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "SUM(PercentSalaryHike)"
+  },
+  {
+    "question": "How does MEAN(PercentSalaryHike) vary by JobLevel?",
+    "reason": "Statistics-based analysis: MEAN(PercentSalaryHike) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(PercentSalaryHike)"
+  },
+  {
+    "question": "How does SUM(StandardHours) vary by JobLevel?",
+    "reason": "Statistics-based analysis: SUM(StandardHours) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "SUM(StandardHours)"
+  },
+  {
+    "question": "How does MEAN(StandardHours) vary by JobLevel?",
+    "reason": "Statistics-based analysis: MEAN(StandardHours) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(StandardHours)"
+  },
+  {
+    "question": "How does SUM(TotalWorkingYears) vary by JobLevel?",
+    "reason": "Statistics-based analysis: SUM(TotalWorkingYears) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "SUM(TotalWorkingYears)"
+  },
+  {
+    "question": "How does MEAN(TotalWorkingYears) vary by JobLevel?",
+    "reason": "Statistics-based analysis: MEAN(TotalWorkingYears) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "How does SUM(TrainingTimesLastYear) vary by JobLevel?",
+    "reason": "Statistics-based analysis: SUM(TrainingTimesLastYear) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "SUM(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does MEAN(TrainingTimesLastYear) vary by JobLevel?",
+    "reason": "Statistics-based analysis: MEAN(TrainingTimesLastYear) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does SUM(WorkLifeBalance) vary by JobLevel?",
+    "reason": "Statistics-based analysis: SUM(WorkLifeBalance) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "SUM(WorkLifeBalance)"
+  },
+  {
+    "question": "How does MEAN(WorkLifeBalance) vary by JobLevel?",
+    "reason": "Statistics-based analysis: MEAN(WorkLifeBalance) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(WorkLifeBalance)"
+  },
+  {
+    "question": "How does SUM(YearsAtCompany) vary by JobLevel?",
+    "reason": "Statistics-based analysis: SUM(YearsAtCompany) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "SUM(YearsAtCompany)"
+  },
+  {
+    "question": "How does MEAN(YearsAtCompany) vary by JobLevel?",
+    "reason": "Statistics-based analysis: MEAN(YearsAtCompany) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(YearsAtCompany)"
+  },
+  {
+    "question": "How does SUM(YearsInCurrentRole) vary by JobLevel?",
+    "reason": "Statistics-based analysis: SUM(YearsInCurrentRole) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "SUM(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does MEAN(YearsInCurrentRole) vary by JobLevel?",
+    "reason": "Statistics-based analysis: MEAN(YearsInCurrentRole) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does SUM(YearsSinceLastPromotion) vary by JobLevel?",
+    "reason": "Statistics-based analysis: SUM(YearsSinceLastPromotion) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "SUM(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does MEAN(YearsSinceLastPromotion) vary by JobLevel?",
+    "reason": "Statistics-based analysis: MEAN(YearsSinceLastPromotion) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does SUM(YearsWithCurrManager) vary by JobLevel?",
+    "reason": "Statistics-based analysis: SUM(YearsWithCurrManager) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "SUM(YearsWithCurrManager)"
+  },
+  {
+    "question": "How does MEAN(YearsWithCurrManager) vary by JobLevel?",
+    "reason": "Statistics-based analysis: MEAN(YearsWithCurrManager) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(YearsWithCurrManager)"
+  },
+  {
+    "question": "How does SUM(Age) vary by JobRole?",
+    "reason": "Statistics-based analysis: SUM(Age) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "SUM(Age)"
+  },
+  {
+    "question": "How does MEAN(Age) vary by JobRole?",
+    "reason": "Statistics-based analysis: MEAN(Age) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(Age)"
+  },
+  {
+    "question": "How does SUM(DailyRate) vary by JobRole?",
+    "reason": "Statistics-based analysis: SUM(DailyRate) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "SUM(DailyRate)"
+  },
+  {
+    "question": "How does MEAN(DailyRate) vary by JobRole?",
+    "reason": "Statistics-based analysis: MEAN(DailyRate) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(DailyRate)"
+  },
+  {
+    "question": "How does SUM(DistanceFromHome) vary by JobRole?",
+    "reason": "Statistics-based analysis: SUM(DistanceFromHome) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "SUM(DistanceFromHome)"
+  },
+  {
+    "question": "How does MEAN(DistanceFromHome) vary by JobRole?",
+    "reason": "Statistics-based analysis: MEAN(DistanceFromHome) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(DistanceFromHome)"
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by JobRole?",
+    "reason": "Statistics-based analysis: SUM(EmployeeCount) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "SUM(EmployeeCount)"
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by JobRole?",
+    "reason": "Statistics-based analysis: MEAN(EmployeeCount) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(EmployeeCount)"
+  },
+  {
+    "question": "How does SUM(HourlyRate) vary by JobRole?",
+    "reason": "Statistics-based analysis: SUM(HourlyRate) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "SUM(HourlyRate)"
+  },
+  {
+    "question": "How does MEAN(HourlyRate) vary by JobRole?",
+    "reason": "Statistics-based analysis: MEAN(HourlyRate) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(HourlyRate)"
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by JobRole?",
+    "reason": "Statistics-based analysis: SUM(MonthlyIncome) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "SUM(MonthlyIncome)"
+  },
+  {
+    "question": "How does MEAN(MonthlyIncome) vary by JobRole?",
+    "reason": "Statistics-based analysis: MEAN(MonthlyIncome) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does SUM(MonthlyRate) vary by JobRole?",
+    "reason": "Statistics-based analysis: SUM(MonthlyRate) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "SUM(MonthlyRate)"
+  },
+  {
+    "question": "How does MEAN(MonthlyRate) vary by JobRole?",
+    "reason": "Statistics-based analysis: MEAN(MonthlyRate) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(MonthlyRate)"
+  },
+  {
+    "question": "How does SUM(NumCompaniesWorked) vary by JobRole?",
+    "reason": "Statistics-based analysis: SUM(NumCompaniesWorked) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "SUM(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MEAN(NumCompaniesWorked) vary by JobRole?",
+    "reason": "Statistics-based analysis: MEAN(NumCompaniesWorked) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does SUM(PercentSalaryHike) vary by JobRole?",
+    "reason": "Statistics-based analysis: SUM(PercentSalaryHike) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "SUM(PercentSalaryHike)"
+  },
+  {
+    "question": "How does MEAN(PercentSalaryHike) vary by JobRole?",
+    "reason": "Statistics-based analysis: MEAN(PercentSalaryHike) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(PercentSalaryHike)"
+  },
+  {
+    "question": "How does SUM(StandardHours) vary by JobRole?",
+    "reason": "Statistics-based analysis: SUM(StandardHours) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "SUM(StandardHours)"
+  },
+  {
+    "question": "How does MEAN(StandardHours) vary by JobRole?",
+    "reason": "Statistics-based analysis: MEAN(StandardHours) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(StandardHours)"
+  },
+  {
+    "question": "How does SUM(TotalWorkingYears) vary by JobRole?",
+    "reason": "Statistics-based analysis: SUM(TotalWorkingYears) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "SUM(TotalWorkingYears)"
+  },
+  {
+    "question": "How does MEAN(TotalWorkingYears) vary by JobRole?",
+    "reason": "Statistics-based analysis: MEAN(TotalWorkingYears) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "How does SUM(TrainingTimesLastYear) vary by JobRole?",
+    "reason": "Statistics-based analysis: SUM(TrainingTimesLastYear) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "SUM(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does MEAN(TrainingTimesLastYear) vary by JobRole?",
+    "reason": "Statistics-based analysis: MEAN(TrainingTimesLastYear) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does SUM(WorkLifeBalance) vary by JobRole?",
+    "reason": "Statistics-based analysis: SUM(WorkLifeBalance) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "SUM(WorkLifeBalance)"
+  },
+  {
+    "question": "How does MEAN(WorkLifeBalance) vary by JobRole?",
+    "reason": "Statistics-based analysis: MEAN(WorkLifeBalance) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(WorkLifeBalance)"
+  },
+  {
+    "question": "How does SUM(YearsAtCompany) vary by JobRole?",
+    "reason": "Statistics-based analysis: SUM(YearsAtCompany) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "SUM(YearsAtCompany)"
+  },
+  {
+    "question": "How does MEAN(YearsAtCompany) vary by JobRole?",
+    "reason": "Statistics-based analysis: MEAN(YearsAtCompany) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(YearsAtCompany)"
+  },
+  {
+    "question": "How does SUM(YearsInCurrentRole) vary by JobRole?",
+    "reason": "Statistics-based analysis: SUM(YearsInCurrentRole) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "SUM(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does MEAN(YearsInCurrentRole) vary by JobRole?",
+    "reason": "Statistics-based analysis: MEAN(YearsInCurrentRole) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does SUM(YearsSinceLastPromotion) vary by JobRole?",
+    "reason": "Statistics-based analysis: SUM(YearsSinceLastPromotion) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "SUM(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does MEAN(YearsSinceLastPromotion) vary by JobRole?",
+    "reason": "Statistics-based analysis: MEAN(YearsSinceLastPromotion) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does SUM(YearsWithCurrManager) vary by JobRole?",
+    "reason": "Statistics-based analysis: SUM(YearsWithCurrManager) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "SUM(YearsWithCurrManager)"
+  },
+  {
+    "question": "How does MEAN(YearsWithCurrManager) vary by JobRole?",
+    "reason": "Statistics-based analysis: MEAN(YearsWithCurrManager) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(YearsWithCurrManager)"
+  },
+  {
+    "question": "How does SUM(Age) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(Age) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "SUM(Age)"
+  },
+  {
+    "question": "How does MEAN(Age) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(Age) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "MEAN(Age)"
+  },
+  {
+    "question": "How does SUM(DailyRate) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(DailyRate) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "SUM(DailyRate)"
+  },
+  {
+    "question": "How does MEAN(DailyRate) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(DailyRate) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "MEAN(DailyRate)"
+  },
+  {
+    "question": "How does SUM(DistanceFromHome) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(DistanceFromHome) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "SUM(DistanceFromHome)"
+  },
+  {
+    "question": "How does MEAN(DistanceFromHome) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(DistanceFromHome) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "MEAN(DistanceFromHome)"
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(EmployeeCount) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "SUM(EmployeeCount)"
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(EmployeeCount) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "MEAN(EmployeeCount)"
+  },
+  {
+    "question": "How does SUM(HourlyRate) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(HourlyRate) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "SUM(HourlyRate)"
+  },
+  {
+    "question": "How does MEAN(HourlyRate) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(HourlyRate) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "MEAN(HourlyRate)"
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(MonthlyIncome) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "SUM(MonthlyIncome)"
+  },
+  {
+    "question": "How does MEAN(MonthlyIncome) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(MonthlyIncome) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does SUM(MonthlyRate) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(MonthlyRate) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "SUM(MonthlyRate)"
+  },
+  {
+    "question": "How does MEAN(MonthlyRate) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(MonthlyRate) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "MEAN(MonthlyRate)"
+  },
+  {
+    "question": "How does SUM(NumCompaniesWorked) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(NumCompaniesWorked) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "SUM(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MEAN(NumCompaniesWorked) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(NumCompaniesWorked) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "MEAN(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does SUM(PercentSalaryHike) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(PercentSalaryHike) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "SUM(PercentSalaryHike)"
+  },
+  {
+    "question": "How does MEAN(PercentSalaryHike) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(PercentSalaryHike) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "MEAN(PercentSalaryHike)"
+  },
+  {
+    "question": "How does SUM(StandardHours) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(StandardHours) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "SUM(StandardHours)"
+  },
+  {
+    "question": "How does MEAN(StandardHours) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(StandardHours) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "MEAN(StandardHours)"
+  },
+  {
+    "question": "How does SUM(TotalWorkingYears) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(TotalWorkingYears) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "SUM(TotalWorkingYears)"
+  },
+  {
+    "question": "How does MEAN(TotalWorkingYears) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(TotalWorkingYears) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "How does SUM(TrainingTimesLastYear) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(TrainingTimesLastYear) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "SUM(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does MEAN(TrainingTimesLastYear) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(TrainingTimesLastYear) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "MEAN(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does SUM(WorkLifeBalance) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(WorkLifeBalance) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "SUM(WorkLifeBalance)"
+  },
+  {
+    "question": "How does MEAN(WorkLifeBalance) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(WorkLifeBalance) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "MEAN(WorkLifeBalance)"
+  },
+  {
+    "question": "How does SUM(YearsAtCompany) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(YearsAtCompany) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "SUM(YearsAtCompany)"
+  },
+  {
+    "question": "How does MEAN(YearsAtCompany) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(YearsAtCompany) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "MEAN(YearsAtCompany)"
+  },
+  {
+    "question": "How does SUM(YearsInCurrentRole) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(YearsInCurrentRole) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "SUM(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does MEAN(YearsInCurrentRole) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(YearsInCurrentRole) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "MEAN(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does SUM(YearsSinceLastPromotion) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(YearsSinceLastPromotion) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "SUM(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does MEAN(YearsSinceLastPromotion) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(YearsSinceLastPromotion) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "MEAN(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does SUM(YearsWithCurrManager) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(YearsWithCurrManager) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "SUM(YearsWithCurrManager)"
+  },
+  {
+    "question": "How does MEAN(YearsWithCurrManager) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(YearsWithCurrManager) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "MEAN(YearsWithCurrManager)"
+  },
+  {
+    "question": "How does SUM(Age) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis: SUM(Age) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "SUM(Age)"
+  },
+  {
+    "question": "How does MEAN(Age) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis: MEAN(Age) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "MEAN(Age)"
+  },
+  {
+    "question": "How does SUM(DailyRate) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis: SUM(DailyRate) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "SUM(DailyRate)"
+  },
+  {
+    "question": "How does MEAN(DailyRate) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis: MEAN(DailyRate) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "MEAN(DailyRate)"
+  },
+  {
+    "question": "How does SUM(DistanceFromHome) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis: SUM(DistanceFromHome) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "SUM(DistanceFromHome)"
+  },
+  {
+    "question": "How does MEAN(DistanceFromHome) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis: MEAN(DistanceFromHome) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "MEAN(DistanceFromHome)"
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis: SUM(EmployeeCount) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "SUM(EmployeeCount)"
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis: MEAN(EmployeeCount) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "MEAN(EmployeeCount)"
+  },
+  {
+    "question": "How does SUM(HourlyRate) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis: SUM(HourlyRate) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "SUM(HourlyRate)"
+  },
+  {
+    "question": "How does MEAN(HourlyRate) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis: MEAN(HourlyRate) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "MEAN(HourlyRate)"
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis: SUM(MonthlyIncome) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "SUM(MonthlyIncome)"
+  },
+  {
+    "question": "How does MEAN(MonthlyIncome) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis: MEAN(MonthlyIncome) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does SUM(MonthlyRate) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis: SUM(MonthlyRate) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "SUM(MonthlyRate)"
+  },
+  {
+    "question": "How does MEAN(MonthlyRate) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis: MEAN(MonthlyRate) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "MEAN(MonthlyRate)"
+  },
+  {
+    "question": "How does SUM(NumCompaniesWorked) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis: SUM(NumCompaniesWorked) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "SUM(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MEAN(NumCompaniesWorked) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis: MEAN(NumCompaniesWorked) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "MEAN(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does SUM(PercentSalaryHike) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis: SUM(PercentSalaryHike) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "SUM(PercentSalaryHike)"
+  },
+  {
+    "question": "How does MEAN(PercentSalaryHike) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis: MEAN(PercentSalaryHike) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "MEAN(PercentSalaryHike)"
+  },
+  {
+    "question": "How does SUM(StandardHours) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis: SUM(StandardHours) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "SUM(StandardHours)"
+  },
+  {
+    "question": "How does MEAN(StandardHours) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis: MEAN(StandardHours) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "MEAN(StandardHours)"
+  },
+  {
+    "question": "How does SUM(TotalWorkingYears) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis: SUM(TotalWorkingYears) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "SUM(TotalWorkingYears)"
+  },
+  {
+    "question": "How does MEAN(TotalWorkingYears) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis: MEAN(TotalWorkingYears) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "How does SUM(TrainingTimesLastYear) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis: SUM(TrainingTimesLastYear) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "SUM(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does MEAN(TrainingTimesLastYear) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis: MEAN(TrainingTimesLastYear) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "MEAN(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does SUM(WorkLifeBalance) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis: SUM(WorkLifeBalance) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "SUM(WorkLifeBalance)"
+  },
+  {
+    "question": "How does MEAN(WorkLifeBalance) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis: MEAN(WorkLifeBalance) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "MEAN(WorkLifeBalance)"
+  },
+  {
+    "question": "How does SUM(YearsAtCompany) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis: SUM(YearsAtCompany) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "SUM(YearsAtCompany)"
+  },
+  {
+    "question": "How does MEAN(YearsAtCompany) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis: MEAN(YearsAtCompany) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "MEAN(YearsAtCompany)"
+  },
+  {
+    "question": "How does SUM(YearsInCurrentRole) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis: SUM(YearsInCurrentRole) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "SUM(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does MEAN(YearsInCurrentRole) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis: MEAN(YearsInCurrentRole) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "MEAN(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does SUM(YearsSinceLastPromotion) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis: SUM(YearsSinceLastPromotion) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "SUM(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does MEAN(YearsSinceLastPromotion) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis: MEAN(YearsSinceLastPromotion) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "MEAN(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does SUM(YearsWithCurrManager) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis: SUM(YearsWithCurrManager) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "SUM(YearsWithCurrManager)"
+  },
+  {
+    "question": "How does MEAN(YearsWithCurrManager) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis: MEAN(YearsWithCurrManager) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "MEAN(YearsWithCurrManager)"
+  },
+  {
+    "question": "How does SUM(Age) vary by Over18?",
+    "reason": "Statistics-based analysis: SUM(Age) grouped by Over18.",
+    "breakdown": "Over18",
+    "measure": "SUM(Age)"
+  },
+  {
+    "question": "How does MEAN(Age) vary by Over18?",
+    "reason": "Statistics-based analysis: MEAN(Age) grouped by Over18.",
+    "breakdown": "Over18",
+    "measure": "MEAN(Age)"
+  },
+  {
+    "question": "How does SUM(DailyRate) vary by Over18?",
+    "reason": "Statistics-based analysis: SUM(DailyRate) grouped by Over18.",
+    "breakdown": "Over18",
+    "measure": "SUM(DailyRate)"
+  },
+  {
+    "question": "How does MEAN(DailyRate) vary by Over18?",
+    "reason": "Statistics-based analysis: MEAN(DailyRate) grouped by Over18.",
+    "breakdown": "Over18",
+    "measure": "MEAN(DailyRate)"
+  },
+  {
+    "question": "How does SUM(DistanceFromHome) vary by Over18?",
+    "reason": "Statistics-based analysis: SUM(DistanceFromHome) grouped by Over18.",
+    "breakdown": "Over18",
+    "measure": "SUM(DistanceFromHome)"
+  },
+  {
+    "question": "How does MEAN(DistanceFromHome) vary by Over18?",
+    "reason": "Statistics-based analysis: MEAN(DistanceFromHome) grouped by Over18.",
+    "breakdown": "Over18",
+    "measure": "MEAN(DistanceFromHome)"
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by Over18?",
+    "reason": "Statistics-based analysis: SUM(EmployeeCount) grouped by Over18.",
+    "breakdown": "Over18",
+    "measure": "SUM(EmployeeCount)"
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by Over18?",
+    "reason": "Statistics-based analysis: MEAN(EmployeeCount) grouped by Over18.",
+    "breakdown": "Over18",
+    "measure": "MEAN(EmployeeCount)"
+  },
+  {
+    "question": "How does SUM(HourlyRate) vary by Over18?",
+    "reason": "Statistics-based analysis: SUM(HourlyRate) grouped by Over18.",
+    "breakdown": "Over18",
+    "measure": "SUM(HourlyRate)"
+  },
+  {
+    "question": "How does MEAN(HourlyRate) vary by Over18?",
+    "reason": "Statistics-based analysis: MEAN(HourlyRate) grouped by Over18.",
+    "breakdown": "Over18",
+    "measure": "MEAN(HourlyRate)"
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by Over18?",
+    "reason": "Statistics-based analysis: SUM(MonthlyIncome) grouped by Over18.",
+    "breakdown": "Over18",
+    "measure": "SUM(MonthlyIncome)"
+  },
+  {
+    "question": "How does MEAN(MonthlyIncome) vary by Over18?",
+    "reason": "Statistics-based analysis: MEAN(MonthlyIncome) grouped by Over18.",
+    "breakdown": "Over18",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does SUM(MonthlyRate) vary by Over18?",
+    "reason": "Statistics-based analysis: SUM(MonthlyRate) grouped by Over18.",
+    "breakdown": "Over18",
+    "measure": "SUM(MonthlyRate)"
+  },
+  {
+    "question": "How does MEAN(MonthlyRate) vary by Over18?",
+    "reason": "Statistics-based analysis: MEAN(MonthlyRate) grouped by Over18.",
+    "breakdown": "Over18",
+    "measure": "MEAN(MonthlyRate)"
+  },
+  {
+    "question": "How does SUM(NumCompaniesWorked) vary by Over18?",
+    "reason": "Statistics-based analysis: SUM(NumCompaniesWorked) grouped by Over18.",
+    "breakdown": "Over18",
+    "measure": "SUM(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MEAN(NumCompaniesWorked) vary by Over18?",
+    "reason": "Statistics-based analysis: MEAN(NumCompaniesWorked) grouped by Over18.",
+    "breakdown": "Over18",
+    "measure": "MEAN(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does SUM(PercentSalaryHike) vary by Over18?",
+    "reason": "Statistics-based analysis: SUM(PercentSalaryHike) grouped by Over18.",
+    "breakdown": "Over18",
+    "measure": "SUM(PercentSalaryHike)"
+  },
+  {
+    "question": "How does MEAN(PercentSalaryHike) vary by Over18?",
+    "reason": "Statistics-based analysis: MEAN(PercentSalaryHike) grouped by Over18.",
+    "breakdown": "Over18",
+    "measure": "MEAN(PercentSalaryHike)"
+  },
+  {
+    "question": "How does SUM(StandardHours) vary by Over18?",
+    "reason": "Statistics-based analysis: SUM(StandardHours) grouped by Over18.",
+    "breakdown": "Over18",
+    "measure": "SUM(StandardHours)"
+  },
+  {
+    "question": "How does MEAN(StandardHours) vary by Over18?",
+    "reason": "Statistics-based analysis: MEAN(StandardHours) grouped by Over18.",
+    "breakdown": "Over18",
+    "measure": "MEAN(StandardHours)"
+  },
+  {
+    "question": "How does SUM(TotalWorkingYears) vary by Over18?",
+    "reason": "Statistics-based analysis: SUM(TotalWorkingYears) grouped by Over18.",
+    "breakdown": "Over18",
+    "measure": "SUM(TotalWorkingYears)"
+  },
+  {
+    "question": "How does MEAN(TotalWorkingYears) vary by Over18?",
+    "reason": "Statistics-based analysis: MEAN(TotalWorkingYears) grouped by Over18.",
+    "breakdown": "Over18",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "How does SUM(TrainingTimesLastYear) vary by Over18?",
+    "reason": "Statistics-based analysis: SUM(TrainingTimesLastYear) grouped by Over18.",
+    "breakdown": "Over18",
+    "measure": "SUM(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does MEAN(TrainingTimesLastYear) vary by Over18?",
+    "reason": "Statistics-based analysis: MEAN(TrainingTimesLastYear) grouped by Over18.",
+    "breakdown": "Over18",
+    "measure": "MEAN(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does SUM(WorkLifeBalance) vary by Over18?",
+    "reason": "Statistics-based analysis: SUM(WorkLifeBalance) grouped by Over18.",
+    "breakdown": "Over18",
+    "measure": "SUM(WorkLifeBalance)"
+  },
+  {
+    "question": "How does MEAN(WorkLifeBalance) vary by Over18?",
+    "reason": "Statistics-based analysis: MEAN(WorkLifeBalance) grouped by Over18.",
+    "breakdown": "Over18",
+    "measure": "MEAN(WorkLifeBalance)"
+  },
+  {
+    "question": "How does SUM(YearsAtCompany) vary by Over18?",
+    "reason": "Statistics-based analysis: SUM(YearsAtCompany) grouped by Over18.",
+    "breakdown": "Over18",
+    "measure": "SUM(YearsAtCompany)"
+  },
+  {
+    "question": "How does MEAN(YearsAtCompany) vary by Over18?",
+    "reason": "Statistics-based analysis: MEAN(YearsAtCompany) grouped by Over18.",
+    "breakdown": "Over18",
+    "measure": "MEAN(YearsAtCompany)"
+  },
+  {
+    "question": "How does SUM(YearsInCurrentRole) vary by Over18?",
+    "reason": "Statistics-based analysis: SUM(YearsInCurrentRole) grouped by Over18.",
+    "breakdown": "Over18",
+    "measure": "SUM(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does MEAN(YearsInCurrentRole) vary by Over18?",
+    "reason": "Statistics-based analysis: MEAN(YearsInCurrentRole) grouped by Over18.",
+    "breakdown": "Over18",
+    "measure": "MEAN(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does SUM(YearsSinceLastPromotion) vary by Over18?",
+    "reason": "Statistics-based analysis: SUM(YearsSinceLastPromotion) grouped by Over18.",
+    "breakdown": "Over18",
+    "measure": "SUM(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does MEAN(YearsSinceLastPromotion) vary by Over18?",
+    "reason": "Statistics-based analysis: MEAN(YearsSinceLastPromotion) grouped by Over18.",
+    "breakdown": "Over18",
+    "measure": "MEAN(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does SUM(YearsWithCurrManager) vary by Over18?",
+    "reason": "Statistics-based analysis: SUM(YearsWithCurrManager) grouped by Over18.",
+    "breakdown": "Over18",
+    "measure": "SUM(YearsWithCurrManager)"
+  },
+  {
+    "question": "How does MEAN(YearsWithCurrManager) vary by Over18?",
+    "reason": "Statistics-based analysis: MEAN(YearsWithCurrManager) grouped by Over18.",
+    "breakdown": "Over18",
+    "measure": "MEAN(YearsWithCurrManager)"
+  },
+  {
+    "question": "How does SUM(Age) vary by OverTime?",
+    "reason": "Statistics-based analysis: SUM(Age) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "SUM(Age)"
+  },
+  {
+    "question": "How does MEAN(Age) vary by OverTime?",
+    "reason": "Statistics-based analysis: MEAN(Age) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "MEAN(Age)"
+  },
+  {
+    "question": "How does SUM(DailyRate) vary by OverTime?",
+    "reason": "Statistics-based analysis: SUM(DailyRate) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "SUM(DailyRate)"
+  },
+  {
+    "question": "How does MEAN(DailyRate) vary by OverTime?",
+    "reason": "Statistics-based analysis: MEAN(DailyRate) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "MEAN(DailyRate)"
+  },
+  {
+    "question": "How does SUM(DistanceFromHome) vary by OverTime?",
+    "reason": "Statistics-based analysis: SUM(DistanceFromHome) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "SUM(DistanceFromHome)"
+  },
+  {
+    "question": "How does MEAN(DistanceFromHome) vary by OverTime?",
+    "reason": "Statistics-based analysis: MEAN(DistanceFromHome) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "MEAN(DistanceFromHome)"
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by OverTime?",
+    "reason": "Statistics-based analysis: SUM(EmployeeCount) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "SUM(EmployeeCount)"
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by OverTime?",
+    "reason": "Statistics-based analysis: MEAN(EmployeeCount) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "MEAN(EmployeeCount)"
+  },
+  {
+    "question": "How does SUM(HourlyRate) vary by OverTime?",
+    "reason": "Statistics-based analysis: SUM(HourlyRate) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "SUM(HourlyRate)"
+  },
+  {
+    "question": "How does MEAN(HourlyRate) vary by OverTime?",
+    "reason": "Statistics-based analysis: MEAN(HourlyRate) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "MEAN(HourlyRate)"
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by OverTime?",
+    "reason": "Statistics-based analysis: SUM(MonthlyIncome) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "SUM(MonthlyIncome)"
+  },
+  {
+    "question": "How does MEAN(MonthlyIncome) vary by OverTime?",
+    "reason": "Statistics-based analysis: MEAN(MonthlyIncome) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does SUM(MonthlyRate) vary by OverTime?",
+    "reason": "Statistics-based analysis: SUM(MonthlyRate) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "SUM(MonthlyRate)"
+  },
+  {
+    "question": "How does MEAN(MonthlyRate) vary by OverTime?",
+    "reason": "Statistics-based analysis: MEAN(MonthlyRate) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "MEAN(MonthlyRate)"
+  },
+  {
+    "question": "How does SUM(NumCompaniesWorked) vary by OverTime?",
+    "reason": "Statistics-based analysis: SUM(NumCompaniesWorked) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "SUM(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MEAN(NumCompaniesWorked) vary by OverTime?",
+    "reason": "Statistics-based analysis: MEAN(NumCompaniesWorked) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "MEAN(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does SUM(PercentSalaryHike) vary by OverTime?",
+    "reason": "Statistics-based analysis: SUM(PercentSalaryHike) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "SUM(PercentSalaryHike)"
+  },
+  {
+    "question": "How does MEAN(PercentSalaryHike) vary by OverTime?",
+    "reason": "Statistics-based analysis: MEAN(PercentSalaryHike) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "MEAN(PercentSalaryHike)"
+  },
+  {
+    "question": "How does SUM(StandardHours) vary by OverTime?",
+    "reason": "Statistics-based analysis: SUM(StandardHours) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "SUM(StandardHours)"
+  },
+  {
+    "question": "How does MEAN(StandardHours) vary by OverTime?",
+    "reason": "Statistics-based analysis: MEAN(StandardHours) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "MEAN(StandardHours)"
+  },
+  {
+    "question": "How does SUM(TotalWorkingYears) vary by OverTime?",
+    "reason": "Statistics-based analysis: SUM(TotalWorkingYears) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "SUM(TotalWorkingYears)"
+  },
+  {
+    "question": "How does MEAN(TotalWorkingYears) vary by OverTime?",
+    "reason": "Statistics-based analysis: MEAN(TotalWorkingYears) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "How does SUM(TrainingTimesLastYear) vary by OverTime?",
+    "reason": "Statistics-based analysis: SUM(TrainingTimesLastYear) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "SUM(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does MEAN(TrainingTimesLastYear) vary by OverTime?",
+    "reason": "Statistics-based analysis: MEAN(TrainingTimesLastYear) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "MEAN(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does SUM(WorkLifeBalance) vary by OverTime?",
+    "reason": "Statistics-based analysis: SUM(WorkLifeBalance) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "SUM(WorkLifeBalance)"
+  },
+  {
+    "question": "How does MEAN(WorkLifeBalance) vary by OverTime?",
+    "reason": "Statistics-based analysis: MEAN(WorkLifeBalance) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "MEAN(WorkLifeBalance)"
+  },
+  {
+    "question": "How does SUM(YearsAtCompany) vary by OverTime?",
+    "reason": "Statistics-based analysis: SUM(YearsAtCompany) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "SUM(YearsAtCompany)"
+  },
+  {
+    "question": "How does MEAN(YearsAtCompany) vary by OverTime?",
+    "reason": "Statistics-based analysis: MEAN(YearsAtCompany) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "MEAN(YearsAtCompany)"
+  },
+  {
+    "question": "How does SUM(YearsInCurrentRole) vary by OverTime?",
+    "reason": "Statistics-based analysis: SUM(YearsInCurrentRole) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "SUM(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does MEAN(YearsInCurrentRole) vary by OverTime?",
+    "reason": "Statistics-based analysis: MEAN(YearsInCurrentRole) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "MEAN(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does SUM(YearsSinceLastPromotion) vary by OverTime?",
+    "reason": "Statistics-based analysis: SUM(YearsSinceLastPromotion) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "SUM(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does MEAN(YearsSinceLastPromotion) vary by OverTime?",
+    "reason": "Statistics-based analysis: MEAN(YearsSinceLastPromotion) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "MEAN(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does SUM(YearsWithCurrManager) vary by OverTime?",
+    "reason": "Statistics-based analysis: SUM(YearsWithCurrManager) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "SUM(YearsWithCurrManager)"
+  },
+  {
+    "question": "How does MEAN(YearsWithCurrManager) vary by OverTime?",
+    "reason": "Statistics-based analysis: MEAN(YearsWithCurrManager) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "MEAN(YearsWithCurrManager)"
+  },
+  {
+    "question": "How does SUM(Age) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis: SUM(Age) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "SUM(Age)"
+  },
+  {
+    "question": "How does MEAN(Age) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis: MEAN(Age) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "MEAN(Age)"
+  },
+  {
+    "question": "How does SUM(DailyRate) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis: SUM(DailyRate) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "SUM(DailyRate)"
+  },
+  {
+    "question": "How does MEAN(DailyRate) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis: MEAN(DailyRate) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "MEAN(DailyRate)"
+  },
+  {
+    "question": "How does SUM(DistanceFromHome) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis: SUM(DistanceFromHome) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "SUM(DistanceFromHome)"
+  },
+  {
+    "question": "How does MEAN(DistanceFromHome) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis: MEAN(DistanceFromHome) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "MEAN(DistanceFromHome)"
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis: SUM(EmployeeCount) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "SUM(EmployeeCount)"
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis: MEAN(EmployeeCount) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "MEAN(EmployeeCount)"
+  },
+  {
+    "question": "How does SUM(HourlyRate) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis: SUM(HourlyRate) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "SUM(HourlyRate)"
+  },
+  {
+    "question": "How does MEAN(HourlyRate) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis: MEAN(HourlyRate) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "MEAN(HourlyRate)"
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis: SUM(MonthlyIncome) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "SUM(MonthlyIncome)"
+  },
+  {
+    "question": "How does MEAN(MonthlyIncome) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis: MEAN(MonthlyIncome) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does SUM(MonthlyRate) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis: SUM(MonthlyRate) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "SUM(MonthlyRate)"
+  },
+  {
+    "question": "How does MEAN(MonthlyRate) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis: MEAN(MonthlyRate) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "MEAN(MonthlyRate)"
+  },
+  {
+    "question": "How does SUM(NumCompaniesWorked) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis: SUM(NumCompaniesWorked) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "SUM(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MEAN(NumCompaniesWorked) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis: MEAN(NumCompaniesWorked) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "MEAN(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does SUM(PercentSalaryHike) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis: SUM(PercentSalaryHike) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "SUM(PercentSalaryHike)"
+  },
+  {
+    "question": "How does MEAN(PercentSalaryHike) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis: MEAN(PercentSalaryHike) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "MEAN(PercentSalaryHike)"
+  },
+  {
+    "question": "How does SUM(StandardHours) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis: SUM(StandardHours) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "SUM(StandardHours)"
+  },
+  {
+    "question": "How does MEAN(StandardHours) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis: MEAN(StandardHours) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "MEAN(StandardHours)"
+  },
+  {
+    "question": "How does SUM(TotalWorkingYears) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis: SUM(TotalWorkingYears) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "SUM(TotalWorkingYears)"
+  },
+  {
+    "question": "How does MEAN(TotalWorkingYears) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis: MEAN(TotalWorkingYears) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "How does SUM(TrainingTimesLastYear) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis: SUM(TrainingTimesLastYear) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "SUM(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does MEAN(TrainingTimesLastYear) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis: MEAN(TrainingTimesLastYear) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "MEAN(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does SUM(WorkLifeBalance) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis: SUM(WorkLifeBalance) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "SUM(WorkLifeBalance)"
+  },
+  {
+    "question": "How does MEAN(WorkLifeBalance) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis: MEAN(WorkLifeBalance) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "MEAN(WorkLifeBalance)"
+  },
+  {
+    "question": "How does SUM(YearsAtCompany) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis: SUM(YearsAtCompany) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "SUM(YearsAtCompany)"
+  },
+  {
+    "question": "How does MEAN(YearsAtCompany) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis: MEAN(YearsAtCompany) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "MEAN(YearsAtCompany)"
+  },
+  {
+    "question": "How does SUM(YearsInCurrentRole) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis: SUM(YearsInCurrentRole) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "SUM(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does MEAN(YearsInCurrentRole) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis: MEAN(YearsInCurrentRole) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "MEAN(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does SUM(YearsSinceLastPromotion) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis: SUM(YearsSinceLastPromotion) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "SUM(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does MEAN(YearsSinceLastPromotion) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis: MEAN(YearsSinceLastPromotion) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "MEAN(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does SUM(YearsWithCurrManager) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis: SUM(YearsWithCurrManager) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "SUM(YearsWithCurrManager)"
+  },
+  {
+    "question": "How does MEAN(YearsWithCurrManager) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis: MEAN(YearsWithCurrManager) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "MEAN(YearsWithCurrManager)"
+  },
+  {
+    "question": "How does SUM(Age) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(Age) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "SUM(Age)"
+  },
+  {
+    "question": "How does MEAN(Age) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(Age) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "MEAN(Age)"
+  },
+  {
+    "question": "How does SUM(DailyRate) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(DailyRate) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "SUM(DailyRate)"
+  },
+  {
+    "question": "How does MEAN(DailyRate) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(DailyRate) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "MEAN(DailyRate)"
+  },
+  {
+    "question": "How does SUM(DistanceFromHome) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(DistanceFromHome) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "SUM(DistanceFromHome)"
+  },
+  {
+    "question": "How does MEAN(DistanceFromHome) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(DistanceFromHome) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "MEAN(DistanceFromHome)"
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(EmployeeCount) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "SUM(EmployeeCount)"
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(EmployeeCount) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "MEAN(EmployeeCount)"
+  },
+  {
+    "question": "How does SUM(HourlyRate) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(HourlyRate) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "SUM(HourlyRate)"
+  },
+  {
+    "question": "How does MEAN(HourlyRate) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(HourlyRate) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "MEAN(HourlyRate)"
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(MonthlyIncome) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "SUM(MonthlyIncome)"
+  },
+  {
+    "question": "How does MEAN(MonthlyIncome) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(MonthlyIncome) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does SUM(MonthlyRate) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(MonthlyRate) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "SUM(MonthlyRate)"
+  },
+  {
+    "question": "How does MEAN(MonthlyRate) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(MonthlyRate) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "MEAN(MonthlyRate)"
+  },
+  {
+    "question": "How does SUM(NumCompaniesWorked) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(NumCompaniesWorked) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "SUM(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MEAN(NumCompaniesWorked) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(NumCompaniesWorked) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "MEAN(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does SUM(PercentSalaryHike) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(PercentSalaryHike) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "SUM(PercentSalaryHike)"
+  },
+  {
+    "question": "How does MEAN(PercentSalaryHike) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(PercentSalaryHike) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "MEAN(PercentSalaryHike)"
+  },
+  {
+    "question": "How does SUM(StandardHours) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(StandardHours) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "SUM(StandardHours)"
+  },
+  {
+    "question": "How does MEAN(StandardHours) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(StandardHours) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "MEAN(StandardHours)"
+  },
+  {
+    "question": "How does SUM(TotalWorkingYears) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(TotalWorkingYears) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "SUM(TotalWorkingYears)"
+  },
+  {
+    "question": "How does MEAN(TotalWorkingYears) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(TotalWorkingYears) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "How does SUM(TrainingTimesLastYear) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(TrainingTimesLastYear) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "SUM(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does MEAN(TrainingTimesLastYear) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(TrainingTimesLastYear) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "MEAN(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does SUM(WorkLifeBalance) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(WorkLifeBalance) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "SUM(WorkLifeBalance)"
+  },
+  {
+    "question": "How does MEAN(WorkLifeBalance) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(WorkLifeBalance) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "MEAN(WorkLifeBalance)"
+  },
+  {
+    "question": "How does SUM(YearsAtCompany) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(YearsAtCompany) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "SUM(YearsAtCompany)"
+  },
+  {
+    "question": "How does MEAN(YearsAtCompany) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(YearsAtCompany) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "MEAN(YearsAtCompany)"
+  },
+  {
+    "question": "How does SUM(YearsInCurrentRole) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(YearsInCurrentRole) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "SUM(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does MEAN(YearsInCurrentRole) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(YearsInCurrentRole) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "MEAN(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does SUM(YearsSinceLastPromotion) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(YearsSinceLastPromotion) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "SUM(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does MEAN(YearsSinceLastPromotion) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(YearsSinceLastPromotion) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "MEAN(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does SUM(YearsWithCurrManager) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis: SUM(YearsWithCurrManager) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "SUM(YearsWithCurrManager)"
+  },
+  {
+    "question": "How does MEAN(YearsWithCurrManager) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis: MEAN(YearsWithCurrManager) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "MEAN(YearsWithCurrManager)"
+  },
+  {
+    "question": "How does SUM(Age) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis: SUM(Age) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "SUM(Age)"
+  },
+  {
+    "question": "How does MEAN(Age) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis: MEAN(Age) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "MEAN(Age)"
+  },
+  {
+    "question": "How does SUM(DailyRate) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis: SUM(DailyRate) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "SUM(DailyRate)"
+  },
+  {
+    "question": "How does MEAN(DailyRate) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis: MEAN(DailyRate) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "MEAN(DailyRate)"
+  },
+  {
+    "question": "How does SUM(DistanceFromHome) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis: SUM(DistanceFromHome) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "SUM(DistanceFromHome)"
+  },
+  {
+    "question": "How does MEAN(DistanceFromHome) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis: MEAN(DistanceFromHome) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "MEAN(DistanceFromHome)"
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis: SUM(EmployeeCount) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "SUM(EmployeeCount)"
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis: MEAN(EmployeeCount) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "MEAN(EmployeeCount)"
+  },
+  {
+    "question": "How does SUM(HourlyRate) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis: SUM(HourlyRate) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "SUM(HourlyRate)"
+  },
+  {
+    "question": "How does MEAN(HourlyRate) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis: MEAN(HourlyRate) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "MEAN(HourlyRate)"
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis: SUM(MonthlyIncome) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "SUM(MonthlyIncome)"
+  },
+  {
+    "question": "How does MEAN(MonthlyIncome) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis: MEAN(MonthlyIncome) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does SUM(MonthlyRate) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis: SUM(MonthlyRate) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "SUM(MonthlyRate)"
+  },
+  {
+    "question": "How does MEAN(MonthlyRate) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis: MEAN(MonthlyRate) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "MEAN(MonthlyRate)"
+  },
+  {
+    "question": "How does SUM(NumCompaniesWorked) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis: SUM(NumCompaniesWorked) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "SUM(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MEAN(NumCompaniesWorked) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis: MEAN(NumCompaniesWorked) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "MEAN(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does SUM(PercentSalaryHike) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis: SUM(PercentSalaryHike) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "SUM(PercentSalaryHike)"
+  },
+  {
+    "question": "How does MEAN(PercentSalaryHike) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis: MEAN(PercentSalaryHike) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "MEAN(PercentSalaryHike)"
+  },
+  {
+    "question": "How does SUM(StandardHours) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis: SUM(StandardHours) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "SUM(StandardHours)"
+  },
+  {
+    "question": "How does MEAN(StandardHours) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis: MEAN(StandardHours) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "MEAN(StandardHours)"
+  },
+  {
+    "question": "How does SUM(TotalWorkingYears) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis: SUM(TotalWorkingYears) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "SUM(TotalWorkingYears)"
+  },
+  {
+    "question": "How does MEAN(TotalWorkingYears) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis: MEAN(TotalWorkingYears) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "How does SUM(TrainingTimesLastYear) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis: SUM(TrainingTimesLastYear) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "SUM(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does MEAN(TrainingTimesLastYear) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis: MEAN(TrainingTimesLastYear) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "MEAN(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does SUM(WorkLifeBalance) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis: SUM(WorkLifeBalance) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "SUM(WorkLifeBalance)"
+  },
+  {
+    "question": "How does MEAN(WorkLifeBalance) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis: MEAN(WorkLifeBalance) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "MEAN(WorkLifeBalance)"
+  },
+  {
+    "question": "How does SUM(YearsAtCompany) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis: SUM(YearsAtCompany) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "SUM(YearsAtCompany)"
+  },
+  {
+    "question": "How does MEAN(YearsAtCompany) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis: MEAN(YearsAtCompany) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "MEAN(YearsAtCompany)"
+  },
+  {
+    "question": "How does SUM(YearsInCurrentRole) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis: SUM(YearsInCurrentRole) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "SUM(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does MEAN(YearsInCurrentRole) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis: MEAN(YearsInCurrentRole) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "MEAN(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does SUM(YearsSinceLastPromotion) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis: SUM(YearsSinceLastPromotion) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "SUM(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does MEAN(YearsSinceLastPromotion) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis: MEAN(YearsSinceLastPromotion) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "MEAN(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does SUM(YearsWithCurrManager) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis: SUM(YearsWithCurrManager) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "SUM(YearsWithCurrManager)"
+  },
+  {
+    "question": "How does MEAN(YearsWithCurrManager) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis: MEAN(YearsWithCurrManager) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "MEAN(YearsWithCurrManager)"
+  }
+]

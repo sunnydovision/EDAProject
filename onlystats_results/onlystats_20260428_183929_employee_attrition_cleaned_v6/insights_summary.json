@@ -1,0 +1,3442 @@
+[
+  {
+    "question": "How does SUM(HourlyRate) vary by Attrition?",
+    "explanation": "Outstanding value: for JobRole=Research Director, one category in Attrition has a value much larger (or smaller) than the others when measuring SUM(HourlyRate).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(HourlyRate)",
+      "subspace": [
+        [
+          "JobRole",
+          "Research Director"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 62.7625,
+      "question": "How does SUM(HourlyRate) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(HourlyRate) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        5021.0,
+        80.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(PercentSalaryHike) vary by Attrition?",
+    "explanation": "Outstanding value: for YearsInCurrentRole=5, one category in Attrition has a value much larger (or smaller) than the others when measuring SUM(PercentSalaryHike).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(PercentSalaryHike)",
+      "subspace": [
+        [
+          "YearsInCurrentRole",
+          5
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 49.45454545454545,
+      "question": "How does SUM(PercentSalaryHike) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(PercentSalaryHike) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        544.0,
+        11.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(TotalWorkingYears) vary by Attrition?",
+    "explanation": "Outstanding value: for HourlyRate=90, one category in Attrition has a value much larger (or smaller) than the others when measuring SUM(TotalWorkingYears).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(TotalWorkingYears)",
+      "subspace": [
+        [
+          "HourlyRate",
+          90
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 48.5,
+      "question": "How does SUM(TotalWorkingYears) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(TotalWorkingYears) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        194.0,
+        4.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(DailyRate) vary by Attrition?",
+    "explanation": "Outstanding value: for YearsAtCompany=18, one category in Attrition has a value much larger (or smaller) than the others when measuring SUM(DailyRate).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(DailyRate)",
+      "subspace": [
+        [
+          "YearsAtCompany",
+          18
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 46.54187192118226,
+      "question": "How does SUM(DailyRate) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(DailyRate) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        9448.0,
+        203.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(StandardHours) vary by Attrition?",
+    "explanation": "Outstanding value: for JobRole=Research Director, one category in Attrition has a value much larger (or smaller) than the others when measuring SUM(StandardHours).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(StandardHours)",
+      "subspace": [
+        [
+          "JobRole",
+          "Research Director"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 39.0,
+      "question": "How does SUM(StandardHours) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(StandardHours) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        6240.0,
+        160.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(TrainingTimesLastYear) vary by Attrition?",
+    "explanation": "Outstanding value: for HourlyRate=83, one category in Attrition has a value much larger (or smaller) than the others when measuring SUM(TrainingTimesLastYear).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(TrainingTimesLastYear)",
+      "subspace": [
+        [
+          "HourlyRate",
+          83
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 28.5,
+      "question": "How does SUM(TrainingTimesLastYear) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(TrainingTimesLastYear) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        57.0,
+        2.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(DailyRate) vary by Attrition?",
+    "explanation": "Outstanding value: for HourlyRate=83, one category in Attrition has a value much larger (or smaller) than the others when measuring SUM(DailyRate).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(DailyRate)",
+      "subspace": [
+        [
+          "HourlyRate",
+          83
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 24.69384835479256,
+      "question": "How does SUM(DailyRate) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(DailyRate) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        17261.0,
+        699.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by Attrition?",
+    "explanation": "Outstanding value: for YearsSinceLastPromotion=5, one category in Attrition has a value much larger (or smaller) than the others when measuring SUM(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(MonthlyIncome)",
+      "subspace": [
+        [
+          "YearsSinceLastPromotion",
+          5
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 22.782173881305205,
+      "question": "How does SUM(MonthlyIncome) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(MonthlyIncome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        312093.0,
+        13699.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(TrainingTimesLastYear) vary by Attrition?",
+    "explanation": "Outstanding value: for JobRole=Healthcare Representative, one category in Attrition has a value much larger (or smaller) than the others when measuring SUM(TrainingTimesLastYear).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(TrainingTimesLastYear)",
+      "subspace": [
+        [
+          "JobRole",
+          "Healthcare Representative"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 17.0,
+      "question": "How does SUM(TrainingTimesLastYear) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(TrainingTimesLastYear) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        340.0,
+        20.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(HourlyRate) vary by Attrition?",
+    "explanation": "Outstanding value: for JobLevel=4, one category in Attrition has a value much larger (or smaller) than the others when measuring SUM(HourlyRate).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(HourlyRate)",
+      "subspace": [
+        [
+          "JobLevel",
+          4
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 16.625316455696204,
+      "question": "How does SUM(HourlyRate) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(HourlyRate) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        6567.0,
+        395.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(TotalWorkingYears) vary by Attrition?",
+    "explanation": "Outstanding value: for YearsAtCompany=11, one category in Attrition has a value much larger (or smaller) than the others when measuring SUM(TotalWorkingYears).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(TotalWorkingYears)",
+      "subspace": [
+        [
+          "YearsAtCompany",
+          11
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 16.375,
+      "question": "How does SUM(TotalWorkingYears) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(TotalWorkingYears) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        393.0,
+        24.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(MonthlyRate) vary by Attrition?",
+    "explanation": "Outstanding value: for JobRole=Manufacturing Director, one category in Attrition has a value much larger (or smaller) than the others when measuring SUM(MonthlyRate).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(MonthlyRate)",
+      "subspace": [
+        [
+          "JobRole",
+          "Manufacturing Director"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 13.73132841224845,
+      "question": "How does SUM(MonthlyRate) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(MonthlyRate) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        1956934.0,
+        142516.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(StandardHours) vary by Attrition?",
+    "explanation": "Outstanding value: for YearsInCurrentRole=10, one category in Attrition has a value much larger (or smaller) than the others when measuring SUM(StandardHours).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(StandardHours)",
+      "subspace": [
+        [
+          "YearsInCurrentRole",
+          10
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 13.5,
+      "question": "How does SUM(StandardHours) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(StandardHours) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        2160.0,
+        160.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Age) vary by Attrition?",
+    "explanation": "Outstanding value: for YearsAtCompany=21, one category in Attrition has a value much larger (or smaller) than the others when measuring SUM(Age).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(Age)",
+      "subspace": [
+        [
+          "YearsAtCompany",
+          21
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 12.952380952380953,
+      "question": "How does SUM(Age) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(Age) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        544.0,
+        42.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(YearsAtCompany) vary by Attrition?",
+    "explanation": "Outstanding value: for JobLevel=2, one category in Attrition has a value much larger (or smaller) than the others when measuring SUM(YearsAtCompany).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(YearsAtCompany)",
+      "subspace": [
+        [
+          "JobLevel",
+          2
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 12.208791208791208,
+      "question": "How does SUM(YearsAtCompany) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(YearsAtCompany) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        3333.0,
+        273.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by Attrition?",
+    "explanation": "Outstanding value: for StockOptionLevel=2, one category in Attrition has a value much larger (or smaller) than the others when measuring SUM(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(EmployeeCount)",
+      "subspace": [
+        [
+          "StockOptionLevel",
+          2
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 12.166666666666666,
+      "question": "How does SUM(EmployeeCount) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(EmployeeCount) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        146.0,
+        12.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(WorkLifeBalance) vary by Attrition?",
+    "explanation": "Outstanding value: for BusinessTravel=Non-Travel, one category in Attrition has a value much larger (or smaller) than the others when measuring SUM(WorkLifeBalance).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(WorkLifeBalance)",
+      "subspace": [
+        [
+          "BusinessTravel",
+          "Non-Travel"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 12.0,
+      "question": "How does SUM(WorkLifeBalance) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(WorkLifeBalance) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        384.0,
+        32.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(WorkLifeBalance) vary by Attrition?",
+    "explanation": "Outstanding value: for YearsInCurrentRole=8, one category in Attrition has a value much larger (or smaller) than the others when measuring SUM(WorkLifeBalance).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(WorkLifeBalance)",
+      "subspace": [
+        [
+          "YearsInCurrentRole",
+          8
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 11.631578947368421,
+      "question": "How does SUM(WorkLifeBalance) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(WorkLifeBalance) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        221.0,
+        19.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Age) vary by Attrition?",
+    "explanation": "Outstanding value: for StockOptionLevel=2, one category in Attrition has a value much larger (or smaller) than the others when measuring SUM(Age).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(Age)",
+      "subspace": [
+        [
+          "StockOptionLevel",
+          2
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 11.620309050772628,
+      "question": "How does SUM(Age) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(Age) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        5264.0,
+        453.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(YearsAtCompany) vary by Attrition?",
+    "explanation": "Outstanding value: for YearsSinceLastPromotion=2, one category in Attrition has a value much larger (or smaller) than the others when measuring SUM(YearsAtCompany).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(YearsAtCompany)",
+      "subspace": [
+        [
+          "YearsSinceLastPromotion",
+          2
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 10.014492753623188,
+      "question": "How does SUM(YearsAtCompany) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(YearsAtCompany) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        691.0,
+        69.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(NumCompaniesWorked) vary by Attrition?",
+    "explanation": "Outstanding value: for Age=46, one category in Attrition has a value much larger (or smaller) than the others when measuring SUM(NumCompaniesWorked).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(NumCompaniesWorked)",
+      "subspace": [
+        [
+          "Age",
+          46
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 9.5,
+      "question": "How does SUM(NumCompaniesWorked) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(NumCompaniesWorked) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        133.0,
+        14.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(DistanceFromHome) vary by Attrition?",
+    "explanation": "Outstanding value: for TrainingTimesLastYear=1, one category in Attrition has a value much larger (or smaller) than the others when measuring SUM(DistanceFromHome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(DistanceFromHome)",
+      "subspace": [
+        [
+          "TrainingTimesLastYear",
+          1
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 8.305555555555555,
+      "question": "How does SUM(DistanceFromHome) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(DistanceFromHome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        598.0,
+        72.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(YearsInCurrentRole) vary by Attrition?",
+    "explanation": "Outstanding value: for overall data, one category in Attrition has a value much larger (or smaller) than the others when measuring SUM(YearsInCurrentRole).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(YearsInCurrentRole)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 8.036337209302326,
+      "question": "How does SUM(YearsInCurrentRole) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(YearsInCurrentRole) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        5529.0,
+        688.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(YearsWithCurrManager) vary by Attrition?",
+    "explanation": "Outstanding value: for overall data, one category in Attrition has a value much larger (or smaller) than the others when measuring SUM(YearsWithCurrManager).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(YearsWithCurrManager)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 7.965976331360947,
+      "question": "How does SUM(YearsWithCurrManager) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(YearsWithCurrManager) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        5385.0,
+        676.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(YearsSinceLastPromotion) vary by Attrition?",
+    "explanation": "Outstanding value: for overall data, one category in Attrition has a value much larger (or smaller) than the others when measuring SUM(YearsSinceLastPromotion).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(YearsSinceLastPromotion)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 5.976138828633406,
+      "question": "How does SUM(YearsSinceLastPromotion) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(YearsSinceLastPromotion) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        2755.0,
+        461.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(NumCompaniesWorked) vary by Attrition?",
+    "explanation": "Outstanding value: for TotalWorkingYears=3, one category in Attrition has a value much larger (or smaller) than the others when measuring MEAN(NumCompaniesWorked).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(NumCompaniesWorked)",
+      "subspace": [
+        [
+          "TotalWorkingYears",
+          3
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 4.425287356321839,
+      "question": "How does MEAN(NumCompaniesWorked) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(NumCompaniesWorked) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        0.8787878787878788,
+        3.888888888888889
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(NumCompaniesWorked) vary by BusinessTravel?",
+    "explanation": "Outstanding value: for overall data, one category in BusinessTravel has a value much larger (or smaller) than the others when measuring SUM(NumCompaniesWorked).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(NumCompaniesWorked)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 4.155297532656023,
+      "question": "How does SUM(NumCompaniesWorked) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis: SUM(NumCompaniesWorked) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        407.0,
+        689.0,
+        2863.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by BusinessTravel?",
+    "explanation": "Outstanding value: for overall data, one category in BusinessTravel has a value much larger (or smaller) than the others when measuring SUM(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(MonthlyIncome)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 4.024309566802785,
+      "question": "How does SUM(MonthlyIncome) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis: SUM(MonthlyIncome) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        939292.0,
+        1715662.0,
+        6904355.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(TotalWorkingYears) vary by BusinessTravel?",
+    "explanation": "Outstanding value: for overall data, one category in BusinessTravel has a value much larger (or smaller) than the others when measuring SUM(TotalWorkingYears).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(TotalWorkingYears)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 3.8833876221498373,
+      "question": "How does SUM(TotalWorkingYears) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis: SUM(TotalWorkingYears) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        1589.0,
+        3070.0,
+        11922.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(HourlyRate) vary by BusinessTravel?",
+    "explanation": "Outstanding value: for overall data, one category in BusinessTravel has a value much larger (or smaller) than the others when measuring SUM(HourlyRate).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(HourlyRate)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 3.8319653948535937,
+      "question": "How does SUM(HourlyRate) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis: SUM(HourlyRate) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        9730.0,
+        18032.0,
+        69098.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Age) vary by BusinessTravel?",
+    "explanation": "Outstanding value: for overall data, one category in BusinessTravel has a value much larger (or smaller) than the others when measuring SUM(Age).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(Age)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 3.8311546840958606,
+      "question": "How does SUM(Age) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis: SUM(Age) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        5493.0,
+        10098.0,
+        38687.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(DailyRate) vary by BusinessTravel?",
+    "explanation": "Outstanding value: for overall data, one category in BusinessTravel has a value much larger (or smaller) than the others when measuring SUM(DailyRate).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(DailyRate)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 3.814718662039188,
+      "question": "How does SUM(DailyRate) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis: SUM(DailyRate) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        122544.0,
+        219558.0,
+        837552.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(PercentSalaryHike) vary by BusinessTravel?",
+    "explanation": "Outstanding value: for overall data, one category in BusinessTravel has a value much larger (or smaller) than the others when measuring SUM(PercentSalaryHike).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(PercentSalaryHike)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 3.7670874017623244,
+      "question": "How does SUM(PercentSalaryHike) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis: SUM(PercentSalaryHike) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        2341.0,
+        4199.0,
+        15818.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by BusinessTravel?",
+    "explanation": "Outstanding value: for overall data, one category in BusinessTravel has a value much larger (or smaller) than the others when measuring SUM(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(EmployeeCount)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 3.765342960288809,
+      "question": "How does SUM(EmployeeCount) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis: SUM(EmployeeCount) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        150.0,
+        277.0,
+        1043.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(StandardHours) vary by BusinessTravel?",
+    "explanation": "Outstanding value: for overall data, one category in BusinessTravel has a value much larger (or smaller) than the others when measuring SUM(StandardHours).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(StandardHours)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 3.765342960288809,
+      "question": "How does SUM(StandardHours) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis: SUM(StandardHours) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        12000.0,
+        22160.0,
+        83440.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(TrainingTimesLastYear) vary by BusinessTravel?",
+    "explanation": "Outstanding value: for overall data, one category in BusinessTravel has a value much larger (or smaller) than the others when measuring SUM(TrainingTimesLastYear).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(TrainingTimesLastYear)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 3.7525641025641026,
+      "question": "How does SUM(TrainingTimesLastYear) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis: SUM(TrainingTimesLastYear) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        408.0,
+        780.0,
+        2927.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(MonthlyRate) vary by BusinessTravel?",
+    "explanation": "Outstanding value: for overall data, one category in BusinessTravel has a value much larger (or smaller) than the others when measuring SUM(MonthlyRate).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(MonthlyRate)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 3.7514539332721153,
+      "question": "How does SUM(MonthlyRate) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis: SUM(MonthlyRate) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        2195340.0,
+        3966138.0,
+        14878784.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(WorkLifeBalance) vary by BusinessTravel?",
+    "explanation": "Outstanding value: for overall data, one category in BusinessTravel has a value much larger (or smaller) than the others when measuring SUM(WorkLifeBalance).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(WorkLifeBalance)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 3.7373211963589075,
+      "question": "How does SUM(WorkLifeBalance) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis: SUM(WorkLifeBalance) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        416.0,
+        769.0,
+        2874.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(YearsInCurrentRole) vary by BusinessTravel?",
+    "explanation": "Outstanding value: for overall data, one category in BusinessTravel has a value much larger (or smaller) than the others when measuring SUM(YearsInCurrentRole).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(YearsInCurrentRole)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 3.73531914893617,
+      "question": "How does SUM(YearsInCurrentRole) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis: SUM(YearsInCurrentRole) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        653.0,
+        1175.0,
+        4389.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(DistanceFromHome) vary by BusinessTravel?",
+    "explanation": "Outstanding value: for overall data, one category in BusinessTravel has a value much larger (or smaller) than the others when measuring SUM(DistanceFromHome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(DistanceFromHome)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 3.6883268482490275,
+      "question": "How does SUM(DistanceFromHome) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis: SUM(DistanceFromHome) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        1464.0,
+        2570.0,
+        9479.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(YearsAtCompany) vary by BusinessTravel?",
+    "explanation": "Outstanding value: for overall data, one category in BusinessTravel has a value much larger (or smaller) than the others when measuring SUM(YearsAtCompany).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(YearsAtCompany)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 3.6451937594363364,
+      "question": "How does SUM(YearsAtCompany) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis: SUM(YearsAtCompany) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        1072.0,
+        1987.0,
+        7243.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(YearsWithCurrManager) vary by BusinessTravel?",
+    "explanation": "Outstanding value: for overall data, one category in BusinessTravel has a value much larger (or smaller) than the others when measuring SUM(YearsWithCurrManager).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(YearsWithCurrManager)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 3.636986301369863,
+      "question": "How does SUM(YearsWithCurrManager) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis: SUM(YearsWithCurrManager) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        645.0,
+        1168.0,
+        4248.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(YearsSinceLastPromotion) vary by BusinessTravel?",
+    "explanation": "Outstanding value: for overall data, one category in BusinessTravel has a value much larger (or smaller) than the others when measuring SUM(YearsSinceLastPromotion).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(YearsSinceLastPromotion)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 3.403697996918336,
+      "question": "How does SUM(YearsSinceLastPromotion) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis: SUM(YearsSinceLastPromotion) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        358.0,
+        649.0,
+        2209.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(YearsAtCompany) vary by Attrition?",
+    "explanation": "Outstanding value: for TrainingTimesLastYear=5, one category in Attrition has a value much larger (or smaller) than the others when measuring MEAN(YearsAtCompany).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(YearsAtCompany)",
+      "subspace": [
+        [
+          "TrainingTimesLastYear",
+          5
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 2.7933333333333334,
+      "question": "How does MEAN(YearsAtCompany) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(YearsAtCompany) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        7.980952380952381,
+        2.857142857142857
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(MonthlyIncome) vary by Attrition?",
+    "explanation": "Outstanding value: for PercentSalaryHike=23, one category in Attrition has a value much larger (or smaller) than the others when measuring MEAN(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(MonthlyIncome)",
+      "subspace": [
+        [
+          "PercentSalaryHike",
+          23
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 2.2959888476558703,
+      "question": "How does MEAN(MonthlyIncome) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(MonthlyIncome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        7161.954545454545,
+        3119.3333333333335
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(HourlyRate) vary by Attrition?",
+    "explanation": "Outstanding value: for DailyRate=1496, one category in Attrition has a value much larger (or smaller) than the others when measuring MEAN(HourlyRate).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(HourlyRate)",
+      "subspace": [
+        [
+          "DailyRate",
+          1496
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 2.2439024390243905,
+      "question": "How does MEAN(HourlyRate) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(HourlyRate) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        41.0,
+        92.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(MonthlyRate) vary by Attrition?",
+    "explanation": "Outstanding value: for PercentSalaryHike=25, one category in Attrition has a value much larger (or smaller) than the others when measuring MEAN(MonthlyRate).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(MonthlyRate)",
+      "subspace": [
+        [
+          "PercentSalaryHike",
+          25
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 2.237810478778369,
+      "question": "How does MEAN(MonthlyRate) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(MonthlyRate) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        13758.058823529413,
+        6148.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Age) vary by Department?",
+    "explanation": "Outstanding value: for overall data, one category in Department has a value much larger (or smaller) than the others when measuring SUM(Age).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "SUM(Age)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 2.184194379678488,
+      "question": "How does SUM(Age) vary by Department?",
+      "reason": "Statistics-based analysis: SUM(Age) grouped by Department.",
+      "view_labels": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        2382.0,
+        35598.0,
+        16298.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(DailyRate) vary by Department?",
+    "explanation": "Outstanding value: for overall data, one category in Department has a value much larger (or smaller) than the others when measuring SUM(DailyRate).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "SUM(DailyRate)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 2.172412537157874,
+      "question": "How does SUM(DailyRate) vary by Department?",
+      "reason": "Statistics-based analysis: SUM(DailyRate) grouped by Department.",
+      "view_labels": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        47347.0,
+        775384.0,
+        356923.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(YearsAtCompany) vary by Attrition?",
+    "explanation": "Outstanding value: for DailyRate=265, one category in Attrition has a value much larger (or smaller) than the others when measuring MEAN(YearsAtCompany).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(YearsAtCompany)",
+      "subspace": [
+        [
+          "DailyRate",
+          265
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 2.0,
+      "question": "How does MEAN(YearsAtCompany) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(YearsAtCompany) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        1.0,
+        2.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(MonthlyIncome) vary by Attrition?",
+    "explanation": "Outstanding value: for WorkLifeBalance=4, one category in Attrition has a value much larger (or smaller) than the others when measuring MEAN(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(MonthlyIncome)",
+      "subspace": [
+        [
+          "WorkLifeBalance",
+          4
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.8464987821272179,
+      "question": "How does MEAN(MonthlyIncome) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(MonthlyIncome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        7340.174603174603,
+        3975.185185185185
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(TotalWorkingYears) vary by Attrition?",
+    "explanation": "Outstanding value: for YearsWithCurrManager=1, one category in Attrition has a value much larger (or smaller) than the others when measuring MEAN(TotalWorkingYears).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(TotalWorkingYears)",
+      "subspace": [
+        [
+          "YearsWithCurrManager",
+          1
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.776923076923077,
+      "question": "How does MEAN(TotalWorkingYears) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(TotalWorkingYears) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        10.338461538461539,
+        5.818181818181818
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(TotalWorkingYears) vary by Attrition?",
+    "explanation": "Outstanding value: for RelationshipSatisfaction=3, one category in Attrition has a value much larger (or smaller) than the others when measuring MEAN(TotalWorkingYears).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(TotalWorkingYears)",
+      "subspace": [
+        [
+          "RelationshipSatisfaction",
+          3
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.709719153984618,
+      "question": "How does MEAN(TotalWorkingYears) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(TotalWorkingYears) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        12.13659793814433,
+        7.098591549295775
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(DistanceFromHome) vary by Attrition?",
+    "explanation": "Outstanding value: for BusinessTravel=Non-Travel, one category in Attrition has a value much larger (or smaller) than the others when measuring MEAN(DistanceFromHome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(DistanceFromHome)",
+      "subspace": [
+        [
+          "BusinessTravel",
+          "Non-Travel"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.6737089201877935,
+      "question": "How does MEAN(DistanceFromHome) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(DistanceFromHome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        9.26086956521739,
+        15.5
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(HourlyRate) vary by Attrition?",
+    "explanation": "Outstanding value: for YearsSinceLastPromotion=5, one category in Attrition has a value much larger (or smaller) than the others when measuring MEAN(HourlyRate).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(HourlyRate)",
+      "subspace": [
+        [
+          "YearsSinceLastPromotion",
+          5
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.5469220246238031,
+      "question": "How does MEAN(HourlyRate) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(HourlyRate) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        65.74418604651163,
+        42.5
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(YearsInCurrentRole) vary by Attrition?",
+    "explanation": "Outstanding value: for overall data, one category in Attrition has a value much larger (or smaller) than the others when measuring MEAN(YearsInCurrentRole).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(YearsInCurrentRole)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 1.5446974197929044,
+      "question": "How does MEAN(YearsInCurrentRole) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(YearsInCurrentRole) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        4.484184914841849,
+        2.9029535864978904
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(YearsWithCurrManager) vary by Attrition?",
+    "explanation": "Outstanding value: for overall data, one category in Attrition has a value much larger (or smaller) than the others when measuring MEAN(YearsWithCurrManager).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(YearsWithCurrManager)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 1.5311730661253404,
+      "question": "How does MEAN(YearsWithCurrManager) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(YearsWithCurrManager) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        4.367396593673966,
+        2.852320675105485
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(TrainingTimesLastYear) vary by Attrition?",
+    "explanation": "Outstanding value: for YearsSinceLastPromotion=10, one category in Attrition has a value much larger (or smaller) than the others when measuring MEAN(TrainingTimesLastYear).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(TrainingTimesLastYear)",
+      "subspace": [
+        [
+          "YearsSinceLastPromotion",
+          10
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.4,
+      "question": "How does MEAN(TrainingTimesLastYear) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(TrainingTimesLastYear) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        2.8,
+        2.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(PercentSalaryHike) vary by Attrition?",
+    "explanation": "Attribution: for YearsInCurrentRole=5, a single category in Attrition accounts for a large share of total SUM(PercentSalaryHike).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(PercentSalaryHike)",
+      "subspace": [
+        [
+          "YearsInCurrentRole",
+          5
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.9801801801801802,
+      "question": "How does SUM(PercentSalaryHike) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(PercentSalaryHike) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        544.0,
+        11.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by Attrition?",
+    "explanation": "Attribution: for JobRole=Research Director, a single category in Attrition accounts for a large share of total SUM(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(MonthlyIncome)",
+      "subspace": [
+        [
+          "JobRole",
+          "Research Director"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.9697579450589545,
+      "question": "How does SUM(MonthlyIncome) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(MonthlyIncome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        1243893.0,
+        38791.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(TrainingTimesLastYear) vary by Attrition?",
+    "explanation": "Attribution: for YearsInCurrentRole=6, a single category in Attrition accounts for a large share of total SUM(TrainingTimesLastYear).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(TrainingTimesLastYear)",
+      "subspace": [
+        [
+          "YearsInCurrentRole",
+          6
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.9696969696969697,
+      "question": "How does SUM(TrainingTimesLastYear) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(TrainingTimesLastYear) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        96.0,
+        3.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(StandardHours) vary by Attrition?",
+    "explanation": "Attribution: for JobLevel=4, a single category in Attrition accounts for a large share of total SUM(StandardHours).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(StandardHours)",
+      "subspace": [
+        [
+          "JobLevel",
+          4
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.9528301886792453,
+      "question": "How does SUM(StandardHours) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(StandardHours) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        8080.0,
+        400.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(NumCompaniesWorked) vary by Attrition?",
+    "explanation": "Attribution: for JobRole=Manager, a single category in Attrition accounts for a large share of total SUM(NumCompaniesWorked).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(NumCompaniesWorked)",
+      "subspace": [
+        [
+          "JobRole",
+          "Manager"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.9490445859872612,
+      "question": "How does SUM(NumCompaniesWorked) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(NumCompaniesWorked) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        298.0,
+        16.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(MonthlyRate) vary by Attrition?",
+    "explanation": "Attribution: for YearsSinceLastPromotion=4, a single category in Attrition accounts for a large share of total SUM(MonthlyRate).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(MonthlyRate)",
+      "subspace": [
+        [
+          "YearsSinceLastPromotion",
+          4
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.9441553385051432,
+      "question": "How does SUM(MonthlyRate) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(MonthlyRate) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        902080.0,
+        53356.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Age) vary by Attrition?",
+    "explanation": "Attribution: for JobRole=Healthcare Representative, a single category in Attrition accounts for a large share of total SUM(Age).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(Age)",
+      "subspace": [
+        [
+          "JobRole",
+          "Healthcare Representative"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.9328859060402684,
+      "question": "How does SUM(Age) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(Age) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        4865.0,
+        350.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(YearsAtCompany) vary by Attrition?",
+    "explanation": "Attribution: for Age=51, a single category in Attrition accounts for a large share of total SUM(YearsAtCompany).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(YearsAtCompany)",
+      "subspace": [
+        [
+          "Age",
+          51
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.9267015706806283,
+      "question": "How does SUM(YearsAtCompany) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(YearsAtCompany) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        177.0,
+        14.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(WorkLifeBalance) vary by Attrition?",
+    "explanation": "Attribution: for JobLevel=5, a single category in Attrition accounts for a large share of total SUM(WorkLifeBalance).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(WorkLifeBalance)",
+      "subspace": [
+        [
+          "JobLevel",
+          5
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.923469387755102,
+      "question": "How does SUM(WorkLifeBalance) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(WorkLifeBalance) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        181.0,
+        15.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(TotalWorkingYears) vary by Attrition?",
+    "explanation": "Attribution: for NumCompaniesWorked=2, a single category in Attrition accounts for a large share of total SUM(TotalWorkingYears).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(TotalWorkingYears)",
+      "subspace": [
+        [
+          "NumCompaniesWorked",
+          2
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.9232201023731968,
+      "question": "How does SUM(TotalWorkingYears) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(TotalWorkingYears) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        1984.0,
+        165.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(HourlyRate) vary by Attrition?",
+    "explanation": "Attribution: for StockOptionLevel=2, a single category in Attrition accounts for a large share of total SUM(HourlyRate).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(HourlyRate)",
+      "subspace": [
+        [
+          "StockOptionLevel",
+          2
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.9230979001908918,
+      "question": "How does SUM(HourlyRate) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(HourlyRate) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        10155.0,
+        846.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(NumCompaniesWorked) vary by Attrition?",
+    "explanation": "Attribution: for YearsWithCurrManager=14, a single category in Attrition accounts for a large share of total MEAN(NumCompaniesWorked).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(NumCompaniesWorked)",
+      "subspace": [
+        [
+          "YearsWithCurrManager",
+          14
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.9142857142857143,
+      "question": "How does MEAN(NumCompaniesWorked) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(NumCompaniesWorked) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        5.333333333333333,
+        0.5
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(DistanceFromHome) vary by Attrition?",
+    "explanation": "Attribution: for Age=55, a single category in Attrition accounts for a large share of total SUM(DistanceFromHome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(DistanceFromHome)",
+      "subspace": [
+        [
+          "Age",
+          55
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.9132653061224489,
+      "question": "How does SUM(DistanceFromHome) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(DistanceFromHome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        179.0,
+        17.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(DailyRate) vary by Attrition?",
+    "explanation": "Attribution: for PercentSalaryHike=19, a single category in Attrition accounts for a large share of total SUM(DailyRate).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(DailyRate)",
+      "subspace": [
+        [
+          "PercentSalaryHike",
+          19
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.9116485903400502,
+      "question": "How does SUM(DailyRate) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(DailyRate) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        62117.0,
+        6020.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(YearsInCurrentRole) vary by Attrition?",
+    "explanation": "Attribution: for overall data, a single category in Attrition accounts for a large share of total SUM(YearsInCurrentRole).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(YearsInCurrentRole)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.8893356924561686,
+      "question": "How does SUM(YearsInCurrentRole) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(YearsInCurrentRole) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        5529.0,
+        688.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(YearsWithCurrManager) vary by Attrition?",
+    "explanation": "Attribution: for overall data, a single category in Attrition accounts for a large share of total SUM(YearsWithCurrManager).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(YearsWithCurrManager)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.8884672496287741,
+      "question": "How does SUM(YearsWithCurrManager) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(YearsWithCurrManager) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        5385.0,
+        676.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by Attrition?",
+    "explanation": "Attribution: for NumCompaniesWorked=4, a single category in Attrition accounts for a large share of total SUM(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(EmployeeCount)",
+      "subspace": [
+        [
+          "NumCompaniesWorked",
+          4
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.8776978417266187,
+      "question": "How does SUM(EmployeeCount) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(EmployeeCount) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        122.0,
+        17.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(MonthlyRate) vary by Attrition?",
+    "explanation": "Attribution: for YearsAtCompany=20, a single category in Attrition accounts for a large share of total MEAN(MonthlyRate).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(MonthlyRate)",
+      "subspace": [
+        [
+          "YearsAtCompany",
+          20
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.8645784816022357,
+      "question": "How does MEAN(MonthlyRate) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(MonthlyRate) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        14850.0,
+        2326.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(YearsSinceLastPromotion) vary by Attrition?",
+    "explanation": "Attribution: for overall data, a single category in Attrition accounts for a large share of total SUM(YearsSinceLastPromotion).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(YearsSinceLastPromotion)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.8566542288557214,
+      "question": "How does SUM(YearsSinceLastPromotion) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(YearsSinceLastPromotion) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        2755.0,
+        461.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(TrainingTimesLastYear) vary by Attrition?",
+    "explanation": "Attribution: for JobRole=Research Director, a single category in Attrition accounts for a large share of total MEAN(TrainingTimesLastYear).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(TrainingTimesLastYear)",
+      "subspace": [
+        [
+          "JobRole",
+          "Research Director"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.738255033557047,
+      "question": "How does MEAN(TrainingTimesLastYear) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(TrainingTimesLastYear) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        2.8205128205128207,
+        1.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(YearsAtCompany) vary by Attrition?",
+    "explanation": "Attribution: for TrainingTimesLastYear=5, a single category in Attrition accounts for a large share of total MEAN(YearsAtCompany).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(YearsAtCompany)",
+      "subspace": [
+        [
+          "TrainingTimesLastYear",
+          5
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.7363796133567663,
+      "question": "How does MEAN(YearsAtCompany) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(YearsAtCompany) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        7.980952380952381,
+        2.857142857142857
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(NumCompaniesWorked) vary by BusinessTravel?",
+    "explanation": "Attribution: for overall data, a single category in BusinessTravel accounts for a large share of total SUM(NumCompaniesWorked).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(NumCompaniesWorked)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.7231624147511998,
+      "question": "How does SUM(NumCompaniesWorked) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis: SUM(NumCompaniesWorked) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        407.0,
+        689.0,
+        2863.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by BusinessTravel?",
+    "explanation": "Attribution: for overall data, a single category in BusinessTravel accounts for a large share of total SUM(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(MonthlyIncome)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.7222650716699293,
+      "question": "How does SUM(MonthlyIncome) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis: SUM(MonthlyIncome) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        939292.0,
+        1715662.0,
+        6904355.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(TotalWorkingYears) vary by BusinessTravel?",
+    "explanation": "Attribution: for overall data, a single category in BusinessTravel accounts for a large share of total SUM(TotalWorkingYears).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(TotalWorkingYears)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.7190157409082685,
+      "question": "How does SUM(TotalWorkingYears) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis: SUM(TotalWorkingYears) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        1589.0,
+        3070.0,
+        11922.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(MonthlyIncome) vary by Attrition?",
+    "explanation": "Attribution: for EducationField=Human Resources, a single category in Attrition accounts for a large share of total MEAN(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(MonthlyIncome)",
+      "subspace": [
+        [
+          "EducationField",
+          "Human Resources"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.7152372258970736,
+      "question": "How does MEAN(MonthlyIncome) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(MonthlyIncome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        8579.95,
+        3416.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(HourlyRate) vary by BusinessTravel?",
+    "explanation": "Attribution: for overall data, a single category in BusinessTravel accounts for a large share of total SUM(HourlyRate).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(HourlyRate)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.7133801362791659,
+      "question": "How does SUM(HourlyRate) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis: SUM(HourlyRate) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        9730.0,
+        18032.0,
+        69098.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Age) vary by BusinessTravel?",
+    "explanation": "Attribution: for overall data, a single category in BusinessTravel accounts for a large share of total SUM(Age).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(Age)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.7127565496149453,
+      "question": "How does SUM(Age) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis: SUM(Age) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        5493.0,
+        10098.0,
+        38687.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(TrainingTimesLastYear) vary by BusinessTravel?",
+    "explanation": "Attribution: for overall data, a single category in BusinessTravel accounts for a large share of total SUM(TrainingTimesLastYear).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(TrainingTimesLastYear)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.7113001215066829,
+      "question": "How does SUM(TrainingTimesLastYear) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis: SUM(TrainingTimesLastYear) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        408.0,
+        780.0,
+        2927.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(DailyRate) vary by BusinessTravel?",
+    "explanation": "Attribution: for overall data, a single category in BusinessTravel accounts for a large share of total SUM(DailyRate).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(DailyRate)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.7099980163675111,
+      "question": "How does SUM(DailyRate) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis: SUM(DailyRate) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        122544.0,
+        219558.0,
+        837552.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by BusinessTravel?",
+    "explanation": "Attribution: for overall data, a single category in BusinessTravel accounts for a large share of total SUM(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(EmployeeCount)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.7095238095238096,
+      "question": "How does SUM(EmployeeCount) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis: SUM(EmployeeCount) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        150.0,
+        277.0,
+        1043.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(StandardHours) vary by BusinessTravel?",
+    "explanation": "Attribution: for overall data, a single category in BusinessTravel accounts for a large share of total SUM(StandardHours).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(StandardHours)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.7095238095238096,
+      "question": "How does SUM(StandardHours) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis: SUM(StandardHours) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        12000.0,
+        22160.0,
+        83440.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(WorkLifeBalance) vary by BusinessTravel?",
+    "explanation": "Attribution: for overall data, a single category in BusinessTravel accounts for a large share of total SUM(WorkLifeBalance).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(WorkLifeBalance)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.7080561714708056,
+      "question": "How does SUM(WorkLifeBalance) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis: SUM(WorkLifeBalance) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        416.0,
+        769.0,
+        2874.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(PercentSalaryHike) vary by BusinessTravel?",
+    "explanation": "Attribution: for overall data, a single category in BusinessTravel accounts for a large share of total SUM(PercentSalaryHike).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(PercentSalaryHike)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.7074872528848735,
+      "question": "How does SUM(PercentSalaryHike) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis: SUM(PercentSalaryHike) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        2341.0,
+        4199.0,
+        15818.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(MonthlyRate) vary by BusinessTravel?",
+    "explanation": "Attribution: for overall data, a single category in BusinessTravel accounts for a large share of total SUM(MonthlyRate).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(MonthlyRate)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.7071577340624371,
+      "question": "How does SUM(MonthlyRate) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis: SUM(MonthlyRate) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        2195340.0,
+        3966138.0,
+        14878784.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(YearsInCurrentRole) vary by BusinessTravel?",
+    "explanation": "Attribution: for overall data, a single category in BusinessTravel accounts for a large share of total SUM(YearsInCurrentRole).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(YearsInCurrentRole)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.7059675084445874,
+      "question": "How does SUM(YearsInCurrentRole) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis: SUM(YearsInCurrentRole) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        653.0,
+        1175.0,
+        4389.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(YearsAtCompany) vary by BusinessTravel?",
+    "explanation": "Attribution: for overall data, a single category in BusinessTravel accounts for a large share of total SUM(YearsAtCompany).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(YearsAtCompany)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.7030673655600854,
+      "question": "How does SUM(YearsAtCompany) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis: SUM(YearsAtCompany) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        1072.0,
+        1987.0,
+        7243.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(DistanceFromHome) vary by BusinessTravel?",
+    "explanation": "Attribution: for overall data, a single category in BusinessTravel accounts for a large share of total SUM(DistanceFromHome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(DistanceFromHome)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.7014726559609266,
+      "question": "How does SUM(DistanceFromHome) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis: SUM(DistanceFromHome) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        1464.0,
+        2570.0,
+        9479.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(YearsWithCurrManager) vary by BusinessTravel?",
+    "explanation": "Attribution: for overall data, a single category in BusinessTravel accounts for a large share of total SUM(YearsWithCurrManager).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(YearsWithCurrManager)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.7008744431611945,
+      "question": "How does SUM(YearsWithCurrManager) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis: SUM(YearsWithCurrManager) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        645.0,
+        1168.0,
+        4248.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(YearsSinceLastPromotion) vary by BusinessTravel?",
+    "explanation": "Attribution: for overall data, a single category in BusinessTravel accounts for a large share of total SUM(YearsSinceLastPromotion).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(YearsSinceLastPromotion)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.6868781094527363,
+      "question": "How does SUM(YearsSinceLastPromotion) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis: SUM(YearsSinceLastPromotion) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        358.0,
+        649.0,
+        2209.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(TotalWorkingYears) vary by Attrition?",
+    "explanation": "Attribution: for YearsInCurrentRole=0, a single category in Attrition accounts for a large share of total MEAN(TotalWorkingYears).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(TotalWorkingYears)",
+      "subspace": [
+        [
+          "YearsInCurrentRole",
+          0
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.6749211121119849,
+      "question": "How does MEAN(TotalWorkingYears) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(TotalWorkingYears) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        9.783625730994151,
+        4.712328767123288
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(TrainingTimesLastYear) vary by Attrition?",
+    "explanation": "Attribution: for HourlyRate=46, a single category in Attrition accounts for a large share of total MEAN(TrainingTimesLastYear).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(TrainingTimesLastYear)",
+      "subspace": [
+        [
+          "HourlyRate",
+          46
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.6595744680851063,
+      "question": "How does MEAN(TrainingTimesLastYear) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(TrainingTimesLastYear) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        3.1,
+        1.6
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Age) vary by Department?",
+    "explanation": "Attribution: for overall data, a single category in Department accounts for a large share of total SUM(Age).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "SUM(Age)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.6558458307233133,
+      "question": "How does SUM(Age) vary by Department?",
+      "reason": "Statistics-based analysis: SUM(Age) grouped by Department.",
+      "view_labels": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        2382.0,
+        35598.0,
+        16298.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(DistanceFromHome) vary by Attrition?",
+    "explanation": "Attribution: for BusinessTravel=Non-Travel, a single category in Attrition accounts for a large share of total MEAN(DistanceFromHome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(DistanceFromHome)",
+      "subspace": [
+        [
+          "BusinessTravel",
+          "Non-Travel"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.6259877085162423,
+      "question": "How does MEAN(DistanceFromHome) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(DistanceFromHome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        9.26086956521739,
+        15.5
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(YearsInCurrentRole) vary by Attrition?",
+    "explanation": "Attribution: for overall data, a single category in Attrition accounts for a large share of total MEAN(YearsInCurrentRole).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(YearsInCurrentRole)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.6070259700733366,
+      "question": "How does MEAN(YearsInCurrentRole) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(YearsInCurrentRole) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        4.484184914841849,
+        2.9029535864978904
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(YearsWithCurrManager) vary by Attrition?",
+    "explanation": "Attribution: for overall data, a single category in Attrition accounts for a large share of total MEAN(YearsWithCurrManager).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(YearsWithCurrManager)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.6049262638801793,
+      "question": "How does MEAN(YearsWithCurrManager) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(YearsWithCurrManager) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        4.367396593673966,
+        2.852320675105485
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(DailyRate) vary by Attrition?",
+    "explanation": "Attribution: for YearsWithCurrManager=8, a single category in Attrition accounts for a large share of total MEAN(DailyRate).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(DailyRate)",
+      "subspace": [
+        [
+          "YearsWithCurrManager",
+          8
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5831289101869284,
+      "question": "How does MEAN(DailyRate) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(DailyRate) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        821.9484536082474,
+        587.6
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(WorkLifeBalance) vary by Attrition?",
+    "explanation": "Attribution: for PercentSalaryHike=25, a single category in Attrition accounts for a large share of total MEAN(WorkLifeBalance).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(WorkLifeBalance)",
+      "subspace": [
+        [
+          "PercentSalaryHike",
+          25
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.576271186440678,
+      "question": "How does MEAN(WorkLifeBalance) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(WorkLifeBalance) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        2.9411764705882355,
+        4.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(HourlyRate) vary by Attrition?",
+    "explanation": "Attribution: for YearsWithCurrManager=11, a single category in Attrition accounts for a large share of total MEAN(HourlyRate).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(HourlyRate)",
+      "subspace": [
+        [
+          "YearsWithCurrManager",
+          11
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5644838432942523,
+      "question": "How does MEAN(HourlyRate) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(HourlyRate) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        72.52380952380952,
+        94.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Age) vary by Attrition?",
+    "explanation": "Attribution: for TrainingTimesLastYear=5, a single category in Attrition accounts for a large share of total MEAN(Age).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(Age)",
+      "subspace": [
+        [
+          "TrainingTimesLastYear",
+          5
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5617199336267225,
+      "question": "How does MEAN(Age) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(Age) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        37.076190476190476,
+        28.928571428571427
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(WorkLifeBalance) vary by Attrition?",
+    "explanation": "Attribution: for DistanceFromHome=13, a single category in Attrition accounts for a large share of total MEAN(WorkLifeBalance).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(WorkLifeBalance)",
+      "subspace": [
+        [
+          "DistanceFromHome",
+          13
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.561038961038961,
+      "question": "How does MEAN(WorkLifeBalance) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(WorkLifeBalance) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        2.769230769230769,
+        2.1666666666666665
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Age) vary by Attrition?",
+    "explanation": "Attribution: for Gender=Female, a single category in Attrition accounts for a large share of total MEAN(Age).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(Age)",
+      "subspace": [
+        [
+          "Gender",
+          "Female"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5394524552324642,
+      "question": "How does MEAN(Age) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(Age) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        38.15568862275449,
+        32.57471264367816
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(PercentSalaryHike) vary by Attrition?",
+    "explanation": "Attribution: for HourlyRate=34, a single category in Attrition accounts for a large share of total MEAN(PercentSalaryHike).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(PercentSalaryHike)",
+      "subspace": [
+        [
+          "HourlyRate",
+          34
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5385329619312906,
+      "question": "How does MEAN(PercentSalaryHike) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(PercentSalaryHike) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        16.571428571428573,
+        14.2
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(PercentSalaryHike) vary by Attrition?",
+    "explanation": "Attribution: for DistanceFromHome=17, a single category in Attrition accounts for a large share of total MEAN(PercentSalaryHike).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(PercentSalaryHike)",
+      "subspace": [
+        [
+          "DistanceFromHome",
+          17
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5379146919431279,
+      "question": "How does MEAN(PercentSalaryHike) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(PercentSalaryHike) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        15.133333333333333,
+        13.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(DailyRate) vary by Attrition?",
+    "explanation": "Attribution: for RelationshipSatisfaction=3, a single category in Attrition accounts for a large share of total MEAN(DailyRate).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(DailyRate)",
+      "subspace": [
+        [
+          "RelationshipSatisfaction",
+          3
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5359091187194283,
+      "question": "How does MEAN(DailyRate) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(DailyRate) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        804.4381443298969,
+        696.6338028169014
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(YearsSinceLastPromotion) vary by Attrition?",
+    "explanation": "Attribution: for overall data, a single category in Attrition accounts for a large share of total MEAN(YearsSinceLastPromotion).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(YearsSinceLastPromotion)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5346019316361921,
+      "question": "How does MEAN(YearsSinceLastPromotion) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(YearsSinceLastPromotion) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        2.234387672343877,
+        1.9451476793248945
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Age) vary by Attrition?",
+    "explanation": "Attribution: for overall data, a single category in Attrition accounts for a large share of total MEAN(Age).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(Age)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5277764715012617,
+      "question": "How does MEAN(Age) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(Age) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        37.561232765612324,
+        33.607594936708864
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(DailyRate) vary by Attrition?",
+    "explanation": "Attribution: for overall data, a single category in Attrition accounts for a large share of total MEAN(DailyRate).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(DailyRate)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5198806355086345,
+      "question": "How does MEAN(DailyRate) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(DailyRate) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        812.5044606650446,
+        750.3628691983122
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(WorkLifeBalance) vary by Attrition?",
+    "explanation": "Attribution: for overall data, a single category in Attrition accounts for a large share of total MEAN(WorkLifeBalance).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(WorkLifeBalance)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5112877745502726,
+      "question": "How does MEAN(WorkLifeBalance) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(WorkLifeBalance) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        2.781021897810219,
+        2.6582278481012658
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(PercentSalaryHike) vary by Attrition?",
+    "explanation": "Attribution: for overall data, a single category in Attrition accounts for a large share of total MEAN(PercentSalaryHike).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(PercentSalaryHike)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5022107672591157,
+      "question": "How does MEAN(PercentSalaryHike) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(PercentSalaryHike) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        15.231143552311435,
+        15.09704641350211
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by Attrition?",
+    "explanation": "Attribution: for overall data, a single category in Attrition accounts for a large share of total MEAN(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(EmployeeCount)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5,
+      "question": "How does MEAN(EmployeeCount) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(EmployeeCount) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by Attrition?",
+    "explanation": "Attribution: for PercentSalaryHike=16, a single category in Attrition accounts for a large share of total MEAN(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(EmployeeCount)",
+      "subspace": [
+        [
+          "PercentSalaryHike",
+          16
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5,
+      "question": "How does MEAN(EmployeeCount) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(EmployeeCount) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by Attrition?",
+    "explanation": "Attribution: for StandardHours=80, a single category in Attrition accounts for a large share of total MEAN(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(EmployeeCount)",
+      "subspace": [
+        [
+          "StandardHours",
+          80
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5,
+      "question": "How does MEAN(EmployeeCount) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(EmployeeCount) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(StandardHours) vary by Attrition?",
+    "explanation": "Attribution: for overall data, a single category in Attrition accounts for a large share of total MEAN(StandardHours).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(StandardHours)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5,
+      "question": "How does MEAN(StandardHours) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(StandardHours) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        80.0,
+        80.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(StandardHours) vary by Attrition?",
+    "explanation": "Attribution: for TotalWorkingYears=28, a single category in Attrition accounts for a large share of total MEAN(StandardHours).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(StandardHours)",
+      "subspace": [
+        [
+          "TotalWorkingYears",
+          28
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5,
+      "question": "How does MEAN(StandardHours) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(StandardHours) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        80.0,
+        80.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(StandardHours) vary by Attrition?",
+    "explanation": "Attribution: for RelationshipSatisfaction=3, a single category in Attrition accounts for a large share of total MEAN(StandardHours).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(StandardHours)",
+      "subspace": [
+        [
+          "RelationshipSatisfaction",
+          3
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5,
+      "question": "How does MEAN(StandardHours) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(StandardHours) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        80.0,
+        80.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(NumCompaniesWorked) vary by Attrition?",
+    "explanation": "Distribution difference: the distribution of Attrition changes notably when filtering by YearsAtCompany=15 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(NumCompaniesWorked)",
+      "subspace": [
+        [
+          "YearsAtCompany",
+          15
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.48012551571102235,
+      "question": "How does MEAN(NumCompaniesWorked) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(NumCompaniesWorked) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        1.6842105263157894,
+        0.0
+      ],
+      "view_labels_baseline": [
+        "False",
+        "True"
+      ],
+      "view_values_baseline": [
+        2.6455798864557987,
+        2.940928270042194
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(MonthlyRate) vary by Attrition?",
+    "explanation": "Distribution difference: the distribution of Attrition changes notably when filtering by MonthlyIncome=2044 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(MonthlyRate)",
+      "subspace": [
+        [
+          "MonthlyIncome",
+          2044
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.4677577951342792,
+      "question": "How does SUM(MonthlyRate) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(MonthlyRate) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        5531.0,
+        22052.0
+      ],
+      "view_labels_baseline": [
+        "False",
+        "True"
+      ],
+      "view_values_baseline": [
+        17589706.0,
+        3450556.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(DistanceFromHome) vary by Attrition?",
+    "explanation": "Distribution difference: the distribution of Attrition changes notably when filtering by DailyRate=527 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(DistanceFromHome)",
+      "subspace": [
+        [
+          "DailyRate",
+          527
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.3366724213794261,
+      "question": "How does MEAN(DistanceFromHome) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(DistanceFromHome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        8.0,
+        1.0
+      ],
+      "view_labels_baseline": [
+        "False",
+        "True"
+      ],
+      "view_values_baseline": [
+        8.915652879156529,
+        10.632911392405063
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by Attrition?",
+    "explanation": "Distribution difference: the distribution of Attrition changes notably when filtering by Age=20 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(MonthlyIncome)",
+      "subspace": [
+        [
+          "Age",
+          20
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.2975582346342221,
+      "question": "How does SUM(MonthlyIncome) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(MonthlyIncome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        14058.0,
+        13875.0
+      ],
+      "view_labels_baseline": [
+        "False",
+        "True"
+      ],
+      "view_values_baseline": [
+        8424768.0,
+        1134541.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(MonthlyRate) vary by Attrition?",
+    "explanation": "Distribution difference: the distribution of Attrition changes notably when filtering by YearsAtCompany=20 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(MonthlyRate)",
+      "subspace": [
+        [
+          "YearsAtCompany",
+          20
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.2867626753570472,
+      "question": "How does MEAN(MonthlyRate) vary by Attrition?",
+      "reason": "Statistics-based analysis: MEAN(MonthlyRate) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        14850.0,
+        2326.0
+      ],
+      "view_labels_baseline": [
+        "False",
+        "True"
+      ],
+      "view_values_baseline": [
+        14265.779399837795,
+        14559.308016877638
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(NumCompaniesWorked) vary by Attrition?",
+    "explanation": "Distribution difference: the distribution of Attrition changes notably when filtering by Age=20 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(NumCompaniesWorked)",
+      "subspace": [
+        [
+          "Age",
+          20
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.27688912416205774,
+      "question": "How does SUM(NumCompaniesWorked) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(NumCompaniesWorked) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        5.0,
+        6.0
+      ],
+      "view_labels_baseline": [
+        "False",
+        "True"
+      ],
+      "view_values_baseline": [
+        3262.0,
+        697.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(PercentSalaryHike) vary by Attrition?",
+    "explanation": "Distribution difference: the distribution of Attrition changes notably when filtering by MonthlyIncome=2367 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(PercentSalaryHike)",
+      "subspace": [
+        [
+          "MonthlyIncome",
+          2367
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.2602975409860269,
+      "question": "How does SUM(PercentSalaryHike) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(PercentSalaryHike) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        12.0,
+        12.0
+      ],
+      "view_labels_baseline": [
+        "False",
+        "True"
+      ],
+      "view_values_baseline": [
+        18780.0,
+        3578.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by Attrition?",
+    "explanation": "Distribution difference: the distribution of Attrition changes notably when filtering by MonthlyIncome=2587 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(EmployeeCount)",
+      "subspace": [
+        [
+          "MonthlyIncome",
+          2587
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.25921107732233334,
+      "question": "How does SUM(EmployeeCount) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(EmployeeCount) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        1.0,
+        1.0
+      ],
+      "view_labels_baseline": [
+        "False",
+        "True"
+      ],
+      "view_values_baseline": [
+        1233.0,
+        237.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(DistanceFromHome) vary by Attrition?",
+    "explanation": "Distribution difference: the distribution of Attrition changes notably when filtering by MonthlyIncome=2564 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(DistanceFromHome)",
+      "subspace": [
+        [
+          "MonthlyIncome",
+          2564
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.23673919221949,
+      "question": "How does SUM(DistanceFromHome) vary by Attrition?",
+      "reason": "Statistics-based analysis: SUM(DistanceFromHome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        2.0,
+        2.0
+      ],
+      "view_labels_baseline": [
+        "False",
+        "True"
+      ],
+      "view_values_baseline": [
+        10993.0,
+        2520.0
+      ]
+    }
+  }
+]

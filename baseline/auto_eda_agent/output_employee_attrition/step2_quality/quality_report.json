@@ -67,13 +67,79 @@
     "total_issues": 10
   },
   "assessment": {
-    "critical_issues": [],
-    "overall_quality_score": 50,
-    "priority_actions": []
+    "critical_issues": [
+      {
+        "issue": "Outliers detected in PerformanceRating (226 records, 15.37%). The IQR method flags all values outside 3.0, indicating the variable is highly concentrated and likely discrete/ordinal rather than truly anomalous.",
+        "severity": "medium",
+        "impact": "Because PerformanceRating is a medium-importance feature, treating these values as errors could distort performance-related segmentation, employee evaluation analysis, and any models using rating as a predictor. The issue is more about inappropriate outlier detection than clear data corruption.",
+        "recommendation": "Do not automatically remove these records. Validate the allowed rating scale from business rules and assess frequency distribution instead of using continuous-variable outlier logic for this ordinal field."
+      },
+      {
+        "issue": "Outliers detected in TrainingTimesLastYear (238 records, 16.19%). This is a medium-importance count variable with a large share of values outside the IQR bounds.",
+        "severity": "medium",
+        "impact": "If these values are valid, they may represent meaningful variation in employee development activity. If invalid, they can bias workforce development reporting and any attrition or performance models that use training frequency.",
+        "recommendation": "Validate against expected business limits for annual training counts. Use rule-based checks for count variables and consider capping or categorizing only if values are confirmed implausible."
+      },
+      {
+        "issue": "Outliers detected in MonthlyIncome (114 records, 7.76%) in a high-importance column.",
+        "severity": "high",
+        "impact": "MonthlyIncome is central to compensation analysis, pay equity studies, attrition modeling, and workforce planning. Extreme values can skew averages, inflate variance, and mislead compensation benchmarking or predictive models.",
+        "recommendation": "Review extreme salary records against payroll source systems. Confirm whether they reflect valid executive/high-pay roles or data entry issues. Apply winsorization, segmentation by job level, or robust statistics if values are valid but influential."
+      },
+      {
+        "issue": "Outliers detected in TotalWorkingYears (63 records, 4.29%) in a high-importance column.",
+        "severity": "high",
+        "impact": "This field is important for tenure, experience, promotion, and attrition analysis. Implausible experience values can distort workforce seniority distributions and weaken models that rely on career-stage indicators.",
+        "recommendation": "Cross-check against Age and YearsAtCompany for logical consistency. Investigate unusually high values and apply business-rule validation such as TotalWorkingYears <= Age - minimum working age."
+      },
+      {
+        "issue": "Outliers detected in YearsAtCompany (104 records, 7.07%) in a medium-importance tenure field.",
+        "severity": "medium",
+        "impact": "Extreme tenure values can bias retention analysis, internal mobility studies, and tenure-based segmentation. They may also indicate inconsistencies when compared with TotalWorkingYears.",
+        "recommendation": "Validate against employment history and enforce consistency rules such as YearsAtCompany <= TotalWorkingYears."
+      },
+      {
+        "issue": "Outliers detected in YearsSinceLastPromotion (107 records, 7.28%) in a medium-importance career progression field.",
+        "severity": "medium",
+        "impact": "This can affect promotion-cycle analysis, employee engagement studies, and attrition risk modeling. Long tails may be valid, but invalid values would misrepresent advancement patterns.",
+        "recommendation": "Check against HR promotion records and validate logical relationships with YearsAtCompany and YearsInCurrentRole."
+      },
+      {
+        "issue": "Outliers detected in StockOptionLevel (85 records, 5.78%) in a medium-importance compensation-related field.",
+        "severity": "medium",
+        "impact": "Unexpected stock option levels can distort compensation package analysis and total rewards modeling. However, because this is likely a small discrete scale, the issue may reflect method sensitivity rather than bad data.",
+        "recommendation": "Validate the permitted stock option categories. Treat as a categorical/ordinal field and assess invalid codes rather than statistical outliers."
+      },
+      {
+        "issue": "Outliers detected in NumCompaniesWorked (52 records, 3.54%) in a medium-importance employment-history field.",
+        "severity": "medium",
+        "impact": "This may affect career mobility analysis and attrition modeling. High values may be legitimate for experienced workers, but if erroneous they can bias employee stability metrics.",
+        "recommendation": "Validate against resume or employment-history records and use business thresholds appropriate for count data."
+      },
+      {
+        "issue": "Outliers detected in YearsInCurrentRole (21 records, 1.43%) in a medium-importance role-tenure field.",
+        "severity": "low",
+        "impact": "The low proportion limits overall dataset risk, but incorrect values could still affect role-stagnation analysis and internal mobility insights.",
+        "recommendation": "Review flagged records for consistency with YearsAtCompany and promotion history. Correct only confirmed anomalies."
+      },
+      {
+        "issue": "Outliers detected in YearsWithCurrManager (14 records, 0.95%) in a medium-importance managerial-tenure field.",
+        "severity": "low",
+        "impact": "Given the very small proportion, business impact is limited. However, errors here could slightly affect manager-tenure and engagement analyses.",
+        "recommendation": "Perform targeted validation on flagged records and check consistency with YearsAtCompany and organizational history."
+      }
+    ],
+    "overall_quality_score": 82,
+    "priority_actions": [
+      "Validate high-impact compensation and experience fields first: review MonthlyIncome and TotalWorkingYears outliers against source HR/payroll systems and apply business-rule consistency checks.",
+      "Replace generic statistical outlier detection for discrete/ordinal HR variables such as PerformanceRating, TrainingTimesLastYear, and StockOptionLevel with domain-based validation rules.",
+      "Implement cross-field consistency checks across tenure variables, including YearsAtCompany <= TotalWorkingYears, YearsInCurrentRole <= YearsAtCompany, and YearsSinceLastPromotion <= YearsAtCompany."
+    ],
+    "detailed_analysis": "The dataset shows strong baseline quality: there are no missing values, no duplicate records, and identifier fields were appropriately excluded from outlier analysis. This indicates good completeness and uniqueness. The main quality concern is outlier prevalence across several numeric fields. However, not all flagged outliers should be treated as true data defects. Several variables, especially PerformanceRating, TrainingTimesLastYear, and StockOptionLevel, are likely discrete or ordinal HR attributes where IQR-based outlier detection can over-flag valid values. The most business-critical risks are in high-importance fields such as MonthlyIncome and TotalWorkingYears, where extreme values can materially distort compensation, tenure, and attrition analyses. Medium-risk issues exist in tenure and progression fields like YearsAtCompany and YearsSinceLastPromotion, especially because these variables should satisfy logical relationships with each other. Overall, the dataset is fairly reliable for analysis, but it would benefit from targeted validation of high-impact numeric fields and replacement of generic outlier methods with HR-specific business rules."
   },
   "summary": {
     "total_issues": 10,
-    "critical_issues": 0,
-    "data_quality_score": 50
+    "critical_issues": 10,
+    "data_quality_score": 82
   }
 }

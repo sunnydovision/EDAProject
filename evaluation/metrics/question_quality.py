@@ -57,7 +57,7 @@ def _embed(texts: List[str]):
 
 # ───────────────────── 11a. Question Semantic Diversity ─────────────────
 
-def compute_question_diversity(insights: List[Dict]) -> Dict[str, Any]:
+def compute_question_diversity(insights: List[Dict], system_name: str = None) -> Dict[str, Any]:
     """
     D_q = 1 - mean cosine_similarity over (i,j), i != j
 
@@ -66,6 +66,8 @@ def compute_question_diversity(insights: List[Dict]) -> Dict[str, Any]:
     breakdown|measure|pattern|subspace. Phơi bày trực tiếp đa dạng intent của
     QuGen, không bị "trộn" với output của IsGen.
     """
+    if system_name == 'ONLYSTATS':
+        return {'question_diversity': None, 'avg_similarity': None, 'num_questions': 0}
     qs = [_get_question(i) for i in insights]
     qs = [q for q in qs if q]
     n = len(qs)
@@ -89,7 +91,7 @@ def compute_question_diversity(insights: List[Dict]) -> Dict[str, Any]:
 
 # ───────────────────── 11b. Question Specificity ─────────────────
 
-def compute_question_specificity(insights: List[Dict]) -> Dict[str, Any]:
+def compute_question_specificity(insights: List[Dict], system_name: str = None) -> Dict[str, Any]:
     """
     Specificity_q = mean(#tokens(q_i))   (cao hơn -> câu hỏi cụ thể hơn)
     + reports stddev to capture variability across questions.
@@ -98,6 +100,8 @@ def compute_question_specificity(insights: List[Dict]) -> Dict[str, Any]:
     window, scope) -> chứng minh QuGen sinh câu hỏi chuyên biệt thay vì chung
     chung kiểu "What is the trend?".
     """
+    if system_name == 'ONLYSTATS':
+        return {'question_specificity_mean': None, 'question_specificity_std': None, 'num_questions': 0}
     qs = [_get_question(i) for i in insights]
     qs = [q for q in qs if q]
     if not qs:
@@ -114,7 +118,7 @@ def compute_question_specificity(insights: List[Dict]) -> Dict[str, Any]:
 
 # ───────────────────── 11c. Question–Insight Alignment ─────────────────
 
-def compute_question_insight_alignment(insights: List[Dict]) -> Dict[str, Any]:
+def compute_question_insight_alignment(insights: List[Dict], system_name: str = None) -> Dict[str, Any]:
     """
     Align_{Q-I} = mean_i cosine( Embed(q_i), Embed(insight_string_i) )
 
@@ -122,6 +126,8 @@ def compute_question_insight_alignment(insights: List[Dict]) -> Dict[str, Any]:
     tầng ngữ nghĩa*: bù cho metric 1 vốn chỉ check số liệu. QuGen tốt -> insight
     sinh ra phải bám sát ngữ cảnh câu hỏi.
     """
+    if system_name == 'ONLYSTATS':
+        return {'question_insight_alignment': None, 'num_pairs': 0}
     qs, isos = [], []
     for ins in insights:
         q = _get_question(ins)
@@ -251,8 +257,8 @@ def compute_question_quality(insights: List[Dict], system_name: str = None) -> D
     systems' insights.
     """
     return {
-        'question_diversity': compute_question_diversity(insights),
-        'question_specificity': compute_question_specificity(insights),
-        'question_insight_alignment': compute_question_insight_alignment(insights),
+        'question_diversity': compute_question_diversity(insights, system_name),
+        'question_specificity': compute_question_specificity(insights, system_name),
+        'question_insight_alignment': compute_question_insight_alignment(insights, system_name),
         'reason_insight_coherence': compute_reason_insight_coherence(insights, system_name),
     }

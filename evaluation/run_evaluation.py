@@ -459,35 +459,44 @@ def main():
     qa = results_a.get('question_quality') or {}
     qb = results_b.get('question_quality') or {}
 
-    qd_a = (qa.get('question_diversity') or {}).get('question_diversity', 0) or 0
-    qd_b = (qb.get('question_diversity') or {}).get('question_diversity', 0) or 0
+    def _fmt(v, fmt='f4') -> str:
+        if v is None:
+            return 'N/A'
+        return f"{v:.4f}" if fmt == 'f4' else f"{v:.2f}"
+
+    qd_a = (qa.get('question_diversity') or {}).get('question_diversity')
+    qd_b = (qb.get('question_diversity') or {}).get('question_diversity')
     print(f"\n11a. Question Semantic Diversity (within-system):")
-    print(f"  • {args.system_a}: {qd_a:.4f}")
-    print(f"  • {args.system_b}: {qd_b:.4f}")
+    print(f"  • {args.system_a}: {_fmt(qd_a)}")
+    print(f"  • {args.system_b}: {_fmt(qd_b)}")
 
     sp_a = qa.get('question_specificity') or {}
     sp_b = qb.get('question_specificity') or {}
+    sp_am = sp_a.get('question_specificity_mean')
+    sp_as = sp_a.get('question_specificity_std')
+    sp_bm = sp_b.get('question_specificity_mean')
+    sp_bs = sp_b.get('question_specificity_std')
     print(f"\n11b. Question Specificity (avg ± std word count):")
-    print(f"  • {args.system_a}: {sp_a.get('question_specificity_mean', 0):.2f} ± {sp_a.get('question_specificity_std', 0):.2f}")
-    print(f"  • {args.system_b}: {sp_b.get('question_specificity_mean', 0):.2f} ± {sp_b.get('question_specificity_std', 0):.2f}")
+    print(f"  • {args.system_a}: " + ('N/A' if sp_am is None else f"{sp_am:.2f} ± {(sp_as or 0):.2f}"))
+    print(f"  • {args.system_b}: " + ('N/A' if sp_bm is None else f"{sp_bm:.2f} ± {(sp_bs or 0):.2f}"))
 
-    al_a = (qa.get('question_insight_alignment') or {}).get('question_insight_alignment', 0) or 0
-    al_b = (qb.get('question_insight_alignment') or {}).get('question_insight_alignment', 0) or 0
+    al_a = (qa.get('question_insight_alignment') or {}).get('question_insight_alignment')
+    al_b = (qb.get('question_insight_alignment') or {}).get('question_insight_alignment')
     print(f"\n11c. Question–Insight Alignment (cosine sim):")
-    print(f"  • {args.system_a}: {al_a:.4f}")
-    print(f"  • {args.system_b}: {al_b:.4f}")
+    print(f"  • {args.system_a}: {_fmt(al_a)}")
+    print(f"  • {args.system_b}: {_fmt(al_b)}")
 
-    qn_a = (qa.get('question_novelty') or {}).get('question_novelty', 0) or 0
-    qn_b = (qb.get('question_novelty') or {}).get('question_novelty', 0) or 0
+    qn_a = (qa.get('question_novelty') or {}).get('question_novelty')
+    qn_b = (qb.get('question_novelty') or {}).get('question_novelty')
     print(f"\n11d. Question Novelty (cross-system, tau=0.85):")
-    print(f"  • {args.system_a}: {qn_a*100:.1f}%")
-    print(f"  • {args.system_b}: {qn_b*100:.1f}%")
+    print(f"  • {args.system_a}: " + ('N/A' if qn_a is None else f"{qn_a*100:.1f}%"))
+    print(f"  • {args.system_b}: " + ('N/A' if qn_b is None else f"{qn_b*100:.1f}%"))
 
-    rc_a = (qa.get('reason_insight_coherence') or {}).get('reason_insight_coherence', 0) or 0
-    rc_b = (qb.get('reason_insight_coherence') or {}).get('reason_insight_coherence', 0) or 0
+    rc_a = (qa.get('reason_insight_coherence') or {}).get('reason_insight_coherence')
+    rc_b = (qb.get('reason_insight_coherence') or {}).get('reason_insight_coherence')
     print(f"\n11e. Reason–Insight Coherence (cosine sim):")
-    print(f"  • {args.system_a}: {rc_a:.4f}")
-    print(f"  • {args.system_b}: {rc_b:.4f}")
+    print(f"  • {args.system_a}: {_fmt(rc_a)}")
+    print(f"  • {args.system_b}: {_fmt(rc_b)}")
 
     print(f"\nEvaluation complete! Results saved to: {output_dir}/")
 

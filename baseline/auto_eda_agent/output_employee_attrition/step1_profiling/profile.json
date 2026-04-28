@@ -13,6 +13,10 @@
       "dtype": "int64",
       "missing_count": 0,
       "missing_percentage": 0.0,
+      "semantic_meaning": "Employee age in years.",
+      "data_type_class": "Numerical",
+      "importance": "high",
+      "potential_issues": "No obvious formatting issues; should be checked for unrealistic ages or age-related bias concerns.",
       "statistics": {
         "min": 18.0,
         "max": 60.0,
@@ -24,12 +28,20 @@
     "Attrition": {
       "dtype": "bool",
       "missing_count": 0,
-      "missing_percentage": 0.0
+      "missing_percentage": 0.0,
+      "semantic_meaning": "Whether the employee has left the company or is considered attrited.",
+      "data_type_class": "Categorical",
+      "importance": "high",
+      "potential_issues": "Binary boolean field appears clean; confirm whether True means left and False means retained."
     },
     "BusinessTravel": {
-      "dtype": "object",
+      "dtype": "str",
       "missing_count": 0,
       "missing_percentage": 0.0,
+      "semantic_meaning": "Frequency of employee business travel.",
+      "data_type_class": "Categorical",
+      "importance": "medium",
+      "potential_issues": "Category labels use underscores and may need normalization for reporting.",
       "unique_count": 3,
       "top_values": {
         "Travel_Rarely": 1043,
@@ -41,6 +53,10 @@
       "dtype": "int64",
       "missing_count": 0,
       "missing_percentage": 0.0,
+      "semantic_meaning": "Employee daily pay rate or internal daily compensation rate.",
+      "data_type_class": "Numerical",
+      "importance": "medium",
+      "potential_issues": "Meaning may be ambiguous versus actual salary; units/currency not specified.",
       "statistics": {
         "min": 102.0,
         "max": 1499.0,
@@ -50,9 +66,13 @@
       }
     },
     "Department": {
-      "dtype": "object",
+      "dtype": "str",
       "missing_count": 0,
       "missing_percentage": 0.0,
+      "semantic_meaning": "Organizational department where the employee works.",
+      "data_type_class": "Categorical",
+      "importance": "high",
+      "potential_issues": "Appears clean; low cardinality.",
       "unique_count": 3,
       "top_values": {
         "Research & Development": 961,
@@ -64,6 +84,10 @@
       "dtype": "int64",
       "missing_count": 0,
       "missing_percentage": 0.0,
+      "semantic_meaning": "Distance between employee home and workplace, likely in miles or kilometers.",
+      "data_type_class": "Numerical",
+      "importance": "medium",
+      "potential_issues": "Unit of measure is not specified.",
       "statistics": {
         "min": 1.0,
         "max": 29.0,
@@ -76,6 +100,10 @@
       "dtype": "int64",
       "missing_count": 0,
       "missing_percentage": 0.0,
+      "semantic_meaning": "Employee education level encoded as an ordinal scale.",
+      "data_type_class": "Categorical",
+      "importance": "medium",
+      "potential_issues": "Numeric codes 1-5 require a lookup to interpret correctly; should be treated as ordinal rather than continuous.",
       "statistics": {
         "min": 1.0,
         "max": 5.0,
@@ -85,9 +113,13 @@
       }
     },
     "EducationField": {
-      "dtype": "object",
+      "dtype": "str",
       "missing_count": 0,
       "missing_percentage": 0.0,
+      "semantic_meaning": "Employee's academic field of study.",
+      "data_type_class": "Categorical",
+      "importance": "medium",
+      "potential_issues": "Appears clean; category 'Other' is broad and may reduce interpretability.",
       "unique_count": 6,
       "top_values": {
         "Life Sciences": 606,
@@ -102,6 +134,10 @@
       "dtype": "int64",
       "missing_count": 0,
       "missing_percentage": 0.0,
+      "semantic_meaning": "Count of employees represented by the row, likely a constant placeholder.",
+      "data_type_class": "Numerical",
+      "importance": "low",
+      "potential_issues": "Only one unique value (1); non-informative and likely removable.",
       "statistics": {
         "min": 1.0,
         "max": 1.0,
@@ -114,6 +150,10 @@
       "dtype": "int64",
       "missing_count": 0,
       "missing_percentage": 0.0,
+      "semantic_meaning": "Unique employee identifier.",
+      "data_type_class": "ID",
+      "importance": "low",
+      "potential_issues": "Unique key only; should not be used as a predictive numeric feature.",
       "statistics": {
         "min": 1.0,
         "max": 2068.0,
@@ -126,6 +166,10 @@
       "dtype": "int64",
       "missing_count": 0,
       "missing_percentage": 0.0,
+      "semantic_meaning": "Employee satisfaction with work environment, likely on a 1-4 ordinal scale.",
+      "data_type_class": "Categorical",
+      "importance": "high",
+      "potential_issues": "Encoded ordinal values need label mapping; should not be treated as purely continuous.",
       "statistics": {
         "min": 1.0,
         "max": 4.0,
@@ -135,9 +179,13 @@
       }
     },
     "Gender": {
-      "dtype": "object",
+      "dtype": "str",
       "missing_count": 0,
       "missing_percentage": 0.0,
+      "semantic_meaning": "Employee gender.",
+      "data_type_class": "Categorical",
+      "importance": "medium",
+      "potential_issues": "Sensitive demographic attribute; potential fairness and compliance concerns.",
       "unique_count": 2,
       "top_values": {
         "Male": 882,
@@ -148,6 +196,10 @@
       "dtype": "int64",
       "missing_count": 0,
       "missing_percentage": 0.0,
+      "semantic_meaning": "Employee hourly pay rate or internal hourly compensation metric.",
+      "data_type_class": "Numerical",
+      "importance": "medium",
+      "potential_issues": "Units/currency not specified; may not align directly with monthly income.",
       "statistics": {
         "min": 30.0,
         "max": 100.0,
@@ -160,6 +212,10 @@
       "dtype": "int64",
       "missing_count": 0,
       "missing_percentage": 0.0,
+      "semantic_meaning": "Employee level of involvement or engagement in their job, likely on a 1-4 ordinal scale.",
+      "data_type_class": "Categorical",
+      "importance": "high",
+      "potential_issues": "Ordinal coded values require interpretation mapping.",
       "statistics": {
         "min": 1.0,
         "max": 4.0,
@@ -172,6 +228,10 @@
       "dtype": "int64",
       "missing_count": 0,
       "missing_percentage": 0.0,
+      "semantic_meaning": "Employee seniority or grade level within the organization.",
+      "data_type_class": "Categorical",
+      "importance": "high",
+      "potential_issues": "Ordinal numeric codes should not be treated as continuous without care.",
       "statistics": {
         "min": 1.0,
         "max": 5.0,
@@ -181,9 +241,13 @@
       }
     },
     "JobRole": {
-      "dtype": "object",
+      "dtype": "str",
       "missing_count": 0,
       "missing_percentage": 0.0,
+      "semantic_meaning": "Specific employee job title or role category.",
+      "data_type_class": "Categorical",
+      "importance": "high",
+      "potential_issues": "Appears clean; some roles may overlap semantically with department.",
       "unique_count": 9,
       "top_values": {
         "Sales Executive": 326,
@@ -201,6 +265,10 @@
       "dtype": "int64",
       "missing_count": 0,
       "missing_percentage": 0.0,
+      "semantic_meaning": "Employee satisfaction with their job, likely on a 1-4 ordinal scale.",
+      "data_type_class": "Categorical",
+      "importance": "high",
+      "potential_issues": "Ordinal coded values need label mapping.",
       "statistics": {
         "min": 1.0,
         "max": 4.0,
@@ -210,9 +278,13 @@
       }
     },
     "MaritalStatus": {
-      "dtype": "object",
+      "dtype": "str",
       "missing_count": 0,
       "missing_percentage": 0.0,
+      "semantic_meaning": "Employee marital status.",
+      "data_type_class": "Categorical",
+      "importance": "medium",
+      "potential_issues": "Sensitive personal attribute; may raise fairness/privacy concerns.",
       "unique_count": 3,
       "top_values": {
         "Married": 673,
@@ -224,6 +296,10 @@
       "dtype": "int64",
       "missing_count": 0,
       "missing_percentage": 0.0,
+      "semantic_meaning": "Employee monthly income or salary amount.",
+      "data_type_class": "Numerical",
+      "importance": "high",
+      "potential_issues": "Currency not specified; should be checked for outliers and consistency with other pay fields.",
       "statistics": {
         "min": 1009.0,
         "max": 19999.0,
@@ -236,6 +312,10 @@
       "dtype": "int64",
       "missing_count": 0,
       "missing_percentage": 0.0,
+      "semantic_meaning": "Monthly pay rate or internal monthly billing/payroll rate associated with the employee.",
+      "data_type_class": "Numerical",
+      "importance": "medium",
+      "potential_issues": "Potential ambiguity versus MonthlyIncome; business definition should be confirmed.",
       "statistics": {
         "min": 2094.0,
         "max": 26999.0,
@@ -248,6 +328,10 @@
       "dtype": "int64",
       "missing_count": 0,
       "missing_percentage": 0.0,
+      "semantic_meaning": "Number of companies the employee worked for before or including current employment context.",
+      "data_type_class": "Numerical",
+      "importance": "medium",
+      "potential_issues": "Definition should be confirmed whether current employer is included.",
       "statistics": {
         "min": 0.0,
         "max": 9.0,
@@ -259,17 +343,29 @@
     "Over18": {
       "dtype": "bool",
       "missing_count": 0,
-      "missing_percentage": 0.0
+      "missing_percentage": 0.0,
+      "semantic_meaning": "Whether the employee is over 18 years old.",
+      "data_type_class": "Categorical",
+      "importance": "low",
+      "potential_issues": "Only one unique value (True); non-informative and likely removable."
     },
     "OverTime": {
       "dtype": "bool",
       "missing_count": 0,
-      "missing_percentage": 0.0
+      "missing_percentage": 0.0,
+      "semantic_meaning": "Whether the employee works overtime.",
+      "data_type_class": "Categorical",
+      "importance": "high",
+      "potential_issues": "Binary field appears clean; confirm whether this reflects current status or historical pattern."
     },
     "PercentSalaryHike": {
       "dtype": "int64",
       "missing_count": 0,
       "missing_percentage": 0.0,
+      "semantic_meaning": "Percentage increase in employee salary, likely from the last review cycle.",
+      "data_type_class": "Numerical",
+      "importance": "medium",
+      "potential_issues": "Time reference is not explicit; should confirm whether this is annual or last raise only.",
       "statistics": {
         "min": 11.0,
         "max": 25.0,
@@ -282,6 +378,10 @@
       "dtype": "int64",
       "missing_count": 0,
       "missing_percentage": 0.0,
+      "semantic_meaning": "Employee performance evaluation rating.",
+      "data_type_class": "Categorical",
+      "importance": "medium",
+      "potential_issues": "Only two observed values (3 and 4), suggesting limited variance; ordinal coding should be interpreted carefully.",
       "statistics": {
         "min": 3.0,
         "max": 4.0,
@@ -294,6 +394,10 @@
       "dtype": "int64",
       "missing_count": 0,
       "missing_percentage": 0.0,
+      "semantic_meaning": "Employee satisfaction with workplace relationships, likely on a 1-4 ordinal scale.",
+      "data_type_class": "Categorical",
+      "importance": "medium",
+      "potential_issues": "Ordinal coded values require mapping to descriptive labels.",
       "statistics": {
         "min": 1.0,
         "max": 4.0,
@@ -306,6 +410,10 @@
       "dtype": "int64",
       "missing_count": 0,
       "missing_percentage": 0.0,
+      "semantic_meaning": "Standard expected working hours, likely per pay period or week context defined by the source system.",
+      "data_type_class": "Numerical",
+      "importance": "low",
+      "potential_issues": "Only one unique value (80); non-informative and unit/time basis is unclear.",
       "statistics": {
         "min": 80.0,
         "max": 80.0,
@@ -318,6 +426,10 @@
       "dtype": "int64",
       "missing_count": 0,
       "missing_percentage": 0.0,
+      "semantic_meaning": "Level or tier of stock option benefits assigned to the employee.",
+      "data_type_class": "Categorical",
+      "importance": "medium",
+      "potential_issues": "Ordinal encoded values need business definition for interpretation.",
       "statistics": {
         "min": 0.0,
         "max": 3.0,
@@ -330,6 +442,10 @@
       "dtype": "int64",
       "missing_count": 0,
       "missing_percentage": 0.0,
+      "semantic_meaning": "Total years of professional work experience.",
+      "data_type_class": "Numerical",
+      "importance": "high",
+      "potential_issues": "Should be checked for consistency with Age and employment history.",
       "statistics": {
         "min": 0.0,
         "max": 40.0,
@@ -342,6 +458,10 @@
       "dtype": "int64",
       "missing_count": 0,
       "missing_percentage": 0.0,
+      "semantic_meaning": "Number of training sessions or training events completed in the last year.",
+      "data_type_class": "Numerical",
+      "importance": "medium",
+      "potential_issues": "Definition of 'training times' may vary; confirm whether zero means none recorded or missing.",
       "statistics": {
         "min": 0.0,
         "max": 6.0,

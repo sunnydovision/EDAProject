@@ -1,0 +1,52 @@
+Group,Metric,QUIS,Baseline,ONLYSTATS,Winner,Description,Aggregation
+Core & Efficiency,0. Total insights,99,75,85,N/A,Total insight cards generated,per-dataset (adidas)
+Core & Efficiency,0. Total insights,133,81,132,N/A,Total insight cards generated,per-dataset (employee_attrition)
+Core & Efficiency,0. Total insights,106,61,72,N/A,Total insight cards generated,per-dataset (online_sales)
+Core & Efficiency,1. Faithfulness,100.0%,100.0%,100.0%,Tie,Correctness - đúng dữ liệu,avg over 3 datasets
+Core & Efficiency,2. Statistical Significance (Overall),46.4%,57.6%,51.7%,Baseline,Validity - pattern-averaged (fair comparison),avg over 3 datasets
+Core & Efficiency,2a. Significance — TREND,100.0%,66.7%,83.3%,QUIS,Validity - TREND pattern,avg over 3 datasets
+Core & Efficiency,2a. Significance — OUTSTANDING_VALUE,32.2%,69.3%,31.2%,Baseline,Validity - OUTSTANDING_VALUE pattern,avg over 3 datasets
+Core & Efficiency,2a. Significance — ATTRIBUTION,62.0%,100.0%,69.1%,Baseline,Validity - ATTRIBUTION pattern,avg over 3 datasets
+Core & Efficiency,2a. Significance — DISTRIBUTION_DIFFERENCE,58.1%,61.1%,50.6%,Baseline,Validity - DISTRIBUTION_DIFFERENCE pattern,avg over 3 datasets
+Core & Efficiency,2b. Pattern Coverage,4/4 (100%),3/4 (75%),4/4 (100%),Tie,Patterns with ≥1 structurally valid insight / 4 total patterns,per-dataset (adidas)
+Core & Efficiency,2b. Pattern Coverage,3/4 (75%),3/4 (75%),3/4 (75%),Tie,Patterns with ≥1 structurally valid insight / 4 total patterns,per-dataset (employee_attrition)
+Core & Efficiency,2b. Pattern Coverage,3/4 (75%),2/4 (50%),4/4 (100%),ONLYSTATS,Patterns with ≥1 structurally valid insight / 4 total patterns,per-dataset (online_sales)
+Core & Efficiency,2b1. Uncovered Patterns,—,ATTRIBUTION,—,N/A,Patterns with 0 valid insights (breakdown type mismatch),per-dataset (adidas)
+Core & Efficiency,2b1. Uncovered Patterns,TREND,TREND,TREND,N/A,Patterns with 0 valid insights (breakdown type mismatch),per-dataset (employee_attrition)
+Core & Efficiency,2b1. Uncovered Patterns,TREND,"TREND, ATTRIBUTION",—,N/A,Patterns with 0 valid insights (breakdown type mismatch),per-dataset (online_sales)
+Core & Efficiency,3. Insight Novelty,72.4%,86.2%,61.8%,Baseline,Usefulness - khác baseline (from pairwise comparison results),avg over 3 datasets
+Core & Efficiency,4a. Diversity — Semantic,0.4890,0.4447,0.4347,QUIS,Semantic diversity (breakdown|measure|pattern|subspace),avg over 3 datasets
+Core & Efficiency,4b. Diversity — Subspace Entropy,2.2643,1.1737,2.2113,QUIS,Entropy of subspace filter columns used,avg over 3 datasets
+Core & Efficiency,4c. Diversity — Value,0.6930,0.4063,0.6950,ONLYSTATS,"Unique (column, value) pairs in subspace / total",avg over 3 datasets
+Core & Efficiency,4d. Diversity — Dedup Rate,0.0000,0.0123,0.0000,Tie,Duplicate rate — lower is better,avg over 3 datasets
+Subspace Deep-dive,7. Subspace Rate,84.4%,37.4%,77.0%,QUIS,Insights with subspace filter / total,avg over 3 datasets
+Subspace Deep-dive,7a. Subspace Faithfulness,100.0%,100.0%,100.0%,Tie,Faithfulness restricted to subspace insights,avg over 3 datasets
+Subspace Deep-dive,7b. Subspace Significance,37.5%,58.3%,31.7%,Baseline,Significance restricted to subspace insights,avg over 3 datasets
+Subspace Deep-dive,8. Score Uplift from Subspace,"Δ=-0.043, x=0.885","Δ=-0.135, x=0.796","Δ=-0.126, x=0.726",QUIS,Δ = mean(score|subspace) - mean(score|no-subspace),per-dataset (adidas)
+Subspace Deep-dive,8. Score Uplift from Subspace,"Δ=0.083, x=1.574","Δ=0.046, x=1.079","Δ=-0.188, x=0.346",QUIS,Δ = mean(score|subspace) - mean(score|no-subspace),per-dataset (employee_attrition)
+Subspace Deep-dive,8. Score Uplift from Subspace,"Δ=-0.137, x=0.742","Δ=0.025, x=1.048","Δ=-0.386, x=0.511",Baseline,Δ = mean(score|subspace) - mean(score|no-subspace),per-dataset (online_sales)
+Intent Layer Quality,"10. Total (B,M) pairs evaluated",26/26,11/24,31/31,N/A,Total unique breakdown-measure pairs (categorical breakdowns only for NMI/Interestingness),per-dataset (adidas)
+Intent Layer Quality,"10. Total (B,M) pairs evaluated",49/51,24/30,53/53,N/A,Total unique breakdown-measure pairs (categorical breakdowns only for NMI/Interestingness),per-dataset (employee_attrition)
+Intent Layer Quality,"10. Total (B,M) pairs evaluated",24/26,7/16,24/24,N/A,Total unique breakdown-measure pairs (categorical breakdowns only for NMI/Interestingness),per-dataset (online_sales)
+Intent Layer Quality,10a. BM — NMI mean,0.1027,0.2550,0.2225,Baseline,Mean NMI over categorical-B pairs,avg over 3 datasets
+Intent Layer Quality,10b. BM — Interestingness,0.1370,0.2533,0.1613,Baseline,Mean Coverage×EffectSize over categorical-B pairs,avg over 3 datasets
+Intent Layer Quality,10c. BM — Actionability,0.9613,0.5653,1.0000,ONLYSTATS,% pairs with categorical breakdown,avg over 3 datasets
+Intent Layer Quality,10d. BM — Diversity,0.2973,0.3173,0.3667,ONLYSTATS,"Unique (B,M) pairs / total insights",avg over 3 datasets
+Intent Layer Quality,11a. Question Semantic Diversity,0.5360,0.5850,N/A,Baseline,1 - mean cosine sim of question embeddings (within-system); N/A for ONLYSTATS (template),avg over 3 datasets
+Intent Layer Quality,11b. Question Specificity,9.7967,12.1133,N/A,Baseline,Avg word count per question (mean ± std) — higher = more specific; N/A for ONLYSTATS (template),avg over 3 datasets
+Intent Layer Quality,11c. Question–Insight Alignment,0.5397,0.5687,N/A,Baseline,"Mean cosine(Embed(question), Embed(insight)) — control metric; N/A for ONLYSTATS (template)",avg over 3 datasets
+Intent Layer Quality,11d. Question Novelty (cross-system),93.4%,99.2%,N/A,Baseline,% of questions with cross-system max cosine sim < 0.85 (from pairwise comparison results),avg over 3 datasets
+Intent Layer Quality,11e. Reason–Insight Coherence,0.5260,0.5143,N/A,QUIS,"Mean cosine(Embed(reason), Embed(insight)) — reason grounding",avg over 3 datasets
+Intent Layer Quality,12. Structural Validity Rate,94.0%,40.0%,90.8%,QUIS,% insights with breakdown type valid for their pattern — measures QuGen structural understanding,avg over 3 datasets
+Intent Layer Quality,12a. SVR — OUTSTANDING_VALUE,30/30,14/14,24/24,Tie,Structural validity for OUTSTANDING_VALUE pattern,per-dataset (adidas)
+Intent Layer Quality,12a. SVR — OUTSTANDING_VALUE,35/35,11/11,58/58,Tie,Structural validity for OUTSTANDING_VALUE pattern,per-dataset (employee_attrition)
+Intent Layer Quality,12a. SVR — OUTSTANDING_VALUE,36/36,18/18,25/25,Tie,Structural validity for OUTSTANDING_VALUE pattern,per-dataset (online_sales)
+Intent Layer Quality,12a. SVR — TREND,2/2,16/33,10/10,Tie,Structural validity for TREND pattern,per-dataset (adidas)
+Intent Layer Quality,12a. SVR — TREND,0/1,0/42,N/A,Tie,Structural validity for TREND pattern,per-dataset (employee_attrition)
+Intent Layer Quality,12a. SVR — TREND,0/1,0/19,3/3,ONLYSTATS,Structural validity for TREND pattern,per-dataset (online_sales)
+Intent Layer Quality,12a. SVR — ATTRIBUTION,27/27,0/13,20/24,QUIS,Structural validity for ATTRIBUTION pattern,per-dataset (adidas)
+Intent Layer Quality,12a. SVR — ATTRIBUTION,50/50,7/13,65/65,Tie,Structural validity for ATTRIBUTION pattern,per-dataset (employee_attrition)
+Intent Layer Quality,12a. SVR — ATTRIBUTION,29/32,0/11,18/20,QUIS,Structural validity for ATTRIBUTION pattern,per-dataset (online_sales)
+Intent Layer Quality,12a. SVR — DISTRIBUTION_DIFFERENCE,39/40,4/15,17/27,QUIS,Structural validity for DISTRIBUTION_DIFFERENCE pattern,per-dataset (adidas)
+Intent Layer Quality,12a. SVR — DISTRIBUTION_DIFFERENCE,43/47,12/15,9/9,ONLYSTATS,Structural validity for DISTRIBUTION_DIFFERENCE pattern,per-dataset (employee_attrition)
+Intent Layer Quality,12a. SVR — DISTRIBUTION_DIFFERENCE,27/37,5/13,18/24,ONLYSTATS,Structural validity for DISTRIBUTION_DIFFERENCE pattern,per-dataset (online_sales)

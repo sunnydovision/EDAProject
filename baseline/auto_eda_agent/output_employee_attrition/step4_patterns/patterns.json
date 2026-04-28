@@ -1,5 +1,334 @@
 {
-  "pattern_categories": [],
-  "total_patterns": 0,
-  "patterns_by_category": {}
+  "pattern_categories": [
+    "Correlation Patterns",
+    "Grouping Patterns",
+    "Anomaly Patterns"
+  ],
+  "total_patterns": 29,
+  "patterns_by_category": {
+    "Correlation Patterns": [
+      {
+        "pattern_name": "Job level and monthly income move together very strongly",
+        "description": "Employees at higher job levels tend to have substantially higher monthly income. This is the strongest relationship in the provided results and is consistent with compensation increasing with seniority/grade.",
+        "variables_involved": [
+          "JobLevel",
+          "MonthlyIncome"
+        ],
+        "evidence": "Strong positive correlation: r = 0.9503. As JobLevel increases, MonthlyIncome also increases. This relationship is likely largely structural because pay bands are commonly tied to job grade or seniority level.",
+        "strength": "strong",
+        "business_relevance": "This indicates compensation is closely aligned with organizational level. JobLevel is a strong proxy for pay and should be treated as highly overlapping with MonthlyIncome in analysis or modeling."
+      },
+      {
+        "pattern_name": "Job level rises with total working experience",
+        "description": "Employees with more total working years tend to be in higher job levels. The relationship suggests seniority in role hierarchy is associated with accumulated career experience.",
+        "variables_involved": [
+          "JobLevel",
+          "TotalWorkingYears"
+        ],
+        "evidence": "Strong positive correlation: r = 0.7822. As TotalWorkingYears increases, JobLevel tends to increase. This appears more behavioral/organizational than purely structural, though promotion frameworks may partially embed experience into level assignment.",
+        "strength": "strong",
+        "business_relevance": "Experience is strongly associated with seniority level. Workforce planning and promotion analysis should account for the close linkage between tenure in the labor market and internal grade."
+      },
+      {
+        "pattern_name": "Monthly income increases with total working experience",
+        "description": "Employees with more total working years tend to earn higher monthly income. This suggests compensation grows with accumulated experience.",
+        "variables_involved": [
+          "MonthlyIncome",
+          "TotalWorkingYears"
+        ],
+        "evidence": "Strong positive correlation: r = 0.7729. As TotalWorkingYears increases, MonthlyIncome tends to increase. This is likely a mix of behavioral and structural effects, because experience can influence both job placement and salary.",
+        "strength": "strong",
+        "business_relevance": "Experience is strongly tied to pay. Compensation benchmarking and equity reviews should consider TotalWorkingYears because it co-moves strongly with income."
+      },
+      {
+        "pattern_name": "Salary hike and performance rating are tightly linked",
+        "description": "Employees with higher performance ratings tend to receive larger percentage salary hikes. The two variables move together strongly.",
+        "variables_involved": [
+          "PercentSalaryHike",
+          "PerformanceRating"
+        ],
+        "evidence": "Strong positive correlation: r = 0.7735. As PerformanceRating increases, PercentSalaryHike also increases. This relationship may be partly structural if compensation review rules directly use performance ratings to determine raises.",
+        "strength": "strong",
+        "business_relevance": "Pay increase decisions appear closely connected to performance evaluation outcomes. This is important for understanding reward policy consistency and for avoiding double-counting similar signals in models."
+      },
+      {
+        "pattern_name": "Years at company and years in current role move together",
+        "description": "Employees who have been at the company longer also tend to have spent more years in their current role. Time in company and time in role are strongly aligned.",
+        "variables_involved": [
+          "YearsAtCompany",
+          "YearsInCurrentRole"
+        ],
+        "evidence": "Strong positive correlation: r = 0.7588. As YearsAtCompany increases, YearsInCurrentRole tends to increase. This relationship is partly structural because time in current role is bounded by total time at the company.",
+        "strength": "strong",
+        "business_relevance": "Internal tenure is closely related to role tenure. Analyses of mobility, stagnation, or promotion timing should recognize that these variables carry overlapping information."
+      },
+      {
+        "pattern_name": "Years at company and years with current manager are strongly aligned",
+        "description": "Employees with longer company tenure also tend to have spent more time with their current manager. This indicates manager-tenure duration often grows with organizational tenure.",
+        "variables_involved": [
+          "YearsAtCompany",
+          "YearsWithCurrManager"
+        ],
+        "evidence": "Strong positive correlation: r = 0.7692. As YearsAtCompany increases, YearsWithCurrManager also increases. This is partly structural because years with current manager cannot exceed years at company.",
+        "strength": "strong",
+        "business_relevance": "Manager continuity is strongly associated with company tenure. This matters for interpreting leadership stability, retention dynamics, and employee development paths."
+      },
+      {
+        "pattern_name": "Years in current role and years with current manager co-move strongly",
+        "description": "Employees who have spent longer in their current role also tend to have spent longer with their current manager. Role stability and manager stability appear to occur together.",
+        "variables_involved": [
+          "YearsInCurrentRole",
+          "YearsWithCurrManager"
+        ],
+        "evidence": "Strong positive correlation: r = 0.7144. As YearsInCurrentRole increases, YearsWithCurrManager tends to increase. This is likely partly structural and partly behavioral, since remaining in the same role can coincide with reporting to the same manager.",
+        "strength": "strong",
+        "business_relevance": "Role tenure and manager tenure overlap materially. This is relevant when studying supervision effects, career progression, or internal movement because the two variables are not independent."
+      }
+    ],
+    "Grouping Patterns": [
+      {
+        "pattern_name": "BusinessTravel is heavily concentrated in Travel_Rarely",
+        "description": "The BusinessTravel distribution is highly uneven, with most employees in the Travel_Rarely segment.",
+        "variables_involved": [
+          "BusinessTravel"
+        ],
+        "evidence": "Counts are Travel_Rarely = 1043, Travel_Frequently = 277, Non-Travel = 150. Travel_Rarely is 3.76× Travel_Frequently (1043/277) and 6.95× Non-Travel (1043/150). It represents about 70.9% of all employees (1043 of 1470).",
+        "strength": "strong",
+        "business_relevance": "Strongly relevant for staffing, policy, and travel-program decisions because the dominant employee segment is Travel_Rarely, so company-wide travel policies will mostly affect this group."
+      },
+      {
+        "pattern_name": "Department headcount is dominated by Research & Development",
+        "description": "Department membership is highly skewed toward Research & Development, with Sales a distant second and Human Resources much smaller.",
+        "variables_involved": [
+          "Department"
+        ],
+        "evidence": "Counts are Research & Development = 961, Sales = 446, Human Resources = 63. Research & Development is 2.15× Sales (961/446) and 15.25× Human Resources (961/63). Human Resources accounts for only about 4.3% of employees (63 of 1470).",
+        "strength": "strong",
+        "business_relevance": "Highly relevant because department-level planning, budgeting, and change management will be driven primarily by Research & Development due to its much larger population."
+      },
+      {
+        "pattern_name": "EducationField is concentrated in Life Sciences and Medical",
+        "description": "Two education fields account for most employees, while several other fields are much smaller.",
+        "variables_involved": [
+          "EducationField"
+        ],
+        "evidence": "Counts are Life Sciences = 606 and Medical = 464, versus Marketing = 159, Technical Degree = 132, Other = 82, Human Resources = 27. Life Sciences + Medical total 1070 employees, which is about 72.8% of the dataset (1070/1470). Life Sciences alone is 22.44× Human Resources (606/27).",
+        "strength": "strong",
+        "business_relevance": "Relevant for recruiting, training, and talent pipeline decisions because the workforce is concentrated in a small number of academic backgrounds."
+      },
+      {
+        "pattern_name": "Gender distribution is male-skewed",
+        "description": "The workforce has more male employees than female employees.",
+        "variables_involved": [
+          "Gender"
+        ],
+        "evidence": "Counts are Male = 882 and Female = 588. Male headcount is 1.50× Female (882/588), corresponding to about 60.0% male and 40.0% female.",
+        "strength": "moderate",
+        "business_relevance": "Relevant for workforce composition monitoring and diversity reporting, though the imbalance is less extreme than some other category skews in the dataset."
+      },
+      {
+        "pattern_name": "JobRole headcount is concentrated in Sales Executive and Research Scientist",
+        "description": "Among job roles, a few roles hold much larger employee counts than the rest.",
+        "variables_involved": [
+          "JobRole"
+        ],
+        "evidence": "Largest counts are Sales Executive = 326 and Research Scientist = 292, followed by Laboratory Technician = 259. Smallest roles include Human Resources = 52 and Research Director = 80. Sales Executive is 6.27× Human Resources (326/52) and 4.08× Research Director (326/80). The top three roles total 877 employees, about 59.7% of all employees (877/1470).",
+        "strength": "strong",
+        "business_relevance": "Relevant for role-based workforce planning because hiring, retention, and training efforts will have the broadest impact in these large roles."
+      },
+      {
+        "pattern_name": "Average Age differs much more by JobRole than by Gender or BusinessTravel",
+        "description": "Age segmentation is relatively flat across Gender and BusinessTravel, but much more uneven across JobRole.",
+        "variables_involved": [
+          "Age",
+          "JobRole",
+          "Gender",
+          "BusinessTravel"
+        ],
+        "evidence": "By JobRole, mean Age ranges from Sales Representative = 30.36 to Manager = 46.76, a gap of 16.40 years. Research Director is also high at 44.00, while Research Scientist = 34.24 and Laboratory Technician = 34.10. In contrast, by Gender the mean Age difference is only 0.68 years (Female 37.33 vs Male 36.65), and by BusinessTravel the range is only 0.64 years (Travel_Rarely 37.09 vs Travel_Frequently 36.45).",
+        "strength": "strong",
+        "business_relevance": "Relevant because age-related workforce structure appears role-driven rather than gender- or travel-driven, which matters for succession planning and role-specific career path design."
+      },
+      {
+        "pattern_name": "Managerial and director roles are the oldest groups",
+        "description": "Leadership-oriented roles have notably higher average ages than most individual contributor roles.",
+        "variables_involved": [
+          "JobRole",
+          "Age"
+        ],
+        "evidence": "Mean Age is Manager = 46.76 and Research Director = 44.00, compared with Sales Representative = 30.36, Laboratory Technician = 34.10, and Research Scientist = 34.24. Managers are 16.40 years older on average than Sales Representatives (46.76 - 30.36). Research Directors are 9.76 years older than Research Scientists (44.00 - 34.24).",
+        "strength": "strong",
+        "business_relevance": "Relevant for succession and retirement-risk planning because older average age is concentrated in leadership roles."
+      },
+      {
+        "pattern_name": "DailyRate differences are largest across EducationField",
+        "description": "Compensation rate variation is more pronounced by EducationField than by Gender, Department, or BusinessTravel.",
+        "variables_involved": [
+          "DailyRate",
+          "EducationField",
+          "Gender",
+          "Department",
+          "BusinessTravel"
+        ],
+        "evidence": "By EducationField, mean DailyRate ranges from Human Resources = 675.26 to Technical Degree = 842.13, a gap of 166.87. Medical is also high at 822.80, while Marketing is 727.84. By Gender, the gap is only 9.65 (Female 808.27 vs Male 798.63). By Department, the gap is 55.31 (Research & Development 806.85 vs Human Resources 751.54). By BusinessTravel, the gap is 24.33 (Non-Travel 816.96 vs Travel_Frequently 792.63).",
+        "strength": "strong",
+        "business_relevance": "Relevant for compensation analysis because pay-rate differences appear more segmented by educational background than by gender, department, or travel category."
+      },
+      {
+        "pattern_name": "Human Resources groups tend to have lower DailyRate",
+        "description": "Categories labeled Human Resources are consistently among the lower DailyRate groups where shown.",
+        "variables_involved": [
+          "Department",
+          "EducationField",
+          "JobRole",
+          "DailyRate"
+        ],
+        "evidence": "Department mean DailyRate: Human Resources = 751.54 versus Research & Development = 806.85 and Sales = 800.28. EducationField mean DailyRate: Human Resources = 675.26, the lowest among listed education fields. JobRole mean DailyRate: Human Resources = 757.92, below Sales Executive = 802.10, Research Scientist = 800.36, and Healthcare Representative = 854.25.",
+        "strength": "moderate",
+        "business_relevance": "Potentially relevant for compensation benchmarking because Human Resources-associated groups repeatedly appear at the lower end of DailyRate distributions."
+      },
+      {
+        "pattern_name": "DistanceFromHome variation is modest overall, with Marketing standing out slightly",
+        "description": "Most groups have similar average commute distance, but some categories are somewhat higher or lower.",
+        "variables_involved": [
+          "DistanceFromHome",
+          "EducationField",
+          "Department",
+          "BusinessTravel",
+          "JobRole",
+          "Gender"
+        ],
+        "evidence": "Across EducationField, Marketing has the highest mean DistanceFromHome at 10.11, versus Technical Degree at 8.81 and Other at 8.93, a maximum gap of 1.30. Across Department, Sales = 9.37 versus Human Resources = 8.70, a gap of 0.67. Across BusinessTravel, Non-Travel = 9.76 versus Travel_Rarely = 9.09, a gap of 0.67. Across Gender, Female = 9.21 and Male = 9.18, a gap of just 0.03.",
+        "strength": "weak",
+        "business_relevance": "Limited relevance for major decisions because differences are small in absolute terms, though Marketing may warrant a closer look if commute burden matters operationally."
+      },
+      {
+        "pattern_name": "BusinessTravel groups differ strongly in size but not in Age, DailyRate, or DistanceFromHome means",
+        "description": "The travel categories are very uneven in headcount, yet their average Age, DailyRate, and DistanceFromHome are close to one another.",
+        "variables_involved": [
+          "BusinessTravel",
+          "Age",
+          "DailyRate",
+          "DistanceFromHome"
+        ],
+        "evidence": "Counts vary widely: Travel_Rarely = 1043, Travel_Frequently = 277, Non-Travel = 150. But mean Age ranges only from 36.45 to 37.09 (gap 0.64), mean DailyRate from 792.63 to 816.96 (gap 24.33), and mean DistanceFromHome from 9.09 to 9.76 (gap 0.67).",
+        "strength": "moderate",
+        "business_relevance": "Relevant because although one travel segment dominates numerically, these three measured characteristics do not show large separation across travel groups, suggesting travel frequency alone may not segment the workforce strongly on these variables."
+      }
+    ],
+    "Anomaly Patterns": [
+      {
+        "pattern_name": "Constant-value administrative fields",
+        "description": "Some variables have no variation at all, which is anomalous for analytical modeling because they carry no discriminatory information.",
+        "variables_involved": [
+          "EmployeeCount",
+          "StandardHours"
+        ],
+        "evidence": "EmployeeCount has mean=1.0, median=1.0, std=0.0, min=1.0, max=1.0, q25=1.0, q75=1.0 across 1470 records. StandardHours has mean=80.0, median=80.0, std=0.0, min=80.0, max=80.0, q25=80.0, q75=80.0 across 1470 records.",
+        "strength": "strong",
+        "business_relevance": "This is most likely a data design or placeholder issue rather than a real business event. In downstream analysis, these columns should usually be dropped because they contain no signal and can distort feature screening or automated anomaly detection."
+      },
+      {
+        "pattern_name": "Degenerate two-point performance distribution with IQR-based outlier inflation",
+        "description": "PerformanceRating is concentrated almost entirely at one value, causing the higher category to be flagged as outliers by the IQR rule even though it appears to be a valid category.",
+        "variables_involved": [
+          "PerformanceRating"
+        ],
+        "evidence": "PerformanceRating ranges only from 3.0 to 4.0, with mean=3.1537, median=3.0, std=0.3608, q25=3.0, q75=3.0. The IQR is therefore 0, producing lower_bound=3.0 and upper_bound=3.0. Step 2 flags 226 records (15.37%) as outliers, which corresponds to values above 3.0, while max is only 4.0.",
+        "strength": "strong",
+        "business_relevance": "This is unlikely to be a data quality error; it is more consistent with a highly compressed rating system. For downstream analysis, do not treat the flagged 4s as erroneous outliers. Handle this as a low-cardinality ordinal variable, and avoid generic IQR-based outlier removal on such fields."
+      },
+      {
+        "pattern_name": "Compressed training-count distribution with boundary values flagged as outliers",
+        "description": "TrainingTimesLastYear has a narrow central range, so low and high valid counts are flagged as outliers by the IQR rule.",
+        "variables_involved": [
+          "TrainingTimesLastYear"
+        ],
+        "evidence": "TrainingTimesLastYear has mean=2.7993, median=3.0, std=1.2893, min=0.0, max=6.0, q25=2.0, q75=3.0. The IQR-based bounds are 0.5 to 4.5, and 238 records (16.19%) are flagged as outliers. Since the observed range is 0 to 6, the flagged values are the edge categories 0 and 5-6.",
+        "strength": "strong",
+        "business_relevance": "This looks more like a real business distribution with discrete counts than a data quality issue. In downstream analysis, keep the values but treat the variable as a bounded count/ordinal feature. Avoid deleting these observations solely because of IQR flags."
+      },
+      {
+        "pattern_name": "High-income right tail",
+        "description": "MonthlyIncome shows a pronounced right-skewed distribution with a substantial upper tail and a nontrivial share of high-end outliers.",
+        "variables_involved": [
+          "MonthlyIncome"
+        ],
+        "evidence": "MonthlyIncome has mean=6502.93 versus median=4919.0, indicating the mean is 1583.93 higher than the median. It has std=4707.96, q25=2911.0, q75=8379.0, skewness=1.3698, kurtosis=1.0052, min=1009.0, max=19999.0. Step 2 flags 114 records (7.76%) above the IQR upper bound of 16581.0; the lower bound is -5291.0, so all outliers are on the high side.",
+        "strength": "strong",
+        "business_relevance": "This is more likely a real compensation structure effect, such as senior or specialized roles, than a data error. For downstream analysis, retain the values but consider log transformation, robust scaling, or winsorization if using methods sensitive to skew and leverage."
+      },
+      {
+        "pattern_name": "Tenure at company has an extreme upper tail",
+        "description": "YearsAtCompany is strongly right-skewed with unusually long tenure values relative to the central distribution.",
+        "variables_involved": [
+          "YearsAtCompany"
+        ],
+        "evidence": "YearsAtCompany has mean=7.0082, median=5.0, std=6.1265, q25=3.0, q75=9.0, skewness=1.7645, kurtosis=3.9355, min=0.0, max=40.0. The IQR-based upper bound is 18.0, and 104 records (7.07%) are flagged as outliers above that threshold.",
+        "strength": "strong",
+        "business_relevance": "This likely reflects a real long-tenure subgroup rather than bad data, though the max of 40 years is operationally extreme and worth validation if employee ages are later cross-checked. For downstream analysis, keep the field but use robust methods or cap extreme values if model stability is a concern."
+      },
+      {
+        "pattern_name": "Promotion recency is zero-inflated with a heavy right tail",
+        "description": "YearsSinceLastPromotion is concentrated at very low values, including many zeros, while also containing a long upper tail.",
+        "variables_involved": [
+          "YearsSinceLastPromotion"
+        ],
+        "evidence": "YearsSinceLastPromotion has min=0.0, q25=0.0, median=1.0, q75=3.0, mean=2.1878, std=3.2224, skewness=1.9843, kurtosis=3.6127, and max=15.0. Step 2 flags 107 records (7.28%) above the IQR upper bound of 7.5. The q25 of 0.0 indicates at least 25% of employees have zero years since last promotion.",
+        "strength": "strong",
+        "business_relevance": "This appears to be a real business pattern: many employees have very recent/no recorded promotion gap, while a smaller group has long periods without promotion. In downstream analysis, preserve zeros explicitly, consider zero-inflated or hurdle-style treatment if modeling, and use robust summaries rather than assuming normality."
+      },
+      {
+        "pattern_name": "Entry-level concentration in stock options with upper-category flags",
+        "description": "StockOptionLevel is concentrated in the lowest categories, making the highest category appear as an outlier under IQR rules.",
+        "variables_involved": [
+          "StockOptionLevel"
+        ],
+        "evidence": "StockOptionLevel has mean=0.7939, median=1.0, std=0.8521, min=0.0, max=3.0, q25=0.0, q75=1.0, skewness=0.9690. The IQR-based bounds are -1.5 to 2.5, so level 3 values are flagged. Step 2 reports 85 outliers (5.78%).",
+        "strength": "moderate",
+        "business_relevance": "This is likely a real benefit-tier distribution rather than a data quality problem. In downstream analysis, treat it as an ordinal categorical variable and do not remove level-3 records as anomalies."
+      },
+      {
+        "pattern_name": "Career-history upper-end concentration",
+        "description": "NumCompaniesWorked has a right-skewed distribution with a small but distinct cluster at the maximum valid category.",
+        "variables_involved": [
+          "NumCompaniesWorked"
+        ],
+        "evidence": "NumCompaniesWorked has mean=2.6932, median=2.0, std=2.4980, min=0.0, max=9.0, q25=1.0, q75=4.0, skewness=1.0265. The IQR-based upper bound is 8.5, so only value 9 is flagged. Step 2 reports 52 outliers (3.54%).",
+        "strength": "moderate",
+        "business_relevance": "This is more consistent with a real subgroup of employees with extensive prior mobility than with bad data. For downstream analysis, keep the values and treat the variable as a bounded count; if needed, combine the top category to reduce sparsity."
+      },
+      {
+        "pattern_name": "Long-experience upper tail",
+        "description": "TotalWorkingYears contains a noticeable upper tail of highly experienced employees relative to the main population.",
+        "variables_involved": [
+          "TotalWorkingYears"
+        ],
+        "evidence": "TotalWorkingYears has mean=11.2796, median=10.0, std=7.7808, q25=6.0, q75=15.0, skewness=1.1172, kurtosis=0.9183, min=0.0, max=40.0. The IQR-based upper bound is 28.5, and 63 records (4.29%) are flagged as outliers above that level.",
+        "strength": "moderate",
+        "business_relevance": "This likely represents a real experienced subgroup, not a data defect. In downstream analysis, retain the values but consider robust scaling or top-coding if the model is sensitive to leverage from long tails."
+      },
+      {
+        "pattern_name": "Role and manager tenure have mild high-end tails",
+        "description": "YearsInCurrentRole and YearsWithCurrManager show smaller upper-tail anomalies, with only a few employees far above the typical tenure range.",
+        "variables_involved": [
+          "YearsInCurrentRole",
+          "YearsWithCurrManager"
+        ],
+        "evidence": "YearsInCurrentRole has mean=4.2293, median=3.0, std=3.6231, q25=2.0, q75=7.0, skewness=0.9174, max=18.0, and 21 outliers (1.43%) above the IQR upper bound of 14.5. YearsWithCurrManager has mean=4.1231, median=3.0, std=3.5681, q25=2.0, q75=7.0, skewness=0.8335, max=17.0, and 14 outliers (0.95%) above the same 14.5 upper bound.",
+        "strength": "moderate",
+        "business_relevance": "These look like plausible long-stability cases rather than data quality issues. For downstream analysis, they generally can be retained as-is, with optional capping only for algorithms highly sensitive to tail values."
+      },
+      {
+        "pattern_name": "Distance from home is right-skewed but not outlier-driven",
+        "description": "DistanceFromHome has a noticeable right-skewed distribution, but the provided evidence does not indicate extreme outlier prevalence.",
+        "variables_involved": [
+          "DistanceFromHome"
+        ],
+        "evidence": "DistanceFromHome has mean=9.1925, median=7.0, std=8.1069, min=1.0, max=29.0, q25=2.0, q75=14.0, and skewness=0.9581. No Step 2 outlier flag is reported for this variable.",
+        "strength": "weak",
+        "business_relevance": "This appears to be a real commuting-distance distribution rather than a data issue. In downstream analysis, it may benefit from robust or nonlinear treatment, but there is no evidence here that records should be removed."
+      }
+    ]
+  }
 }

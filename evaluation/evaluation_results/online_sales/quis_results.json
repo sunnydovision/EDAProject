@@ -959,10 +959,10 @@
     "model": "gpt-5.4"
   },
   "insight_novelty": {
-    "novelty": 0.6415094339622641,
-    "novel_count": 68,
+    "novelty": 0.4716981132075472,
+    "novel_count": 50,
     "total_count": 106,
-    "avg_max_similarity": 0.8201828002929688,
+    "avg_max_similarity": 0.8595296144485474,
     "tau": 0.85,
     "compared_against": "ONLYSTATS"
   },
@@ -1139,10 +1139,10 @@
       }
     },
     "novelty": {
-      "novelty": 0.6190476190476191,
-      "novel_count": 52,
+      "novelty": 0.4166666666666667,
+      "novel_count": 35,
       "total_count": 84,
-      "avg_max_similarity": 0.8284412622451782,
+      "avg_max_similarity": 0.8731061220169067,
       "tau": 0.85
     },
     "diversity": {

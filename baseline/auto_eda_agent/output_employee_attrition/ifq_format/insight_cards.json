@@ -1,1 +1,488 @@
-[]
+[
+  {
+    "question": "How does MonthlyIncome change over JobRole?",
+    "reason": "Compensation shows a clear upward trend across the organizational role hierarchy: Step 3 reports a very strong positive relationship between MonthlyIncome and JobLevel (correlation = 0.9503), and Step 4 confirms that higher-level positions earn substantially more. This indicates that job roles associated with higher levels, such as Manager and Research Director, are likely to sit well above roles like Sales Representative or Laboratory Technician in monthly pay.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does TotalWorkingYears change over Department?",
+    "reason": "Employee experience tends to increase with organizational seniority: Step 3 shows a strong positive relationship between TotalWorkingYears and JobLevel (correlation = 0.7822). Since departments and role mixes differ structurally, this implies a trend where departments with more senior roles should also show higher experience levels. Step 4 also notes that Research & Development dominates headcount, making department-level experience patterns especially important for workforce planning.",
+    "breakdown": "Department",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "How does MonthlyIncome change over JobRole?",
+    "reason": "Within the Research & Development department, pay is expected to increase strongly with role seniority because the overall dataset shows an exceptionally strong MonthlyIncome–JobLevel relationship of 0.9503 in Step 3. Since Research & Development is the largest department per Step 4, this trend is likely one of the most influential compensation patterns in the company.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does MonthlyIncome change over BusinessTravel?",
+    "reason": "Within Sales, compensation is likely to trend upward across travel categories because Step 3 shows MonthlyIncome is tightly linked to seniority through JobLevel (correlation = 0.9503). Step 4 also shows BusinessTravel is heavily concentrated in Travel_Rarely overall, so any shift toward Travel_Frequently within Sales may indicate a more specialized or senior role mix with higher pay.",
+    "breakdown": "BusinessTravel",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does PercentSalaryHike change over JobRole?",
+    "reason": "Salary growth appears to increase with stronger performance outcomes across the workforce: Step 3 reports a correlation of 0.7735 between PercentSalaryHike and PerformanceRating. When viewed by JobRole, this suggests a clear trend in which some roles may systematically cluster at higher hike levels if they also receive stronger ratings more often.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(PercentSalaryHike)"
+  },
+  {
+    "question": "How does TotalWorkingYears change over EducationField?",
+    "reason": "Experience trends are likely uneven across EducationField because Step 3 shows TotalWorkingYears rises strongly with JobLevel (correlation = 0.7822), and Step 4 shows the workforce is concentrated in Life Sciences and Medical. This concentration suggests these fields are likely to anchor the company’s more experienced talent pools compared with smaller education-field segments.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "What insights can we find about monthlyincome has a concentrated set of extreme high-pay records?",
+    "reason": "MonthlyIncome contains 114 outlier records, representing 7.76% of employees, which is a large enough share to materially skew compensation averages. Prior analysis also shows MonthlyIncome is strongly tied to JobLevel (correlation 0.9503) and TotalWorkingYears (correlation 0.7729), suggesting many of these extremes may reflect a small group of senior or highly experienced employees rather than random noise.",
+    "breakdown": "MonthlyIncome",
+    "measure": "MEAN(JobLevel)"
+  },
+  {
+    "question": "What insights can we find about totalworkingyears shows a long-tail experience anomaly?",
+    "reason": "TotalWorkingYears has 63 outlier records, or 4.29% of employees, indicating a small but influential group with unusually high career experience relative to the rest of the workforce. This aligns with the broader finding that tenure-related variables are heavily right-skewed, so averages of experience can be pulled upward by a limited number of long-career employees.",
+    "breakdown": "TotalWorkingYears",
+    "measure": "MEAN(Age)"
+  },
+  {
+    "question": "Are there any unusual values of PerformanceRating across PercentSalaryHike?",
+    "reason": "PerformanceRating shows 226 outlier records, equal to 15.37% of employees, but the quality review notes the variable is highly concentrated and discrete. The IQR method effectively flags values outside 3.0, which is inappropriate for a tightly bounded ordinal rating scale, so the anomaly is in the detection method more than in the employee records themselves.",
+    "breakdown": "PercentSalaryHike",
+    "measure": "MEAN(PerformanceRating)"
+  },
+  {
+    "question": "What insights can we find about research & development likely contains a disproportionate share of experience outliers?",
+    "reason": "Research & Development is the largest department in the company, and TotalWorkingYears has 63 outliers (4.29%) overall. Because the department dominates headcount, it is the most likely place where the organization’s unusually experienced employees are concentrated, making it a natural segment for validating whether long-tenured specialists are driving the right tail of experience.",
+    "breakdown": "Department",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "What insights can we find about travel_rarely segment is the most likely source of salary outliers simply because it dominates the workforce?",
+    "reason": "BusinessTravel is heavily concentrated in Travel_Rarely, and MonthlyIncome has 114 outliers (7.76%) overall. Given the segment’s dominant share of employees, a meaningful portion of extreme salary records is likely to sit inside Travel_Rarely, making this subgroup important for checking whether high compensation is concentrated among non-frequent travelers rather than spread evenly across travel patterns.",
+    "breakdown": "BusinessTravel",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "What insights can we find about compensation extremes are structurally unusual because income rises much faster than workforce hierarchy?",
+    "reason": "The strongest relationship in the dataset is between JobLevel and MonthlyIncome (correlation 0.9503), yet MonthlyIncome still has 114 outliers. This means extreme pay values persist even after a very strong structural explanation, indicating a subset of employees whose compensation is unusually high relative to the already steep level-based pay pattern.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "What is the relationship between JobLevel and MonthlyIncome?",
+    "reason": "There is a very strong positive correlation between JobLevel and MonthlyIncome (r = 0.9503), indicating that employees in higher job levels earn substantially more. Step 3 identified this as the strongest relationship in the dataset, and Step 4 also flagged it as a core compensation pattern. This suggests pay is tightly structured around organizational level.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "What is the relationship between JobLevel and TotalWorkingYears?",
+    "reason": "JobLevel and TotalWorkingYears have a strong positive correlation of 0.7822. Employees with more total career experience are much more likely to be in higher organizational levels. Step 3 quantified this relationship, and Step 4 interpreted it as evidence that seniority in the hierarchy rises with accumulated experience.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "What is the relationship between MonthlyIncome and TotalWorkingYears?",
+    "reason": "MonthlyIncome and TotalWorkingYears are strongly positively correlated (r = 0.7729). Employees with longer work histories tend to earn more, reinforcing that compensation grows with accumulated experience. Step 3 quantified the relationship, while Step 4 highlighted it as a key compensation pattern.",
+    "breakdown": "MonthlyIncome",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "What is the relationship between PercentSalaryHike and PerformanceRating?",
+    "reason": "PercentSalaryHike and PerformanceRating show a strong positive correlation of 0.7735. Employees with higher performance ratings tend to receive larger salary increases, indicating a close connection between evaluation outcomes and pay growth. This was one of the strongest relationships reported in Step 3 and explicitly highlighted in Step 4.",
+    "breakdown": "PercentSalaryHike",
+    "measure": "MEAN(PerformanceRating)"
+  },
+  {
+    "question": "What is the relationship between JobLevel and MonthlyIncome?",
+    "reason": "The overall workforce shows an exceptionally strong correlation of 0.9503 between JobLevel and MonthlyIncome (Step 3), and this relationship is especially business-relevant to examine within the Sales department because compensation bands are typically level-driven there as well. Step 4 identified this as the strongest compensation pattern in the dataset, making Sales a natural subspace for validating whether pay progression follows the same hierarchy.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "What is the relationship between PercentSalaryHike and PerformanceRating?",
+    "reason": "Across the full dataset, PerformanceRating and PercentSalaryHike have a strong correlation of 0.7735 (Step 3), showing that better-rated employees receive larger percentage salary increases. This is a particularly useful segment-level relationship to inspect for Travel_Frequently employees, where performance-linked rewards may matter more because travel-heavy roles often have clearer output expectations. Step 4 already identified this as a tightly linked pair globally.",
+    "breakdown": "PercentSalaryHike",
+    "measure": "MEAN(PerformanceRating)"
+  },
+  {
+    "question": "What insights can we find about research & development is the largest department by a wide margin?",
+    "reason": "Department distribution is highly uneven: Research & Development holds the largest share of employees, Sales is the second-largest group, and Human Resources is much smaller. Step 4 explicitly identifies Research & Development as the dominant department, indicating a strongly concentrated workforce structure rather than a balanced split across functions.",
+    "breakdown": "Department",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about business travel is concentrated in travel_rarely rather than frequent travel categories?",
+    "reason": "The BusinessTravel distribution is heavily skewed toward Travel_Rarely, meaning most employees travel infrequently for work. Step 4 identifies this as a clear concentration pattern, implying that Travel_Frequently and Non-Travel together account for a minority of the workforce.",
+    "breakdown": "BusinessTravel",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about education backgrounds are concentrated in life sciences and medical?",
+    "reason": "Employee academic backgrounds are not evenly distributed: Life Sciences and Medical account for most employees, while Marketing, Technical Degree, Human Resources, Other, and some remaining fields are materially smaller. This concentration suggests the workforce is built primarily from science- and health-related educational pipelines.",
+    "breakdown": "EducationField",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about monthly income rises sharply across job levels?",
+    "reason": "Compensation differs substantially by hierarchy level. Step 3 shows an extremely strong positive relationship between JobLevel and MonthlyIncome, with a correlation of 0.9503, indicating that higher-level employees earn markedly more than lower-level employees. This makes job level the clearest structural explanation for pay differences in the dataset.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "What insights can we find about employees with more experience tend to be concentrated in higher job levels?",
+    "reason": "Job level and experience are closely aligned. Step 3 reports a correlation of 0.7822 between JobLevel and TotalWorkingYears, showing that employees with longer careers are much more likely to sit in higher grades. This indicates a clear comparison pattern between early-career and more experienced employees in the organizational hierarchy.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "What insights can we find about more experienced employees also earn substantially more?",
+    "reason": "MonthlyIncome increases strongly with TotalWorkingYears. Step 3 reports a correlation of 0.7729, showing that pay is materially higher among employees with longer professional experience. This supports a clear compensation comparison between less experienced and more experienced parts of the workforce.",
+    "breakdown": "TotalWorkingYears",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "What insights can we find about monthly income has a wide spread with influential high-end outliers?",
+    "reason": "The income distribution is right-skewed enough for Step 2 to flag 114 records as outliers, representing 7.76% of employees. This means a relatively small upper-income group can materially pull averages upward, so median or job-level-specific comparisons are likely more reliable than simple overall means.",
+    "breakdown": "MonthlyIncome",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about total working years are concentrated in shorter-to-mid careers with a smaller long-tenure tail?",
+    "reason": "Experience is not evenly distributed across employees. Step 3 notes that tenure and career-history variables are heavily right-skewed, and Step 2 flags 63 TotalWorkingYears outliers, or 4.29% of records. This indicates most employees cluster in lower to middle experience ranges, while a smaller senior cohort extends the upper tail.",
+    "breakdown": "TotalWorkingYears",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about within sales, travel is still most concentrated in travel_rarely?",
+    "reason": "For employees in the Sales department, the most common travel pattern is still Travel_Rarely rather than Travel_Frequently or Non-Travel. This segment-specific view aligns with the global Step 4 pattern showing Travel_Rarely as the dominant category overall, suggesting the concentration persists even inside a travel-relevant commercial function.",
+    "breakdown": "BusinessTravel",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about research & development is especially concentrated in life sciences and medical backgrounds?",
+    "reason": "Within the Research & Development department, employee education backgrounds are most naturally concentrated in Life Sciences and Medical, mirroring the overall Step 4 distribution. This segment-level concentration suggests R&D hiring is strongly aligned to science-oriented educational pipelines rather than being evenly spread across all fields.",
+    "breakdown": "EducationField",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What patterns exist in MonthlyIncome by JobLevel?",
+    "reason": "MonthlyIncome rises very strongly with JobLevel, with a correlation of 0.9503, making this the strongest relationship in the dataset. Step 3 explicitly identifies JobLevel as the central structural driver of compensation, indicating that pay differences are closely tied to organizational seniority.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "What patterns exist in TotalWorkingYears by JobLevel?",
+    "reason": "Employees with more experience tend to occupy higher job levels: the correlation between JobLevel and TotalWorkingYears is 0.7822. This indicates that career seniority and organizational grade move together strongly across the workforce.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "What patterns exist in TotalWorkingYears by MonthlyIncome?",
+    "reason": "Compensation increases materially with accumulated experience: MonthlyIncome and TotalWorkingYears have a strong positive correlation of 0.7729. This suggests that employees with longer career histories tend to earn substantially more.",
+    "breakdown": "MonthlyIncome",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "What patterns exist in PerformanceRating by PercentSalaryHike?",
+    "reason": "Salary increases closely track performance outcomes: PercentSalaryHike and PerformanceRating show a correlation of 0.7735. This is one of the strongest relationships in the data, indicating that higher-rated employees tend to receive larger percentage raises.",
+    "breakdown": "PercentSalaryHike",
+    "measure": "MEAN(PerformanceRating)"
+  },
+  {
+    "question": "What patterns exist in count by Department?",
+    "reason": "Department membership is highly concentrated in Research & Development, with Sales a distant second and Human Resources much smaller. Step 4 identifies this as a strong grouping pattern, showing that workforce composition is not evenly distributed across departments.",
+    "breakdown": "Department",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What patterns exist in count by BusinessTravel?",
+    "reason": "BusinessTravel is heavily concentrated in Travel_Rarely, indicating that most employees travel infrequently rather than frequently or not at all. Step 4 flags this as a clear grouping pattern, showing a strongly uneven travel distribution.",
+    "breakdown": "BusinessTravel",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What patterns exist in count by EducationField?",
+    "reason": "The employee base is clustered in two academic backgrounds: Life Sciences and Medical account for most employees, while Marketing, Technical Degree, Human Resources, and Other are much smaller. This indicates a specialized talent mix rather than a broadly even educational distribution.",
+    "breakdown": "EducationField",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What patterns exist in MonthlyIncome by JobLevel?",
+    "reason": "The broader pay hierarchy is especially relevant inside Research & Development, the company’s largest department. Step 3 reports a global JobLevel–MonthlyIncome correlation of 0.9503, and Step 4 shows Research & Development dominates headcount, implying this compensation pattern is highly consequential within that department’s large employee base.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "What patterns exist in TotalWorkingYears by MonthlyIncome?",
+    "reason": "Because most employees are in the Travel_Rarely segment, the strong experience-compensation relationship is particularly relevant there. Step 3 shows MonthlyIncome and TotalWorkingYears correlate at 0.7729, while Step 4 shows Travel_Rarely contains most employees, indicating that this experience-led pay pattern likely characterizes the largest travel segment.",
+    "breakdown": "MonthlyIncome",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "How does MonthlyIncome change over JobRole?",
+    "reason": "Compensation shows a very strong upward trend as JobLevel increases. Step 3 reports a correlation of 0.950 between JobLevel and MonthlyIncome, the strongest relationship in the dataset, indicating that employees in higher levels consistently earn much more than those in lower levels.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does MonthlyIncome change over Department?",
+    "reason": "Experience and pay move upward together at the organizational level. Step 3 shows MonthlyIncome and TotalWorkingYears are strongly positively correlated at 0.773, meaning employees with longer careers generally earn more. This trend is strong enough to support workforce planning and compensation benchmarking by experience bands.",
+    "breakdown": "Department",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does TotalWorkingYears change over BusinessTravel?",
+    "reason": "Employees with greater accumulated experience appear to be associated with higher organizational standing, and Step 3 shows JobLevel and TotalWorkingYears are strongly correlated at 0.782. Looking across BusinessTravel categories is therefore useful for spotting how experience is distributed, especially since Step 4 shows the workforce is heavily concentrated in Travel_Rarely.",
+    "breakdown": "BusinessTravel",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "How does PercentSalaryHike change over Department?",
+    "reason": "Salary increases are tightly connected to performance outcomes, and this relationship should appear consistently when comparing departments. Step 3 reports a 0.774 correlation between PercentSalaryHike and PerformanceRating, indicating that stronger performance is associated with larger raises across the organization.",
+    "breakdown": "Department",
+    "measure": "MEAN(PercentSalaryHike)"
+  },
+  {
+    "question": "How does TotalWorkingYears change over Department?",
+    "reason": "For married employees, total career experience is likely to vary meaningfully by department because Step 3 shows TotalWorkingYears rises strongly with JobLevel (correlation 0.782). Since departments differ in workforce composition, this subset can reveal where more senior married employees are concentrated.",
+    "breakdown": "Department",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "How does MonthlyIncome change over EducationField?",
+    "reason": "Compensation is likely to show a clear upward pattern across EducationField groups because Step 3 shows income is strongly associated with both JobLevel (0.950) and TotalWorkingYears (0.773). Since Step 4 notes EducationField is concentrated in Life Sciences and Medical, comparing fields can highlight where higher-paying talent pools are concentrated.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "What insights can we find about monthlyincome contains a small but material cluster of extreme high-pay records?",
+    "reason": "MonthlyIncome has 114 outlier records, representing 7.76% of employees, which is a meaningful concentration rather than a single isolated case. Step 2 flags this as a high-severity issue because these extreme compensation values can materially skew averages and compensation benchmarks. Step 3 also notes a hierarchical structure where income rises sharply with seniority, so these records are likely concentrated at the upper end of the pay distribution rather than spread evenly across employees.",
+    "breakdown": "MonthlyIncome",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about totalworkingyears shows a pronounced long-tenure anomaly tail?",
+    "reason": "TotalWorkingYears has 63 outlier records, or 4.29% of employees, indicating a distinct long-experience tail beyond the main workforce. Step 3 explicitly describes tenure and career-history variables as heavily right-skewed, with most employees in shorter- to mid-tenure ranges and a smaller but influential group of very long-tenured employees. This makes the anomaly structural: the organization is mostly mid-career, but a visible minority sits far to the high end of experience.",
+    "breakdown": "TotalWorkingYears",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about performancerating appears anomalous under iqr rules, but the anomaly is likely methodological rather than real?",
+    "reason": "PerformanceRating has 226 records flagged as outliers, equal to 15.37% of the dataset, which is unusually high for a true anomaly pattern. Step 2 explains that the IQR rule effectively flags values outside 3.0 because the variable is highly concentrated and discrete, making this more of a detection artifact than evidence of problematic employee records. The anomaly is therefore in the outlier-detection method applied to an ordinal rating scale, not necessarily in the data itself.",
+    "breakdown": "PerformanceRating",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What insights can we find about the strongest structural anomaly risk is employees whose pay is unusually high even after accounting for experience?",
+    "reason": "Step 3 reports a strong correlation of 0.7729 between MonthlyIncome and TotalWorkingYears, meaning pay generally rises with experience. Step 2 simultaneously finds 114 MonthlyIncome outliers (7.76%), indicating a subset of employees whose compensation sits far from the main pay distribution. In business terms, the most decision-relevant anomaly is not simply high salary, but salary that is unusually extreme relative to a workforce where experience already explains much of pay variation.",
+    "breakdown": "MonthlyIncome",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "What is the relationship between MonthlyIncome and TotalWorkingYears?",
+    "reason": "For employees in Research & Development, the broader workforce pattern suggests MonthlyIncome should rise with TotalWorkingYears, consistent with the global correlation of r = 0.773 from Step 3. Because Research & Development is the largest department noted in Step 4, this experience-pay relationship is likely especially important for understanding compensation structure in the company’s biggest employee segment.",
+    "breakdown": "MonthlyIncome",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "What is the relationship between MonthlyIncome and TotalWorkingYears?",
+    "reason": "Among employees who travel rarely, MonthlyIncome is expected to increase with TotalWorkingYears in line with the strong company-wide correlation of r = 0.773 from Step 3. Step 4 shows Travel_Rarely is the dominant BusinessTravel category, so this relationship likely describes the compensation pattern for most employees in the dataset.",
+    "breakdown": "MonthlyIncome",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "What is the relationship between PerformanceRating and PercentSalaryHike?",
+    "reason": "PercentSalaryHike and PerformanceRating show a very strong positive correlation of 0.774. This means employees with stronger performance ratings tend to receive larger percentage salary increases, making performance evaluation closely tied to compensation adjustment outcomes.",
+    "breakdown": "PerformanceRating",
+    "measure": "MEAN(PercentSalaryHike)"
+  },
+  {
+    "question": "What is the relationship between PerformanceRating and PercentSalaryHike?",
+    "reason": "For Sales Executive employees, the company-wide relationship between PerformanceRating and PercentSalaryHike remains highly relevant: Step 3 reports a strong correlation of 0.774 overall. This suggests that merit-based pay adjustments are likely to be clearly reflected within this role as well, especially in a compensation-sensitive commercial function.",
+    "breakdown": "PerformanceRating",
+    "measure": "MEAN(PercentSalaryHike)"
+  },
+  {
+    "question": "What is the relationship between TotalWorkingYears and JobLevel?",
+    "reason": "JobLevel and TotalWorkingYears have a strong positive correlation of 0.782, showing that employees with more accumulated work experience tend to occupy higher organizational levels. This supports the idea that the company’s hierarchy is closely tied to career seniority rather than being randomly distributed across experience bands.",
+    "breakdown": "TotalWorkingYears",
+    "measure": "MEAN(JobLevel)"
+  },
+  {
+    "question": "What insights can we find about performancerating creates a clear split in percentsalaryhike outcomes?",
+    "reason": "Salary growth is strongly differentiated by performance level: Step 3 reports a 0.7735 correlation between PercentSalaryHike and PerformanceRating. Employees with higher ratings tend to receive meaningfully larger salary increases, so raise outcomes are not evenly distributed across performance groups.",
+    "breakdown": "PerformanceRating",
+    "measure": "MEAN(PercentSalaryHike)"
+  },
+  {
+    "question": "What insights can we find about within sales, job level remains a strong separator of monthly income?",
+    "reason": "The prior analysis notes that in Sales, JobLevel and MonthlyIncome are still expected to move closely together. Combined with the global Step 3 correlation of 0.9503 between JobLevel and MonthlyIncome, this suggests Sales employees are also distributed into clearly different pay bands by level rather than showing a flat compensation structure.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "What insights can we find about within research & development, higher job levels still map to much higher income bands?",
+    "reason": "Research & Development follows the same structural pay pattern seen company-wide. Step 4 explicitly notes that within Research & Development, MonthlyIncome still rises with JobLevel, and the global relationship is extremely strong at 0.9503, indicating that compensation differences by level remain pronounced even inside the largest department.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "What insights can we find about travel_rarely employees likely account for the broadest spread of pay outcomes because they dominate the workforce?",
+    "reason": "BusinessTravel is heavily concentrated in Travel_Rarely according to Step 4, and prior analysis indicates this segment is the most likely source of salary outliers simply because it contains most employees. Combined with the 114 MonthlyIncome outliers found in Step 2, this implies the widest visible spread of pay is likely to appear inside the Travel_Rarely group.",
+    "breakdown": "BusinessTravel",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "What patterns exist in NumCompaniesWorked by JobLevel?",
+    "reason": "A clear structural pattern is that employees in higher JobLevel positions tend to have worked at more companies over their careers before reaching those roles. Step 3 shows JobLevel is strongly tied to TotalWorkingYears (correlation 0.782), and Step 4 already establishes JobLevel as the main hierarchy axis in the workforce. Together, this supports a pattern where senior roles are typically occupied by employees with broader external career histories rather than first-company employees. This is especially relevant because the workforce also has a right-skewed tenure/experience profile, meaning a smaller experienced tail likely contributes disproportionately to upper levels.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(NumCompaniesWorked)"
+  },
+  {
+    "question": "What patterns exist in MonthlyIncome by JobRole?",
+    "reason": "JobRole appears to organize employees into distinct career-stage bands, with management-oriented roles likely concentrated at the high end of both TotalWorkingYears and MonthlyIncome. Step 3 reports a 0.773 correlation between MonthlyIncome and TotalWorkingYears, while Step 4 notes strong structural pay differences across the organization. This implies that role categories are not just titles—they likely reflect materially different combinations of experience and compensation, with leadership roles clustering in the upper-right portion of the workforce profile.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "What patterns exist in TotalWorkingYears by JobRole?",
+    "reason": "Within the Research Scientist subspace, experience is likely spread across a wide range rather than tightly clustered. Step 3 indicates that TotalWorkingYears is right-skewed with notable long-tail behavior, and JobLevel rises strongly with experience (correlation 0.782). In a large technical workforce, that combination usually produces role groups containing both earlier-career and highly experienced specialists. This suggests Research Scientist employees are not a single-career-stage population but a layered talent segment with meaningful internal variation.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "What patterns exist in TotalWorkingYears by MaritalStatus?",
+    "reason": "MaritalStatus likely segments the workforce by career stage, with Married employees more concentrated in higher TotalWorkingYears bands than Single employees. Step 3 shows the organization has many short- to mid-tenure employees plus a smaller long-experience tail, and JobLevel rises strongly with experience (0.782 correlation with TotalWorkingYears). This makes marital status a plausible demographic grouping that aligns with workforce maturity, especially in a hierarchical organization where experience and seniority move together.",
+    "breakdown": "MaritalStatus",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "What patterns exist in MonthlyIncome by JobRole?",
+    "reason": "Within the Sales department, JobRole likely creates clear compensation tiers rather than a single blended pay pattern. Step 3 shows MonthlyIncome is extremely strongly linked to JobLevel (correlation 0.950), and Step 4 establishes the organization as strongly hierarchical. In a department with multiple commercial roles, that structure usually translates into visibly different MonthlyIncome bands by role, with managerial and executive sales roles sitting well above representative roles.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "What patterns exist in MonthlyIncome by EducationField?",
+    "reason": "EducationField likely corresponds to distinct compensation patterns, with technical and business-oriented backgrounds sorting into different MonthlyIncome ranges. Step 4 shows EducationField is concentrated in Life Sciences and Medical, while Step 3 shows MonthlyIncome is strongly shaped by hierarchy and experience. This combination suggests education background is not evenly distributed across the organization’s role structure, and some fields likely feed into higher-paying career tracks than others.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "What patterns exist in MonthlyIncome by BusinessTravel?",
+    "reason": "BusinessTravel appears likely to separate employees into different compensation profiles, with Travel_Frequently employees tending toward higher MonthlyIncome bands than Non-Travel employees. Step 4 shows BusinessTravel is heavily concentrated in Travel_Rarely, making the other travel groups more selective segments. Combined with Step 3’s very strong JobLevel–MonthlyIncome relationship (0.950), this suggests frequent travel may be associated with more senior or commercially critical roles that command higher pay.",
+    "breakdown": "BusinessTravel",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "What patterns exist in TotalWorkingYears by Gender?",
+    "reason": "The main workforce structure appears to be driven by hierarchy and experience rather than broad demographic separation, so Gender likely shows substantial overlap in TotalWorkingYears distributions. Step 3 identifies JobLevel, MonthlyIncome, and TotalWorkingYears as the dominant structural variables, with correlations of 0.950, 0.782, and 0.773 among them. That suggests any observed gender differences are more likely to reflect representation across job levels or roles than a fundamentally different experience profile.",
+    "breakdown": "Gender",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "How does MonthlyIncome change over JobRole?",
+    "reason": "MonthlyIncome shows the clearest upward trend across JobLevel. Step 3 reports a very strong correlation of 0.950 between JobLevel and MonthlyIncome, making this the strongest structural pay progression in the dataset. Step 3 also notes that most employees are concentrated in lower job levels, while income rises sharply at higher levels, indicating a steep compensation ladder rather than a gradual increase.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does PercentSalaryHike change over Gender?",
+    "reason": "PercentSalaryHike trends upward with PerformanceRating. Step 3 shows a correlation of 0.774 between PercentSalaryHike and PerformanceRating, indicating that better-rated employees consistently receive larger raises. This is one of the strongest relationships in the dataset and suggests salary growth is tightly tied to formal performance outcomes.",
+    "breakdown": "Gender",
+    "measure": "MEAN(PercentSalaryHike)"
+  },
+  {
+    "question": "How does MonthlyIncome change over Department?",
+    "reason": "There is a strong positive income trend with career experience. Step 3 reports a correlation of 0.773 between MonthlyIncome and TotalWorkingYears, showing that employees with more experience tend to earn materially more. This supports a broad experience-based compensation pattern rather than pay being randomly distributed across career stages.",
+    "breakdown": "Department",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does JobLevel change over BusinessTravel?",
+    "reason": "Career seniority trends upward with experience. Step 3 shows a correlation of 0.782 between JobLevel and TotalWorkingYears, indicating that employees with longer work histories are more likely to be in higher organizational levels. This is a strong workforce progression pattern and reinforces that the hierarchy is experience-linked.",
+    "breakdown": "BusinessTravel",
+    "measure": "MEAN(JobLevel)"
+  },
+  {
+    "question": "How does EmployeeNumber change over Department?",
+    "reason": "Employees with more YearsAtCompany also tend to have spent more time in their current role. Step 3 reports a correlation of 0.759 between YearsAtCompany and YearsInCurrentRole, which indicates a strong upward tenure trend inside the organization. This suggests internal role stability increases as company tenure grows.",
+    "breakdown": "Department",
+    "measure": "MEAN(EmployeeNumber)"
+  },
+  {
+    "question": "How does EmployeeNumber change over MaritalStatus?",
+    "reason": "Time with the current manager rises with total tenure at the company. Step 3 shows a correlation of 0.769 between YearsAtCompany and YearsWithCurrManager, indicating that longer-tenured employees often also have longer manager relationships. This points to a stability trend in reporting structure as tenure accumulates.",
+    "breakdown": "MaritalStatus",
+    "measure": "MEAN(EmployeeNumber)"
+  },
+  {
+    "question": "How does EmployeeNumber change over JobRole?",
+    "reason": "Employees who have been in their current role longer also tend to have spent longer with their current manager. Step 3 reports a correlation of 0.714 between YearsInCurrentRole and YearsWithCurrManager, showing a clear upward stability trend between role continuity and manager continuity.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(EmployeeNumber)"
+  },
+  {
+    "question": "How does EmployeeNumber change over BusinessTravel?",
+    "reason": "BusinessTravel is strongly concentrated in Travel_Rarely rather than Travel_Frequently or Non-Travel. Step 4 explicitly notes that the distribution is highly uneven, with most employees in Travel_Rarely. This indicates the workforce is primarily composed of employees with limited travel demands.",
+    "breakdown": "BusinessTravel",
+    "measure": "MEAN(EmployeeNumber)"
+  },
+  {
+    "question": "How does EmployeeNumber change over EducationField?",
+    "reason": "EducationField is concentrated in two major categories: Life Sciences and Medical. Step 4 notes that these two fields account for most employees, while the remaining education fields are much smaller. This indicates a clear educational concentration trend in the workforce pipeline.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(EmployeeNumber)"
+  },
+  {
+    "question": "What insights can we find about some employees may have unusually high experience for their job level?",
+    "reason": "Step 3 reports a strong 0.7822 correlation between JobLevel and TotalWorkingYears, meaning experience usually increases with hierarchy. Step 2 still found 63 TotalWorkingYears outliers (4.29%), suggesting a small set of employees with unusually high career experience relative to the level structure of the broader workforce.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "What is the relationship between JobLevel and MonthlyIncome?",
+    "reason": "Step 3 shows a very strong overall correlation of 0.950 between JobLevel and MonthlyIncome, and this structural relationship is likely to remain visible within the Human Resources subset as well. Given that this is the strongest relationship in the dataset, higher job levels in Human Resources should correspond to clearly higher monthly income bands.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "What is the relationship between PerformanceRating and PercentSalaryHike?",
+    "reason": "The overall correlation between PercentSalaryHike and PerformanceRating is 0.774, indicating a tight pay-for-performance link. This relationship is likely to persist within the Non-Travel segment, where higher performance ratings should still align with larger percentage salary increases even without travel-related role differences.",
+    "breakdown": "PerformanceRating",
+    "measure": "MEAN(PercentSalaryHike)"
+  },
+  {
+    "question": "What insights can we find about performancerating is concentrated in a very narrow band, with 15.37% flagged only because the scale is discrete?",
+    "reason": "Performance ratings appear tightly clustered rather than broadly distributed. Step 2 reports 226 records, or 15.37%, flagged as outliers because the IQR rule treats values outside 3.0 as unusual, but the quality note explicitly says this is likely a methodological artifact caused by a discrete ordinal scale. In practice, the distribution is narrow and concentrated around a small number of rating levels.",
+    "breakdown": "PerformanceRating",
+    "measure": "COUNT(*)"
+  },
+  {
+    "question": "What patterns exist in MonthlyIncome by Department?",
+    "reason": "Department composition is highly uneven, with Research & Development identified in Step 4 as the largest department by a wide margin, Sales second, and Human Resources much smaller. Because the workforce is concentrated there, Research & Development is likely to contain the widest visible spread of MonthlyIncome values simply due to scale and role diversity.",
+    "breakdown": "Department",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "What patterns exist in TotalWorkingYears by MonthlyIncome?",
+    "reason": "The overall workforce shows a strong positive relationship between MonthlyIncome and TotalWorkingYears, with a Step 3 correlation of 0.773. That broad pattern is likely to remain visible within the Female segment as well, indicating that more experienced female employees tend to occupy higher income positions rather than a flat pay profile across career stages.",
+    "breakdown": "MonthlyIncome",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "What patterns exist in MonthlyIncome by MaritalStatus?",
+    "reason": "Step 3 shows that MonthlyIncome is strongly tied to TotalWorkingYears (correlation 0.773), while prior analysis already noted meaningful experience differences by MaritalStatus. Together, these findings imply a structured pay pattern across marital-status groups, with MonthlyIncome likely reflecting differences in career stage and workforce composition rather than random variation.",
+    "breakdown": "MaritalStatus",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "What patterns exist in MonthlyIncome by JobRole?",
+    "reason": "Step 4 shows BusinessTravel is heavily concentrated in Travel_Rarely, while Step 3 indicates compensation is strongly structured by seniority and experience. Within the Travel_Frequently subset, MonthlyIncome is therefore likely to vary substantially by JobRole, with senior commercial and managerial roles forming the upper pay bands rather than a uniform traveler profile.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(MonthlyIncome)"
+  }
+]

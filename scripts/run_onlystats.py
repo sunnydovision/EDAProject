@@ -38,6 +38,7 @@ except ImportError:
 
 from quis.shared.data_loader import load_data
 from quis.isgen.pipeline import ISGENPipeline, ISGENConfig
+from quis.configs.isgen_config import DEFAULT_ISGEN_CONFIG
 
 _CATEGORICAL_CLASSES = {"Categorical"}
 _TEMPORAL_CLASSES = {"Temporal"}
@@ -177,9 +178,9 @@ def main():
     parser.add_argument("--exp-factor", type=int, default=20)
     parser.add_argument("--max-depth", type=int, default=1)
     parser.add_argument("--no-subspace", action="store_true", help="Skip subspace search")
-    parser.add_argument("--max-overall-per-key", type=int, default=1)
-    parser.add_argument("--max-subspace-per-key", type=int, default=2)
-    parser.add_argument("--max-insights-per-question", type=int, default=2)
+    parser.add_argument("--max-overall-per-key", type=int, default=DEFAULT_ISGEN_CONFIG.max_overall_per_key)
+    parser.add_argument("--max-subspace-per-key", type=int, default=DEFAULT_ISGEN_CONFIG.max_subspace_per_key)
+    parser.add_argument("--max-insights-per-question", type=int, default=DEFAULT_ISGEN_CONFIG.max_insights_per_question)
     args = parser.parse_args()
 
     if not os.path.isfile(args.csv):

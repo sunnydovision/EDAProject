@@ -425,14 +425,73 @@
     }
   },
   "interpretation": {
-    "distribution_patterns": "",
-    "strong_correlations": [],
-    "key_findings": []
+    "distribution_patterns": "The workforce appears centered in mid-career ages: Age is slightly right-skewed (mean 36.9, median 36), indicating somewhat more employees in their late 40s to 60 than in the youngest ages, but overall the age profile is fairly balanced. DailyRate and HourlyRate are both nearly symmetric with means and medians almost identical, suggesting compensation rate fields are broadly spread across their allowed ranges rather than concentrated in a narrow band; however, because MonthlyIncome behaves very differently, these rate variables may reflect administrative pay codes or normalized internal rates rather than actual take-home pay. DistanceFromHome is moderately right-skewed (mean 9.2, median 7), meaning most employees live relatively close to work, with a smaller group commuting much farther. Education is centered around level 3 with mild left skew, implying the organization is concentrated in mid-to-higher education levels rather than at the lowest levels. Satisfaction and engagement measures—EnvironmentSatisfaction, JobInvolvement, JobSatisfaction, RelationshipSatisfaction, and WorkLifeBalance—all cluster around 3 on a 1-4 scale with mild negative skew, which in business terms suggests employees more often report moderate-to-positive experiences than poor ones; these are not highly polarized distributions. JobLevel is clearly right-skewed (mean 2.06, median 2), showing the company is pyramid-shaped, with many employees in lower grades and relatively few in senior roles. MonthlyIncome is strongly right-skewed with a large mean-median gap (6503 vs 4919) and known outliers, indicating a small number of highly paid employees pull the average upward; median income is therefore a better indicator of the typical employee. MonthlyRate is roughly symmetric, again suggesting it may be a system rate field rather than a direct reflection of salary. NumCompaniesWorked is right-skewed (mean 2.69, median 2) with outliers, meaning many employees have worked at only a few firms, while a smaller subset has very high prior mobility. PercentSalaryHike is moderately right-skewed, implying most raises are in the lower-to-middle range with fewer unusually large increases. PerformanceRating is extremely concentrated at 3 with only some 4s (min 3, q25=q75=3), producing strong right skew not because of poor performance but because the scale is compressed; this suggests limited differentiation in evaluations. StockOptionLevel is right-skewed with many employees at 0 or 1 and relatively few at higher levels, consistent with benefits being tiered by role or seniority. TotalWorkingYears is right-skewed with outliers, showing a typical employee has about 10 years of experience but a smaller group has very long careers. Tenure variables are especially skewed: YearsAtCompany, YearsInCurrentRole, YearsSinceLastPromotion, and YearsWithCurrManager all show right skew, with YearsAtCompany and YearsSinceLastPromotion also having high kurtosis. In business terms, most employees are relatively early in tenure, role tenure, and time since promotion, but there is a long tail of very long-tenured employees and some employees who have gone many years without promotion. EmployeeCount and StandardHours are constants, so they carry no analytical value and likely reflect source-system placeholders rather than meaningful business variation.",
+    "strong_correlations": [
+      {
+        "variables": "JobLevel and MonthlyIncome",
+        "interpretation": "This is an extremely strong positive relationship (r=0.95): higher job grades are associated with much higher monthly income. This is almost certainly structural, reflecting compensation bands tied to organizational level rather than employee behavior. It also means these two variables are largely redundant in modeling unless the goal is specifically to separate level effects from pay effects.",
+        "strength": "strong"
+      },
+      {
+        "variables": "JobLevel and TotalWorkingYears",
+        "interpretation": "Employees with more total career experience tend to be in higher job levels (r=0.78). This is mostly structural, since promotion systems often reward accumulated experience, though some behavioral and talent effects may also contribute. It suggests seniority and experience are closely linked in this workforce.",
+        "strength": "strong"
+      },
+      {
+        "variables": "MonthlyIncome and TotalWorkingYears",
+        "interpretation": "More experienced employees tend to earn more (r=0.77). This is expected in HR data and is likely primarily structural through pay progression and promotion ladders. Because JobLevel is also strongly tied to both variables, much of this relationship may be mediated by level rather than pure tenure alone.",
+        "strength": "strong"
+      },
+      {
+        "variables": "PercentSalaryHike and PerformanceRating",
+        "interpretation": "Employees with higher performance ratings receive larger salary increases (r=0.77). This appears structural, likely reflecting compensation policy that links raises to performance review outcomes. However, because PerformanceRating is highly compressed at 3 and 4 only, the correlation may reflect a simple rule-based distinction rather than nuanced performance differentiation.",
+        "strength": "strong"
+      },
+      {
+        "variables": "YearsAtCompany and YearsInCurrentRole",
+        "interpretation": "Longer-tenured employees have generally spent more time in their current role (r=0.76). This is partly structural because role tenure cannot exceed company tenure, but it is also behaviorally informative: many employees appear to remain in the same role for substantial portions of their tenure, which may indicate stability or limited internal mobility.",
+        "strength": "strong"
+      },
+      {
+        "variables": "YearsAtCompany and YearsWithCurrManager",
+        "interpretation": "Employees who have been at the company longer also tend to have spent longer with their current manager (r=0.77). This is partly structural, but it may also indicate relatively stable reporting relationships in parts of the organization. In some contexts this could be positive continuity; in others it could signal low managerial rotation or stagnant team structures.",
+        "strength": "strong"
+      },
+      {
+        "variables": "YearsInCurrentRole and YearsWithCurrManager",
+        "interpretation": "Employees who have been in their role longer also tend to have had the same manager longer (r=0.71). This is a mix of structural and organizational behavior: role changes often trigger manager changes, and stable roles often come with stable supervision. It may indicate that role mobility and manager mobility are tightly linked.",
+        "strength": "strong"
+      }
+    ],
+    "key_findings": [
+      "The organization has a classic hierarchical workforce structure: most employees are in lower job levels, while income and experience rise sharply with level, making JobLevel the central structural driver of compensation.",
+      "Typical employees report moderately positive workplace conditions—job satisfaction, environment satisfaction, relationship satisfaction, job involvement, and work-life balance all center around 3 on 1-4 scales—so the dataset does not show broad dissatisfaction at the aggregate level.",
+      "Tenure and career-history variables are heavily right-skewed with outliers, indicating a workforce made up mostly of shorter- to mid-tenure employees plus a smaller but important group of very long-tenured employees who can materially affect averages."
+    ],
+    "statistical_anomalies": [
+      "PerformanceRating is highly compressed: values only range from 3 to 4, with at least 75% of employees at 3. This suggests the rating system may not meaningfully distinguish performance across most employees, or lower ratings may be absent from the extract.",
+      "EmployeeCount and StandardHours are constants, and Over18 was described as a field but not included in the statistics. These are likely administrative placeholders or non-informative fields and should not be treated as explanatory variables.",
+      "MonthlyIncome is strongly skewed while DailyRate, HourlyRate, and MonthlyRate are nearly symmetric and weakly interpretable as direct pay measures. This mismatch suggests some compensation fields may be coded system rates rather than economically comparable salary variables.",
+      "YearsSinceLastPromotion has a low median of 1 but a long right tail up to 15 years, which may indicate a subset of employees experiencing prolonged promotion stagnation or role structures where promotion is infrequent by design.",
+      "YearsAtCompany reaches 40 years and TotalWorkingYears also reaches 40, creating influential long-tenure cases. These may be valid but should be checked because they can distort means and regression estimates."
+    ],
+    "recommendations": [
+      "Use medians and segmented distributions, not just means, for MonthlyIncome, TotalWorkingYears, YearsAtCompany, and promotion-related variables because outliers materially affect averages.",
+      "Run attrition analysis by OverTime, JobLevel, MonthlyIncome band, YearsSinceLastPromotion, DistanceFromHome, and satisfaction measures to identify practical retention drivers.",
+      "Test whether the strong pay-experience relationships remain after controlling for JobLevel; this will clarify whether experience independently affects compensation or mostly operates through promotion level.",
+      "Investigate performance management quality: examine the full distribution of PerformanceRating by department, manager, and job role to determine whether the 3-versus-4 pattern reflects policy compression or missing lower ratings.",
+      "Assess internal mobility by analyzing YearsInCurrentRole and YearsSinceLastPromotion jointly across JobRole and Department; this can reveal where employees may be stuck versus where long role tenure is normal.",
+      "Validate the business meaning of DailyRate, HourlyRate, and MonthlyRate before using them in decision-making models, since their distributions do not align cleanly with MonthlyIncome."
+    ]
   },
   "summary": {
     "numerical_columns": 26,
     "categorical_columns": 6,
-    "strong_correlations": 0,
-    "key_findings": []
+    "strong_correlations": 7,
+    "key_findings": [
+      "The organization has a classic hierarchical workforce structure: most employees are in lower job levels, while income and experience rise sharply with level, making JobLevel the central structural driver of compensation.",
+      "Typical employees report moderately positive workplace conditions—job satisfaction, environment satisfaction, relationship satisfaction, job involvement, and work-life balance all center around 3 on 1-4 scales—so the dataset does not show broad dissatisfaction at the aggregate level.",
+      "Tenure and career-history variables are heavily right-skewed with outliers, indicating a workforce made up mostly of shorter- to mid-tenure employees plus a smaller but important group of very long-tenured employees who can materially affect averages."
+    ]
   }
 }
