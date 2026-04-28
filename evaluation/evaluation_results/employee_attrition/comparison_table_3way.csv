@@ -17,6 +17,7 @@ Subspace Deep-dive,7. Subspace Rate,116/133 (87.2%),27/81 (33.3%),78/132 (59.1%)
 Subspace Deep-dive,7a. Subspace Faithfulness,100.0%,100.0%,100.0%,Tie,Faithfulness restricted to subspace insights
 Subspace Deep-dive,7b. Subspace Significance,24.0%,0.0%,0.0%,QUIS,Significance restricted to subspace insights
 Subspace Deep-dive,8. Score Uplift from Subspace,"Δ=0.083, x=1.574","Δ=0.046, x=1.079","Δ=-0.188, x=0.346",QUIS,Δ = mean(score|subspace) - mean(score|no-subspace)
+Subspace Deep-dive,9. Direction (Contrasting Rate),0.438 (46/105),0.300 (3/10),0.711 (27/38),ONLYSTATS,Rate of subspace insights where subspace value opposes global value — higher means more contrasting/valuable insights
 Intent Layer Quality,"10. Total (B,M) pairs evaluated",49/51,24/30,53/53,N/A,Total unique breakdown-measure pairs (categorical breakdowns only for NMI/Interestingness)
 Intent Layer Quality,10a. BM — NMI mean,0.035,0.086,nan,Baseline,Mean NMI over categorical-B pairs
 Intent Layer Quality,10b. BM — Interestingness,0.090,0.157,0.102,Baseline,Mean Coverage×EffectSize over categorical-B pairs

@@ -20,7 +20,7 @@ Subspace Deep-dive,7d.2. Diversity — Subspace Entropy (Subspace),2.027,2.259,Q
 Subspace Deep-dive,7d.3. Diversity — Value (Subspace),0.866,0.872,QUIS,"Unique (column, value) pairs in subspace / total (subspace insights)"
 Subspace Deep-dive,7d.4. Diversity — Dedup Rate (Subspace),0,0,Tie,Duplicate rate restricted to subspace insights - lower is better
 Subspace Deep-dive,8. Score Uplift from Subspace,"Δ=-0.126, x=0.726","Δ=-0.043, x=0.885",QUIS,Δ = mean(score|subspace) - mean(score|no-subspace)
-Subspace Deep-dive,9. Direction Uplift,down,down,Tie,Direction of Δ score uplift: up/down/flat
+Subspace Deep-dive,9. Direction (Contrasting Rate),0.821 (55/67),0.634 (52/82),ONLYSTATS,Rate of subspace insights where subspace value opposes global value — higher means more contrasting/valuable insights
 Intent Layer Quality,"10. Total (B,M) pairs evaluated",31/31,26/26,N/A,Total unique breakdown-measure pairs (categorical breakdowns only for NMI/Interestingness)
 Intent Layer Quality,10a. BM — NMI mean,0.217,0.094,ONLYSTATS,Mean NMI over categorical-B pairs
 Intent Layer Quality,10b. BM — Interestingness,0.068,0.077,QUIS,Mean Coverage×EffectSize over categorical-B pairs

@@ -61,14 +61,54 @@ def _effect_size_score(insight_item: Dict[str, Any], df: pd.DataFrame, profile_p
     return result.get("score")  # None if pattern could not be evaluated
 
 
-def _uplift_direction(delta: float | None, eps: float = 1e-9) -> str | None:
-    if delta is None:
+def _apply_subspace_filter(df: pd.DataFrame, subspace: list) -> pd.DataFrame:
+    """Apply subspace conditions (list of [col, val] pairs) to filter the dataframe."""
+    df_f = df
+    for item in subspace:
+        if isinstance(item, (list, tuple)) and len(item) == 2:
+            col_f, val = item
+            if col_f in df_f.columns:
+                df_f = df_f[df_f[col_f].astype(str) == str(val)]
+    return df_f
+
+
+def _agg_value(df: pd.DataFrame, col: str, agg: str) -> Optional[float]:
+    """Compute scalar aggregate of col over df. Returns None if not possible."""
+    if col not in df.columns or df.empty:
         return None
-    if delta > eps:
-        return "up"
-    if delta < -eps:
-        return "down"
-    return "flat"
+    try:
+        series = pd.to_numeric(df[col], errors="coerce").dropna()
+        if series.empty:
+            return None
+        agg_l = (agg or "mean").lower()
+        if agg_l == "sum":
+            return float(series.sum())
+        if agg_l == "count":
+            return float(len(df))
+        if agg_l == "min":
+            return float(series.min())
+        if agg_l == "max":
+            return float(series.max())
+        if agg_l == "median":
+            return float(series.median())
+        return float(series.mean())
+    except Exception:
+        return None
+
+
+def _is_contrasting(global_val: float, subspace_val: float, eps: float = 1e-9) -> bool:
+    """
+    True when the subspace pulls in the OPPOSITE direction relative to global.
+    That is: sign(subspace_val - global_val) is opposite to sign(global_val).
+    A subspace mean that is below-zero while global is above-zero (or vice versa)
+    is also considered contrasting.
+    """
+    delta = subspace_val - global_val
+    if abs(delta) < eps:
+        return False
+    if abs(global_val) < eps:
+        return False
+    return (delta > 0) != (global_val > 0)
 
 
 def compute_score_uplift_from_subspace(
@@ -100,15 +140,35 @@ def compute_score_uplift_from_subspace(
 
     with_scores: list[float] = []
     without_scores: list[float] = []
+    contrasting_count = 0
+    subspace_evaluated = 0
 
     for ins in insights:
         score = _effect_size_score(ins, df_cleaned, profile_path)
         if score is None:
             continue
-        if _has_subspace(ins):
+        has_sub = _has_subspace(ins)
+        if has_sub:
             with_scores.append(score)
         else:
             without_scores.append(score)
+
+        if has_sub:
+            insight = ins.get("insight", ins)
+            measure = insight.get("measure", "")
+            subspace = insight.get("subspace", [])
+            parsed = parse_measure(measure)
+            if parsed is not None:
+                agg, col = parsed
+                col_r = resolve_column(col, list(df_cleaned.columns)) if col and col != "*" else None
+                if col_r and col_r in df_cleaned.columns:
+                    global_val = _agg_value(df_cleaned, col_r, agg)
+                    df_sub = _apply_subspace_filter(df_cleaned, subspace)
+                    subspace_val = _agg_value(df_sub, col_r, agg)
+                    if global_val is not None and subspace_val is not None:
+                        subspace_evaluated += 1
+                        if _is_contrasting(global_val, subspace_val):
+                            contrasting_count += 1
 
     mean_with = sum(with_scores) / len(with_scores) if with_scores else None
     mean_without = sum(without_scores) / len(without_scores) if without_scores else None
@@ -120,6 +180,11 @@ def compute_score_uplift_from_subspace(
         if mean_without != 0:
             uplift_ratio = mean_with / mean_without
 
+    contrasting_rate = (
+        round(contrasting_count / subspace_evaluated, 4)
+        if subspace_evaluated > 0 else None
+    )
+
     return {
         "num_with_subspace_scored": len(with_scores),
         "num_without_subspace_scored": len(without_scores),
@@ -127,6 +192,8 @@ def compute_score_uplift_from_subspace(
         "mean_score_without_subspace": round(mean_without, 4) if mean_without is not None else None,
         "score_uplift_abs": round(uplift_abs, 4) if uplift_abs is not None else None,
         "score_uplift_ratio": round(uplift_ratio, 4) if uplift_ratio is not None else None,
-        "score_uplift_direction": _uplift_direction(uplift_abs),
+        "score_uplift_direction": contrasting_rate,
+        "contrasting_count": contrasting_count,
+        "subspace_direction_evaluated": subspace_evaluated,
     }
 

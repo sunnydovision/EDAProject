@@ -168,6 +168,18 @@ def create_comparison_table_3way(
         up_str, _winner3(names, [v or 0 for v in up_vals]),
         'Δ = mean(score|subspace) - mean(score|no-subspace)')
 
+    # ── 9. Direction (Contrasting Rate) ───────────────────────────────────
+    dir_vals = [u.get('score_uplift_direction') for u in ups]
+    dir_counts = [u.get('contrasting_count') for u in ups]
+    dir_evals = [u.get('subspace_direction_evaluated') for u in ups]
+    dir_str = [
+        f"{v:.3f} ({c}/{e})" if v is not None and c is not None and e is not None else 'N/A'
+        for v, c, e in zip(dir_vals, dir_counts, dir_evals)
+    ]
+    row('Subspace Deep-dive', '9. Direction (Contrasting Rate)',
+        dir_str, _winner3(names, [v if isinstance(v, (int, float)) else None for v in dir_vals]),
+        'Rate of subspace insights where subspace value opposes global value — higher means more contrasting/valuable insights')
+
     # ── 10. BM Quality ────────────────────────────────────────────────────
     bms = [r.get('bm_quality') for r in results_list]
     if any(bms):

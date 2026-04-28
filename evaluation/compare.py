@@ -307,21 +307,27 @@ def create_comparison_table(
             'Description': 'Δ = mean(score|subspace) - mean(score|no-subspace)'
         })
 
-    # 9. Direction uplift from subspace
+    # 9. Direction (contrasting rate): proportion of subspace insights where
+    #    subspace value is opposite in sign to global value — higher is more valuable
     dir_a = (results_a.get('score_uplift_from_subspace') or {}).get('score_uplift_direction')
     dir_b = (results_b.get('score_uplift_from_subspace') or {}).get('score_uplift_direction')
+    ct_a = (results_a.get('score_uplift_from_subspace') or {}).get('contrasting_count')
+    ct_b = (results_b.get('score_uplift_from_subspace') or {}).get('contrasting_count')
+    ev_a = (results_a.get('score_uplift_from_subspace') or {}).get('subspace_direction_evaluated')
+    ev_b = (results_b.get('score_uplift_from_subspace') or {}).get('subspace_direction_evaluated')
     if dir_a is not None or dir_b is not None:
-        rank = {'down': 0, 'flat': 1, 'up': 2}
-        a_rank = rank.get(dir_a, -1)
-        b_rank = rank.get(dir_b, -1)
-        winner = name_a if a_rank > b_rank else name_b if b_rank > a_rank else 'Tie'
+        winner = name_a if (dir_a or 0) > (dir_b or 0) else name_b if (dir_b or 0) > (dir_a or 0) else 'Tie'
+        def _fmt_dir(rate, ct, ev):
+            if rate is None:
+                return 'N/A'
+            return f"{rate:.3f} ({ct}/{ev})"
         metrics.append({
             'Group': 'Subspace Deep-dive',
-            'Metric': '9. Direction Uplift',
-            name_a: dir_a if dir_a is not None else 'N/A',
-            name_b: dir_b if dir_b is not None else 'N/A',
+            'Metric': '9. Direction (Contrasting Rate)',
+            name_a: _fmt_dir(dir_a, ct_a, ev_a),
+            name_b: _fmt_dir(dir_b, ct_b, ev_b),
             'Winner': winner,
-            'Description': 'Direction of Δ score uplift: up/down/flat'
+            'Description': 'Rate of subspace insights where subspace value opposes global value — higher means more contrasting/valuable insights'
         })
 
     # 10. BM Quality

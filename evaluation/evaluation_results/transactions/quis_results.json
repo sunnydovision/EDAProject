@@ -9,15 +9,23 @@
     "mean_score_without_subspace": null,
     "score_uplift_abs": null,
     "score_uplift_ratio": null,
-    "score_uplift_direction": null
+    "score_uplift_direction": 1.0,
+    "contrasting_count": 3,
+    "subspace_direction_evaluated": 3
   },
   "faithfulness": {
-    "faithfulness": 1.0,
-    "verified_count": 12,
+    "faithfulness": 0.9166666666666666,
+    "verified_count": 11,
     "total_count": 12,
-    "hallucination_count": 0,
-    "hallucination_rate": 0.0,
-    "_failed_insights": []
+    "hallucination_count": 1,
+    "hallucination_rate": 0.08333333333333337,
+    "_failed_insights": [
+      {
+        "idx": 0,
+        "reason": "Label \"T\u00f4n K\u1ebdm\" not found in recomputed values (converted: T\u00f4n K\u1ebdm)",
+        "pattern": "Outstanding Value"
+      }
+    ]
   },
   "insight_significance": {
     "avg_effect_size": 0.20123333333333335,
@@ -206,12 +214,18 @@
     "total_with_subspace": 12,
     "total_original": 12,
     "faithfulness": {
-      "faithfulness": 1.0,
-      "verified_count": 12,
+      "faithfulness": 0.9166666666666666,
+      "verified_count": 11,
       "total_count": 12,
-      "hallucination_count": 0,
-      "hallucination_rate": 0.0,
-      "_failed_insights": []
+      "hallucination_count": 1,
+      "hallucination_rate": 0.08333333333333337,
+      "_failed_insights": [
+        {
+          "idx": 0,
+          "reason": "Label \"T\u00f4n K\u1ebdm\" not found in recomputed values (converted: T\u00f4n K\u1ebdm)",
+          "pattern": "Outstanding Value"
+        }
+      ]
     },
     "significance": {
       "avg_effect_size": 0.5677,

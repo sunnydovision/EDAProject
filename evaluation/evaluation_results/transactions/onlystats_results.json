@@ -9,7 +9,9 @@
     "mean_score_without_subspace": 0.3066,
     "score_uplift_abs": 0.0481,
     "score_uplift_ratio": 1.157,
-    "score_uplift_direction": "up"
+    "score_uplift_direction": 0.7045,
+    "contrasting_count": 31,
+    "subspace_direction_evaluated": 44
   },
   "faithfulness": {
     "faithfulness": 0.9081632653061225,
@@ -1098,19 +1100,18 @@
   },
   "question_quality": {
     "question_diversity": {
-      "question_diversity": 0.3854115605354309,
-      "avg_similarity": 0.6145884394645691,
-      "num_questions": 98
+      "question_diversity": null,
+      "avg_similarity": null,
+      "num_questions": 0
     },
     "question_specificity": {
-      "question_specificity_mean": 8.0,
-      "question_specificity_std": 0.7423074889580902,
-      "num_questions": 98
+      "question_specificity_mean": null,
+      "question_specificity_std": null,
+      "num_questions": 0
     },
     "question_insight_alignment": {
-      "question_insight_alignment": 0.7615508437156677,
-      "question_insight_alignment_std": 0.058200057595968246,
-      "num_pairs": 98
+      "question_insight_alignment": null,
+      "num_pairs": 0
     },
     "reason_insight_coherence": {
       "reason_insight_coherence": null,

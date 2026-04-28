@@ -1,6 +1,6 @@
 # ONLYSTATS vs QUIS: Evaluation Report
 
-**Generated**: 2026-04-28 18:57:06
+**Generated**: 2026-04-28 23:55:37
 
 ---
 
@@ -8,7 +8,7 @@
 
 | | ONLYSTATS | QUIS |
 |---|---|---|
-| **Metrics Won** | 8 | 14 |
+| **Metrics Won** | 9 | 13 |
 | **Overall Winner** |  | ✓ |
 
 ---
@@ -34,18 +34,18 @@
 
 ## Group 2 — Subspace Deep-dive
 
-| Metric                                        | ONLYSTATS         | QUIS             | Winner    | Description                                                          |
-|:----------------------------------------------|:------------------|:-----------------|:----------|:---------------------------------------------------------------------|
-| 7. Subspace Rate                              | 78/132 (59.1%)    | 116/133 (87.2%)  | QUIS      | Insights with subspace filter / total                                |
-| 7a. Subspace Faithfulness                     | 100.0%            | 100.0%           | Tie       | Faithfulness restricted to subspace insights                         |
-| 7b. Subspace Significance                     | 0.0%              | 24.0%            | QUIS      | Significance restricted to subspace insights                         |
-| 7c. Subspace Novelty                          | 91.0%             | 95.7%            | QUIS      | Novelty restricted to subspace insights                              |
-| 7d.1. Diversity — Semantic (Subspace)         | 0.396             | 0.478            | QUIS      | Semantic diversity restricted to subspace insights                   |
-| 7d.2. Diversity — Subspace Entropy (Subspace) | 2.948             | 2.938            | ONLYSTATS | Entropy of subspace filter columns used (subspace insights)          |
-| 7d.3. Diversity — Value (Subspace)            | 0.756             | 0.767            | QUIS      | Unique (column, value) pairs in subspace / total (subspace insights) |
-| 7d.4. Diversity — Dedup Rate (Subspace)       | 0                 | 0                | Tie       | Duplicate rate restricted to subspace insights - lower is better     |
-| 8. Score Uplift from Subspace                 | Δ=-0.188, x=0.346 | Δ=0.083, x=1.574 | QUIS      | Δ = mean(score|subspace) - mean(score|no-subspace)                   |
-| 9. Direction Uplift                           | down              | up               | QUIS      | Direction of Δ score uplift: up/down/flat                            |
+| Metric                                        | ONLYSTATS         | QUIS             | Winner    | Description                                                                                                           |
+|:----------------------------------------------|:------------------|:-----------------|:----------|:----------------------------------------------------------------------------------------------------------------------|
+| 7. Subspace Rate                              | 78/132 (59.1%)    | 116/133 (87.2%)  | QUIS      | Insights with subspace filter / total                                                                                 |
+| 7a. Subspace Faithfulness                     | 100.0%            | 100.0%           | Tie       | Faithfulness restricted to subspace insights                                                                          |
+| 7b. Subspace Significance                     | 0.0%              | 24.0%            | QUIS      | Significance restricted to subspace insights                                                                          |
+| 7c. Subspace Novelty                          | 91.0%             | 95.7%            | QUIS      | Novelty restricted to subspace insights                                                                               |
+| 7d.1. Diversity — Semantic (Subspace)         | 0.396             | 0.478            | QUIS      | Semantic diversity restricted to subspace insights                                                                    |
+| 7d.2. Diversity — Subspace Entropy (Subspace) | 2.948             | 2.938            | ONLYSTATS | Entropy of subspace filter columns used (subspace insights)                                                           |
+| 7d.3. Diversity — Value (Subspace)            | 0.756             | 0.767            | QUIS      | Unique (column, value) pairs in subspace / total (subspace insights)                                                  |
+| 7d.4. Diversity — Dedup Rate (Subspace)       | 0                 | 0                | Tie       | Duplicate rate restricted to subspace insights - lower is better                                                      |
+| 8. Score Uplift from Subspace                 | Δ=-0.188, x=0.346 | Δ=0.083, x=1.574 | QUIS      | Δ = mean(score|subspace) - mean(score|no-subspace)                                                                    |
+| 9. Direction (Contrasting Rate)               | 0.711 (27/38)     | 0.438 (46/105)   | ONLYSTATS | Rate of subspace insights where subspace value opposes global value — higher means more contrasting/valuable insights |
 
 ---
 
@@ -77,5 +77,5 @@
 
 ## Conclusion
 
-**Overall Winner**: QUIS (8 vs 14 metrics won)
+**Overall Winner**: QUIS (9 vs 13 metrics won)
 

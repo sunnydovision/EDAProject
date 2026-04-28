@@ -430,9 +430,16 @@ def main():
         f"uplift={up_b.get('score_uplift_abs')} ratio={up_b.get('score_uplift_ratio')}"
     )
 
-    print(f"\n9. Direction Uplift:")
-    print(f"  • {args.system_a}: direction={up_a.get('score_uplift_direction')}")
-    print(f"  • {args.system_b}: direction={up_b.get('score_uplift_direction')}")
+    print(f"\n9. Direction (Contrasting Rate) — subspace value opposes global value:")
+    def _fmt_dir_rate(r):
+        if r is None:
+            return 'N/A'
+        ct = r.get('contrasting_count', 0)
+        ev = r.get('subspace_direction_evaluated', 0)
+        rate = r.get('score_uplift_direction')
+        return f"{rate:.3f} ({ct}/{ev})" if rate is not None else 'N/A'
+    print(f"  • {args.system_a}: {_fmt_dir_rate(up_a)}")
+    print(f"  • {args.system_b}: {_fmt_dir_rate(up_b)}")
 
     # ── GROUP 3: Intent Layer Quality ─────────────────────────────
     # Merged group: BM target structure (10a-e) + Question text/reason (11a-e).

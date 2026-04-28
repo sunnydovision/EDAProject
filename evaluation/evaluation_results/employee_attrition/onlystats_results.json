@@ -9,7 +9,9 @@
     "mean_score_without_subspace": 0.2872,
     "score_uplift_abs": -0.1877,
     "score_uplift_ratio": 0.3465,
-    "score_uplift_direction": "down"
+    "score_uplift_direction": 0.7105,
+    "contrasting_count": 27,
+    "subspace_direction_evaluated": 38
   },
   "faithfulness": {
     "faithfulness": 1.0,

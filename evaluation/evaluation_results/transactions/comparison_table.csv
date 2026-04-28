@@ -1,6 +1,6 @@
 Group,Metric,ONLYSTATS,QUIS,Winner,Description
 Core & Efficiency,0. Total insights,98,12,N/A,Total insight cards generated
-Core & Efficiency,1. Faithfulness,90.8%,100.0%,QUIS,Correctness - đúng dữ liệu
+Core & Efficiency,1. Faithfulness,90.8%,91.7%,QUIS,Correctness - đúng dữ liệu
 Core & Efficiency,2. Statistical Significance (Overall),44.3%,0.0%,ONLYSTATS,Validity - pattern-averaged (fair comparison)
 Core & Efficiency,2a. Significance — TREND,N/A,N/A,N/A,Validity - TREND pattern
 Core & Efficiency,2a. Significance — OUTSTANDING_VALUE,80.0% (25),0.0% (1),ONLYSTATS,Validity - OUTSTANDING_VALUE pattern
@@ -12,7 +12,7 @@ Core & Efficiency,4b. Diversity — Subspace Entropy,3.009,1.748,ONLYSTATS,Entro
 Core & Efficiency,4c. Diversity — Value,0.920,0.917,ONLYSTATS,"Unique (column, value) pairs in subspace / total"
 Core & Efficiency,4d. Diversity — Dedup Rate,0,0,Tie,Duplicate rate — lower is better
 Subspace Deep-dive,7. Subspace Rate,50/98 (51.0%),12/12 (100.0%),QUIS,Insights with subspace filter / total
-Subspace Deep-dive,7a. Subspace Faithfulness,92.0%,100.0%,QUIS,Faithfulness restricted to subspace insights
+Subspace Deep-dive,7a. Subspace Faithfulness,92.0%,91.7%,ONLYSTATS,Faithfulness restricted to subspace insights
 Subspace Deep-dive,7b. Subspace Significance,68.8%,0.0%,ONLYSTATS,Significance restricted to subspace insights
 Subspace Deep-dive,7c. Subspace Novelty,100.0%,100.0%,Tie,Novelty restricted to subspace insights
 Subspace Deep-dive,7d.1. Diversity — Semantic (Subspace),0.322,0.433,QUIS,Semantic diversity restricted to subspace insights
@@ -20,14 +20,14 @@ Subspace Deep-dive,7d.2. Diversity — Subspace Entropy (Subspace),3.009,1.748,O
 Subspace Deep-dive,7d.3. Diversity — Value (Subspace),0.920,0.917,ONLYSTATS,"Unique (column, value) pairs in subspace / total (subspace insights)"
 Subspace Deep-dive,7d.4. Diversity — Dedup Rate (Subspace),0,0,Tie,Duplicate rate restricted to subspace insights - lower is better
 Subspace Deep-dive,8. Score Uplift from Subspace,"Δ=0.048, x=1.157",N/A,ONLYSTATS,Δ = mean(score|subspace) - mean(score|no-subspace)
-Subspace Deep-dive,9. Direction Uplift,up,N/A,ONLYSTATS,Direction of Δ score uplift: up/down/flat
+Subspace Deep-dive,9. Direction (Contrasting Rate),0.705 (31/44),1.000 (3/3),QUIS,Rate of subspace insights where subspace value opposes global value — higher means more contrasting/valuable insights
 Intent Layer Quality,"10. Total (B,M) pairs evaluated",49/49,1/4,N/A,Total unique breakdown-measure pairs (categorical breakdowns only for NMI/Interestingness)
 Intent Layer Quality,10a. BM — NMI mean,0.089,0.002,ONLYSTATS,Mean NMI over categorical-B pairs
 Intent Layer Quality,10b. BM — Interestingness,0.167,0.001,ONLYSTATS,Mean Coverage×EffectSize over categorical-B pairs
 Intent Layer Quality,10c. BM — Actionability,1.000,0.250,ONLYSTATS,% pairs with categorical breakdown
 Intent Layer Quality,10d. BM — Diversity,0.500,0.333,ONLYSTATS,"Unique (B,M) pairs / total insights"
-Intent Layer Quality,11a. Question Semantic Diversity,0.385,0.406,QUIS,1 - mean cosine sim of question embeddings (within-system)
-Intent Layer Quality,11b. Question Specificity,8.00 ± 0.74,9.50 ± 0.87,QUIS,Avg word count per question (mean ± std) — higher = more specific
-Intent Layer Quality,11c. Question–Insight Alignment,0.762,0.262,ONLYSTATS,"Mean cosine(Embed(question), Embed(insight)) — semantic faithfulness"
+Intent Layer Quality,11a. Question Semantic Diversity,0,0.406,QUIS,1 - mean cosine sim of question embeddings (within-system)
+Intent Layer Quality,11b. Question Specificity,0.00 ± 0.00,9.50 ± 0.87,QUIS,Avg word count per question (mean ± std) — higher = more specific
+Intent Layer Quality,11c. Question–Insight Alignment,0,0.262,QUIS,"Mean cosine(Embed(question), Embed(insight)) — semantic faithfulness"
 Intent Layer Quality,11d. Question Novelty (cross-system),N/A,100.0%,Tie,% of questions with cross-system max cosine sim < 0.85
 Intent Layer Quality,11e. Reason–Insight Coherence,N/A,0.203,Tie,"Mean cosine(Embed(reason), Embed(insight)) — reason grounding"
