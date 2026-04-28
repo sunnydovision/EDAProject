@@ -58,6 +58,11 @@ def main():
     parser.add_argument("--samples", type=int, default=3, help="Samples per iteration")
     parser.add_argument("--temperature", type=float, default=1.1, help="LLM temperature")
     parser.add_argument("--in-context", type=int, default=6, help="Number of in-context example cards")
+    parser.add_argument(
+        "--mock",
+        action="store_true",
+        help="Use mock LLM (no API calls; for dry-run / offline)",
+    )
     args = parser.parse_args()
 
     if not args.csv and not args.schema:
@@ -78,10 +83,14 @@ def main():
         num_in_context_examples=args.in_context,
     )
 
-    if not os.getenv("OPENAI_API_KEY") and not os.getenv("OPENAI_API_BASE"):
+    if (
+        not args.mock
+        and not os.getenv("OPENAI_API_KEY")
+        and not os.getenv("OPENAI_API_BASE")
+    ):
         parser.error("OPENAI_API_KEY (hoặc OPENAI_API_BASE) là bắt buộc. Project chỉ chạy với API thật.")
 
-    llm_client = get_default_llm_client(use_mock=False)
+    llm_client = get_default_llm_client(use_mock=args.mock)
     pipeline = QUGENPipeline(config=config, llm_client=llm_client)
     cards = pipeline.run(table_schema=table_schema, df=df)
 

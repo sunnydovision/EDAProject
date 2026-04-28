@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(python3 *)",
-      "Bash(pip3 install *)",
-      "Bash(pdftotext \"/Users/ngocuit/Dropbox/PhanTichDuLieuKD/2410.10270v3-2.pdf\" -)"
-    ]
-  }
-}

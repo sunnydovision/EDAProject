@@ -109,14 +109,14 @@ class EvalConfig:
         },
         "employee_attrition": {
             "data_path": "data/employee_attrition_cleaned.csv",
-            "profile_path": None,  # Run baseline to generate
-            "quis_insights_path": None,  # Will be determined when running QUIS
-            "baseline_insights_path": None,  # Run baseline to generate
-            "onlystats_insights_path": None,  # Doesn't exist yet
-            "quis_timing_path": None,
-            "quis_usage_path": None,
-            "baseline_timing_path": None,
-            "baseline_usage_path": None,
+            "profile_path": "baseline/auto_eda_agent/output_employee_attrition/step1_profiling/profile.json",
+            "quis_insights_path": "quis_results/quis_20260428_091031_employee_attrition_cleaned/insights_summary.json",
+            "baseline_insights_path": "baseline/auto_eda_agent/output_employee_attrition/ifq_format/insights_summary.json",
+            "onlystats_insights_path": "onlystats_results/onlystats_20260428_075620_employee_attrition_cleaned_v4/insights_summary.json",
+            "quis_timing_path": "quis_results/quis_20260428_091031_employee_attrition_cleaned/timing.json",
+            "quis_usage_path": "quis_results/quis_20260428_091031_employee_attrition_cleaned/usage.json",
+            "baseline_timing_path": "baseline/auto_eda_agent/output_employee_attrition/timing.json",
+            "baseline_usage_path": "baseline/auto_eda_agent/output_employee_attrition/usage.json",
         },
         "online_sales": {
             "data_path": "data/online_sales_cleaned.csv",

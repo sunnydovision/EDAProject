@@ -1,0 +1,638 @@
+[
+  {
+    "question": "How does monthly income change across job levels?",
+    "reason": "Compensation differences across job levels are important for understanding career progression and pay structure. Comparing average monthly income by job level can reveal whether pay increases consistently with seniority or if there are unusual gaps.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "Which education fields are associated with employees having worked at more companies?",
+    "reason": "Career stability often varies by educational background. Comparing average number of companies worked across education fields can uncover whether employees from certain fields tend to switch employers more frequently, signaling different career mobility patterns.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(NumCompaniesWorked)"
+  },
+  {
+    "question": "How do total working years vary across departments?",
+    "reason": "Experience distribution across departments can reveal whether some areas rely more on senior talent while others are staffed by relatively newer professionals. This helps identify structural workforce differences and possible succession risks.",
+    "breakdown": "Department",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "Is job involvement associated with the amount of training employees receive?",
+    "reason": "Training exposure can influence employee development and engagement. Comparing average training times last year across job involvement levels can show whether more involved employees receive more learning opportunities or whether disengaged groups are being underserved.",
+    "breakdown": "JobInvolvement",
+    "measure": "MEAN(TrainingTimesLastYear)"
+  },
+  {
+    "question": "In which job roles do employees wait the longest for promotion?",
+    "reason": "Promotions are a strong indicator of career growth. Comparing the average years since last promotion across job roles can reveal roles where advancement is slower, which may indicate bottlenecks or potential dissatisfaction risks.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "Do employees who work overtime differ in average tenure at the company compared with those who do not?",
+    "reason": "Overtime can be a strong signal of workload pressure and potential burnout. Comparing average years at company across overtime groups can show whether employees working overtime tend to be newer hires or longer-tenured staff, helping uncover retention or workload patterns.",
+    "breakdown": "OverTime",
+    "measure": "MEAN(YearsAtCompany)"
+  },
+  {
+    "question": "Which education fields are associated with the highest average total working years?",
+    "reason": "Education background can shape career paths and accumulated experience. Comparing average total working years across education fields can reveal whether some fields are associated with more experienced employees, which may indicate differences in hiring patterns or career trajectories.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "How does average environment satisfaction vary across departments?",
+    "reason": "Department-level differences in employee satisfaction can point to cultural or managerial issues. Using Department as the breakdown and MEAN(EnvironmentSatisfaction) as the measure helps identify whether workplace conditions are perceived differently across departments.",
+    "breakdown": "Department",
+    "measure": "MEAN(EnvironmentSatisfaction)"
+  },
+  {
+    "question": "Does the average time since last promotion differ by marital status?",
+    "reason": "Career advancement may differ by demographic group, and promotion timing is a useful signal of growth opportunity. Comparing average years since last promotion across marital status categories can uncover whether certain groups are experiencing slower progression or unusual delays.",
+    "breakdown": "MaritalStatus",
+    "measure": "MEAN(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "Which departments receive the highest average salary hikes?",
+    "reason": "Pay growth may reflect recognition and reward practices, and these can vary across functions. Looking at average percent salary hike by department can reveal whether some departments receive systematically higher raises, helping identify compensation disparities or exceptional patterns.",
+    "breakdown": "Department",
+    "measure": "MEAN(PercentSalaryHike)"
+  },
+  {
+    "question": "Is there a difference in average job satisfaction between genders?",
+    "reason": "Job satisfaction is closely related to retention and engagement, and differences by gender may reveal equity or role experience issues. Using Gender as the breakdown and MEAN(JobSatisfaction) as the measure enables comparison of employee sentiment across demographic groups.",
+    "breakdown": "Gender",
+    "measure": "MEAN(JobSatisfaction)"
+  },
+  {
+    "question": "How does average training frequency vary across job levels?",
+    "reason": "Training investment may differ across seniority bands and can indicate how development opportunities are allocated. Comparing average training times last year across job levels helps reveal whether training is concentrated among junior or senior employees, or whether some levels are underserved.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does monthly income differ between employees who work overtime and those who do not?",
+    "reason": "Overtime is often linked to employee burnout and dissatisfaction. Comparing average monthly income across overtime groups can show whether employees working overtime are concentrated in lower- or higher-paying segments, which may help explain compensation-related retention patterns.",
+    "breakdown": "OverTime",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does work-life balance vary by business travel frequency?",
+    "reason": "Travel requirements can affect employee well-being and work-life balance. Examining work-life balance scores across business travel categories can reveal whether frequent travel is associated with poorer balance, indicating a meaningful relationship between travel demands and employee experience.",
+    "breakdown": "BusinessTravel",
+    "measure": "MEAN(WorkLifeBalance)"
+  },
+  {
+    "question": "Which departments show the longest time since employees were last promoted?",
+    "reason": "Promotion stagnation can be an important signal of career bottlenecks. Comparing years since last promotion across departments can reveal structural differences in advancement opportunities and highlight departments where employees may be experiencing slower career growth.",
+    "breakdown": "Department",
+    "measure": "MEAN(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does total working experience vary across job levels?",
+    "reason": "Job level typically reflects seniority and responsibility. Analyzing total working years across job levels helps assess whether career progression aligns with experience, and can expose anomalies where certain levels appear over- or under-experienced.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "Are salary hike percentages different across education fields?",
+    "reason": "Education background may influence career paths and salary growth. Comparing average percent salary hike across education fields can reveal whether some educational backgrounds are associated with stronger compensation progression.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(PercentSalaryHike)"
+  },
+  {
+    "question": "Does environment satisfaction differ by gender?",
+    "reason": "Satisfaction with the work environment may vary across demographic groups. Comparing average environment satisfaction by gender can help detect differences in workplace experience and point to inclusion or culture issues if gaps exist.",
+    "breakdown": "Gender",
+    "measure": "MEAN(EnvironmentSatisfaction)"
+  },
+  {
+    "question": "How does job involvement change with employees' number of previous companies worked?",
+    "reason": "Employees with different career histories may show different engagement levels. Comparing average job involvement across the number of companies previously worked for can reveal whether frequent job changes are associated with lower or higher engagement in the current role.",
+    "breakdown": "NumCompaniesWorked",
+    "measure": "MEAN(JobInvolvement)"
+  },
+  {
+    "question": "How does time spent with the current manager vary across job satisfaction levels?",
+    "reason": "Tenure under the same manager can strongly shape employee relationships and team stability. Comparing average years with current manager across job satisfaction levels can reveal whether satisfied employees tend to have longer, more stable manager relationships or whether dissatisfaction appears in long-tenure teams.",
+    "breakdown": "JobSatisfaction",
+    "measure": "MEAN(YearsWithCurrManager)"
+  },
+  {
+    "question": "How does average employee age vary across departments?",
+    "reason": "Age patterns across departments can indicate whether some departments are staffed by relatively younger or more experienced employees. This can help uncover differences in workforce composition, succession exposure, or hiring patterns across organizational units.",
+    "breakdown": "Department",
+    "measure": "MEAN(Age)"
+  },
+  {
+    "question": "How do average education levels differ across departments?",
+    "reason": "Educational attainment may differ by department depending on the technical or professional requirements of the work. Comparing average education levels across departments helps identify whether some functions employ more highly educated staff or show unusual qualification patterns.",
+    "breakdown": "Department",
+    "measure": "MEAN(Education)"
+  },
+  {
+    "question": "How does average daily rate vary across job roles?",
+    "reason": "Compensation structure often varies by job role beyond base monthly income, and daily rate comparisons can surface role-based pay differences that may not be obvious otherwise. This helps identify whether some roles are compensated disproportionately relative to others.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(DailyRate)"
+  },
+  {
+    "question": "Which education fields are associated with higher average monthly rates?",
+    "reason": "Monthly rate variation by education field can reveal whether certain educational backgrounds are associated with stronger compensation outcomes. This can help uncover relationships between specialization and pay positioning, as well as potential outliers among education categories.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(MonthlyRate)"
+  },
+  {
+    "question": "How does average stock option level change across job levels?",
+    "reason": "Stock option allocation is often linked to retention strategy or seniority, and comparing it across job levels can reveal whether long-term incentives are concentrated among higher-level employees. This is useful for understanding how equity-like rewards are distributed across the hierarchy.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(StockOptionLevel)"
+  },
+  {
+    "question": "How does average performance rating vary across departments?",
+    "reason": "Performance rating variation across departments can uncover whether some departments consistently receive higher evaluations, which may reflect differences in performance, rating standards, or managerial calibration. This can help detect systematic scoring differences or possible rating inflation.",
+    "breakdown": "Department",
+    "measure": "MEAN(PerformanceRating)"
+  },
+  {
+    "question": "Does the average age differ between employees who left and those who stayed?",
+    "reason": "Attrition patterns across age groups can reveal whether turnover is concentrated among younger or older employees. Using Age as the measure and Attrition as the breakdown helps identify whether employees who leave differ meaningfully in age from those who stay, which is useful for retention planning and workforce stability analysis.",
+    "breakdown": "Attrition",
+    "measure": "MEAN(Age)"
+  },
+  {
+    "question": "How does the average daily rate vary across departments?",
+    "reason": "Travel requirements may vary substantially by department and can indicate structural differences in job demands. Comparing average daily rate across departments can help detect whether certain departments are associated with notably different compensation-related patterns or assignment structures, highlighting possible operational or policy differences.",
+    "breakdown": "Department",
+    "measure": "MEAN(DailyRate)"
+  },
+  {
+    "question": "Which job roles have the highest average education level?",
+    "reason": "Educational attainment may vary across job roles and can reveal how formal qualifications align with role specialization. Comparing average education level across job roles helps identify whether some roles systematically require higher educational backgrounds or whether there are unusual mismatches.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(Education)"
+  },
+  {
+    "question": "How does average job level differ across education fields?",
+    "reason": "Career hierarchy may differ across educational backgrounds, and job level is a useful indicator of progression and seniority. Comparing average job level across education fields can uncover whether certain fields are more strongly associated with advancement or whether some groups appear underrepresented in senior positions.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(JobLevel)"
+  },
+  {
+    "question": "How does average stock option level differ between employees who left and those who stayed?",
+    "reason": "Stock options are often used to support retention and reward commitment, so differences by attrition status can be highly informative. Comparing average stock option level between employees who left and those who stayed can reveal whether equity-related incentives are associated with lower turnover.",
+    "breakdown": "Attrition",
+    "measure": "MEAN(StockOptionLevel)"
+  },
+  {
+    "question": "How does performance rating vary by training frequency last year?",
+    "reason": "Performance outcomes may vary by the amount of recent training employees receive. Comparing average performance rating across training frequency groups can help identify whether training is associated with stronger performance or whether additional training is concentrated among lower-performing groups.",
+    "breakdown": "TrainingTimesLastYear",
+    "measure": "MEAN(PerformanceRating)"
+  },
+  {
+    "question": "Does average time in current role differ by marital status?",
+    "reason": "Tenure in role can differ by marital status and may reflect differences in career mobility, stability, or promotion timing across personal circumstances. Comparing average years in current role across marital status categories can help identify whether certain groups tend to remain longer in the same role, signaling slower movement or greater stability.",
+    "breakdown": "MaritalStatus",
+    "measure": "MEAN(YearsInCurrentRole)"
+  },
+  {
+    "question": "Do employees who leave tend to live farther from work than those who stay?",
+    "reason": "Commute burden can influence employee experience and turnover. Comparing average distance from home across attrition groups helps determine whether employees who leave tend to live farther away, pointing to a possible relationship between commuting difficulty and resignations.",
+    "breakdown": "Attrition",
+    "measure": "MEAN(DistanceFromHome)"
+  },
+  {
+    "question": "How does average monthly rate differ across departments?",
+    "reason": "Monthly rate differences across departments can reveal how compensation-related billing or salary components vary structurally by function. Using Department as the breakdown and MonthlyRate as the measure can surface departmental disparities and potential anomalies in pay-related patterns.",
+    "breakdown": "Department",
+    "measure": "MEAN(MonthlyRate)"
+  },
+  {
+    "question": "How do performance ratings vary across job levels?",
+    "reason": "Promotion and pay raise patterns are often expected to align with performance outcomes. Comparing average performance rating across job levels helps reveal whether higher-level employees consistently receive stronger ratings or whether ratings are compressed across seniority levels.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(PerformanceRating)"
+  },
+  {
+    "question": "Which job roles tend to have employees staying longer in their current role?",
+    "reason": "Tenure in role can vary significantly by job function and may indicate either stability or stagnation. Comparing average years in current role across job roles helps identify which roles have longer role occupancy and which may experience faster rotation or advancement.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does average environment satisfaction vary across job roles?",
+    "reason": "Work environment perception can differ substantially by job role due to manager support, work setting, or operational pressures. Comparing average environment satisfaction across roles can highlight where employees feel most or least supported and point to potential workplace issues.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(EnvironmentSatisfaction)"
+  },
+  {
+    "question": "Is average job involvement different across marital status groups?",
+    "reason": "Job involvement reflects engagement and commitment to work, and differences by marital status may indicate variation in personal responsibilities or work priorities. Comparing average job involvement across marital status groups can help uncover meaningful behavioral or engagement patterns.",
+    "breakdown": "MaritalStatus",
+    "measure": "MEAN(JobInvolvement)"
+  },
+  {
+    "question": "Which departments have employees at higher average job levels?",
+    "reason": "Compensation should generally rise with seniority, but the strength of that pattern may differ by department. Comparing average job level across departments can reveal whether some departments have a more senior workforce structure or unusually flat hierarchies.",
+    "breakdown": "Department",
+    "measure": "MEAN(JobLevel)"
+  },
+  {
+    "question": "How does average job satisfaction differ by business travel frequency?",
+    "reason": "Satisfaction with one’s job can vary by travel burden, since frequent travel may affect stress, flexibility, and work-life balance. Comparing average job satisfaction across business travel categories can reveal whether travel expectations are associated with lower or higher employee sentiment.",
+    "breakdown": "BusinessTravel",
+    "measure": "MEAN(JobSatisfaction)"
+  },
+  {
+    "question": "Which job roles receive the highest average monthly income?",
+    "reason": "Income differences across job roles are fundamental for understanding compensation structure and identifying roles that may be underpaid or highly rewarded. Comparing average monthly income by job role can reveal strong pay disparities and possible outliers in the compensation framework.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "Do employees with different marital statuses live at different average distances from work?",
+    "reason": "Commute patterns may vary by marital status due to housing choices, family obligations, or life-stage differences. Comparing average distance from home across marital groups can help uncover whether certain groups consistently face longer commutes, which may also relate to satisfaction or attrition patterns.",
+    "breakdown": "MaritalStatus",
+    "measure": "MEAN(DistanceFromHome)"
+  },
+  {
+    "question": "Which departments tend to retain employees for longer periods?",
+    "reason": "Tenure at a company often varies by department due to differences in career progression, role stability, or turnover pressure. Comparing average years at company across departments can reveal which functions retain employees longer and which may experience shorter employment duration.",
+    "breakdown": "Department",
+    "measure": "MEAN(YearsAtCompany)"
+  },
+  {
+    "question": "How do average salary hike percentages differ across job levels?",
+    "reason": "Compensation progression is often tied to seniority, and examining salary hike patterns by job level can show whether raises are distributed consistently across hierarchy levels. Comparing average percent salary hike across job levels can surface whether senior employees receive stronger or weaker relative increases.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(PercentSalaryHike)"
+  },
+  {
+    "question": "Which job roles report the lowest average work-life balance?",
+    "reason": "Work-life balance may vary by job role because some roles involve tighter deadlines, shift patterns, or customer-facing pressure. Comparing average work-life balance scores across roles can identify functions where employees report poorer balance, which is useful for spotting operational stress points.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(WorkLifeBalance)"
+  },
+  {
+    "question": "Do departments differ in the average number of companies employees have worked at previously?",
+    "reason": "Career mobility may differ substantially between departments. Comparing the average number of companies worked before joining across departments can reveal whether some functions attract more externally experienced employees, which may indicate different hiring strategies or talent market dynamics.",
+    "breakdown": "Department",
+    "measure": "MEAN(NumCompaniesWorked)"
+  },
+  {
+    "question": "Is relationship satisfaction lower among employees who work overtime?",
+    "reason": "Relationship satisfaction can be affected by work demands such as overtime. Comparing average relationship satisfaction between employees who do and do not work overtime can reveal whether overtime is associated with strain in employees’ personal lives, making it a meaningful cross-domain insight.",
+    "breakdown": "OverTime",
+    "measure": "MEAN(RelationshipSatisfaction)"
+  },
+  {
+    "question": "How is the workforce distributed across departments?",
+    "reason": "Employee volume across departments is useful for understanding workforce concentration and organizational structure. Comparing counts of employees by department can reveal dominant business functions and provide context for interpreting other patterns such as attrition, pay, or overtime differences.",
+    "breakdown": "Department",
+    "measure": "COUNT(EmployeeNumber)"
+  },
+  {
+    "question": "How is the employee population distributed across departments?",
+    "reason": "EmployeeCount is constant at 1 for every row, so using COUNT(EmployeeCount) effectively measures headcount. Comparing headcount across departments helps understand workforce distribution and can contextualize other findings such as attrition or satisfaction differences.",
+    "breakdown": "Department",
+    "measure": "COUNT(EmployeeCount)"
+  },
+  {
+    "question": "Which marital status groups make up the largest share of the workforce?",
+    "reason": "StandardHours is a fixed-hours field and can be used with COUNT to compare record volume across categories. Looking at counts by marital status can reveal whether certain life-stage groups are more represented in the workforce, which may be useful when interpreting patterns in attrition, overtime, or work-life balance.",
+    "breakdown": "MaritalStatus",
+    "measure": "COUNT(StandardHours)"
+  },
+  {
+    "question": "Which education fields are most common among employees?",
+    "reason": "Over18 appears constant, so counting it provides the number of employees in each category. Comparing counts across education fields helps identify where talent is concentrated academically and can later support deeper analysis of role alignment, compensation, or retention by background.",
+    "breakdown": "EducationField",
+    "measure": "COUNT(Over18)"
+  },
+  {
+    "question": "How does workforce representation differ by gender?",
+    "reason": "Gender representation can vary significantly by job function. Counting employees by gender across departments can reveal concentration or imbalance patterns that may be important for diversity analysis and for interpreting differences in pay, promotion timing, or attrition.",
+    "breakdown": "Gender",
+    "measure": "COUNT(EmployeeNumber)"
+  },
+  {
+    "question": "How does employee age vary across marital status groups?",
+    "reason": "Age can differ meaningfully across marital status groups, reflecting career stage and personal life stage effects. Comparing average age by marital status can reveal whether certain groups are systematically younger or older, which may help explain variation in attrition, income, or tenure.",
+    "breakdown": "MaritalStatus",
+    "measure": "MEAN(Age)"
+  },
+  {
+    "question": "Which departments have employees with longer average commutes from home?",
+    "reason": "Commute distance can influence job stress and retention, and its effect may differ by department due to role structure or location patterns. Comparing average distance from home across departments can reveal whether some departments disproportionately employ longer-distance commuters.",
+    "breakdown": "Department",
+    "measure": "MEAN(DistanceFromHome)"
+  },
+  {
+    "question": "How does monthly income vary across education fields?",
+    "reason": "Compensation differences across education fields can indicate whether some backgrounds are associated with higher-paying career paths inside the company. Comparing average monthly income by education field can reveal meaningful relationships between academic specialization and pay outcomes.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "Which job roles tend to have employees with the most prior company experience?",
+    "reason": "Career mobility often differs by job role. Comparing the average number of companies worked across roles can reveal whether certain roles tend to attract employees with more varied external experience, which may influence seniority, compensation expectations, or attrition patterns.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(NumCompaniesWorked)"
+  },
+  {
+    "question": "Do employees from different education fields differ in how long they stay with the same manager?",
+    "reason": "Education field often influences the types of roles employees enter and the pace of career progression. Comparing average years with current manager across education fields can highlight whether employees from certain backgrounds experience longer reporting stability or more frequent managerial changes, which may signal differences in role mobility.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(YearsWithCurrManager)"
+  },
+  {
+    "question": "Which job roles have the longest average time since last promotion?",
+    "reason": "Promotions are an important signal of career growth, but the pace of promotion may vary by role due to hierarchy depth or advancement opportunities. Comparing average years since last promotion across job roles can identify roles where career stagnation may be more common and flag possible advancement bottlenecks.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "Do employees who leave the company tend to have worked at more companies before?",
+    "reason": "Employees who have worked for many companies may have different career stability patterns than those with fewer prior employers. Comparing average number of companies worked across attrition groups can reveal whether employees who leave tend to have more mobile career histories, helping identify a meaningful relationship between prior mobility and current turnover.",
+    "breakdown": "Attrition",
+    "measure": "MEAN(NumCompaniesWorked)"
+  },
+  {
+    "question": "Is work-life balance lower among employees who work overtime?",
+    "reason": "Overtime can strongly affect employees’ perception of balance between work and personal life. Comparing average work-life balance scores between overtime groups can reveal whether overtime is linked to lower perceived balance and help identify a potential driver of dissatisfaction or attrition.",
+    "breakdown": "OverTime",
+    "measure": "MEAN(WorkLifeBalance)"
+  },
+  {
+    "question": "Which departments show the greatest stability in employee-manager relationships?",
+    "reason": "Tenure with the current manager can vary across departments because of differences in leadership stability, team structure, or internal movement. Comparing average years with current manager across departments can help identify functions with unusually frequent managerial change or stronger continuity.",
+    "breakdown": "Department",
+    "measure": "MEAN(YearsWithCurrManager)"
+  },
+  {
+    "question": "How is employee headcount distributed across job roles?",
+    "reason": "Gender representation across job roles can reveal structural imbalances in workforce composition. Comparing employee counts by job role helps identify concentration patterns, underrepresentation, or unusual staffing distributions across roles.",
+    "breakdown": "JobRole",
+    "measure": "COUNT(EmployeeNumber)"
+  },
+  {
+    "question": "Which departments tend to have the youngest employees?",
+    "reason": "Employee count by age can help identify whether the workforce is concentrated in particular life or career stages. Looking at the youngest ages represented within departments can also surface departments with unusually early-career hiring patterns.",
+    "breakdown": "Department",
+    "measure": "MIN(Age)"
+  },
+  {
+    "question": "How does work-life balance vary across job levels?",
+    "reason": "Work-life balance may vary by job seniority because higher-level roles can carry different responsibilities and flexibility. Comparing average work-life balance across job levels can reveal whether advancement is associated with better balance or greater strain.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(WorkLifeBalance)"
+  },
+  {
+    "question": "How does relationship satisfaction vary across departments?",
+    "reason": "Relationship satisfaction with colleagues or managers can vary across functional areas due to culture, leadership, or collaboration patterns. Comparing average relationship satisfaction across departments can help identify teams with notably stronger or weaker interpersonal environments.",
+    "breakdown": "Department",
+    "measure": "MEAN(RelationshipSatisfaction)"
+  },
+  {
+    "question": "Are salary hike percentages different between gender groups?",
+    "reason": "Gender-based differences in salary growth are an important workforce equity question. Comparing average percent salary hike across gender groups can help identify whether one group systematically receives larger raises, which may point to policy differences or compensation imbalance.",
+    "breakdown": "Gender",
+    "measure": "MEAN(PercentSalaryHike)"
+  },
+  {
+    "question": "How does work-life balance vary by marital status?",
+    "reason": "Employees with different marital statuses may face different personal commitments that affect their perceived work-life balance. Comparing average work-life balance scores across marital status groups can reveal meaningful lifestyle and engagement differences across employee segments.",
+    "breakdown": "MaritalStatus",
+    "measure": "MEAN(WorkLifeBalance)"
+  },
+  {
+    "question": "How do total working years differ across education fields?",
+    "reason": "Education field may shape long-term career trajectories and accumulated experience. Comparing average total working years across education fields can reveal whether certain backgrounds are associated with more experienced employees, potentially indicating different talent pipelines or career entry patterns.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "Do employees who leave tend to have spent less time with their current manager?",
+    "reason": "Managerial stability often affects employee support, development, and retention. Comparing average years with current manager across attrition groups can reveal whether shorter manager relationships are associated with employees who leave, helping identify a possible retention signal.",
+    "breakdown": "Attrition",
+    "measure": "MEAN(YearsWithCurrManager)"
+  },
+  {
+    "question": "Which departments have the highest and lowest average environment satisfaction?",
+    "reason": "Environment satisfaction is a strong indicator of workplace quality, and variation by department can reveal where employees perceive better or worse working conditions. Comparing average environment satisfaction across departments helps identify organizational areas that may require attention or offer best practices.",
+    "breakdown": "Department",
+    "measure": "MEAN(EnvironmentSatisfaction)"
+  },
+  {
+    "question": "Which job roles report the highest and lowest environment satisfaction?",
+    "reason": "Environmental satisfaction can be strongly shaped by the nature of an employee’s role. Comparing average environment satisfaction across job roles can identify roles with notably positive or negative workplace perceptions, helping detect where the work setting may be contributing to stronger morale or dissatisfaction.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(EnvironmentSatisfaction)"
+  },
+  {
+    "question": "Do employees who work overtime receive different performance ratings than those who do not?",
+    "reason": "Performance ratings may vary across levels of overtime exposure and can reveal whether extra hours are associated with stronger outcomes or whether overtime is not translating into better performance. Comparing average performance rating across overtime groups helps assess the relationship between workload intensity and evaluated results.",
+    "breakdown": "OverTime",
+    "measure": "MEAN(PerformanceRating)"
+  },
+  {
+    "question": "Which job roles account for the most employee attrition?",
+    "reason": "Attrition can vary substantially by role depending on job demands, advancement opportunities, and stress. Counting attrition cases across job roles helps identify where exits are concentrated and where retention interventions may be most needed.",
+    "breakdown": "JobRole",
+    "measure": "COUNT(Attrition)"
+  },
+  {
+    "question": "Which departments have younger versus older employee populations on average?",
+    "reason": "Departmental age differences can indicate whether some parts of the organization are staffed by earlier-career or more experienced employees. Comparing average age across departments can reveal structural talent distribution and possible succession or hiring patterns.",
+    "breakdown": "Department",
+    "measure": "MEAN(Age)"
+  },
+  {
+    "question": "How does employee age vary across job roles?",
+    "reason": "Age patterns across job roles can reveal whether some roles are staffed by relatively younger or more experienced employees. This helps uncover workforce composition differences and may point to hiring pipelines, career progression structures, or succession risks.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(Age)"
+  },
+  {
+    "question": "How does hourly rate change across job levels?",
+    "reason": "Hourly compensation differences by job level can indicate whether pay progression is aligned with seniority. Comparing mean hourly rate across job levels can reveal whether compensation rises consistently or whether there are unusual gaps between adjacent levels.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(HourlyRate)"
+  },
+  {
+    "question": "Is job involvement associated with business travel frequency?",
+    "reason": "Employee involvement may vary with travel demands. Comparing average job involvement across business travel categories can reveal whether frequent travel is associated with stronger engagement or instead with lower involvement, helping uncover a meaningful relationship between work conditions and commitment.",
+    "breakdown": "BusinessTravel",
+    "measure": "MEAN(JobInvolvement)"
+  },
+  {
+    "question": "Is employee age associated with business travel frequency?",
+    "reason": "Employee age can differ meaningfully by business travel pattern, reflecting career stage, role expectations, or willingness to travel. Comparing average age across travel categories can reveal whether travel-heavy roles are concentrated among younger or more experienced employees.",
+    "breakdown": "BusinessTravel",
+    "measure": "MEAN(Age)"
+  },
+  {
+    "question": "Do departments differ in the average salary hike employees receive?",
+    "reason": "Salary growth may not be uniform across departments, even when employees receive raises. Comparing average percent salary hike by department can reveal compensation policy differences or uneven reward patterns that may influence morale and retention.",
+    "breakdown": "Department",
+    "measure": "MEAN(PercentSalaryHike)"
+  },
+  {
+    "question": "Which job roles show the longest average time spent in the current role?",
+    "reason": "Tenure in the current role is a useful signal of role stability and internal mobility. Comparing average years in current role across job roles can reveal where employees remain longer versus where positions change more frequently, helping identify stagnation or rapid progression patterns.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(YearsInCurrentRole)"
+  },
+  {
+    "question": "How does prior job mobility vary across employee ages?",
+    "reason": "The number of prior companies worked for can indicate career mobility and may vary by age group due to experience and labor-market behavior. Comparing average number of companies worked across ages can reveal whether mobility rises steadily with age or if some age segments are unusually more mobile.",
+    "breakdown": "Age",
+    "measure": "MEAN(NumCompaniesWorked)"
+  },
+  {
+    "question": "Do employees in some departments live farther from work than others?",
+    "reason": "Commute burden can shape work-life strain and employee behavior. Comparing average distance from home across departments can reveal whether certain functions tend to attract or require employees with longer commutes, which may help explain department-level differences in engagement or attrition.",
+    "breakdown": "Department",
+    "measure": "MEAN(DistanceFromHome)"
+  },
+  {
+    "question": "Which education fields show longer average time since last promotion?",
+    "reason": "Promotion timing is a useful signal of career progression. Comparing average years since last promotion across education fields can reveal whether employees from some backgrounds experience slower advancement, highlighting structural differences in career mobility.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(YearsSinceLastPromotion)"
+  },
+  {
+    "question": "How does time spent with the current manager differ across departments?",
+    "reason": "Leadership stability can influence employee continuity and team dynamics. Comparing average years with current manager across departments can reveal where manager-employee relationships are more established versus more frequently changing, which may point to structural instability or stronger managerial retention.",
+    "breakdown": "Department",
+    "measure": "MEAN(YearsWithCurrManager)"
+  },
+  {
+    "question": "Which departments have the most experienced employees on average?",
+    "reason": "Workforce seniority is often uneven across functional areas. Comparing average total working years by department can uncover whether certain departments rely more heavily on experienced employees, helping identify expertise concentration, succession risk, or talent pipeline differences.",
+    "breakdown": "Department",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "Do employees from different education fields differ in their average education level?",
+    "reason": "Educational background can vary meaningfully by function. Comparing average education level across education fields can show whether some fields tend to correspond to higher formal education attainment, which may influence role placement, pay, and advancement opportunities.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(Education)"
+  },
+  {
+    "question": "Which departments receive more training on average?",
+    "reason": "Training investment may not be uniform across the organization. Comparing average training times last year across departments can reveal whether some departments receive more structured development support, which may influence performance, satisfaction, and retention.",
+    "breakdown": "Department",
+    "measure": "MEAN(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does job involvement change across job levels?",
+    "reason": "Workload intensity and engagement can differ across job levels. Comparing average job involvement by job level can show whether seniority is associated with greater engagement or responsibility, and can also expose unusual dips at specific levels.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(JobInvolvement)"
+  },
+  {
+    "question": "How does prior company experience vary by education field?",
+    "reason": "Career stability may differ by educational background, with some fields producing more specialized career paths and others encouraging greater movement across employers. Comparing the average number of companies worked across education fields can reveal differences in career mobility and hiring patterns.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(NumCompaniesWorked)"
+  },
+  {
+    "question": "Do departments differ in how much training employees receive?",
+    "reason": "Training allocation may not be evenly distributed across the organization. Comparing average training times last year by department can show whether some departments invest more in skill development, which may influence performance, engagement, and internal mobility.",
+    "breakdown": "Department",
+    "measure": "MEAN(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does environment satisfaction vary across employee age?",
+    "reason": "Employees in different age groups may experience different levels of satisfaction with their work environment due to expectations, tenure, or role seniority. Comparing average environment satisfaction across age can reveal generational patterns or unusual dips that may warrant closer workforce analysis.",
+    "breakdown": "Age",
+    "measure": "MEAN(EnvironmentSatisfaction)"
+  },
+  {
+    "question": "Which departments have employees spending the most time with their current manager?",
+    "reason": "Managerial stability can strongly affect employee experience, and some departments may have more stable reporting structures than others. Comparing average years with current manager across departments can reveal organizational differences in leadership continuity and identify areas with unusually frequent management changes.",
+    "breakdown": "Department",
+    "measure": "MEAN(YearsWithCurrManager)"
+  },
+  {
+    "question": "How does the average number of companies worked change with age?",
+    "reason": "Career stability and external mobility often vary by age. Comparing average number of companies worked across age values or age groups can reveal whether older employees show expected mobility patterns or whether some age bands appear unusually static or mobile.",
+    "breakdown": "Age",
+    "measure": "MEAN(NumCompaniesWorked)"
+  },
+  {
+    "question": "Is attrition associated with differences in time spent with the current manager?",
+    "reason": "Time under the same manager can signal stability, mentorship continuity, or lack of movement. Comparing average years with current manager across attrition status can help assess whether shorter or longer manager relationships are associated with employee departures.",
+    "breakdown": "Attrition",
+    "measure": "MEAN(YearsWithCurrManager)"
+  },
+  {
+    "question": "Which job roles tend to have the longest average tenure at the company?",
+    "reason": "Tenure patterns often differ by role because some jobs have clearer advancement paths or higher turnover. Comparing average years at company across job roles can identify which roles retain employees longer and which may have shorter organizational attachment.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(YearsAtCompany)"
+  },
+  {
+    "question": "Does job satisfaction vary across education fields?",
+    "reason": "Job satisfaction may vary depending on educational background if some fields align better with certain job assignments or career expectations. Comparing average job satisfaction across education fields can uncover meaningful mismatches or particularly well-aligned backgrounds.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(JobSatisfaction)"
+  },
+  {
+    "question": "Does training exposure differ by business travel frequency?",
+    "reason": "Development opportunities can be unevenly distributed across organizational travel demands. Comparing average training times last year across business travel categories can show whether employees who travel more receive less development support or, conversely, more training due to role complexity.",
+    "breakdown": "BusinessTravel",
+    "measure": "MEAN(TrainingTimesLastYear)"
+  },
+  {
+    "question": "Do employees in some departments spend longer on average with the same manager?",
+    "reason": "Managerial stability can shape employee experience, support, and team cohesion. Comparing average years with current manager across departments can highlight whether some departments experience more managerial continuity while others may face frequent leadership turnover or restructuring.",
+    "breakdown": "Department",
+    "measure": "MEAN(YearsWithCurrManager)"
+  },
+  {
+    "question": "Does training participation differ by education level?",
+    "reason": "Training investment often differs by employee seniority and development stage. Comparing average training times last year across education levels can reveal whether employees with different educational backgrounds receive different amounts of development support.",
+    "breakdown": "Education",
+    "measure": "MEAN(TrainingTimesLastYear)"
+  },
+  {
+    "question": "Do employees who leave show lower job involvement on average?",
+    "reason": "Employees with stronger involvement in their jobs may be more committed, while lower involvement can indicate disengagement. Comparing average job involvement across attrition groups helps assess whether disengagement is associated with employee exits.",
+    "breakdown": "Attrition",
+    "measure": "MEAN(JobInvolvement)"
+  },
+  {
+    "question": "Which job roles have the shortest average time with their current manager?",
+    "reason": "Team stability and managerial continuity can vary by role and affect support, communication, and performance. Comparing average years with current manager across job roles can reveal where manager-employee relationships are more stable versus more frequently changing, which may indicate organizational churn or role-specific restructuring.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(YearsWithCurrManager)"
+  },
+  {
+    "question": "Which job roles tend to have the most experienced employees in terms of total working years?",
+    "reason": "Seniority and accumulated experience often differ by role, and these differences can explain workforce structure and promotion pipelines. Comparing average total working years across job roles helps identify which roles are dominated by more experienced employees and which skew earlier-career.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(TotalWorkingYears)"
+  },
+  {
+    "question": "How does the average amount of training received vary by job involvement level?",
+    "reason": "Training investment may vary depending on how engaged employees are in their work. Comparing average training times last year across job involvement levels can reveal whether more involved employees receive more development support, or whether low-involvement groups are being targeted for improvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "MEAN(TrainingTimesLastYear)"
+  },
+  {
+    "question": "How does average monthly income differ by gender?",
+    "reason": "Gender-based differences in pay are an important workforce equity question. Comparing average monthly income across gender can highlight possible compensation disparities and reveal whether one group systematically earns more than the other.",
+    "breakdown": "Gender",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "In which departments do employees wait the longest on average since their last promotion?",
+    "reason": "Promotions are a key signal of employee growth and recognition. Comparing average years since last promotion across departments can reveal where advancement may be slower, helping identify structural bottlenecks or potential causes of frustration.",
+    "breakdown": "Department",
+    "measure": "MEAN(YearsSinceLastPromotion)"
+  }
+]

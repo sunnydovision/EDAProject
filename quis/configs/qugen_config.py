@@ -9,6 +9,8 @@ Paper Appendix D.2:
 - Number of in-context examples = 6
 """
 
+from __future__ import annotations
+
 from dataclasses import dataclass
 from typing import Callable
 from .api_config import get_default_model

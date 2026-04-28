@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-04-28T07:59:50.816683",
+  "script": "compare3",
+  "arguments": {
+    "dataset": "employee_attrition",
+    "output": null
+  },
+  "config": {
+    "dataset": "employee_attrition",
+    "data_path": "data/employee_attrition_cleaned.csv",
+    "profile_path": "baseline/auto_eda_agent/output_employee_attrition/step1_profiling/profile.json",
+    "quis_insights_path": "quis_results/quis_STUB_employee_attrition_cleaned/insights_summary.json",
+    "baseline_insights_path": "baseline/auto_eda_agent/output_employee_attrition/ifq_format/insights_summary.json",
+    "onlystats_insights_path": "onlystats_results/onlystats_20260428_075620_employee_attrition_cleaned_v4/insights_summary.json",
+    "results_dir": "evaluation/evaluation_results/employee_attrition"
+  }
+}

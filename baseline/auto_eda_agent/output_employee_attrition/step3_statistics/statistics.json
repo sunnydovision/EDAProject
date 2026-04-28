@@ -1,0 +1,438 @@
+{
+  "statistics": {
+    "numerical_stats": {
+      "Age": {
+        "count": 1470,
+        "mean": 36.923809523809524,
+        "median": 36.0,
+        "std": 9.135373489136732,
+        "min": 18.0,
+        "max": 60.0,
+        "q25": 30.0,
+        "q75": 43.0,
+        "skewness": 0.4132863018563338,
+        "kurtosis": -0.4041451371872906
+      },
+      "DailyRate": {
+        "count": 1470,
+        "mean": 802.4857142857143,
+        "median": 802.0,
+        "std": 403.50909994352816,
+        "min": 102.0,
+        "max": 1499.0,
+        "q25": 465.0,
+        "q75": 1157.0,
+        "skewness": -0.003518568352325854,
+        "kurtosis": -1.2038228076234574
+      },
+      "DistanceFromHome": {
+        "count": 1470,
+        "mean": 9.19251700680272,
+        "median": 7.0,
+        "std": 8.106864435666074,
+        "min": 1.0,
+        "max": 29.0,
+        "q25": 2.0,
+        "q75": 14.0,
+        "skewness": 0.9581179956568269,
+        "kurtosis": -0.22483340490405102
+      },
+      "Education": {
+        "count": 1470,
+        "mean": 2.912925170068027,
+        "median": 3.0,
+        "std": 1.0241649445978729,
+        "min": 1.0,
+        "max": 5.0,
+        "q25": 2.0,
+        "q75": 4.0,
+        "skewness": -0.2896810819684331,
+        "kurtosis": -0.5591149664143074
+      },
+      "EmployeeCount": {
+        "count": 1470,
+        "mean": 1.0,
+        "median": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "q25": 1.0,
+        "q75": 1.0,
+        "skewness": 0.0,
+        "kurtosis": 0.0
+      },
+      "EmployeeNumber": {
+        "count": 1470,
+        "mean": 1024.865306122449,
+        "median": 1020.5,
+        "std": 602.0243348474751,
+        "min": 1.0,
+        "max": 2068.0,
+        "q25": 491.25,
+        "q75": 1555.75,
+        "skewness": 0.016574019580105036,
+        "kurtosis": -1.2231789059146994
+      },
+      "EnvironmentSatisfaction": {
+        "count": 1470,
+        "mean": 2.721768707482993,
+        "median": 3.0,
+        "std": 1.0930822146350005,
+        "min": 1.0,
+        "max": 4.0,
+        "q25": 2.0,
+        "q75": 4.0,
+        "skewness": -0.32165444773937907,
+        "kurtosis": -1.2025205217966843
+      },
+      "HourlyRate": {
+        "count": 1470,
+        "mean": 65.89115646258503,
+        "median": 66.0,
+        "std": 20.329427593996165,
+        "min": 30.0,
+        "max": 100.0,
+        "q25": 48.0,
+        "q75": 83.75,
+        "skewness": -0.03231095290044942,
+        "kurtosis": -1.1963984562565886
+      },
+      "JobInvolvement": {
+        "count": 1470,
+        "mean": 2.7299319727891156,
+        "median": 3.0,
+        "std": 0.7115611429632304,
+        "min": 1.0,
+        "max": 4.0,
+        "q25": 2.0,
+        "q75": 3.0,
+        "skewness": -0.4984193640419493,
+        "kurtosis": 0.27099876649436405
+      },
+      "JobLevel": {
+        "count": 1470,
+        "mean": 2.0639455782312925,
+        "median": 2.0,
+        "std": 1.106939898935122,
+        "min": 1.0,
+        "max": 5.0,
+        "q25": 1.0,
+        "q75": 3.0,
+        "skewness": 1.0254012829518246,
+        "kurtosis": 0.39915205539119025
+      },
+      "JobSatisfaction": {
+        "count": 1470,
+        "mean": 2.7285714285714286,
+        "median": 3.0,
+        "std": 1.1028461230547204,
+        "min": 1.0,
+        "max": 4.0,
+        "q25": 2.0,
+        "q75": 4.0,
+        "skewness": -0.3296719586636647,
+        "kurtosis": -1.2221925684964252
+      },
+      "MonthlyIncome": {
+        "count": 1470,
+        "mean": 6502.931292517007,
+        "median": 4919.0,
+        "std": 4707.956783097994,
+        "min": 1009.0,
+        "max": 19999.0,
+        "q25": 2911.0,
+        "q75": 8379.0,
+        "skewness": 1.3698166808390662,
+        "kurtosis": 1.005232691449859
+      },
+      "MonthlyRate": {
+        "count": 1470,
+        "mean": 14313.103401360544,
+        "median": 14235.5,
+        "std": 7117.786044059976,
+        "min": 2094.0,
+        "max": 26999.0,
+        "q25": 8047.0,
+        "q75": 20461.5,
+        "skewness": 0.018577807891132458,
+        "kurtosis": -1.2149560995878737
+      },
+      "NumCompaniesWorked": {
+        "count": 1470,
+        "mean": 2.6931972789115646,
+        "median": 2.0,
+        "std": 2.498009006070747,
+        "min": 0.0,
+        "max": 9.0,
+        "q25": 1.0,
+        "q75": 4.0,
+        "skewness": 1.026471111968205,
+        "kurtosis": 0.01021381669037602
+      },
+      "PercentSalaryHike": {
+        "count": 1470,
+        "mean": 15.209523809523809,
+        "median": 14.0,
+        "std": 3.6599377165396407,
+        "min": 11.0,
+        "max": 25.0,
+        "q25": 12.0,
+        "q75": 18.0,
+        "skewness": 0.8211279755780908,
+        "kurtosis": -0.30059822209054543
+      },
+      "PerformanceRating": {
+        "count": 1470,
+        "mean": 3.1537414965986397,
+        "median": 3.0,
+        "std": 0.36082352460434397,
+        "min": 3.0,
+        "max": 4.0,
+        "q25": 3.0,
+        "q75": 3.0,
+        "skewness": 1.921882702142603,
+        "kurtosis": 1.6959386701408348
+      },
+      "RelationshipSatisfaction": {
+        "count": 1470,
+        "mean": 2.7122448979591836,
+        "median": 3.0,
+        "std": 1.0812088864403524,
+        "min": 1.0,
+        "max": 4.0,
+        "q25": 2.0,
+        "q75": 4.0,
+        "skewness": -0.30282756517072296,
+        "kurtosis": -1.184813981868854
+      },
+      "StandardHours": {
+        "count": 1470,
+        "mean": 80.0,
+        "median": 80.0,
+        "std": 0.0,
+        "min": 80.0,
+        "max": 80.0,
+        "q25": 80.0,
+        "q75": 80.0,
+        "skewness": 0.0,
+        "kurtosis": 0.0
+      },
+      "StockOptionLevel": {
+        "count": 1470,
+        "mean": 0.7938775510204081,
+        "median": 1.0,
+        "std": 0.852076667930838,
+        "min": 0.0,
+        "max": 3.0,
+        "q25": 0.0,
+        "q75": 1.0,
+        "skewness": 0.9689803167738937,
+        "kurtosis": 0.3646343338026954
+      },
+      "TotalWorkingYears": {
+        "count": 1470,
+        "mean": 11.279591836734694,
+        "median": 10.0,
+        "std": 7.780781675514997,
+        "min": 0.0,
+        "max": 40.0,
+        "q25": 6.0,
+        "q75": 15.0,
+        "skewness": 1.1171718528128527,
+        "kurtosis": 0.918269536621358
+      },
+      "TrainingTimesLastYear": {
+        "count": 1470,
+        "mean": 2.7993197278911564,
+        "median": 3.0,
+        "std": 1.2892706207958455,
+        "min": 0.0,
+        "max": 6.0,
+        "q25": 2.0,
+        "q75": 3.0,
+        "skewness": 0.5531241710537028,
+        "kurtosis": 0.4949929860394717
+      },
+      "WorkLifeBalance": {
+        "count": 1470,
+        "mean": 2.7612244897959184,
+        "median": 3.0,
+        "std": 0.7064758297141507,
+        "min": 1.0,
+        "max": 4.0,
+        "q25": 2.0,
+        "q75": 3.0,
+        "skewness": -0.5524802990965146,
+        "kurtosis": 0.4194604953216339
+      },
+      "YearsAtCompany": {
+        "count": 1470,
+        "mean": 7.0081632653061225,
+        "median": 5.0,
+        "std": 6.126525152403569,
+        "min": 0.0,
+        "max": 40.0,
+        "q25": 3.0,
+        "q75": 9.0,
+        "skewness": 1.7645294543422085,
+        "kurtosis": 3.93550875575465
+      },
+      "YearsInCurrentRole": {
+        "count": 1470,
+        "mean": 4.229251700680272,
+        "median": 3.0,
+        "std": 3.623137034670628,
+        "min": 0.0,
+        "max": 18.0,
+        "q25": 2.0,
+        "q75": 7.0,
+        "skewness": 0.9173631562908262,
+        "kurtosis": 0.47742077351356293
+      },
+      "YearsSinceLastPromotion": {
+        "count": 1470,
+        "mean": 2.1877551020408164,
+        "median": 1.0,
+        "std": 3.222430279137967,
+        "min": 0.0,
+        "max": 15.0,
+        "q25": 0.0,
+        "q75": 3.0,
+        "skewness": 1.9842899833524859,
+        "kurtosis": 3.612673114548667
+      },
+      "YearsWithCurrManager": {
+        "count": 1470,
+        "mean": 4.12312925170068,
+        "median": 3.0,
+        "std": 3.5681361205404376,
+        "min": 0.0,
+        "max": 17.0,
+        "q25": 2.0,
+        "q75": 7.0,
+        "skewness": 0.8334509919918475,
+        "kurtosis": 0.17105808388335575
+      }
+    },
+    "categorical_stats": {
+      "BusinessTravel": {
+        "unique_count": 3,
+        "most_common": "Travel_Rarely",
+        "most_common_count": 1043,
+        "distribution": {
+          "Travel_Rarely": 1043,
+          "Travel_Frequently": 277,
+          "Non-Travel": 150
+        }
+      },
+      "Department": {
+        "unique_count": 3,
+        "most_common": "Research & Development",
+        "most_common_count": 961,
+        "distribution": {
+          "Research & Development": 961,
+          "Sales": 446,
+          "Human Resources": 63
+        }
+      },
+      "EducationField": {
+        "unique_count": 6,
+        "most_common": "Life Sciences",
+        "most_common_count": 606,
+        "distribution": {
+          "Life Sciences": 606,
+          "Medical": 464,
+          "Marketing": 159,
+          "Technical Degree": 132,
+          "Other": 82,
+          "Human Resources": 27
+        }
+      },
+      "Gender": {
+        "unique_count": 2,
+        "most_common": "Male",
+        "most_common_count": 882,
+        "distribution": {
+          "Male": 882,
+          "Female": 588
+        }
+      },
+      "JobRole": {
+        "unique_count": 9,
+        "most_common": "Sales Executive",
+        "most_common_count": 326,
+        "distribution": {
+          "Sales Executive": 326,
+          "Research Scientist": 292,
+          "Laboratory Technician": 259,
+          "Manufacturing Director": 145,
+          "Healthcare Representative": 131,
+          "Manager": 102,
+          "Sales Representative": 83,
+          "Research Director": 80,
+          "Human Resources": 52
+        }
+      },
+      "MaritalStatus": {
+        "unique_count": 3,
+        "most_common": "Married",
+        "most_common_count": 673,
+        "distribution": {
+          "Married": 673,
+          "Single": 470,
+          "Divorced": 327
+        }
+      }
+    },
+    "correlations": {
+      "strong_correlations": [
+        {
+          "var1": "JobLevel",
+          "var2": "MonthlyIncome",
+          "correlation": 0.9502999134798473
+        },
+        {
+          "var1": "JobLevel",
+          "var2": "TotalWorkingYears",
+          "correlation": 0.7822078045362748
+        },
+        {
+          "var1": "MonthlyIncome",
+          "var2": "TotalWorkingYears",
+          "correlation": 0.7728932462543575
+        },
+        {
+          "var1": "PercentSalaryHike",
+          "var2": "PerformanceRating",
+          "correlation": 0.7735499964012669
+        },
+        {
+          "var1": "YearsAtCompany",
+          "var2": "YearsInCurrentRole",
+          "correlation": 0.7587537366134618
+        },
+        {
+          "var1": "YearsAtCompany",
+          "var2": "YearsWithCurrManager",
+          "correlation": 0.7692124251007031
+        },
+        {
+          "var1": "YearsInCurrentRole",
+          "var2": "YearsWithCurrManager",
+          "correlation": 0.7143647616385931
+        }
+      ]
+    }
+  },
+  "interpretation": {
+    "distribution_patterns": "",
+    "strong_correlations": [],
+    "key_findings": []
+  },
+  "summary": {
+    "numerical_columns": 26,
+    "categorical_columns": 6,
+    "strong_correlations": 0,
+    "key_findings": []
+  }
+}

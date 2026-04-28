@@ -1,0 +1,129 @@
+{
+  "system": "Baseline",
+  "num_cards": 0,
+  "num_insights": 0,
+  "score_uplift_from_subspace": {
+    "num_with_subspace_scored": 0,
+    "num_without_subspace_scored": 0,
+    "mean_score_with_subspace": null,
+    "mean_score_without_subspace": null,
+    "score_uplift_abs": null,
+    "score_uplift_ratio": null,
+    "score_uplift_direction": null
+  },
+  "faithfulness": {
+    "faithfulness": 0,
+    "verified_count": 0,
+    "total_count": 0,
+    "hallucination_count": 0,
+    "hallucination_rate": 1,
+    "_failed_insights": []
+  },
+  "insight_significance": {
+    "avg_effect_size": 0.0,
+    "significant_count": 0,
+    "significant_rate": 0.0,
+    "max_effect_size": 0.0,
+    "total_evaluated": 0,
+    "by_pattern": {
+      "TREND": {
+        "significant_count": 0,
+        "total_count": 0,
+        "significant_rate": 0.0
+      },
+      "OUTSTANDING_VALUE": {
+        "significant_count": 0,
+        "total_count": 0,
+        "significant_rate": 0.0
+      },
+      "ATTRIBUTION": {
+        "significant_count": 0,
+        "total_count": 0,
+        "significant_rate": 0.0
+      },
+      "DISTRIBUTION_DIFFERENCE": {
+        "significant_count": 0,
+        "total_count": 0,
+        "significant_rate": 0.0
+      }
+    }
+  },
+  "question_diversity": {
+    "semantic_diversity": 0.0,
+    "avg_similarity": 0.0,
+    "num_insights": 0,
+    "subspace_diversity": null,
+    "value_diversity": null,
+    "dedup_rate": 0.0,
+    "unique_count": 0,
+    "total_count": 0,
+    "duplicate_count": 0
+  },
+  "bm_quality": {
+    "nmi_mean": 0.0,
+    "int_mean": 0.0,
+    "actionability": 0.0,
+    "bm_diversity": 0.0,
+    "total_evaluated": 0,
+    "total_categorical": 0,
+    "total_insights": 0,
+    "pairs": []
+  },
+  "question_quality": {
+    "question_diversity": {
+      "question_diversity": 0.0,
+      "avg_similarity": 0.0,
+      "num_questions": 0
+    },
+    "question_specificity": {
+      "question_specificity_mean": 0.0,
+      "question_specificity_std": 0.0,
+      "num_questions": 0
+    },
+    "question_insight_alignment": {
+      "question_insight_alignment": 0.0,
+      "num_pairs": 0
+    },
+    "reason_insight_coherence": {
+      "reason_insight_coherence": 0.0,
+      "num_pairs": 0
+    },
+    "question_novelty": {
+      "question_novelty": 0.0,
+      "novel_count": 0,
+      "total_count": 0,
+      "avg_max_similarity": 0.0,
+      "compared_against": "QUIS"
+    }
+  },
+  "time_to_insight": {
+    "total_time_seconds": 30.019101858139038,
+    "insights_generated": 0,
+    "time_per_insight_seconds": 0,
+    "throughput_insights_per_second": 0.0
+  },
+  "token_usage": {
+    "total_tokens": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "requests": 0,
+    "insights_generated": 0,
+    "tokens_per_insight": 0,
+    "model": "gpt-4o-mini"
+  },
+  "insight_novelty": {
+    "novelty": 0.0,
+    "novel_count": 0,
+    "total_count": 0,
+    "avg_max_similarity": 0.0,
+    "compared_against": "QUIS"
+  },
+  "subspace_metrics": {
+    "total_with_subspace": 0,
+    "total_original": 0,
+    "faithfulness": null,
+    "significance": null,
+    "novelty": null,
+    "diversity": null
+  }
+}

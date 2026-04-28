@@ -1,0 +1,15 @@
+======================================================================
+AGENTIC AUTOEDA BASELINE - SUMMARY
+======================================================================
+
+Total Insights: 0
+Passed ISGEN Threshold: 0/0 (0.0%)
+Average Pattern Score: 0.000
+
+Insights by Type:
+
+Insights by ISGEN Pattern:
+
+Top 10 Insights:
+
+======================================================================

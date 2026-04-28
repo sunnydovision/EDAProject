@@ -99,6 +99,26 @@ def save_usage_json(output_dir: Path, system: str = "onlystats") -> Path:
     return usage_path
 
 
+def _effective_data_type_class(col_name: str, info: dict) -> str:
+    """Resolve data_type_class, with heuristics when baseline profile has no LLM semantic labels."""
+    cls = (info.get("data_type_class") or "").strip()
+    if cls:
+        return cls
+    dtype = str(info.get("dtype", "")).lower()
+    if dtype in ("bool", "object", "category"):
+        return "Categorical"
+    if info.get("top_values"):
+        return "Categorical"
+    lc = col_name.lower()
+    if ("date" in lc or "month" in lc or "year" in lc) and (
+        dtype == "object" or "datetime" in dtype
+    ):
+        return "Temporal"
+    if info.get("statistics") is not None and dtype not in ("bool", "object"):
+        return "Numerical"
+    return ""
+
+
 def generate_cards_from_profile(df, profile_path: str) -> list[dict]:
     """
     Enumerate all valid (breakdown, measure) pairs from profile.json.
@@ -113,7 +133,7 @@ def generate_cards_from_profile(df, profile_path: str) -> list[dict]:
     numerical_cols: list[str] = []
 
     for col_name, info in col_info.items():
-        cls = info.get("data_type_class", "")
+        cls = _effective_data_type_class(col_name, info)
         if col_name not in df.columns:
             continue
         if cls in _CATEGORICAL_CLASSES or cls in _TEMPORAL_CLASSES:

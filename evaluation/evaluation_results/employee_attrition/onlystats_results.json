@@ -1,0 +1,1778 @@
+{
+  "system": "ONLYSTATS",
+  "num_cards": 200,
+  "num_insights": 200,
+  "score_uplift_from_subspace": {
+    "num_with_subspace_scored": 0,
+    "num_without_subspace_scored": 108,
+    "mean_score_with_subspace": null,
+    "mean_score_without_subspace": 0.3026,
+    "score_uplift_abs": null,
+    "score_uplift_ratio": null,
+    "score_uplift_direction": null
+  },
+  "faithfulness": {
+    "faithfulness": 1.0,
+    "verified_count": 200,
+    "total_count": 200,
+    "hallucination_count": 0,
+    "hallucination_rate": 0.0,
+    "_failed_insights": []
+  },
+  "insight_significance": {
+    "avg_effect_size": 0.30256203703703693,
+    "significant_count": 4,
+    "significant_rate": 0.037037037037037035,
+    "pattern_avg_significance": 0.017857142857142856,
+    "max_effect_size": 0.5844,
+    "total_evaluated": 108,
+    "by_pattern": {
+      "TREND": {
+        "significant_count": 0,
+        "total_count": 0,
+        "significant_rate": 0.0,
+        "insights": []
+      },
+      "OUTSTANDING_VALUE": {
+        "significant_count": 0,
+        "total_count": 52,
+        "significant_rate": 0.0,
+        "insights": [
+          {
+            "breakdown": "BusinessTravel",
+            "col": "NumCompaniesWorked",
+            "p_value": 0.079801,
+            "effect_size": 0.5844,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "MonthlyIncome",
+            "p_value": 0.080153,
+            "effect_size": 0.584,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "StockOptionLevel",
+            "p_value": 0.07987,
+            "effect_size": 0.5844,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "JobLevel",
+            "p_value": 0.080279,
+            "effect_size": 0.5839,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "TotalWorkingYears",
+            "p_value": 0.080497,
+            "effect_size": 0.5836,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "HourlyRate",
+            "p_value": 0.080402,
+            "effect_size": 0.5837,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "Age",
+            "p_value": 0.080372,
+            "effect_size": 0.5838,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "DailyRate",
+            "p_value": 0.080292,
+            "effect_size": 0.5839,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "EnvironmentSatisfaction",
+            "p_value": 0.080352,
+            "effect_size": 0.5838,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "Education",
+            "p_value": 0.080393,
+            "effect_size": 0.5838,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "EmployeeNumber",
+            "p_value": 0.08025,
+            "effect_size": 0.5839,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "JobInvolvement",
+            "p_value": 0.080607,
+            "effect_size": 0.5835,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "PercentSalaryHike",
+            "p_value": 0.080349,
+            "effect_size": 0.5838,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "EmployeeCount",
+            "p_value": 0.080466,
+            "effect_size": 0.5837,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "StandardHours",
+            "p_value": 0.080466,
+            "effect_size": 0.5837,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "TrainingTimesLastYear",
+            "p_value": 0.080619,
+            "effect_size": 0.5835,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "MonthlyRate",
+            "p_value": 0.080396,
+            "effect_size": 0.5838,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "PerformanceRating",
+            "p_value": 0.080484,
+            "effect_size": 0.5837,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "WorkLifeBalance",
+            "p_value": 0.080504,
+            "effect_size": 0.5836,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "YearsInCurrentRole",
+            "p_value": 0.080398,
+            "effect_size": 0.5837,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "DistanceFromHome",
+            "p_value": 0.080352,
+            "effect_size": 0.5838,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "JobSatisfaction",
+            "p_value": 0.080614,
+            "effect_size": 0.5835,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "YearsAtCompany",
+            "p_value": 0.080636,
+            "effect_size": 0.5835,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "RelationshipSatisfaction",
+            "p_value": 0.080618,
+            "effect_size": 0.5835,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "YearsWithCurrManager",
+            "p_value": 0.080548,
+            "effect_size": 0.5836,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "YearsSinceLastPromotion",
+            "p_value": 0.080903,
+            "effect_size": 0.5832,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "NumCompaniesWorked",
+            "p_value": 0.096523,
+            "effect_size": 0.5655,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "StockOptionLevel",
+            "p_value": 0.098172,
+            "effect_size": 0.5637,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "EnvironmentSatisfaction",
+            "p_value": 0.098964,
+            "effect_size": 0.5628,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "TotalWorkingYears",
+            "p_value": 0.098922,
+            "effect_size": 0.5629,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "JobInvolvement",
+            "p_value": 0.099369,
+            "effect_size": 0.5624,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "Age",
+            "p_value": 0.099343,
+            "effect_size": 0.5624,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "PercentSalaryHike",
+            "p_value": 0.099654,
+            "effect_size": 0.5621,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "HourlyRate",
+            "p_value": 0.099798,
+            "effect_size": 0.5619,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "DailyRate",
+            "p_value": 0.100091,
+            "effect_size": 0.5616,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "PerformanceRating",
+            "p_value": 0.099793,
+            "effect_size": 0.5619,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "RelationshipSatisfaction",
+            "p_value": 0.099623,
+            "effect_size": 0.5621,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "EmployeeCount",
+            "p_value": 0.100246,
+            "effect_size": 0.5614,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "StandardHours",
+            "p_value": 0.100246,
+            "effect_size": 0.5614,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "JobSatisfaction",
+            "p_value": 0.101019,
+            "effect_size": 0.5606,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "Education",
+            "p_value": 0.100882,
+            "effect_size": 0.5607,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "MonthlyRate",
+            "p_value": 0.101393,
+            "effect_size": 0.5602,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "TrainingTimesLastYear",
+            "p_value": 0.101863,
+            "effect_size": 0.5597,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "DistanceFromHome",
+            "p_value": 0.101972,
+            "effect_size": 0.5595,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "EmployeeNumber",
+            "p_value": 0.10125,
+            "effect_size": 0.5603,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "WorkLifeBalance",
+            "p_value": 0.101951,
+            "effect_size": 0.5596,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "YearsWithCurrManager",
+            "p_value": 0.103629,
+            "effect_size": 0.5577,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "YearsAtCompany",
+            "p_value": 0.103848,
+            "effect_size": 0.5575,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "YearsInCurrentRole",
+            "p_value": 0.106153,
+            "effect_size": 0.555,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "YearsSinceLastPromotion",
+            "p_value": 0.107787,
+            "effect_size": 0.5532,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "MonthlyIncome",
+            "p_value": 0.107052,
+            "effect_size": 0.554,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "JobLevel",
+            "p_value": 0.109646,
+            "effect_size": 0.5513,
+            "significant": "False"
+          }
+        ]
+      },
+      "ATTRIBUTION": {
+        "significant_count": 4,
+        "total_count": 56,
+        "significant_rate": 0.07142857142857142,
+        "insights": [
+          {
+            "breakdown": "BusinessTravel",
+            "col": "NumCompaniesWorked",
+            "p_value": 0.672142,
+            "effect_size": 0.0443,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "MonthlyIncome",
+            "p_value": 0.326244,
+            "effect_size": 0.0559,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "TotalWorkingYears",
+            "p_value": 0.216168,
+            "effect_size": 0.0605,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "JobLevel",
+            "p_value": 0.444065,
+            "effect_size": 0.0518,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "HourlyRate",
+            "p_value": 0.802905,
+            "effect_size": 0.0394,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "Age",
+            "p_value": 0.339987,
+            "effect_size": 0.0554,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "JobInvolvement",
+            "p_value": 0.341932,
+            "effect_size": 0.048,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "TrainingTimesLastYear",
+            "p_value": 0.852888,
+            "effect_size": 0.0371,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "EnvironmentSatisfaction",
+            "p_value": 0.624462,
+            "effect_size": 0.0386,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "Education",
+            "p_value": 0.587116,
+            "effect_size": 0.0472,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "DailyRate",
+            "p_value": 0.09799,
+            "effect_size": 0.0676,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "PerformanceRating",
+            "p_value": 0.587653,
+            "effect_size": 0.0269,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "WorkLifeBalance",
+            "p_value": 0.933126,
+            "effect_size": 0.0251,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "PercentSalaryHike",
+            "p_value": 0.77387,
+            "effect_size": 0.0406,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "EmployeeNumber",
+            "p_value": 0.739374,
+            "effect_size": 0.0419,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "MonthlyRate",
+            "p_value": 0.768515,
+            "effect_size": 0.0408,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "StockOptionLevel",
+            "p_value": 0.909056,
+            "effect_size": 0.0268,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "YearsInCurrentRole",
+            "p_value": 0.882875,
+            "effect_size": 0.0355,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "YearsAtCompany",
+            "p_value": 0.408085,
+            "effect_size": 0.053,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "JobSatisfaction",
+            "p_value": 0.515947,
+            "effect_size": 0.0421,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "RelationshipSatisfaction",
+            "p_value": 0.684531,
+            "effect_size": 0.0366,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "DistanceFromHome",
+            "p_value": 0.480876,
+            "effect_size": 0.0506,
+            "significant": "False"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "YearsWithCurrManager",
+            "p_value": 0.014255,
+            "effect_size": 0.0806,
+            "significant": "True"
+          },
+          {
+            "breakdown": "BusinessTravel",
+            "col": "YearsSinceLastPromotion",
+            "p_value": 0.889868,
+            "effect_size": 0.0351,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "NumCompaniesWorked",
+            "p_value": 0.472662,
+            "effect_size": 0.0509,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "StockOptionLevel",
+            "p_value": 0.63581,
+            "effect_size": 0.0383,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "EnvironmentSatisfaction",
+            "p_value": 0.32684,
+            "effect_size": 0.0486,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "TotalWorkingYears",
+            "p_value": 0.267432,
+            "effect_size": 0.0582,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "DailyRate",
+            "p_value": 0.705074,
+            "effect_size": 0.0432,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "PercentSalaryHike",
+            "p_value": 0.759914,
+            "effect_size": 0.0411,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "JobInvolvement",
+            "p_value": 0.677967,
+            "effect_size": 0.0368,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "HourlyRate",
+            "p_value": 0.379309,
+            "effect_size": 0.054,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "Age",
+            "p_value": 0.890453,
+            "effect_size": 0.035,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "PerformanceRating",
+            "p_value": 0.451686,
+            "effect_size": 0.0329,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "JobSatisfaction",
+            "p_value": 0.201897,
+            "effect_size": 0.0539,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "RelationshipSatisfaction",
+            "p_value": 0.307493,
+            "effect_size": 0.0493,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "MonthlyRate",
+            "p_value": 0.923638,
+            "effect_size": 0.0328,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "TrainingTimesLastYear",
+            "p_value": 0.305878,
+            "effect_size": 0.0567,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "Education",
+            "p_value": 0.936588,
+            "effect_size": 0.0318,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "DistanceFromHome",
+            "p_value": 0.922728,
+            "effect_size": 0.0329,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "YearsWithCurrManager",
+            "p_value": 0.207594,
+            "effect_size": 0.0609,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "WorkLifeBalance",
+            "p_value": 0.05159,
+            "effect_size": 0.0652,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "YearsInCurrentRole",
+            "p_value": 0.274116,
+            "effect_size": 0.0579,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "EmployeeNumber",
+            "p_value": 0.049113,
+            "effect_size": 0.0728,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Department",
+            "col": "YearsAtCompany",
+            "p_value": 0.652327,
+            "effect_size": 0.045,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "YearsSinceLastPromotion",
+            "p_value": 0.608822,
+            "effect_size": 0.0465,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Department",
+            "col": "MonthlyIncome",
+            "p_value": 0.0,
+            "effect_size": 0.1808,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Department",
+            "col": "JobLevel",
+            "p_value": 0.0,
+            "effect_size": 0.2185,
+            "significant": "True"
+          },
+          {
+            "breakdown": "Gender",
+            "col": "DistanceFromHome",
+            "p_value": 0.45509,
+            "effect_size": 0.0498,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Gender",
+            "col": "Education",
+            "p_value": 0.545698,
+            "effect_size": 0.0457,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Gender",
+            "col": "DailyRate",
+            "p_value": 0.232221,
+            "effect_size": 0.0616,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Gender",
+            "col": "Age",
+            "p_value": 0.470119,
+            "effect_size": 0.0492,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Gender",
+            "col": "Age",
+            "p_value": 0.470119,
+            "effect_size": 0.0492,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Gender",
+            "col": "DailyRate",
+            "p_value": 0.232221,
+            "effect_size": 0.0616,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Gender",
+            "col": "Education",
+            "p_value": 0.545698,
+            "effect_size": 0.0457,
+            "significant": "False"
+          },
+          {
+            "breakdown": "Gender",
+            "col": "DistanceFromHome",
+            "p_value": 0.45509,
+            "effect_size": 0.0498,
+            "significant": "False"
+          }
+        ]
+      },
+      "DISTRIBUTION_DIFFERENCE": {
+        "significant_count": 0,
+        "total_count": 0,
+        "significant_rate": 0.0,
+        "insights": []
+      }
+    }
+  },
+  "question_diversity": {
+    "semantic_diversity": 0.45119625329971313,
+    "avg_similarity": 0.5488037467002869,
+    "num_insights": 200,
+    "subspace_diversity": null,
+    "value_diversity": null,
+    "dedup_rate": 0.0,
+    "unique_count": 200,
+    "total_count": 200,
+    "duplicate_count": 0
+  },
+  "bm_quality": {
+    "nmi_mean": NaN,
+    "int_mean": 0.0054,
+    "actionability": 0.5357,
+    "bm_diversity": 0.56,
+    "total_evaluated": 112,
+    "total_categorical": 60,
+    "total_insights": 200,
+    "pairs": [
+      {
+        "breakdown": "Attrition",
+        "col": "StockOptionLevel",
+        "agg": "sum",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "YearsInCurrentRole",
+        "agg": "sum",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "YearsWithCurrManager",
+        "agg": "sum",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "TotalWorkingYears",
+        "agg": "sum",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "YearsAtCompany",
+        "agg": "sum",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "MonthlyIncome",
+        "agg": "sum",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "JobLevel",
+        "agg": "sum",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "YearsSinceLastPromotion",
+        "agg": "sum",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "JobSatisfaction",
+        "agg": "sum",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "EnvironmentSatisfaction",
+        "agg": "sum",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "Age",
+        "agg": "sum",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "JobInvolvement",
+        "agg": "sum",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "DailyRate",
+        "agg": "sum",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "TrainingTimesLastYear",
+        "agg": "sum",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "RelationshipSatisfaction",
+        "agg": "sum",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "WorkLifeBalance",
+        "agg": "sum",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "Education",
+        "agg": "sum",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "EmployeeNumber",
+        "agg": "sum",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "PercentSalaryHike",
+        "agg": "sum",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "HourlyRate",
+        "agg": "sum",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "EmployeeCount",
+        "agg": "sum",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "StandardHours",
+        "agg": "sum",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "PerformanceRating",
+        "agg": "sum",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "MonthlyRate",
+        "agg": "sum",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "NumCompaniesWorked",
+        "agg": "sum",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "DistanceFromHome",
+        "agg": "sum",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "BusinessTravel",
+        "col": "NumCompaniesWorked",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0037,
+        "interestingness": 0.0016
+      },
+      {
+        "breakdown": "BusinessTravel",
+        "col": "MonthlyIncome",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0183,
+        "interestingness": 0.0015
+      },
+      {
+        "breakdown": "BusinessTravel",
+        "col": "StockOptionLevel",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0007,
+        "interestingness": 0.001
+      },
+      {
+        "breakdown": "BusinessTravel",
+        "col": "JobLevel",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0026,
+        "interestingness": 0.0006
+      },
+      {
+        "breakdown": "BusinessTravel",
+        "col": "TotalWorkingYears",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0184,
+        "interestingness": 0.0012
+      },
+      {
+        "breakdown": "BusinessTravel",
+        "col": "HourlyRate",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0153,
+        "interestingness": 0.0008
+      },
+      {
+        "breakdown": "BusinessTravel",
+        "col": "Age",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0153,
+        "interestingness": 0.0009
+      },
+      {
+        "breakdown": "BusinessTravel",
+        "col": "DailyRate",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0145,
+        "interestingness": 0.0002
+      },
+      {
+        "breakdown": "BusinessTravel",
+        "col": "EnvironmentSatisfaction",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0014,
+        "interestingness": 0.0002
+      },
+      {
+        "breakdown": "BusinessTravel",
+        "col": "Education",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0021,
+        "interestingness": 0.0001
+      },
+      {
+        "breakdown": "BusinessTravel",
+        "col": "EmployeeNumber",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0132,
+        "interestingness": 0.0005
+      },
+      {
+        "breakdown": "BusinessTravel",
+        "col": "JobInvolvement",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0022,
+        "interestingness": 0.0021
+      },
+      {
+        "breakdown": "BusinessTravel",
+        "col": "PercentSalaryHike",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0114,
+        "interestingness": 0.0013
+      },
+      {
+        "breakdown": "BusinessTravel",
+        "col": "EmployeeCount",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": NaN,
+        "interestingness": 0.0
+      },
+      {
+        "breakdown": "BusinessTravel",
+        "col": "StandardHours",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": NaN,
+        "interestingness": 0.0
+      },
+      {
+        "breakdown": "BusinessTravel",
+        "col": "TrainingTimesLastYear",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0021,
+        "interestingness": 0.0004
+      },
+      {
+        "breakdown": "BusinessTravel",
+        "col": "MonthlyRate",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.016,
+        "interestingness": 0.0002
+      },
+      {
+        "breakdown": "BusinessTravel",
+        "col": "PerformanceRating",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0006,
+        "interestingness": 0.0007
+      },
+      {
+        "breakdown": "BusinessTravel",
+        "col": "WorkLifeBalance",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0007,
+        "interestingness": 0.0002
+      },
+      {
+        "breakdown": "BusinessTravel",
+        "col": "YearsInCurrentRole",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.008,
+        "interestingness": 0.0001
+      },
+      {
+        "breakdown": "BusinessTravel",
+        "col": "DistanceFromHome",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0122,
+        "interestingness": 0.0006
+      },
+      {
+        "breakdown": "BusinessTravel",
+        "col": "JobSatisfaction",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0017,
+        "interestingness": 0.0013
+      },
+      {
+        "breakdown": "BusinessTravel",
+        "col": "YearsAtCompany",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0183,
+        "interestingness": 0.0003
+      },
+      {
+        "breakdown": "BusinessTravel",
+        "col": "RelationshipSatisfaction",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0013,
+        "interestingness": 0.0015
+      },
+      {
+        "breakdown": "BusinessTravel",
+        "col": "YearsWithCurrManager",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0118,
+        "interestingness": 0.0005
+      },
+      {
+        "breakdown": "BusinessTravel",
+        "col": "YearsSinceLastPromotion",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0082,
+        "interestingness": 0.0012
+      },
+      {
+        "breakdown": "Department",
+        "col": "NumCompaniesWorked",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0059,
+        "interestingness": 0.0013
+      },
+      {
+        "breakdown": "Department",
+        "col": "StockOptionLevel",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0017,
+        "interestingness": 0.0003
+      },
+      {
+        "breakdown": "Department",
+        "col": "EnvironmentSatisfaction",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0023,
+        "interestingness": 0.0008
+      },
+      {
+        "breakdown": "Department",
+        "col": "TotalWorkingYears",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0125,
+        "interestingness": 0.0002
+      },
+      {
+        "breakdown": "Department",
+        "col": "JobInvolvement",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0015,
+        "interestingness": 0.0007
+      },
+      {
+        "breakdown": "Department",
+        "col": "Age",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0187,
+        "interestingness": 0.001
+      },
+      {
+        "breakdown": "Department",
+        "col": "PercentSalaryHike",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.009,
+        "interestingness": 0.0013
+      },
+      {
+        "breakdown": "Department",
+        "col": "HourlyRate",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0185,
+        "interestingness": 0.0005
+      },
+      {
+        "breakdown": "Department",
+        "col": "DailyRate",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.016,
+        "interestingness": 0.0008
+      },
+      {
+        "breakdown": "Department",
+        "col": "PerformanceRating",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.001,
+        "interestingness": 0.0011
+      },
+      {
+        "breakdown": "Department",
+        "col": "RelationshipSatisfaction",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0024,
+        "interestingness": 0.0012
+      },
+      {
+        "breakdown": "Department",
+        "col": "EmployeeCount",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": NaN,
+        "interestingness": 0.0
+      },
+      {
+        "breakdown": "Department",
+        "col": "StandardHours",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": NaN,
+        "interestingness": 0.0
+      },
+      {
+        "breakdown": "Department",
+        "col": "JobSatisfaction",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0026,
+        "interestingness": 0.0007
+      },
+      {
+        "breakdown": "Department",
+        "col": "Education",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.001,
+        "interestingness": 0.0004
+      },
+      {
+        "breakdown": "Department",
+        "col": "MonthlyRate",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0131,
+        "interestingness": 0.0008
+      },
+      {
+        "breakdown": "Department",
+        "col": "TrainingTimesLastYear",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0037,
+        "interestingness": 0.002
+      },
+      {
+        "breakdown": "Department",
+        "col": "DistanceFromHome",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0159,
+        "interestingness": 0.0003
+      },
+      {
+        "breakdown": "Department",
+        "col": "EmployeeNumber",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0163,
+        "interestingness": 0.0046
+      },
+      {
+        "breakdown": "Department",
+        "col": "WorkLifeBalance",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0051,
+        "interestingness": 0.0057
+      },
+      {
+        "breakdown": "Department",
+        "col": "YearsWithCurrManager",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.008,
+        "interestingness": 0.0013
+      },
+      {
+        "breakdown": "Department",
+        "col": "YearsAtCompany",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0117,
+        "interestingness": 0.001
+      },
+      {
+        "breakdown": "Department",
+        "col": "YearsInCurrentRole",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0107,
+        "interestingness": 0.0034
+      },
+      {
+        "breakdown": "Department",
+        "col": "YearsSinceLastPromotion",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0067,
+        "interestingness": 0.0017
+      },
+      {
+        "breakdown": "Department",
+        "col": "MonthlyIncome",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0476,
+        "interestingness": 0.0043
+      },
+      {
+        "breakdown": "Department",
+        "col": "JobLevel",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0487,
+        "interestingness": 0.0132
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "StockOptionLevel",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "YearsInCurrentRole",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "YearsWithCurrManager",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Gender",
+        "col": "DistanceFromHome",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0103,
+        "interestingness": 0.0038
+      },
+      {
+        "breakdown": "Gender",
+        "col": "Education",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0011,
+        "interestingness": 0.0327
+      },
+      {
+        "breakdown": "Gender",
+        "col": "DailyRate",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0085,
+        "interestingness": 0.0233
+      },
+      {
+        "breakdown": "Gender",
+        "col": "Age",
+        "agg": "sum",
+        "categorical_b": true,
+        "nmi": 0.0114,
+        "interestingness": 0.069
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "TotalWorkingYears",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "YearsAtCompany",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "MonthlyIncome",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "JobLevel",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "DistanceFromHome",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "YearsSinceLastPromotion",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "JobSatisfaction",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "EnvironmentSatisfaction",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "Age",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "NumCompaniesWorked",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "JobInvolvement",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "DailyRate",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "TrainingTimesLastYear",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "RelationshipSatisfaction",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "WorkLifeBalance",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "Education",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "MonthlyRate",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Gender",
+        "col": "Age",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.0114,
+        "interestingness": 0.069
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "EmployeeNumber",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Gender",
+        "col": "DailyRate",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.0085,
+        "interestingness": 0.0233
+      },
+      {
+        "breakdown": "Gender",
+        "col": "Education",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.0011,
+        "interestingness": 0.0327
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "PercentSalaryHike",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "HourlyRate",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Gender",
+        "col": "DistanceFromHome",
+        "agg": "mean",
+        "categorical_b": true,
+        "nmi": 0.0103,
+        "interestingness": 0.0038
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "PerformanceRating",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "EmployeeCount",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      },
+      {
+        "breakdown": "Attrition",
+        "col": "StandardHours",
+        "agg": "mean",
+        "categorical_b": false,
+        "nmi": null,
+        "interestingness": null
+      }
+    ]
+  },
+  "question_quality": {
+    "question_diversity": {
+      "question_diversity": 0.48650801181793213,
+      "avg_similarity": 0.5134919881820679,
+      "num_questions": 200
+    },
+    "question_specificity": {
+      "question_specificity_mean": 6.0,
+      "question_specificity_std": 0.0,
+      "num_questions": 200
+    },
+    "question_insight_alignment": {
+      "question_insight_alignment": 0.7779089212417603,
+      "question_insight_alignment_std": 0.031810127198696136,
+      "num_pairs": 200
+    },
+    "reason_insight_coherence": {
+      "reason_insight_coherence": null,
+      "num_pairs": 0
+    },
+    "question_novelty": {
+      "question_novelty": null,
+      "novel_count": 0,
+      "total_count": 0,
+      "tau": 0.85,
+      "compared_against": "QUIS"
+    }
+  },
+  "time_to_insight": null,
+  "token_usage": null,
+  "insight_novelty": {
+    "novelty": 0.775,
+    "novel_count": 155,
+    "total_count": 200,
+    "avg_max_similarity": 0.794766366481781,
+    "tau": 0.85,
+    "compared_against": "QUIS"
+  },
+  "subspace_metrics": {
+    "total_with_subspace": 0,
+    "total_original": 0,
+    "faithfulness": null,
+    "significance": null,
+    "novelty": null,
+    "diversity": null
+  }
+}

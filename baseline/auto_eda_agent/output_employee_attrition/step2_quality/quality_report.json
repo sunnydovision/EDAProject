@@ -1,0 +1,79 @@
+{
+  "metrics": {
+    "missing_values": {},
+    "outliers": {
+      "MonthlyIncome": {
+        "count": 114,
+        "percentage": 7.755102040816326,
+        "lower_bound": -5291.0,
+        "upper_bound": 16581.0
+      },
+      "NumCompaniesWorked": {
+        "count": 52,
+        "percentage": 3.537414965986395,
+        "lower_bound": -3.5,
+        "upper_bound": 8.5
+      },
+      "PerformanceRating": {
+        "count": 226,
+        "percentage": 15.374149659863946,
+        "lower_bound": 3.0,
+        "upper_bound": 3.0
+      },
+      "StockOptionLevel": {
+        "count": 85,
+        "percentage": 5.782312925170068,
+        "lower_bound": -1.5,
+        "upper_bound": 2.5
+      },
+      "TotalWorkingYears": {
+        "count": 63,
+        "percentage": 4.285714285714286,
+        "lower_bound": -7.5,
+        "upper_bound": 28.5
+      },
+      "TrainingTimesLastYear": {
+        "count": 238,
+        "percentage": 16.19047619047619,
+        "lower_bound": 0.5,
+        "upper_bound": 4.5
+      },
+      "YearsAtCompany": {
+        "count": 104,
+        "percentage": 7.07482993197279,
+        "lower_bound": -6.0,
+        "upper_bound": 18.0
+      },
+      "YearsInCurrentRole": {
+        "count": 21,
+        "percentage": 1.4285714285714286,
+        "lower_bound": -5.5,
+        "upper_bound": 14.5
+      },
+      "YearsSinceLastPromotion": {
+        "count": 107,
+        "percentage": 7.278911564625851,
+        "lower_bound": -4.5,
+        "upper_bound": 7.5
+      },
+      "YearsWithCurrManager": {
+        "count": 14,
+        "percentage": 0.9523809523809524,
+        "lower_bound": -5.5,
+        "upper_bound": 14.5
+      }
+    },
+    "duplicates": 0,
+    "total_issues": 10
+  },
+  "assessment": {
+    "critical_issues": [],
+    "overall_quality_score": 50,
+    "priority_actions": []
+  },
+  "summary": {
+    "total_issues": 10,
+    "critical_issues": 0,
+    "data_quality_score": 50
+  }
+}

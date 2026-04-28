@@ -1,0 +1,9 @@
+{
+  "total_time": 1526.4329717080002,
+  "step_times": {
+    "qugen": 1526.1620723330002,
+    "isgen": 0.27089937499999905
+  },
+  "insights_generated": 0,
+  "throughput": 0.0
+}

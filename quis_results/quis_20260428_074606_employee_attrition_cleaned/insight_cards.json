@@ -1,0 +1,8 @@
+[
+  {
+    "question": "Tỷ lệ giao dịch có giao hàng trễ hoặc khiếu nại theo từng tỉnh/thành phố?",
+    "reason": "Tỷ lệ giao hàng trễ và khiếu nại phản ánh chất lượng dịch vụ.",
+    "breakdown": "Tỉnh / Thành Phố_x",
+    "measure": "COUNT(*)"
+  }
+]

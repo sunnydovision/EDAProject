@@ -1,0 +1,4424 @@
+[
+  {
+    "question": "Which job roles receive the highest average monthly income?",
+    "explanation": "Outstanding value: for Department=Human Resources, one category in JobRole has a value much larger (or smaller) than the others when measuring MEAN(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobRole",
+      "measure": "MEAN(MonthlyIncome)",
+      "subspace": [
+        [
+          "Department",
+          "Human Resources"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 4.270468361833528,
+      "question": "Which job roles receive the highest average monthly income?",
+      "reason": "Income differences across job roles are fundamental for understanding compensation structure and identifying roles that may be underpaid or highly rewarded. Comparing average monthly income by job role can reveal strong pay disparities and possible outliers in the compensation framework.",
+      "view_labels": [
+        "Human Resources",
+        "Manager"
+      ],
+      "view_values": [
+        4235.75,
+        18088.636363636364
+      ]
+    }
+  },
+  {
+    "question": "Is there a difference in average job satisfaction between genders?",
+    "explanation": "Outstanding value: for DailyRate=167, one category in Gender has a value much larger (or smaller) than the others when measuring MEAN(JobSatisfaction).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Gender",
+      "measure": "MEAN(JobSatisfaction)",
+      "subspace": [
+        [
+          "DailyRate",
+          167
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 4.0,
+      "question": "Is there a difference in average job satisfaction between genders?",
+      "reason": "Job satisfaction is closely related to retention and engagement, and differences by gender may reveal equity or role experience issues. Using Gender as the breakdown and MEAN(JobSatisfaction) as the measure enables comparison of employee sentiment across demographic groups.",
+      "view_labels": [
+        "Female",
+        "Male"
+      ],
+      "view_values": [
+        1.0,
+        4.0
+      ]
+    }
+  },
+  {
+    "question": "How does average job satisfaction differ by business travel frequency?",
+    "explanation": "Outstanding value: for DailyRate=1018, one category in BusinessTravel has a value much larger (or smaller) than the others when measuring MEAN(JobSatisfaction).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "MEAN(JobSatisfaction)",
+      "subspace": [
+        [
+          "DailyRate",
+          1018
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 4.0,
+      "question": "How does average job satisfaction differ by business travel frequency?",
+      "reason": "Satisfaction with one’s job can vary by travel burden, since frequent travel may affect stress, flexibility, and work-life balance. Comparing average job satisfaction across business travel categories can reveal whether travel expectations are associated with lower or higher employee sentiment.",
+      "view_labels": [
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        1.0,
+        4.0
+      ]
+    }
+  },
+  {
+    "question": "In which job roles do employees wait the longest for promotion?",
+    "explanation": "Outstanding value: for EducationField=Human Resources, one category in JobRole has a value much larger (or smaller) than the others when measuring MEAN(YearsSinceLastPromotion).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobRole",
+      "measure": "MEAN(YearsSinceLastPromotion)",
+      "subspace": [
+        [
+          "EducationField",
+          "Human Resources"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 3.195652173913043,
+      "question": "In which job roles do employees wait the longest for promotion?",
+      "reason": "Promotions are a strong indicator of career growth. Comparing the average years since last promotion across job roles can reveal roles where advancement is slower, which may indicate bottlenecks or potential dissatisfaction risks.",
+      "view_labels": [
+        "Human Resources",
+        "Manager"
+      ],
+      "view_values": [
+        1.0952380952380953,
+        3.5
+      ]
+    }
+  },
+  {
+    "question": "How is the workforce distributed across departments?",
+    "explanation": "Outstanding value: for EducationField=Life Sciences, one category in Department has a value much larger (or smaller) than the others when measuring COUNT(EmployeeNumber).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "COUNT(EmployeeNumber)",
+      "subspace": [
+        [
+          "EducationField",
+          "Life Sciences"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 2.933333333333333,
+      "question": "How is the workforce distributed across departments?",
+      "reason": "Employee volume across departments is useful for understanding workforce concentration and organizational structure. Comparing counts of employees by department can reveal dominant business functions and provide context for interpreting other patterns such as attrition, pay, or overtime differences.",
+      "view_labels": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        16.0,
+        440.0,
+        150.0
+      ]
+    }
+  },
+  {
+    "question": "In which job roles do employees wait the longest for promotion?",
+    "explanation": "Outstanding value: for Attrition=True, one category in JobRole has a value much larger (or smaller) than the others when measuring MEAN(YearsSinceLastPromotion).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobRole",
+      "measure": "MEAN(YearsSinceLastPromotion)",
+      "subspace": [
+        [
+          "Attrition",
+          true
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 2.916666666666667,
+      "question": "In which job roles do employees wait the longest for promotion?",
+      "reason": "Promotions are a strong indicator of career growth. Comparing the average years since last promotion across job roles can reveal roles where advancement is slower, which may indicate bottlenecks or potential dissatisfaction risks.",
+      "view_labels": [
+        "Healthcare Representative",
+        "Human Resources",
+        "Laboratory Technician",
+        "Manager",
+        "Manufacturing Director",
+        "Research Director",
+        "Research Scientist",
+        "Sales Executive",
+        "Sales Representative"
+      ],
+      "view_values": [
+        4.111111111111111,
+        0.8333333333333334,
+        1.0161290322580645,
+        4.8,
+        1.7,
+        14.0,
+        1.851063829787234,
+        3.0701754385964914,
+        0.6060606060606061
+      ]
+    }
+  },
+  {
+    "question": "How is the workforce distributed across departments?",
+    "explanation": "Outstanding value: for Age=43, one category in Department has a value much larger (or smaller) than the others when measuring COUNT(EmployeeNumber).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "COUNT(EmployeeNumber)",
+      "subspace": [
+        [
+          "Age",
+          43
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 2.875,
+      "question": "How is the workforce distributed across departments?",
+      "reason": "Employee volume across departments is useful for understanding workforce concentration and organizational structure. Comparing counts of employees by department can reveal dominant business functions and provide context for interpreting other patterns such as attrition, pay, or overtime differences.",
+      "view_labels": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        1.0,
+        23.0,
+        8.0
+      ]
+    }
+  },
+  {
+    "question": "Which education fields are associated with employees having worked at more companies?",
+    "explanation": "Outstanding value: for JobLevel=3, one category in EducationField has a value much larger (or smaller) than the others when measuring MEAN(NumCompaniesWorked).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "EducationField",
+      "measure": "MEAN(NumCompaniesWorked)",
+      "subspace": [
+        [
+          "JobLevel",
+          3
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 2.835,
+      "question": "Which education fields are associated with employees having worked at more companies?",
+      "reason": "Career stability often varies by educational background. Comparing average number of companies worked across education fields can uncover whether employees from certain fields tend to switch employers more frequently, signaling different career mobility patterns.",
+      "view_labels": [
+        "Human Resources",
+        "Life Sciences",
+        "Marketing",
+        "Medical",
+        "Other",
+        "Technical Degree"
+      ],
+      "view_values": [
+        9.0,
+        3.1494252873563218,
+        2.3125,
+        3.1746031746031744,
+        2.727272727272727,
+        2.4583333333333335
+      ]
+    }
+  },
+  {
+    "question": "How does average stock option level differ between employees who left and those who stayed?",
+    "explanation": "Outstanding value: for DistanceFromHome=18, one category in Attrition has a value much larger (or smaller) than the others when measuring MEAN(StockOptionLevel).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(StockOptionLevel)",
+      "subspace": [
+        [
+          "DistanceFromHome",
+          18
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 2.727272727272727,
+      "question": "How does average stock option level differ between employees who left and those who stayed?",
+      "reason": "Stock options are often used to support retention and reward commitment, so differences by attrition status can be highly informative. Comparing average stock option level between employees who left and those who stayed can reveal whether equity-related incentives are associated with lower turnover.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        0.6818181818181818,
+        0.25
+      ]
+    }
+  },
+  {
+    "question": "Do employees who work overtime differ in average tenure at the company compared with those who do not?",
+    "explanation": "Outstanding value: for HourlyRate=69, one category in OverTime has a value much larger (or smaller) than the others when measuring MEAN(YearsAtCompany).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "OverTime",
+      "measure": "MEAN(YearsAtCompany)",
+      "subspace": [
+        [
+          "HourlyRate",
+          69
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 2.6666666666666665,
+      "question": "Do employees who work overtime differ in average tenure at the company compared with those who do not?",
+      "reason": "Overtime can be a strong signal of workload pressure and potential burnout. Comparing average years at company across overtime groups can show whether employees working overtime tend to be newer hires or longer-tenured staff, helping uncover retention or workload patterns.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        7.111111111111111,
+        2.6666666666666665
+      ]
+    }
+  },
+  {
+    "question": "How does total working experience vary across job levels?",
+    "explanation": "Outstanding value: for JobRole=Laboratory Technician, one category in JobLevel has a value much larger (or smaller) than the others when measuring MEAN(TotalWorkingYears).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobLevel",
+      "measure": "MEAN(TotalWorkingYears)",
+      "subspace": [
+        [
+          "JobRole",
+          "Laboratory Technician"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 2.17921146953405,
+      "question": "How does total working experience vary across job levels?",
+      "reason": "Job level typically reflects seniority and responsibility. Analyzing total working years across job levels helps assess whether career progression aligns with experience, and can expose anomalies where certain levels appear over- or under-experienced.",
+      "view_labels": [
+        "1",
+        "2",
+        "3"
+      ],
+      "view_values": [
+        6.28,
+        11.625,
+        25.333333333333332
+      ]
+    }
+  },
+  {
+    "question": "How is the employee population distributed across departments?",
+    "explanation": "Outstanding value: for overall data, one category in Department has a value much larger (or smaller) than the others when measuring COUNT(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "COUNT(EmployeeCount)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 2.1547085201793723,
+      "question": "How is the employee population distributed across departments?",
+      "reason": "EmployeeCount is constant at 1 for every row, so using COUNT(EmployeeCount) effectively measures headcount. Comparing headcount across departments helps understand workforce distribution and can contextualize other findings such as attrition or satisfaction differences.",
+      "view_labels": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        63.0,
+        961.0,
+        446.0
+      ]
+    }
+  },
+  {
+    "question": "How does average environment satisfaction vary across departments?",
+    "explanation": "Outstanding value: for MonthlyIncome=5993, one category in Department has a value much larger (or smaller) than the others when measuring MEAN(EnvironmentSatisfaction).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "MEAN(EnvironmentSatisfaction)",
+      "subspace": [
+        [
+          "MonthlyIncome",
+          5993
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 2.0,
+      "question": "How does average environment satisfaction vary across departments?",
+      "reason": "Department-level differences in employee satisfaction can point to cultural or managerial issues. Using Department as the breakdown and MEAN(EnvironmentSatisfaction) as the measure helps identify whether workplace conditions are perceived differently across departments.",
+      "view_labels": [
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        1.0,
+        2.0
+      ]
+    }
+  },
+  {
+    "question": "Do employees with different marital statuses live at different average distances from work?",
+    "explanation": "Outstanding value: for DailyRate=266, one category in MaritalStatus has a value much larger (or smaller) than the others when measuring MEAN(DistanceFromHome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "MaritalStatus",
+      "measure": "MEAN(DistanceFromHome)",
+      "subspace": [
+        [
+          "DailyRate",
+          266
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 2.0,
+      "question": "Do employees with different marital statuses live at different average distances from work?",
+      "reason": "Commute patterns may vary by marital status due to housing choices, family obligations, or life-stage differences. Comparing average distance from home across marital groups can help uncover whether certain groups consistently face longer commutes, which may also relate to satisfaction or attrition patterns.",
+      "view_labels": [
+        "Married",
+        "Single"
+      ],
+      "view_values": [
+        2.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "question": "Do employees who leave tend to live farther from work than those who stay?",
+    "explanation": "Outstanding value: for JobRole=Healthcare Representative, one category in Attrition has a value much larger (or smaller) than the others when measuring MEAN(DistanceFromHome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(DistanceFromHome)",
+      "subspace": [
+        [
+          "JobRole",
+          "Healthcare Representative"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.919263876521223,
+      "question": "Do employees who leave tend to live farther from work than those who stay?",
+      "reason": "Commute burden can influence employee experience and turnover. Comparing average distance from home across attrition groups helps determine whether employees who leave tend to live farther away, pointing to a possible relationship between commuting difficulty and resignations.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        9.204918032786885,
+        17.666666666666668
+      ]
+    }
+  },
+  {
+    "question": "Do employees who leave tend to live farther from work than those who stay?",
+    "explanation": "Outstanding value: for YearsSinceLastPromotion=15, one category in Attrition has a value much larger (or smaller) than the others when measuring MEAN(DistanceFromHome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(DistanceFromHome)",
+      "subspace": [
+        [
+          "YearsSinceLastPromotion",
+          15
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.8888888888888888,
+      "question": "Do employees who leave tend to live farther from work than those who stay?",
+      "reason": "Commute burden can influence employee experience and turnover. Comparing average distance from home across attrition groups helps determine whether employees who leave tend to live farther away, pointing to a possible relationship between commuting difficulty and resignations.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        9.0,
+        17.0
+      ]
+    }
+  },
+  {
+    "question": "Do departments differ in the average number of companies employees have worked at previously?",
+    "explanation": "Outstanding value: for BusinessTravel=Non-Travel, one category in Department has a value much larger (or smaller) than the others when measuring MEAN(NumCompaniesWorked).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "MEAN(NumCompaniesWorked)",
+      "subspace": [
+        [
+          "BusinessTravel",
+          "Non-Travel"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.7537313432835822,
+      "question": "Do departments differ in the average number of companies employees have worked at previously?",
+      "reason": "Career mobility may differ substantially between departments. Comparing the average number of companies worked before joining across departments can reveal whether some functions attract more externally experienced employees, which may indicate different hiring strategies or talent market dynamics.",
+      "view_labels": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        5.0,
+        2.5051546391752577,
+        2.851063829787234
+      ]
+    }
+  },
+  {
+    "question": "Which departments show the longest time since employees were last promoted?",
+    "explanation": "Outstanding value: for PercentSalaryHike=20, one category in Department has a value much larger (or smaller) than the others when measuring MEAN(YearsSinceLastPromotion).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "MEAN(YearsSinceLastPromotion)",
+      "subspace": [
+        [
+          "PercentSalaryHike",
+          20
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.6753246753246753,
+      "question": "Which departments show the longest time since employees were last promoted?",
+      "reason": "Promotion stagnation can be an important signal of career bottlenecks. Comparing years since last promotion across departments can reveal structural differences in advancement opportunities and highlight departments where employees may be experiencing slower career growth.",
+      "view_labels": [
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        1.7906976744186047,
+        3.0
+      ]
+    }
+  },
+  {
+    "question": "Is job involvement associated with the amount of training employees receive?",
+    "explanation": "Outstanding value: for YearsAtCompany=18, one category in JobInvolvement has a value much larger (or smaller) than the others when measuring MEAN(TrainingTimesLastYear).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobInvolvement",
+      "measure": "MEAN(TrainingTimesLastYear)",
+      "subspace": [
+        [
+          "YearsAtCompany",
+          18
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.6666666666666667,
+      "question": "Is job involvement associated with the amount of training employees receive?",
+      "reason": "Training exposure can influence employee development and engagement. Comparing average training times last year across job involvement levels can show whether more involved employees receive more learning opportunities or whether disengaged groups are being underserved.",
+      "view_labels": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "view_values": [
+        3.0,
+        3.0,
+        2.5,
+        5.0
+      ]
+    }
+  },
+  {
+    "question": "How does average monthly rate differ across departments?",
+    "explanation": "Outstanding value: for DistanceFromHome=29, one category in Department has a value much larger (or smaller) than the others when measuring MEAN(MonthlyRate).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "MEAN(MonthlyRate)",
+      "subspace": [
+        [
+          "DistanceFromHome",
+          29
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.6660914675873282,
+      "question": "How does average monthly rate differ across departments?",
+      "reason": "Monthly rate differences across departments can reveal how compensation-related billing or salary components vary structurally by function. Using Department as the breakdown and MonthlyRate as the measure can surface departmental disparities and potential anomalies in pay-related patterns.",
+      "view_labels": [
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        10229.105263157895,
+        17042.625
+      ]
+    }
+  },
+  {
+    "question": "Do departments differ in the average number of companies employees have worked at previously?",
+    "explanation": "Outstanding value: for Age=28, one category in Department has a value much larger (or smaller) than the others when measuring MEAN(NumCompaniesWorked).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "MEAN(NumCompaniesWorked)",
+      "subspace": [
+        [
+          "Age",
+          28
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.638655462184874,
+      "question": "Do departments differ in the average number of companies employees have worked at previously?",
+      "reason": "Career mobility may differ substantially between departments. Comparing the average number of companies worked before joining across departments can reveal whether some functions attract more externally experienced employees, which may indicate different hiring strategies or talent market dynamics.",
+      "view_labels": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        1.0,
+        1.911764705882353,
+        1.1666666666666667
+      ]
+    }
+  },
+  {
+    "question": "Which education fields are associated with the highest average total working years?",
+    "explanation": "Outstanding value: for Education=4, one category in EducationField has a value much larger (or smaller) than the others when measuring MEAN(TotalWorkingYears).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "EducationField",
+      "measure": "MEAN(TotalWorkingYears)",
+      "subspace": [
+        [
+          "Education",
+          4
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.611808118081181,
+      "question": "Which education fields are associated with the highest average total working years?",
+      "reason": "Education background can shape career paths and accumulated experience. Comparing average total working years across education fields can reveal whether some fields are associated with more experienced employees, which may indicate differences in hiring patterns or career trajectories.",
+      "view_labels": [
+        "Human Resources",
+        "Life Sciences",
+        "Marketing",
+        "Medical",
+        "Other",
+        "Technical Degree"
+      ],
+      "view_values": [
+        21.0,
+        12.38150289017341,
+        11.73076923076923,
+        13.028846153846153,
+        11.212121212121213,
+        11.838709677419354
+      ]
+    }
+  },
+  {
+    "question": "Do employees who work overtime differ in average tenure at the company compared with those who do not?",
+    "explanation": "Outstanding value: for YearsSinceLastPromotion=12, one category in OverTime has a value much larger (or smaller) than the others when measuring MEAN(YearsAtCompany).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "OverTime",
+      "measure": "MEAN(YearsAtCompany)",
+      "subspace": [
+        [
+          "YearsSinceLastPromotion",
+          12
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.607142857142857,
+      "question": "Do employees who work overtime differ in average tenure at the company compared with those who do not?",
+      "reason": "Overtime can be a strong signal of workload pressure and potential burnout. Comparing average years at company across overtime groups can show whether employees working overtime tend to be newer hires or longer-tenured staff, helping uncover retention or workload patterns.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        18.666666666666668,
+        30.0
+      ]
+    }
+  },
+  {
+    "question": "Which job roles tend to have employees staying longer in their current role?",
+    "explanation": "Outstanding value: for TotalWorkingYears=1, one category in JobRole has a value much larger (or smaller) than the others when measuring MEAN(YearsInCurrentRole).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobRole",
+      "measure": "MEAN(YearsInCurrentRole)",
+      "subspace": [
+        [
+          "TotalWorkingYears",
+          1
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.6,
+      "question": "Which job roles tend to have employees staying longer in their current role?",
+      "reason": "Tenure in role can vary significantly by job function and may indicate either stability or stagnation. Comparing average years in current role across job roles helps identify which roles have longer role occupancy and which may experience faster rotation or advancement.",
+      "view_labels": [
+        "Human Resources",
+        "Laboratory Technician",
+        "Research Scientist",
+        "Sales Representative"
+      ],
+      "view_values": [
+        0.0,
+        0.125,
+        0.2,
+        0.05
+      ]
+    }
+  },
+  {
+    "question": "How do average education levels differ across departments?",
+    "explanation": "Outstanding value: for NumCompaniesWorked=7, one category in Department has a value much larger (or smaller) than the others when measuring MEAN(Education).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "MEAN(Education)",
+      "subspace": [
+        [
+          "NumCompaniesWorked",
+          7
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.5662650602409638,
+      "question": "How do average education levels differ across departments?",
+      "reason": "Educational attainment may differ by department depending on the technical or professional requirements of the work. Comparing average education levels across departments helps identify whether some functions employ more highly educated staff or show unusual qualification patterns.",
+      "view_labels": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        5.0,
+        2.74468085106383,
+        3.1923076923076925
+      ]
+    }
+  },
+  {
+    "question": "Do employees who leave tend to have spent less time with their current manager?",
+    "explanation": "Outstanding value: for overall data, one category in Attrition has a value much larger (or smaller) than the others when measuring MEAN(YearsWithCurrManager).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(YearsWithCurrManager)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 1.5311730661253404,
+      "question": "Do employees who leave tend to have spent less time with their current manager?",
+      "reason": "Managerial stability often affects employee support, development, and retention. Comparing average years with current manager across attrition groups can reveal whether shorter manager relationships are associated with employees who leave, helping identify a possible retention signal.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        4.367396593673966,
+        2.852320675105485
+      ]
+    }
+  },
+  {
+    "question": "How does average training frequency vary across job levels?",
+    "explanation": "Outstanding value: for YearsAtCompany=7, one category in JobLevel has a value much larger (or smaller) than the others when measuring MEAN(TrainingTimesLastYear).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobLevel",
+      "measure": "MEAN(TrainingTimesLastYear)",
+      "subspace": [
+        [
+          "YearsAtCompany",
+          7
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.5294117647058822,
+      "question": "How does average training frequency vary across job levels?",
+      "reason": "Training investment may differ across seniority bands and can indicate how development opportunities are allocated. Comparing average training times last year across job levels helps reveal whether training is concentrated among junior or senior employees, or whether some levels are underserved.",
+      "view_labels": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "view_values": [
+        2.8076923076923075,
+        2.738095238095238,
+        2.8333333333333335,
+        2.5714285714285716,
+        4.333333333333333
+      ]
+    }
+  },
+  {
+    "question": "How does workforce representation differ by gender?",
+    "explanation": "Outstanding value: for overall data, one category in Gender has a value much larger (or smaller) than the others when measuring COUNT(EmployeeNumber).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Gender",
+      "measure": "COUNT(EmployeeNumber)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 1.5,
+      "question": "How does workforce representation differ by gender?",
+      "reason": "Gender representation can vary significantly by job function. Counting employees by gender across departments can reveal concentration or imbalance patterns that may be important for diversity analysis and for interpreting differences in pay, promotion timing, or attrition.",
+      "view_labels": [
+        "Female",
+        "Male"
+      ],
+      "view_values": [
+        588.0,
+        882.0
+      ]
+    }
+  },
+  {
+    "question": "How does average daily rate vary across job roles?",
+    "explanation": "Outstanding value: for YearsSinceLastPromotion=5, one category in JobRole has a value much larger (or smaller) than the others when measuring MEAN(DailyRate).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobRole",
+      "measure": "MEAN(DailyRate)",
+      "subspace": [
+        [
+          "YearsSinceLastPromotion",
+          5
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.4838709677419355,
+      "question": "How does average daily rate vary across job roles?",
+      "reason": "Compensation structure often varies by job role beyond base monthly income, and daily rate comparisons can surface role-based pay differences that may not be obvious otherwise. This helps identify whether some roles are compensated disproportionately relative to others.",
+      "view_labels": [
+        "Healthcare Representative",
+        "Human Resources",
+        "Laboratory Technician",
+        "Manager",
+        "Manufacturing Director",
+        "Research Director",
+        "Research Scientist",
+        "Sales Executive",
+        "Sales Representative"
+      ],
+      "view_values": [
+        930.0,
+        926.3333333333334,
+        711.5,
+        791.0,
+        606.2222222222222,
+        899.4,
+        1380.0,
+        641.2727272727273,
+        660.25
+      ]
+    }
+  },
+  {
+    "question": "Does the average time since last promotion differ by marital status?",
+    "explanation": "Outstanding value: for JobInvolvement=4, one category in MaritalStatus has a value much larger (or smaller) than the others when measuring MEAN(YearsSinceLastPromotion).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "MaritalStatus",
+      "measure": "MEAN(YearsSinceLastPromotion)",
+      "subspace": [
+        [
+          "JobInvolvement",
+          4
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.4738304770727189,
+      "question": "Does the average time since last promotion differ by marital status?",
+      "reason": "Career advancement may differ by demographic group, and promotion timing is a useful signal of growth opportunity. Comparing average years since last promotion across marital status categories can uncover whether certain groups are experiencing slower progression or unusual delays.",
+      "view_labels": [
+        "Divorced",
+        "Married",
+        "Single"
+      ],
+      "view_values": [
+        2.5294117647058822,
+        1.7162162162162162,
+        1.5833333333333333
+      ]
+    }
+  },
+  {
+    "question": "Which education fields are associated with the highest average total working years?",
+    "explanation": "Outstanding value: for YearsSinceLastPromotion=14, one category in EducationField has a value much larger (or smaller) than the others when measuring MEAN(TotalWorkingYears).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "EducationField",
+      "measure": "MEAN(TotalWorkingYears)",
+      "subspace": [
+        [
+          "YearsSinceLastPromotion",
+          14
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.472636815920398,
+      "question": "Which education fields are associated with the highest average total working years?",
+      "reason": "Education background can shape career paths and accumulated experience. Comparing average total working years across education fields can reveal whether some fields are associated with more experienced employees, which may indicate differences in hiring patterns or career trajectories.",
+      "view_labels": [
+        "Life Sciences",
+        "Medical"
+      ],
+      "view_values": [
+        25.125,
+        37.0
+      ]
+    }
+  },
+  {
+    "question": "Does the average time since last promotion differ by marital status?",
+    "explanation": "Outstanding value: for Attrition=True, one category in MaritalStatus has a value much larger (or smaller) than the others when measuring MEAN(YearsSinceLastPromotion).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "MaritalStatus",
+      "measure": "MEAN(YearsSinceLastPromotion)",
+      "subspace": [
+        [
+          "Attrition",
+          true
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.4705882352941178,
+      "question": "Does the average time since last promotion differ by marital status?",
+      "reason": "Career advancement may differ by demographic group, and promotion timing is a useful signal of growth opportunity. Comparing average years since last promotion across marital status categories can uncover whether certain groups are experiencing slower progression or unusual delays.",
+      "view_labels": [
+        "Divorced",
+        "Married",
+        "Single"
+      ],
+      "view_values": [
+        1.4242424242424243,
+        2.5,
+        1.7
+      ]
+    }
+  },
+  {
+    "question": "How does monthly income change across job levels?",
+    "explanation": "Outstanding value: for JobRole=Sales Executive, one category in JobLevel has a value much larger (or smaller) than the others when measuring MEAN(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobLevel",
+      "measure": "MEAN(MonthlyIncome)",
+      "subspace": [
+        [
+          "JobRole",
+          "Sales Executive"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.4468513221450627,
+      "question": "How does monthly income change across job levels?",
+      "reason": "Compensation differences across job levels are important for understanding career progression and pay structure. Comparing average monthly income by job level can reveal whether pay increases consistently with seniority or if there are unusual gaps.",
+      "view_labels": [
+        "2",
+        "3",
+        "4"
+      ],
+      "view_values": [
+        5800.884120171674,
+        9124.987341772152,
+        13202.5
+      ]
+    }
+  },
+  {
+    "question": "Which marital status groups make up the largest share of the workforce?",
+    "explanation": "Outstanding value: for overall data, one category in MaritalStatus has a value much larger (or smaller) than the others when measuring COUNT(StandardHours).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "MaritalStatus",
+      "measure": "COUNT(StandardHours)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 1.4319148936170212,
+      "question": "Which marital status groups make up the largest share of the workforce?",
+      "reason": "StandardHours is a fixed-hours field and can be used with COUNT to compare record volume across categories. Looking at counts by marital status can reveal whether certain life-stage groups are more represented in the workforce, which may be useful when interpreting patterns in attrition, overtime, or work-life balance.",
+      "view_labels": [
+        "Divorced",
+        "Married",
+        "Single"
+      ],
+      "view_values": [
+        327.0,
+        673.0,
+        470.0
+      ]
+    }
+  },
+  {
+    "question": "Which education fields are associated with employees having worked at more companies?",
+    "explanation": "Outstanding value: for JobSatisfaction=2, one category in EducationField has a value much larger (or smaller) than the others when measuring MEAN(NumCompaniesWorked).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "EducationField",
+      "measure": "MEAN(NumCompaniesWorked)",
+      "subspace": [
+        [
+          "JobSatisfaction",
+          2
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.4157303370786518,
+      "question": "Which education fields are associated with employees having worked at more companies?",
+      "reason": "Career stability often varies by educational background. Comparing average number of companies worked across education fields can uncover whether employees from certain fields tend to switch employers more frequently, signaling different career mobility patterns.",
+      "view_labels": [
+        "Human Resources",
+        "Life Sciences",
+        "Marketing",
+        "Medical",
+        "Other",
+        "Technical Degree"
+      ],
+      "view_values": [
+        4.5,
+        3.0495049504950495,
+        2.425,
+        2.7471264367816093,
+        1.625,
+        3.1785714285714284
+      ]
+    }
+  },
+  {
+    "question": "How does performance rating vary by training frequency last year?",
+    "explanation": "There is a notable trend in MEAN(PerformanceRating) across TrainingTimesLastYear. For the segment JobSatisfaction=3, the values show a monotonic trend.",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "TrainingTimesLastYear",
+      "measure": "MEAN(PerformanceRating)",
+      "subspace": [
+        [
+          "JobSatisfaction",
+          3
+        ]
+      ],
+      "pattern": "Trend",
+      "score": 0.9052822637849351,
+      "question": "How does performance rating vary by training frequency last year?",
+      "reason": "Performance outcomes may vary by the amount of recent training employees receive. Comparing average performance rating across training frequency groups can help identify whether training is associated with stronger performance or whether additional training is concentrated among lower-performing groups.",
+      "view_labels": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "view_values": [
+        3.142857142857143,
+        3.1052631578947367,
+        3.1403508771929824,
+        3.1301369863013697,
+        3.096774193548387,
+        3.085714285714286,
+        3.1052631578947367
+      ]
+    }
+  },
+  {
+    "question": "Do employees who leave tend to live farther from work than those who stay?",
+    "explanation": "Attribution: for YearsWithCurrManager=14, a single category in Attrition accounts for a large share of total MEAN(DistanceFromHome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(DistanceFromHome)",
+      "subspace": [
+        [
+          "YearsWithCurrManager",
+          14
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.8076923076923077,
+      "question": "Do employees who leave tend to live farther from work than those who stay?",
+      "reason": "Commute burden can influence employee experience and turnover. Comparing average distance from home across attrition groups helps determine whether employees who leave tend to live farther away, pointing to a possible relationship between commuting difficulty and resignations.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        3.3333333333333335,
+        14.0
+      ]
+    }
+  },
+  {
+    "question": "How does average stock option level change across job levels?",
+    "explanation": "Attribution: for YearsAtCompany=24, a single category in JobLevel accounts for a large share of total MEAN(StockOptionLevel).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobLevel",
+      "measure": "MEAN(StockOptionLevel)",
+      "subspace": [
+        [
+          "YearsAtCompany",
+          24
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.8,
+      "question": "How does average stock option level change across job levels?",
+      "reason": "Stock option allocation is often linked to retention strategy or seniority, and comparing it across job levels can reveal whether long-term incentives are concentrated among higher-level employees. This is useful for understanding how equity-like rewards are distributed across the hierarchy.",
+      "view_labels": [
+        "3",
+        "5"
+      ],
+      "view_values": [
+        2.0,
+        0.5
+      ]
+    }
+  },
+  {
+    "question": "How is the workforce distributed across departments?",
+    "explanation": "Attribution: for JobLevel=1, a single category in Department accounts for a large share of total COUNT(EmployeeNumber).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "COUNT(EmployeeNumber)",
+      "subspace": [
+        [
+          "JobLevel",
+          1
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.7992633517495396,
+      "question": "How is the workforce distributed across departments?",
+      "reason": "Employee volume across departments is useful for understanding workforce concentration and organizational structure. Comparing counts of employees by department can reveal dominant business functions and provide context for interpreting other patterns such as attrition, pay, or overtime differences.",
+      "view_labels": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        33.0,
+        434.0,
+        76.0
+      ]
+    }
+  },
+  {
+    "question": "How does average stock option level differ between employees who left and those who stayed?",
+    "explanation": "Attribution: for Age=30, a single category in Attrition accounts for a large share of total MEAN(StockOptionLevel).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(StockOptionLevel)",
+      "subspace": [
+        [
+          "Age",
+          30
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.7702702702702703,
+      "question": "How does average stock option level differ between employees who left and those who stayed?",
+      "reason": "Stock options are often used to support retention and reward commitment, so differences by attrition status can be highly informative. Comparing average stock option level between employees who left and those who stayed can reveal whether equity-related incentives are associated with lower turnover.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        1.1176470588235294,
+        0.3333333333333333
+      ]
+    }
+  },
+  {
+    "question": "Do employees with different marital statuses live at different average distances from work?",
+    "explanation": "Attribution: for MonthlyRate=6319, a single category in MaritalStatus accounts for a large share of total MEAN(DistanceFromHome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "MaritalStatus",
+      "measure": "MEAN(DistanceFromHome)",
+      "subspace": [
+        [
+          "MonthlyRate",
+          6319
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.6923076923076923,
+      "question": "Do employees with different marital statuses live at different average distances from work?",
+      "reason": "Commute patterns may vary by marital status due to housing choices, family obligations, or life-stage differences. Comparing average distance from home across marital groups can help uncover whether certain groups consistently face longer commutes, which may also relate to satisfaction or attrition patterns.",
+      "view_labels": [
+        "Divorced",
+        "Single"
+      ],
+      "view_values": [
+        4.0,
+        9.0
+      ]
+    }
+  },
+  {
+    "question": "How does monthly income change across job levels?",
+    "explanation": "Distribution difference: the distribution of JobLevel changes notably when filtering by JobRole=Sales Representative (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobLevel",
+      "measure": "MEAN(MonthlyIncome)",
+      "subspace": [
+        [
+          "JobRole",
+          "Sales Representative"
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.6810843662455175,
+      "question": "How does monthly income change across job levels?",
+      "reason": "Compensation differences across job levels are important for understanding career progression and pay structure. Comparing average monthly income by job level can reveal whether pay increases consistently with seniority or if there are unusual gaps.",
+      "view_labels": [
+        "1",
+        "2"
+      ],
+      "view_values": [
+        2506.7236842105262,
+        3921.0
+      ],
+      "view_labels_baseline": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "view_values_baseline": [
+        2786.915285451197,
+        5502.277153558052,
+        9817.252293577982,
+        15503.783018867925,
+        19191.82608695652
+      ]
+    }
+  },
+  {
+    "question": "How does average training frequency vary across job levels?",
+    "explanation": "Attribution: for DailyRate=575, a single category in JobLevel accounts for a large share of total MEAN(TrainingTimesLastYear).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobLevel",
+      "measure": "MEAN(TrainingTimesLastYear)",
+      "subspace": [
+        [
+          "DailyRate",
+          575
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.6666666666666666,
+      "question": "How does average training frequency vary across job levels?",
+      "reason": "Training investment may differ across seniority bands and can indicate how development opportunities are allocated. Comparing average training times last year across job levels helps reveal whether training is concentrated among junior or senior employees, or whether some levels are underserved.",
+      "view_labels": [
+        "1",
+        "2"
+      ],
+      "view_values": [
+        2.0,
+        4.0
+      ]
+    }
+  },
+  {
+    "question": "How does monthly income change across job levels?",
+    "explanation": "Attribution: for TotalWorkingYears=8, a single category in JobLevel accounts for a large share of total MEAN(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobLevel",
+      "measure": "MEAN(MonthlyIncome)",
+      "subspace": [
+        [
+          "TotalWorkingYears",
+          8
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.6638870509234819,
+      "question": "How does monthly income change across job levels?",
+      "reason": "Compensation differences across job levels are important for understanding career progression and pay structure. Comparing average monthly income by job level can reveal whether pay increases consistently with seniority or if there are unusual gaps.",
+      "view_labels": [
+        "1",
+        "2"
+      ],
+      "view_values": [
+        2932.2105263157896,
+        5791.673913043478
+      ]
+    }
+  },
+  {
+    "question": "Which job roles tend to have employees staying longer in their current role?",
+    "explanation": "Distribution difference: the distribution of JobRole changes notably when filtering by DailyRate=735 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobRole",
+      "measure": "MEAN(YearsInCurrentRole)",
+      "subspace": [
+        [
+          "DailyRate",
+          735
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.6619120274668588,
+      "question": "Which job roles tend to have employees staying longer in their current role?",
+      "reason": "Tenure in role can vary significantly by job function and may indicate either stability or stagnation. Comparing average years in current role across job roles helps identify which roles have longer role occupancy and which may experience faster rotation or advancement.",
+      "view_labels": [
+        "Research Scientist",
+        "Sales Executive"
+      ],
+      "view_values": [
+        6.0,
+        2.0
+      ],
+      "view_labels_baseline": [
+        "Healthcare Representative",
+        "Human Resources",
+        "Laboratory Technician",
+        "Manager",
+        "Manufacturing Director",
+        "Research Director",
+        "Research Scientist",
+        "Sales Executive",
+        "Sales Representative"
+      ],
+      "view_values_baseline": [
+        4.862595419847328,
+        3.1346153846153846,
+        3.200772200772201,
+        6.450980392156863,
+        4.972413793103448,
+        6.2875,
+        3.2739726027397262,
+        4.855828220858895,
+        2.0120481927710845
+      ]
+    }
+  },
+  {
+    "question": "How does job involvement change with employees' number of previous companies worked?",
+    "explanation": "Distribution difference: the distribution of NumCompaniesWorked changes notably when filtering by MonthlyRate=22074 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "NumCompaniesWorked",
+      "measure": "MEAN(JobInvolvement)",
+      "subspace": [
+        [
+          "MonthlyRate",
+          22074
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.659879557247255,
+      "question": "How does job involvement change with employees' number of previous companies worked?",
+      "reason": "Employees with different career histories may show different engagement levels. Comparing average job involvement across the number of companies previously worked for can reveal whether frequent job changes are associated with lower or higher engagement in the current role.",
+      "view_labels": [
+        "1",
+        "3"
+      ],
+      "view_values": [
+        1.0,
+        3.0
+      ],
+      "view_labels_baseline": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "view_values_baseline": [
+        2.751269035532995,
+        2.7005758157389637,
+        2.73972602739726,
+        2.7358490566037736,
+        2.8129496402877696,
+        2.6666666666666665,
+        2.6714285714285713,
+        2.7162162162162162,
+        2.7755102040816326,
+        2.8076923076923075
+      ]
+    }
+  },
+  {
+    "question": "In which job roles do employees wait the longest for promotion?",
+    "explanation": "Distribution difference: the distribution of JobRole changes notably when filtering by TotalWorkingYears=1 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobRole",
+      "measure": "MEAN(YearsSinceLastPromotion)",
+      "subspace": [
+        [
+          "TotalWorkingYears",
+          1
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.6573638895348656,
+      "question": "In which job roles do employees wait the longest for promotion?",
+      "reason": "Promotions are a strong indicator of career growth. Comparing the average years since last promotion across job roles can reveal roles where advancement is slower, which may indicate bottlenecks or potential dissatisfaction risks.",
+      "view_labels": [
+        "Human Resources",
+        "Laboratory Technician",
+        "Research Scientist",
+        "Sales Representative"
+      ],
+      "view_values": [
+        0.0,
+        0.125,
+        0.16,
+        0.15
+      ],
+      "view_labels_baseline": [
+        "Healthcare Representative",
+        "Human Resources",
+        "Laboratory Technician",
+        "Manager",
+        "Manufacturing Director",
+        "Research Director",
+        "Research Scientist",
+        "Sales Executive",
+        "Sales Representative"
+      ],
+      "view_values_baseline": [
+        2.969465648854962,
+        1.2692307692307692,
+        1.420849420849421,
+        4.833333333333333,
+        2.117241379310345,
+        3.1875,
+        1.5068493150684932,
+        2.4846625766871164,
+        1.0602409638554218
+      ]
+    }
+  },
+  {
+    "question": "How is the employee population distributed across departments?",
+    "explanation": "Attribution: for overall data, a single category in Department accounts for a large share of total COUNT(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "COUNT(EmployeeCount)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.6537414965986394,
+      "question": "How is the employee population distributed across departments?",
+      "reason": "EmployeeCount is constant at 1 for every row, so using COUNT(EmployeeCount) effectively measures headcount. Comparing headcount across departments helps understand workforce distribution and can contextualize other findings such as attrition or satisfaction differences.",
+      "view_labels": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        63.0,
+        961.0,
+        446.0
+      ]
+    }
+  },
+  {
+    "question": "Which job roles receive the highest average monthly income?",
+    "explanation": "Attribution: for EducationField=Marketing, a single category in JobRole accounts for a large share of total MEAN(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobRole",
+      "measure": "MEAN(MonthlyIncome)",
+      "subspace": [
+        [
+          "EducationField",
+          "Marketing"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.6474239625341746,
+      "question": "Which job roles receive the highest average monthly income?",
+      "reason": "Income differences across job roles are fundamental for understanding compensation structure and identifying roles that may be underpaid or highly rewarded. Comparing average monthly income by job role can reveal strong pay disparities and possible outliers in the compensation framework.",
+      "view_labels": [
+        "Manager",
+        "Sales Executive",
+        "Sales Representative"
+      ],
+      "view_values": [
+        17835.428571428572,
+        7023.565573770492,
+        2689.304347826087
+      ]
+    }
+  },
+  {
+    "question": "Which job roles have the highest average education level?",
+    "explanation": "Distribution difference: the distribution of JobRole changes notably when filtering by JobLevel=5 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobRole",
+      "measure": "MEAN(Education)",
+      "subspace": [
+        [
+          "JobLevel",
+          5
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.6266571253959787,
+      "question": "Which job roles have the highest average education level?",
+      "reason": "Educational attainment may vary across job roles and can reveal how formal qualifications align with role specialization. Comparing average education level across job roles helps identify whether some roles systematically require higher educational backgrounds or whether there are unusual mismatches.",
+      "view_labels": [
+        "Manager",
+        "Research Director"
+      ],
+      "view_values": [
+        3.0,
+        2.9615384615384617
+      ],
+      "view_labels_baseline": [
+        "Healthcare Representative",
+        "Human Resources",
+        "Laboratory Technician",
+        "Manager",
+        "Manufacturing Director",
+        "Research Director",
+        "Research Scientist",
+        "Sales Executive",
+        "Sales Representative"
+      ],
+      "view_values_baseline": [
+        2.9923664122137406,
+        2.8846153846153846,
+        2.772200772200772,
+        3.019607843137255,
+        2.896551724137931,
+        3.125,
+        2.914383561643836,
+        3.0153374233128836,
+        2.5301204819277108
+      ]
+    }
+  },
+  {
+    "question": "Do departments differ in the average number of companies employees have worked at previously?",
+    "explanation": "Attribution: for DistanceFromHome=16, a single category in Department accounts for a large share of total MEAN(NumCompaniesWorked).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "MEAN(NumCompaniesWorked)",
+      "subspace": [
+        [
+          "DistanceFromHome",
+          16
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.6109725685785535,
+      "question": "Do departments differ in the average number of companies employees have worked at previously?",
+      "reason": "Career mobility may differ substantially between departments. Comparing the average number of companies worked before joining across departments can reveal whether some functions attract more externally experienced employees, which may indicate different hiring strategies or talent market dynamics.",
+      "view_labels": [
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        2.6,
+        4.083333333333333
+      ]
+    }
+  },
+  {
+    "question": "Do employees who leave tend to have spent less time with their current manager?",
+    "explanation": "Attribution: for overall data, a single category in Attrition accounts for a large share of total MEAN(YearsWithCurrManager).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(YearsWithCurrManager)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.6049262638801793,
+      "question": "Do employees who leave tend to have spent less time with their current manager?",
+      "reason": "Managerial stability often affects employee support, development, and retention. Comparing average years with current manager across attrition groups can reveal whether shorter manager relationships are associated with employees who leave, helping identify a possible retention signal.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        4.367396593673966,
+        2.852320675105485
+      ]
+    }
+  },
+  {
+    "question": "How does workforce representation differ by gender?",
+    "explanation": "Attribution: for overall data, a single category in Gender accounts for a large share of total COUNT(EmployeeNumber).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Gender",
+      "measure": "COUNT(EmployeeNumber)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.6,
+      "question": "How does workforce representation differ by gender?",
+      "reason": "Gender representation can vary significantly by job function. Counting employees by gender across departments can reveal concentration or imbalance patterns that may be important for diversity analysis and for interpreting differences in pay, promotion timing, or attrition.",
+      "view_labels": [
+        "Female",
+        "Male"
+      ],
+      "view_values": [
+        588.0,
+        882.0
+      ]
+    }
+  },
+  {
+    "question": "How does performance rating vary by training frequency last year?",
+    "explanation": "Distribution difference: the distribution of TrainingTimesLastYear changes notably when filtering by DailyRate=177 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "TrainingTimesLastYear",
+      "measure": "MEAN(PerformanceRating)",
+      "subspace": [
+        [
+          "DailyRate",
+          177
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.5944021330584841,
+      "question": "How does performance rating vary by training frequency last year?",
+      "reason": "Performance outcomes may vary by the amount of recent training employees receive. Comparing average performance rating across training frequency groups can help identify whether training is associated with stronger performance or whether additional training is concentrated among lower-performing groups.",
+      "view_labels": [
+        "2",
+        "3"
+      ],
+      "view_values": [
+        4.0,
+        3.0
+      ],
+      "view_labels_baseline": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "view_values_baseline": [
+        3.185185185185185,
+        3.1267605633802815,
+        3.162705667276051,
+        3.15071283095723,
+        3.130081300813008,
+        3.1596638655462184,
+        3.1384615384615384
+      ]
+    }
+  },
+  {
+    "question": "How does monthly income differ between employees who work overtime and those who do not?",
+    "explanation": "Attribution: for NumCompaniesWorked=6, a single category in OverTime accounts for a large share of total MEAN(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "OverTime",
+      "measure": "MEAN(MonthlyIncome)",
+      "subspace": [
+        [
+          "NumCompaniesWorked",
+          6
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5843661452518425,
+      "question": "How does monthly income differ between employees who work overtime and those who do not?",
+      "reason": "Overtime is often linked to employee burnout and dissatisfaction. Comparing average monthly income across overtime groups can show whether employees working overtime are concentrated in lower- or higher-paying segments, which may help explain compensation-related retention patterns.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        7708.529411764706,
+        5482.736842105263
+      ]
+    }
+  },
+  {
+    "question": "Which job roles receive the highest average monthly income?",
+    "explanation": "Distribution difference: the distribution of JobRole changes notably when filtering by Department=Human Resources (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobRole",
+      "measure": "MEAN(MonthlyIncome)",
+      "subspace": [
+        [
+          "Department",
+          "Human Resources"
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.5763743066550554,
+      "question": "Which job roles receive the highest average monthly income?",
+      "reason": "Income differences across job roles are fundamental for understanding compensation structure and identifying roles that may be underpaid or highly rewarded. Comparing average monthly income by job role can reveal strong pay disparities and possible outliers in the compensation framework.",
+      "view_labels": [
+        "Human Resources",
+        "Manager"
+      ],
+      "view_values": [
+        4235.75,
+        18088.636363636364
+      ],
+      "view_labels_baseline": [
+        "Healthcare Representative",
+        "Human Resources",
+        "Laboratory Technician",
+        "Manager",
+        "Manufacturing Director",
+        "Research Director",
+        "Research Scientist",
+        "Sales Executive",
+        "Sales Representative"
+      ],
+      "view_values_baseline": [
+        7528.763358778626,
+        4235.75,
+        3237.169884169884,
+        17181.676470588234,
+        7295.137931034483,
+        16033.55,
+        3239.972602739726,
+        6924.2791411042945,
+        2626.0
+      ]
+    }
+  },
+  {
+    "question": "How does the average daily rate vary across departments?",
+    "explanation": "Attribution: for TotalWorkingYears=0, a single category in Department accounts for a large share of total MEAN(DailyRate).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "MEAN(DailyRate)",
+      "subspace": [
+        [
+          "TotalWorkingYears",
+          0
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5734168763802578,
+      "question": "How does the average daily rate vary across departments?",
+      "reason": "Travel requirements may vary substantially by department and can indicate structural differences in job demands. Comparing average daily rate across departments can help detect whether certain departments are associated with notably different compensation-related patterns or assignment structures, highlighting possible operational or policy differences.",
+      "view_labels": [
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        593.2857142857143,
+        797.5
+      ]
+    }
+  },
+  {
+    "question": "Which education fields are associated with higher average monthly rates?",
+    "explanation": "Distribution difference: the distribution of EducationField changes notably when filtering by YearsInCurrentRole=17 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "EducationField",
+      "measure": "MEAN(MonthlyRate)",
+      "subspace": [
+        [
+          "YearsInCurrentRole",
+          17
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.5723543646255901,
+      "question": "Which education fields are associated with higher average monthly rates?",
+      "reason": "Monthly rate variation by education field can reveal whether certain educational backgrounds are associated with stronger compensation outcomes. This can help uncover relationships between specialization and pay positioning, as well as potential outliers among education categories.",
+      "view_labels": [
+        "Medical",
+        "Technical Degree"
+      ],
+      "view_values": [
+        14570.0,
+        6336.0
+      ],
+      "view_labels_baseline": [
+        "Human Resources",
+        "Life Sciences",
+        "Marketing",
+        "Medical",
+        "Other",
+        "Technical Degree"
+      ],
+      "view_values_baseline": [
+        14810.74074074074,
+        14530.13201320132,
+        14076.943396226416,
+        14295.056034482759,
+        13270.780487804877,
+        14210.363636363636
+      ]
+    }
+  },
+  {
+    "question": "Do employees who work overtime differ in average tenure at the company compared with those who do not?",
+    "explanation": "Attribution: for EducationField=Marketing, a single category in OverTime accounts for a large share of total MEAN(YearsAtCompany).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "OverTime",
+      "measure": "MEAN(YearsAtCompany)",
+      "subspace": [
+        [
+          "EducationField",
+          "Marketing"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5718334251751555,
+      "question": "Do employees who work overtime differ in average tenure at the company compared with those who do not?",
+      "reason": "Overtime can be a strong signal of workload pressure and potential burnout. Comparing average years at company across overtime groups can show whether employees working overtime tend to be newer hires or longer-tenured staff, helping uncover retention or workload patterns.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        8.18018018018018,
+        6.125
+      ]
+    }
+  },
+  {
+    "question": "Are salary hike percentages different across education fields?",
+    "explanation": "Distribution difference: the distribution of EducationField changes notably when filtering by MonthlyIncome=10096 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "EducationField",
+      "measure": "MEAN(PercentSalaryHike)",
+      "subspace": [
+        [
+          "MonthlyIncome",
+          10096
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.568296510960984,
+      "question": "Are salary hike percentages different across education fields?",
+      "reason": "Education background may influence career paths and salary growth. Comparing average percent salary hike across education fields can reveal whether some educational backgrounds are associated with stronger compensation progression.",
+      "view_labels": [
+        "Marketing",
+        "Technical Degree"
+      ],
+      "view_values": [
+        11.0,
+        13.0
+      ],
+      "view_labels_baseline": [
+        "Human Resources",
+        "Life Sciences",
+        "Marketing",
+        "Medical",
+        "Other",
+        "Technical Degree"
+      ],
+      "view_values_baseline": [
+        14.777777777777779,
+        15.254125412541255,
+        14.918238993710691,
+        15.366379310344827,
+        15.5,
+        14.712121212121213
+      ]
+    }
+  },
+  {
+    "question": "How does monthly income differ between employees who work overtime and those who do not?",
+    "explanation": "Attribution: for DistanceFromHome=9, a single category in OverTime accounts for a large share of total MEAN(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "OverTime",
+      "measure": "MEAN(MonthlyIncome)",
+      "subspace": [
+        [
+          "DistanceFromHome",
+          9
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5666146108504004,
+      "question": "How does monthly income differ between employees who work overtime and those who do not?",
+      "reason": "Overtime is often linked to employee burnout and dissatisfaction. Comparing average monthly income across overtime groups can show whether employees working overtime are concentrated in lower- or higher-paying segments, which may help explain compensation-related retention patterns.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        5148.9384615384615,
+        6731.8
+      ]
+    }
+  },
+  {
+    "question": "How does average daily rate vary across job roles?",
+    "explanation": "Attribution: for JobLevel=5, a single category in JobRole accounts for a large share of total MEAN(DailyRate).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobRole",
+      "measure": "MEAN(DailyRate)",
+      "subspace": [
+        [
+          "JobLevel",
+          5
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5652545940089844,
+      "question": "How does average daily rate vary across job roles?",
+      "reason": "Compensation structure often varies by job role beyond base monthly income, and daily rate comparisons can surface role-based pay differences that may not be obvious otherwise. This helps identify whether some roles are compensated disproportionately relative to others.",
+      "view_labels": [
+        "Manager",
+        "Research Director"
+      ],
+      "view_values": [
+        732.5813953488372,
+        952.5
+      ]
+    }
+  },
+  {
+    "question": "How does average daily rate vary across job roles?",
+    "explanation": "Distribution difference: the distribution of JobRole changes notably when filtering by EducationField=Marketing (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobRole",
+      "measure": "MEAN(DailyRate)",
+      "subspace": [
+        [
+          "EducationField",
+          "Marketing"
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.564597126808063,
+      "question": "How does average daily rate vary across job roles?",
+      "reason": "Compensation structure often varies by job role beyond base monthly income, and daily rate comparisons can surface role-based pay differences that may not be obvious otherwise. This helps identify whether some roles are compensated disproportionately relative to others.",
+      "view_labels": [
+        "Manager",
+        "Sales Executive",
+        "Sales Representative"
+      ],
+      "view_values": [
+        706.5714285714286,
+        735.139344262295,
+        702.0434782608696
+      ],
+      "view_labels_baseline": [
+        "Healthcare Representative",
+        "Human Resources",
+        "Laboratory Technician",
+        "Manager",
+        "Manufacturing Director",
+        "Research Director",
+        "Research Scientist",
+        "Sales Executive",
+        "Sales Representative"
+      ],
+      "view_values_baseline": [
+        854.2519083969465,
+        757.9230769230769,
+        796.6177606177606,
+        782.9509803921569,
+        796.0206896551724,
+        802.45,
+        800.3595890410959,
+        802.0981595092024,
+        811.3493975903615
+      ]
+    }
+  },
+  {
+    "question": "Which job roles report the lowest average work-life balance?",
+    "explanation": "Distribution difference: the distribution of JobRole changes notably when filtering by Department=Sales (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobRole",
+      "measure": "MEAN(WorkLifeBalance)",
+      "subspace": [
+        [
+          "Department",
+          "Sales"
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.5617823591173304,
+      "question": "Which job roles report the lowest average work-life balance?",
+      "reason": "Work-life balance may vary by job role because some roles involve tighter deadlines, shift patterns, or customer-facing pressure. Comparing average work-life balance scores across roles can identify functions where employees report poorer balance, which is useful for spotting operational stress points.",
+      "view_labels": [
+        "Manager",
+        "Sales Executive",
+        "Sales Representative"
+      ],
+      "view_values": [
+        2.7567567567567566,
+        2.803680981595092,
+        2.891566265060241
+      ],
+      "view_labels_baseline": [
+        "Healthcare Representative",
+        "Human Resources",
+        "Laboratory Technician",
+        "Manager",
+        "Manufacturing Director",
+        "Research Director",
+        "Research Scientist",
+        "Sales Executive",
+        "Sales Representative"
+      ],
+      "view_values_baseline": [
+        2.7022900763358777,
+        2.923076923076923,
+        2.718146718146718,
+        2.7745098039215685,
+        2.7655172413793103,
+        2.8625,
+        2.6780821917808217,
+        2.803680981595092,
+        2.891566265060241
+      ]
+    }
+  },
+  {
+    "question": "Is there a difference in average job satisfaction between genders?",
+    "explanation": "Attribution: for HourlyRate=75, a single category in Gender accounts for a large share of total MEAN(JobSatisfaction).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Gender",
+      "measure": "MEAN(JobSatisfaction)",
+      "subspace": [
+        [
+          "HourlyRate",
+          75
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5601436265709157,
+      "question": "Is there a difference in average job satisfaction between genders?",
+      "reason": "Job satisfaction is closely related to retention and engagement, and differences by gender may reveal equity or role experience issues. Using Gender as the breakdown and MEAN(JobSatisfaction) as the measure enables comparison of employee sentiment across demographic groups.",
+      "view_labels": [
+        "Female",
+        "Male"
+      ],
+      "view_values": [
+        2.6923076923076925,
+        3.4285714285714284
+      ]
+    }
+  },
+  {
+    "question": "Does the average age differ between employees who left and those who stayed?",
+    "explanation": "Attribution: for DistanceFromHome=25, a single category in Attrition accounts for a large share of total MEAN(Age).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(Age)",
+      "subspace": [
+        [
+          "DistanceFromHome",
+          25
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5441122185308233,
+      "question": "Does the average age differ between employees who left and those who stayed?",
+      "reason": "Attrition patterns across age groups can reveal whether turnover is concentrated among younger or older employees. Using Age as the measure and Attrition as the breakdown helps identify whether employees who leave differ meaningfully in age from those who stay, which is useful for retention planning and workforce stability analysis.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        38.78947368421053,
+        32.5
+      ]
+    }
+  },
+  {
+    "question": "Is there a difference in average job satisfaction between genders?",
+    "explanation": "Attribution: for WorkLifeBalance=4, a single category in Gender accounts for a large share of total MEAN(JobSatisfaction).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Gender",
+      "measure": "MEAN(JobSatisfaction)",
+      "subspace": [
+        [
+          "WorkLifeBalance",
+          4
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5428571428571428,
+      "question": "Is there a difference in average job satisfaction between genders?",
+      "reason": "Job satisfaction is closely related to retention and engagement, and differences by gender may reveal equity or role experience issues. Using Gender as the breakdown and MEAN(JobSatisfaction) as the measure enables comparison of employee sentiment across demographic groups.",
+      "view_labels": [
+        "Female",
+        "Male"
+      ],
+      "view_values": [
+        2.456140350877193,
+        2.9166666666666665
+      ]
+    }
+  },
+  {
+    "question": "Which departments show the longest time since employees were last promoted?",
+    "explanation": "Attribution: for YearsInCurrentRole=11, a single category in Department accounts for a large share of total MEAN(YearsSinceLastPromotion).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "MEAN(YearsSinceLastPromotion)",
+      "subspace": [
+        [
+          "YearsInCurrentRole",
+          11
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5428571428571428,
+      "question": "Which departments show the longest time since employees were last promoted?",
+      "reason": "Promotion stagnation can be an important signal of career bottlenecks. Comparing years since last promotion across departments can reveal structural differences in advancement opportunities and highlight departments where employees may be experiencing slower career growth.",
+      "view_labels": [
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        5.052631578947368,
+        6.0
+      ]
+    }
+  },
+  {
+    "question": "Does the average age differ between employees who left and those who stayed?",
+    "explanation": "Attribution: for TotalWorkingYears=1, a single category in Attrition accounts for a large share of total MEAN(Age).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(Age)",
+      "subspace": [
+        [
+          "TotalWorkingYears",
+          1
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5416354256426326,
+      "question": "Does the average age differ between employees who left and those who stayed?",
+      "reason": "Attrition patterns across age groups can reveal whether turnover is concentrated among younger or older employees. Using Age as the measure and Attrition as the breakdown helps identify whether employees who leave differ meaningfully in age from those who stay, which is useful for retention planning and workforce stability analysis.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        29.51219512195122,
+        24.975
+      ]
+    }
+  },
+  {
+    "question": "How does average environment satisfaction vary across departments?",
+    "explanation": "Attribution: for DistanceFromHome=15, a single category in Department accounts for a large share of total MEAN(EnvironmentSatisfaction).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "MEAN(EnvironmentSatisfaction)",
+      "subspace": [
+        [
+          "DistanceFromHome",
+          15
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5414012738853503,
+      "question": "How does average environment satisfaction vary across departments?",
+      "reason": "Department-level differences in employee satisfaction can point to cultural or managerial issues. Using Department as the breakdown and MEAN(EnvironmentSatisfaction) as the measure helps identify whether workplace conditions are perceived differently across departments.",
+      "view_labels": [
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        2.4,
+        2.8333333333333335
+      ]
+    }
+  },
+  {
+    "question": "Which job roles have the highest average education level?",
+    "explanation": "Attribution: for Department=Human Resources, a single category in JobRole accounts for a large share of total MEAN(Education).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobRole",
+      "measure": "MEAN(Education)",
+      "subspace": [
+        [
+          "Department",
+          "Human Resources"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5383324006715166,
+      "question": "Which job roles have the highest average education level?",
+      "reason": "Educational attainment may vary across job roles and can reveal how formal qualifications align with role specialization. Comparing average education level across job roles helps identify whether some roles systematically require higher educational backgrounds or whether there are unusual mismatches.",
+      "view_labels": [
+        "Human Resources",
+        "Manager"
+      ],
+      "view_values": [
+        2.8846153846153846,
+        3.3636363636363638
+      ]
+    }
+  },
+  {
+    "question": "How do average salary hike percentages differ across job levels?",
+    "explanation": "Attribution: for JobRole=Sales Representative, a single category in JobLevel accounts for a large share of total MEAN(PercentSalaryHike).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobLevel",
+      "measure": "MEAN(PercentSalaryHike)",
+      "subspace": [
+        [
+          "JobRole",
+          "Sales Representative"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5290727532097005,
+      "question": "How do average salary hike percentages differ across job levels?",
+      "reason": "Compensation progression is often tied to seniority, and examining salary hike patterns by job level can show whether raises are distributed consistently across hierarchy levels. Comparing average percent salary hike across job levels can surface whether senior employees receive stronger or weaker relative increases.",
+      "view_labels": [
+        "1",
+        "2"
+      ],
+      "view_values": [
+        15.513157894736842,
+        17.428571428571427
+      ]
+    }
+  },
+  {
+    "question": "Does the average age differ between employees who left and those who stayed?",
+    "explanation": "Attribution: for overall data, a single category in Attrition accounts for a large share of total MEAN(Age).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(Age)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5277764715012617,
+      "question": "Does the average age differ between employees who left and those who stayed?",
+      "reason": "Attrition patterns across age groups can reveal whether turnover is concentrated among younger or older employees. Using Age as the measure and Attrition as the breakdown helps identify whether employees who leave differ meaningfully in age from those who stay, which is useful for retention planning and workforce stability analysis.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        37.561232765612324,
+        33.607594936708864
+      ]
+    }
+  },
+  {
+    "question": "Which departments have employees at higher average job levels?",
+    "explanation": "Attribution: for HourlyRate=93, a single category in Department accounts for a large share of total MEAN(JobLevel).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "MEAN(JobLevel)",
+      "subspace": [
+        [
+          "HourlyRate",
+          93
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5272727272727272,
+      "question": "Which departments have employees at higher average job levels?",
+      "reason": "Compensation should generally rise with seniority, but the strength of that pattern may differ by department. Comparing average job level across departments can reveal whether some departments have a more senior workforce structure or unusually flat hierarchies.",
+      "view_labels": [
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        2.230769230769231,
+        2.0
+      ]
+    }
+  },
+  {
+    "question": "Do employees who leave the company tend to have worked at more companies before?",
+    "explanation": "Attribution: for overall data, a single category in Attrition accounts for a large share of total MEAN(NumCompaniesWorked).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(NumCompaniesWorked)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5264340778991666,
+      "question": "Do employees who leave the company tend to have worked at more companies before?",
+      "reason": "Employees who have worked for many companies may have different career stability patterns than those with fewer prior employers. Comparing average number of companies worked across attrition groups can reveal whether employees who leave tend to have more mobile career histories, helping identify a meaningful relationship between prior mobility and current turnover.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        2.6455798864557987,
+        2.940928270042194
+      ]
+    }
+  },
+  {
+    "question": "How does the average daily rate vary across departments?",
+    "explanation": "Attribution: for HourlyRate=41, a single category in Department accounts for a large share of total MEAN(DailyRate).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "MEAN(DailyRate)",
+      "subspace": [
+        [
+          "HourlyRate",
+          41
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5255541748506835,
+      "question": "How does the average daily rate vary across departments?",
+      "reason": "Travel requirements may vary substantially by department and can indicate structural differences in job demands. Comparing average daily rate across departments can help detect whether certain departments are associated with notably different compensation-related patterns or assignment structures, highlighting possible operational or policy differences.",
+      "view_labels": [
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        936.5,
+        845.4285714285714
+      ]
+    }
+  },
+  {
+    "question": "Is relationship satisfaction lower among employees who work overtime?",
+    "explanation": "Attribution: for EnvironmentSatisfaction=3, a single category in OverTime accounts for a large share of total MEAN(RelationshipSatisfaction).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "OverTime",
+      "measure": "MEAN(RelationshipSatisfaction)",
+      "subspace": [
+        [
+          "EnvironmentSatisfaction",
+          3
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5254804701221861,
+      "question": "Is relationship satisfaction lower among employees who work overtime?",
+      "reason": "Relationship satisfaction can be affected by work demands such as overtime. Comparing average relationship satisfaction between employees who do and do not work overtime can reveal whether overtime is associated with strain in employees’ personal lives, making it a meaningful cross-domain insight.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        2.634375,
+        2.917293233082707
+      ]
+    }
+  },
+  {
+    "question": "Is relationship satisfaction lower among employees who work overtime?",
+    "explanation": "Attribution: for PercentSalaryHike=15, a single category in OverTime accounts for a large share of total MEAN(RelationshipSatisfaction).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "OverTime",
+      "measure": "MEAN(RelationshipSatisfaction)",
+      "subspace": [
+        [
+          "PercentSalaryHike",
+          15
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5251641137855579,
+      "question": "Is relationship satisfaction lower among employees who work overtime?",
+      "reason": "Relationship satisfaction can be affected by work demands such as overtime. Comparing average relationship satisfaction between employees who do and do not work overtime can reveal whether overtime is associated with strain in employees’ personal lives, making it a meaningful cross-domain insight.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        2.7125,
+        3.0
+      ]
+    }
+  },
+  {
+    "question": "Do employees who leave show lower job involvement on average?",
+    "explanation": "Attribution: for overall data, a single category in Attrition accounts for a large share of total MEAN(JobInvolvement).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(JobInvolvement)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5237728319918639,
+      "question": "Do employees who leave show lower job involvement on average?",
+      "reason": "Employees with stronger involvement in their jobs may be more committed, while lower involvement can indicate disengagement. Comparing average job involvement across attrition groups helps assess whether disengagement is associated with employee exits.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        2.770478507704785,
+        2.518987341772152
+      ]
+    }
+  },
+  {
+    "question": "How does average training frequency vary across job levels?",
+    "explanation": "Distribution difference: the distribution of JobLevel changes notably when filtering by JobRole=Sales Representative (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobLevel",
+      "measure": "MEAN(TrainingTimesLastYear)",
+      "subspace": [
+        [
+          "JobRole",
+          "Sales Representative"
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.5213635686313572,
+      "question": "How does average training frequency vary across job levels?",
+      "reason": "Training investment may differ across seniority bands and can indicate how development opportunities are allocated. Comparing average training times last year across job levels helps reveal whether training is concentrated among junior or senior employees, or whether some levels are underserved.",
+      "view_labels": [
+        "1",
+        "2"
+      ],
+      "view_values": [
+        2.9473684210526314,
+        3.7142857142857144
+      ],
+      "view_labels_baseline": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "view_values_baseline": [
+        2.8084714548802947,
+        2.8146067415730336,
+        2.8440366972477062,
+        2.556603773584906,
+        2.8405797101449277
+      ]
+    }
+  },
+  {
+    "question": "Which job roles tend to have employees staying longer in their current role?",
+    "explanation": "Attribution: for JobLevel=5, a single category in JobRole accounts for a large share of total MEAN(YearsInCurrentRole).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobRole",
+      "measure": "MEAN(YearsInCurrentRole)",
+      "subspace": [
+        [
+          "JobLevel",
+          5
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5187825610090485,
+      "question": "Which job roles tend to have employees staying longer in their current role?",
+      "reason": "Tenure in role can vary significantly by job function and may indicate either stability or stagnation. Comparing average years in current role across job roles helps identify which roles have longer role occupancy and which may experience faster rotation or advancement.",
+      "view_labels": [
+        "Manager",
+        "Research Director"
+      ],
+      "view_values": [
+        6.27906976744186,
+        6.769230769230769
+      ]
+    }
+  },
+  {
+    "question": "Does environment satisfaction differ by gender?",
+    "explanation": "Attribution: for YearsWithCurrManager=8, a single category in Gender accounts for a large share of total MEAN(EnvironmentSatisfaction).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Gender",
+      "measure": "MEAN(EnvironmentSatisfaction)",
+      "subspace": [
+        [
+          "YearsWithCurrManager",
+          8
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.516148285695338,
+      "question": "Does environment satisfaction differ by gender?",
+      "reason": "Satisfaction with the work environment may vary across demographic groups. Comparing average environment satisfaction by gender can help detect differences in workplace experience and point to inclusion or culture issues if gaps exist.",
+      "view_labels": [
+        "Female",
+        "Male"
+      ],
+      "view_values": [
+        2.6511627906976742,
+        2.828125
+      ]
+    }
+  },
+  {
+    "question": "Which departments receive the highest average salary hikes?",
+    "explanation": "Attribution: for DailyRate=1448, a single category in Department accounts for a large share of total MEAN(PercentSalaryHike).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "MEAN(PercentSalaryHike)",
+      "subspace": [
+        [
+          "DailyRate",
+          1448
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5142857142857142,
+      "question": "Which departments receive the highest average salary hikes?",
+      "reason": "Pay growth may reflect recognition and reward practices, and these can vary across functions. Looking at average percent salary hike by department can reveal whether some departments receive systematically higher raises, helping identify compensation disparities or exceptional patterns.",
+      "view_labels": [
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        18.0,
+        17.0
+      ]
+    }
+  },
+  {
+    "question": "Does environment satisfaction differ by gender?",
+    "explanation": "Attribution: for NumCompaniesWorked=3, a single category in Gender accounts for a large share of total MEAN(EnvironmentSatisfaction).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Gender",
+      "measure": "MEAN(EnvironmentSatisfaction)",
+      "subspace": [
+        [
+          "NumCompaniesWorked",
+          3
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5125396367829345,
+      "question": "Does environment satisfaction differ by gender?",
+      "reason": "Satisfaction with the work environment may vary across demographic groups. Comparing average environment satisfaction by gender can help detect differences in workplace experience and point to inclusion or culture issues if gaps exist.",
+      "view_labels": [
+        "Female",
+        "Male"
+      ],
+      "view_values": [
+        2.7142857142857144,
+        2.853932584269663
+      ]
+    }
+  },
+  {
+    "question": "How does average monthly income differ by gender?",
+    "explanation": "Attribution: for overall data, a single category in Gender accounts for a large share of total MEAN(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Gender",
+      "measure": "MEAN(MonthlyIncome)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5117110526756701,
+      "question": "How does average monthly income differ by gender?",
+      "reason": "Gender-based differences in pay are an important workforce equity question. Comparing average monthly income across gender can highlight possible compensation disparities and reveal whether one group systematically earns more than the other.",
+      "view_labels": [
+        "Female",
+        "Male"
+      ],
+      "view_values": [
+        6686.566326530612,
+        6380.507936507936
+      ]
+    }
+  },
+  {
+    "question": "Is relationship satisfaction lower among employees who work overtime?",
+    "explanation": "Attribution: for overall data, a single category in OverTime accounts for a large share of total MEAN(RelationshipSatisfaction).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "OverTime",
+      "measure": "MEAN(RelationshipSatisfaction)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.510626155447045,
+      "question": "Is relationship satisfaction lower among employees who work overtime?",
+      "reason": "Relationship satisfaction can be affected by work demands such as overtime. Comparing average relationship satisfaction between employees who do and do not work overtime can reveal whether overtime is associated with strain in employees’ personal lives, making it a meaningful cross-domain insight.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        2.6793168880455407,
+        2.795673076923077
+      ]
+    }
+  },
+  {
+    "question": "Which job roles have the highest average education level?",
+    "explanation": "Distribution difference: the distribution of JobRole changes notably when filtering by JobLevel=1 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobRole",
+      "measure": "MEAN(Education)",
+      "subspace": [
+        [
+          "JobLevel",
+          1
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.5092095936436922,
+      "question": "Which job roles have the highest average education level?",
+      "reason": "Educational attainment may vary across job roles and can reveal how formal qualifications align with role specialization. Comparing average education level across job roles helps identify whether some roles systematically require higher educational backgrounds or whether there are unusual mismatches.",
+      "view_labels": [
+        "Human Resources",
+        "Laboratory Technician",
+        "Research Scientist",
+        "Sales Representative"
+      ],
+      "view_values": [
+        2.727272727272727,
+        2.73,
+        2.841880341880342,
+        2.539473684210526
+      ],
+      "view_labels_baseline": [
+        "Healthcare Representative",
+        "Human Resources",
+        "Laboratory Technician",
+        "Manager",
+        "Manufacturing Director",
+        "Research Director",
+        "Research Scientist",
+        "Sales Executive",
+        "Sales Representative"
+      ],
+      "view_values_baseline": [
+        2.9923664122137406,
+        2.8846153846153846,
+        2.772200772200772,
+        3.019607843137255,
+        2.896551724137931,
+        3.125,
+        2.914383561643836,
+        3.0153374233128836,
+        2.5301204819277108
+      ]
+    }
+  },
+  {
+    "question": "Which job roles report the lowest average work-life balance?",
+    "explanation": "Attribution: for JobLevel=5, a single category in JobRole accounts for a large share of total MEAN(WorkLifeBalance).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobRole",
+      "measure": "MEAN(WorkLifeBalance)",
+      "subspace": [
+        [
+          "JobLevel",
+          5
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5061999686077538,
+      "question": "Which job roles report the lowest average work-life balance?",
+      "reason": "Work-life balance may vary by job role because some roles involve tighter deadlines, shift patterns, or customer-facing pressure. Comparing average work-life balance scores across roles can identify functions where employees report poorer balance, which is useful for spotting operational stress points.",
+      "view_labels": [
+        "Manager",
+        "Research Director"
+      ],
+      "view_values": [
+        2.813953488372093,
+        2.8846153846153846
+      ]
+    }
+  },
+  {
+    "question": "How do total working years vary across departments?",
+    "explanation": "Attribution: for YearsInCurrentRole=12, a single category in Department accounts for a large share of total MEAN(TotalWorkingYears).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "MEAN(TotalWorkingYears)",
+      "subspace": [
+        [
+          "YearsInCurrentRole",
+          12
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5055555555555555,
+      "question": "How do total working years vary across departments?",
+      "reason": "Experience distribution across departments can reveal whether some areas rely more on senior talent while others are staffed by relatively newer professionals. This helps identify structural workforce differences and possible succession risks.",
+      "view_labels": [
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        17.8,
+        18.2
+      ]
+    }
+  },
+  {
+    "question": "How do total working years vary across departments?",
+    "explanation": "Attribution: for Age=53, a single category in Department accounts for a large share of total MEAN(TotalWorkingYears).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "MEAN(TotalWorkingYears)",
+      "subspace": [
+        [
+          "Age",
+          53
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5046904315196998,
+      "question": "How do total working years vary across departments?",
+      "reason": "Experience distribution across departments can reveal whether some areas rely more on senior talent while others are staffed by relatively newer professionals. This helps identify structural workforce differences and possible succession risks.",
+      "view_labels": [
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        24.454545454545453,
+        24.0
+      ]
+    }
+  },
+  {
+    "question": "Is work-life balance lower among employees who work overtime?",
+    "explanation": "Attribution: for overall data, a single category in OverTime accounts for a large share of total MEAN(WorkLifeBalance).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "OverTime",
+      "measure": "MEAN(WorkLifeBalance)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.503858597645062,
+      "question": "Is work-life balance lower among employees who work overtime?",
+      "reason": "Overtime can strongly affect employees’ perception of balance between work and personal life. Comparing average work-life balance scores between overtime groups can reveal whether overtime is linked to lower perceived balance and help identify a potential driver of dissatisfaction or attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        2.7732447817836814,
+        2.730769230769231
+      ]
+    }
+  },
+  {
+    "question": "How does monthly income differ between employees who work overtime and those who do not?",
+    "explanation": "Attribution: for overall data, a single category in OverTime accounts for a large share of total MEAN(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "OverTime",
+      "measure": "MEAN(MonthlyIncome)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5024406818536371,
+      "question": "How does monthly income differ between employees who work overtime and those who do not?",
+      "reason": "Overtime is often linked to employee burnout and dissatisfaction. Comparing average monthly income across overtime groups can show whether employees working overtime are concentrated in lower- or higher-paying segments, which may help explain compensation-related retention patterns.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        6484.926944971537,
+        6548.548076923077
+      ]
+    }
+  },
+  {
+    "question": "Which departments have employees at higher average job levels?",
+    "explanation": "Attribution: for YearsWithCurrManager=13, a single category in Department accounts for a large share of total MEAN(JobLevel).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "MEAN(JobLevel)",
+      "subspace": [
+        [
+          "YearsWithCurrManager",
+          13
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5017301038062284,
+      "question": "Which departments have employees at higher average job levels?",
+      "reason": "Compensation should generally rise with seniority, but the strength of that pattern may differ by department. Comparing average job level across departments can reveal whether some departments have a more senior workforce structure or unusually flat hierarchies.",
+      "view_labels": [
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        3.2222222222222223,
+        3.2
+      ]
+    }
+  },
+  {
+    "question": "How does total working experience vary across job levels?",
+    "explanation": "Attribution: for JobRole=Manufacturing Director, a single category in JobLevel accounts for a large share of total MEAN(TotalWorkingYears).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobLevel",
+      "measure": "MEAN(TotalWorkingYears)",
+      "subspace": [
+        [
+          "JobRole",
+          "Manufacturing Director"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5016077170418007,
+      "question": "How does total working experience vary across job levels?",
+      "reason": "Job level typically reflects seniority and responsibility. Analyzing total working years across job levels helps assess whether career progression aligns with experience, and can expose anomalies where certain levels appear over- or under-experienced.",
+      "view_labels": [
+        "2",
+        "3",
+        "4"
+      ],
+      "view_values": [
+        9.588888888888889,
+        16.244444444444444,
+        26.0
+      ]
+    }
+  },
+  {
+    "question": "Are salary hike percentages different between gender groups?",
+    "explanation": "Attribution: for overall data, a single category in Gender accounts for a large share of total MEAN(PercentSalaryHike).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Gender",
+      "measure": "MEAN(PercentSalaryHike)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5003354954148961,
+      "question": "Are salary hike percentages different between gender groups?",
+      "reason": "Gender-based differences in salary growth are an important workforce equity question. Comparing average percent salary hike across gender groups can help identify whether one group systematically receives larger raises, which may point to policy differences or compensation imbalance.",
+      "view_labels": [
+        "Female",
+        "Male"
+      ],
+      "view_values": [
+        15.197278911564625,
+        15.217687074829932
+      ]
+    }
+  },
+  {
+    "question": "Do employees who work overtime receive different performance ratings than those who do not?",
+    "explanation": "Attribution: for overall data, a single category in OverTime accounts for a large share of total MEAN(PerformanceRating).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "OverTime",
+      "measure": "MEAN(PerformanceRating)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5002772686686404,
+      "question": "Do employees who work overtime receive different performance ratings than those who do not?",
+      "reason": "Performance ratings may vary across levels of overtime exposure and can reveal whether extra hours are associated with stronger outcomes or whether overtime is not translating into better performance. Comparing average performance rating across overtime groups helps assess the relationship between workload intensity and evaluated results.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        3.152751423149905,
+        3.15625
+      ]
+    }
+  },
+  {
+    "question": "Does environment satisfaction differ by gender?",
+    "explanation": "Attribution: for overall data, a single category in Gender accounts for a large share of total MEAN(EnvironmentSatisfaction).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Gender",
+      "measure": "MEAN(EnvironmentSatisfaction)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5001041449697979,
+      "question": "Does environment satisfaction differ by gender?",
+      "reason": "Satisfaction with the work environment may vary across demographic groups. Comparing average environment satisfaction by gender can help detect differences in workplace experience and point to inclusion or culture issues if gaps exist.",
+      "view_labels": [
+        "Female",
+        "Male"
+      ],
+      "view_values": [
+        2.7210884353741496,
+        2.7222222222222223
+      ]
+    }
+  },
+  {
+    "question": "How does average job level differ across education fields?",
+    "explanation": "Attribution: for DailyRate=1181, a single category in EducationField accounts for a large share of total MEAN(JobLevel).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "EducationField",
+      "measure": "MEAN(JobLevel)",
+      "subspace": [
+        [
+          "DailyRate",
+          1181
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5,
+      "question": "How does average job level differ across education fields?",
+      "reason": "Career hierarchy may differ across educational backgrounds, and job level is a useful indicator of progression and seniority. Comparing average job level across education fields can uncover whether certain fields are more strongly associated with advancement or whether some groups appear underrepresented in senior positions.",
+      "view_labels": [
+        "Life Sciences",
+        "Medical"
+      ],
+      "view_values": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "question": "How do performance ratings vary across job levels?",
+    "explanation": "Attribution: for DailyRate=1194, a single category in JobLevel accounts for a large share of total MEAN(PerformanceRating).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobLevel",
+      "measure": "MEAN(PerformanceRating)",
+      "subspace": [
+        [
+          "DailyRate",
+          1194
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5,
+      "question": "How do performance ratings vary across job levels?",
+      "reason": "Promotion and pay raise patterns are often expected to align with performance outcomes. Comparing average performance rating across job levels helps reveal whether higher-level employees consistently receive stronger ratings or whether ratings are compressed across seniority levels.",
+      "view_labels": [
+        "1",
+        "2"
+      ],
+      "view_values": [
+        3.0,
+        3.0
+      ]
+    }
+  },
+  {
+    "question": "How does average environment satisfaction vary across job roles?",
+    "explanation": "Distribution difference: the distribution of JobRole changes notably when filtering by JobLevel=1 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobRole",
+      "measure": "MEAN(EnvironmentSatisfaction)",
+      "subspace": [
+        [
+          "JobLevel",
+          1
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.49904465386773667,
+      "question": "How does average environment satisfaction vary across job roles?",
+      "reason": "Work environment perception can differ substantially by job role due to manager support, work setting, or operational pressures. Comparing average environment satisfaction across roles can highlight where employees feel most or least supported and point to potential workplace issues.",
+      "view_labels": [
+        "Human Resources",
+        "Laboratory Technician",
+        "Research Scientist",
+        "Sales Representative"
+      ],
+      "view_values": [
+        2.6363636363636362,
+        2.75,
+        2.6880341880341883,
+        2.763157894736842
+      ],
+      "view_labels_baseline": [
+        "Healthcare Representative",
+        "Human Resources",
+        "Laboratory Technician",
+        "Manager",
+        "Manufacturing Director",
+        "Research Director",
+        "Research Scientist",
+        "Sales Executive",
+        "Sales Representative"
+      ],
+      "view_values_baseline": [
+        2.7709923664122136,
+        2.5961538461538463,
+        2.718146718146718,
+        2.764705882352941,
+        2.9172413793103447,
+        2.5,
+        2.7260273972602738,
+        2.6717791411042944,
+        2.7349397590361444
+      ]
+    }
+  },
+  {
+    "question": "Which job roles report the lowest average work-life balance?",
+    "explanation": "Distribution difference: the distribution of JobRole changes notably when filtering by JobLevel=1 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobRole",
+      "measure": "MEAN(WorkLifeBalance)",
+      "subspace": [
+        [
+          "JobLevel",
+          1
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.4962657964285293,
+      "question": "Which job roles report the lowest average work-life balance?",
+      "reason": "Work-life balance may vary by job role because some roles involve tighter deadlines, shift patterns, or customer-facing pressure. Comparing average work-life balance scores across roles can identify functions where employees report poorer balance, which is useful for spotting operational stress points.",
+      "view_labels": [
+        "Human Resources",
+        "Laboratory Technician",
+        "Research Scientist",
+        "Sales Representative"
+      ],
+      "view_values": [
+        2.9393939393939394,
+        2.655,
+        2.6666666666666665,
+        2.9210526315789473
+      ],
+      "view_labels_baseline": [
+        "Healthcare Representative",
+        "Human Resources",
+        "Laboratory Technician",
+        "Manager",
+        "Manufacturing Director",
+        "Research Director",
+        "Research Scientist",
+        "Sales Executive",
+        "Sales Representative"
+      ],
+      "view_values_baseline": [
+        2.7022900763358777,
+        2.923076923076923,
+        2.718146718146718,
+        2.7745098039215685,
+        2.7655172413793103,
+        2.8625,
+        2.6780821917808217,
+        2.803680981595092,
+        2.891566265060241
+      ]
+    }
+  },
+  {
+    "question": "Are salary hike percentages different across education fields?",
+    "explanation": "Distribution difference: the distribution of EducationField changes notably when filtering by YearsWithCurrManager=15 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "EducationField",
+      "measure": "MEAN(PercentSalaryHike)",
+      "subspace": [
+        [
+          "YearsWithCurrManager",
+          15
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.46780217956777287,
+      "question": "Are salary hike percentages different across education fields?",
+      "reason": "Education background may influence career paths and salary growth. Comparing average percent salary hike across education fields can reveal whether some educational backgrounds are associated with stronger compensation progression.",
+      "view_labels": [
+        "Life Sciences",
+        "Medical",
+        "Technical Degree"
+      ],
+      "view_values": [
+        17.0,
+        11.0,
+        11.0
+      ],
+      "view_labels_baseline": [
+        "Human Resources",
+        "Life Sciences",
+        "Marketing",
+        "Medical",
+        "Other",
+        "Technical Degree"
+      ],
+      "view_values_baseline": [
+        14.777777777777779,
+        15.254125412541255,
+        14.918238993710691,
+        15.366379310344827,
+        15.5,
+        14.712121212121213
+      ]
+    }
+  },
+  {
+    "question": "How does average job level differ across education fields?",
+    "explanation": "Distribution difference: the distribution of EducationField changes notably when filtering by YearsAtCompany=26 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "EducationField",
+      "measure": "MEAN(JobLevel)",
+      "subspace": [
+        [
+          "YearsAtCompany",
+          26
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.45678434343915564,
+      "question": "How does average job level differ across education fields?",
+      "reason": "Career hierarchy may differ across educational backgrounds, and job level is a useful indicator of progression and seniority. Comparing average job level across education fields can uncover whether certain fields are more strongly associated with advancement or whether some groups appear underrepresented in senior positions.",
+      "view_labels": [
+        "Life Sciences",
+        "Marketing",
+        "Other"
+      ],
+      "view_values": [
+        4.0,
+        4.0,
+        3.5
+      ],
+      "view_labels_baseline": [
+        "Human Resources",
+        "Life Sciences",
+        "Marketing",
+        "Medical",
+        "Other",
+        "Technical Degree"
+      ],
+      "view_values_baseline": [
+        2.1481481481481484,
+        2.052805280528053,
+        2.358490566037736,
+        2.040948275862069,
+        1.9878048780487805,
+        1.871212121212121
+      ]
+    }
+  },
+  {
+    "question": "How does average stock option level change across job levels?",
+    "explanation": "Distribution difference: the distribution of JobLevel changes notably when filtering by YearsAtCompany=0 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobLevel",
+      "measure": "MEAN(StockOptionLevel)",
+      "subspace": [
+        [
+          "YearsAtCompany",
+          0
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.4199507479444323,
+      "question": "How does average stock option level change across job levels?",
+      "reason": "Stock option allocation is often linked to retention strategy or seniority, and comparing it across job levels can reveal whether long-term incentives are concentrated among higher-level employees. This is useful for understanding how equity-like rewards are distributed across the hierarchy.",
+      "view_labels": [
+        "1",
+        "2",
+        "3",
+        "5"
+      ],
+      "view_values": [
+        0.48148148148148145,
+        1.0,
+        0.3333333333333333,
+        0.0
+      ],
+      "view_labels_baseline": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "view_values_baseline": [
+        0.7458563535911602,
+        0.8389513108614233,
+        0.8256880733944955,
+        0.7830188679245284,
+        0.7391304347826086
+      ]
+    }
+  },
+  {
+    "question": "How do average salary hike percentages differ across job levels?",
+    "explanation": "Distribution difference: the distribution of JobLevel changes notably when filtering by JobRole=Research Director (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobLevel",
+      "measure": "MEAN(PercentSalaryHike)",
+      "subspace": [
+        [
+          "JobRole",
+          "Research Director"
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.40770448143259436,
+      "question": "How do average salary hike percentages differ across job levels?",
+      "reason": "Compensation progression is often tied to seniority, and examining salary hike patterns by job level can show whether raises are distributed consistently across hierarchy levels. Comparing average percent salary hike across job levels can surface whether senior employees receive stronger or weaker relative increases.",
+      "view_labels": [
+        "3",
+        "4",
+        "5"
+      ],
+      "view_values": [
+        15.035714285714286,
+        15.538461538461538,
+        14.26923076923077
+      ],
+      "view_labels_baseline": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "view_values_baseline": [
+        15.305709023941068,
+        15.205992509363297,
+        15.197247706422019,
+        15.29245283018868,
+        14.391304347826088
+      ]
+    }
+  },
+  {
+    "question": "How does average stock option level change across job levels?",
+    "explanation": "Distribution difference: the distribution of JobLevel changes notably when filtering by JobRole=Manager (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobLevel",
+      "measure": "MEAN(StockOptionLevel)",
+      "subspace": [
+        [
+          "JobRole",
+          "Manager"
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.4068566428123061,
+      "question": "How does average stock option level change across job levels?",
+      "reason": "Stock option allocation is often linked to retention strategy or seniority, and comparing it across job levels can reveal whether long-term incentives are concentrated among higher-level employees. This is useful for understanding how equity-like rewards are distributed across the hierarchy.",
+      "view_labels": [
+        "3",
+        "4",
+        "5"
+      ],
+      "view_values": [
+        0.75,
+        0.7872340425531915,
+        0.6976744186046512
+      ],
+      "view_labels_baseline": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "view_values_baseline": [
+        0.7458563535911602,
+        0.8389513108614233,
+        0.8256880733944955,
+        0.7830188679245284,
+        0.7391304347826086
+      ]
+    }
+  },
+  {
+    "question": "How do performance ratings vary across job levels?",
+    "explanation": "Distribution difference: the distribution of JobLevel changes notably when filtering by TotalWorkingYears=24 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobLevel",
+      "measure": "MEAN(PerformanceRating)",
+      "subspace": [
+        [
+          "TotalWorkingYears",
+          24
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.4056491139022634,
+      "question": "How do performance ratings vary across job levels?",
+      "reason": "Promotion and pay raise patterns are often expected to align with performance outcomes. Comparing average performance rating across job levels helps reveal whether higher-level employees consistently receive stronger ratings or whether ratings are compressed across seniority levels.",
+      "view_labels": [
+        "3",
+        "4",
+        "5"
+      ],
+      "view_values": [
+        3.125,
+        3.0,
+        3.1666666666666665
+      ],
+      "view_labels_baseline": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "view_values_baseline": [
+        3.162062615101289,
+        3.149812734082397,
+        3.1513761467889907,
+        3.169811320754717,
+        3.101449275362319
+      ]
+    }
+  },
+  {
+    "question": "How do performance ratings vary across job levels?",
+    "explanation": "Distribution difference: the distribution of JobLevel changes notably when filtering by JobRole=Research Director (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobLevel",
+      "measure": "MEAN(PerformanceRating)",
+      "subspace": [
+        [
+          "JobRole",
+          "Research Director"
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.40553862067367874,
+      "question": "How do performance ratings vary across job levels?",
+      "reason": "Promotion and pay raise patterns are often expected to align with performance outcomes. Comparing average performance rating across job levels helps reveal whether higher-level employees consistently receive stronger ratings or whether ratings are compressed across seniority levels.",
+      "view_labels": [
+        "3",
+        "4",
+        "5"
+      ],
+      "view_values": [
+        3.107142857142857,
+        3.1153846153846154,
+        3.076923076923077
+      ],
+      "view_labels_baseline": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "view_values_baseline": [
+        3.162062615101289,
+        3.149812734082397,
+        3.1513761467889907,
+        3.169811320754717,
+        3.101449275362319
+      ]
+    }
+  },
+  {
+    "question": "How do average salary hike percentages differ across job levels?",
+    "explanation": "Distribution difference: the distribution of JobLevel changes notably when filtering by JobRole=Manufacturing Director (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobLevel",
+      "measure": "MEAN(PercentSalaryHike)",
+      "subspace": [
+        [
+          "JobRole",
+          "Manufacturing Director"
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.40123679517303235,
+      "question": "How do average salary hike percentages differ across job levels?",
+      "reason": "Compensation progression is often tied to seniority, and examining salary hike patterns by job level can show whether raises are distributed consistently across hierarchy levels. Comparing average percent salary hike across job levels can surface whether senior employees receive stronger or weaker relative increases.",
+      "view_labels": [
+        "2",
+        "3",
+        "4"
+      ],
+      "view_values": [
+        15.466666666666667,
+        15.622222222222222,
+        16.6
+      ],
+      "view_labels_baseline": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "view_values_baseline": [
+        15.305709023941068,
+        15.205992509363297,
+        15.197247706422019,
+        15.29245283018868,
+        14.391304347826088
+      ]
+    }
+  },
+  {
+    "question": "How does total working experience vary across job levels?",
+    "explanation": "Distribution difference: the distribution of JobLevel changes notably when filtering by JobRole=Manufacturing Director (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobLevel",
+      "measure": "MEAN(TotalWorkingYears)",
+      "subspace": [
+        [
+          "JobRole",
+          "Manufacturing Director"
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.3975663537425449,
+      "question": "How does total working experience vary across job levels?",
+      "reason": "Job level typically reflects seniority and responsibility. Analyzing total working years across job levels helps assess whether career progression aligns with experience, and can expose anomalies where certain levels appear over- or under-experienced.",
+      "view_labels": [
+        "2",
+        "3",
+        "4"
+      ],
+      "view_values": [
+        9.588888888888889,
+        16.244444444444444,
+        26.0
+      ],
+      "view_labels_baseline": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "view_values_baseline": [
+        5.89134438305709,
+        10.423220973782772,
+        15.119266055045872,
+        25.471698113207548,
+        26.3768115942029
+      ]
+    }
+  },
+  {
+    "question": "How does average job level differ across education fields?",
+    "explanation": "Distribution difference: the distribution of EducationField changes notably when filtering by JobRole=Healthcare Representative (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "EducationField",
+      "measure": "MEAN(JobLevel)",
+      "subspace": [
+        [
+          "JobRole",
+          "Healthcare Representative"
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.3826581862882994,
+      "question": "How does average job level differ across education fields?",
+      "reason": "Career hierarchy may differ across educational backgrounds, and job level is a useful indicator of progression and seniority. Comparing average job level across education fields can uncover whether certain fields are more strongly associated with advancement or whether some groups appear underrepresented in senior positions.",
+      "view_labels": [
+        "Life Sciences",
+        "Medical",
+        "Other",
+        "Technical Degree"
+      ],
+      "view_values": [
+        2.4,
+        2.5416666666666665,
+        2.2222222222222223,
+        2.7142857142857144
+      ],
+      "view_labels_baseline": [
+        "Human Resources",
+        "Life Sciences",
+        "Marketing",
+        "Medical",
+        "Other",
+        "Technical Degree"
+      ],
+      "view_values_baseline": [
+        2.1481481481481484,
+        2.052805280528053,
+        2.358490566037736,
+        2.040948275862069,
+        1.9878048780487805,
+        1.871212121212121
+      ]
+    }
+  },
+  {
+    "question": "Which education fields are associated with employees having worked at more companies?",
+    "explanation": "Distribution difference: the distribution of EducationField changes notably when filtering by Department=Research & Development (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "EducationField",
+      "measure": "MEAN(NumCompaniesWorked)",
+      "subspace": [
+        [
+          "Department",
+          "Research & Development"
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.3770354592381219,
+      "question": "Which education fields are associated with employees having worked at more companies?",
+      "reason": "Career stability often varies by educational background. Comparing average number of companies worked across education fields can uncover whether employees from certain fields tend to switch employers more frequently, signaling different career mobility patterns.",
+      "view_labels": [
+        "Life Sciences",
+        "Medical",
+        "Other",
+        "Technical Degree"
+      ],
+      "view_values": [
+        2.6159090909090907,
+        2.8677685950413223,
+        2.6875,
+        2.797872340425532
+      ],
+      "view_labels_baseline": [
+        "Human Resources",
+        "Life Sciences",
+        "Marketing",
+        "Medical",
+        "Other",
+        "Technical Degree"
+      ],
+      "view_values_baseline": [
+        3.259259259259259,
+        2.674917491749175,
+        2.559748427672956,
+        2.7844827586206895,
+        2.5609756097560976,
+        2.5833333333333335
+      ]
+    }
+  },
+  {
+    "question": "Which education fields are associated with the highest average total working years?",
+    "explanation": "Distribution difference: the distribution of EducationField changes notably when filtering by JobRole=Research Director (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "EducationField",
+      "measure": "MEAN(TotalWorkingYears)",
+      "subspace": [
+        [
+          "JobRole",
+          "Research Director"
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.37511747486871905,
+      "question": "Which education fields are associated with the highest average total working years?",
+      "reason": "Education background can shape career paths and accumulated experience. Comparing average total working years across education fields can reveal whether some fields are associated with more experienced employees, which may indicate differences in hiring patterns or career trajectories.",
+      "view_labels": [
+        "Life Sciences",
+        "Medical",
+        "Other",
+        "Technical Degree"
+      ],
+      "view_values": [
+        21.63888888888889,
+        22.114285714285714,
+        18.75,
+        16.8
+      ],
+      "view_labels_baseline": [
+        "Human Resources",
+        "Life Sciences",
+        "Marketing",
+        "Medical",
+        "Other",
+        "Technical Degree"
+      ],
+      "view_values_baseline": [
+        11.592592592592593,
+        11.245874587458745,
+        11.855345911949685,
+        11.564655172413794,
+        10.353658536585366,
+        10.25
+      ]
+    }
+  },
+  {
+    "question": "How do total working years vary across departments?",
+    "explanation": "Distribution difference: the distribution of Department changes notably when filtering by HourlyRate=74 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "MEAN(TotalWorkingYears)",
+      "subspace": [
+        [
+          "HourlyRate",
+          74
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.3746549981305835,
+      "question": "How do total working years vary across departments?",
+      "reason": "Experience distribution across departments can reveal whether some areas rely more on senior talent while others are staffed by relatively newer professionals. This helps identify structural workforce differences and possible succession risks.",
+      "view_labels": [
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        13.5,
+        8.375
+      ],
+      "view_labels_baseline": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values_baseline": [
+        11.555555555555555,
+        11.342351716961499,
+        11.105381165919283
+      ]
+    }
+  },
+  {
+    "question": "Does average time in current role differ by marital status?",
+    "explanation": "Distribution difference: the distribution of MaritalStatus changes notably when filtering by YearsInCurrentRole=15 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "MaritalStatus",
+      "measure": "MEAN(YearsInCurrentRole)",
+      "subspace": [
+        [
+          "YearsInCurrentRole",
+          15
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.3721881591728321,
+      "question": "Does average time in current role differ by marital status?",
+      "reason": "Tenure in role can differ by marital status and may reflect differences in career mobility, stability, or promotion timing across personal circumstances. Comparing average years in current role across marital status categories can help identify whether certain groups tend to remain longer in the same role, signaling slower movement or greater stability.",
+      "view_labels": [
+        "Married",
+        "Single"
+      ],
+      "view_values": [
+        15.0,
+        15.0
+      ],
+      "view_labels_baseline": [
+        "Divorced",
+        "Married",
+        "Single"
+      ],
+      "view_values_baseline": [
+        4.3547400611620795,
+        4.487369985141159,
+        3.772340425531915
+      ]
+    }
+  },
+  {
+    "question": "How do average education levels differ across departments?",
+    "explanation": "Distribution difference: the distribution of Department changes notably when filtering by TotalWorkingYears=28 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "MEAN(Education)",
+      "subspace": [
+        [
+          "TotalWorkingYears",
+          28
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.3671555242786025,
+      "question": "How do average education levels differ across departments?",
+      "reason": "Educational attainment may differ by department depending on the technical or professional requirements of the work. Comparing average education levels across departments helps identify whether some functions employ more highly educated staff or show unusual qualification patterns.",
+      "view_labels": [
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        2.5,
+        3.0
+      ],
+      "view_labels_baseline": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values_baseline": [
+        2.9682539682539684,
+        2.899063475546306,
+        2.9349775784753365
+      ]
+    }
+  },
+  {
+    "question": "Which departments tend to retain employees for longer periods?",
+    "explanation": "Distribution difference: the distribution of Department changes notably when filtering by YearsSinceLastPromotion=15 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "MEAN(YearsAtCompany)",
+      "subspace": [
+        [
+          "YearsSinceLastPromotion",
+          15
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.36713696365112797,
+      "question": "Which departments tend to retain employees for longer periods?",
+      "reason": "Tenure at a company often varies by department due to differences in career progression, role stability, or turnover pressure. Comparing average years at company across departments can reveal which functions retain employees longer and which may experience shorter employment duration.",
+      "view_labels": [
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        24.625,
+        24.2
+      ],
+      "view_labels_baseline": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values_baseline": [
+        7.238095238095238,
+        6.8647242455775235,
+        7.2847533632287
+      ]
+    }
+  },
+  {
+    "question": "Which departments tend to retain employees for longer periods?",
+    "explanation": "Distribution difference: the distribution of Department changes notably when filtering by YearsInCurrentRole=16 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "MEAN(YearsAtCompany)",
+      "subspace": [
+        [
+          "YearsInCurrentRole",
+          16
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.3669581052357263,
+      "question": "Which departments tend to retain employees for longer periods?",
+      "reason": "Tenure at a company often varies by department due to differences in career progression, role stability, or turnover pressure. Comparing average years at company across departments can reveal which functions retain employees longer and which may experience shorter employment duration.",
+      "view_labels": [
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        19.0,
+        19.666666666666668
+      ],
+      "view_labels_baseline": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values_baseline": [
+        7.238095238095238,
+        6.8647242455775235,
+        7.2847533632287
+      ]
+    }
+  },
+  {
+    "question": "How do average education levels differ across departments?",
+    "explanation": "Distribution difference: the distribution of Department changes notably when filtering by YearsSinceLastPromotion=14 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "MEAN(Education)",
+      "subspace": [
+        [
+          "YearsSinceLastPromotion",
+          14
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.36643827277988816,
+      "question": "How do average education levels differ across departments?",
+      "reason": "Educational attainment may differ by department depending on the technical or professional requirements of the work. Comparing average education levels across departments helps identify whether some functions employ more highly educated staff or show unusual qualification patterns.",
+      "view_labels": [
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        2.7142857142857144,
+        3.0
+      ],
+      "view_labels_baseline": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values_baseline": [
+        2.9682539682539684,
+        2.899063475546306,
+        2.9349775784753365
+      ]
+    }
+  },
+  {
+    "question": "How does average environment satisfaction vary across departments?",
+    "explanation": "Distribution difference: the distribution of Department changes notably when filtering by YearsSinceLastPromotion=14 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "MEAN(EnvironmentSatisfaction)",
+      "subspace": [
+        [
+          "YearsSinceLastPromotion",
+          14
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.3623213814518705,
+      "question": "How does average environment satisfaction vary across departments?",
+      "reason": "Department-level differences in employee satisfaction can point to cultural or managerial issues. Using Department as the breakdown and MEAN(EnvironmentSatisfaction) as the measure helps identify whether workplace conditions are perceived differently across departments.",
+      "view_labels": [
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        2.4285714285714284,
+        2.5
+      ],
+      "view_labels_baseline": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values_baseline": [
+        2.6825396825396823,
+        2.7440166493236213,
+        2.679372197309417
+      ]
+    }
+  },
+  {
+    "question": "Is average job involvement different across marital status groups?",
+    "explanation": "Distribution difference: the distribution of MaritalStatus changes notably when filtering by StockOptionLevel=1 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "MaritalStatus",
+      "measure": "MEAN(JobInvolvement)",
+      "subspace": [
+        [
+          "StockOptionLevel",
+          1
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.3601897267000288,
+      "question": "Is average job involvement different across marital status groups?",
+      "reason": "Job involvement reflects engagement and commitment to work, and differences by marital status may indicate variation in personal responsibilities or work priorities. Comparing average job involvement across marital status groups can help uncover meaningful behavioral or engagement patterns.",
+      "view_labels": [
+        "Divorced",
+        "Married"
+      ],
+      "view_values": [
+        2.717948717948718,
+        2.748129675810474
+      ],
+      "view_labels_baseline": [
+        "Divorced",
+        "Married",
+        "Single"
+      ],
+      "view_values_baseline": [
+        2.7522935779816513,
+        2.7518573551263,
+        2.6829787234042555
+      ]
+    }
+  },
+  {
+    "question": "Which departments receive the highest average salary hikes?",
+    "explanation": "Distribution difference: the distribution of Department changes notably when filtering by HourlyRate=95 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "MEAN(PercentSalaryHike)",
+      "subspace": [
+        [
+          "HourlyRate",
+          95
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.35987844347948084,
+      "question": "Which departments receive the highest average salary hikes?",
+      "reason": "Pay growth may reflect recognition and reward practices, and these can vary across functions. Looking at average percent salary hike by department can reveal whether some departments receive systematically higher raises, helping identify compensation disparities or exceptional patterns.",
+      "view_labels": [
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        15.473684210526315,
+        14.25
+      ],
+      "view_labels_baseline": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values_baseline": [
+        14.761904761904763,
+        15.291363163371487,
+        15.096412556053812
+      ]
+    }
+  },
+  {
+    "question": "Which departments receive the highest average salary hikes?",
+    "explanation": "Distribution difference: the distribution of Department changes notably when filtering by YearsSinceLastPromotion=6 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "MEAN(PercentSalaryHike)",
+      "subspace": [
+        [
+          "YearsSinceLastPromotion",
+          6
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.3598159328452806,
+      "question": "Which departments receive the highest average salary hikes?",
+      "reason": "Pay growth may reflect recognition and reward practices, and these can vary across functions. Looking at average percent salary hike by department can reveal whether some departments receive systematically higher raises, helping identify compensation disparities or exceptional patterns.",
+      "view_labels": [
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        15.666666666666666,
+        14.636363636363637
+      ],
+      "view_labels_baseline": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values_baseline": [
+        14.761904761904763,
+        15.291363163371487,
+        15.096412556053812
+      ]
+    }
+  },
+  {
+    "question": "Which departments have employees at higher average job levels?",
+    "explanation": "Distribution difference: the distribution of Department changes notably when filtering by HourlyRate=92 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "MEAN(JobLevel)",
+      "subspace": [
+        [
+          "HourlyRate",
+          92
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.3581844231739264,
+      "question": "Which departments have employees at higher average job levels?",
+      "reason": "Compensation should generally rise with seniority, but the strength of that pattern may differ by department. Comparing average job level across departments can reveal whether some departments have a more senior workforce structure or unusually flat hierarchies.",
+      "view_labels": [
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        2.3333333333333335,
+        2.5
+      ],
+      "view_labels_baseline": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values_baseline": [
+        2.0317460317460316,
+        1.9771071800208118,
+        2.2556053811659194
+      ]
+    }
+  },
+  {
+    "question": "How does the average daily rate vary across departments?",
+    "explanation": "Distribution difference: the distribution of Department changes notably when filtering by DistanceFromHome=14 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "MEAN(DailyRate)",
+      "subspace": [
+        [
+          "DistanceFromHome",
+          14
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.358011088424011,
+      "question": "How does the average daily rate vary across departments?",
+      "reason": "Travel requirements may vary substantially by department and can indicate structural differences in job demands. Comparing average daily rate across departments can help detect whether certain departments are associated with notably different compensation-related patterns or assignment structures, highlighting possible operational or policy differences.",
+      "view_labels": [
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        888.0714285714286,
+        640.1428571428571
+      ],
+      "view_labels_baseline": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values_baseline": [
+        751.5396825396825,
+        806.8511966701353,
+        800.2757847533633
+      ]
+    }
+  },
+  {
+    "question": "Does average time in current role differ by marital status?",
+    "explanation": "Distribution difference: the distribution of MaritalStatus changes notably when filtering by DailyRate=921 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "MaritalStatus",
+      "measure": "MEAN(YearsInCurrentRole)",
+      "subspace": [
+        [
+          "DailyRate",
+          921
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.34605887861493934,
+      "question": "Does average time in current role differ by marital status?",
+      "reason": "Tenure in role can differ by marital status and may reflect differences in career mobility, stability, or promotion timing across personal circumstances. Comparing average years in current role across marital status categories can help identify whether certain groups tend to remain longer in the same role, signaling slower movement or greater stability.",
+      "view_labels": [
+        "Divorced",
+        "Married"
+      ],
+      "view_values": [
+        3.0,
+        4.333333333333333
+      ],
+      "view_labels_baseline": [
+        "Divorced",
+        "Married",
+        "Single"
+      ],
+      "view_values_baseline": [
+        4.3547400611620795,
+        4.487369985141159,
+        3.772340425531915
+      ]
+    }
+  },
+  {
+    "question": "Which departments show the longest time since employees were last promoted?",
+    "explanation": "Distribution difference: the distribution of Department changes notably when filtering by YearsAtCompany=15 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "MEAN(YearsSinceLastPromotion)",
+      "subspace": [
+        [
+          "YearsAtCompany",
+          15
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.3329275165165161,
+      "question": "Which departments show the longest time since employees were last promoted?",
+      "reason": "Promotion stagnation can be an important signal of career bottlenecks. Comparing years since last promotion across departments can reveal structural differences in advancement opportunities and highlight departments where employees may be experiencing slower career growth.",
+      "view_labels": [
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        5.3,
+        4.9
+      ],
+      "view_labels_baseline": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values_baseline": [
+        1.7777777777777777,
+        2.13735691987513,
+        2.3542600896860986
+      ]
+    }
+  },
+  {
+    "question": "How does average stock option level differ between employees who left and those who stayed?",
+    "explanation": "Distribution difference: the distribution of Attrition changes notably when filtering by Age=51 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(StockOptionLevel)",
+      "subspace": [
+        [
+          "Age",
+          51
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.2558741910165176,
+      "question": "How does average stock option level differ between employees who left and those who stayed?",
+      "reason": "Stock options are often used to support retention and reward commitment, so differences by attrition status can be highly informative. Comparing average stock option level between employees who left and those who stayed can reveal whether equity-related incentives are associated with lower turnover.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        0.5294117647058824,
+        1.5
+      ],
+      "view_labels_baseline": [
+        "False",
+        "True"
+      ],
+      "view_values_baseline": [
+        0.8450932684509327,
+        0.5274261603375527
+      ]
+    }
+  },
+  {
+    "question": "Which education fields are associated with higher average monthly rates?",
+    "explanation": "Distribution difference: the distribution of EducationField changes notably when filtering by Department=Human Resources (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "EducationField",
+      "measure": "MEAN(MonthlyRate)",
+      "subspace": [
+        [
+          "Department",
+          "Human Resources"
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.24993980163932641,
+      "question": "Which education fields are associated with higher average monthly rates?",
+      "reason": "Monthly rate variation by education field can reveal whether certain educational backgrounds are associated with stronger compensation outcomes. This can help uncover relationships between specialization and pay positioning, as well as potential outliers among education categories.",
+      "view_labels": [
+        "Human Resources",
+        "Life Sciences",
+        "Medical",
+        "Other",
+        "Technical Degree"
+      ],
+      "view_values": [
+        14810.74074074074,
+        12813.875,
+        12668.23076923077,
+        9275.0,
+        13158.5
+      ],
+      "view_labels_baseline": [
+        "Human Resources",
+        "Life Sciences",
+        "Marketing",
+        "Medical",
+        "Other",
+        "Technical Degree"
+      ],
+      "view_values_baseline": [
+        14810.74074074074,
+        14530.13201320132,
+        14076.943396226416,
+        14295.056034482759,
+        13270.780487804877,
+        14210.363636363636
+      ]
+    }
+  },
+  {
+    "question": "Does the average time since last promotion differ by marital status?",
+    "explanation": "Distribution difference: the distribution of MaritalStatus changes notably when filtering by TotalWorkingYears=1 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "MaritalStatus",
+      "measure": "MEAN(YearsSinceLastPromotion)",
+      "subspace": [
+        [
+          "TotalWorkingYears",
+          1
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.23718402194338312,
+      "question": "Does the average time since last promotion differ by marital status?",
+      "reason": "Career advancement may differ by demographic group, and promotion timing is a useful signal of growth opportunity. Comparing average years since last promotion across marital status categories can uncover whether certain groups are experiencing slower progression or unusual delays.",
+      "view_labels": [
+        "Divorced",
+        "Married",
+        "Single"
+      ],
+      "view_values": [
+        0.058823529411764705,
+        0.07142857142857142,
+        0.2222222222222222
+      ],
+      "view_labels_baseline": [
+        "Divorced",
+        "Married",
+        "Single"
+      ],
+      "view_values_baseline": [
+        2.1559633027522938,
+        2.37741456166419,
+        1.9382978723404256
+      ]
+    }
+  },
+  {
+    "question": "How does performance rating vary by training frequency last year?",
+    "explanation": "Distribution difference: the distribution of TrainingTimesLastYear changes notably when filtering by EducationField=Human Resources (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "TrainingTimesLastYear",
+      "measure": "MEAN(PerformanceRating)",
+      "subspace": [
+        [
+          "EducationField",
+          "Human Resources"
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.22833486070632805,
+      "question": "How does performance rating vary by training frequency last year?",
+      "reason": "Performance outcomes may vary by the amount of recent training employees receive. Comparing average performance rating across training frequency groups can help identify whether training is associated with stronger performance or whether additional training is concentrated among lower-performing groups.",
+      "view_labels": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "view_values": [
+        3.0,
+        3.0,
+        3.1,
+        3.2222222222222223,
+        3.0,
+        3.0
+      ],
+      "view_labels_baseline": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "view_values_baseline": [
+        3.185185185185185,
+        3.1267605633802815,
+        3.162705667276051,
+        3.15071283095723,
+        3.130081300813008,
+        3.1596638655462184,
+        3.1384615384615384
+      ]
+    }
+  },
+  {
+    "question": "How does average environment satisfaction vary across job roles?",
+    "explanation": "Distribution difference: the distribution of JobRole changes notably when filtering by JobLevel=3 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "JobRole",
+      "measure": "MEAN(EnvironmentSatisfaction)",
+      "subspace": [
+        [
+          "JobLevel",
+          3
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.22248013116161233,
+      "question": "How does average environment satisfaction vary across job roles?",
+      "reason": "Work environment perception can differ substantially by job role due to manager support, work setting, or operational pressures. Comparing average environment satisfaction across roles can highlight where employees feel most or least supported and point to potential workplace issues.",
+      "view_labels": [
+        "Healthcare Representative",
+        "Human Resources",
+        "Laboratory Technician",
+        "Manager",
+        "Manufacturing Director",
+        "Research Director",
+        "Research Scientist",
+        "Sales Executive"
+      ],
+      "view_values": [
+        2.727272727272727,
+        2.5,
+        1.0,
+        2.3333333333333335,
+        3.088888888888889,
+        2.3214285714285716,
+        2.0,
+        2.632911392405063
+      ],
+      "view_labels_baseline": [
+        "Healthcare Representative",
+        "Human Resources",
+        "Laboratory Technician",
+        "Manager",
+        "Manufacturing Director",
+        "Research Director",
+        "Research Scientist",
+        "Sales Executive",
+        "Sales Representative"
+      ],
+      "view_values_baseline": [
+        2.7709923664122136,
+        2.5961538461538463,
+        2.718146718146718,
+        2.764705882352941,
+        2.9172413793103447,
+        2.5,
+        2.7260273972602738,
+        2.6717791411042944,
+        2.7349397590361444
+      ]
+    }
+  },
+  {
+    "question": "How does job involvement change with employees' number of previous companies worked?",
+    "explanation": "Distribution difference: the distribution of NumCompaniesWorked changes notably when filtering by DistanceFromHome=24 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "NumCompaniesWorked",
+      "measure": "MEAN(JobInvolvement)",
+      "subspace": [
+        [
+          "DistanceFromHome",
+          24
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.20601030050741026,
+      "question": "How does job involvement change with employees' number of previous companies worked?",
+      "reason": "Employees with different career histories may show different engagement levels. Comparing average job involvement across the number of companies previously worked for can reveal whether frequent job changes are associated with lower or higher engagement in the current role.",
+      "view_labels": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "view_values": [
+        2.3333333333333335,
+        2.5384615384615383,
+        2.0,
+        3.5,
+        4.0,
+        2.0,
+        3.0,
+        3.0,
+        3.0
+      ],
+      "view_labels_baseline": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "view_values_baseline": [
+        2.751269035532995,
+        2.7005758157389637,
+        2.73972602739726,
+        2.7358490566037736,
+        2.8129496402877696,
+        2.6666666666666665,
+        2.6714285714285713,
+        2.7162162162162162,
+        2.7755102040816326,
+        2.8076923076923075
+      ]
+    }
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "input_tokens": 92430,
+  "output_tokens": 34492,
+  "total_tokens": 126922,
+  "requests": 182,
+  "model": "gpt-5.4"
+}

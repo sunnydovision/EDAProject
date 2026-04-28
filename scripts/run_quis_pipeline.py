@@ -105,6 +105,11 @@ def main() -> None:
         default="",
         help="Output directory suffix, e.g. v4 → quis_results/quis_{timestamp}_{dataset}_v4/",
     )
+    parser.add_argument(
+        "--mock-llm",
+        action="store_true",
+        help="QUGEN uses mock LLM; ISGEN runs with --no-subspace (no API). For offline dry-run only.",
+    )
     args = parser.parse_args()
     suffix = args.suffix.strip()
 
@@ -134,31 +139,36 @@ def main() -> None:
     t0 = time.perf_counter()
     env_q = os.environ.copy()
     env_q["IFQ_USAGE_OUTPUT"] = str(usage_qugen_path)
-    r1 = subprocess.run(
-        [py, str(ROOT / "scripts" / "run_qugen.py"), "--csv", str(csv_path), "--output", str(cards_path)],
-        cwd=str(ROOT),
-        env=env_q,
-    )
+    qugen_cmd = [
+        py,
+        str(ROOT / "scripts" / "run_qugen.py"),
+        "--csv",
+        str(csv_path),
+        "--output",
+        str(cards_path),
+    ]
+    if args.mock_llm:
+        qugen_cmd.append("--mock")
+    r1 = subprocess.run(qugen_cmd, cwd=str(ROOT), env=env_q)
     t1 = time.perf_counter()
     if r1.returncode != 0:
         sys.exit(r1.returncode)
 
     env_i = os.environ.copy()
     env_i["IFQ_USAGE_OUTPUT"] = str(usage_isgen_path)
-    r2 = subprocess.run(
-        [
-            py,
-            str(ROOT / "scripts" / "run_isgen.py"),
-            "--csv",
-            str(csv_path),
-            "--insight-cards",
-            str(cards_path),
-            "--output",
-            str(summary_path),
-        ],
-        cwd=str(ROOT),
-        env=env_i,
-    )
+    isgen_cmd = [
+        py,
+        str(ROOT / "scripts" / "run_isgen.py"),
+        "--csv",
+        str(csv_path),
+        "--insight-cards",
+        str(cards_path),
+        "--output",
+        str(summary_path),
+    ]
+    if args.mock_llm:
+        isgen_cmd.append("--no-subspace")
+    r2 = subprocess.run(isgen_cmd, cwd=str(ROOT), env=env_i)
     t2 = time.perf_counter()
     if r2.returncode != 0:
         sys.exit(r2.returncode)

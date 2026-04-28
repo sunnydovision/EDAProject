@@ -1,0 +1,414 @@
+{
+  "dataset_overview": {
+    "shape": {
+      "rows": 1470,
+      "columns": 35
+    },
+    "total_columns": 35,
+    "numerical_columns": 26,
+    "categorical_columns": 6
+  },
+  "columns": {
+    "Age": {
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "statistics": {
+        "min": 18.0,
+        "max": 60.0,
+        "mean": 36.923809523809524,
+        "median": 36.0,
+        "std": 9.135373489136732
+      }
+    },
+    "Attrition": {
+      "dtype": "bool",
+      "missing_count": 0,
+      "missing_percentage": 0.0
+    },
+    "BusinessTravel": {
+      "dtype": "object",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_count": 3,
+      "top_values": {
+        "Travel_Rarely": 1043,
+        "Travel_Frequently": 277,
+        "Non-Travel": 150
+      }
+    },
+    "DailyRate": {
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "statistics": {
+        "min": 102.0,
+        "max": 1499.0,
+        "mean": 802.4857142857143,
+        "median": 802.0,
+        "std": 403.50909994352816
+      }
+    },
+    "Department": {
+      "dtype": "object",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_count": 3,
+      "top_values": {
+        "Research & Development": 961,
+        "Sales": 446,
+        "Human Resources": 63
+      }
+    },
+    "DistanceFromHome": {
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "statistics": {
+        "min": 1.0,
+        "max": 29.0,
+        "mean": 9.19251700680272,
+        "median": 7.0,
+        "std": 8.106864435666074
+      }
+    },
+    "Education": {
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "statistics": {
+        "min": 1.0,
+        "max": 5.0,
+        "mean": 2.912925170068027,
+        "median": 3.0,
+        "std": 1.0241649445978729
+      }
+    },
+    "EducationField": {
+      "dtype": "object",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_count": 6,
+      "top_values": {
+        "Life Sciences": 606,
+        "Medical": 464,
+        "Marketing": 159,
+        "Technical Degree": 132,
+        "Other": 82,
+        "Human Resources": 27
+      }
+    },
+    "EmployeeCount": {
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "statistics": {
+        "min": 1.0,
+        "max": 1.0,
+        "mean": 1.0,
+        "median": 1.0,
+        "std": 0.0
+      }
+    },
+    "EmployeeNumber": {
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "statistics": {
+        "min": 1.0,
+        "max": 2068.0,
+        "mean": 1024.865306122449,
+        "median": 1020.5,
+        "std": 602.0243348474751
+      }
+    },
+    "EnvironmentSatisfaction": {
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "statistics": {
+        "min": 1.0,
+        "max": 4.0,
+        "mean": 2.721768707482993,
+        "median": 3.0,
+        "std": 1.0930822146350005
+      }
+    },
+    "Gender": {
+      "dtype": "object",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_count": 2,
+      "top_values": {
+        "Male": 882,
+        "Female": 588
+      }
+    },
+    "HourlyRate": {
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "statistics": {
+        "min": 30.0,
+        "max": 100.0,
+        "mean": 65.89115646258503,
+        "median": 66.0,
+        "std": 20.329427593996165
+      }
+    },
+    "JobInvolvement": {
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "statistics": {
+        "min": 1.0,
+        "max": 4.0,
+        "mean": 2.7299319727891156,
+        "median": 3.0,
+        "std": 0.7115611429632304
+      }
+    },
+    "JobLevel": {
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "statistics": {
+        "min": 1.0,
+        "max": 5.0,
+        "mean": 2.0639455782312925,
+        "median": 2.0,
+        "std": 1.106939898935122
+      }
+    },
+    "JobRole": {
+      "dtype": "object",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_count": 9,
+      "top_values": {
+        "Sales Executive": 326,
+        "Research Scientist": 292,
+        "Laboratory Technician": 259,
+        "Manufacturing Director": 145,
+        "Healthcare Representative": 131,
+        "Manager": 102,
+        "Sales Representative": 83,
+        "Research Director": 80,
+        "Human Resources": 52
+      }
+    },
+    "JobSatisfaction": {
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "statistics": {
+        "min": 1.0,
+        "max": 4.0,
+        "mean": 2.7285714285714286,
+        "median": 3.0,
+        "std": 1.1028461230547204
+      }
+    },
+    "MaritalStatus": {
+      "dtype": "object",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "unique_count": 3,
+      "top_values": {
+        "Married": 673,
+        "Single": 470,
+        "Divorced": 327
+      }
+    },
+    "MonthlyIncome": {
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "statistics": {
+        "min": 1009.0,
+        "max": 19999.0,
+        "mean": 6502.931292517007,
+        "median": 4919.0,
+        "std": 4707.956783097994
+      }
+    },
+    "MonthlyRate": {
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "statistics": {
+        "min": 2094.0,
+        "max": 26999.0,
+        "mean": 14313.103401360544,
+        "median": 14235.5,
+        "std": 7117.786044059976
+      }
+    },
+    "NumCompaniesWorked": {
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "statistics": {
+        "min": 0.0,
+        "max": 9.0,
+        "mean": 2.6931972789115646,
+        "median": 2.0,
+        "std": 2.498009006070747
+      }
+    },
+    "Over18": {
+      "dtype": "bool",
+      "missing_count": 0,
+      "missing_percentage": 0.0
+    },
+    "OverTime": {
+      "dtype": "bool",
+      "missing_count": 0,
+      "missing_percentage": 0.0
+    },
+    "PercentSalaryHike": {
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "statistics": {
+        "min": 11.0,
+        "max": 25.0,
+        "mean": 15.209523809523809,
+        "median": 14.0,
+        "std": 3.6599377165396407
+      }
+    },
+    "PerformanceRating": {
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "statistics": {
+        "min": 3.0,
+        "max": 4.0,
+        "mean": 3.1537414965986397,
+        "median": 3.0,
+        "std": 0.36082352460434397
+      }
+    },
+    "RelationshipSatisfaction": {
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "statistics": {
+        "min": 1.0,
+        "max": 4.0,
+        "mean": 2.7122448979591836,
+        "median": 3.0,
+        "std": 1.0812088864403524
+      }
+    },
+    "StandardHours": {
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "statistics": {
+        "min": 80.0,
+        "max": 80.0,
+        "mean": 80.0,
+        "median": 80.0,
+        "std": 0.0
+      }
+    },
+    "StockOptionLevel": {
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "statistics": {
+        "min": 0.0,
+        "max": 3.0,
+        "mean": 0.7938775510204081,
+        "median": 1.0,
+        "std": 0.852076667930838
+      }
+    },
+    "TotalWorkingYears": {
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "statistics": {
+        "min": 0.0,
+        "max": 40.0,
+        "mean": 11.279591836734694,
+        "median": 10.0,
+        "std": 7.780781675514997
+      }
+    },
+    "TrainingTimesLastYear": {
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "statistics": {
+        "min": 0.0,
+        "max": 6.0,
+        "mean": 2.7993197278911564,
+        "median": 3.0,
+        "std": 1.2892706207958455
+      }
+    },
+    "WorkLifeBalance": {
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "statistics": {
+        "min": 1.0,
+        "max": 4.0,
+        "mean": 2.7612244897959184,
+        "median": 3.0,
+        "std": 0.7064758297141507
+      }
+    },
+    "YearsAtCompany": {
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "statistics": {
+        "min": 0.0,
+        "max": 40.0,
+        "mean": 7.0081632653061225,
+        "median": 5.0,
+        "std": 6.126525152403569
+      }
+    },
+    "YearsInCurrentRole": {
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "statistics": {
+        "min": 0.0,
+        "max": 18.0,
+        "mean": 4.229251700680272,
+        "median": 3.0,
+        "std": 3.623137034670628
+      }
+    },
+    "YearsSinceLastPromotion": {
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "statistics": {
+        "min": 0.0,
+        "max": 15.0,
+        "mean": 2.1877551020408164,
+        "median": 1.0,
+        "std": 3.222430279137967
+      }
+    },
+    "YearsWithCurrManager": {
+      "dtype": "int64",
+      "missing_count": 0,
+      "missing_percentage": 0.0,
+      "statistics": {
+        "min": 0.0,
+        "max": 17.0,
+        "mean": 4.12312925170068,
+        "median": 3.0,
+        "std": 3.5681361205404376
+      }
+    }
+  }
+}
