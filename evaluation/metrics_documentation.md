@@ -903,16 +903,6 @@ Direction (Contrasting Rate) đo tỉ lệ insights có subspace filter mà **ph
 
 Insights contrasting phản ánh **phân khúc bất thường** — nhóm đối tượng đang ở mức dưới kỳ vọng khi toàn thể là dương (hoặc trên kỳ vọng khi toàn thể là âm). Đây là loại insights có giá trị phân tích cao vì chỉ ra các điểm cần can thiệp.
 
-### Khác gì Direction Uplift (cũ)?
-
-| | Direction Uplift (cũ) | Direction Contrasting Rate (mới) |
-|---|---|---|
-| **Loại** | Sub-metric của metric 8 | **Metric độc lập** |
-| **Giá trị** | "up" / "flat" / "down" (định tính) | Float ∈ [0, 1] (định lượng) |
-| **So sánh** | `uplift_abs` của metric 8 với 0 | `subspace_val` vs `global_val` từng insight |
-| **Ý nghĩa** | Score trung bình subspace > no-subspace? | Tỉ lệ insights tìm ra phân khúc bất thường |
-| **Phụ thuộc** | Phụ thuộc hoàn toàn vào metric 8 | Tính toán độc lập |
-
 ### Output
 
 | Field (JSON key) | Ý nghĩa |
@@ -920,8 +910,6 @@ Insights contrasting phản ánh **phân khúc bất thường** — nhóm đố
 | `score_uplift_direction` | contrasting_rate = contrasting_count / subspace_direction_evaluated ∈ [0, 1] |
 | `contrasting_count` | Số insights có subspace value đi ngược chiều global value |
 | `subspace_direction_evaluated` | Số insights có subspace được đánh giá thành công (có score hợp lệ và global/subspace_val không None) |
-
-> 💡 **Lưu ý:** `score_uplift_direction` được tái sử dụng để lưu `contrasting_rate` thay vì "up"/"down"/"flat" như trước. Giá trị này là float ∈ [0, 1].
 
 ### Ngưỡng
 - Tốt: ≥ 0.6 (>60% insights subspace tìm ra phân khúc bất thường)
