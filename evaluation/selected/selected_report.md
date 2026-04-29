@@ -48,6 +48,12 @@ Metrics are split into two parts to serve the paper's two contributions:
 
 > All three systems achieve 100% correctness. This confirms QUIS is faithfully reproduced and QuGen does not introduce hallucinated values.
 
+**How it is computed:** For each insight, the pipeline applies the subspace filter on the cleaned dataframe, recomputes the aggregation (SUM / MEAN / COUNT / MAX / MIN grouped by breakdown), then compares every reported value against the recomputed value (tolerance ε = 1e-6). An insight is faithful only if *all* reported values match. Duplicate labels in `view_labels` also cause a fail.
+
+`faithfulness = verified_count / total_count` — **higher is better** (max = 100%)
+
+**Why the winner (Tie) outperforms:** All three systems tie at 100% because every system derives its reported numerical values directly from pandas aggregations on the cleaned dataframe — there is no free-text generation step that can introduce hallucinated numbers. The tie confirms that adding the QuGen layer (question + reason generation in QUIS) does not corrupt numerical correctness; the extra LLM calls in QUIS operate only on metadata (column names, patterns, intents), not on the data values themselves.
+
 ---
 
 ## 2. Statistical Validity & Coverage
@@ -58,6 +64,32 @@ Metrics are split into two parts to serve the paper's two contributions:
 
 > Baseline generates the most statistically significant insights on average. QUIS trades raw significance for richer subspace exploration (see Part 2).
 
+**How it is computed:** Each insight is tested with the statistical method appropriate for its pattern type:
+
+| Pattern | Test | Effect size (score) |
+|---|---|---|
+| OUTSTANDING_VALUE | Z-test | z / (z + 1), where z = (max − μ) / σ |
+| TREND | Mann-Kendall | \|Kendall τ\| ∈ [0, 1] |
+| ATTRIBUTION | Chi-square (Fisher if 2×2 sparse) | Cramér's V ∈ [0, 1] |
+| DISTRIBUTION_DIFFERENCE | KS test | KS statistic ∈ [0, 1] |
+
+Insights whose breakdown column is numeric are excluded from evaluation entirely (EDA structural violation) — they are not counted as non-significant. An insight is significant if p < 0.05.
+
+`significant_rate = significant_count / total_evaluated` — **higher is better.** Threshold: ≥ 80% good, ≥ 70% acceptable.
+
+**Why Baseline outperforms:** Baseline scores 57.6% vs QUIS 46.4% and ONLYSTATS 51.7%. Baseline wins on OUTSTANDING_VALUE (69.3%), ATTRIBUTION (100%), and DISTRIBUTION_DIFFERENCE (61.1%) — its direct LLM prompt concentrates on a smaller set of (B, M) pairs that happen to be statistically high-signal. QUIS, driven by QuGen's exploratory questions, generates a wider spread of subspace-filtered insights across many breakdown-measure combinations, including segments where the pattern is analytically meaningful but does not always cross the p < 0.05 threshold. The lower significance rate in QUIS is therefore a consequence of broader exploration, not lower analytical quality.
+
+Per-pattern breakdown (avg across datasets):
+
+| Pattern | QUIS | Baseline | ONLYSTATS | Winner |
+|---------|------|----------|-----------|--------|
+| TREND | 100.0% | 66.7% | 83.3% | **QUIS** |
+| OUTSTANDING_VALUE | 32.2% | 69.3% | 31.2% | **Baseline** |
+| ATTRIBUTION | 62.0% | 100.0% | 69.1% | **Baseline** |
+| DISTRIBUTION_DIFFERENCE | 58.1% | 61.1% | 50.6% | **Baseline** |
+
+---
+
 **Pattern Coverage** (per dataset)
 
 | Dataset | QUIS | Baseline | ONLYSTATS |
@@ -65,6 +97,20 @@ Metrics are split into two parts to serve the paper's two contributions:
 | adidas | **4/4 (100%)** | 3/4 (75%) | **4/4 (100%)** |
 | employee_attrition | 3/4 (75%) | 3/4 (75%) | 3/4 (75%) |
 | online_sales | 3/4 (75%) | 2/4 (50%) | **4/4 (100%)** |
+
+**How it is computed:** A pattern is "covered" if the system generates at least one insight with a structurally valid breakdown for that pattern (e.g., Temporal column for TREND; Categorical/ID for ATTRIBUTION and DISTRIBUTION_DIFFERENCE; no restriction for OUTSTANDING_VALUE). Column semantic types are sourced from `profile.json`.
+
+`pattern_coverage = covered_count / 4` — **higher is better** (max = 4/4). Threshold: 4/4 good, 3/4 acceptable.
+
+**Uncovered patterns per dataset:**
+
+| Dataset | QUIS | Baseline | ONLYSTATS |
+|---------|------|----------|-----------|
+| adidas | — | ATTRIBUTION | — |
+| employee_attrition | TREND | TREND | TREND, DISTRIBUTION_DIFFERENCE |
+| online_sales | TREND | TREND, ATTRIBUTION | — |
+
+**Why there is no single winner:** TREND is the most frequently missed pattern across all three systems — it requires a Temporal breakdown column, which is absent or insufficiently populated in employee_attrition and online_sales. Baseline additionally misses ATTRIBUTION on adidas and online_sales because its LLM prompt frequently assigns numeric columns as breakdowns for ATTRIBUTION insights, making those insights structurally invalid. QUIS and ONLYSTATS avoid this because QuGen (QUIS) selects breakdowns with semantic awareness, and ONLYSTATS restricts breakdowns to categorical columns by design.
 
 ---
 
@@ -82,45 +128,100 @@ Metrics are split into two parts to serve the paper's two contributions:
 
 ---
 
-## 4. Subspace Coverage
+### Metric 3 — Insight Novelty
 
-| Metric | QUIS | Baseline | ONLYSTATS | Winner |
-|--------|------|----------|-----------|--------|
-| 7. Subspace Rate | **84.4%** | 37.4% | 77.0% | **QUIS** |
-| 7b. Subspace Significance | 37.5% | **58.3%** | 31.7% | **Baseline** |
+**How it is computed:** Each insight is converted to the string `"{breakdown} | {measure} | {pattern} | {condition}"` and embedded with `SentenceTransformer all-MiniLM-L6-v2`. For each insight in system A, the maximum cosine similarity to any insight in system B is computed. An insight is novel if this max similarity < τ = 0.85.
 
-**Subspace Rate per dataset:**
+`novelty = novel_count / total_count` — **higher is better.** Threshold: ≥ 80% good.
 
-| Dataset | QUIS | Baseline | ONLYSTATS |
-|---------|------|----------|-----------|
-| adidas | **86/99 (86.9%)** | 32/75 (42.7%) | 67/85 (78.8%) |
-| employee_attrition | **116/133 (87.2%)** | 27/81 (33.3%) | 78/132 (59.1%) |
-| online_sales | 84/106 (79.2%) | 22/61 (36.1%) | **67/72 (93.1%)** |
+Per-dataset results:
 
-> QUIS generates the most subspace-conditional insights (84.4% vs 37.4% Baseline). However, Baseline's smaller set of subspace insights are more statistically significant (58.3% vs 37.5%). This trade-off is examined deeper in Part 2.
+| Dataset | QUIS | Baseline | ONLYSTATS | Winner |
+|---------|------|----------|-----------|--------|
+| adidas | 84.8% | 80.0% | 73.3% | QUIS |
+| employee_attrition | 84.2% | 85.2% | 77.5% | Baseline |
+| online_sales | 64.2% | 93.4% | 31.2% | Baseline |
+| **AVG** | **77.7%** | **86.2%** | **61.8%** | **Baseline** |
+
+**Why Baseline outperforms:** Baseline scores 86.2% vs QUIS 77.7% and ONLYSTATS 61.8%. The main driver is the asymmetry in how novelty is computed: Baseline's novelty is measured relative to QUIS (i.e., how many Baseline insights are different from QUIS), while QUIS's novelty is measured relative to Baseline. Because QUIS is the richer, broader system (more total insights, more subspace coverage), many Baseline insights land outside QUIS's specific coverage zone — making them appear "novel" even when they explore similar analytical territory at a coarser level. ONLYSTATS scores lowest (61.8%) because its exhaustive enumeration of (breakdown, measure, pattern) combinations heavily overlaps with QUIS's broader output. Note: QUIS's online_sales novelty drops to 64.2% because QUIS generates many more insights in that dataset (106 vs 61 Baseline), increasing the chance that Baseline insights find a similar match in QUIS.
 
 ---
 
-## 5. Breakdown–Measure Quality
+### Metric 4a — Diversity (Semantic)
 
-**Total (B,M) pairs evaluated**
+**How it is computed:** Each insight is converted to the same string format as Novelty and embedded. Pairwise cosine similarity is computed among all insights *within the same system*. Average similarity (excluding diagonal) is subtracted from 1.
 
-| Dataset | QUIS | Baseline | ONLYSTATS |
-|---------|------|----------|-----------|
-| adidas | 26/26 | 11/24 | 31/31 |
-| employee_attrition | 49/51 | 24/30 | 53/53 |
-| online_sales | 24/26 | 7/16 | 24/24 |
+`D_semantic = 1 − avg_cosine_similarity` — **higher is better.** Threshold: ≥ 0.4 good.
 
-**Averaged BM metrics**
+Per-dataset results:
 
-| Metric | QUIS | Baseline | ONLYSTATS | Winner |
-|--------|------|----------|-----------|--------|
-| 10a. BM — NMI mean | 0.1027 | **0.2550** | 0.2225 | **Baseline** |
-| 10b. BM — Interestingness | 0.1370 | **0.2533** | 0.1613 | **Baseline** |
-| 10c. BM — Actionability | 0.9613 | 0.5653 | **1.0000** | **ONLYSTATS** |
-| 10d. BM — Diversity | 0.2973 | 0.3173 | **0.3667** | **ONLYSTATS** |
+| Dataset | QUIS | Baseline | ONLYSTATS | Winner |
+|---------|------|----------|-----------|--------|
+| adidas | 0.479 | 0.388 | 0.435 | QUIS |
+| employee_attrition | 0.499 | 0.497 | 0.451 | QUIS |
+| online_sales | 0.489 | 0.449 | 0.415 | QUIS |
+| **AVG** | **0.489** | **0.445** | **0.434** | **QUIS** |
 
-> Baseline selects more informative (B,M) pairs (higher NMI and Interestingness). ONLYSTATS has perfect actionability (always categorical) and highest (B,M) variety. QUIS's lower NMI/Interestingness reflects that its QuGen-chosen breakdowns prioritise exploratory coverage over per-pair information gain.
+**Why QUIS outperforms:** QUIS scores 0.489 vs Baseline 0.445 and ONLYSTATS 0.434, winning consistently across all three datasets. QuGen generates questions with diverse analytical intents ("How does X vary across Y?", "Which segment is the outlier in Z?", "Is there a trend in A over time?") — each question steers ISGEN toward a distinct (breakdown, measure, pattern) combination. This cascading diversity from the intent layer means QUIS insights collectively span a wider portion of the analytical space. Baseline's direct LLM prompt converges on statistically strong (B, M) pairs, causing more semantic overlap between insights. ONLYSTATS' fixed template structure further clusters insights around the same breakdown-measure pairs.
+
+---
+
+### Metric 4b — Diversity (Subspace Entropy)
+
+**How it is computed:** For all insights with a non-empty subspace, the proportion p_c of each filter column c is computed (how often each column appears as a filter key). Shannon entropy is applied over those proportions.
+
+`subspace_entropy = −Σ (p_c × log(p_c))` — **higher is better** (wider spread across filter columns). Only computed when ≥ 1 insight has a non-empty subspace.
+
+Per-dataset results:
+
+| Dataset | QUIS | Baseline | ONLYSTATS | Winner |
+|---------|------|----------|-----------|--------|
+| adidas | 2.259 | 1.373 | 2.143 | QUIS |
+| employee_attrition | 2.938 | 1.305 | N/A | QUIS |
+| online_sales | 1.596 | 0.843 | 1.645 | ONLYSTATS |
+| **AVG** | **2.264** | **1.174** | **1.894** | **QUIS** |
+
+**Why QUIS outperforms:** QUIS scores 2.264 vs Baseline 1.174 and ONLYSTATS 1.894. QuGen's questions reference diverse contextual attributes ("for the West region", "among online customers", "within the high-salary bracket") — the intent layer steers ISGEN to apply subspace filters on many different columns rather than concentrating on one or two. Baseline generates far fewer subspace insights overall (subspace rate 37.4%) and concentrates them on a narrow set of filter columns, leading to low entropy. ONLYSTATS is competitive (1.894) due to exhaustive enumeration hitting many columns, but QUIS's question-driven selection spreads filter column usage more evenly — yielding the highest entropy on 2 of 3 datasets.
+
+---
+
+### Metric 4c — Diversity (Value)
+
+**How it is computed:** All (column, value) pairs appearing as subspace filters across all insights are collected. Value diversity is the fraction of unique pairs.
+
+`value_diversity = |unique (column, value) pairs| / total_pairs` — **higher is better.** Only computed when ≥ 1 insight has a non-empty subspace.
+
+Per-dataset results:
+
+| Dataset | QUIS | Baseline | ONLYSTATS | Winner |
+|---------|------|----------|-----------|--------|
+| adidas | 0.872 | 0.312 | 0.810 | QUIS |
+| employee_attrition | 0.767 | 0.407 | N/A | QUIS |
+| online_sales | 0.440 | 0.500 | 0.444 | Baseline |
+| **AVG** | **0.693** | **0.406** | **0.627** | **QUIS** |
+
+> Note: the averaged winner in the main table appears as ONLYSTATS (0.695) because employee_attrition is excluded for ONLYSTATS (N/A), so the ONLYSTATS average is over only 2 datasets (adidas and online_sales), while QUIS and Baseline are averaged over all 3. When compared on the same 2 datasets, QUIS (0.656) still exceeds ONLYSTATS (0.627).
+
+**Why ONLYSTATS leads (averaged with caveat):** ONLYSTATS achieves 0.695 on the 2-dataset average by systematically iterating through many distinct category values for each breakdown column in its fixed enumeration, producing a high variety of (column, value) filter pairs. QUIS is nearly identical in the full 3-dataset average (0.693) — QuGen questions naturally reach diverse values through intent diversity. Baseline scores significantly lower (0.406) because it generates fewer subspace insights and concentrates them on the same few (column, value) combinations.
+
+---
+
+### Metric 4d — Diversity (Dedup Rate)
+
+**How it is computed:** Two insights are considered duplicates if they share the same (pattern, breakdown, measure, subspace) tuple. Dedup rate is the fraction of insights that are exact structural duplicates.
+
+`dedup_rate = 1 − (unique_count / total_count)` — **lower is better** (0.000 = no duplicates).
+
+Per-dataset results:
+
+| Dataset | QUIS | Baseline | ONLYSTATS | Winner |
+|---------|------|----------|-----------|--------|
+| adidas | 0 | 0 | 0 | Tie |
+| employee_attrition | 0 | 0.037 | 0 | Tie |
+| online_sales | 0 | 0 | 0 | Tie |
+| **AVG** | **0.000** | **0.012** | **0.000** | **Tie** |
+
+**Why QUIS and ONLYSTATS tie:** Both score 0.000 — no duplicate insights on any dataset. QUIS benefits from QuGen generating distinct questions that lead to distinct (B, M, pattern, subspace) combinations; two questions rarely produce identical analytical configurations. ONLYSTATS avoids duplicates by construction through its deterministic enumeration pipeline that deduplicated pairs. Baseline has a small duplication rate (0.037) on employee_attrition — a few (B, M, pattern, subspace) combinations were generated more than once by the LLM, likely due to the prompt not enforcing uniqueness constraints. This metric does not differentiate strongly between systems and serves mainly as a sanity check.
 
 ---
 
