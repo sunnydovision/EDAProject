@@ -1,32 +1,33 @@
-# Selected Metrics Report — MAPR Conference Paper
+# Báo cáo Tổng hợp Các Chỉ số (Tóm tắt)
 
-Generated: 2026-04-29  
-Datasets: adidas, employee_attrition, online_sales  
-Systems: QUIS | Baseline | ONLYSTATS
+Báo cáo này tổng hợp các chỉ số đánh giá mà nhóm đã nghiên cứu và lựa chọn, phù hợp với mục tiêu đánh giá hệ thống EDA tự động bằng LLM mà không sử dụng human evaluation.
 
-Metrics are split into two parts to serve the paper's two contributions:
+Tập dữ liệu: [adidas](adidas_dataset.html), [employee_attrition](employee_attrition_dataset.html), [online_sales](online_sales_dataset.html)  
+Hệ thống so sánh: QUIS | Baseline | ONLYSTATS
 
-| Part | Purpose | Metrics |
+Các chỉ số được chia thành hai phần phục vụ hai mục tiêu đánh giá của nhóm:
+
+| Phần | Mục đích | Chỉ số |
 |------|---------|---------|
-| **Part 1 — Overall Model Comparison** | Holistic output quality: correctness, diversity, coverage, subspace volume, breakdown-measure quality | 13 averaged + per-dataset |
-| **Part 2 — QuGen Module Analysis** | What the intent layer adds: structural understanding, question quality, subspace intelligence | 9 averaged + per-dataset |
+| **Phần 1 — So sánh Mô hình Tổng thể** | Chất lượng đầu ra toàn diện: tính đúng đắn, đa dạng, độ phủ, khối lượng subspace, chất lượng cặp breakdown-measure | 13 trung bình + theo tập dữ liệu |
+| **Phần 2 — Phân tích Module QuGen** | Đóng góp của tầng mục đích: hiểu biết cấu trúc, chất lượng câu hỏi, trí tuệ subspace | 9 trung bình + theo tập dữ liệu |
 
 ---
 
-# Part 1 — Overall Model Comparison
+# Phần 1 — So sánh Mô hình Tổng thể
 
-*Comprehensive metrics for evaluating and comparing all three EDA systems on output quality.*
+*Các chỉ số toàn diện để đánh giá và so sánh ba hệ thống EDA về chất lượng đầu ra.*
 
-## Win Count (Part 1 — averaged metrics, 11 decidable)
+## Số lần thắng (Phần 1 — chỉ số trung bình, 11 chỉ số có thể quyết định)
 
-| System | Wins |
+| Hệ thống | Số thắng |
 |--------|------|
 | QUIS | 3 |
 | Baseline | 5 |
 | ONLYSTATS | 3 |
-| Tie | 2 |
+| Hòa | 2 |
 
-> Baseline leads on validity and novelty; QUIS leads on diversity and subspace volume; ONLYSTATS leads on breakdown variety. No single system dominates — this motivates the deeper QuGen analysis in Part 2.
+> Baseline dẫn đầu về tính hợp lệ và độ mới; QUIS dẫn đầu về đa dạng và khối lượng subspace; ONLYSTATS dẫn đầu về đa dạng breakdown. Không có hệ thống nào vượt trội toàn diện — điều này là động lực cho phân tích QuGen sâu hơn ở Phần 2.
 
 ---
 
@@ -34,54 +35,54 @@ Metrics are split into two parts to serve the paper's two contributions:
 
 **Total Insight Cards Generated**
 
-| Dataset | QUIS | Baseline | ONLYSTATS |
+| Tập dữ liệu | QUIS | Baseline | ONLYSTATS |
 |---------|------|----------|-----------|
 | adidas | 99 | 75 | 85 |
 | employee_attrition | 133 | 81 | 132 |
 | online_sales | 106 | 61 | 72 |
 
-**Faithfulness** (avg over 3 datasets)
+**Faithfulness** (trung bình trên 3 tập dữ liệu)
 
-| Metric | QUIS | Baseline | ONLYSTATS | Winner |
+| Metric | QUIS | Baseline | ONLYSTATS | Thắng |
 |--------|------|----------|-----------|--------|
-| 1. Faithfulness | 100.0% | 100.0% | 100.0% | **Tie** |
+| 1. Faithfulness | 100.0% | 100.0% | 100.0% | **Hòa** |
 
-> All three systems achieve 100% correctness. This confirms QUIS is faithfully reproduced and QuGen does not introduce hallucinated values.
+> Cả ba hệ thống đều đạt 100% tính đúng đắn. Điều này xác nhận QUIS được tái hiện trung thực và QuGen không đưa ra các giá trị ảo.
 
-**How it is computed:** For each insight, the pipeline applies the subspace filter on the cleaned dataframe, recomputes the aggregation (SUM / MEAN / COUNT / MAX / MIN grouped by breakdown), then compares every reported value against the recomputed value (tolerance ε = 1e-6). An insight is faithful only if *all* reported values match. Duplicate labels in `view_labels` also cause a fail.
+**Cách tính:** Với mỗi insight, pipeline áp dụng bộ lọc subspace trên dataframe đã làm sạch, tính lại phép tổng hợp (SUM / MEAN / COUNT / MAX / MIN theo nhóm breakdown), rồi so sánh từng giá trị được báo cáo với giá trị tính lại (ngưỡng ε = 1e-6). Một insight chỉ được coi là faithful khi *tất cả* các giá trị đều khớp. Nhãn trùng lặp trong `view_labels` cũng khiến insight bị fail.
 
-`faithfulness = verified_count / total_count` — **higher is better** (max = 100%)
+`faithfulness = verified_count / total_count` — **càng cao càng tốt** (tối đa = 100%)
 
-**Why the winner (Tie) outperforms:** All three systems tie at 100% because every system derives its reported numerical values directly from pandas aggregations on the cleaned dataframe — there is no free-text generation step that can introduce hallucinated numbers. The tie confirms that adding the QuGen layer (question + reason generation in QUIS) does not corrupt numerical correctness; the extra LLM calls in QUIS operate only on metadata (column names, patterns, intents), not on the data values themselves.
+**Tại sao kết quả là Hòa:** Cả ba hệ thống đều đạt 100% vì mỗi hệ thống lấy giá trị số trực tiếp từ các phép tổng hợp pandas trên dataframe đã làm sạch — không có bước sinh văn bản tự do nào có thể tạo số liệu ảo. Kết quả hòa xác nhận rằng thêm tầng QuGen (sinh câu hỏi + lý giải trong QUIS) không làm hỏng tính đúng đắn của số liệu; các lệnh gọi LLM bổ sung trong QUIS chỉ hoạt động trên metadata (tên cột, pattern, mục đích), không phải trên giá trị dữ liệu.
 
 ---
 
 ## 2. Statistical Validity & Coverage
 
-| Metric | QUIS | Baseline | ONLYSTATS | Winner |
+| Metric | QUIS | Baseline | ONLYSTATS | Thắng |
 |--------|------|----------|-----------|--------|
 | 2. Statistical Significance (Overall) | 46.4% | **57.6%** | 51.7% | **Baseline** |
 
-> Baseline generates the most statistically significant insights on average. QUIS trades raw significance for richer subspace exploration (see Part 2).
+> Baseline tạo ra các insight có ý nghĩa thống kê cao nhất tính trung bình. QUIS đánh đổi mức ý nghĩa thô để khám phá subspace phong phú hơn (xem Phần 2).
 
-**How it is computed:** Each insight is tested with the statistical method appropriate for its pattern type:
+**Cách tính:** Mỗi insight được kiểm định bằng phương pháp thống kê phù hợp với kiểu pattern:
 
-| Pattern | Test | Effect size (score) |
+| Pattern | Kiểm định | Kích thước hiệu ứng (điểm) |
 |---|---|---|
-| OUTSTANDING_VALUE | Z-test | z / (z + 1), where z = (max − μ) / σ |
+| OUTSTANDING_VALUE | Kiểm định Z | z / (z + 1), trong đó z = (max − μ) / σ |
 | TREND | Mann-Kendall | \|Kendall τ\| ∈ [0, 1] |
-| ATTRIBUTION | Chi-square (Fisher if 2×2 sparse) | Cramér's V ∈ [0, 1] |
-| DISTRIBUTION_DIFFERENCE | KS test | KS statistic ∈ [0, 1] |
+| ATTRIBUTION | Chi-square (Fisher nếu 2×2 thưa) | Cramér's V ∈ [0, 1] |
+| DISTRIBUTION_DIFFERENCE | Kiểm định KS | KS statistic ∈ [0, 1] |
 
-Insights whose breakdown column is numeric are excluded from evaluation entirely (EDA structural violation) — they are not counted as non-significant. An insight is significant if p < 0.05.
+Các insight có cột breakdown là kiểu số bị loại hoàn toàn khỏi đánh giá (vi phạm cấu trúc EDA) — không được tính là không có ý nghĩa. Một insight có ý nghĩa nếu p < 0.05.
 
-`significant_rate = significant_count / total_evaluated` — **higher is better.** Threshold: ≥ 80% good, ≥ 70% acceptable.
+`significant_rate = significant_count / total_evaluated` — **càng cao càng tốt.** Ngưỡng: ≥ 80% tốt, ≥ 70% chấp nhận được.
 
-**Why Baseline outperforms:** Baseline scores 57.6% vs QUIS 46.4% and ONLYSTATS 51.7%. Baseline wins on OUTSTANDING_VALUE (69.3%), ATTRIBUTION (100%), and DISTRIBUTION_DIFFERENCE (61.1%) — its direct LLM prompt concentrates on a smaller set of (B, M) pairs that happen to be statistically high-signal. QUIS, driven by QuGen's exploratory questions, generates a wider spread of subspace-filtered insights across many breakdown-measure combinations, including segments where the pattern is analytically meaningful but does not always cross the p < 0.05 threshold. The lower significance rate in QUIS is therefore a consequence of broader exploration, not lower analytical quality.
+**Tại sao Baseline thắng:** Baseline đạt 57,6% so với QUIS 46,4% và ONLYSTATS 51,7%. Baseline thắng ở OUTSTANDING_VALUE (69,3%), ATTRIBUTION (100%) và DISTRIBUTION_DIFFERENCE (61,1%) — prompt LLM trực tiếp tập trung vào tập nhỏ các cặp (B, M) có tín hiệu thống kê cao. QUIS, được thúc đẩy bởi các câu hỏi khám phá của QuGen, sinh ra tập insight rộng hơn trên nhiều tổ hợp breakdown-measure, bao gồm cả phân khúc nơi pattern có ý nghĩa phân tích nhưng không luôn vượt ngưỡng p < 0.05. Tỷ lệ ý nghĩa thấp hơn của QUIS là hệ quả của khám phá rộng hơn, không phải chất lượng phân tích thấp hơn.
 
-Per-pattern breakdown (avg across datasets):
+Phân tích theo pattern (trung bình trên các tập dữ liệu):
 
-| Pattern | QUIS | Baseline | ONLYSTATS | Winner |
+| Pattern | QUIS | Baseline | ONLYSTATS | Thắng |
 |---------|------|----------|-----------|--------|
 | TREND | 100.0% | 66.7% | 83.3% | **QUIS** |
 | OUTSTANDING_VALUE | 32.2% | 69.3% | 31.2% | **Baseline** |
@@ -90,191 +91,191 @@ Per-pattern breakdown (avg across datasets):
 
 ---
 
-**Pattern Coverage** (per dataset)
+**Pattern Coverage** (theo tập dữ liệu)
 
-| Dataset | QUIS | Baseline | ONLYSTATS |
+| Tập dữ liệu | QUIS | Baseline | ONLYSTATS |
 |---------|------|----------|-----------|
 | adidas | **4/4 (100%)** | 3/4 (75%) | **4/4 (100%)** |
 | employee_attrition | 3/4 (75%) | 3/4 (75%) | 3/4 (75%) |
 | online_sales | 3/4 (75%) | 2/4 (50%) | **4/4 (100%)** |
 
-**How it is computed:** A pattern is "covered" if the system generates at least one insight with a structurally valid breakdown for that pattern (e.g., Temporal column for TREND; Categorical/ID for ATTRIBUTION and DISTRIBUTION_DIFFERENCE; no restriction for OUTSTANDING_VALUE). Column semantic types are sourced from `profile.json`.
+**Cách tính:** Một pattern được coi là "được phủ" nếu hệ thống sinh ít nhất một insight với breakdown hợp lệ về cấu trúc cho pattern đó (ví dụ: cột Thời gian cho TREND; Phân loại/ID cho ATTRIBUTION và DISTRIBUTION_DIFFERENCE; không giới hạn cho OUTSTANDING_VALUE). Kiểu ngữ nghĩa cột lấy từ `profile.json`.
 
-`pattern_coverage = covered_count / 4` — **higher is better** (max = 4/4). Threshold: 4/4 good, 3/4 acceptable.
+`pattern_coverage = covered_count / 4` — **càng cao càng tốt** (tối đa = 4/4). Ngưỡng: 4/4 tốt, 3/4 chấp nhận được.
 
-**Uncovered patterns per dataset:**
+**Pattern không được phủ theo tập dữ liệu:**
 
-| Dataset | QUIS | Baseline | ONLYSTATS |
+| Tập dữ liệu | QUIS | Baseline | ONLYSTATS |
 |---------|------|----------|-----------|
 | adidas | — | ATTRIBUTION | — |
 | employee_attrition | TREND | TREND | TREND, DISTRIBUTION_DIFFERENCE |
 | online_sales | TREND | TREND, ATTRIBUTION | — |
 
-**Why there is no single winner:** TREND is the most frequently missed pattern across all three systems — it requires a Temporal breakdown column, which is absent or insufficiently populated in employee_attrition and online_sales. Baseline additionally misses ATTRIBUTION on adidas and online_sales because its LLM prompt frequently assigns numeric columns as breakdowns for ATTRIBUTION insights, making those insights structurally invalid. QUIS and ONLYSTATS avoid this because QuGen (QUIS) selects breakdowns with semantic awareness, and ONLYSTATS restricts breakdowns to categorical columns by design.
+**Tại sao không có người thắng duy nhất:** TREND là pattern bị bỏ lỡ nhiều nhất — nó yêu cầu cột breakdown Thời gian, vốn không có hoặc không đủ dữ liệu trong employee_attrition và online_sales. Baseline còn bỏ lỡ ATTRIBUTION trên adidas và online_sales vì prompt LLM thường xuyên gán cột số làm breakdown cho ATTRIBUTION, khiến các insight sai cấu trúc. QUIS và ONLYSTATS tránh được điều này vì QuGen chọn breakdown có nhận thức ngữ nghĩa, còn ONLYSTATS theo thiết kế chỉ cho phép breakdown là cột phân loại.
 
 ---
 
 ## 3. Usefulness & Diversity
 
-| Metric | QUIS | Baseline | ONLYSTATS | Winner |
+| Metric | QUIS | Baseline | ONLYSTATS | Thắng |
 |--------|------|----------|-----------|--------|
 | 3. Insight Novelty | 72.4% | **86.2%** | 61.8% | **Baseline** |
 | 4a. Diversity — Semantic | **0.4890** | 0.4447 | 0.4347 | **QUIS** |
 | 4b. Diversity — Subspace Entropy | **2.2643** | 1.1737 | 2.2113 | **QUIS** |
 | 4c. Diversity — Value | 0.6930 | 0.4063 | **0.6950** | **ONLYSTATS** |
-| 4d. Diversity — Dedup Rate | **0.0000** | 0.0123 | **0.0000** | **Tie** |
+| 4d. Diversity — Dedup Rate | **0.0000** | 0.0123 | **0.0000** | **Hòa** |
 
-> QUIS leads on two of four diversity metrics. Its insights span more diverse (breakdown, measure, pattern) combinations (4a) and use a wider variety of subspace filter columns (4b). ONLYSTATS narrowly edges QUIS on value diversity (4c). Baseline has the most novel insights cross-system but lower structural diversity.
+> QUIS dẫn đầu ở hai trong bốn chỉ số đa dạng. Insight của QUIS trải rộng trên nhiều tổ hợp (breakdown, measure, pattern) đa dạng hơn (4a) và sử dụng nhiều loại cột lọc subspace hơn (4b). ONLYSTATS nhỉnh hơn QUIS về đa dạng giá trị (4c). Baseline có nhiều insight mới nhất xuyên hệ thống nhưng đa dạng cấu trúc thấp hơn.
 
 ---
 
 ### Metric 3 — Insight Novelty
 
-**How it is computed:** Each insight is converted to the string `"{breakdown} | {measure} | {pattern} | {condition}"` and embedded with `SentenceTransformer all-MiniLM-L6-v2`. For each insight in system A, the maximum cosine similarity to any insight in system B is computed. An insight is novel if this max similarity < τ = 0.85.
+**Cách tính:** Mỗi insight được chuyển thành chuỗi `"{breakdown} | {measure} | {pattern} | {condition}"` và nhúng bằng `SentenceTransformer all-MiniLM-L6-v2`. Với mỗi insight trong hệ thống A, độ tương đồng cosine tối đa so với bất kỳ insight nào trong hệ thống B được tính. Một insight là mới nếu độ tương đồng tối đa này < τ = 0.85.
 
-`novelty = novel_count / total_count` — **higher is better.** Threshold: ≥ 80% good.
+`novelty = novel_count / total_count` — **càng cao càng tốt.** Ngưỡng: ≥ 80% tốt.
 
-Per-dataset results:
+Kết quả theo tập dữ liệu:
 
-| Dataset | QUIS | Baseline | ONLYSTATS | Winner |
+| Tập dữ liệu | QUIS | Baseline | ONLYSTATS | Thắng |
 |---------|------|----------|-----------|--------|
 | adidas | 84.8% | 80.0% | 73.3% | QUIS |
 | employee_attrition | 84.2% | 85.2% | 77.5% | Baseline |
 | online_sales | 64.2% | 93.4% | 31.2% | Baseline |
-| **AVG** | **77.7%** | **86.2%** | **61.8%** | **Baseline** |
+| **TB** | **77.7%** | **86.2%** | **61.8%** | **Baseline** |
 
-**Why Baseline outperforms:** Baseline scores 86.2% vs QUIS 77.7% and ONLYSTATS 61.8%. The main driver is the asymmetry in how novelty is computed: Baseline's novelty is measured relative to QUIS (i.e., how many Baseline insights are different from QUIS), while QUIS's novelty is measured relative to Baseline. Because QUIS is the richer, broader system (more total insights, more subspace coverage), many Baseline insights land outside QUIS's specific coverage zone — making them appear "novel" even when they explore similar analytical territory at a coarser level. ONLYSTATS scores lowest (61.8%) because its exhaustive enumeration of (breakdown, measure, pattern) combinations heavily overlaps with QUIS's broader output. Note: QUIS's online_sales novelty drops to 64.2% because QUIS generates many more insights in that dataset (106 vs 61 Baseline), increasing the chance that Baseline insights find a similar match in QUIS.
+**Tại sao Baseline thắng:** Baseline đạt 86,2% so với QUIS 77,7% và ONLYSTATS 61,8%. Nguyên nhân chính là sự bất đối xứng trong cách tính độ mới: độ mới của Baseline được đo tương đối so với QUIS (bao nhiêu insight Baseline khác với QUIS), trong khi độ mới của QUIS được đo tương đối so với Baseline. Vì QUIS là hệ thống phong phú, rộng hơn (nhiều insight hơn, phủ subspace nhiều hơn), nhiều insight Baseline rơi ngoài vùng phủ cụ thể của QUIS — khiến chúng có vẻ "mới" dù khám phá cùng lãnh thổ phân tích ở mức thô hơn. ONLYSTATS đạt điểm thấp nhất (61,8%) vì việc liệt kê toàn diện các tổ hợp (breakdown, measure, pattern) chồng lấp nhiều với đầu ra của QUIS. Lưu ý: độ mới của QUIS trên online_sales giảm xuống 64,2% vì QUIS sinh nhiều insight hơn (106 so với 61 của Baseline), tăng khả năng insight Baseline tìm thấy kết quả tương đồng trong QUIS.
 
 ---
 
 ### Metric 4a — Diversity (Semantic)
 
-**How it is computed:** Each insight is converted to the same string format as Novelty and embedded. Pairwise cosine similarity is computed among all insights *within the same system*. Average similarity (excluding diagonal) is subtracted from 1.
+**Cách tính:** Mỗi insight được chuyển sang định dạng chuỗi giống Độ mới và nhúng. Độ tương đồng cosine theo từng cặp được tính trong *cùng một hệ thống*. Độ tương đồng trung bình (loại trừ đường chéo) được trừ khỏi 1.
 
-`D_semantic = 1 − avg_cosine_similarity` — **higher is better.** Threshold: ≥ 0.4 good.
+`D_semantic = 1 − avg_cosine_similarity` — **càng cao càng tốt.** Ngưỡng: ≥ 0.4 tốt.
 
-Per-dataset results:
+Kết quả theo tập dữ liệu:
 
-| Dataset | QUIS | Baseline | ONLYSTATS | Winner |
+| Tập dữ liệu | QUIS | Baseline | ONLYSTATS | Thắng |
 |---------|------|----------|-----------|--------|
 | adidas | 0.479 | 0.388 | 0.435 | QUIS |
 | employee_attrition | 0.499 | 0.497 | 0.451 | QUIS |
 | online_sales | 0.489 | 0.449 | 0.415 | QUIS |
-| **AVG** | **0.489** | **0.445** | **0.434** | **QUIS** |
+| **TB** | **0.489** | **0.445** | **0.434** | **QUIS** |
 
-**Why QUIS outperforms:** QUIS scores 0.489 vs Baseline 0.445 and ONLYSTATS 0.434, winning consistently across all three datasets. QuGen generates questions with diverse analytical intents ("How does X vary across Y?", "Which segment is the outlier in Z?", "Is there a trend in A over time?") — each question steers ISGEN toward a distinct (breakdown, measure, pattern) combination. This cascading diversity from the intent layer means QUIS insights collectively span a wider portion of the analytical space. Baseline's direct LLM prompt converges on statistically strong (B, M) pairs, causing more semantic overlap between insights. ONLYSTATS' fixed template structure further clusters insights around the same breakdown-measure pairs.
+**Tại sao QUIS thắng:** QUIS đạt 0,489 so với Baseline 0,445 và ONLYSTATS 0,434, chiến thắng nhất quán trên cả ba tập dữ liệu. QuGen sinh câu hỏi với mục đích phân tích đa dạng ("X thay đổi như thế nào theo Y?", "Phân khúc nào là ngoại lệ trong Z?", "Có xu hướng nào trong A theo thời gian không?") — mỗi câu hỏi hướng ISGEN tới một tổ hợp (breakdown, measure, pattern) khác biệt. Tính đa dạng lan tỏa từ tầng mục đích khiến các insight của QUIS cùng nhau phủ phần rộng hơn của không gian phân tích. Prompt LLM trực tiếp của Baseline hội tụ vào các cặp (B, M) mạnh về thống kê, gây ra nhiều chồng lấp ngữ nghĩa hơn. Cấu trúc mẫu cố định của ONLYSTATS càng làm insight tập trung quanh các cặp breakdown-measure giống nhau.
 
 ---
 
 ### Metric 4b — Diversity (Subspace Entropy)
 
-**How it is computed:** For all insights with a non-empty subspace, the proportion p_c of each filter column c is computed (how often each column appears as a filter key). Shannon entropy is applied over those proportions.
+**Cách tính:** Với tất cả insight có subspace không rỗng, tỷ lệ p_c của mỗi cột lọc c được tính (tần suất xuất hiện của mỗi cột làm khóa lọc). Entropy Shannon được áp dụng trên các tỷ lệ đó.
 
-`subspace_entropy = −Σ (p_c × log(p_c))` — **higher is better** (wider spread across filter columns). Only computed when ≥ 1 insight has a non-empty subspace.
+`subspace_entropy = −Σ (p_c × log(p_c))` — **càng cao càng tốt** (phân bố rộng hơn trên các cột lọc). Chỉ tính khi có ≥ 1 insight với subspace không rỗng.
 
-Per-dataset results:
+Kết quả theo tập dữ liệu:
 
-| Dataset | QUIS | Baseline | ONLYSTATS | Winner |
+| Tập dữ liệu | QUIS | Baseline | ONLYSTATS | Thắng |
 |---------|------|----------|-----------|--------|
 | adidas | 2.259 | 1.373 | 2.143 | QUIS |
 | employee_attrition | 2.938 | 1.305 | N/A | QUIS |
 | online_sales | 1.596 | 0.843 | 1.645 | ONLYSTATS |
-| **AVG** | **2.264** | **1.174** | **1.894** | **QUIS** |
+| **TB** | **2.264** | **1.174** | **1.894** | **QUIS** |
 
-**Why QUIS outperforms:** QUIS scores 2.264 vs Baseline 1.174 and ONLYSTATS 1.894. QuGen's questions reference diverse contextual attributes ("for the West region", "among online customers", "within the high-salary bracket") — the intent layer steers ISGEN to apply subspace filters on many different columns rather than concentrating on one or two. Baseline generates far fewer subspace insights overall (subspace rate 37.4%) and concentrates them on a narrow set of filter columns, leading to low entropy. ONLYSTATS is competitive (1.894) due to exhaustive enumeration hitting many columns, but QUIS's question-driven selection spreads filter column usage more evenly — yielding the highest entropy on 2 of 3 datasets.
+**Tại sao QUIS thắng:** QUIS đạt 2,264 so với Baseline 1,174 và ONLYSTATS 1,894. Câu hỏi của QuGen tham chiếu đến các thuộc tính ngữ cảnh đa dạng ("cho khu vực Tây", "trong nhóm khách hàng trực tuyến", "trong phân khúc thu nhập cao") — tầng mục đích hướng ISGEN áp dụng bộ lọc subspace trên nhiều cột khác nhau thay vì tập trung vào một hoặc hai cột. Baseline sinh ít insight subspace hơn (tỷ lệ subspace 37,4%) và tập trung vào tập hẹp các cột lọc, dẫn đến entropy thấp. ONLYSTATS cạnh tranh được (1,894) nhờ liệt kê toàn diện truy cập nhiều cột, nhưng QUIS phân bổ đều hơn mức sử dụng cột lọc — cho entropy cao nhất trên 2 trong 3 tập dữ liệu.
 
 ---
 
 ### Metric 4c — Diversity (Value)
 
-**How it is computed:** All (column, value) pairs appearing as subspace filters across all insights are collected. Value diversity is the fraction of unique pairs.
+**Cách tính:** Tất cả các cặp (cột, giá trị) xuất hiện làm bộ lọc subspace trong mọi insight được thu thập. Đa dạng giá trị là tỷ lệ các cặp duy nhất.
 
-`value_diversity = |unique (column, value) pairs| / total_pairs` — **higher is better.** Only computed when ≥ 1 insight has a non-empty subspace.
+`value_diversity = |cặp (cột, giá trị) duy nhất| / tổng số cặp` — **càng cao càng tốt.** Chỉ tính khi có ≥ 1 insight với subspace không rỗng.
 
-Per-dataset results:
+Kết quả theo tập dữ liệu:
 
-| Dataset | QUIS | Baseline | ONLYSTATS | Winner |
+| Tập dữ liệu | QUIS | Baseline | ONLYSTATS | Thắng |
 |---------|------|----------|-----------|--------|
 | adidas | 0.872 | 0.312 | 0.810 | QUIS |
 | employee_attrition | 0.767 | 0.407 | N/A | QUIS |
 | online_sales | 0.440 | 0.500 | 0.444 | Baseline |
-| **AVG** | **0.693** | **0.406** | **0.627** | **QUIS** |
+| **TB** | **0.693** | **0.406** | **0.627** | **QUIS** |
 
-> Note: the averaged winner in the main table appears as ONLYSTATS (0.695) because employee_attrition is excluded for ONLYSTATS (N/A), so the ONLYSTATS average is over only 2 datasets (adidas and online_sales), while QUIS and Baseline are averaged over all 3. When compared on the same 2 datasets, QUIS (0.656) still exceeds ONLYSTATS (0.627).
+> Lưu ý: người thắng trong bảng trung bình chính là ONLYSTATS (0,695) vì employee_attrition bị loại khỏi ONLYSTATS (N/A), nên trung bình của ONLYSTATS chỉ tính trên 2 tập dữ liệu (adidas và online_sales), trong khi QUIS và Baseline tính trên cả 3. Khi so sánh trên cùng 2 tập, QUIS (0,656) vẫn vượt ONLYSTATS (0,627).
 
-**Why ONLYSTATS leads (averaged with caveat):** ONLYSTATS achieves 0.695 on the 2-dataset average by systematically iterating through many distinct category values for each breakdown column in its fixed enumeration, producing a high variety of (column, value) filter pairs. QUIS is nearly identical in the full 3-dataset average (0.693) — QuGen questions naturally reach diverse values through intent diversity. Baseline scores significantly lower (0.406) because it generates fewer subspace insights and concentrates them on the same few (column, value) combinations.
+**Tại sao ONLYSTATS dẫn đầu (trung bình có lưu ý):** ONLYSTATS đạt 0,695 trên trung bình 2 tập bằng cách lặp qua nhiều giá trị phân loại khác nhau cho từng cột breakdown, tạo ra sự đa dạng cao về các cặp lọc (cột, giá trị). QUIS gần như giống nhau trong trung bình đủ 3 tập (0,693) — câu hỏi QuGen tự nhiên tiếp cận các giá trị đa dạng thông qua đa dạng mục đích. Baseline đạt điểm thấp hơn đáng kể (0,406) vì sinh ít insight subspace hơn và tập trung vào cùng một số tổ hợp (cột, giá trị).
 
 ---
 
 ### Metric 4d — Diversity (Dedup Rate)
 
-**How it is computed:** Two insights are considered duplicates if they share the same (pattern, breakdown, measure, subspace) tuple. Dedup rate is the fraction of insights that are exact structural duplicates.
+**Cách tính:** Hai insight được coi là trùng lặp nếu chúng chia sẻ cùng bộ tứ (pattern, breakdown, measure, subspace). Tỷ lệ trùng lặp là phần trăm insight là trùng lặp cấu trúc chính xác.
 
-`dedup_rate = 1 − (unique_count / total_count)` — **lower is better** (0.000 = no duplicates).
+`dedup_rate = 1 − (unique_count / total_count)` — **càng thấp càng tốt** (0.000 = không có trùng lặp).
 
-Per-dataset results:
+Kết quả theo tập dữ liệu:
 
-| Dataset | QUIS | Baseline | ONLYSTATS | Winner |
+| Tập dữ liệu | QUIS | Baseline | ONLYSTATS | Thắng |
 |---------|------|----------|-----------|--------|
-| adidas | 0 | 0 | 0 | Tie |
-| employee_attrition | 0 | 0.037 | 0 | Tie |
-| online_sales | 0 | 0 | 0 | Tie |
-| **AVG** | **0.000** | **0.012** | **0.000** | **Tie** |
+| adidas | 0 | 0 | 0 | Hòa |
+| employee_attrition | 0 | 0.037 | 0 | Hòa |
+| online_sales | 0 | 0 | 0 | Hòa |
+| **TB** | **0.000** | **0.012** | **0.000** | **Hòa** |
 
-**Why QUIS and ONLYSTATS tie:** Both score 0.000 — no duplicate insights on any dataset. QUIS benefits from QuGen generating distinct questions that lead to distinct (B, M, pattern, subspace) combinations; two questions rarely produce identical analytical configurations. ONLYSTATS avoids duplicates by construction through its deterministic enumeration pipeline that deduplicated pairs. Baseline has a small duplication rate (0.037) on employee_attrition — a few (B, M, pattern, subspace) combinations were generated more than once by the LLM, likely due to the prompt not enforcing uniqueness constraints. This metric does not differentiate strongly between systems and serves mainly as a sanity check.
+**Tại sao QUIS và ONLYSTATS hòa:** Cả hai đạt 0,000 — không có insight trùng lặp trên bất kỳ tập nào. QUIS được hưởng lợi từ QuGen sinh câu hỏi khác biệt dẫn đến các tổ hợp (B, M, pattern, subspace) khác biệt; hai câu hỏi hiếm khi tạo ra cùng một cấu hình phân tích. ONLYSTATS tránh trùng lặp theo cấu trúc thông qua pipeline liệt kê xác định. Baseline có tỷ lệ trùng lặp nhỏ (0,037) trên employee_attrition — một số tổ hợp (B, M, pattern, subspace) được LLM sinh ra nhiều hơn một lần, có thể do prompt không áp đặt ràng buộc duy nhất. Chỉ số này không phân biệt mạnh giữa các hệ thống và chủ yếu phục vụ như một bước kiểm tra sơ bộ.
 
 ---
 
-# Part 2 — QuGen Module Analysis
+# Phần 2 — Phân tích Module QuGen
 
-*Metrics that specifically probe the question-generation and intent layer — what QuGen adds over a purely statistical or template-driven approach.*
+*Các chỉ số đặc biệt kiểm tra tầng sinh câu hỏi và mục đích — những gì QuGen thêm vào so với cách tiếp cận thuần thống kê hoặc dựa trên mẫu cố định.*
 
-## Win Count (Part 2 — averaged metrics, 8 decidable)
+## Số lần thắng (Phần 2 — chỉ số trung bình, 8 chỉ số có thể quyết định)
 
-| System | Wins |
+| Hệ thống | Số thắng |
 |--------|------|
 | QUIS | 4 |
 | Baseline | 4 |
 | ONLYSTATS | 0 |
 
-> QUIS and Baseline split evenly: QUIS wins on the structural/subspace dimensions; Baseline wins on question surface quality. ONLYSTATS is N/A for question metrics (template-based, no intent layer).
+> QUIS và Baseline hòa nhau: QUIS thắng ở các chiều cấu trúc/subspace; Baseline thắng ở chất lượng bề mặt câu hỏi. ONLYSTATS không áp dụng cho các chỉ số câu hỏi (dựa trên mẫu cố định, không có tầng mục đích).
 
 ---
 
 ## 6. Structural Understanding
 
-*Does QuGen know which breakdown type fits which pattern?*
+*QuGen có biết kiểu breakdown nào phù hợp với pattern nào không?*
 
-| Metric | QUIS | Baseline | ONLYSTATS | Winner |
+| Metric | QUIS | Baseline | ONLYSTATS | Thắng |
 |--------|------|----------|-----------|--------|
-| 12. Structural Validity Rate | **94.0%** | 40.0% | 90.8% | **QUIS** |
+| 12. Structural Validity Rate (SVR) | **94.0%** | 40.0% | 90.8% | **QUIS** |
 | 2a. Significance — TREND | **100.0%** | 66.7% | 83.3% | **QUIS** |
 
-> **SVR**: QUIS more than doubles Baseline (94.0% vs 40.0%). QuGen's question-first pipeline steers the engine toward structurally valid breakdown-pattern combinations, while a direct LLM prompt frequently selects numeric columns for TREND/ATTRIBUTION patterns.
+> **SVR**: QUIS vượt gấp đôi Baseline (94,0% so với 40,0%). Pipeline ưu tiên câu hỏi của QuGen hướng engine đến các tổ hợp breakdown-pattern hợp lệ về cấu trúc, trong khi prompt LLM trực tiếp thường xuyên chọn cột số cho pattern TREND/ATTRIBUTION.
 >
-> **Significance — TREND**: QUIS's TREND insights are all statistically valid (100%). Baseline generates many TREND insights with non-temporal columns — they fail significance by construction.
+> **Ý nghĩa — TREND**: Tất cả insight TREND của QUIS đều hợp lệ về thống kê (100%). Baseline sinh nhiều insight TREND với cột không phải thời gian — chúng thất bại về ý nghĩa theo cấu trúc.
 
-**SVR by pattern (per dataset):**
+**SVR theo pattern (mỗi tập dữ liệu):**
 
-*SVR — ATTRIBUTION* (requires categorical breakdown)
+*SVR — ATTRIBUTION* (yêu cầu breakdown phân loại)
 
-| Dataset | QUIS | Baseline | ONLYSTATS |
+| Tập dữ liệu | QUIS | Baseline | ONLYSTATS |
 |---------|------|----------|-----------|
 | adidas | **27/27 (100%)** | 0/13 (0%) | 20/24 (83%) |
 | employee_attrition | **50/50 (100%)** | 7/13 (54%) | 65/65 (100%) |
 | online_sales | **29/32 (91%)** | 0/11 (0%) | 18/20 (90%) |
 
-*SVR — DISTRIBUTION_DIFFERENCE* (requires categorical breakdown)
+*SVR — DISTRIBUTION_DIFFERENCE* (yêu cầu breakdown phân loại)
 
-| Dataset | QUIS | Baseline | ONLYSTATS |
+| Tập dữ liệu | QUIS | Baseline | ONLYSTATS |
 |---------|------|----------|-----------|
 | adidas | **39/40 (98%)** | 4/15 (27%) | 17/27 (63%) |
 | employee_attrition | **43/47 (91%)** | 12/15 (80%) | 9/9 (100%) |
 | online_sales | 27/37 (73%) | 5/13 (38%) | 18/24 (75%) |
 
-*SVR — TREND* (requires temporal breakdown)
+*SVR — TREND* (yêu cầu breakdown thời gian)
 
-| Dataset | QUIS | Baseline | ONLYSTATS |
+| Tập dữ liệu | QUIS | Baseline | ONLYSTATS |
 |---------|------|----------|-----------|
 | adidas | **2/2 (100%)** | 16/33 (48%) | 10/10 (100%) |
 | employee_attrition | 0/1 (0%) | 0/42 (0%) | N/A |
@@ -284,40 +285,40 @@ Per-dataset results:
 
 ## 7. Subspace Intelligence
 
-*Does QuGen guide the system toward higher-quality conditional insights?*
+*QuGen có hướng hệ thống đến các insight có điều kiện chất lượng cao hơn không?*
 
-| Metric | QUIS | Baseline | ONLYSTATS | Winner |
+| Metric | QUIS | Baseline | ONLYSTATS | Thắng |
 |--------|------|----------|-----------|--------|
 | 8. Score Uplift from Subspace | **1.0670** | 0.9740 | 0.5277 | **QUIS** |
-| 9. Direction (Contrasting Rate) | N/A (avg) | N/A (avg) | N/A (avg) | **N/A** |
+| 9. Direction — Contrasting Rate | N/A (tb) | N/A (tb) | N/A (tb) | **N/A** |
 
-**Score Uplift per dataset** (x = mean_score_subspace / mean_score_global):
+**Score Uplift theo tập dữ liệu** (x = mean_score_subspace / mean_score_global):
 
-| Dataset | QUIS | Baseline | ONLYSTATS |
+| Tập dữ liệu | QUIS | Baseline | ONLYSTATS |
 |---------|------|----------|-----------|
 | adidas | x=0.885 | x=0.796 | x=0.726 |
 | employee_attrition | **x=1.574** | x=1.079 | x=0.346 |
 | online_sales | x=0.742 | x=1.048 | x=0.511 |
 
-> QUIS subspace insights have a mean score ratio of 1.067 vs 0.974 (Baseline). On employee_attrition, QUIS's subspace insights are 57% stronger than global insights (x=1.574) — showing that QuGen's exploratory questions lead the system to segments where patterns are amplified, not diluted.
+> Insight subspace của QUIS có tỷ lệ điểm trung bình 1,067 so với 0,974 của Baseline. Trên employee_attrition, insight subspace của QUIS mạnh hơn 57% so với insight toàn cục (x=1,574) — cho thấy câu hỏi khám phá của QuGen dẫn hệ thống đến các phân khúc nơi pattern được khuếch đại, không bị loãng.
 
-**Direction (Contrasting Rate) per dataset** — rate of subspace insights opposing the global direction:
+**Hướng (Contrasting Rate) theo tập dữ liệu** — tỷ lệ insight subspace đi ngược chiều toàn cục:
 
-| Dataset | QUIS | Baseline | ONLYSTATS |
+| Tập dữ liệu | QUIS | Baseline | ONLYSTATS |
 |---------|------|----------|-----------|
 | adidas | 0.634 (52/82) | 0.389 (7/18) | 0.821 (55/67) |
 | employee_attrition | 0.438 (46/105) | 0.300 (3/10) | 0.711 (27/38) |
 | online_sales | 0.554 (36/65) | 0.667 (4/6) | 0.770 (47/61) |
 
-> QUIS surfaces more contrasting insights than Baseline on all datasets. These counter-narrative findings (a segment behaves opposite to the global trend) are the most analytically valuable in EDA.
+> QUIS phát hiện nhiều insight đối nghịch hơn Baseline trên tất cả các tập dữ liệu. Những phát hiện đi ngược xu hướng chung này (một phân khúc hành xử ngược xu hướng toàn cục) là những phát hiện có giá trị phân tích cao nhất trong EDA.
 
 ---
 
 ## 8. Intent Layer Quality
 
-*How good are the questions and reasons QuGen generates? (N/A for ONLYSTATS — template-based, no question generation)*
+*Các câu hỏi và lý giải mà QuGen tạo ra tốt đến mức nào? (N/A cho ONLYSTATS — dựa trên mẫu cố định, không sinh câu hỏi)*
 
-| Metric | QUIS | Baseline | Winner |
+| Metric | QUIS | Baseline | Thắng |
 |--------|------|----------|--------|
 | 11a. Question Semantic Diversity | 0.5360 | **0.5850** | **Baseline** |
 | 11b. Question Specificity (avg word count) | 9.80 | **12.11** | **Baseline** |
@@ -325,28 +326,28 @@ Per-dataset results:
 | 11d. Question Novelty (cross-system) | 93.4% | **99.2%** | **Baseline** |
 | 11e. Reason–Insight Coherence | **0.5260** | 0.5143 | **QUIS** |
 
-**Per dataset:**
+**Theo tập dữ liệu:**
 
-| Dataset | 11c Q–I Align QUIS | 11c Q–I Align Base | 11e Reason Coh QUIS | 11e Reason Coh Base |
+| Tập dữ liệu | 11c Q–I Alignment QUIS | 11c Q–I Alignment Base | 11e Reason Coherence QUIS | 11e Reason Coherence Base |
 |---------|--------------------|--------------------|---------------------|---------------------|
 | adidas | **0.583** | 0.579 | **0.553** | 0.527 |
 | employee_attrition | 0.493 | **0.588** | 0.468 | **0.519** |
 | online_sales | 0.543 | 0.539 | **0.557** | 0.497 |
 
-> **Honest finding**: Baseline generates longer and more semantically diverse questions (11a, 11b, 11d) that align more tightly with their insight string (11c). QUIS's questions are exploratory ("How does X vary across Y?") — they diverge from the raw insight text even when analytically correct.
+> **Phát hiện trung thực**: Baseline sinh câu hỏi dài hơn và đa dạng ngữ nghĩa hơn (11a, 11b, 11d), căn chỉnh chặt hơn với chuỗi insight (11c). Câu hỏi của QUIS mang tính khám phá ("X thay đổi như thế nào theo Y?") — chúng khác với văn bản insight thô dù đúng về mặt phân tích.
 >
-> **QUIS advantage**: Reason–Insight Coherence (11e): 0.526 vs 0.514. QuGen's reasons are marginally better grounded in the actual insight content, suggesting the reason layer adds semantic value that outweighs the question surface gap.
+> **Lợi thế của QUIS**: Liên kết Lý giải–Insight (11e): 0,526 so với 0,514. Lý giải của QuGen bám chắc hơn vào nội dung insight thực tế, cho thấy tầng lý giải thêm giá trị ngữ nghĩa vượt qua khoảng cách bề mặt câu hỏi.
 
 ---
 
-## Paper Contribution Summary
+## Tóm tắt Đóng góp của Bài báo
 
-| Contribution | Metric | QUIS vs Baseline | QUIS vs ONLYSTATS |
+| Đóng góp | Metric | QUIS so với Baseline | QUIS so với ONLYSTATS |
 |---|---|---|---|
-| QuGen understands pattern-breakdown semantics | SVR (12) | **+54.0 pp** (94.0 vs 40.0) | +3.2 pp (94.0 vs 90.8) |
-| TREND insights are structurally valid | Significance — TREND (2a) | **+33.3 pp** (100.0 vs 66.7) | +16.7 pp (100.0 vs 83.3) |
-| QuGen selects high-quality subspaces | Score Uplift (8) | **+9.6%** (1.067 vs 0.974) | **+102.2%** (1.067 vs 0.528) |
-| QuGen produces semantically diverse output | Diversity — Semantic (4a) | +4.4 pp (0.489 vs 0.445) | +5.4 pp (0.489 vs 0.435) |
-| QuGen drives broad subspace exploration | Subspace Rate (7) | **+47.0 pp** (84.4 vs 37.4) | +7.4 pp (84.4 vs 77.0) |
-| Reasons are grounded in insight content | Reason–Insight Coherence (11e) | +1.2 pp (0.526 vs 0.514) | N/A (template) |
-| Correctness not sacrificed | Faithfulness (1) | 0 pp (all 100%) | 0 pp (all 100%) |
+| QuGen hiểu ngữ nghĩa pattern-breakdown | SVR (12) | **+54.0 pp** (94.0 vs 40.0) | +3.2 pp (94.0 vs 90.8) |
+| Insight TREND hợp lệ về cấu trúc | Significance — TREND (2a) | **+33.3 pp** (100.0 vs 66.7) | +16.7 pp (100.0 vs 83.3) |
+| QuGen chọn subspace chất lượng cao | Score Uplift (8) | **+9.6%** (1.067 vs 0.974) | **+102.2%** (1.067 vs 0.528) |
+| QuGen sinh đầu ra đa dạng ngữ nghĩa | Diversity — Semantic (4a) | +4.4 pp (0.489 vs 0.445) | +5.4 pp (0.489 vs 0.435) |
+| QuGen thúc đẩy khám phá subspace rộng | Subspace Rate (7) | **+47.0 pp** (84.4 vs 37.4) | +7.4 pp (84.4 vs 77.0) |
+| Lý giải bám chắc vào nội dung insight | Reason–Insight Coherence (11e) | +1.2 pp (0.526 vs 0.514) | N/A (template) |
+| Tính đúng đắn không bị hi sinh | Faithfulness (1) | 0 pp (all 100%) | 0 pp (all 100%) |

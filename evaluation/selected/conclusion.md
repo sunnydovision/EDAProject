@@ -1,108 +1,27 @@
-# Conclusion
+# Kết luận Đánh giá
 
-This paper presented a reproduction of QUIS, an intent-driven automated exploratory data analysis
-system, and introduced a set of evaluation metrics designed to measure the contribution of its
-question generation module, QuGen. Experiments were conducted across three heterogeneous
-real-world datasets — adidas sales, employee attrition, and online retail — comparing QUIS against
-two baselines: a direct LLM-prompted baseline (Baseline) and a purely statistical template system
-(ONLYSTATS).
+Bài báo này trình bày việc tái hiện QUIS — một hệ thống phân tích dữ liệu khám phá tự động theo hướng mục đích — đồng thời giới thiệu một bộ chỉ số đánh giá được thiết kế nhằm đo lường đóng góp của module sinh câu hỏi QuGen. Thực nghiệm được tiến hành trên ba tập dữ liệu thực tế có tính đa dạng cao — doanh số Adidas, nghỉ việc nhân viên và bán lẻ trực tuyến — so sánh QUIS với hai hệ thống cơ sở: một hệ thống cơ sở sử dụng LLM trực tiếp (Baseline) và một hệ thống dựa thuần túy vào thống kê theo mẫu cố định (ONLYSTATS).
 
-## Summary of Findings
+## Tổng kết kết quả
 
-A surface-level reading of standard EDA evaluation metrics appears to favour the Baseline system.
-Baseline achieves higher average statistical significance (57.6% vs. 46.4%), higher cross-system
-insight novelty (86.2% vs. 72.4%), and higher per-pair breakdown informativeness as measured by
-NMI (0.255 vs. 0.103) and Interestingness (0.253 vs. 0.137). However, we argue that these
-apparent advantages are systematic artefacts of how the metrics were designed, rather than
-evidence of superior analytical quality.
+Nhìn sơ bộ vào các chỉ số đánh giá EDA tiêu chuẩn, hệ thống Baseline có vẻ chiếm ưu thế. Baseline đạt độ có ý nghĩa thống kê trung bình cao hơn (57,6% so với 46,4%), độ mới của insight xuyên hệ thống cao hơn (86,2% so với 72,4%) và mức độ thông tin hữu ích của từng cặp breakdown cao hơn theo NMI (0,255 so với 0,103) và Interestingness (0,253 so với 0,137). Tuy nhiên, chúng tôi lập luận rằng những lợi thế bề ngoài này là hệ quả có tính hệ thống từ cách các chỉ số được thiết kế, chứ không phải bằng chứng về chất lượng phân tích vượt trội.
 
-Statistical significance is structurally biased against subspace-conditional insights. QUIS
-generates 84.4% of its insights with subspace filters, reducing sample sizes and consequently
-statistical power. Insight novelty measures cross-theme breadth rather than within-theme depth;
-QUIS deliberately explores multiple subspace variants of the same analytical theme, which
-suppresses cross-system novelty scores while increasing analytical coverage. Similarly, NMI and
-Interestingness reward sparse, high-precision (Breakdown, Measure) selection — a property that
-favours systems which avoid comprehensive coverage. These observations motivate the need for
-a richer evaluation framework that captures the qualitative dimensions of intent-driven EDA.
+Độ có ý nghĩa thống kê có xu hướng bất lợi cấu trúc đối với các insight có điều kiện subspace. QUIS sinh ra 84,4% insight kèm bộ lọc subspace, làm giảm cỡ mẫu và do đó giảm năng lực thống kê. Độ mới của insight đo lường sự đa dạng xuyên chủ đề chứ không đo chiều sâu trong một chủ đề; QUIS chủ động khám phá nhiều biến thể subspace của cùng một chủ đề phân tích, điều này kéo thấp điểm mới xuyên hệ thống trong khi thực chất lại tăng độ phủ phân tích. Tương tự, NMI và Interestingness ưu ái việc chọn (Breakdown, Measure) thưa thớt nhưng chính xác cao — đây là đặc điểm có lợi cho các hệ thống tránh phủ toàn diện. Những quan sát này thúc đẩy nhu cầu xây dựng khung đánh giá phong phú hơn, có khả năng nắm bắt các chiều chất lượng của EDA theo hướng mục đích.
 
-## Contribution of the QuGen Module
+## Đóng góp của module QuGen
 
-Our proposed evaluation metrics reveal a consistent and significant advantage for QUIS on
-dimensions directly attributable to QuGen. We summarise the three principal findings.
+Các chỉ số đánh giá mà chúng tôi đề xuất cho thấy QUIS có lợi thế nhất quán và đáng kể trên các chiều trực tiếp quy cho QuGen. Chúng tôi tóm tắt ba phát hiện chính.
 
-**Structural semantic understanding.** The Structural Validity Rate (SVR), which measures
-whether an insight's breakdown column type is semantically appropriate for its analytical pattern,
-exposes the most substantial gap in the entire evaluation. QUIS achieves an SVR of 94.0%
-averaged across datasets, compared to 40.0% for Baseline. Baseline frequently assigns numeric
-columns to TREND patterns and temporal columns to ATTRIBUTION patterns, producing
-structurally invalid insights that cannot yield meaningful statistical results. QuGen eliminates this
-failure mode by generating a natural-language question prior to insight computation: the question
-implicitly encodes the required column semantics — temporal for trend analysis, categorical for
-attribution and distribution difference — constraining the insight engine to structurally valid
-configurations. This advantage is corroborated by the per-pattern analysis: QUIS achieves 100%
-SVR on ATTRIBUTION for adidas and employee_attrition, and 91–98% for
-DISTRIBUTION_DIFFERENCE, while Baseline scores 0% on ATTRIBUTION for adidas and
-online_sales.
+**Hiểu biết ngữ nghĩa cấu trúc.** Structural Validity Rate (SVR) — đo lường liệu kiểu cột breakdown của insight có phù hợp về mặt ngữ nghĩa với pattern phân tích của nó hay không — bộc lộ khoảng cách lớn nhất trong toàn bộ quá trình đánh giá. QUIS đạt SVR trung bình 94,0% trên các tập dữ liệu, trong khi Baseline chỉ đạt 40,0%. Baseline thường xuyên gán cột số vào pattern TREND và cột thời gian vào pattern ATTRIBUTION, tạo ra các insight sai cấu trúc không thể cho kết quả thống kê có ý nghĩa. QuGen loại bỏ điểm thất bại này bằng cách sinh câu hỏi ngôn ngữ tự nhiên trước khi tính insight: câu hỏi ngầm mã hóa ngữ nghĩa cột cần thiết — thời gian cho phân tích xu hướng, phân loại cho attribution và phân phối khác biệt — từ đó ràng buộc engine insight vào các cấu hình hợp lệ về cấu trúc. Lợi thế này được xác nhận qua phân tích theo từng pattern: QUIS đạt SVR 100% trên ATTRIBUTION với adidas và employee_attrition, và 91–98% với DISTRIBUTION_DIFFERENCE, trong khi Baseline đạt 0% trên ATTRIBUTION với adidas và online_sales.
 
-**Subspace exploration quality.** QUIS generates subspace-conditional insights at more than
-double the rate of Baseline (84.4% vs. 37.4%). More importantly, these insights are of higher
-analytical quality: the Score Uplift ratio — defined as the mean effect size of subspace insights
-relative to global insights — is 1.067 for QUIS versus 0.974 for Baseline and 0.528 for ONLYSTATS.
-This result demonstrates that QuGen's question formulation actively steers the insight engine
-toward data segments where patterns are amplified. The effect is most pronounced on
-employee_attrition, where QUIS's subspace insights achieve effect sizes 57% stronger than their
-global counterparts (score ratio x = 1.574). Furthermore, QUIS's subspace insights oppose the
-global direction at a higher rate than Baseline (Contrasting Rate: 0.634 vs. 0.389 on adidas;
-0.438 vs. 0.300 on employee_attrition), indicating that QuGen systematically surfaces
-counter-narrative sub-population findings that global analysis would obscure.
+**Chất lượng khám phá subspace.** QUIS sinh insight có điều kiện subspace với tỷ lệ cao hơn gấp đôi so với Baseline (84,4% so với 37,4%). Quan trọng hơn, các insight này có chất lượng phân tích cao hơn: Score Uplift ratio — định nghĩa là kích thước hiệu ứng trung bình của insight subspace so với insight toàn cục — là 1,067 cho QUIS so với 0,974 của Baseline và 0,528 của ONLYSTATS. Kết quả này chứng minh rằng việc đặt câu hỏi của QuGen chủ động hướng engine insight tới các phân khúc dữ liệu nơi pattern được khuếch đại. Hiệu ứng rõ nét nhất trên employee_attrition, nơi insight subspace của QUIS đạt kích thước hiệu ứng mạnh hơn 57% so với các insight toàn cục (tỷ lệ điểm x = 1,574). Hơn nữa, insight subspace của QUIS đi ngược chiều toàn cục với tỷ lệ cao hơn Baseline (Contrasting Rate: 0,634 so với 0,389 trên adidas; 0,438 so với 0,300 trên employee_attrition), cho thấy QuGen có hệ thống phát hiện các phát hiện đi ngược xu hướng chung ở cấp tiểu dân số — những phát hiện mà phân tích toàn cục sẽ bỏ qua.
 
-**Intent layer coherence.** Among the intent-layer metrics, Baseline produces questions with
-higher surface alignment to their corresponding insight text (Question–Insight Alignment: 0.569
-vs. 0.540) and longer, more specific phrasing (Question Specificity: 12.11 vs. 9.80 words). We
-attribute this to a fundamental methodological difference: Baseline constructs questions
-retrospectively, after the insight has been computed, producing descriptions that naturally
-resemble their source. QuGen generates questions prospectively, as analytical hypotheses that
-drive the insight engine forward. A hypothesis ("How does attrition rate vary across departments
-for high-tenure employees?") will necessarily diverge from the insight it produces, yet it is
-precisely this forward-looking intent that guides the system toward structurally valid, subspace-rich
-findings. The Reason–Insight Coherence metric, which measures how well QuGen's explanatory
-reason is grounded in the actual insight content, marginally favours QUIS (0.526 vs. 0.514),
-confirming that the intent layer produces semantically coherent output rather than generic
-boilerplate.
+**Tính liên kết của tầng mục đích.** Trong số các chỉ số tầng mục đích, Baseline tạo ra câu hỏi có độ căn chỉnh bề mặt cao hơn với văn bản insight tương ứng (Question–Insight Alignment: 0,569 so với 0,540) và cách diễn đạt dài hơn, cụ thể hơn (Question Specificity: 12,11 so với 9,80 từ). Chúng tôi cho rằng điều này xuất phát từ một sự khác biệt phương pháp luận cơ bản: Baseline xây dựng câu hỏi hồi tố, sau khi insight đã được tính, tạo ra các mô tả tự nhiên gần giống với nguồn của chúng. QuGen sinh câu hỏi tiên nghiệm, như những giả thuyết phân tích thúc đẩy engine insight tiến về phía trước. Một giả thuyết ("Tỷ lệ nghỉ việc thay đổi như thế nào qua các phòng ban đối với nhân viên thâm niên cao?") nhất định sẽ khác với insight mà nó tạo ra, nhưng chính mục đích hướng về tương lai này mới dẫn dắt hệ thống đến các phát hiện hợp lệ về cấu trúc và giàu subspace. Chỉ số Reason–Insight Coherence — đo lường mức độ lý giải của QuGen được bám chắc vào nội dung insight thực tế — nghiêng nhẹ về phía QUIS (0,526 so với 0,514), xác nhận rằng tầng mục đích tạo ra đầu ra có liên kết ngữ nghĩa chứ không phải nội dung chung chung.
 
-## Implications for EDA Evaluation
+## Hàm ý đối với đánh giá EDA
 
-The results of this study highlight a broader limitation in the evaluation of automated EDA systems.
-Metrics derived from information retrieval and statistical hypothesis testing — significance rates,
-NMI, cross-system novelty — were originally designed for globally-scoped, low-cardinality insight
-generation tasks. Applied to an intent-driven system that deliberately explores conditional,
-subspace-level patterns, these metrics produce systematically misleading comparisons. We propose
-that future EDA evaluation frameworks incorporate, at minimum, the following complementary
-dimensions: (i) Structural Validity Rate, to assess pattern–breakdown semantic compatibility;
-(ii) Score Uplift from Subspace, to assess whether conditional filtering reveals stronger patterns
-rather than weaker ones; and (iii) Contrasting Rate, to assess the proportion of subspace insights
-that expose population heterogeneity invisible at the global level. Together, these metrics capture
-what distinguishes an intent-driven EDA system from a statistical baseline: not the strength of
-any individual insight in isolation, but the structural coherence and conditional richness of the
-analytical narrative it produces.
+Kết quả của nghiên cứu này làm nổi bật một hạn chế rộng hơn trong việc đánh giá các hệ thống EDA tự động. Các chỉ số bắt nguồn từ truy xuất thông tin và kiểm định giả thuyết thống kê — tỷ lệ có ý nghĩa, NMI, độ mới xuyên hệ thống — ban đầu được thiết kế cho các tác vụ sinh insight ở phạm vi toàn cục với lực chọn thấp. Khi áp dụng cho một hệ thống theo hướng mục đích, vốn chủ động khám phá các pattern có điều kiện ở mức subspace, các chỉ số này tạo ra các so sánh sai lệch có tính hệ thống. Chúng tôi đề xuất rằng các khung đánh giá EDA trong tương lai cần tích hợp tối thiểu các chiều bổ sung sau: (i) Structural Validity Rate, để đánh giá tính tương thích ngữ nghĩa giữa pattern và breakdown; (ii) Score Uplift from Subspace, để đánh giá liệu lọc có điều kiện có tìm ra pattern mạnh hơn hay không; và (iii) Contrasting Rate, để đánh giá tỷ lệ insight subspace bộc lộ tính không đồng nhất của tổng thể mà phân tích toàn cục không thấy được. Cùng nhau, các chỉ số này nắm bắt điều phân biệt một hệ thống EDA theo hướng mục đích với một hệ thống cơ sở thống kê: không phải độ mạnh của từng insight riêng lẻ, mà là tính liên kết cấu trúc và sự phong phú có điều kiện của câu chuyện phân tích mà nó tạo ra.
 
-## Conclusion
+## Kết luận
 
-This paper reproduces QUIS faithfully — achieving 100% Faithfulness and matching or exceeding
-pattern coverage across all datasets — and demonstrates that its QuGen module is the
-architectural source of the system's most distinctive capabilities. While conventional metrics such
-as statistical significance, insight novelty, and breakdown informativeness superficially favour the
-simpler Baseline system, we show that these measures are structurally biased toward globally-scoped,
-low-cardinality generation: they penalise the subspace exploration and comprehensive coverage that
-QuGen deliberately enables. When evaluated on metrics designed to capture intent-driven quality,
-QUIS leads decisively — achieving a Structural Validity Rate of 94.0% versus 40.0% for Baseline,
-a Subspace Rate of 84.4% versus 37.4%, and a Score Uplift ratio of 1.067 versus 0.974, indicating
-that QuGen not only drives broader conditional exploration but steers the insight engine toward
-segments where patterns are genuinely amplified. These advantages originate from QuGen's
-question-first design: by formulating a natural-language analytical question before invoking the
-insight engine, QuGen encodes semantic constraints on breakdown type, anchors exploration to
-meaningful sub-populations, and surfaces counter-narrative findings that global analysis obscures.
-We therefore argue that standard EDA evaluation frameworks are insufficient for assessing
-intent-driven systems, and propose Structural Validity Rate, Score Uplift from Subspace, and
-Contrasting Rate as necessary complementary dimensions — metrics that capture the structural
-coherence and conditional richness of the analytical narrative that QuGen produces.
+Bài báo này tái hiện QUIS một cách trung thực — đạt 100% Faithfulness và đáp ứng hoặc vượt qua độ phủ pattern trên tất cả các tập dữ liệu — đồng thời chứng minh rằng module QuGen là nguồn gốc kiến trúc của các năng lực đặc trưng nhất của hệ thống. Trong khi các chỉ số thông thường như độ có ý nghĩa thống kê, độ mới của insight và mức thông tin breakdown bề ngoài ưu ái hệ thống Baseline đơn giản hơn, chúng tôi chỉ ra rằng các chỉ số này có xu hướng bất lợi cấu trúc đối với việc sinh ở phạm vi toàn cục với lực chọn thấp: chúng phạt việc khám phá subspace và độ phủ toàn diện mà QuGen chủ động kích hoạt. Khi được đánh giá trên các chỉ số được thiết kế để nắm bắt chất lượng theo hướng mục đích, QUIS dẫn đầu một cách rõ ràng — đạt Structural Validity Rate 94,0% so với 40,0% của Baseline, Subspace Rate 84,4% so với 37,4%, và Score Uplift ratio 1,067 so với 0,974, cho thấy QuGen không chỉ thúc đẩy khám phá có điều kiện rộng hơn mà còn hướng engine insight tới các phân khúc nơi pattern thực sự được khuếch đại. Những lợi thế này bắt nguồn từ thiết kế ưu tiên câu hỏi của QuGen: bằng cách đặt một câu hỏi phân tích ngôn ngữ tự nhiên trước khi gọi engine insight, QuGen mã hóa các ràng buộc ngữ nghĩa về kiểu breakdown, neo thám hiểm vào các tiểu dân số có ý nghĩa, và phát hiện các kết quả đi ngược xu hướng chung mà phân tích toàn cục che khuất. Vì vậy, chúng tôi lập luận rằng các khung đánh giá EDA tiêu chuẩn là không đủ để đánh giá các hệ thống theo hướng mục đích, và đề xuất Structural Validity Rate, Score Uplift from Subspace và Contrasting Rate là các chiều bổ sung cần thiết — các chỉ số nắm bắt tính liên kết cấu trúc và sự phong phú có điều kiện của câu chuyện phân tích mà QuGen tạo ra.
