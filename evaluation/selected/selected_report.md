@@ -290,7 +290,7 @@ Kết quả theo tập dữ liệu:
 | Metric | QUIS | Baseline | ONLYSTATS | Thắng |
 |--------|------|----------|-----------|--------|
 | 8. Score Uplift from Subspace | **1.0670** | 0.9740 | 0.5277 | **QUIS** |
-| 9. Direction — Contrasting Rate | N/A (tb) | N/A (tb) | N/A (tb) | **N/A** |
+| 9. Simpson's Paradox Rate (SPR) | **27.7%** | 18.9% | 24.5% | **QUIS** |
 
 **Score Uplift theo tập dữ liệu** (x = mean_score_subspace / mean_score_global):
 

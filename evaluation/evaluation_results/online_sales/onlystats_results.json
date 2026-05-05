@@ -13,6 +13,388 @@
     "contrasting_count": 47,
     "subspace_direction_evaluated": 61
   },
+  "simpson_paradox": {
+    "simpson_paradox_rate": 0.2836,
+    "significant_paradox_rate": 0.1045,
+    "paradox_count": 19,
+    "significant_paradox_count": 7,
+    "subspace_count": 67,
+    "total_insights": 72,
+    "paradoxes": [
+      {
+        "insight_index": 3,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Product Category",
+        "measure": "MEAN(Total Revenue)",
+        "subspace": [
+          [
+            "Region",
+            "Europe"
+          ]
+        ],
+        "global_metric": "Electronics",
+        "subspace_metric": "Home Appliances",
+        "p_value": 0.0041306169080536125,
+        "is_significant": true,
+        "reversal_type": "Outstanding value reversal: global=Electronics, subspace=Home Appliances, p=0.0041 [SIGNIFICANT]",
+        "subspace_size": 80
+      },
+      {
+        "insight_index": 4,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Product Category",
+        "measure": "MEAN(Unit Price)",
+        "subspace": [
+          [
+            "Region",
+            "Europe"
+          ]
+        ],
+        "global_metric": "Electronics",
+        "subspace_metric": "Home Appliances",
+        "p_value": 0.010008666916101663,
+        "is_significant": true,
+        "reversal_type": "Outstanding value reversal: global=Electronics, subspace=Home Appliances, p=0.0100 [SIGNIFICANT]",
+        "subspace_size": 80
+      },
+      {
+        "insight_index": 5,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Date",
+        "measure": "SUM(Unit Price)",
+        "subspace": [
+          [
+            "Units Sold",
+            6
+          ]
+        ],
+        "global_metric": "2024-12-04 00:00:00",
+        "subspace_metric": "2024-09-01 00:00:00",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=2024-12-04 00:00:00, subspace=2024-09-01 00:00:00 [not significant]",
+        "subspace_size": 4
+      },
+      {
+        "insight_index": 7,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Payment Method",
+        "measure": "MEAN(Total Revenue)",
+        "subspace": [
+          [
+            "Unit Price",
+            9.99
+          ]
+        ],
+        "global_metric": "Credit Card",
+        "subspace_metric": "Debit Card",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=Credit Card, subspace=Debit Card [not significant]",
+        "subspace_size": 4
+      },
+      {
+        "insight_index": 9,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Region",
+        "measure": "MEAN(Total Revenue)",
+        "subspace": [
+          [
+            "Unit Price",
+            29.99
+          ]
+        ],
+        "global_metric": "North America",
+        "subspace_metric": "Asia",
+        "p_value": 0.9122492113488652,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=North America, subspace=Asia, p=0.9122 [not significant]",
+        "subspace_size": 7
+      },
+      {
+        "insight_index": 13,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Payment Method",
+        "measure": "SUM(Units Sold)",
+        "subspace": [
+          [
+            "Units Sold",
+            5
+          ]
+        ],
+        "global_metric": "Credit Card",
+        "subspace_metric": "Debit Card",
+        "p_value": 0.00020624861188375758,
+        "is_significant": true,
+        "reversal_type": "Outstanding value reversal: global=Credit Card, subspace=Debit Card, p=0.0002 [SIGNIFICANT]",
+        "subspace_size": 7
+      },
+      {
+        "insight_index": 14,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Region",
+        "measure": "SUM(Units Sold)",
+        "subspace": [
+          [
+            "Units Sold",
+            1
+          ]
+        ],
+        "global_metric": "Asia",
+        "subspace_metric": "Europe",
+        "p_value": 9.97662730090451e-18,
+        "is_significant": true,
+        "reversal_type": "Outstanding value reversal: global=Asia, subspace=Europe, p=0.0000 [SIGNIFICANT]",
+        "subspace_size": 97
+      },
+      {
+        "insight_index": 17,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Date",
+        "measure": "SUM(Total Revenue)",
+        "subspace": [
+          [
+            "Region",
+            "Asia"
+          ]
+        ],
+        "global_metric": "2024-12-04 00:00:00",
+        "subspace_metric": "2024-05-02 00:00:00",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=2024-12-04 00:00:00, subspace=2024-05-02 00:00:00 [not significant]",
+        "subspace_size": 80
+      },
+      {
+        "insight_index": 18,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Date",
+        "measure": "MEAN(Total Revenue)",
+        "subspace": [
+          [
+            "Product Category",
+            "Sports"
+          ]
+        ],
+        "global_metric": "2024-12-04 00:00:00",
+        "subspace_metric": "2024-05-02 00:00:00",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=2024-12-04 00:00:00, subspace=2024-05-02 00:00:00 [not significant]",
+        "subspace_size": 40
+      },
+      {
+        "insight_index": 19,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Product Category",
+        "measure": "MEAN(Units Sold)",
+        "subspace": [
+          [
+            "Region",
+            "North America"
+          ]
+        ],
+        "global_metric": "Clothing",
+        "subspace_metric": "Books",
+        "p_value": 0.009671232774141596,
+        "is_significant": true,
+        "reversal_type": "Outstanding value reversal: global=Clothing, subspace=Books, p=0.0097 [SIGNIFICANT]",
+        "subspace_size": 80
+      },
+      {
+        "insight_index": 27,
+        "pattern": "TREND",
+        "breakdown": "Date",
+        "measure": "MEAN(Unit Price)",
+        "subspace": [
+          [
+            "Product Category",
+            "Sports"
+          ]
+        ],
+        "global_metric": -0.057236842105263155,
+        "subspace_metric": 0.14166666666666666,
+        "p_value": 0.41036541459288123,
+        "is_significant": false,
+        "reversal_type": "Trend reversal: global decreasing (\u03c4=-0.057, p=0.4104), subspace increasing (\u03c4=0.142, p=0.4699) [not significant]",
+        "subspace_size": 40
+      },
+      {
+        "insight_index": 32,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Product Category",
+        "measure": "MEAN(Unit Price)",
+        "subspace": [
+          [
+            "Region",
+            "Europe"
+          ]
+        ],
+        "global_metric": "Electronics",
+        "subspace_metric": "Home Appliances",
+        "p_value": 0.010008666916101663,
+        "is_significant": true,
+        "reversal_type": "Attribution reversal: global top=Electronics, subspace top=Home Appliances, p=0.0100 [SIGNIFICANT]",
+        "subspace_size": 80
+      },
+      {
+        "insight_index": 36,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Region",
+        "measure": "SUM(Total Revenue)",
+        "subspace": [
+          [
+            "Unit Price",
+            59.99
+          ]
+        ],
+        "global_metric": "North America",
+        "subspace_metric": "Asia",
+        "p_value": 0.6879649379876656,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=North America, subspace top=Asia, p=0.6880 [not significant]",
+        "subspace_size": 6
+      },
+      {
+        "insight_index": 43,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Region",
+        "measure": "MEAN(Units Sold)",
+        "subspace": [
+          [
+            "Unit Price",
+            16.99
+          ]
+        ],
+        "global_metric": "Asia",
+        "subspace_metric": "North America",
+        "p_value": 0.745694968960539,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=Asia, subspace top=North America, p=0.7457 [not significant]",
+        "subspace_size": 4
+      },
+      {
+        "insight_index": 46,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Region",
+        "measure": "MEAN(Unit Price)",
+        "subspace": [
+          [
+            "Units Sold",
+            4
+          ]
+        ],
+        "global_metric": "North America",
+        "subspace_metric": "Asia",
+        "p_value": 0.4509051068812695,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=North America, subspace top=Asia, p=0.4509 [not significant]",
+        "subspace_size": 23
+      },
+      {
+        "insight_index": 50,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Product Category",
+        "measure": "MEAN(Units Sold)",
+        "subspace": [
+          [
+            "Region",
+            "North America"
+          ]
+        ],
+        "global_metric": "Clothing",
+        "subspace_metric": "Books",
+        "p_value": 0.009671232774141596,
+        "is_significant": true,
+        "reversal_type": "Attribution reversal: global top=Clothing, subspace top=Books, p=0.0097 [SIGNIFICANT]",
+        "subspace_size": 80
+      },
+      {
+        "insight_index": 54,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Payment Method",
+        "measure": "MEAN(Total Revenue)",
+        "subspace": [
+          [
+            "Unit Price",
+            249.99
+          ]
+        ],
+        "global_metric": "Credit Card",
+        "subspace_metric": "Debit Card",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=Credit Card, subspace top=Debit Card [not significant]",
+        "subspace_size": 4
+      },
+      {
+        "insight_index": 57,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Date",
+        "measure": "SUM(Total Revenue)",
+        "subspace": [
+          [
+            "Unit Price",
+            49.99
+          ]
+        ],
+        "global_metric": "2024-12-04 00:00:00",
+        "subspace_metric": "2024-10-08 00:00:00",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=2024-12-04 00:00:00, subspace top=2024-10-08 00:00:00 [not significant]",
+        "subspace_size": 9
+      },
+      {
+        "insight_index": 60,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Date",
+        "measure": "SUM(Unit Price)",
+        "subspace": [
+          [
+            "Unit Price",
+            49.99
+          ]
+        ],
+        "global_metric": "2024-12-04 00:00:00",
+        "subspace_metric": "2024-06-08 00:00:00",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=2024-12-04 00:00:00, subspace top=2024-06-08 00:00:00 [not significant]",
+        "subspace_size": 9
+      }
+    ],
+    "by_pattern": {
+      "OUTSTANDING_VALUE": {
+        "paradox_count": 10,
+        "significant_paradox_count": 5,
+        "subspace_count": 20,
+        "simpson_paradox_rate": 0.5,
+        "significant_paradox_rate": 0.25
+      },
+      "TREND": {
+        "paradox_count": 1,
+        "significant_paradox_count": 0,
+        "subspace_count": 3,
+        "simpson_paradox_rate": 0.3333,
+        "significant_paradox_rate": 0.0
+      },
+      "ATTRIBUTION": {
+        "paradox_count": 8,
+        "significant_paradox_count": 2,
+        "subspace_count": 20,
+        "simpson_paradox_rate": 0.4,
+        "significant_paradox_rate": 0.1
+      },
+      "DISTRIBUTION_DIFFERENCE": {
+        "paradox_count": 0,
+        "significant_paradox_count": 0,
+        "subspace_count": 24,
+        "simpson_paradox_rate": 0.0,
+        "significant_paradox_rate": 0.0
+      }
+    }
+  },
   "faithfulness": {
     "faithfulness": 1.0,
     "verified_count": 72,

@@ -13,6 +13,172 @@
     "contrasting_count": 4,
     "subspace_direction_evaluated": 6
   },
+  "simpson_paradox": {
+    "simpson_paradox_rate": 0.3182,
+    "significant_paradox_rate": 0.0,
+    "paradox_count": 7,
+    "significant_paradox_count": 0,
+    "subspace_count": 22,
+    "total_insights": 61,
+    "paradoxes": [
+      {
+        "insight_index": 10,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Unit Price",
+        "measure": "MEAN(Total Revenue)",
+        "subspace": [
+          [
+            "Product Category",
+            "Home Appliances"
+          ]
+        ],
+        "global_metric": "3899.99",
+        "subspace_metric": "1299.99",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=3899.99, subspace top=1299.99 [not significant]",
+        "subspace_size": 40
+      },
+      {
+        "insight_index": 30,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Unit Price",
+        "measure": "MEAN(Total Revenue)",
+        "subspace": [
+          [
+            "Product Category",
+            "Home Appliances"
+          ]
+        ],
+        "global_metric": "3899.99",
+        "subspace_metric": "1299.99",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=3899.99, subspace=1299.99 [not significant]",
+        "subspace_size": 40
+      },
+      {
+        "insight_index": 31,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Unit Price",
+        "measure": "MEAN(Total Revenue)",
+        "subspace": [
+          [
+            "Product Category",
+            "Sports"
+          ]
+        ],
+        "global_metric": "3899.99",
+        "subspace_metric": "1895.0",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=3899.99, subspace top=1895.0 [not significant]",
+        "subspace_size": 40
+      },
+      {
+        "insight_index": 32,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Unit Price",
+        "measure": "MEAN(Total Revenue)",
+        "subspace": [
+          [
+            "Product Category",
+            "Books"
+          ]
+        ],
+        "global_metric": "3899.99",
+        "subspace_metric": "32.5",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=3899.99, subspace top=32.5 [not significant]",
+        "subspace_size": 40
+      },
+      {
+        "insight_index": 50,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Unit Price",
+        "measure": "MEAN(Total Revenue)",
+        "subspace": [
+          [
+            "Region",
+            "Asia"
+          ]
+        ],
+        "global_metric": "3899.99",
+        "subspace_metric": "1895.0",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=3899.99, subspace top=1895.0 [not significant]",
+        "subspace_size": 80
+      },
+      {
+        "insight_index": 51,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Unit Price",
+        "measure": "MEAN(Total Revenue)",
+        "subspace": [
+          [
+            "Payment Method",
+            "PayPal"
+          ]
+        ],
+        "global_metric": "3899.99",
+        "subspace_metric": "1299.99",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=3899.99, subspace top=1299.99 [not significant]",
+        "subspace_size": 80
+      },
+      {
+        "insight_index": 52,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Unit Price",
+        "measure": "MEAN(Total Revenue)",
+        "subspace": [
+          [
+            "Region",
+            "Europe"
+          ]
+        ],
+        "global_metric": "3899.99",
+        "subspace_metric": "1299.99",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=3899.99, subspace top=1299.99 [not significant]",
+        "subspace_size": 80
+      }
+    ],
+    "by_pattern": {
+      "OUTSTANDING_VALUE": {
+        "paradox_count": 1,
+        "significant_paradox_count": 0,
+        "subspace_count": 4,
+        "simpson_paradox_rate": 0.25,
+        "significant_paradox_rate": 0.0
+      },
+      "ATTRIBUTION": {
+        "paradox_count": 6,
+        "significant_paradox_count": 0,
+        "subspace_count": 7,
+        "simpson_paradox_rate": 0.8571,
+        "significant_paradox_rate": 0.0
+      },
+      "DISTRIBUTION_DIFFERENCE": {
+        "paradox_count": 0,
+        "significant_paradox_count": 0,
+        "subspace_count": 4,
+        "simpson_paradox_rate": 0.0,
+        "significant_paradox_rate": 0.0
+      },
+      "TREND": {
+        "paradox_count": 0,
+        "significant_paradox_count": 0,
+        "subspace_count": 7,
+        "simpson_paradox_rate": 0.0,
+        "significant_paradox_rate": 0.0
+      }
+    }
+  },
   "faithfulness": {
     "faithfulness": 1.0,
     "verified_count": 61,

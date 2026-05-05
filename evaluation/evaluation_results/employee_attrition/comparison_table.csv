@@ -20,7 +20,7 @@ Subspace Deep-dive,7d.2. Diversity — Subspace Entropy (Subspace),2.948,2.938,O
 Subspace Deep-dive,7d.3. Diversity — Value (Subspace),0.756,0.767,QUIS,"Unique (column, value) pairs in subspace / total (subspace insights)"
 Subspace Deep-dive,7d.4. Diversity — Dedup Rate (Subspace),0,0,Tie,Duplicate rate restricted to subspace insights - lower is better
 Subspace Deep-dive,8. Score Uplift from Subspace,"Δ=-0.188, x=0.346","Δ=0.083, x=1.574",QUIS,Δ = mean(score|subspace) - mean(score|no-subspace)
-Subspace Deep-dive,9. Direction (Contrasting Rate),0.711 (27/38),0.438 (46/105),ONLYSTATS,Rate of subspace insights where subspace value opposes global value — higher means more contrasting/valuable insights
+Subspace Deep-dive,9. Simpson's Paradox Rate (SPR),7.7% (0/6 sig),26.7% (7/31 sig),QUIS,Rate of statistically significant pattern reversals (p<0.05) — true Simpson's Paradox cases
 Intent Layer Quality,"10. Total (B,M) pairs evaluated",53/53,49/51,N/A,Total unique breakdown-measure pairs (categorical breakdowns only for NMI/Interestingness)
 Intent Layer Quality,10a. BM — NMI mean,nan,0.035,Tie,Mean NMI over categorical-B pairs
 Intent Layer Quality,10b. BM — Interestingness,0.102,0.090,ONLYSTATS,Mean Coverage×EffectSize over categorical-B pairs

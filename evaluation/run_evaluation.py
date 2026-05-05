@@ -25,6 +25,7 @@ from metrics.time_to_insight import compute_time_to_insight
 from metrics.token_usage import compute_token_usage
 from metrics.subspace import compute_subspace_metrics, filter_insights_with_subspace
 from metrics.score_uplift import compute_score_uplift_from_subspace
+from metrics.simpson_paradox import compute_simpson_paradox_rate
 from metrics.breakdown_measure import compute_bm_quality
 from metrics.question_quality import (
     compute_question_quality,
@@ -122,6 +123,7 @@ def evaluate_system(
         'num_cards': len(cards),
         'num_insights': len(insights_data),
         'score_uplift_from_subspace': compute_score_uplift_from_subspace(insights_data, df_cleaned, config.profile_path),
+        'simpson_paradox': compute_simpson_paradox_rate(insights_data, df_cleaned, config.profile_path),
         
         # 4 CORE METRICS for Defense
         'faithfulness': compute_faithfulness(insights_data, df_raw, df_cleaned, config.data_path),

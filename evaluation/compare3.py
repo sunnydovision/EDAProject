@@ -168,17 +168,18 @@ def create_comparison_table_3way(
         up_str, _winner3(names, [v or 0 for v in up_vals]),
         'Δ = mean(score|subspace) - mean(score|no-subspace)')
 
-    # ── 9. Direction (Contrasting Rate) ───────────────────────────────────
-    dir_vals = [u.get('score_uplift_direction') for u in ups]
-    dir_counts = [u.get('contrasting_count') for u in ups]
-    dir_evals = [u.get('subspace_direction_evaluated') for u in ups]
-    dir_str = [
-        f"{v:.3f} ({c}/{e})" if v is not None and c is not None and e is not None else 'N/A'
-        for v, c, e in zip(dir_vals, dir_counts, dir_evals)
+    # ── 9. Simpson's Paradox Rate ─────────────────────────────────────────
+    sprs = [r.get('simpson_paradox') for r in results_list]
+    spr_vals = [sp.get('simpson_paradox_rate') if sp else None for sp in sprs]
+    sig_counts = [sp.get('significant_paradox_count') if sp else None for sp in sprs]
+    total_counts = [sp.get('paradox_count') if sp else None for sp in sprs]
+    spr_str = [
+        f"{v:.1%} ({sc}/{tc} sig)" if v is not None and sc is not None and tc is not None else 'N/A'
+        for v, sc, tc in zip(spr_vals, sig_counts, total_counts)
     ]
-    row('Subspace Deep-dive', '9. Direction (Contrasting Rate)',
-        dir_str, _winner3(names, [v if isinstance(v, (int, float)) else None for v in dir_vals]),
-        'Rate of subspace insights where subspace value opposes global value — higher means more contrasting/valuable insights')
+    row('Subspace Deep-dive', '9. Simpson\'s Paradox Rate (SPR)',
+        spr_str, _winner3(names, [v if isinstance(v, (int, float)) else None for v in spr_vals]),
+        'Rate of statistically significant pattern reversals (p<0.05) — true Simpson\'s Paradox cases')
 
     # ── 10. BM Quality ────────────────────────────────────────────────────
     bms = [r.get('bm_quality') for r in results_list]

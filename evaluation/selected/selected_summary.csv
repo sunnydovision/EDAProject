@@ -23,7 +23,7 @@ Intent Layer Quality,10c. BM — Actionability,0.9613,0.5653,1.0000,ONLYSTATS,% 
 Intent Layer Quality,10d. BM — Diversity,0.2973,0.3173,0.3667,ONLYSTATS,"Unique (B,M) pairs / total insights",avg over 3 datasets,Overall Model Comparison
 Core & Efficiency,2a. Significance — TREND,100.0%,66.7%,83.3%,QUIS,Validity - TREND pattern,avg over 3 datasets,QuGen Module Analysis
 Subspace Deep-dive,8. Score Uplift from Subspace,1.0670,0.9740,0.5277,QUIS,Δ = mean(score|subspace) - mean(score|no-subspace),avg over 3 datasets,QuGen Module Analysis
-Subspace Deep-dive,9. Direction (Contrasting Rate),N/A,N/A,N/A,N/A,Rate of subspace insights where subspace value opposes global value — higher means more contrasting/valuable insights,avg over 3 datasets,QuGen Module Analysis
+Subspace Deep-dive,9. Simpson's Paradox Rate (SPR),27.7%,18.9%,24.5%,QUIS,Rate of statistically significant pattern reversals (p<0.05) — true Simpson's Paradox cases,avg over 3 datasets,QuGen Module Analysis
 Intent Layer Quality,11a. Question Semantic Diversity,0.5360,0.5850,N/A,Baseline,1 - mean cosine sim of question embeddings (within-system); N/A for ONLYSTATS (template),avg over 3 datasets,QuGen Module Analysis
 Intent Layer Quality,11b. Question Specificity,9.7967,12.1133,N/A,Baseline,Avg word count per question — higher = more specific; N/A for ONLYSTATS (template),avg over 3 datasets,QuGen Module Analysis
 Intent Layer Quality,11c. Question–Insight Alignment,0.5397,0.5687,N/A,Baseline,"Mean cosine(Embed(question), Embed(insight)); N/A for ONLYSTATS (template)",avg over 3 datasets,QuGen Module Analysis

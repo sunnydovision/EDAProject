@@ -108,7 +108,7 @@ AVERAGE_METRICS = {
     "7a. Subspace Faithfulness",
     "7b. Subspace Significance",
     "8. Score Uplift from Subspace",
-    "9. Direction (Contrasting Rate)",
+    "9. Simpson's Paradox Rate (SPR)",
     "10a. BM — NMI mean",
     "10b. BM — Interestingness",
     "10c. BM — Actionability",

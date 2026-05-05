@@ -307,27 +307,29 @@ def create_comparison_table(
             'Description': 'Δ = mean(score|subspace) - mean(score|no-subspace)'
         })
 
-    # 9. Direction (contrasting rate): proportion of subspace insights where
-    #    subspace value is opposite in sign to global value — higher is more valuable
-    dir_a = (results_a.get('score_uplift_from_subspace') or {}).get('score_uplift_direction')
-    dir_b = (results_b.get('score_uplift_from_subspace') or {}).get('score_uplift_direction')
-    ct_a = (results_a.get('score_uplift_from_subspace') or {}).get('contrasting_count')
-    ct_b = (results_b.get('score_uplift_from_subspace') or {}).get('contrasting_count')
-    ev_a = (results_a.get('score_uplift_from_subspace') or {}).get('subspace_direction_evaluated')
-    ev_b = (results_b.get('score_uplift_from_subspace') or {}).get('subspace_direction_evaluated')
-    if dir_a is not None or dir_b is not None:
-        winner = name_a if (dir_a or 0) > (dir_b or 0) else name_b if (dir_b or 0) > (dir_a or 0) else 'Tie'
-        def _fmt_dir(rate, ct, ev):
+    # 9. Simpson's Paradox Rate: proportion of subspace insights with statistically
+    #    significant pattern reversals — true Simpson's Paradox cases
+    spr_a = (results_a.get('simpson_paradox') or {}).get('simpson_paradox_rate')
+    spr_b = (results_b.get('simpson_paradox') or {}).get('simpson_paradox_rate')
+    sig_ct_a = (results_a.get('simpson_paradox') or {}).get('significant_paradox_count')
+    sig_ct_b = (results_b.get('simpson_paradox') or {}).get('significant_paradox_count')
+    total_ct_a = (results_a.get('simpson_paradox') or {}).get('paradox_count')
+    total_ct_b = (results_b.get('simpson_paradox') or {}).get('paradox_count')
+    if spr_a is not None or spr_b is not None:
+        winner = name_a if (spr_a or 0) > (spr_b or 0) else name_b if (spr_b or 0) > (spr_a or 0) else 'Tie'
+        def _fmt_spr(rate, sig_ct, total_ct):
             if rate is None:
                 return 'N/A'
-            return f"{rate:.3f} ({ct}/{ev})"
+            if sig_ct is not None and total_ct is not None:
+                return f"{rate:.1%} ({sig_ct}/{total_ct} sig)"
+            return f"{rate:.1%}"
         metrics.append({
             'Group': 'Subspace Deep-dive',
-            'Metric': '9. Direction (Contrasting Rate)',
-            name_a: _fmt_dir(dir_a, ct_a, ev_a),
-            name_b: _fmt_dir(dir_b, ct_b, ev_b),
+            'Metric': '9. Simpson\'s Paradox Rate (SPR)',
+            name_a: _fmt_spr(spr_a, sig_ct_a, total_ct_a),
+            name_b: _fmt_spr(spr_b, sig_ct_b, total_ct_b),
             'Winner': winner,
-            'Description': 'Rate of subspace insights where subspace value opposes global value — higher means more contrasting/valuable insights'
+            'Description': 'Rate of statistically significant pattern reversals (p<0.05) — true Simpson\'s Paradox cases'
         })
 
     # 10. BM Quality

@@ -13,6 +13,489 @@
     "contrasting_count": 36,
     "subspace_direction_evaluated": 65
   },
+  "simpson_paradox": {
+    "simpson_paradox_rate": 0.2976,
+    "significant_paradox_rate": 0.0952,
+    "paradox_count": 25,
+    "significant_paradox_count": 8,
+    "subspace_count": 84,
+    "total_insights": 106,
+    "paradoxes": [
+      {
+        "insight_index": 2,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Payment Method",
+        "measure": "MIN(Total Revenue)",
+        "subspace": [
+          [
+            "Units Sold",
+            1
+          ]
+        ],
+        "global_metric": "Debit Card",
+        "subspace_metric": "Credit Card",
+        "p_value": 8.074398753939982e-08,
+        "is_significant": true,
+        "reversal_type": "Outstanding value reversal: global=Debit Card, subspace=Credit Card, p=0.0000 [SIGNIFICANT]",
+        "subspace_size": 97
+      },
+      {
+        "insight_index": 3,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Product Category",
+        "measure": "MIN(Unit Price)",
+        "subspace": [
+          [
+            "Region",
+            "Europe"
+          ]
+        ],
+        "global_metric": "Electronics",
+        "subspace_metric": "Home Appliances",
+        "p_value": 0.010008666916101663,
+        "is_significant": true,
+        "reversal_type": "Outstanding value reversal: global=Electronics, subspace=Home Appliances, p=0.0100 [SIGNIFICANT]",
+        "subspace_size": 80
+      },
+      {
+        "insight_index": 4,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Product Category",
+        "measure": "MAX(Unit Price)",
+        "subspace": [
+          [
+            "Region",
+            "Asia"
+          ]
+        ],
+        "global_metric": "Electronics",
+        "subspace_metric": "Sports",
+        "p_value": 9.625830051520524e-05,
+        "is_significant": true,
+        "reversal_type": "Outstanding value reversal: global=Electronics, subspace=Sports, p=0.0001 [SIGNIFICANT]",
+        "subspace_size": 80
+      },
+      {
+        "insight_index": 5,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Product Category",
+        "measure": "MEAN(Total Revenue)",
+        "subspace": [
+          [
+            "Region",
+            "Europe"
+          ]
+        ],
+        "global_metric": "Electronics",
+        "subspace_metric": "Home Appliances",
+        "p_value": 0.0041306169080536125,
+        "is_significant": true,
+        "reversal_type": "Outstanding value reversal: global=Electronics, subspace=Home Appliances, p=0.0041 [SIGNIFICANT]",
+        "subspace_size": 80
+      },
+      {
+        "insight_index": 6,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Date",
+        "measure": "MAX(Total Revenue)",
+        "subspace": [
+          [
+            "Units Sold",
+            6
+          ]
+        ],
+        "global_metric": "2024-12-04 00:00:00",
+        "subspace_metric": "2024-09-01 00:00:00",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=2024-12-04 00:00:00, subspace=2024-09-01 00:00:00 [not significant]",
+        "subspace_size": 4
+      },
+      {
+        "insight_index": 7,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Product Category",
+        "measure": "COUNT(Transaction ID)",
+        "subspace": [
+          [
+            "Unit Price",
+            14.99
+          ]
+        ],
+        "global_metric": "Beauty Products",
+        "subspace_metric": "Books",
+        "p_value": 1.0,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=Beauty Products, subspace=Books, p=1.0000 [not significant]",
+        "subspace_size": 6
+      },
+      {
+        "insight_index": 11,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Product Category",
+        "measure": "COUNT(Product Name)",
+        "subspace": [
+          [
+            "Unit Price",
+            16.99
+          ]
+        ],
+        "global_metric": "Beauty Products",
+        "subspace_metric": "Books",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=Beauty Products, subspace=Books [not significant]",
+        "subspace_size": 4
+      },
+      {
+        "insight_index": 13,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Payment Method",
+        "measure": "COUNT(Transaction ID)",
+        "subspace": [
+          [
+            "Units Sold",
+            5
+          ]
+        ],
+        "global_metric": "Credit Card",
+        "subspace_metric": "Debit Card",
+        "p_value": 0.3522203339405374,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=Credit Card, subspace=Debit Card, p=0.3522 [not significant]",
+        "subspace_size": 7
+      },
+      {
+        "insight_index": 17,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Product Category",
+        "measure": "COUNT(Product Name)",
+        "subspace": [
+          [
+            "Total Revenue",
+            149.97
+          ]
+        ],
+        "global_metric": "Beauty Products",
+        "subspace_metric": "Clothing",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=Beauty Products, subspace=Clothing [not significant]",
+        "subspace_size": 4
+      },
+      {
+        "insight_index": 19,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Region",
+        "measure": "COUNT(Transaction ID)",
+        "subspace": [
+          [
+            "Payment Method",
+            "Credit Card"
+          ]
+        ],
+        "global_metric": "Asia",
+        "subspace_metric": "North America",
+        "p_value": 0.8927712570893849,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=Asia, subspace=North America, p=0.8928 [not significant]",
+        "subspace_size": 120
+      },
+      {
+        "insight_index": 20,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Product Name",
+        "measure": "MIN(Unit Price)",
+        "subspace": [
+          [
+            "Region",
+            "Asia"
+          ]
+        ],
+        "global_metric": "Canon EOS R5 Camera",
+        "subspace_metric": "Peloton Bike",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=Canon EOS R5 Camera, subspace=Peloton Bike [not significant]",
+        "subspace_size": 80
+      },
+      {
+        "insight_index": 23,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Payment Method",
+        "measure": "MEAN(Unit Price)",
+        "subspace": [
+          [
+            "Units Sold",
+            6
+          ]
+        ],
+        "global_metric": "Credit Card",
+        "subspace_metric": "Debit Card",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=Credit Card, subspace=Debit Card [not significant]",
+        "subspace_size": 4
+      },
+      {
+        "insight_index": 35,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Region",
+        "measure": "MEAN(Units Sold)",
+        "subspace": [
+          [
+            "Unit Price",
+            499.99
+          ]
+        ],
+        "global_metric": "Asia",
+        "subspace_metric": "North America",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=Asia, subspace=North America [not significant]",
+        "subspace_size": 5
+      },
+      {
+        "insight_index": 40,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Product Category",
+        "measure": "MIN(Unit Price)",
+        "subspace": [
+          [
+            "Payment Method",
+            "PayPal"
+          ]
+        ],
+        "global_metric": "Electronics",
+        "subspace_metric": "Home Appliances",
+        "p_value": 0.010008666916101663,
+        "is_significant": true,
+        "reversal_type": "Attribution reversal: global top=Electronics, subspace top=Home Appliances, p=0.0100 [SIGNIFICANT]",
+        "subspace_size": 80
+      },
+      {
+        "insight_index": 41,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Product Category",
+        "measure": "MEAN(Total Revenue)",
+        "subspace": [
+          [
+            "Region",
+            "Europe"
+          ]
+        ],
+        "global_metric": "Electronics",
+        "subspace_metric": "Home Appliances",
+        "p_value": 0.0041306169080536125,
+        "is_significant": true,
+        "reversal_type": "Attribution reversal: global top=Electronics, subspace top=Home Appliances, p=0.0041 [SIGNIFICANT]",
+        "subspace_size": 80
+      },
+      {
+        "insight_index": 42,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Product Category",
+        "measure": "MEAN(Unit Price)",
+        "subspace": [
+          [
+            "Region",
+            "Europe"
+          ]
+        ],
+        "global_metric": "Electronics",
+        "subspace_metric": "Home Appliances",
+        "p_value": 0.010008666916101663,
+        "is_significant": true,
+        "reversal_type": "Attribution reversal: global top=Electronics, subspace top=Home Appliances, p=0.0100 [SIGNIFICANT]",
+        "subspace_size": 80
+      },
+      {
+        "insight_index": 53,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Product Category",
+        "measure": "COUNT(Transaction ID)",
+        "subspace": [
+          [
+            "Unit Price",
+            16.99
+          ]
+        ],
+        "global_metric": "Beauty Products",
+        "subspace_metric": "Books",
+        "p_value": 0.4228182481160359,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=Beauty Products, subspace top=Books, p=0.4228 [not significant]",
+        "subspace_size": 4
+      },
+      {
+        "insight_index": 54,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Product Category",
+        "measure": "COUNT(Product Name)",
+        "subspace": [
+          [
+            "Unit Price",
+            16.99
+          ]
+        ],
+        "global_metric": "Beauty Products",
+        "subspace_metric": "Books",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=Beauty Products, subspace top=Books [not significant]",
+        "subspace_size": 4
+      },
+      {
+        "insight_index": 56,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Product Category",
+        "measure": "COUNT(Product Name)",
+        "subspace": [
+          [
+            "Units Sold",
+            5
+          ]
+        ],
+        "global_metric": "Beauty Products",
+        "subspace_metric": "Clothing",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=Beauty Products, subspace top=Clothing [not significant]",
+        "subspace_size": 7
+      },
+      {
+        "insight_index": 57,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Region",
+        "measure": "MIN(Total Revenue)",
+        "subspace": [
+          [
+            "Units Sold",
+            3
+          ]
+        ],
+        "global_metric": "Asia",
+        "subspace_metric": "Europe",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=Asia, subspace top=Europe [not significant]",
+        "subspace_size": 44
+      },
+      {
+        "insight_index": 63,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Region",
+        "measure": "COUNT(Transaction ID)",
+        "subspace": [
+          [
+            "Payment Method",
+            "Credit Card"
+          ]
+        ],
+        "global_metric": "Asia",
+        "subspace_metric": "North America",
+        "p_value": 0.8927712570893849,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=Asia, subspace top=North America, p=0.8928 [not significant]",
+        "subspace_size": 120
+      },
+      {
+        "insight_index": 66,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Region",
+        "measure": "MEAN(Total Revenue)",
+        "subspace": [
+          [
+            "Units Sold",
+            4
+          ]
+        ],
+        "global_metric": "North America",
+        "subspace_metric": "Asia",
+        "p_value": 0.880187599534745,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=North America, subspace top=Asia, p=0.8802 [not significant]",
+        "subspace_size": 23
+      },
+      {
+        "insight_index": 81,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Region",
+        "measure": "MEAN(Units Sold)",
+        "subspace": [
+          [
+            "Payment Method",
+            "Credit Card"
+          ]
+        ],
+        "global_metric": "Asia",
+        "subspace_metric": "North America",
+        "p_value": 0.011841570368363747,
+        "is_significant": true,
+        "reversal_type": "Attribution reversal: global top=Asia, subspace top=North America, p=0.0118 [SIGNIFICANT]",
+        "subspace_size": 120
+      },
+      {
+        "insight_index": 85,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Region",
+        "measure": "MEAN(Unit Price)",
+        "subspace": [
+          [
+            "Unit Price",
+            24.99
+          ]
+        ],
+        "global_metric": "North America",
+        "subspace_metric": "Asia",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=North America, subspace top=Asia [not significant]",
+        "subspace_size": 3
+      },
+      {
+        "insight_index": 89,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Date",
+        "measure": "COUNT(Transaction ID)",
+        "subspace": [
+          [
+            "Units Sold",
+            6
+          ]
+        ],
+        "global_metric": "2024-01-01 00:00:00",
+        "subspace_metric": "2024-08-04 00:00:00",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=2024-01-01 00:00:00, subspace top=2024-08-04 00:00:00 [not significant]",
+        "subspace_size": 4
+      }
+    ],
+    "by_pattern": {
+      "OUTSTANDING_VALUE": {
+        "paradox_count": 13,
+        "significant_paradox_count": 4,
+        "subspace_count": 22,
+        "simpson_paradox_rate": 0.5909,
+        "significant_paradox_rate": 0.1818
+      },
+      "ATTRIBUTION": {
+        "paradox_count": 12,
+        "significant_paradox_count": 4,
+        "subspace_count": 25,
+        "simpson_paradox_rate": 0.48,
+        "significant_paradox_rate": 0.16
+      },
+      "DISTRIBUTION_DIFFERENCE": {
+        "paradox_count": 0,
+        "significant_paradox_count": 0,
+        "subspace_count": 37,
+        "simpson_paradox_rate": 0.0,
+        "significant_paradox_rate": 0.0
+      }
+    }
+  },
   "faithfulness": {
     "faithfulness": 1.0,
     "verified_count": 106,

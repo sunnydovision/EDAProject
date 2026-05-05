@@ -13,6 +13,147 @@
     "contrasting_count": 27,
     "subspace_direction_evaluated": 38
   },
+  "simpson_paradox": {
+    "simpson_paradox_rate": 0.0769,
+    "significant_paradox_rate": 0.0,
+    "paradox_count": 6,
+    "significant_paradox_count": 0,
+    "subspace_count": 78,
+    "total_insights": 132,
+    "paradoxes": [
+      {
+        "insight_index": 46,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Attrition",
+        "measure": "MEAN(MonthlyRate)",
+        "subspace": [
+          [
+            "PercentSalaryHike",
+            25
+          ]
+        ],
+        "global_metric": "True",
+        "subspace_metric": "False",
+        "p_value": 0.6717239827439891,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=True, subspace=False, p=0.6717 [not significant]",
+        "subspace_size": 18
+      },
+      {
+        "insight_index": 49,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Attrition",
+        "measure": "MEAN(YearsAtCompany)",
+        "subspace": [
+          [
+            "DailyRate",
+            265
+          ]
+        ],
+        "global_metric": "False",
+        "subspace_metric": "True",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=False, subspace=True [not significant]",
+        "subspace_size": 3
+      },
+      {
+        "insight_index": 69,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Attrition",
+        "measure": "MEAN(NumCompaniesWorked)",
+        "subspace": [
+          [
+            "YearsWithCurrManager",
+            14
+          ]
+        ],
+        "global_metric": "True",
+        "subspace_metric": "False",
+        "p_value": 0.09207651303226702,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=True, subspace top=False, p=0.0921 [not significant]",
+        "subspace_size": 5
+      },
+      {
+        "insight_index": 75,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Attrition",
+        "measure": "MEAN(MonthlyRate)",
+        "subspace": [
+          [
+            "YearsAtCompany",
+            20
+          ]
+        ],
+        "global_metric": "True",
+        "subspace_metric": "False",
+        "p_value": 0.8930535323908424,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=True, subspace top=False, p=0.8931 [not significant]",
+        "subspace_size": 27
+      },
+      {
+        "insight_index": 104,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Attrition",
+        "measure": "MEAN(WorkLifeBalance)",
+        "subspace": [
+          [
+            "PercentSalaryHike",
+            25
+          ]
+        ],
+        "global_metric": "False",
+        "subspace_metric": "True",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=False, subspace top=True [not significant]",
+        "subspace_size": 18
+      },
+      {
+        "insight_index": 105,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Attrition",
+        "measure": "MEAN(HourlyRate)",
+        "subspace": [
+          [
+            "YearsWithCurrManager",
+            11
+          ]
+        ],
+        "global_metric": "False",
+        "subspace_metric": "True",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=False, subspace top=True [not significant]",
+        "subspace_size": 22
+      }
+    ],
+    "by_pattern": {
+      "OUTSTANDING_VALUE": {
+        "paradox_count": 2,
+        "significant_paradox_count": 0,
+        "subspace_count": 34,
+        "simpson_paradox_rate": 0.0588,
+        "significant_paradox_rate": 0.0
+      },
+      "ATTRIBUTION": {
+        "paradox_count": 4,
+        "significant_paradox_count": 0,
+        "subspace_count": 35,
+        "simpson_paradox_rate": 0.1143,
+        "significant_paradox_rate": 0.0
+      },
+      "DISTRIBUTION_DIFFERENCE": {
+        "paradox_count": 0,
+        "significant_paradox_count": 0,
+        "subspace_count": 9,
+        "simpson_paradox_rate": 0.0,
+        "significant_paradox_rate": 0.0
+      }
+    }
+  },
   "faithfulness": {
     "faithfulness": 1.0,
     "verified_count": 132,

@@ -13,6 +13,496 @@
     "contrasting_count": 55,
     "subspace_direction_evaluated": 67
   },
+  "simpson_paradox": {
+    "simpson_paradox_rate": 0.3731,
+    "significant_paradox_rate": 0.194,
+    "paradox_count": 25,
+    "significant_paradox_count": 13,
+    "subspace_count": 67,
+    "total_insights": 85,
+    "paradoxes": [
+      {
+        "insight_index": 2,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Retailer",
+        "measure": "SUM(Operating Margin)",
+        "subspace": [
+          [
+            "State",
+            "Tennessee"
+          ]
+        ],
+        "global_metric": "Foot Locker",
+        "subspace_metric": "Sports Direct",
+        "p_value": 4.845564954891413e-35,
+        "is_significant": true,
+        "reversal_type": "Outstanding value reversal: global=Foot Locker, subspace=Sports Direct, p=0.0000 [SIGNIFICANT]",
+        "subspace_size": 216
+      },
+      {
+        "insight_index": 3,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Retailer",
+        "measure": "SUM(Units Sold)",
+        "subspace": [
+          [
+            "City",
+            "Columbus"
+          ]
+        ],
+        "global_metric": "West Gear",
+        "subspace_metric": "Amazon",
+        "p_value": 0.00018628939079082114,
+        "is_significant": true,
+        "reversal_type": "Outstanding value reversal: global=West Gear, subspace=Amazon, p=0.0002 [SIGNIFICANT]",
+        "subspace_size": 144
+      },
+      {
+        "insight_index": 4,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Region",
+        "measure": "SUM(Price per Unit)",
+        "subspace": [
+          [
+            "Retailer ID",
+            1197831
+          ]
+        ],
+        "global_metric": "West",
+        "subspace_metric": "South",
+        "p_value": 1.276594723783949e-142,
+        "is_significant": true,
+        "reversal_type": "Outstanding value reversal: global=West, subspace=South, p=0.0000 [SIGNIFICANT]",
+        "subspace_size": 1653
+      },
+      {
+        "insight_index": 5,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Region",
+        "measure": "SUM(Total Sales)",
+        "subspace": [
+          [
+            "Units Sold",
+            96.0
+          ]
+        ],
+        "global_metric": "West",
+        "subspace_metric": "Northeast",
+        "p_value": 7.06986106541092e-06,
+        "is_significant": true,
+        "reversal_type": "Outstanding value reversal: global=West, subspace=Northeast, p=0.0000 [SIGNIFICANT]",
+        "subspace_size": 23
+      },
+      {
+        "insight_index": 6,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Region",
+        "measure": "SUM(Units Sold)",
+        "subspace": [
+          [
+            "Operating Margin",
+            75
+          ]
+        ],
+        "global_metric": "West",
+        "subspace_metric": "South",
+        "p_value": 0.12982149048340427,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=West, subspace=South, p=0.1298 [not significant]",
+        "subspace_size": 6
+      },
+      {
+        "insight_index": 9,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Invoice Date",
+        "measure": "SUM(Operating Profit)",
+        "subspace": [
+          [
+            "State",
+            "Louisiana"
+          ]
+        ],
+        "global_metric": "2021-09-12 00:00:00",
+        "subspace_metric": "2021-05-01 00:00:00",
+        "p_value": 0.0003223319141501197,
+        "is_significant": true,
+        "reversal_type": "Outstanding value reversal: global=2021-09-12 00:00:00, subspace=2021-05-01 00:00:00, p=0.0003 [SIGNIFICANT]",
+        "subspace_size": 216
+      },
+      {
+        "insight_index": 12,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Invoice Date",
+        "measure": "SUM(Price per Unit)",
+        "subspace": [
+          [
+            "Total Sales",
+            290000
+          ]
+        ],
+        "global_metric": "2021-09-12 00:00:00",
+        "subspace_metric": "2021-11-10 00:00:00",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=2021-09-12 00:00:00, subspace=2021-11-10 00:00:00 [not significant]",
+        "subspace_size": 5
+      },
+      {
+        "insight_index": 17,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Retailer",
+        "measure": "MEAN(Operating Profit)",
+        "subspace": [
+          [
+            "City",
+            "Columbus"
+          ]
+        ],
+        "global_metric": "Walmart",
+        "subspace_metric": "West Gear",
+        "p_value": 0.03325134295505958,
+        "is_significant": true,
+        "reversal_type": "Outstanding value reversal: global=Walmart, subspace=West Gear, p=0.0333 [SIGNIFICANT]",
+        "subspace_size": 144
+      },
+      {
+        "insight_index": 19,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Invoice Date",
+        "measure": "SUM(Units Sold)",
+        "subspace": [
+          [
+            "Operating Profit",
+            1536
+          ]
+        ],
+        "global_metric": "2021-10-07 00:00:00",
+        "subspace_metric": "2021-08-10 00:00:00",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=2021-10-07 00:00:00, subspace=2021-08-10 00:00:00 [not significant]",
+        "subspace_size": 3
+      },
+      {
+        "insight_index": 21,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Invoice Date",
+        "measure": "MEAN(Operating Profit)",
+        "subspace": [
+          [
+            "Sales Method",
+            "Outlet"
+          ]
+        ],
+        "global_metric": "2020-10-10 00:00:00",
+        "subspace_metric": "2020-03-05 00:00:00",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=2020-10-10 00:00:00, subspace=2020-03-05 00:00:00 [not significant]",
+        "subspace_size": 3019
+      },
+      {
+        "insight_index": 34,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Retailer",
+        "measure": "SUM(Total Sales)",
+        "subspace": [
+          [
+            "City",
+            "Dallas"
+          ]
+        ],
+        "global_metric": "West Gear",
+        "subspace_metric": "Sports Direct",
+        "p_value": 0.3863567724385669,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=West Gear, subspace top=Sports Direct, p=0.3864 [not significant]",
+        "subspace_size": 216
+      },
+      {
+        "insight_index": 35,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Retailer",
+        "measure": "SUM(Price per Unit)",
+        "subspace": [
+          [
+            "City",
+            "San Francisco"
+          ]
+        ],
+        "global_metric": "Foot Locker",
+        "subspace_metric": "West Gear",
+        "p_value": 5.363056654813748e-29,
+        "is_significant": true,
+        "reversal_type": "Attribution reversal: global top=Foot Locker, subspace top=West Gear, p=0.0000 [SIGNIFICANT]",
+        "subspace_size": 216
+      },
+      {
+        "insight_index": 36,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Retailer",
+        "measure": "SUM(Operating Margin)",
+        "subspace": [
+          [
+            "State",
+            "Tennessee"
+          ]
+        ],
+        "global_metric": "Foot Locker",
+        "subspace_metric": "Sports Direct",
+        "p_value": 4.845564954891413e-35,
+        "is_significant": true,
+        "reversal_type": "Attribution reversal: global top=Foot Locker, subspace top=Sports Direct, p=0.0000 [SIGNIFICANT]",
+        "subspace_size": 216
+      },
+      {
+        "insight_index": 37,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Retailer",
+        "measure": "SUM(Operating Profit)",
+        "subspace": [
+          [
+            "State",
+            "Wyoming"
+          ]
+        ],
+        "global_metric": "West Gear",
+        "subspace_metric": "Kohl's",
+        "p_value": 0.00012440569873516135,
+        "is_significant": true,
+        "reversal_type": "Attribution reversal: global top=West Gear, subspace top=Kohl's, p=0.0001 [SIGNIFICANT]",
+        "subspace_size": 144
+      },
+      {
+        "insight_index": 38,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Retailer",
+        "measure": "SUM(Units Sold)",
+        "subspace": [
+          [
+            "State",
+            "Michigan"
+          ]
+        ],
+        "global_metric": "West Gear",
+        "subspace_metric": "Sports Direct",
+        "p_value": 8.934177326448053e-07,
+        "is_significant": true,
+        "reversal_type": "Attribution reversal: global top=West Gear, subspace top=Sports Direct, p=0.0000 [SIGNIFICANT]",
+        "subspace_size": 144
+      },
+      {
+        "insight_index": 49,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Region",
+        "measure": "SUM(Price per Unit)",
+        "subspace": [
+          [
+            "Retailer ID",
+            1197831
+          ]
+        ],
+        "global_metric": "West",
+        "subspace_metric": "South",
+        "p_value": 1.276594723783949e-142,
+        "is_significant": true,
+        "reversal_type": "Attribution reversal: global top=West, subspace top=South, p=0.0000 [SIGNIFICANT]",
+        "subspace_size": 1653
+      },
+      {
+        "insight_index": 50,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Region",
+        "measure": "SUM(Units Sold)",
+        "subspace": [
+          [
+            "Operating Profit",
+            2058
+          ]
+        ],
+        "global_metric": "West",
+        "subspace_metric": "Northeast",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=West, subspace top=Northeast [not significant]",
+        "subspace_size": 3
+      },
+      {
+        "insight_index": 51,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Retailer",
+        "measure": "MEAN(Total Sales)",
+        "subspace": [
+          [
+            "State",
+            "Alabama"
+          ]
+        ],
+        "global_metric": "Walmart",
+        "subspace_metric": "Sports Direct",
+        "p_value": 0.0002717909999676961,
+        "is_significant": true,
+        "reversal_type": "Attribution reversal: global top=Walmart, subspace top=Sports Direct, p=0.0003 [SIGNIFICANT]",
+        "subspace_size": 216
+      },
+      {
+        "insight_index": 55,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Retailer",
+        "measure": "MEAN(Operating Profit)",
+        "subspace": [
+          [
+            "State",
+            "Ohio"
+          ]
+        ],
+        "global_metric": "Walmart",
+        "subspace_metric": "West Gear",
+        "p_value": 0.03325134295505958,
+        "is_significant": true,
+        "reversal_type": "Attribution reversal: global top=Walmart, subspace top=West Gear, p=0.0333 [SIGNIFICANT]",
+        "subspace_size": 144
+      },
+      {
+        "insight_index": 62,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Retailer",
+        "measure": "MEAN(Price per Unit)",
+        "subspace": [
+          [
+            "Operating Profit",
+            864
+          ]
+        ],
+        "global_metric": "Amazon",
+        "subspace_metric": "West Gear",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=Amazon, subspace top=West Gear [not significant]",
+        "subspace_size": 3
+      },
+      {
+        "insight_index": 71,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Invoice Date",
+        "measure": "MEAN(Units Sold)",
+        "subspace": [
+          [
+            "City",
+            "Anchorage"
+          ]
+        ],
+        "global_metric": "2020-05-10 00:00:00",
+        "subspace_metric": "2021-10-02 00:00:00",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=2020-05-10 00:00:00, subspace top=2021-10-02 00:00:00 [not significant]",
+        "subspace_size": 144
+      },
+      {
+        "insight_index": 72,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Invoice Date",
+        "measure": "MEAN(Total Sales)",
+        "subspace": [
+          [
+            "City",
+            "Anchorage"
+          ]
+        ],
+        "global_metric": "2020-01-07 00:00:00",
+        "subspace_metric": "2021-10-02 00:00:00",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=2020-01-07 00:00:00, subspace top=2021-10-02 00:00:00 [not significant]",
+        "subspace_size": 144
+      },
+      {
+        "insight_index": 77,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Region",
+        "measure": "MEAN(Price per Unit)",
+        "subspace": [
+          [
+            "Total Sales",
+            37500
+          ]
+        ],
+        "global_metric": "Southeast",
+        "subspace_metric": "Northeast",
+        "p_value": 0.5377666587806769,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=Southeast, subspace top=Northeast, p=0.5378 [not significant]",
+        "subspace_size": 18
+      },
+      {
+        "insight_index": 78,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Invoice Date",
+        "measure": "MEAN(Price per Unit)",
+        "subspace": [
+          [
+            "Units Sold",
+            333.0
+          ]
+        ],
+        "global_metric": "2020-06-07 00:00:00",
+        "subspace_metric": "2020-05-05 00:00:00",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=2020-06-07 00:00:00, subspace top=2020-05-05 00:00:00 [not significant]",
+        "subspace_size": 4
+      },
+      {
+        "insight_index": 82,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Region",
+        "measure": "MEAN(Price per Unit)",
+        "subspace": [
+          [
+            "Total Sales",
+            2378
+          ]
+        ],
+        "global_metric": "Southeast",
+        "subspace_metric": "Midwest",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=Southeast, subspace top=Midwest [not significant]",
+        "subspace_size": 3
+      }
+    ],
+    "by_pattern": {
+      "OUTSTANDING_VALUE": {
+        "paradox_count": 10,
+        "significant_paradox_count": 6,
+        "subspace_count": 18,
+        "simpson_paradox_rate": 0.5556,
+        "significant_paradox_rate": 0.3333
+      },
+      "TREND": {
+        "paradox_count": 0,
+        "significant_paradox_count": 0,
+        "subspace_count": 2,
+        "simpson_paradox_rate": 0.0,
+        "significant_paradox_rate": 0.0
+      },
+      "ATTRIBUTION": {
+        "paradox_count": 15,
+        "significant_paradox_count": 7,
+        "subspace_count": 20,
+        "simpson_paradox_rate": 0.75,
+        "significant_paradox_rate": 0.35
+      },
+      "DISTRIBUTION_DIFFERENCE": {
+        "paradox_count": 0,
+        "significant_paradox_count": 0,
+        "subspace_count": 27,
+        "simpson_paradox_rate": 0.0,
+        "significant_paradox_rate": 0.0
+      }
+    }
+  },
   "faithfulness": {
     "faithfulness": 1.0,
     "verified_count": 85,

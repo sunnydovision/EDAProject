@@ -13,6 +13,453 @@
     "contrasting_count": 52,
     "subspace_direction_evaluated": 82
   },
+  "simpson_paradox": {
+    "simpson_paradox_rate": 0.2674,
+    "significant_paradox_rate": 0.1047,
+    "paradox_count": 23,
+    "significant_paradox_count": 9,
+    "subspace_count": 86,
+    "total_insights": 99,
+    "paradoxes": [
+      {
+        "insight_index": 1,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Sales Method",
+        "measure": "SUM(Total Sales)",
+        "subspace": [
+          [
+            "City",
+            "Atlanta"
+          ]
+        ],
+        "global_metric": "In-store",
+        "subspace_metric": "Online",
+        "p_value": 3.362660089883277e-11,
+        "is_significant": true,
+        "reversal_type": "Outstanding value reversal: global=In-store, subspace=Online, p=0.0000 [SIGNIFICANT]",
+        "subspace_size": 216
+      },
+      {
+        "insight_index": 4,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Region",
+        "measure": "SUM(Operating Profit)",
+        "subspace": [
+          [
+            "Retailer ID",
+            1197831
+          ]
+        ],
+        "global_metric": "West",
+        "subspace_metric": "South",
+        "p_value": 0.0006699681056755109,
+        "is_significant": true,
+        "reversal_type": "Outstanding value reversal: global=West, subspace=South, p=0.0007 [SIGNIFICANT]",
+        "subspace_size": 1653
+      },
+      {
+        "insight_index": 5,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Retailer",
+        "measure": "COUNT(Invoice Date)",
+        "subspace": [
+          [
+            "Retailer ID",
+            1197831
+          ]
+        ],
+        "global_metric": "Foot Locker",
+        "subspace_metric": "Sports Direct",
+        "p_value": 0.4799816102154312,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=Foot Locker, subspace=Sports Direct, p=0.4800 [not significant]",
+        "subspace_size": 1653
+      },
+      {
+        "insight_index": 7,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Sales Method",
+        "measure": "MEAN(Units Sold)",
+        "subspace": [
+          [
+            "State",
+            "Alaska"
+          ]
+        ],
+        "global_metric": "In-store",
+        "subspace_metric": "Outlet",
+        "p_value": 0.062422213894786804,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=In-store, subspace=Outlet, p=0.0624 [not significant]",
+        "subspace_size": 144
+      },
+      {
+        "insight_index": 16,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Retailer",
+        "measure": "MAX(Price per Unit)",
+        "subspace": [
+          [
+            "Operating Profit",
+            112000
+          ]
+        ],
+        "global_metric": "Walmart",
+        "subspace_metric": "Foot Locker",
+        "p_value": 0.16772407303028503,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=Walmart, subspace=Foot Locker, p=0.1677 [not significant]",
+        "subspace_size": 7
+      },
+      {
+        "insight_index": 17,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Sales Method",
+        "measure": "COUNT(Retailer)",
+        "subspace": [
+          [
+            "State",
+            "Pennsylvania"
+          ]
+        ],
+        "global_metric": "Online",
+        "subspace_metric": "Outlet",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=Online, subspace=Outlet [not significant]",
+        "subspace_size": 216
+      },
+      {
+        "insight_index": 19,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "State",
+        "measure": "MEAN(Operating Margin)",
+        "subspace": [
+          [
+            "Total Sales",
+            431250
+          ]
+        ],
+        "global_metric": "Alabama",
+        "subspace_metric": "Mississippi",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=Alabama, subspace=Mississippi [not significant]",
+        "subspace_size": 3
+      },
+      {
+        "insight_index": 22,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Product",
+        "measure": "MEAN(Operating Margin)",
+        "subspace": [
+          [
+            "Total Sales",
+            356250
+          ]
+        ],
+        "global_metric": "Men's Street Footwear",
+        "subspace_metric": "Men's Apparel",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=Men's Street Footwear, subspace=Men's Apparel [not significant]",
+        "subspace_size": 5
+      },
+      {
+        "insight_index": 23,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Product",
+        "measure": "SUM(Total Sales)",
+        "subspace": [
+          [
+            "Operating Profit",
+            47813
+          ]
+        ],
+        "global_metric": "Men's Street Footwear",
+        "subspace_metric": "Men's Apparel",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=Men's Street Footwear, subspace=Men's Apparel [not significant]",
+        "subspace_size": 3
+      },
+      {
+        "insight_index": 27,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Product",
+        "measure": "MAX(Units Sold)",
+        "subspace": [
+          [
+            "City",
+            "Des Moines"
+          ]
+        ],
+        "global_metric": "Men's Athletic Footwear",
+        "subspace_metric": "Men's Street Footwear",
+        "p_value": 0.20397710966634575,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=Men's Athletic Footwear, subspace=Men's Street Footwear, p=0.2040 [not significant]",
+        "subspace_size": 144
+      },
+      {
+        "insight_index": 33,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Sales Method",
+        "measure": "SUM(Total Sales)",
+        "subspace": [
+          [
+            "State",
+            "Arkansas"
+          ]
+        ],
+        "global_metric": "In-store",
+        "subspace_metric": "Online",
+        "p_value": 5.55792705025814e-30,
+        "is_significant": true,
+        "reversal_type": "Attribution reversal: global top=In-store, subspace top=Online, p=0.0000 [SIGNIFICANT]",
+        "subspace_size": 216
+      },
+      {
+        "insight_index": 37,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Retailer",
+        "measure": "MEAN(Operating Profit)",
+        "subspace": [
+          [
+            "State",
+            "Tennessee"
+          ]
+        ],
+        "global_metric": "Walmart",
+        "subspace_metric": "Sports Direct",
+        "p_value": 0.6150402318604777,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=Walmart, subspace top=Sports Direct, p=0.6150 [not significant]",
+        "subspace_size": 216
+      },
+      {
+        "insight_index": 39,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Sales Method",
+        "measure": "MEAN(Units Sold)",
+        "subspace": [
+          [
+            "State",
+            "Illinois"
+          ]
+        ],
+        "global_metric": "In-store",
+        "subspace_metric": "Outlet",
+        "p_value": 3.2534096795267716e-07,
+        "is_significant": true,
+        "reversal_type": "Attribution reversal: global top=In-store, subspace top=Outlet, p=0.0000 [SIGNIFICANT]",
+        "subspace_size": 144
+      },
+      {
+        "insight_index": 42,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Product",
+        "measure": "MEAN(Units Sold)",
+        "subspace": [
+          [
+            "Operating Margin",
+            72
+          ]
+        ],
+        "global_metric": "Men's Street Footwear",
+        "subspace_metric": "Women's Apparel",
+        "p_value": 0.409052294969662,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=Men's Street Footwear, subspace top=Women's Apparel, p=0.4091 [not significant]",
+        "subspace_size": 6
+      },
+      {
+        "insight_index": 44,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Sales Method",
+        "measure": "COUNT(Retailer)",
+        "subspace": [
+          [
+            "Units Sold",
+            228.0
+          ]
+        ],
+        "global_metric": "Online",
+        "subspace_metric": "Outlet",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=Online, subspace top=Outlet [not significant]",
+        "subspace_size": 16
+      },
+      {
+        "insight_index": 51,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Retailer",
+        "measure": "MEAN(Price per Unit)",
+        "subspace": [
+          [
+            "Total Sales",
+            4940
+          ]
+        ],
+        "global_metric": "Amazon",
+        "subspace_metric": "West Gear",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=Amazon, subspace top=West Gear [not significant]",
+        "subspace_size": 3
+      },
+      {
+        "insight_index": 54,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Retailer",
+        "measure": "MAX(Price per Unit)",
+        "subspace": [
+          [
+            "State",
+            "Illinois"
+          ]
+        ],
+        "global_metric": "Walmart",
+        "subspace_metric": "Foot Locker",
+        "p_value": 0.04053221525239375,
+        "is_significant": true,
+        "reversal_type": "Attribution reversal: global top=Walmart, subspace top=Foot Locker, p=0.0405 [SIGNIFICANT]",
+        "subspace_size": 144
+      },
+      {
+        "insight_index": 57,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Retailer",
+        "measure": "MEAN(Price per Unit)",
+        "subspace": [
+          [
+            "City",
+            "Columbus"
+          ]
+        ],
+        "global_metric": "Amazon",
+        "subspace_metric": "West Gear",
+        "p_value": 3.874487384605776e-05,
+        "is_significant": true,
+        "reversal_type": "Attribution reversal: global top=Amazon, subspace top=West Gear, p=0.0000 [SIGNIFICANT]",
+        "subspace_size": 144
+      },
+      {
+        "insight_index": 60,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Product",
+        "measure": "SUM(Total Sales)",
+        "subspace": [
+          [
+            "Total Sales",
+            1452
+          ]
+        ],
+        "global_metric": "Men's Street Footwear",
+        "subspace_metric": "Men's Apparel",
+        "p_value": 0.002738406159950606,
+        "is_significant": true,
+        "reversal_type": "Attribution reversal: global top=Men's Street Footwear, subspace top=Men's Apparel, p=0.0027 [SIGNIFICANT]",
+        "subspace_size": 5
+      },
+      {
+        "insight_index": 62,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Region",
+        "measure": "SUM(Units Sold)",
+        "subspace": [
+          [
+            "Retailer",
+            "Walmart"
+          ]
+        ],
+        "global_metric": "West",
+        "subspace_metric": "South",
+        "p_value": 0.007215834132917208,
+        "is_significant": true,
+        "reversal_type": "Attribution reversal: global top=West, subspace top=South, p=0.0072 [SIGNIFICANT]",
+        "subspace_size": 626
+      },
+      {
+        "insight_index": 69,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Retailer",
+        "measure": "MEAN(Operating Profit)",
+        "subspace": [
+          [
+            "City",
+            "Albuquerque"
+          ]
+        ],
+        "global_metric": "Walmart",
+        "subspace_metric": "Kohl's",
+        "p_value": 0.04423907865827286,
+        "is_significant": true,
+        "reversal_type": "Attribution reversal: global top=Walmart, subspace top=Kohl's, p=0.0442 [SIGNIFICANT]",
+        "subspace_size": 216
+      },
+      {
+        "insight_index": 78,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "State",
+        "measure": "MAX(Operating Profit)",
+        "subspace": [
+          [
+            "Price per Unit",
+            87
+          ]
+        ],
+        "global_metric": "New York",
+        "subspace_metric": "Florida",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=New York, subspace top=Florida [not significant]",
+        "subspace_size": 3
+      },
+      {
+        "insight_index": 83,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "State",
+        "measure": "MIN(Total Sales)",
+        "subspace": [
+          [
+            "Operating Profit",
+            85313
+          ]
+        ],
+        "global_metric": "New York",
+        "subspace_metric": "Colorado",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=New York, subspace top=Colorado [not significant]",
+        "subspace_size": 3
+      }
+    ],
+    "by_pattern": {
+      "OUTSTANDING_VALUE": {
+        "paradox_count": 10,
+        "significant_paradox_count": 2,
+        "subspace_count": 25,
+        "simpson_paradox_rate": 0.4,
+        "significant_paradox_rate": 0.08
+      },
+      "ATTRIBUTION": {
+        "paradox_count": 13,
+        "significant_paradox_count": 7,
+        "subspace_count": 21,
+        "simpson_paradox_rate": 0.619,
+        "significant_paradox_rate": 0.3333
+      },
+      "DISTRIBUTION_DIFFERENCE": {
+        "paradox_count": 0,
+        "significant_paradox_count": 0,
+        "subspace_count": 40,
+        "simpson_paradox_rate": 0.0,
+        "significant_paradox_rate": 0.0
+      }
+    }
+  },
   "faithfulness": {
     "faithfulness": 1.0,
     "verified_count": 99,

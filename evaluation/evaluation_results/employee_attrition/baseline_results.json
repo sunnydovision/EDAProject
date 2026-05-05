@@ -13,6 +13,45 @@
     "contrasting_count": 3,
     "subspace_direction_evaluated": 10
   },
+  "simpson_paradox": {
+    "simpson_paradox_rate": 0.0,
+    "significant_paradox_rate": 0.0,
+    "paradox_count": 0,
+    "significant_paradox_count": 0,
+    "subspace_count": 27,
+    "total_insights": 81,
+    "paradoxes": [],
+    "by_pattern": {
+      "TREND": {
+        "paradox_count": 0,
+        "significant_paradox_count": 0,
+        "subspace_count": 13,
+        "simpson_paradox_rate": 0.0,
+        "significant_paradox_rate": 0.0
+      },
+      "OUTSTANDING_VALUE": {
+        "paradox_count": 0,
+        "significant_paradox_count": 0,
+        "subspace_count": 2,
+        "simpson_paradox_rate": 0.0,
+        "significant_paradox_rate": 0.0
+      },
+      "ATTRIBUTION": {
+        "paradox_count": 0,
+        "significant_paradox_count": 0,
+        "subspace_count": 7,
+        "simpson_paradox_rate": 0.0,
+        "significant_paradox_rate": 0.0
+      },
+      "DISTRIBUTION_DIFFERENCE": {
+        "paradox_count": 0,
+        "significant_paradox_count": 0,
+        "subspace_count": 5,
+        "simpson_paradox_rate": 0.0,
+        "significant_paradox_rate": 0.0
+      }
+    }
+  },
   "faithfulness": {
     "faithfulness": 1.0,
     "verified_count": 81,

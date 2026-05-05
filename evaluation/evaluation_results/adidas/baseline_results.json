@@ -13,6 +13,190 @@
     "contrasting_count": 7,
     "subspace_direction_evaluated": 18
   },
+  "simpson_paradox": {
+    "simpson_paradox_rate": 0.25,
+    "significant_paradox_rate": 0.0,
+    "paradox_count": 8,
+    "significant_paradox_count": 0,
+    "subspace_count": 32,
+    "total_insights": 75,
+    "paradoxes": [
+      {
+        "insight_index": 17,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Total Sales",
+        "measure": "MEAN(Operating Profit)",
+        "subspace": [
+          [
+            "Sales Method",
+            "Online"
+          ]
+        ],
+        "global_metric": "780000",
+        "subspace_metric": "752500",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=780000, subspace top=752500 [not significant]",
+        "subspace_size": 4889
+      },
+      {
+        "insight_index": 18,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Units Sold",
+        "measure": "MEAN(Total Sales)",
+        "subspace": [
+          [
+            "State",
+            "California"
+          ]
+        ],
+        "global_metric": "1.275",
+        "subspace_metric": "1.025",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=1.275, subspace top=1.025 [not significant]",
+        "subspace_size": 432
+      },
+      {
+        "insight_index": 40,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Units Sold",
+        "measure": "MEAN(Operating Profit)",
+        "subspace": [
+          [
+            "Sales Method",
+            "Online"
+          ]
+        ],
+        "global_metric": "1.275",
+        "subspace_metric": "1.15",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=1.275, subspace top=1.15 [not significant]",
+        "subspace_size": 4889
+      },
+      {
+        "insight_index": 61,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Units Sold",
+        "measure": "MEAN(Price per Unit)",
+        "subspace": [
+          [
+            "Sales Method",
+            "Online"
+          ]
+        ],
+        "global_metric": "1.125",
+        "subspace_metric": "850.0",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=1.125, subspace=850.0 [not significant]",
+        "subspace_size": 4889
+      },
+      {
+        "insight_index": 62,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Operating Profit",
+        "measure": "MEAN(Total Sales)",
+        "subspace": [
+          [
+            "Region",
+            "West"
+          ]
+        ],
+        "global_metric": "371250",
+        "subspace_metric": "252875",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=371250, subspace=252875 [not significant]",
+        "subspace_size": 2448
+      },
+      {
+        "insight_index": 64,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Units Sold",
+        "measure": "MEAN(Total Sales)",
+        "subspace": [
+          [
+            "Sales Method",
+            "In-store"
+          ]
+        ],
+        "global_metric": "1.275",
+        "subspace_metric": "1.15",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=1.275, subspace top=1.15 [not significant]",
+        "subspace_size": 1740
+      },
+      {
+        "insight_index": 66,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Units Sold",
+        "measure": "MEAN(Total Sales)",
+        "subspace": [
+          [
+            "Region",
+            "West"
+          ]
+        ],
+        "global_metric": "1.275",
+        "subspace_metric": "1.025",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=1.275, subspace top=1.025 [not significant]",
+        "subspace_size": 2448
+      },
+      {
+        "insight_index": 67,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Units Sold",
+        "measure": "MEAN(Operating Profit)",
+        "subspace": [
+          [
+            "Region",
+            "South"
+          ]
+        ],
+        "global_metric": "1.275",
+        "subspace_metric": "1.0",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=1.275, subspace top=1.0 [not significant]",
+        "subspace_size": 1728
+      }
+    ],
+    "by_pattern": {
+      "TREND": {
+        "paradox_count": 0,
+        "significant_paradox_count": 0,
+        "subspace_count": 16,
+        "simpson_paradox_rate": 0.0,
+        "significant_paradox_rate": 0.0
+      },
+      "OUTSTANDING_VALUE": {
+        "paradox_count": 2,
+        "significant_paradox_count": 0,
+        "subspace_count": 4,
+        "simpson_paradox_rate": 0.5,
+        "significant_paradox_rate": 0.0
+      },
+      "ATTRIBUTION": {
+        "paradox_count": 6,
+        "significant_paradox_count": 0,
+        "subspace_count": 7,
+        "simpson_paradox_rate": 0.8571,
+        "significant_paradox_rate": 0.0
+      },
+      "DISTRIBUTION_DIFFERENCE": {
+        "paradox_count": 0,
+        "significant_paradox_count": 0,
+        "subspace_count": 5,
+        "simpson_paradox_rate": 0.0,
+        "significant_paradox_rate": 0.0
+      }
+    }
+  },
   "faithfulness": {
     "faithfulness": 1.0,
     "verified_count": 75,

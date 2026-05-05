@@ -13,6 +13,604 @@
     "contrasting_count": 46,
     "subspace_direction_evaluated": 105
   },
+  "simpson_paradox": {
+    "simpson_paradox_rate": 0.2672,
+    "significant_paradox_rate": 0.0603,
+    "paradox_count": 31,
+    "significant_paradox_count": 7,
+    "subspace_count": 116,
+    "total_insights": 133,
+    "paradoxes": [
+      {
+        "insight_index": 2,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "BusinessTravel",
+        "measure": "MEAN(JobSatisfaction)",
+        "subspace": [
+          [
+            "DailyRate",
+            1018
+          ]
+        ],
+        "global_metric": "Non-Travel",
+        "subspace_metric": "Travel_Rarely",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=Non-Travel, subspace=Travel_Rarely [not significant]",
+        "subspace_size": 3
+      },
+      {
+        "insight_index": 5,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "JobRole",
+        "measure": "MEAN(YearsSinceLastPromotion)",
+        "subspace": [
+          [
+            "Attrition",
+            true
+          ]
+        ],
+        "global_metric": "Manager",
+        "subspace_metric": "Research Director",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=Manager, subspace=Research Director [not significant]",
+        "subspace_size": 237
+      },
+      {
+        "insight_index": 10,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "JobLevel",
+        "measure": "MEAN(TotalWorkingYears)",
+        "subspace": [
+          [
+            "JobRole",
+            "Laboratory Technician"
+          ]
+        ],
+        "global_metric": "5",
+        "subspace_metric": "3",
+        "p_value": 0.9774018941488022,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=5, subspace=3, p=0.9774 [not significant]",
+        "subspace_size": 259
+      },
+      {
+        "insight_index": 18,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "JobInvolvement",
+        "measure": "MEAN(TrainingTimesLastYear)",
+        "subspace": [
+          [
+            "YearsAtCompany",
+            18
+          ]
+        ],
+        "global_metric": "1",
+        "subspace_metric": "4",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=1, subspace=4 [not significant]",
+        "subspace_size": 13
+      },
+      {
+        "insight_index": 20,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "Department",
+        "measure": "MEAN(NumCompaniesWorked)",
+        "subspace": [
+          [
+            "Age",
+            28
+          ]
+        ],
+        "global_metric": "Human Resources",
+        "subspace_metric": "Research & Development",
+        "p_value": 0.1439613735982267,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=Human Resources, subspace=Research & Development, p=0.1440 [not significant]",
+        "subspace_size": 48
+      },
+      {
+        "insight_index": 21,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "EducationField",
+        "measure": "MEAN(TotalWorkingYears)",
+        "subspace": [
+          [
+            "Education",
+            4
+          ]
+        ],
+        "global_metric": "Marketing",
+        "subspace_metric": "Human Resources",
+        "p_value": 0.08194419739373156,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=Marketing, subspace=Human Resources, p=0.0819 [not significant]",
+        "subspace_size": 398
+      },
+      {
+        "insight_index": 22,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "OverTime",
+        "measure": "MEAN(YearsAtCompany)",
+        "subspace": [
+          [
+            "YearsSinceLastPromotion",
+            12
+          ]
+        ],
+        "global_metric": "False",
+        "subspace_metric": "True",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=False, subspace=True [not significant]",
+        "subspace_size": 10
+      },
+      {
+        "insight_index": 23,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "JobRole",
+        "measure": "MEAN(YearsInCurrentRole)",
+        "subspace": [
+          [
+            "TotalWorkingYears",
+            1
+          ]
+        ],
+        "global_metric": "Manager",
+        "subspace_metric": "Research Scientist",
+        "p_value": 7.24717986154041e-11,
+        "is_significant": true,
+        "reversal_type": "Outstanding value reversal: global=Manager, subspace=Research Scientist, p=0.0000 [SIGNIFICANT]",
+        "subspace_size": 81
+      },
+      {
+        "insight_index": 26,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "JobLevel",
+        "measure": "MEAN(TrainingTimesLastYear)",
+        "subspace": [
+          [
+            "YearsAtCompany",
+            7
+          ]
+        ],
+        "global_metric": "3",
+        "subspace_metric": "5",
+        "p_value": 0.05769297650719506,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=3, subspace=5, p=0.0577 [not significant]",
+        "subspace_size": 90
+      },
+      {
+        "insight_index": 28,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "JobRole",
+        "measure": "MEAN(DailyRate)",
+        "subspace": [
+          [
+            "YearsSinceLastPromotion",
+            5
+          ]
+        ],
+        "global_metric": "Healthcare Representative",
+        "subspace_metric": "Research Scientist",
+        "p_value": 0.022698411204176833,
+        "is_significant": true,
+        "reversal_type": "Outstanding value reversal: global=Healthcare Representative, subspace=Research Scientist, p=0.0227 [SIGNIFICANT]",
+        "subspace_size": 45
+      },
+      {
+        "insight_index": 29,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "MaritalStatus",
+        "measure": "MEAN(YearsSinceLastPromotion)",
+        "subspace": [
+          [
+            "JobInvolvement",
+            4
+          ]
+        ],
+        "global_metric": "Married",
+        "subspace_metric": "Divorced",
+        "p_value": 0.787482505998777,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=Married, subspace=Divorced, p=0.7875 [not significant]",
+        "subspace_size": 144
+      },
+      {
+        "insight_index": 30,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "EducationField",
+        "measure": "MEAN(TotalWorkingYears)",
+        "subspace": [
+          [
+            "YearsSinceLastPromotion",
+            14
+          ]
+        ],
+        "global_metric": "Marketing",
+        "subspace_metric": "Medical",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=Marketing, subspace=Medical [not significant]",
+        "subspace_size": 9
+      },
+      {
+        "insight_index": 32,
+        "pattern": "OUTSTANDING_VALUE",
+        "breakdown": "JobLevel",
+        "measure": "MEAN(MonthlyIncome)",
+        "subspace": [
+          [
+            "JobRole",
+            "Sales Executive"
+          ]
+        ],
+        "global_metric": "5",
+        "subspace_metric": "4",
+        "p_value": 4.421759143063322e-09,
+        "is_significant": true,
+        "reversal_type": "Outstanding value reversal: global=5, subspace=4, p=0.0000 [SIGNIFICANT]",
+        "subspace_size": 326
+      },
+      {
+        "insight_index": 37,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "JobLevel",
+        "measure": "MEAN(StockOptionLevel)",
+        "subspace": [
+          [
+            "YearsAtCompany",
+            24
+          ]
+        ],
+        "global_metric": "2",
+        "subspace_metric": "3",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=2, subspace top=3 [not significant]",
+        "subspace_size": 6
+      },
+      {
+        "insight_index": 42,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "JobLevel",
+        "measure": "MEAN(TrainingTimesLastYear)",
+        "subspace": [
+          [
+            "DailyRate",
+            575
+          ]
+        ],
+        "global_metric": "3",
+        "subspace_metric": "2",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=3, subspace top=2 [not significant]",
+        "subspace_size": 4
+      },
+      {
+        "insight_index": 43,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "JobLevel",
+        "measure": "MEAN(MonthlyIncome)",
+        "subspace": [
+          [
+            "TotalWorkingYears",
+            8
+          ]
+        ],
+        "global_metric": "5",
+        "subspace_metric": "2",
+        "p_value": 1.3371055277757443e-19,
+        "is_significant": true,
+        "reversal_type": "Attribution reversal: global top=5, subspace top=2, p=0.0000 [SIGNIFICANT]",
+        "subspace_size": 103
+      },
+      {
+        "insight_index": 50,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Department",
+        "measure": "MEAN(NumCompaniesWorked)",
+        "subspace": [
+          [
+            "DistanceFromHome",
+            16
+          ]
+        ],
+        "global_metric": "Human Resources",
+        "subspace_metric": "Sales",
+        "p_value": 0.13070522534121723,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=Human Resources, subspace top=Sales, p=0.1307 [not significant]",
+        "subspace_size": 32
+      },
+      {
+        "insight_index": 54,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "OverTime",
+        "measure": "MEAN(MonthlyIncome)",
+        "subspace": [
+          [
+            "NumCompaniesWorked",
+            6
+          ]
+        ],
+        "global_metric": "True",
+        "subspace_metric": "False",
+        "p_value": 0.14491261498571792,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=True, subspace top=False, p=0.1449 [not significant]",
+        "subspace_size": 70
+      },
+      {
+        "insight_index": 56,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Department",
+        "measure": "MEAN(DailyRate)",
+        "subspace": [
+          [
+            "TotalWorkingYears",
+            0
+          ]
+        ],
+        "global_metric": "Research & Development",
+        "subspace_metric": "Sales",
+        "p_value": 0.941960652060318,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=Research & Development, subspace top=Sales, p=0.9420 [not significant]",
+        "subspace_size": 11
+      },
+      {
+        "insight_index": 61,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "JobRole",
+        "measure": "MEAN(DailyRate)",
+        "subspace": [
+          [
+            "JobLevel",
+            5
+          ]
+        ],
+        "global_metric": "Healthcare Representative",
+        "subspace_metric": "Research Director",
+        "p_value": 0.23312467788420188,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=Healthcare Representative, subspace top=Research Director, p=0.2331 [not significant]",
+        "subspace_size": 69
+      },
+      {
+        "insight_index": 69,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Department",
+        "measure": "MEAN(EnvironmentSatisfaction)",
+        "subspace": [
+          [
+            "DistanceFromHome",
+            15
+          ]
+        ],
+        "global_metric": "Research & Development",
+        "subspace_metric": "Sales",
+        "p_value": 0.8519536413860663,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=Research & Development, subspace top=Sales, p=0.8520 [not significant]",
+        "subspace_size": 26
+      },
+      {
+        "insight_index": 70,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "JobRole",
+        "measure": "MEAN(Education)",
+        "subspace": [
+          [
+            "Department",
+            "Human Resources"
+          ]
+        ],
+        "global_metric": "Research Director",
+        "subspace_metric": "Manager",
+        "p_value": 0.47863525332589707,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=Research Director, subspace top=Manager, p=0.4786 [not significant]",
+        "subspace_size": 63
+      },
+      {
+        "insight_index": 71,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "JobLevel",
+        "measure": "MEAN(PercentSalaryHike)",
+        "subspace": [
+          [
+            "JobRole",
+            "Sales Representative"
+          ]
+        ],
+        "global_metric": "1",
+        "subspace_metric": "2",
+        "p_value": 0.08102738414713077,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=1, subspace top=2, p=0.0810 [not significant]",
+        "subspace_size": 83
+      },
+      {
+        "insight_index": 73,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Department",
+        "measure": "MEAN(JobLevel)",
+        "subspace": [
+          [
+            "HourlyRate",
+            93
+          ]
+        ],
+        "global_metric": "Sales",
+        "subspace_metric": "Research & Development",
+        "p_value": 0.6492876847137339,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=Sales, subspace top=Research & Development, p=0.6493 [not significant]",
+        "subspace_size": 16
+      },
+      {
+        "insight_index": 80,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "JobRole",
+        "measure": "MEAN(YearsInCurrentRole)",
+        "subspace": [
+          [
+            "JobLevel",
+            5
+          ]
+        ],
+        "global_metric": "Manager",
+        "subspace_metric": "Research Director",
+        "p_value": 0.9217865749881904,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=Manager, subspace top=Research Director, p=0.9218 [not significant]",
+        "subspace_size": 69
+      },
+      {
+        "insight_index": 87,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "JobRole",
+        "measure": "MEAN(WorkLifeBalance)",
+        "subspace": [
+          [
+            "JobLevel",
+            5
+          ]
+        ],
+        "global_metric": "Human Resources",
+        "subspace_metric": "Research Director",
+        "p_value": 0.5348251224305571,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=Human Resources, subspace top=Research Director, p=0.5348 [not significant]",
+        "subspace_size": 69
+      },
+      {
+        "insight_index": 88,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Department",
+        "measure": "MEAN(TotalWorkingYears)",
+        "subspace": [
+          [
+            "YearsInCurrentRole",
+            12
+          ]
+        ],
+        "global_metric": "Human Resources",
+        "subspace_metric": "Sales",
+        "p_value": 0.02526293273788133,
+        "is_significant": true,
+        "reversal_type": "Attribution reversal: global top=Human Resources, subspace top=Sales, p=0.0253 [SIGNIFICANT]",
+        "subspace_size": 10
+      },
+      {
+        "insight_index": 89,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Department",
+        "measure": "MEAN(TotalWorkingYears)",
+        "subspace": [
+          [
+            "Age",
+            53
+          ]
+        ],
+        "global_metric": "Human Resources",
+        "subspace_metric": "Research & Development",
+        "p_value": 0.0007066641418378061,
+        "is_significant": true,
+        "reversal_type": "Attribution reversal: global top=Human Resources, subspace top=Research & Development, p=0.0007 [SIGNIFICANT]",
+        "subspace_size": 19
+      },
+      {
+        "insight_index": 92,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "Department",
+        "measure": "MEAN(JobLevel)",
+        "subspace": [
+          [
+            "YearsWithCurrManager",
+            13
+          ]
+        ],
+        "global_metric": "Sales",
+        "subspace_metric": "Research & Development",
+        "p_value": 0.017607131284585943,
+        "is_significant": true,
+        "reversal_type": "Attribution reversal: global top=Sales, subspace top=Research & Development, p=0.0176 [SIGNIFICANT]",
+        "subspace_size": 14
+      },
+      {
+        "insight_index": 93,
+        "pattern": "ATTRIBUTION",
+        "breakdown": "JobLevel",
+        "measure": "MEAN(TotalWorkingYears)",
+        "subspace": [
+          [
+            "JobRole",
+            "Manufacturing Director"
+          ]
+        ],
+        "global_metric": "5",
+        "subspace_metric": "4",
+        "p_value": 0.8821621647224208,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=5, subspace top=4, p=0.8822 [not significant]",
+        "subspace_size": 145
+      },
+      {
+        "insight_index": 127,
+        "pattern": "DISTRIBUTION_DIFFERENCE",
+        "breakdown": "Attrition",
+        "measure": "MEAN(StockOptionLevel)",
+        "subspace": [
+          [
+            "Age",
+            51
+          ]
+        ],
+        "global_metric": -0.31766710811337995,
+        "subspace_metric": 0.9705882352941176,
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Distribution reversal: global diff=-0.318, subspace diff=0.971 [not significant]",
+        "subspace_size": 19
+      }
+    ],
+    "by_pattern": {
+      "OUTSTANDING_VALUE": {
+        "paradox_count": 13,
+        "significant_paradox_count": 3,
+        "subspace_count": 31,
+        "simpson_paradox_rate": 0.4194,
+        "significant_paradox_rate": 0.0968
+      },
+      "TREND": {
+        "paradox_count": 0,
+        "significant_paradox_count": 0,
+        "subspace_count": 1,
+        "simpson_paradox_rate": 0.0,
+        "significant_paradox_rate": 0.0
+      },
+      "ATTRIBUTION": {
+        "paradox_count": 17,
+        "significant_paradox_count": 4,
+        "subspace_count": 37,
+        "simpson_paradox_rate": 0.4595,
+        "significant_paradox_rate": 0.1081
+      },
+      "DISTRIBUTION_DIFFERENCE": {
+        "paradox_count": 1,
+        "significant_paradox_count": 0,
+        "subspace_count": 47,
+        "simpson_paradox_rate": 0.0213,
+        "significant_paradox_rate": 0.0
+      }
+    }
+  },
   "faithfulness": {
     "faithfulness": 1.0,
     "verified_count": 133,
