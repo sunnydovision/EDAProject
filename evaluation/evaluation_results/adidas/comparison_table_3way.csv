@@ -17,7 +17,7 @@ Subspace Deep-dive,7. Subspace Rate,86/99 (86.9%),32/75 (42.7%),67/85 (78.8%),QU
 Subspace Deep-dive,7a. Subspace Faithfulness,100.0%,100.0%,100.0%,Tie,Faithfulness restricted to subspace insights
 Subspace Deep-dive,7b. Subspace Significance,44.0%,75.0%,50.0%,Baseline,Significance restricted to subspace insights
 Subspace Deep-dive,8. Score Uplift from Subspace,"Δ=-0.043, x=0.885","Δ=-0.135, x=0.796","Δ=-0.126, x=0.726",QUIS,Δ = mean(score|subspace) - mean(score|no-subspace)
-Subspace Deep-dive,9. Simpson's Paradox Rate (SPR),26.7% (9/23 sig),25.0% (0/8 sig),37.3% (13/25 sig),ONLYSTATS,Rate of statistically significant pattern reversals (p<0.05) — true Simpson's Paradox cases
+Subspace Deep-dive,9. Simpson's Paradox Rate (SPR),27.9% (0/24 sig),25.0% (0/8 sig),37.3% (0/25 sig),ONLYSTATS,Rate of statistically significant pattern reversals (p<0.05) — true Simpson's Paradox cases
 Intent Layer Quality,"10. Total (B,M) pairs evaluated",26/26,11/24,31/31,N/A,Total unique breakdown-measure pairs (categorical breakdowns only for NMI/Interestingness)
 Intent Layer Quality,10a. BM — NMI mean,0.094,0.331,0.217,Baseline,Mean NMI over categorical-B pairs
 Intent Layer Quality,10b. BM — Interestingness,0.077,0.090,0.068,Baseline,Mean Coverage×EffectSize over categorical-B pairs

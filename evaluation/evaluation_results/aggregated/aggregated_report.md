@@ -1,6 +1,6 @@
 # Aggregated 3-Way Evaluation Report
 
-Generated: 2026-05-05 22:11  
+Generated: 2026-05-06 22:55  
 Datasets: adidas, employee_attrition, online_sales  
 Systems: QUIS | Baseline | ONLYSTATS
 
@@ -41,7 +41,7 @@ Systems: QUIS | Baseline | ONLYSTATS
 | 7a. Subspace Faithfulness | 100.0% | 100.0% | 100.0% | **Tie** | Faithfulness restricted to subspace insights |
 | 7b. Subspace Significance | 37.5% | 58.3% | 31.7% | **Baseline** | Significance restricted to subspace insights |
 | 8. Score Uplift from Subspace | 1.0670 | 0.9743 | 0.5277 | **QUIS** | Δ = mean(score|subspace) - mean(score|no-subspace) |
-| 9. Simpson's Paradox Rate (SPR) | 27.7% | 18.9% | 24.5% | **QUIS** | Rate of statistically significant pattern reversals (p<0.05) — true Simpson's Paradox cases |
+| 9. Simpson's Paradox Rate (SPR) | 30.1% | 18.9% | 25.4% | **QUIS** | Rate of statistically significant pattern reversals (p<0.05) — true Simpson's Paradox cases |
 ### Intent Layer Quality
 
 | Metric | QUIS | Baseline | ONLYSTATS | Winner | Description |
@@ -151,7 +151,7 @@ Systems: QUIS | Baseline | ONLYSTATS
 | Subspace Deep-dive | 7a. Subspace Faithfulness | 100.0% | 100.0% | 100.0% | Tie |
 | Subspace Deep-dive | 7b. Subspace Significance | 44.0% | 75.0% | 50.0% | Baseline |
 | Subspace Deep-dive | 8. Score Uplift from Subspace | Δ=-0.043, x=0.885 | Δ=-0.135, x=0.796 | Δ=-0.126, x=0.726 | QUIS |
-| Subspace Deep-dive | 9. Simpson's Paradox Rate (SPR) | 26.7% (9/23 sig) | 25.0% (0/8 sig) | 37.3% (13/25 sig) | ONLYSTATS |
+| Subspace Deep-dive | 9. Simpson's Paradox Rate (SPR) | 27.9% (0/24 sig) | 25.0% (0/8 sig) | 37.3% (0/25 sig) | ONLYSTATS |
 | Intent Layer Quality | 10. Total (B,M) pairs evaluated | 26/26 | 11/24 | 31/31 | N/A |
 | Intent Layer Quality | 10a. BM — NMI mean | 0.094 | 0.331 | 0.217 | Baseline |
 | Intent Layer Quality | 10b. BM — Interestingness | 0.077 | 0.090 | 0.068 | Baseline |
@@ -190,7 +190,7 @@ Systems: QUIS | Baseline | ONLYSTATS
 | Subspace Deep-dive | 7a. Subspace Faithfulness | 100.0% | 100.0% | 100.0% | Tie |
 | Subspace Deep-dive | 7b. Subspace Significance | 24.0% | 0.0% | 0.0% | QUIS |
 | Subspace Deep-dive | 8. Score Uplift from Subspace | Δ=0.083, x=1.574 | Δ=0.046, x=1.079 | Δ=-0.188, x=0.346 | QUIS |
-| Subspace Deep-dive | 9. Simpson's Paradox Rate (SPR) | 26.7% (7/31 sig) | 0.0% (0/0 sig) | 7.7% (0/6 sig) | QUIS |
+| Subspace Deep-dive | 9. Simpson's Paradox Rate (SPR) | 30.2% (1/35 sig) | 0.0% (0/0 sig) | 7.7% (0/6 sig) | QUIS |
 | Intent Layer Quality | 10. Total (B,M) pairs evaluated | 49/51 | 24/30 | 53/53 | N/A |
 | Intent Layer Quality | 10a. BM — NMI mean | 0.035 | 0.086 | nan | Baseline |
 | Intent Layer Quality | 10b. BM — Interestingness | 0.090 | 0.157 | 0.102 | Baseline |
@@ -229,7 +229,7 @@ Systems: QUIS | Baseline | ONLYSTATS
 | Subspace Deep-dive | 7a. Subspace Faithfulness | 100.0% | 100.0% | 100.0% | Tie |
 | Subspace Deep-dive | 7b. Subspace Significance | 44.4% | 100.0% | 45.0% | Baseline |
 | Subspace Deep-dive | 8. Score Uplift from Subspace | Δ=-0.137, x=0.742 | Δ=0.025, x=1.048 | Δ=-0.386, x=0.511 | Baseline |
-| Subspace Deep-dive | 9. Simpson's Paradox Rate (SPR) | 29.8% (8/25 sig) | 31.8% (0/7 sig) | 28.4% (7/19 sig) | Baseline |
+| Subspace Deep-dive | 9. Simpson's Paradox Rate (SPR) | 32.1% (1/27 sig) | 31.8% (0/7 sig) | 31.3% (1/21 sig) | QUIS |
 | Intent Layer Quality | 10. Total (B,M) pairs evaluated | 24/26 | 7/16 | 24/24 | N/A |
 | Intent Layer Quality | 10a. BM — NMI mean | 0.179 | 0.348 | 0.228 | Baseline |
 | Intent Layer Quality | 10b. BM — Interestingness | 0.244 | 0.513 | 0.314 | Baseline |

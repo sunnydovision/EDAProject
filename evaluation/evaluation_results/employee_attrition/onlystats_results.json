@@ -34,9 +34,9 @@
         ],
         "global_metric": "True",
         "subspace_metric": "False",
-        "p_value": 0.6717239827439891,
+        "p_value": 0.37230974460093147,
         "is_significant": false,
-        "reversal_type": "Outstanding value reversal: global=True, subspace=False, p=0.6717 [not significant]",
+        "reversal_type": "Outstanding value reversal: global=True, subspace=False, p=0.3723 [not significant]",
         "subspace_size": 18
       },
       {
@@ -52,9 +52,9 @@
         ],
         "global_metric": "False",
         "subspace_metric": "True",
-        "p_value": null,
+        "p_value": 0.9808644450450721,
         "is_significant": false,
-        "reversal_type": "Outstanding value reversal: global=False, subspace=True [not significant]",
+        "reversal_type": "Outstanding value reversal: global=False, subspace=True, p=0.9809 [not significant]",
         "subspace_size": 3
       },
       {
@@ -70,9 +70,9 @@
         ],
         "global_metric": "True",
         "subspace_metric": "False",
-        "p_value": 0.09207651303226702,
+        "p_value": 0.40166810547074006,
         "is_significant": false,
-        "reversal_type": "Attribution reversal: global top=True, subspace top=False, p=0.0921 [not significant]",
+        "reversal_type": "Attribution reversal: global top=True, subspace top=False, p=0.4017 [not significant]",
         "subspace_size": 5
       },
       {
@@ -88,9 +88,9 @@
         ],
         "global_metric": "True",
         "subspace_metric": "False",
-        "p_value": 0.8930535323908424,
+        "p_value": 0.1380235325690788,
         "is_significant": false,
-        "reversal_type": "Attribution reversal: global top=True, subspace top=False, p=0.8931 [not significant]",
+        "reversal_type": "Attribution reversal: global top=True, subspace top=False, p=0.1380 [not significant]",
         "subspace_size": 27
       },
       {
@@ -106,9 +106,9 @@
         ],
         "global_metric": "False",
         "subspace_metric": "True",
-        "p_value": null,
+        "p_value": 0.37230974460093147,
         "is_significant": false,
-        "reversal_type": "Attribution reversal: global top=False, subspace top=True [not significant]",
+        "reversal_type": "Attribution reversal: global top=False, subspace top=True, p=0.3723 [not significant]",
         "subspace_size": 18
       },
       {
@@ -124,9 +124,9 @@
         ],
         "global_metric": "False",
         "subspace_metric": "True",
-        "p_value": null,
+        "p_value": 0.23851170742211558,
         "is_significant": false,
-        "reversal_type": "Attribution reversal: global top=False, subspace top=True [not significant]",
+        "reversal_type": "Attribution reversal: global top=False, subspace top=True, p=0.2385 [not significant]",
         "subspace_size": 22
       }
     ],
