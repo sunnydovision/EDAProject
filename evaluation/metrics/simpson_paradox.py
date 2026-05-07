@@ -162,20 +162,20 @@ def _detect_attribution_reversal(
         is_significant = False
         
         try:
-            # Get all categories that appear in both global and subspace
-            common_categories = set(global_agg.index) & set(subspace_agg.index)
-            if len(common_categories) >= 2:
-                # Perform one-way ANOVA or Kruskal-Wallis test
-                # Compare if the top categories have significantly different values
-                top_global_values = df_global[df_global[breakdown] == top_global][measure_col]
-                top_subspace_values = df_subspace[df_subspace[breakdown] == top_subspace][measure_col]
-                
-                top_global_numeric = pd.to_numeric(top_global_values, errors='coerce').dropna()
-                top_subspace_numeric = pd.to_numeric(top_subspace_values, errors='coerce').dropna()
-                
-                if len(top_global_numeric) >= 3 and len(top_subspace_numeric) >= 3:
-                    # Use Mann-Whitney U test (non-parametric)
-                    _, p_value = stats.mannwhitneyu(top_global_numeric, top_subspace_numeric, alternative='two-sided')
+            # Use Chi-square test on a contingency table (global vs subspace) x categories
+            # This tests whether the category distribution profile changes between global and subspace,
+            # which is exactly what we need: if the profile shifts significantly, the dominant-category
+            # reversal is statistically meaningful.
+            all_categories = sorted(set(global_agg.index) | set(subspace_agg.index))
+            if len(all_categories) >= 2:
+                global_counts = np.array([df_global[df_global[breakdown].astype(str) == str(c)].shape[0]
+                                          for c in all_categories])
+                subspace_counts = np.array([df_subspace[df_subspace[breakdown].astype(str) == str(c)].shape[0]
+                                            for c in all_categories])
+                contingency = np.array([global_counts, subspace_counts])
+                # Only run if all expected counts are non-zero
+                if contingency.min() >= 1:
+                    _, p_value, _, _ = chi2_contingency(contingency)
                     is_significant = (p_value < 0.05)
         except Exception:
             pass
@@ -213,62 +213,72 @@ def _detect_distribution_reversal(
 ) -> Tuple[bool, Optional[float], Optional[float], Optional[float], bool]:
     """
     Detect distribution difference reversal.
-    
-    Compares the distribution of measure_col across two groups defined by breakdown.
-    Reversal occurs if the relative ordering of groups flips.
-    Uses KS test (consistent with significance.py).
-    
+
+    For multi-category breakdowns, we anchor on the pair (cat_high, cat_low) where
+    cat_high has the highest mean and cat_low has the lowest mean in the global data.
+    Reversal occurs if the ordering of that same pair flips in the subspace
+    (i.e., mean_diff_global > 0 but mean_diff_subspace < 0, or vice versa).
+
+    Statistical significance requires both the global KS test and the subspace KS
+    test to be significant at p < 0.05, consistent with the TREND reversal logic.
+
     Returns:
         (is_reversal, mean_diff_global, mean_diff_subspace, p_value, is_significant)
     """
     try:
-        # Get unique breakdown values
-        categories = df_global[breakdown].unique()
-        if len(categories) != 2:
-            # For simplicity, only handle binary breakdown
+        # Compute per-category means in global data (at least 2 values each)
+        global_means = {}
+        for cat in df_global[breakdown].unique():
+            vals = pd.to_numeric(df_global[df_global[breakdown] == cat][measure_col], errors='coerce').dropna()
+            if len(vals) >= 2:
+                global_means[cat] = vals.mean()
+
+        if len(global_means) < 2:
             return False, None, None, None, False
-        
-        cat1, cat2 = categories[0], categories[1]
-        
-        # Global comparison
-        global_cat1 = pd.to_numeric(df_global[df_global[breakdown] == cat1][measure_col], errors='coerce').dropna()
-        global_cat2 = pd.to_numeric(df_global[df_global[breakdown] == cat2][measure_col], errors='coerce').dropna()
-        
-        if len(global_cat1) < 2 or len(global_cat2) < 2:
+
+        # Anchor pair: highest-mean vs lowest-mean category in global
+        cat_high = max(global_means, key=global_means.get)
+        cat_low  = min(global_means, key=global_means.get)
+
+        global_high = pd.to_numeric(df_global[df_global[breakdown] == cat_high][measure_col], errors='coerce').dropna()
+        global_low  = pd.to_numeric(df_global[df_global[breakdown] == cat_low ][measure_col], errors='coerce').dropna()
+        mean_diff_global = global_high.mean() - global_low.mean()
+
+        # Same pair in subspace
+        subspace_high = pd.to_numeric(df_subspace[df_subspace[breakdown] == cat_high][measure_col], errors='coerce').dropna()
+        subspace_low  = pd.to_numeric(df_subspace[df_subspace[breakdown] == cat_low ][measure_col], errors='coerce').dropna()
+
+        if len(subspace_high) < 2 or len(subspace_low) < 2:
             return False, None, None, None, False
-        
-        mean_diff_global = global_cat1.mean() - global_cat2.mean()
-        
-        # Subspace comparison
-        subspace_cat1 = pd.to_numeric(df_subspace[df_subspace[breakdown] == cat1][measure_col], errors='coerce').dropna()
-        subspace_cat2 = pd.to_numeric(df_subspace[df_subspace[breakdown] == cat2][measure_col], errors='coerce').dropna()
-        
-        if len(subspace_cat1) < 2 or len(subspace_cat2) < 2:
-            return False, None, None, None, False
-        
-        mean_diff_subspace = subspace_cat1.mean() - subspace_cat2.mean()
-        
-        # Reversal if signs are opposite
+
+        mean_diff_subspace = subspace_high.mean() - subspace_low.mean()
+
+        # Reversal if the ordering of the anchor pair flips
         eps = 1e-6
         if abs(mean_diff_global) < eps or abs(mean_diff_subspace) < eps:
             return False, mean_diff_global, mean_diff_subspace, None, False
-        
+
         is_reversal = (mean_diff_global > 0) != (mean_diff_subspace > 0)
-        
-        # Statistical significance: use KS test (consistent with significance.py)
-        p_value = None
+
+        # Statistical significance: require both global and subspace KS tests significant
+        # (consistent with TREND which requires p_global < 0.05 AND p_subspace < 0.05)
+        p_global = None
+        p_subspace = None
         is_significant = False
-        
+
         try:
-            if len(subspace_cat1) >= 3 and len(subspace_cat2) >= 3:
-                # Use Kolmogorov-Smirnov test (same as significance.py)
-                _, p_value = ks_2samp(subspace_cat1, subspace_cat2)
-                is_significant = (p_value < 0.05)
+            if len(global_high) >= 3 and len(global_low) >= 3:
+                _, p_global = ks_2samp(global_high, global_low)
+            if len(subspace_high) >= 3 and len(subspace_low) >= 3:
+                _, p_subspace = ks_2samp(subspace_high, subspace_low)
+            if p_global is not None and p_subspace is not None:
+                is_significant = (p_global < 0.05) and (p_subspace < 0.05)
         except Exception:
             pass
-        
+
+        p_value = min(p_global, p_subspace) if p_global is not None and p_subspace is not None else None
         return is_reversal, mean_diff_global, mean_diff_subspace, p_value, is_significant
-        
+
     except Exception:
         return False, None, None, None, False
 

@@ -14,10 +14,10 @@
     "subspace_direction_evaluated": 82
   },
   "simpson_paradox": {
-    "simpson_paradox_rate": 0.2674,
-    "significant_paradox_rate": 0.1047,
-    "paradox_count": 23,
-    "significant_paradox_count": 9,
+    "simpson_paradox_rate": 0.2791,
+    "significant_paradox_rate": 0.0,
+    "paradox_count": 24,
+    "significant_paradox_count": 0,
     "subspace_count": 86,
     "total_insights": 99,
     "paradoxes": [
@@ -34,9 +34,9 @@
         ],
         "global_metric": "In-store",
         "subspace_metric": "Online",
-        "p_value": 3.362660089883277e-11,
-        "is_significant": true,
-        "reversal_type": "Outstanding value reversal: global=In-store, subspace=Online, p=0.0000 [SIGNIFICANT]",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=In-store, subspace=Online [not significant]",
         "subspace_size": 216
       },
       {
@@ -52,9 +52,9 @@
         ],
         "global_metric": "West",
         "subspace_metric": "South",
-        "p_value": 0.0006699681056755109,
-        "is_significant": true,
-        "reversal_type": "Outstanding value reversal: global=West, subspace=South, p=0.0007 [SIGNIFICANT]",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=West, subspace=South [not significant]",
         "subspace_size": 1653
       },
       {
@@ -70,9 +70,9 @@
         ],
         "global_metric": "Foot Locker",
         "subspace_metric": "Sports Direct",
-        "p_value": 0.4799816102154312,
+        "p_value": null,
         "is_significant": false,
-        "reversal_type": "Outstanding value reversal: global=Foot Locker, subspace=Sports Direct, p=0.4800 [not significant]",
+        "reversal_type": "Outstanding value reversal: global=Foot Locker, subspace=Sports Direct [not significant]",
         "subspace_size": 1653
       },
       {
@@ -88,9 +88,9 @@
         ],
         "global_metric": "In-store",
         "subspace_metric": "Outlet",
-        "p_value": 0.062422213894786804,
+        "p_value": null,
         "is_significant": false,
-        "reversal_type": "Outstanding value reversal: global=In-store, subspace=Outlet, p=0.0624 [not significant]",
+        "reversal_type": "Outstanding value reversal: global=In-store, subspace=Outlet [not significant]",
         "subspace_size": 144
       },
       {
@@ -106,9 +106,9 @@
         ],
         "global_metric": "Walmart",
         "subspace_metric": "Foot Locker",
-        "p_value": 0.16772407303028503,
+        "p_value": null,
         "is_significant": false,
-        "reversal_type": "Outstanding value reversal: global=Walmart, subspace=Foot Locker, p=0.1677 [not significant]",
+        "reversal_type": "Outstanding value reversal: global=Walmart, subspace=Foot Locker [not significant]",
         "subspace_size": 7
       },
       {
@@ -196,9 +196,9 @@
         ],
         "global_metric": "Men's Athletic Footwear",
         "subspace_metric": "Men's Street Footwear",
-        "p_value": 0.20397710966634575,
+        "p_value": 0.9999999999862235,
         "is_significant": false,
-        "reversal_type": "Outstanding value reversal: global=Men's Athletic Footwear, subspace=Men's Street Footwear, p=0.2040 [not significant]",
+        "reversal_type": "Outstanding value reversal: global=Men's Athletic Footwear, subspace=Men's Street Footwear, p=1.0000 [not significant]",
         "subspace_size": 144
       },
       {
@@ -214,9 +214,9 @@
         ],
         "global_metric": "In-store",
         "subspace_metric": "Online",
-        "p_value": 5.55792705025814e-30,
-        "is_significant": true,
-        "reversal_type": "Attribution reversal: global top=In-store, subspace top=Online, p=0.0000 [SIGNIFICANT]",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=In-store, subspace top=Online [not significant]",
         "subspace_size": 216
       },
       {
@@ -232,9 +232,9 @@
         ],
         "global_metric": "Walmart",
         "subspace_metric": "Sports Direct",
-        "p_value": 0.6150402318604777,
+        "p_value": null,
         "is_significant": false,
-        "reversal_type": "Attribution reversal: global top=Walmart, subspace top=Sports Direct, p=0.6150 [not significant]",
+        "reversal_type": "Attribution reversal: global top=Walmart, subspace top=Sports Direct [not significant]",
         "subspace_size": 216
       },
       {
@@ -250,9 +250,9 @@
         ],
         "global_metric": "In-store",
         "subspace_metric": "Outlet",
-        "p_value": 3.2534096795267716e-07,
-        "is_significant": true,
-        "reversal_type": "Attribution reversal: global top=In-store, subspace top=Outlet, p=0.0000 [SIGNIFICANT]",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=In-store, subspace top=Outlet [not significant]",
         "subspace_size": 144
       },
       {
@@ -268,9 +268,9 @@
         ],
         "global_metric": "Men's Street Footwear",
         "subspace_metric": "Women's Apparel",
-        "p_value": 0.409052294969662,
+        "p_value": null,
         "is_significant": false,
-        "reversal_type": "Attribution reversal: global top=Men's Street Footwear, subspace top=Women's Apparel, p=0.4091 [not significant]",
+        "reversal_type": "Attribution reversal: global top=Men's Street Footwear, subspace top=Women's Apparel [not significant]",
         "subspace_size": 6
       },
       {
@@ -322,9 +322,9 @@
         ],
         "global_metric": "Walmart",
         "subspace_metric": "Foot Locker",
-        "p_value": 0.04053221525239375,
-        "is_significant": true,
-        "reversal_type": "Attribution reversal: global top=Walmart, subspace top=Foot Locker, p=0.0405 [SIGNIFICANT]",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=Walmart, subspace top=Foot Locker [not significant]",
         "subspace_size": 144
       },
       {
@@ -340,9 +340,9 @@
         ],
         "global_metric": "Amazon",
         "subspace_metric": "West Gear",
-        "p_value": 3.874487384605776e-05,
-        "is_significant": true,
-        "reversal_type": "Attribution reversal: global top=Amazon, subspace top=West Gear, p=0.0000 [SIGNIFICANT]",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=Amazon, subspace top=West Gear [not significant]",
         "subspace_size": 144
       },
       {
@@ -358,9 +358,9 @@
         ],
         "global_metric": "Men's Street Footwear",
         "subspace_metric": "Men's Apparel",
-        "p_value": 0.002738406159950606,
-        "is_significant": true,
-        "reversal_type": "Attribution reversal: global top=Men's Street Footwear, subspace top=Men's Apparel, p=0.0027 [SIGNIFICANT]",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=Men's Street Footwear, subspace top=Men's Apparel [not significant]",
         "subspace_size": 5
       },
       {
@@ -376,10 +376,28 @@
         ],
         "global_metric": "West",
         "subspace_metric": "South",
-        "p_value": 0.007215834132917208,
-        "is_significant": true,
-        "reversal_type": "Attribution reversal: global top=West, subspace top=South, p=0.0072 [SIGNIFICANT]",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=West, subspace top=South [not significant]",
         "subspace_size": 626
+      },
+      {
+        "insight_index": 64,
+        "pattern": "DISTRIBUTION_DIFFERENCE",
+        "breakdown": "Retailer",
+        "measure": "MAX(Price per Unit)",
+        "subspace": [
+          [
+            "City",
+            "Birmingham"
+          ]
+        ],
+        "global_metric": 6.712995133708922,
+        "subspace_metric": -4.607843137254896,
+        "p_value": 1.3094654091494198e-26,
+        "is_significant": false,
+        "reversal_type": "Distribution reversal: global diff=6.713, subspace diff=-4.608, p=0.0000 [not significant]",
+        "subspace_size": 216
       },
       {
         "insight_index": 69,
@@ -394,9 +412,9 @@
         ],
         "global_metric": "Walmart",
         "subspace_metric": "Kohl's",
-        "p_value": 0.04423907865827286,
-        "is_significant": true,
-        "reversal_type": "Attribution reversal: global top=Walmart, subspace top=Kohl's, p=0.0442 [SIGNIFICANT]",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=Walmart, subspace top=Kohl's [not significant]",
         "subspace_size": 216
       },
       {
@@ -439,23 +457,23 @@
     "by_pattern": {
       "OUTSTANDING_VALUE": {
         "paradox_count": 10,
-        "significant_paradox_count": 2,
+        "significant_paradox_count": 0,
         "subspace_count": 25,
         "simpson_paradox_rate": 0.4,
-        "significant_paradox_rate": 0.08
+        "significant_paradox_rate": 0.0
       },
       "ATTRIBUTION": {
         "paradox_count": 13,
-        "significant_paradox_count": 7,
+        "significant_paradox_count": 0,
         "subspace_count": 21,
         "simpson_paradox_rate": 0.619,
-        "significant_paradox_rate": 0.3333
+        "significant_paradox_rate": 0.0
       },
       "DISTRIBUTION_DIFFERENCE": {
-        "paradox_count": 0,
+        "paradox_count": 1,
         "significant_paradox_count": 0,
         "subspace_count": 40,
-        "simpson_paradox_rate": 0.0,
+        "simpson_paradox_rate": 0.025,
         "significant_paradox_rate": 0.0
       }
     }

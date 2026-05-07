@@ -14,10 +14,10 @@
     "subspace_direction_evaluated": 65
   },
   "simpson_paradox": {
-    "simpson_paradox_rate": 0.2976,
-    "significant_paradox_rate": 0.0952,
-    "paradox_count": 25,
-    "significant_paradox_count": 8,
+    "simpson_paradox_rate": 0.3214,
+    "significant_paradox_rate": 0.0119,
+    "paradox_count": 27,
+    "significant_paradox_count": 1,
     "subspace_count": 84,
     "total_insights": 106,
     "paradoxes": [
@@ -34,9 +34,9 @@
         ],
         "global_metric": "Debit Card",
         "subspace_metric": "Credit Card",
-        "p_value": 8.074398753939982e-08,
-        "is_significant": true,
-        "reversal_type": "Outstanding value reversal: global=Debit Card, subspace=Credit Card, p=0.0000 [SIGNIFICANT]",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=Debit Card, subspace=Credit Card [not significant]",
         "subspace_size": 97
       },
       {
@@ -52,9 +52,9 @@
         ],
         "global_metric": "Electronics",
         "subspace_metric": "Home Appliances",
-        "p_value": 0.010008666916101663,
-        "is_significant": true,
-        "reversal_type": "Outstanding value reversal: global=Electronics, subspace=Home Appliances, p=0.0100 [SIGNIFICANT]",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=Electronics, subspace=Home Appliances [not significant]",
         "subspace_size": 80
       },
       {
@@ -70,9 +70,9 @@
         ],
         "global_metric": "Electronics",
         "subspace_metric": "Sports",
-        "p_value": 9.625830051520524e-05,
-        "is_significant": true,
-        "reversal_type": "Outstanding value reversal: global=Electronics, subspace=Sports, p=0.0001 [SIGNIFICANT]",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=Electronics, subspace=Sports [not significant]",
         "subspace_size": 80
       },
       {
@@ -88,9 +88,9 @@
         ],
         "global_metric": "Electronics",
         "subspace_metric": "Home Appliances",
-        "p_value": 0.0041306169080536125,
-        "is_significant": true,
-        "reversal_type": "Outstanding value reversal: global=Electronics, subspace=Home Appliances, p=0.0041 [SIGNIFICANT]",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Outstanding value reversal: global=Electronics, subspace=Home Appliances [not significant]",
         "subspace_size": 80
       },
       {
@@ -124,9 +124,9 @@
         ],
         "global_metric": "Beauty Products",
         "subspace_metric": "Books",
-        "p_value": 1.0,
+        "p_value": null,
         "is_significant": false,
-        "reversal_type": "Outstanding value reversal: global=Beauty Products, subspace=Books, p=1.0000 [not significant]",
+        "reversal_type": "Outstanding value reversal: global=Beauty Products, subspace=Books [not significant]",
         "subspace_size": 6
       },
       {
@@ -160,9 +160,9 @@
         ],
         "global_metric": "Credit Card",
         "subspace_metric": "Debit Card",
-        "p_value": 0.3522203339405374,
+        "p_value": null,
         "is_significant": false,
-        "reversal_type": "Outstanding value reversal: global=Credit Card, subspace=Debit Card, p=0.3522 [not significant]",
+        "reversal_type": "Outstanding value reversal: global=Credit Card, subspace=Debit Card [not significant]",
         "subspace_size": 7
       },
       {
@@ -196,9 +196,9 @@
         ],
         "global_metric": "Asia",
         "subspace_metric": "North America",
-        "p_value": 0.8927712570893849,
+        "p_value": null,
         "is_significant": false,
-        "reversal_type": "Outstanding value reversal: global=Asia, subspace=North America, p=0.8928 [not significant]",
+        "reversal_type": "Outstanding value reversal: global=Asia, subspace=North America [not significant]",
         "subspace_size": 120
       },
       {
@@ -268,9 +268,9 @@
         ],
         "global_metric": "Electronics",
         "subspace_metric": "Home Appliances",
-        "p_value": 0.010008666916101663,
-        "is_significant": true,
-        "reversal_type": "Attribution reversal: global top=Electronics, subspace top=Home Appliances, p=0.0100 [SIGNIFICANT]",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=Electronics, subspace top=Home Appliances [not significant]",
         "subspace_size": 80
       },
       {
@@ -286,9 +286,9 @@
         ],
         "global_metric": "Electronics",
         "subspace_metric": "Home Appliances",
-        "p_value": 0.0041306169080536125,
-        "is_significant": true,
-        "reversal_type": "Attribution reversal: global top=Electronics, subspace top=Home Appliances, p=0.0041 [SIGNIFICANT]",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=Electronics, subspace top=Home Appliances [not significant]",
         "subspace_size": 80
       },
       {
@@ -304,9 +304,9 @@
         ],
         "global_metric": "Electronics",
         "subspace_metric": "Home Appliances",
-        "p_value": 0.010008666916101663,
-        "is_significant": true,
-        "reversal_type": "Attribution reversal: global top=Electronics, subspace top=Home Appliances, p=0.0100 [SIGNIFICANT]",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=Electronics, subspace top=Home Appliances [not significant]",
         "subspace_size": 80
       },
       {
@@ -322,9 +322,9 @@
         ],
         "global_metric": "Beauty Products",
         "subspace_metric": "Books",
-        "p_value": 0.4228182481160359,
+        "p_value": null,
         "is_significant": false,
-        "reversal_type": "Attribution reversal: global top=Beauty Products, subspace top=Books, p=0.4228 [not significant]",
+        "reversal_type": "Attribution reversal: global top=Beauty Products, subspace top=Books [not significant]",
         "subspace_size": 4
       },
       {
@@ -376,9 +376,9 @@
         ],
         "global_metric": "Asia",
         "subspace_metric": "Europe",
-        "p_value": null,
-        "is_significant": false,
-        "reversal_type": "Attribution reversal: global top=Asia, subspace top=Europe [not significant]",
+        "p_value": 0.0005516998838616976,
+        "is_significant": true,
+        "reversal_type": "Attribution reversal: global top=Asia, subspace top=Europe, p=0.0006 [SIGNIFICANT]",
         "subspace_size": 44
       },
       {
@@ -394,9 +394,9 @@
         ],
         "global_metric": "Asia",
         "subspace_metric": "North America",
-        "p_value": 0.8927712570893849,
+        "p_value": null,
         "is_significant": false,
-        "reversal_type": "Attribution reversal: global top=Asia, subspace top=North America, p=0.8928 [not significant]",
+        "reversal_type": "Attribution reversal: global top=Asia, subspace top=North America [not significant]",
         "subspace_size": 120
       },
       {
@@ -412,9 +412,9 @@
         ],
         "global_metric": "North America",
         "subspace_metric": "Asia",
-        "p_value": 0.880187599534745,
+        "p_value": null,
         "is_significant": false,
-        "reversal_type": "Attribution reversal: global top=North America, subspace top=Asia, p=0.8802 [not significant]",
+        "reversal_type": "Attribution reversal: global top=North America, subspace top=Asia [not significant]",
         "subspace_size": 23
       },
       {
@@ -430,9 +430,9 @@
         ],
         "global_metric": "Asia",
         "subspace_metric": "North America",
-        "p_value": 0.011841570368363747,
-        "is_significant": true,
-        "reversal_type": "Attribution reversal: global top=Asia, subspace top=North America, p=0.0118 [SIGNIFICANT]",
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Attribution reversal: global top=Asia, subspace top=North America [not significant]",
         "subspace_size": 120
       },
       {
@@ -470,28 +470,64 @@
         "is_significant": false,
         "reversal_type": "Attribution reversal: global top=2024-01-01 00:00:00, subspace top=2024-08-04 00:00:00 [not significant]",
         "subspace_size": 4
+      },
+      {
+        "insight_index": 91,
+        "pattern": "DISTRIBUTION_DIFFERENCE",
+        "breakdown": "Payment Method",
+        "measure": "MEAN(Unit Price)",
+        "subspace": [
+          [
+            "Units Sold",
+            6
+          ]
+        ],
+        "global_metric": 255.47299999999996,
+        "subspace_metric": -22.499999999999993,
+        "p_value": null,
+        "is_significant": false,
+        "reversal_type": "Distribution reversal: global diff=255.473, subspace diff=-22.500 [not significant]",
+        "subspace_size": 4
+      },
+      {
+        "insight_index": 96,
+        "pattern": "DISTRIBUTION_DIFFERENCE",
+        "breakdown": "Region",
+        "measure": "MEAN(Unit Price)",
+        "subspace": [
+          [
+            "Units Sold",
+            4
+          ]
+        ],
+        "global_metric": 189.46199999999996,
+        "subspace_metric": -22.69287878787878,
+        "p_value": 2.1207668356439592e-05,
+        "is_significant": false,
+        "reversal_type": "Distribution reversal: global diff=189.462, subspace diff=-22.693, p=0.0000 [not significant]",
+        "subspace_size": 23
       }
     ],
     "by_pattern": {
       "OUTSTANDING_VALUE": {
         "paradox_count": 13,
-        "significant_paradox_count": 4,
+        "significant_paradox_count": 0,
         "subspace_count": 22,
         "simpson_paradox_rate": 0.5909,
-        "significant_paradox_rate": 0.1818
+        "significant_paradox_rate": 0.0
       },
       "ATTRIBUTION": {
         "paradox_count": 12,
-        "significant_paradox_count": 4,
+        "significant_paradox_count": 1,
         "subspace_count": 25,
         "simpson_paradox_rate": 0.48,
-        "significant_paradox_rate": 0.16
+        "significant_paradox_rate": 0.04
       },
       "DISTRIBUTION_DIFFERENCE": {
-        "paradox_count": 0,
+        "paradox_count": 2,
         "significant_paradox_count": 0,
         "subspace_count": 37,
-        "simpson_paradox_rate": 0.0,
+        "simpson_paradox_rate": 0.0541,
         "significant_paradox_rate": 0.0
       }
     }

@@ -1,6 +1,6 @@
 # ONLYSTATS vs QUIS: Evaluation Report
 
-**Generated**: 2026-05-05 20:28:35
+**Generated**: 2026-05-06 22:53:07
 
 ---
 
@@ -45,7 +45,7 @@
 | 7d.3. Diversity — Value (Subspace)            | 0.756             | 0.767            | QUIS      | Unique (column, value) pairs in subspace / total (subspace insights)                        |
 | 7d.4. Diversity — Dedup Rate (Subspace)       | 0                 | 0                | Tie       | Duplicate rate restricted to subspace insights - lower is better                            |
 | 8. Score Uplift from Subspace                 | Δ=-0.188, x=0.346 | Δ=0.083, x=1.574 | QUIS      | Δ = mean(score|subspace) - mean(score|no-subspace)                                          |
-| 9. Simpson's Paradox Rate (SPR)               | 7.7% (0/6 sig)    | 26.7% (7/31 sig) | QUIS      | Rate of statistically significant pattern reversals (p<0.05) — true Simpson's Paradox cases |
+| 9. Simpson's Paradox Rate (SPR)               | 7.7% (0/6 sig)    | 30.2% (1/35 sig) | QUIS      | Rate of statistically significant pattern reversals (p<0.05) — true Simpson's Paradox cases |
 
 ---
 
