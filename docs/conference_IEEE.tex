@@ -84,7 +84,7 @@ For each insight card, ISGEN computes the global view ($S = \emptyset$), then ru
 
 \subsection{ONLYSTATS (Ablation Baseline)}
 
-ONLYSTATS is the ablation baseline derived from QUIS. It replaces QUGEN with a statistics-based selection method: it computes Kruskal-Wallis test scores \cite{kruskal} for all possible breakdown-measure pairs and selects the top 20 pairs per breakdown. It produces 45 unique (B, M) pairs on Adidas, 38 on Employee Attrition, and 40 on Online Sales. No LLM is used for card generation. ONLYSTATS then runs the identical ISGEN pipeline as QUIS. This ablation isolates the contribution of QUGEN to card quality alone.
+ONLYSTATS is the ablation baseline derived from QUIS. It replaces QUGEN with a statistics-based selection method: it computes Kruskal-Wallis test scores \cite{kruskal} for all possible breakdown-measure pairs and selects the top 20 pairs per breakdown. It produces 140 (B, M) pairs on Adidas, 320 on Employee Attrition, and 60 on Online Sales. No LLM is used for card generation. ONLYSTATS then runs the identical ISGEN pipeline as QUIS. This ablation isolates the contribution of QUGEN to card quality alone.
 
 \subsection{LLM Agentic Baseline}
 
