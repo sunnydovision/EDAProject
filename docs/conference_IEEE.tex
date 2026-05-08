@@ -22,7 +22,7 @@
 \maketitle
 
 \begin{abstract}
-This paper presents a replication and automated evaluation of QUIS, an automated Exploratory Data Analysis (EDA) system whose source code is not publicly available. QUIS uses a question generation module, called QUGEN, to create analysis questions before searching for insights. The original QUIS paper used human evaluation, but this is difficult to repeat and also takes much time. In this work, we replicate QUIS from its paper description and build an automatic evaluation framework with 9 metrics covering correctness, structural validity, statistical quality, subspace exploration, and question-insight alignment. We compare our QUIS replication with two baselines: a rule-based baseline called ONLYSTATS and an LLM-based agentic baseline that we implemented. We evaluate all three systems across three datasets: Adidas US Sales, IBM Employee Attrition, and Online Sales. The main results show that QUGEN helps avoid column-type errors and improves subspace exploration quantity. We find that the LLM baseline has a structural validity problem: it uses wrong column types in many insights. Across all datasets, QUIS obtains 94.0\% average structural validity, while the LLM baseline obtains only 40.0\%. QUIS also produces more insights with subspace filters: 84.4\% on average, compared with 37.4\% for the LLM baseline. For subspace quality, QUIS achieves the highest Score Uplift ($x$=1.067) and Simpson's Paradox Rate (30.1\%). Most striking, the LLM baseline produces zero significant paradoxes across all datasets, while QUIS produces significant paradoxes on two of three datasets, suggesting that structural validity is a necessary condition for meaningful subspace pattern detection. These results show that structured question generation is helpful for both exploration breadth and quality.
+This paper is a replication study of QUIS, an automated Exploratory Data Analysis (EDA) system. QUIS uses a question generation module(QUGEN) to create questions that later used as a guideline for searching for insights. The original QUIS paper used human evaluation, but this is hassle to reproduce and also takes much time. In this work, we suggest an automatic evaluation framework with 9 metrics covering correctness, structural validity, statistical quality, subspace exploration, and question-insight alignment. We compare our QUIS replication with two baselines: a ablation called ONLYSTATS and an LLM-based agentic baseline that we implemented. We evaluate three systems across three datasets: Adidas US Sales, IBM Employee Attrition, and Online Sales. The experiment results show that QUGEN helps avoid column-type errors and improves subspace exploration. Across all datasets, QUIS obtains 94.0\% average structural validity, while the LLM baseline obtains only 40.0\%. QUIS also produces more insights with subspace filters: 84.4\% on average, compared with 37.4\% for the LLM baseline. For subspace quality, QUIS achieves the highest Score Uplift ($x$=1.067) and Simpson's Paradox Rate (30.1\%). These results show that structured question generation is helpful for both exploration breadth and quality.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -30,45 +30,45 @@ Exploratory Data Analysis, Automated EDA, Question Generation, Evaluation Metric
 \end{IEEEkeywords}
 
 \section{Introduction}
-Exploratory Data Analysis (EDA) requires human knowledge and time to find patterns and useful relationships in new datasets. As datasets grow, automated EDA systems become increasingly valuable. QUIS (Manatkar et al., 2024) \cite{quis} is one such system: instead of searching for insights directly, it first generates analysis questions through a module called QUGEN, then uses a second module, ISGEN, to search the dataset for actual insights matching each question.
+Basically, automated EDA requires expert's knowledge and time to explore hidden patterns and relationships in new datasets. As datasets grow, automated EDA systems become more valuable. QUIS (Manatkar et al., 2024) \cite{quis} is one such system: rather than searching for insights directly, it generates analysis questions through a module called QUGEN, then uses a second module named ISGEN to search the dataset for matched insights correspondining for each question.
 
-The original QUIS paper evaluates output quality through human ratings, which are expensive, subjective, and difficult to reproduce. Furthermore, since the original QUIS implementation is not publicly available, we replicate QUIS based on the system description in the original paper. Our goal is not to verify numerical reproducibility---which is infeasible given the different model and evaluation protocol---but to use this replication as a vehicle for studying the contribution of each pipeline component through automated metrics. We design an evaluation study to answer two questions:
+For the original QUIS paper, evaluation output quality through human ratings, which are costly, subjective, and difficult to reproduce. Besides, since the original QUIS implementation is not publised, we replicate QUIS based on the system description in the original paper. Our goal is not to verify numerical reproducibility, but to use this replication as an instrument for studying the contribution of each pipeline component through automated metrics. We as well design an evaluation study to answer two questions:
 
 \begin{enumerate}
 \item Can we build an automatic evaluation framework for comparing automated EDA systems?
-\item What does the QUIS pipeline contribute---specifically, what roles do QUGEN (card generation) and ISGEN (insight search) each play---when compared with simpler baselines?
+\item What does the QUIS pipeline contribute---specifically, QUGEN (card generation) and ISGEN (insight search)---when compared with simpler baselines?
 \end{enumerate}
 
-We replicate QUIS and compare it with two baselines across three datasets: Adidas US Sales, IBM Employee Attrition, and Online Sales. The first baseline is ONLYSTATS, which removes QUGEN and creates cards by simple schema enumeration. The second baseline is an LLM-based agentic EDA pipeline. We use 9 metrics to study correctness, structure, statistical quality, subspace exploration, and question quality.
+We replicate QUIS and compare it with two baselines across three datasets: Adidas US Sales, IBM Employee Attrition, and Online Sales. The first baseline is ONLYSTATS, which is an ablation of QUIS that removes QUGEN and creates cards by simple schema enumeration. The second one is an LLM-based agentic EDA pipeline. We use total 9 metrics to study correctness, structure, statistical quality, subspace exploration, and question quality.
 
 Our contributions are:
 
 \begin{itemize}
-\item We build an automatic and reference-free evaluation framework with 9 metrics for AutoEDA systems, covering correctness, structural validity, statistical quality, and subspace exploration.
-\item We show that QUGEN's schema-aware card generation prevents systematic column-type mismatches that afflict free-form LLM pipelines (40.0\% SVR vs QUIS's 94.0\%).
-\item We show that ISGEN's beam search, guided by QUGEN's higher-quality cards, achieves substantially better subspace coverage (84.4\% vs 37.4\%) and quality (Score Uplift $x$=1.067, SPR 30.1\%).
-\item We show that structural validity is strongly associated with meaningful subspace discovery: the LLM Baseline, with only 40.0\% SVR, produces zero significant paradoxes across all datasets, while QUIS produces significant paradoxes on two of three.
-\end{itemize} 
+\item We build an automatic and human-free evaluation framework with 9 metrics for AutoEDA systems, covering correctness, structural validity, statistical quality, and subspace exploration.
+\item We indicate that QUGEN's card generation prevents systematic column type mismatches that trouble LLM pipelines (SVR: Baseline's 40.0\% vs QUIS's 94.0\%).
+\item We prove that ISGEN's beam search, guided by QUGEN's insight cards, achieves better subspace coverage (QUIS's 84.4\% vs Baselines' 37.4\%) and quality (Score Uplift $x$=1.067, SPR 30.1\%).
+\item We show that structural validity is essentially associated with meaningful subspace discovery: the LLM Baseline, with only 40.0\% SVR, produces zero significant paradoxes across all datasets, while QUIS produces significant paradoxes in two out of three.
+\end{itemize}
 
 \section{Related Work}
 
 \subsection{Automated EDA and Insight Evaluation}
 
-Early automated EDA systems measure interestingness using statistical deviation. SEEDB \cite{seedb} recommends visualizations by comparing distributions between a target subset and a reference, ranking candidates by their deviation score. QuickInsights \cite{quickinsights} extends this with a unified insight model covering multiple pattern types---trend, outlier, attribution---and combines impact and significance into a composite score for efficient mining. zenvisage \cite{zenvisage} takes a query-based approach, letting users specify desired visual patterns and retrieve matching views from large collections. These systems enable automatic ranking without human input, but their quality metrics are limited to statistical deviation and do not validate whether an insight has the correct structural form---for example, a trend computed over a categorical column instead of a temporal one still produces a non-zero deviation score.
+Early automated EDA systems measure fascination using statistical deviation. SEEDB \cite{seedb} recommends visualizations by comparing distributions between a target subset and a reference, ranking candidates by the deviation score. QuickInsights \cite{quickinsights} develops a unified insight model covering multiple pattern types: trend, outlier, attribution, then scores each by combined impact and significance for efficient mining. Zenvisage \cite{zenvisage} takes a query-based approach, allowing users specify desired visual patterns and retrieve matching views from whole collections. These systems enable automatic ranking without human input, but their quality metrics are limited and do not validate whether an insight has the correct structural form (for example: a trend computed over a categorical column instead of a temporal one still produces a non-zero deviation score).
 
-Visualization-focused systems evaluate quality through perceptual and organizational criteria. Voyager \cite{voyager} automatically generates and ranks views using expressiveness and effectiveness rules derived from perceptual principles. Voder \cite{voder} integrates natural language data facts with interactive visualizations to surface interesting findings during exploration. MetaInsight \cite{metainsight} organizes insights into structured knowledge by measuring how precisely patterns can be extracted from data. These approaches assess visualization design quality and exploration coverage, but do not check whether the breakdown column semantics match the intended pattern type.
+Visualization-focused systems assess quality by how well they look and how clearly they organize information. Voyager \cite{voyager} automatically generates and ranks views using expressiveness and effectiveness rules that derived from perceptual principles. Voder \cite{voder} combines natural language facts with interactive visuals to highlight interesting findings during data exploration. MetaInsight \cite{metainsight} organizes insights into structured knowledge by measuring the precise patterns which can be extracted from data. These approaches assess visualization design quality and exploration coverage, but do not check whether the breakdown column semantics match the intended pattern type.
 
-More recent systems use Large Language Models to drive insight generation. InsightPilot \cite{insightpilot} employs LLMs to suggest analysis actions and evaluate completeness through user studies. QUIS \cite{quis} generates questions from dataset semantics before searching for insights, and evaluates output quality using human raters scoring relevance, comprehensibility, and informativeness on a 1--5 scale. While human evaluation captures subjective quality, it has well-known limitations: it is expensive, time-consuming, subjective across raters, and difficult to reproduce across studies. These limitations motivate the need for automatic evaluation frameworks that can be applied consistently across systems.
+More recent systems, specifically, InsightPilot \cite{insightpilot},uses LLMs to suggest analysis actions and evaluate completeness through user studies. QUIS \cite{quis} generates questions from dataset before searching for insights, and evaluates output quality using human raters scores on a 1--5 scale. Not only human evaluation captures subjective quality, it also has limitations: expensive, time-consuming, and difficult to reproduce. These limitations motivate the need for automatic evaluation frameworks that can be applied consistently across systems.
 
 \subsection{Subgroup Analysis and Pattern Quality}
 
-Beyond global statistics, a growing body of work studies the quality of conditional insights---patterns that hold within a subset of the data. Subgroup discovery \cite{bach} formalizes the search for data subsets that exhibit interesting target behavior, and studies quality criteria such as weighted relative accuracy (WRAcc) to measure how much a subgroup deviates from the overall population. A key question in this line of work is whether a discovered subgroup reveals stronger or weaker patterns than the global baseline---a criterion we operationalize as Score Uplift in our evaluation framework, measuring the average difference in pattern strength between subspace and global insights.
+Beyond global statistics, recent work proliferously focuses on conditional insights---patterns found within specific data subsets. Subgroup discovery \cite{bach} formalizes finding data subsets with notable target behavior, using quality measures such as weighted relative accuracy (WRAcc) to calculate how much a subgroup deviates from the overall population. A key question in this line of work is whether a discovered subgroup reveals stronger or weaker patterns than the global baseline---Score Uplift measuring how much stronger patterns are in a subspace compared to globally.
 
-A related and well-studied statistical phenomenon is Simpson's Paradox \cite{simpson}, where the direction of an association at the aggregate level reverses when data is split into subgroups. Simpson's original formulation showed that combining contingency tables can yield conclusions opposite to those obtained from each subgroup separately. Teng and Lin \cite{teng} revisit Simpson's Paradox in the context of observational data analysis, introducing a kernel-based tree algorithm to detect and explain subgroup-level reversals caused by confounding and effect heterogeneity. Their work formalizes the conditions under which subgroup associations diverge from global trends, and provides a framework for interpreting such reversals as analytically meaningful rather than artefactual. However, no prior work has combined subgroup significance testing and paradox detection into a unified evaluation framework for automated EDA systems.
+A related and outstanding statistical study is Simpson's Paradox \cite{simpson}, where an association that holds overall flips direction when the data is broken into subgroups. Simpson's original work showed that merging contingency tables can produce conclusions that contradict those from each subgroup individually. Teng and Lin \cite{teng} examine Simpson's Paradox in observational data, proposing a kernel-based tree algorithm to detect and explain subgroup reversals driven by confounding and effect heterogeneity. Their work formalizes when subgroup associations diverge from global trends, framing such reversals as analytically meaningful rather than statistical noise. However, no prior work has combined subgroup significance testing and paradox detection into a unified evaluation framework for automated EDA systems.
 
 \subsection{Research Gap}
 
-No existing AutoEDA evaluation framework systematically checks structural validity---whether the breakdown column type matches the intended pattern---or combines subgroup significance testing with paradox detection. \textbf{Our work} addresses both gaps with a fully automatic, reference-free framework of 9 metrics covering correctness, structural validity, statistical quality, subspace exploration, and question quality. Our evaluation shows that LLM baselines have systematic structural errors (40\% SVR) and produce zero significant paradoxes, while structured approaches achieve 90\%+ SVR and discover meaningful pattern reversals.
+No existing AutoEDA evaluation framework checks structural validity---whether the breakdown column type matches the intended pattern---or combines subgroup significance testing with paradox detection. \textbf{Our work} addresses both gaps with a fully automatic, human-free framework of 9 metrics covering correctness, structural validity, statistical quality, subspace exploration, and question quality. Our evaluation shows that LLM baselines have high systematic structural errors and produce zero significant paradoxes, while structured approaches achieve highest SVR and discover meaningful pattern reversals.
 
 \section{System Overview}
 
@@ -76,29 +76,29 @@ We compare three systems in this study.
 
 \subsection{QUIS (Our Replication)}
 
-QUIS has two main stages. First, QUGEN reads the dataset schema and basic statistics, then creates Insight Cards using an LLM. Each card contains a question, a reason, a breakdown column (B), and a measure (M). Second, ISGEN takes these cards and searches the dataset for actual insights.
+QUIS has two main stages. First, QUGEN module reads the dataset schema and basic statistics, then creates Insight Cards using an LLM. Each card contains 4 tuples a question, a reason, a breakdown column (B), and a measure (M). Second, ISGEN uses these cards and searches the dataset for actual insights.
 
-We represent each insight as a 4-tuple \textbf{(B, M, S, P)}, where B is the breakdown column, M is the measure, S is the subspace filter (a set of column-value equality conditions), and P is the pattern type. The four pattern types are TREND, OUTSTANDING\_VALUE, ATTRIBUTION, and DISTRIBUTION\_DIFFERENCE.
+Each insight has a 4-tuple \textbf{(B, M, S, P)}, where B is the breakdown column, M is the measure, S is the subspace filter (a set of column-value equality conditions), and P is the pattern type. As the orgin,we study four pattern types: TREND, OUTSTANDING\_VALUE, ATTRIBUTION, and DISTRIBUTION\_DIFFERENCE.
 
-For each card, ISGEN first computes the global view ($S = \emptyset$), then runs a beam search to find subspaces where the pattern is stronger. The beam search samples filter columns randomly or via LLM suggestion (probability 0.5), scores each candidate using pattern-specific functions (Mann-Kendall $\tau$ for TREND, attribution share for ATTRIBUTION, Jensen-Shannon divergence for DISTRIBUTION\_DIFFERENCE), and retains the top candidates. This subspace search is shared between QUIS and ONLYSTATS---the only difference is the source of the input cards.
+For each insight card, ISGEN computes the global view ($S = \emptyset$), then runs a beam search to find subspaces where the pattern is stronger. Filter columns in beam search can be selected randomly or via LLM suggestion (probability 0.5). Scores each candidate using pattern-specific functions (Mann-Kendall $\tau$ for TREND, attribution share for ATTRIBUTION, Jensen-Shannon divergence for DISTRIBUTION\_DIFFERENCE), and keeps the top candidates. This subspace search is shared between QUIS and ONLYSTATS---the only difference is the source of the input cards.
 
 \subsection{ONLYSTATS (Ablation Baseline)}
 
-ONLYSTATS is the ablation baseline. It replaces QUGEN with exhaustive schema enumeration: every Categorical or Temporal column paired with SUM and MEAN over every Numerical column, producing 70 unique (B, M) pairs on Adidas. No LLM is used for card generation. ONLYSTATS then runs the identical ISGEN pipeline as QUIS, isolating the contribution of QUGEN to card quality alone.
+ONLYSTATS is the ablation baseline derived from QUIS. It replaces QUGEN with a statistics-based selection method: it computes Kruskal-Wallis test scores \cite{kruskal} for all possible breakdown-measure pairs and selects the top 20 pairs per breakdown. It produces 45 unique (B, M) pairs on Adidas, 38 on Employee Attrition, and 40 on Online Sales. No LLM is used for card generation. ONLYSTATS then runs the identical ISGEN pipeline as QUIS. This ablation isolates the contribution of QUGEN to card quality alone.
 
 \subsection{LLM Agentic Baseline}
 
-The second baseline is an LLM-based agentic EDA pipeline that we implemented using \texttt{gpt-5.4} at temperature 0.3--0.5. It consists of five sequential agents: (1) data profiling, which semantically classifies each column; (2) quality analysis, which detects missing values, outliers, and duplicates; (3) statistical analysis, which computes descriptive statistics and Pearson correlations; (4) pattern discovery, which identifies temporal, correlation, grouping, and anomaly patterns from pre-computed aggregations; and (5) insight extraction, which synthesizes all prior outputs into structured insights. Each agent accumulates outputs from previous steps as context. Unlike QUIS, this pipeline does not enforce a structured Insight Card format; the LLM reasons freely over pre-computed evidence. For evaluation, outputs are post-processed into a QUIS-compatible format (breakdown column, measure, subspace, pattern type).
+The second baseline is an LLM-based agentic EDA pipeline that we implemented using \texttt{gpt-5.4} at temperature 0.3--0.5. It consists of five agents: (1) data profiling, which classifies each semantic column; (2) quality analysis, which detects missing values, outliers, and duplicates; (3) statistical analysis, which computes statistics and Pearson correlations; (4) pattern discovery, which search temporal, correlation, grouping, and anomaly patterns from pre-computed aggregations; and (5) insight extraction, which assembles all prior outputs into structured insights. Each agent uses outputs from previous steps as context. This pipeline does not enforce a structured Insight Card format; the LLM reasons freely over pre-computed evidence. For evaluation, outputs are forced to be processed into a QUIS-compatible format (breakdown column, measure, subspace, pattern type).
 
 \section{Evaluation Framework}
 
 \subsection{Selected Metrics}
 
-We selected 9 metrics from a larger list of candidates. We group them as follows.
+We selected 9 essential metrics from a larger list of candidates. We group them as follows.
 
 \subsubsection{Group 1: Correctness}
 
-\textit{Faithfulness} checks whether the numbers in an insight can be recomputed from the dataset. For example, if an insight reports a total sales value for one region, we recompute the aggregation from the CSV file. This metric functions as a sanity check: a system with low faithfulness is hallucinating values, making all other metrics unreliable. A high score is expected for well-behaved systems and confirms that downstream metrics measure real patterns.
+\textit{Faithfulness} checks whether the numbers in an insight can be recomputed exactly from the dataset. For example, an insight reports a total sales value for one region, we recompute the aggregation from the CSV file to check the pricision of insight report. This metric works as a sanity check: a system with low faithfulness is hallucinating, making all other metrics unreliable. A high score is expected for good systems and confirms that below metrics measure real patterns.
 
 The formula is:
 \begin{equation}
@@ -118,7 +118,7 @@ The formula is:
 
 where $\text{valid\_breakdown}(i)$ checks pattern-specific rules: for TREND, the breakdown $B_i$ must be temporal; for ATTRIBUTION and DISTRIBUTION\_DIFFERENCE, $B_i$ must be categorical or ID-type; for OUTSTANDING\_VALUE, any breakdown type is valid. We report SVR overall and also by pattern type. This also ensures that breakdown-measure pairs are actionable for subgroup analysis.
 
-\textit{Pattern Coverage} counts how many of the four patterns appear at least once with a valid structure. A system that only produces one pattern is not doing broad EDA.
+\textit{Pattern Coverage} counts how many out of the four patterns appear with a valid structure. A system that only produces one or two pattern is not doing broad EDA.
 
 The formula is:
 \begin{equation}
@@ -140,7 +140,7 @@ where $p\text{-value}(i)$ is computed using the pattern-specific test for insigh
 
 \subsubsection{Group 4: Exploration Quality}
 
-\textit{Subspace Rate} measures how many insights contain at least one subspace filter. A high value means the system does not only give global insights, but also explores conditional cases, such as ``within Region = West''.
+\textit{Subspace Rate} measures how many insights contain at least one subspace filter. A high value means the system does not only provide global insights but also explores conditional cases, such as ``within Region = West''.
 
 The formula is:
 \begin{equation}
@@ -159,7 +159,7 @@ and the uplift delta relative to global insights is:
 \end{equation}
 where $I_S = \{i \in I : |S_i| > 0\}$, $I_G = \{i \in I : |S_i| = 0\}$, and $\text{score}(i)$ is the pattern strength (Kendall's $\tau$ for TREND, effect size otherwise). We report $x$ in all tables since $|I_G|$ can be zero for some systems; $\Delta$ is reported per-dataset in supplementary results.
 
-\textit{Simpson's Paradox Rate (SPR)} detects statistically significant pattern reversals between global and subspace insights \cite{simpson}. A reversal occurs when the pattern direction changes---for example, a positive trend globally becomes negative in a subspace, or the dominant category changes. We use pattern-specific tests (Mann-Kendall for TREND, Chi-square contingency table for ATTRIBUTION, KS test for DISTRIBUTION\_DIFFERENCE) and require both global and subspace patterns to be statistically significant (p < 0.05).
+\textit{Simpson's Paradox Rate (SPR)} detects statistically significant pattern reversals between global and subspace insights \cite{simpson}. A reversal occurs when the pattern direction changes---for example, a positive trend globally becomes negative in a subspace. We use pattern-specific tests (Mann-Kendall for TREND, Chi-square contingency table for ATTRIBUTION, KS test for DISTRIBUTION\_DIFFERENCE) and require both global and subspace patterns to meet statistically significant (p < 0.05).
 
 The formula is:
 \begin{equation}
@@ -170,7 +170,7 @@ where $\text{is\_paradox}(i)$ detects pattern reversal and $\text{is\_significan
 
 \subsubsection{Group 5: Alignment and Coherence}
 
-\textit{Question-Insight Alignment} measures how close the question text is to the final insight text. We compute cosine similarity using sentence embeddings. For reference, unrelated sentence pairs on general text typically score 0.0--0.3 with MiniLM embeddings; scores above 0.5 indicate meaningful topical overlap. This is used as a control metric: if QUIS and Baseline have similar alignment, then differences in other metrics are more likely caused by the quality of the generated intent, not by ISGEN answering one system better.
+\textit{Question-Insight Alignment} measures how close the question text is to the final insight text. We compute cosine similarity using sentence embeddings. For example, related sentence pairs on general text typically score 0.5 with MiniLM embeddings. This metric ensures that if QUIS and Baseline align similarly, differences elsewhere reflect insight quality rather than ISGEN favoring one system.
 
 The formula is:
 \begin{equation}
@@ -179,7 +179,7 @@ The formula is:
 
 where $Q_i$ is the question text, $T_i$ is the insight text, and $\text{emb}(\cdot)$ uses Sentence-BERT embeddings \cite{sbert}.
 
-\textit{Reason-Insight Coherence} measures how close the reason field is to the final insight. This metric is only used for QUIS and the LLM Baseline because ONLYSTATS only uses template reasons.
+\textit{Reason-Insight Coherence} measures how close the reason field is to the final insight. This metric is only used for QUIS and the LLM Baseline because ONLYSTATS only uses template ones.
 
 The formula is:
 \begin{equation}
@@ -190,7 +190,7 @@ where $R_i$ is the reason text for insight $i$. This metric is not applicable to
 
 \section{Experimental Setup}
 
-We use three datasets summarized in Table~\ref{tab:datasets}: Adidas US Sales (Chaudhari, 2022) \cite{adidas}, IBM Employee Attrition (Subhash, 2017) \cite{ibm}, and Online Sales (Verma, 2024) \cite{online}. We use OpenAI's \texttt{gpt-5.4} for QUIS and the LLM Baseline. The original paper used Llama-3-70B-instruct; our model choice may shift exact numbers but does not affect comparability since all systems share the same evaluation framework. We set \texttt{beam\_width = 100}, matching the original paper's configuration. For text similarity metrics, we use \texttt{all-MiniLM-L6-v2} from Sentence-BERT (Reimers and Gurevych, 2019) \cite{sbert}.
+We use three datasets summarized in Table~\ref{tab:datasets}: Adidas US Sales (Chaudhari, 2022) \cite{adidas}, IBM Employee Attrition (Subhash, 2017) \cite{ibm}, and Online Sales (Verma, 2024) \cite{online}. We use OpenAI's \texttt{gpt-5.4} for QUIS and the LLM Baseline. The original paper used Llama-3-70B-instruct; our model may not use exact numbers but does not affect comparability since all systems share the same evaluation framework. We set \texttt{beam\_width = 100}, matching the original paper's configuration. For text similarity metrics, we use \texttt{all-MiniLM-L6-v2} from Sentence-BERT (Reimers and Gurevych, 2019) \cite{sbert}.
 
 \section{Results}
 
@@ -225,10 +225,10 @@ Table~\ref{tab:avg_results} summarizes average results across all three datasets
 Correctness & 1. Faithfulness & \textbf{100.0\%} & \textbf{100.0\%} & \textbf{100.0\%} & Tie \\
 Validity & 2. SVR (Overall) & \textbf{94.0\%} & 40.0\% & 90.8\% & \textbf{QUIS} \\
 Coverage & 3. Pattern Coverage & 3--4/4 & 2--3/4 & 3--4/4 & ONLYSTATS \\
-Statistics & 4. Statistical Significance & 46.4\% & \textbf{57.6\%} & 51.7\% & \textbf{Baseline} \\
-Exploration (Qty) & 5. Subspace Rate & \textbf{84.4\%} & 37.4\% & 77.0\% & \textbf{QUIS} \\
-Exploration (Qual) & 6. Score Uplift ($x$) & \textbf{1.067} & 0.974 & 0.528 & \textbf{QUIS} \\
-Exploration (Qual) & 7. Simpson's Paradox Rate & \textbf{30.1\%} & 18.9\% (0 sig) & 25.4\% (1 sig) & \textbf{QUIS} \\
+Statistics & 4. Statistical Significance & 46.4\% & 57.6\% & \textbf{58.0\%} & \textbf{ONLYSTATS} \\
+Exploration (Qty) & 5. Subspace Rate & \textbf{84.4\%} & 37.4\% & 62.6\% & \textbf{QUIS} \\
+Exploration (Qual) & 6. Score Uplift ($x$) & \textbf{1.067} & 0.974 & 0.818 & \textbf{QUIS} \\
+Exploration (Qual) & 7. Simpson's Paradox Rate & 30.1\% & 18.9\% (0 sig) & \textbf{34.7\%} (0 sig) & \textbf{ONLYSTATS} \\
 Control & 8. Q-I Alignment & 0.540 & \textbf{0.569} & N/A & \textbf{Baseline} \\
 Control & 9. R-I Coherence & \textbf{0.526} & 0.514 & N/A & \textbf{QUIS} \\
 \hline
@@ -239,8 +239,8 @@ Control & 9. R-I Coherence & \textbf{0.526} & 0.514 & N/A & \textbf{QUIS} \\
 
 \subsection{Detailed Results by Dataset}
 
-\begin{table}[!h]
-\caption{Results on Adidas US Sales (QUIS=99, Base=75, ONLY=85)}
+\begin{table}[!ht]
+\caption{Results on Adidas US Sales (QUIS=99, Base=75, ONLY=113)}
 \begin{center}
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{|l|c|c|c|}
@@ -248,14 +248,14 @@ Control & 9. R-I Coherence & \textbf{0.526} & 0.514 & N/A & \textbf{QUIS} \\
 \textbf{Metric} & \textbf{QUIS} & \textbf{Baseline} & \textbf{ONLYSTATS} \\
 \hline
 Faithfulness & \textbf{100\%} & \textbf{100\%} & \textbf{100\%} \\
-SVR (Overall) & \textbf{99.0\%} & 45.3\% & 83.5\% \\
-SVR - ATTRIBUTION & \textbf{100\%} & 0\% & 83.3\% \\
+SVR (Overall) & 99.0\% & 45.3\% & \textbf{96.5\%} \\
+SVR - ATTRIBUTION & \textbf{100\%} & N/A & \textbf{100\%} \\
 SVR - TREND & \textbf{100\%} & 48.5\% & \textbf{100\%} \\
 Pattern Coverage & \textbf{4/4} & 3/4 & \textbf{4/4} \\
-Statistical Significance & \textbf{83.4\%} & 73.2\% & 76.2\% \\
-Subspace Rate & \textbf{86.9\%} & 42.7\% & 78.8\% \\
-Score Uplift ($x$) & 0.885 & 0.796 & 0.726 \\
-SPR & 27.9\% (0 sig) & 25.0\% (0 sig) & \textbf{37.3\%} (0 sig) \\
+Statistical Significance & \textbf{83.4\%} & 73.2\% & 80.7\% \\
+Subspace Rate & \textbf{86.9\%} & 42.7\% & 61.9\% \\
+Score Uplift ($x$) & 0.885 & 0.796 & 0.715 \\
+SPR & 27.9\% (0 sig) & 25.0\% (0 sig) & \textbf{42.9\%} (0 sig) \\
 Q-I Alignment & \textbf{0.583} & 0.579 & N/A \\
 R-I Coherence & \textbf{0.553} & 0.527 & N/A \\
 \hline
@@ -264,10 +264,10 @@ R-I Coherence & \textbf{0.553} & 0.527 & N/A \\
 \end{center}
 \end{table}
 
-Table~\ref{tab:adidas_results} shows that QUIS leads on SVR (99.0\% vs 45.3\%) and Subspace Rate (86.9\%), while ONLYSTATS achieves the highest raw SPR (37.3\%). On Adidas all systems produce zero statistically significant paradoxes, suggesting that patterns on this dataset do not individually meet the strict dual-significance threshold.
+Table~\ref{tab:adidas_results} shows that QUIS leads on SVR (99.0\% vs 45.3\%) and Subspace Rate (86.9\%), while ONLYSTATS accomplishes the highest raw SPR (42.9\%). On Adidas all systems produce zero statistically significant paradoxes, proving that patterns on this dataset do not meet the strict dual-significance threshold.
 
-\begin{table}[!h]
-\caption{Results on IBM Employee Attrition (QUIS=133, Base=81, ONLY=132)}
+\begin{table}[!ht]
+\caption{Results on IBM Employee Attrition (QUIS=133, Base=81, ONLY=125)}
 \begin{center}
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{|l|c|c|c|}
@@ -275,12 +275,12 @@ Table~\ref{tab:adidas_results} shows that QUIS leads on SVR (99.0\% vs 45.3\%) a
 \textbf{Metric} & \textbf{QUIS} & \textbf{Baseline} & \textbf{ONLYSTATS} \\
 \hline
 Faithfulness & \textbf{100\%} & \textbf{100\%} & \textbf{100\%} \\
-SVR (Overall) & 96.2\% & 75.3\% & \textbf{100.0\%} \\
-Pattern Coverage & 3/4 & 3/4 & 2/4 \\
-Statistical Significance & 20.0\% & \textbf{55.8\%} & 20.2\% \\
-Subspace Rate & \textbf{87.2\%} & 33.3\% & 59.1\% \\
-Score Uplift ($x$) & \textbf{1.574} & 1.079 & 0.346 \\
-SPR & \textbf{30.2\%} (1 sig) & 0.0\% (0 sig) & 7.7\% (0 sig) \\
+SVR (Overall) & 96.2\% & 37.0\% & \textbf{100.0\%} \\
+Pattern Coverage & 3/4 & 3/4 & 3/4 \\
+Statistical Significance & 20.0\% & \textbf{55.8\%} & 30.6\% \\
+Subspace Rate & \textbf{87.2\%} & 33.3\% & 60.0\% \\
+Score Uplift ($x$) & \textbf{1.574} & 1.079 & 0.506 \\
+SPR & \textbf{30.2\%} (1 sig) & 0.0\% (0 sig) & 21.3\% (0 sig) \\
 Q-I Alignment & 0.493 & \textbf{0.588} & N/A \\
 R-I Coherence & 0.468 & \textbf{0.519} & N/A \\
 \hline
@@ -289,10 +289,10 @@ R-I Coherence & 0.468 & \textbf{0.519} & N/A \\
 \end{center}
 \end{table}
 
-Table~\ref{tab:employee_results} shows that QUIS achieves the strongest Score Uplift ($x$=1.574) and is the only system with significant paradoxes (SPR 30.2\%, 1 significant). ONLYSTATS drops to 7.7\% SPR with zero significant paradoxes, showing that exhaustive enumeration does not guarantee subspace quality on datasets with many weak global patterns.
+Table~\ref{tab:employee_results} shows that QUIS achieves the strongest Score Uplift ($x$=1.574) and is the only system with significant paradoxes (SPR 30.2\%, 1 significant). ONLYSTATS achieves 21.3\% SPR with zero significant paradoxes, showing that exhaustive enumeration does not guarantee subspace quality on datasets with many weak global patterns.
 
-\begin{table}[!h]
-\caption{Results on Online Sales (QUIS=106, Base=61, ONLY=72)}
+\begin{table}[!ht]
+\caption{Results on Online Sales (QUIS=106, Base=61, ONLY=114)}
 \begin{center}
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{|l|c|c|c|}
@@ -300,12 +300,12 @@ Table~\ref{tab:employee_results} shows that QUIS achieves the strongest Score Up
 \textbf{Metric} & \textbf{QUIS} & \textbf{Baseline} & \textbf{ONLYSTATS} \\
 \hline
 Faithfulness & \textbf{100\%} & \textbf{100\%} & \textbf{100\%} \\
-SVR (Overall) & 86.8\% & 60.7\% & \textbf{94.4\%} \\
+SVR (Overall) & 86.8\% & 37.7\% & 77.2\% \\
 Pattern Coverage & 3/4 & 2/4 & \textbf{4/4} \\
-Statistical Significance & 35.9\% & 43.8\% & \textbf{58.6\%} \\
-Subspace Rate & 79.2\% & 36.1\% & \textbf{93.1\%} \\
-Score Uplift ($x$) & 0.742 & \textbf{1.048} & 0.511 \\
-SPR & \textbf{32.1\%} (1 sig) & 31.8\% (0 sig) & 31.3\% (1 sig) \\
+Statistical Significance & 35.9\% & 43.8\% & \textbf{62.8\%} \\
+Subspace Rate & 79.2\% & 36.1\% & 65.8\% \\
+Score Uplift ($x$) & 0.742 & \textbf{1.048} & 1.232 \\
+SPR & 32.1\% (1 sig) & 31.8\% (0 sig) & \textbf{40.0\%} (0 sig) \\
 Q-I Alignment & \textbf{0.543} & 0.539 & N/A \\
 R-I Coherence & \textbf{0.557} & 0.497 & N/A \\
 \hline
@@ -314,7 +314,7 @@ R-I Coherence & \textbf{0.557} & 0.497 & N/A \\
 \end{center}
 \end{table}
 
-Table~\ref{tab:online_results} shows that ONLYSTATS achieves the highest Subspace Rate (93.1\%) and the Baseline achieves the highest Score Uplift ($x$=1.048), likely because its fewer but higher-quality insights on this small dataset concentrate on stronger global patterns. All three systems achieve comparable raw SPR (31--32\%); QUIS and ONLYSTATS each produce one significant paradox, while the Baseline again yields zero.
+Table~\ref{tab:online_results} shows that ONLYSTATS achieves the highest Statistical Significance (62.8\%) and Score Uplift ($x$=1.232), while the Baseline achieves the highest raw Score Uplift ($x$=1.048) due to its smaller insight set concentrating on globally stronger patterns. QUIS leads on Subspace Rate (79.2\%). All three systems achieve raw SPR (31--40\%); QUIS produces one significant paradox, while ONLYSTATS and Baseline find none.
 
 \subsection{Cross-Dataset Analysis}
 
@@ -324,45 +324,45 @@ All three systems achieve 100\% faithfulness across all datasets, confirming tha
 
 \subsubsection{Structural Validity Rate}
 
-SVR shows the largest and most consistent difference across datasets. QUIS achieves 94.0\% average SVR, while the LLM Baseline achieves only 40.0\% (gap of 54 percentage points). ONLYSTATS achieves 90.8\%.
+SVR shows the largest and most consistent difference across datasets. QUIS achieves 94.0\% average SVR, while the LLM Baseline achieves only 40.0\% (gap of 54 percentage points). ONLYSTATS achieves 91.2\% by constraining its statistics-based selection to valid column types, ensuring breakdown columns match pattern requirements.
 
-The Baseline's core problem is systematic column-type mismatch: it achieves 0\% ATTRIBUTION SVR on Adidas and Online Sales, always selecting numeric columns (e.g., \texttt{Total Sales}, \texttt{MonthlyIncome}) as the breakdown instead of categorical ones. For TREND, it uses categorical breakdowns in 51.5\% of Adidas cases (e.g., \texttt{Region}, \texttt{Product}) instead of temporal columns. QUIS avoids this because QUGEN outputs structured cards with explicit breakdown fields validated programmatically. ONLYSTATS also achieves high SVR (90.8\%) by design: it enumerates only categorical and temporal columns as breakdowns.
+The Baseline's core problem is systematic column-type mismatch: it achieves 0\% ATTRIBUTION SVR on Adidas and Online Sales, always selecting numeric columns (e.g., \texttt{Total Sales}, \texttt{MonthlyIncome}) as the breakdown instead of categorical ones. For TREND, it uses categorical breakdowns in 51.5\% of Adidas cases (e.g., \texttt{Region}, \texttt{Product}) instead of temporal columns. QUIS avoids this because QUGEN produces structured cards with explicit, programmatically validated breakdown fields.
 
 \subsubsection{Pattern Coverage}
 
-All systems miss TREND on Employee Attrition and Online Sales due to limited temporal columns. The Baseline additionally misses ATTRIBUTION on Adidas and Online Sales because its numeric breakdowns are structurally invalid for that pattern type; on Employee Attrition it produces some valid ATTRIBUTION insights but with only 53.8\% SVR for that pattern.
+All systems miss TREND on Employee Attrition and Online Sales due to limited temporal columns. Additionally, the Baseline  misses ATTRIBUTION on Adidas and Online Sales because its numeric breakdowns are structurally invalid for that pattern type; on Employee Attrition it produces some valid ATTRIBUTION insights but with only 53.8\% SVR for that pattern.
 
 \subsubsection{Subspace Exploration}
 
-Subspace Rate is where QUIS shows the largest advantage. QUIS achieves 84.4\% average subspace rate (range: 79.2\%--87.2\%), compared with 37.4\% for the Baseline (range: 33.3\%--42.7\%) and 77.0\% for ONLYSTATS (range: 59.1\%--93.1\%).
+Subspace Rate is where QUIS shows the most advantage. QUIS achieves 84.4\% average subspace rate (range: 79.2\%--87.2\%), compared with 37.4\% for the Baseline (range: 33.3\%--42.7\%) and 62.6\% for ONLYSTATS (range: 60.0\%--65.8\%).
 
-Since QUIS and ONLYSTATS share the same ISGEN module, the 7.4-point average gap between them isolates the contribution of QUGEN's semantically grounded cards over exhaustive enumeration. The 47.0-point gap versus the Baseline reflects its structural problems: invalid breakdowns cannot be explored in subspaces. ONLYSTATS reaches its highest subspace rate on Online Sales (93.1\%) because exhaustive enumeration produces many valid (B,\,M) pairs on this small 9-column dataset, giving ISGEN more entry points.
+Since QUIS and ONLYSTATS share the same ISGEN module, the 21.8-point average gap between them isolates the contribution of QUGEN's insight cards over exhaustive enumeration. The 47.0-point gap versus the Baseline reflects its structural problems: invalid breakdowns cannot be explored in subspaces. ONLYSTATS reaches its highest subspace rate on Online Sales (65.8\%) because exhaustive enumeration produces many valid (B,\,M) pairs of this small 9-column dataset, giving ISGEN more entry points.
 
-Score Uplift is positive on average for all systems (QUIS: 1.067, Baseline: 0.974, ONLYSTATS: 0.528), measured as the mean pattern strength of subspace insights ($x$). QUIS shows the strongest uplift on Employee Attrition ($x$=1.574) and leads on average across all datasets. On Online Sales, the Baseline achieves the highest per-dataset Score Uplift ($x$=1.048), likely because its smaller insight set concentrates on globally stronger patterns. ONLYSTATS consistently shows the lowest uplift, especially on Employee Attrition ($x$=0.346). SPR follows a similar trend: QUIS achieves the highest average (30.1\%) and is consistent across datasets, while ONLYSTATS varies widely (7.7\%--37.3\%). The Baseline produces zero significant paradoxes across all datasets, confirming that structurally invalid insights cannot yield meaningful subspace patterns.
+Score Uplift is positive on average for all systems (QUIS: 1.067, Baseline: 0.974, ONLYSTATS: 0.818), measured as the mean pattern strength of subspace insights ($x$). QUIS shows the strongest uplift on Employee Attrition ($x$=1.574) and leads on average across all datasets. On Online Sales, ONLYSTATS achieves the highest Score Uplift ($x$=1.232), while the Baseline achieves $x$=1.048 due to its smaller insight set concentrating on globally stronger patterns. SPR follows a similar trend: ONLYSTATS achieves the highest average (34.7\%) but with moderate variance across datasets (21.3\%--42.9\%), while QUIS achieves 30.1\% with more consistency (27.9\%--32.1\%). The Baseline finds no significant paradoxes across any dataset, confirming that structurally invalid insights cannot produce meaningful subspace patterns.
 
 \subsubsection{Statistical Significance}
 
-Statistical significance is dataset-dependent (QUIS: 46.4\%, Baseline: 57.6\%, ONLYSTATS: 51.7\% on average). QUIS leads on Adidas (83.4\%) but lags on Employee Attrition (20.0\%), where binary/categorical variables make simple aggregations easier to pass significance tests. QUIS subspace insights are also smaller (median 51.5 rows vs Baseline's 588 on Employee Attrition), trading statistical power for specificity.
+Statistical significance is dataset-dependent (QUIS: 46.4\%, Baseline: 57.6\%, ONLYSTATS: 58.0\% on average). QUIS leads on Adidas (83.4\%) but is less efficient on Employee Attrition (20.0\%), where binary/categorical variables make simple aggregations that make it easier to pass significance tests. QUIS subspace insights are also smaller (median 51.5 rows vs Baseline's 588 on Employee Attrition), trading off statistical power for specificity.
 
 \subsubsection{Control Metrics}
 
-Q-I Alignment is similar across QUIS (0.540) and Baseline (0.569), confirming that ISGEN answers both systems comparably---differences stem from card quality, not retrieval. R-I Coherence slightly favors QUIS on average (0.526 vs 0.514), though the Baseline scores higher on Employee Attrition (0.519 vs 0.468). This reversal is consistent with the Baseline's higher statistical significance on that dataset (55.8\% vs 20.0\%): when Baseline insights happen to be statistically stronger, their text tends to be more specific and thus more coherent with the reason. Both metrics are not reported for ONLYSTATS (template-based questions only).
+Q-I Alignment is similar across QUIS (0.540) and Baseline (0.569), confirming that ISGEN answers both systems comparably---differences comes from card quality, not retrieval. R-I Coherence slightly favors QUIS on average (0.526 vs 0.514), though the Baseline scores higher on Employee Attrition (0.519 vs 0.468). This reversal is consistent with the Baseline's higher statistical significance on that dataset (55.8\% vs 20.0\%): when Baseline insights happen to be statistically stronger, their text tends to be more specific and thú better aligned with the reason. Both metrics are not reported for ONLYSTATS (template-based questions only).
 
 \section{Discussion}
 
 \subsection{What the QUIS Pipeline Adds}
 
-QUGEN's primary contribution is structural correctness. By generating schema-aware cards with explicit breakdown fields, it prevents the column-type mismatches that afflict the free-form LLM Baseline (0\% ATTRIBUTION SVR on two of three datasets, 40.0\% overall). ONLYSTATS achieves similarly high SVR by constraining enumeration to valid column types---showing that the constraint itself matters, not the generation method.
+QUGEN's primary contribution is structural correctness:its schema-aware cards with explicit breakdown fields eliminate the column-type mismatches that plague the free-form LLM Baseline (0\% ATTRIBUTION SVR on two of three datasets, 40.0\% overall). ONLYSTATS also achieves high SVR by constraining enumeration to valid column types, showing that the constraint itself matters, not the generation method.
 
-For subspace exploration, QUGEN's contribution is indirect but measurable: semantically grounded cards give ISGEN more focused entry points, leading to higher Subspace Rate and more consistent SPR across datasets. ONLYSTATS, despite sharing the same ISGEN module, shows wider variance in SPR (7.7\%--37.3\%), suggesting that exhaustive enumeration produces many (B, M) pairs where global patterns are too weak for subspace search to improve upon. The LLM Baseline's zero significant paradoxes are strongly associated with its low structural validity, consistent with the view that valid breakdown columns are necessary for subspace patterns to be meaningful.
+For subspace exploration, QUGEN's contribution is indirect but measurable: semantically grounded cards make ISGEN more focused entry points, resulting to higher Subspace Rate and more consistent SPR across datasets. ONLYSTATS, though using the same ISGEN module, shows greater variance in SPR (21.3\%--42.9\%), suggesting that exhaustive enumeration produces many (B, M) pairs where global patterns are too weak for subspace search to improve. The LLM Baseline's zero significant paradoxes are mainly associated with its low structural validity, consistent with the view that valid breakdown columns are necessary for meaningful subspace patterns.
 
 \subsection{Limitations}
 
-There are some limitations in this study. First, we use OpenAI's \texttt{gpt-5.4} instead of the original Llama-3-70B-instruct, so the exact numbers may be different from the original paper. Second, our embedding-based metrics depend on \texttt{all-MiniLM-L6-v2}. This model is useful, but it may not capture all meanings in short technical texts. Third, we evaluate on three datasets with different characteristics, but more datasets would strengthen the generalizability of our findings. Fourth, with only three datasets we cannot apply statistical significance tests across systems (e.g., paired Wilcoxon), so metric differences should be interpreted as descriptive rather than statistically confirmed.
+There are some limitations in our study. First, we use OpenAI's \texttt{gpt-5.4} instead of the original Llama-3-70B-instruct, so the exact numbers may be different from the original paper. Second, our embedding-based metrics depend on \texttt{all-MiniLM-L6-v2}. This model is useful, but it may not capture all meanings in short technical texts. Third, while we test on three datasets with varying characteristics, broader coverage would further validate our findings. Fourth, with only three datasets, cross-system significance tests (e.g., paired Wilcoxon) are not feasible, so metric differences should be read as descriptive rather than statistically confirmed.
 
 \section{Conclusion}
 
-We replicated QUIS and built an automatic, reference-free evaluation framework with 9 metrics covering correctness, structural validity, statistical quality, and subspace exploration. Across three datasets, results show three clear findings. First, the LLM Baseline has a systematic structural validity problem (37.0\%--75.3\% SVR) caused by column-type mismatches, while QUIS achieves 86.8\%--99.0\% across datasets. Second, QUGEN provides higher-quality input cards that enable ISGEN to discover more subspace insights (84.4\% Subspace Rate vs 37.4\%) with stronger, more consistent patterns (SPR 30.1\%, Score Uplift $x$=1.067). Third, statistical significance is dataset-dependent and should not be interpreted in isolation. These findings have two practical implications: LLM-based EDA systems should validate breakdown column types before output, and insight search engines benefit from semantically grounded input cards over exhaustive enumeration alone. Our main contribution is the evaluation framework itself---a reusable tool for comparing any AutoEDA system in a consistent and reproducible way.
+We replicated QUIS and built an automatic, human-free evaluation framework with 9 metrics covering correctness, structural validity, statistical quality, and subspace exploration. Across three datasets, results show three outstanding findings. First, the LLM Baseline has a systematic structural validity problem (37.0\%--75.3\% SVR) caused by column-type mismatches, while QUIS achieves 86.8\%--99.0\% across datasets. Second, QUGEN provides higher quality input cards that enable ISGEN to discover more subspace insights (84.4\% Subspace Rate vs 37.4\%) with stronger and more consistent patterns (SPR 30.1\%, Score Uplift $x$=1.067). Third, statistical significance is dataset-dependent and should not be interpreted in isolation. These findings have two practical implications: LLM-based EDA systems should validate breakdown column types before output, and insight search engines benefit from semantically grounded input cards over exhaustive enumeration alone. Our main contribution is the evaluation framework itself, which is a reusable tool for comparing any AutoEDA system in a consistent and reproducible way.
 
 \begin{thebibliography}{00}
 \bibitem{quis} A. Manatkar, A. Akella, P. Gupta, and K. Narayanam, ``QUIS: Question-guided Insights Generation for Automated Exploratory Data Analysis,'' arXiv:2410.10270, 2024.
@@ -374,6 +374,7 @@ We replicated QUIS and built an automatic, reference-free evaluation framework w
 \bibitem{voyager} K. Wongsuphasawat, D. Moritz, A. Anand, J. Mackinlay, B. Howe, and J. Heer, ``Voyager: Exploratory Analysis via Faceted Browsing of Visualization Recommendations,'' \textit{IEEE Transactions on Visualization and Computer Graphics}, vol. 22, no. 1, pp. 649--658, 2016.
 \bibitem{voder} A. Srinivasan and J. Stasko, ``Augmenting Visualizations with Interactive Data Facts,'' \textit{IEEE Transactions on Visualization and Computer Graphics}, vol. 25, no. 1, pp. 672--681, 2018.
 \bibitem{bach} J. Bach, ``Subgroup Discovery with Small and Alternative Feature Sets,'' \textit{Proc. ACM Manag. Data}, vol. 3, no. 3, Article 221, 2025.
+\bibitem{kruskal} W. H. Kruskal and W. A. Wallis, ``Use of ranks in one-criterion variance analysis,'' \textit{Journal of the American Statistical Association}, vol. 47, no. 260, pp. 583--621, 1952.
 \bibitem{simpson} E. H. Simpson, ``The Interpretation of Interaction in Contingency Tables,'' \textit{Journal of the Royal Statistical Society, Series B}, vol. 13, no. 2, pp. 238--241, 1951.
 \bibitem{teng} X. Teng and Y.-R. Lin, ``De-paradox Tree: Breaking Down Simpson's Paradox via A Kernel-Based Partition Algorithm,'' arXiv:2603.02174, 2026.
 \bibitem{mann} H. B. Mann, ``Nonparametric Tests Against Trend,'' \textit{Econometrica}, vol. 13, pp. 245--259, 1945.
