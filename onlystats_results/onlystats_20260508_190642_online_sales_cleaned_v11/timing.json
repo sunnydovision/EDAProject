@@ -1,0 +1,11 @@
+{
+  "onlystats": {
+    "total_time_seconds": 36.11960658302996,
+    "insights_generated": 114,
+    "throughput_insights_per_second": 3.1561805563397387,
+    "step_times": {
+      "card_generation": 0,
+      "isgen": 36.11960658302996
+    }
+  }
+}

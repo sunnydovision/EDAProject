@@ -1,0 +1,3385 @@
+[
+  {
+    "question": "How does SUM(DistanceFromHome) vary by Attrition?",
+    "explanation": "Outstanding value: for JobRole=Research Director, one category in Attrition has a value much larger (or smaller) than the others when measuring SUM(DistanceFromHome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(DistanceFromHome)",
+      "subspace": [
+        [
+          "JobRole",
+          "Research Director"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 47.214285714285715,
+      "question": "How does SUM(DistanceFromHome) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=9.226): SUM(DistanceFromHome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        661.0,
+        14.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by Attrition?",
+    "explanation": "Outstanding value: for YearsInCurrentRole=5, one category in Attrition has a value much larger (or smaller) than the others when measuring SUM(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(EmployeeCount)",
+      "subspace": [
+        [
+          "YearsInCurrentRole",
+          5
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 35.0,
+      "question": "How does SUM(EmployeeCount) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): SUM(EmployeeCount) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        35.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by Attrition?",
+    "explanation": "Outstanding value: for YearsAtCompany=20, one category in Attrition has a value much larger (or smaller) than the others when measuring SUM(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(MonthlyIncome)",
+      "subspace": [
+        [
+          "YearsAtCompany",
+          20
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 30.291738217897347,
+      "question": "How does SUM(MonthlyIncome) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=57.768): SUM(MonthlyIncome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        317518.0,
+        10482.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(DistanceFromHome) vary by Attrition?",
+    "explanation": "Outstanding value: for HourlyRate=59, one category in Attrition has a value much larger (or smaller) than the others when measuring COUNT(DistanceFromHome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "COUNT(DistanceFromHome)",
+      "subspace": [
+        [
+          "HourlyRate",
+          59
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 20.0,
+      "question": "How does COUNT(DistanceFromHome) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=9.226): COUNT(DistanceFromHome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        20.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Age) vary by Attrition?",
+    "explanation": "Outstanding value: for JobRole=Manager, one category in Attrition has a value much larger (or smaller) than the others when measuring SUM(Age).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(Age)",
+      "subspace": [
+        [
+          "JobRole",
+          "Manager"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 19.560344827586206,
+      "question": "How does SUM(Age) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=43.063): SUM(Age) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        4538.0,
+        232.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(Age) vary by Attrition?",
+    "explanation": "Outstanding value: for Age=45, one category in Attrition has a value much larger (or smaller) than the others when measuring COUNT(Age).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "COUNT(Age)",
+      "subspace": [
+        [
+          "Age",
+          45
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 19.5,
+      "question": "How does COUNT(Age) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=43.063): COUNT(Age) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        39.0,
+        2.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(EmployeeCount) vary by Attrition?",
+    "explanation": "Outstanding value: for JobRole=Manager, one category in Attrition has a value much larger (or smaller) than the others when measuring COUNT(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "COUNT(EmployeeCount)",
+      "subspace": [
+        [
+          "JobRole",
+          "Manager"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 19.4,
+      "question": "How does COUNT(EmployeeCount) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): COUNT(EmployeeCount) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        97.0,
+        5.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(MonthlyIncome) vary by Attrition?",
+    "explanation": "Outstanding value: for JobRole=Manager, one category in Attrition has a value much larger (or smaller) than the others when measuring COUNT(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "COUNT(MonthlyIncome)",
+      "subspace": [
+        [
+          "JobRole",
+          "Manager"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 19.4,
+      "question": "How does COUNT(MonthlyIncome) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=57.768): COUNT(MonthlyIncome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        97.0,
+        5.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(MonthlyIncome) vary by Attrition?",
+    "explanation": "Outstanding value: for YearsInCurrentRole=6, one category in Attrition has a value much larger (or smaller) than the others when measuring COUNT(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "COUNT(MonthlyIncome)",
+      "subspace": [
+        [
+          "YearsInCurrentRole",
+          6
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 17.5,
+      "question": "How does COUNT(MonthlyIncome) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=57.768): COUNT(MonthlyIncome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        35.0,
+        2.0
+      ]
+    }
+  },
+  {
+    "question": "How does MAX(DistanceFromHome) vary by Attrition?",
+    "explanation": "Outstanding value: for TotalWorkingYears=21, one category in Attrition has a value much larger (or smaller) than the others when measuring MAX(DistanceFromHome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MAX(DistanceFromHome)",
+      "subspace": [
+        [
+          "TotalWorkingYears",
+          21
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 14.0,
+      "question": "How does MAX(DistanceFromHome) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=9.226): MAX(DistanceFromHome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        28.0,
+        2.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(DistanceFromHome) vary by Attrition?",
+    "explanation": "Outstanding value: for YearsAtCompany=20, one category in Attrition has a value much larger (or smaller) than the others when measuring MEAN(DistanceFromHome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(DistanceFromHome)",
+      "subspace": [
+        [
+          "YearsAtCompany",
+          20
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 13.115384615384615,
+      "question": "How does MEAN(DistanceFromHome) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=9.226): MEAN(DistanceFromHome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        13.115384615384615,
+        1.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by BusinessTravel?",
+    "explanation": "Outstanding value: for Age=25, one category in BusinessTravel has a value much larger (or smaller) than the others when measuring SUM(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(EmployeeCount)",
+      "subspace": [
+        [
+          "Age",
+          25
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 11.5,
+      "question": "How does SUM(EmployeeCount) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): SUM(EmployeeCount) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        1.0,
+        2.0,
+        23.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(EmployeeCount) vary by BusinessTravel?",
+    "explanation": "Outstanding value: for Age=25, one category in BusinessTravel has a value much larger (or smaller) than the others when measuring COUNT(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "COUNT(EmployeeCount)",
+      "subspace": [
+        [
+          "Age",
+          25
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 11.5,
+      "question": "How does COUNT(EmployeeCount) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): COUNT(EmployeeCount) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        1.0,
+        2.0,
+        23.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(EmployeeCount) vary by BusinessTravel?",
+    "explanation": "Outstanding value: for YearsAtCompany=16, one category in BusinessTravel has a value much larger (or smaller) than the others when measuring COUNT(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "COUNT(EmployeeCount)",
+      "subspace": [
+        [
+          "YearsAtCompany",
+          16
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 11.0,
+      "question": "How does COUNT(EmployeeCount) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): COUNT(EmployeeCount) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        1.0,
+        11.0
+      ]
+    }
+  },
+  {
+    "question": "How does MIN(DistanceFromHome) vary by Attrition?",
+    "explanation": "Outstanding value: for YearsInCurrentRole=12, one category in Attrition has a value much larger (or smaller) than the others when measuring MIN(DistanceFromHome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MIN(DistanceFromHome)",
+      "subspace": [
+        [
+          "YearsInCurrentRole",
+          12
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 10.0,
+      "question": "How does MIN(DistanceFromHome) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=9.226): MIN(DistanceFromHome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        1.0,
+        10.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(PercentSalaryHike) vary by BusinessTravel?",
+    "explanation": "Outstanding value: for YearsAtCompany=5, one category in BusinessTravel has a value much larger (or smaller) than the others when measuring SUM(PercentSalaryHike).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(PercentSalaryHike)",
+      "subspace": [
+        [
+          "YearsAtCompany",
+          5
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 6.145161290322581,
+      "question": "How does SUM(PercentSalaryHike) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=3.571): SUM(PercentSalaryHike) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        333.0,
+        372.0,
+        2286.0
+      ]
+    }
+  },
+  {
+    "question": "How does MAX(MonthlyIncome) vary by Attrition?",
+    "explanation": "Outstanding value: for HourlyRate=99, one category in Attrition has a value much larger (or smaller) than the others when measuring MAX(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MAX(MonthlyIncome)",
+      "subspace": [
+        [
+          "HourlyRate",
+          99
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 5.063430919363123,
+      "question": "How does MAX(MonthlyIncome) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=57.768): MAX(MonthlyIncome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        19717.0,
+        3894.0
+      ]
+    }
+  },
+  {
+    "question": "How does MIN(MonthlyIncome) vary by Attrition?",
+    "explanation": "Outstanding value: for HourlyRate=78, one category in Attrition has a value much larger (or smaller) than the others when measuring MIN(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MIN(MonthlyIncome)",
+      "subspace": [
+        [
+          "HourlyRate",
+          78
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 5.001967535661584,
+      "question": "How does MIN(MonthlyIncome) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=57.768): MIN(MonthlyIncome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        2033.0,
+        10169.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(NumCompaniesWorked) vary by BusinessTravel?",
+    "explanation": "Outstanding value: for overall data, one category in BusinessTravel has a value much larger (or smaller) than the others when measuring SUM(NumCompaniesWorked).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(NumCompaniesWorked)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 4.155297532656023,
+      "question": "How does SUM(NumCompaniesWorked) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=2.308): SUM(NumCompaniesWorked) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        407.0,
+        689.0,
+        2863.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by BusinessTravel?",
+    "explanation": "Outstanding value: for overall data, one category in BusinessTravel has a value much larger (or smaller) than the others when measuring SUM(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(MonthlyIncome)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 4.024309566802785,
+      "question": "How does SUM(MonthlyIncome) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=1.264): SUM(MonthlyIncome) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        939292.0,
+        1715662.0,
+        6904355.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(PercentSalaryHike) vary by BusinessTravel?",
+    "explanation": "Outstanding value: for overall data, one category in BusinessTravel has a value much larger (or smaller) than the others when measuring COUNT(PercentSalaryHike).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "COUNT(PercentSalaryHike)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 3.765342960288809,
+      "question": "How does COUNT(PercentSalaryHike) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=3.571): COUNT(PercentSalaryHike) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        150.0,
+        277.0,
+        1043.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(NumCompaniesWorked) vary by BusinessTravel?",
+    "explanation": "Outstanding value: for overall data, one category in BusinessTravel has a value much larger (or smaller) than the others when measuring COUNT(NumCompaniesWorked).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "COUNT(NumCompaniesWorked)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 3.765342960288809,
+      "question": "How does COUNT(NumCompaniesWorked) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=2.308): COUNT(NumCompaniesWorked) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        150.0,
+        277.0,
+        1043.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(MonthlyIncome) vary by BusinessTravel?",
+    "explanation": "Outstanding value: for overall data, one category in BusinessTravel has a value much larger (or smaller) than the others when measuring COUNT(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "COUNT(MonthlyIncome)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 3.765342960288809,
+      "question": "How does COUNT(MonthlyIncome) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=1.264): COUNT(MonthlyIncome) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        150.0,
+        277.0,
+        1043.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(NumCompaniesWorked) vary by Department?",
+    "explanation": "Outstanding value: for overall data, one category in Department has a value much larger (or smaller) than the others when measuring SUM(NumCompaniesWorked).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "SUM(NumCompaniesWorked)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 2.2903225806451615,
+      "question": "How does SUM(NumCompaniesWorked) vary by Department?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=1.551): SUM(NumCompaniesWorked) grouped by Department.",
+      "view_labels": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        185.0,
+        2627.0,
+        1147.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(MonthlyIncome) vary by Attrition?",
+    "explanation": "Outstanding value: for MonthlyRate=15986, one category in Attrition has a value much larger (or smaller) than the others when measuring MEAN(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(MonthlyIncome)",
+      "subspace": [
+        [
+          "MonthlyRate",
+          15986
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 2.281581920903955,
+      "question": "How does MEAN(MonthlyIncome) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=57.768): MEAN(MonthlyIncome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        4425.0,
+        10096.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Age) vary by Department?",
+    "explanation": "Outstanding value: for overall data, one category in Department has a value much larger (or smaller) than the others when measuring SUM(Age).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "SUM(Age)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 2.184194379678488,
+      "question": "How does SUM(Age) vary by Department?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=1.586): SUM(Age) grouped by Department.",
+      "view_labels": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        2382.0,
+        35598.0,
+        16298.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(PercentSalaryHike) vary by Department?",
+    "explanation": "Outstanding value: for overall data, one category in Department has a value much larger (or smaller) than the others when measuring SUM(PercentSalaryHike).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "SUM(PercentSalaryHike)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 2.182533788801426,
+      "question": "How does SUM(PercentSalaryHike) vary by Department?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=2.070): SUM(PercentSalaryHike) grouped by Department.",
+      "view_labels": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        930.0,
+        14695.0,
+        6733.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by Department?",
+    "explanation": "Outstanding value: for overall data, one category in Department has a value much larger (or smaller) than the others when measuring SUM(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "SUM(EmployeeCount)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 2.1547085201793723,
+      "question": "How does SUM(EmployeeCount) vary by Department?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): SUM(EmployeeCount) grouped by Department.",
+      "view_labels": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        63.0,
+        961.0,
+        446.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(EmployeeCount) vary by Department?",
+    "explanation": "Outstanding value: for overall data, one category in Department has a value much larger (or smaller) than the others when measuring COUNT(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "COUNT(EmployeeCount)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 2.1547085201793723,
+      "question": "How does COUNT(EmployeeCount) vary by Department?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): COUNT(EmployeeCount) grouped by Department.",
+      "view_labels": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        63.0,
+        961.0,
+        446.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(MonthlyIncome) vary by Department?",
+    "explanation": "Outstanding value: for overall data, one category in Department has a value much larger (or smaller) than the others when measuring COUNT(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "COUNT(MonthlyIncome)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 2.1547085201793723,
+      "question": "How does COUNT(MonthlyIncome) vary by Department?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=42.619): COUNT(MonthlyIncome) grouped by Department.",
+      "view_labels": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        63.0,
+        961.0,
+        446.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(Age) vary by Department?",
+    "explanation": "Outstanding value: for overall data, one category in Department has a value much larger (or smaller) than the others when measuring COUNT(Age).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "COUNT(Age)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 2.1547085201793723,
+      "question": "How does COUNT(Age) vary by Department?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=1.586): COUNT(Age) grouped by Department.",
+      "view_labels": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        63.0,
+        961.0,
+        446.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(NumCompaniesWorked) vary by Department?",
+    "explanation": "Outstanding value: for overall data, one category in Department has a value much larger (or smaller) than the others when measuring COUNT(NumCompaniesWorked).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "COUNT(NumCompaniesWorked)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 2.1547085201793723,
+      "question": "How does COUNT(NumCompaniesWorked) vary by Department?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=1.551): COUNT(NumCompaniesWorked) grouped by Department.",
+      "view_labels": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        63.0,
+        961.0,
+        446.0
+      ]
+    }
+  },
+  {
+    "question": "How does MIN(Age) vary by Attrition?",
+    "explanation": "Outstanding value: for DistanceFromHome=28, one category in Attrition has a value much larger (or smaller) than the others when measuring MIN(Age).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MIN(Age)",
+      "subspace": [
+        [
+          "DistanceFromHome",
+          28
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.96,
+      "question": "How does MIN(Age) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=43.063): MIN(Age) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        25.0,
+        49.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by Department?",
+    "explanation": "Outstanding value: for overall data, one category in Department has a value much larger (or smaller) than the others when measuring SUM(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "SUM(MonthlyIncome)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 1.9448100725854285,
+      "question": "How does SUM(MonthlyIncome) vary by Department?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=42.619): SUM(MonthlyIncome) grouped by Department.",
+      "view_labels": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        419234.0,
+        6036284.0,
+        3103791.0
+      ]
+    }
+  },
+  {
+    "question": "How does MAX(Age) vary by Attrition?",
+    "explanation": "Outstanding value: for HourlyRate=83, one category in Attrition has a value much larger (or smaller) than the others when measuring MAX(Age).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MAX(Age)",
+      "subspace": [
+        [
+          "HourlyRate",
+          83
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.6764705882352942,
+      "question": "How does MAX(Age) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=43.063): MAX(Age) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        57.0,
+        34.0
+      ]
+    }
+  },
+  {
+    "question": "How does MAX(Age) vary by Attrition?",
+    "explanation": "Outstanding value: for EducationField=Human Resources, one category in Attrition has a value much larger (or smaller) than the others when measuring MAX(Age).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MAX(Age)",
+      "subspace": [
+        [
+          "EducationField",
+          "Human Resources"
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.5945945945945945,
+      "question": "How does MAX(Age) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=43.063): MAX(Age) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        59.0,
+        37.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(PercentSalaryHike) vary by BusinessTravel?",
+    "explanation": "Outstanding value: for YearsAtCompany=19, one category in BusinessTravel has a value much larger (or smaller) than the others when measuring MEAN(PercentSalaryHike).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "MEAN(PercentSalaryHike)",
+      "subspace": [
+        [
+          "YearsAtCompany",
+          19
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.5876288659793814,
+      "question": "How does MEAN(PercentSalaryHike) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=3.571): MEAN(PercentSalaryHike) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        12.5,
+        22.0,
+        13.857142857142858
+      ]
+    }
+  },
+  {
+    "question": "How does MIN(MonthlyIncome) vary by Education?",
+    "explanation": "Outstanding value: for overall data, one category in Education has a value much larger (or smaller) than the others when measuring MIN(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Education",
+      "measure": "MIN(MonthlyIncome)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 1.565121412803532,
+      "question": "How does MIN(MonthlyIncome) vary by Education?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=27.490): MIN(MonthlyIncome) grouped by Education.",
+      "view_labels": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "view_values": [
+        1009.0,
+        1051.0,
+        1081.0,
+        1359.0,
+        2127.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by Gender?",
+    "explanation": "Outstanding value: for overall data, one category in Gender has a value much larger (or smaller) than the others when measuring SUM(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Gender",
+      "measure": "SUM(EmployeeCount)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 1.5,
+      "question": "How does SUM(EmployeeCount) vary by Gender?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): SUM(EmployeeCount) grouped by Gender.",
+      "view_labels": [
+        "Female",
+        "Male"
+      ],
+      "view_values": [
+        588.0,
+        882.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(EmployeeCount) vary by Gender?",
+    "explanation": "Outstanding value: for overall data, one category in Gender has a value much larger (or smaller) than the others when measuring COUNT(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Gender",
+      "measure": "COUNT(EmployeeCount)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 1.5,
+      "question": "How does COUNT(EmployeeCount) vary by Gender?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): COUNT(EmployeeCount) grouped by Gender.",
+      "view_labels": [
+        "Female",
+        "Male"
+      ],
+      "view_values": [
+        588.0,
+        882.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(MonthlyIncome) vary by Gender?",
+    "explanation": "Outstanding value: for overall data, one category in Gender has a value much larger (or smaller) than the others when measuring COUNT(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Gender",
+      "measure": "COUNT(MonthlyIncome)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 1.5,
+      "question": "How does COUNT(MonthlyIncome) vary by Gender?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=2.903): COUNT(MonthlyIncome) grouped by Gender.",
+      "view_labels": [
+        "Female",
+        "Male"
+      ],
+      "view_values": [
+        588.0,
+        882.0
+      ]
+    }
+  },
+  {
+    "question": "How does MIN(MonthlyIncome) vary by Department?",
+    "explanation": "Outstanding value: for overall data, one category in Department has a value much larger (or smaller) than the others when measuring MIN(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "MIN(MonthlyIncome)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 1.4781368821292775,
+      "question": "How does MIN(MonthlyIncome) vary by Department?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=42.619): MIN(MonthlyIncome) grouped by Department.",
+      "view_labels": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        1555.0,
+        1009.0,
+        1052.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(Age) vary by Education?",
+    "explanation": "Outstanding value: for overall data, one category in Education has a value much larger (or smaller) than the others when measuring COUNT(Age).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Education",
+      "measure": "COUNT(Age)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 1.4371859296482412,
+      "question": "How does COUNT(Age) vary by Education?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=86.397): COUNT(Age) grouped by Education.",
+      "view_labels": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "view_values": [
+        170.0,
+        282.0,
+        572.0,
+        398.0,
+        48.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by Education?",
+    "explanation": "Outstanding value: for overall data, one category in Education has a value much larger (or smaller) than the others when measuring SUM(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Education",
+      "measure": "SUM(EmployeeCount)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 1.4371859296482412,
+      "question": "How does SUM(EmployeeCount) vary by Education?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): SUM(EmployeeCount) grouped by Education.",
+      "view_labels": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "view_values": [
+        170.0,
+        282.0,
+        572.0,
+        398.0,
+        48.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(EmployeeCount) vary by Education?",
+    "explanation": "Outstanding value: for overall data, one category in Education has a value much larger (or smaller) than the others when measuring COUNT(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Education",
+      "measure": "COUNT(EmployeeCount)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 1.4371859296482412,
+      "question": "How does COUNT(EmployeeCount) vary by Education?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): COUNT(EmployeeCount) grouped by Education.",
+      "view_labels": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "view_values": [
+        170.0,
+        282.0,
+        572.0,
+        398.0,
+        48.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(NumCompaniesWorked) vary by Education?",
+    "explanation": "Outstanding value: for overall data, one category in Education has a value much larger (or smaller) than the others when measuring COUNT(NumCompaniesWorked).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Education",
+      "measure": "COUNT(NumCompaniesWorked)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 1.4371859296482412,
+      "question": "How does COUNT(NumCompaniesWorked) vary by Education?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=34.678): COUNT(NumCompaniesWorked) grouped by Education.",
+      "view_labels": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "view_values": [
+        170.0,
+        282.0,
+        572.0,
+        398.0,
+        48.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(MonthlyIncome) vary by Education?",
+    "explanation": "Outstanding value: for overall data, one category in Education has a value much larger (or smaller) than the others when measuring COUNT(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Education",
+      "measure": "COUNT(MonthlyIncome)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 1.4371859296482412,
+      "question": "How does COUNT(MonthlyIncome) vary by Education?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=27.490): COUNT(MonthlyIncome) grouped by Education.",
+      "view_labels": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "view_values": [
+        170.0,
+        282.0,
+        572.0,
+        398.0,
+        48.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by Gender?",
+    "explanation": "Outstanding value: for overall data, one category in Gender has a value much larger (or smaller) than the others when measuring SUM(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Gender",
+      "measure": "SUM(MonthlyIncome)",
+      "subspace": [],
+      "pattern": "Outstanding Value",
+      "score": 1.4313418034586047,
+      "question": "How does SUM(MonthlyIncome) vary by Gender?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=2.903): SUM(MonthlyIncome) grouped by Gender.",
+      "view_labels": [
+        "Female",
+        "Male"
+      ],
+      "view_values": [
+        3931701.0,
+        5627608.0
+      ]
+    }
+  },
+  {
+    "question": "How does MIN(Age) vary by Attrition?",
+    "explanation": "Outstanding value: for HourlyRate=94, one category in Attrition has a value much larger (or smaller) than the others when measuring MIN(Age).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MIN(Age)",
+      "subspace": [
+        [
+          "HourlyRate",
+          94
+        ]
+      ],
+      "pattern": "Outstanding Value",
+      "score": 1.4090909090909092,
+      "question": "How does MIN(Age) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=43.063): MIN(Age) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        22.0,
+        31.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(DistanceFromHome) vary by Attrition?",
+    "explanation": "Attribution: for JobRole=Research Director, a single category in Attrition accounts for a large share of total COUNT(DistanceFromHome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "COUNT(DistanceFromHome)",
+      "subspace": [
+        [
+          "JobRole",
+          "Research Director"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.975,
+      "question": "How does COUNT(DistanceFromHome) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=9.226): COUNT(DistanceFromHome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        78.0,
+        2.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by Attrition?",
+    "explanation": "Attribution: for YearsInCurrentRole=5, a single category in Attrition accounts for a large share of total SUM(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(EmployeeCount)",
+      "subspace": [
+        [
+          "YearsInCurrentRole",
+          5
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.9722222222222222,
+      "question": "How does SUM(EmployeeCount) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): SUM(EmployeeCount) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        35.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Age) vary by Attrition?",
+    "explanation": "Attribution: for JobRole=Research Director, a single category in Attrition accounts for a large share of total SUM(Age).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(Age)",
+      "subspace": [
+        [
+          "JobRole",
+          "Research Director"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.971875,
+      "question": "How does SUM(Age) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=43.063): SUM(Age) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        3421.0,
+        99.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by Attrition?",
+    "explanation": "Attribution: for YearsAtCompany=15, a single category in Attrition accounts for a large share of total SUM(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(MonthlyIncome)",
+      "subspace": [
+        [
+          "YearsAtCompany",
+          15
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.9668764944830169,
+      "question": "How does SUM(MonthlyIncome) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=57.768): SUM(MonthlyIncome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        134245.0,
+        4599.0
+      ]
+    }
+  },
+  {
+    "question": "How does MIN(DistanceFromHome) vary by Attrition?",
+    "explanation": "Attribution: for TotalWorkingYears=20, a single category in Attrition accounts for a large share of total MIN(DistanceFromHome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MIN(DistanceFromHome)",
+      "subspace": [
+        [
+          "TotalWorkingYears",
+          20
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.9655172413793104,
+      "question": "How does MIN(DistanceFromHome) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=9.226): MIN(DistanceFromHome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        1.0,
+        28.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(Age) vary by Attrition?",
+    "explanation": "Attribution: for Age=42, a single category in Attrition accounts for a large share of total COUNT(Age).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "COUNT(Age)",
+      "subspace": [
+        [
+          "Age",
+          42
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.9565217391304348,
+      "question": "How does COUNT(Age) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=43.063): COUNT(Age) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        44.0,
+        2.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(EmployeeCount) vary by Attrition?",
+    "explanation": "Attribution: for Age=42, a single category in Attrition accounts for a large share of total COUNT(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "COUNT(EmployeeCount)",
+      "subspace": [
+        [
+          "Age",
+          42
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.9565217391304348,
+      "question": "How does COUNT(EmployeeCount) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): COUNT(EmployeeCount) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        44.0,
+        2.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(MonthlyIncome) vary by Attrition?",
+    "explanation": "Attribution: for JobRole=Manager, a single category in Attrition accounts for a large share of total COUNT(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "COUNT(MonthlyIncome)",
+      "subspace": [
+        [
+          "JobRole",
+          "Manager"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.9509803921568627,
+      "question": "How does COUNT(MonthlyIncome) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=57.768): COUNT(MonthlyIncome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        97.0,
+        5.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(DistanceFromHome) vary by Attrition?",
+    "explanation": "Attribution: for JobRole=Manager, a single category in Attrition accounts for a large share of total SUM(DistanceFromHome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(DistanceFromHome)",
+      "subspace": [
+        [
+          "JobRole",
+          "Manager"
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.938949938949939,
+      "question": "How does SUM(DistanceFromHome) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=9.226): SUM(DistanceFromHome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        769.0,
+        50.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by BusinessTravel?",
+    "explanation": "Attribution: for HourlyRate=93, a single category in BusinessTravel accounts for a large share of total SUM(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(EmployeeCount)",
+      "subspace": [
+        [
+          "HourlyRate",
+          93
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.9375,
+      "question": "How does SUM(EmployeeCount) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): SUM(EmployeeCount) grouped by BusinessTravel.",
+      "view_labels": [
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        1.0,
+        15.0
+      ]
+    }
+  },
+  {
+    "question": "How does MAX(MonthlyIncome) vary by Attrition?",
+    "explanation": "Attribution: for PercentSalaryHike=25, a single category in Attrition accounts for a large share of total MAX(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MAX(MonthlyIncome)",
+      "subspace": [
+        [
+          "PercentSalaryHike",
+          25
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.9036038371791548,
+      "question": "How does MAX(MonthlyIncome) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=57.768): MAX(MonthlyIncome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        17426.0,
+        1859.0
+      ]
+    }
+  },
+  {
+    "question": "How does MIN(MonthlyIncome) vary by Attrition?",
+    "explanation": "Attribution: for YearsAtCompany=20, a single category in Attrition accounts for a large share of total MIN(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MIN(MonthlyIncome)",
+      "subspace": [
+        [
+          "YearsAtCompany",
+          20
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.8309155766944114,
+      "question": "How does MIN(MonthlyIncome) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=57.768): MIN(MonthlyIncome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        2133.0,
+        10482.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(PercentSalaryHike) vary by BusinessTravel?",
+    "explanation": "Attribution: for YearsInCurrentRole=13, a single category in BusinessTravel accounts for a large share of total SUM(PercentSalaryHike).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(PercentSalaryHike)",
+      "subspace": [
+        [
+          "YearsInCurrentRole",
+          13
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.8253275109170306,
+      "question": "How does SUM(PercentSalaryHike) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=3.571): SUM(PercentSalaryHike) grouped by BusinessTravel.",
+      "view_labels": [
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        40.0,
+        189.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(DistanceFromHome) vary by Attrition?",
+    "explanation": "Attribution: for HourlyRate=70, a single category in Attrition accounts for a large share of total MEAN(DistanceFromHome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(DistanceFromHome)",
+      "subspace": [
+        [
+          "HourlyRate",
+          70
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.8156779661016949,
+      "question": "How does MEAN(DistanceFromHome) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=9.226): MEAN(DistanceFromHome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        2.9,
+        12.833333333333334
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(MonthlyIncome) vary by Attrition?",
+    "explanation": "Attribution: for PercentSalaryHike=25, a single category in Attrition accounts for a large share of total MEAN(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(MonthlyIncome)",
+      "subspace": [
+        [
+          "PercentSalaryHike",
+          25
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.8038201772899958,
+      "question": "How does MEAN(MonthlyIncome) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=57.768): MEAN(MonthlyIncome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        7617.0,
+        1859.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(EmployeeCount) vary by BusinessTravel?",
+    "explanation": "Attribution: for JobLevel=5, a single category in BusinessTravel accounts for a large share of total COUNT(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "COUNT(EmployeeCount)",
+      "subspace": [
+        [
+          "JobLevel",
+          5
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.7971014492753623,
+      "question": "How does COUNT(EmployeeCount) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): COUNT(EmployeeCount) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        4.0,
+        10.0,
+        55.0
+      ]
+    }
+  },
+  {
+    "question": "How does MAX(DistanceFromHome) vary by Attrition?",
+    "explanation": "Attribution: for TotalWorkingYears=31, a single category in Attrition accounts for a large share of total MAX(DistanceFromHome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MAX(DistanceFromHome)",
+      "subspace": [
+        [
+          "TotalWorkingYears",
+          31
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.78125,
+      "question": "How does MAX(DistanceFromHome) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=9.226): MAX(DistanceFromHome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        25.0,
+        7.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(NumCompaniesWorked) vary by BusinessTravel?",
+    "explanation": "Attribution: for overall data, a single category in BusinessTravel accounts for a large share of total SUM(NumCompaniesWorked).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(NumCompaniesWorked)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.7231624147511998,
+      "question": "How does SUM(NumCompaniesWorked) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=2.308): SUM(NumCompaniesWorked) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        407.0,
+        689.0,
+        2863.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by BusinessTravel?",
+    "explanation": "Attribution: for overall data, a single category in BusinessTravel accounts for a large share of total SUM(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(MonthlyIncome)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.7222650716699293,
+      "question": "How does SUM(MonthlyIncome) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=1.264): SUM(MonthlyIncome) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        939292.0,
+        1715662.0,
+        6904355.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(PercentSalaryHike) vary by BusinessTravel?",
+    "explanation": "Attribution: for overall data, a single category in BusinessTravel accounts for a large share of total COUNT(PercentSalaryHike).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "COUNT(PercentSalaryHike)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.7095238095238096,
+      "question": "How does COUNT(PercentSalaryHike) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=3.571): COUNT(PercentSalaryHike) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        150.0,
+        277.0,
+        1043.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(NumCompaniesWorked) vary by BusinessTravel?",
+    "explanation": "Attribution: for overall data, a single category in BusinessTravel accounts for a large share of total COUNT(NumCompaniesWorked).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "COUNT(NumCompaniesWorked)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.7095238095238096,
+      "question": "How does COUNT(NumCompaniesWorked) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=2.308): COUNT(NumCompaniesWorked) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        150.0,
+        277.0,
+        1043.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(MonthlyIncome) vary by BusinessTravel?",
+    "explanation": "Attribution: for overall data, a single category in BusinessTravel accounts for a large share of total COUNT(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "COUNT(MonthlyIncome)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.7095238095238096,
+      "question": "How does COUNT(MonthlyIncome) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=1.264): COUNT(MonthlyIncome) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        150.0,
+        277.0,
+        1043.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(NumCompaniesWorked) vary by Department?",
+    "explanation": "Attribution: for overall data, a single category in Department accounts for a large share of total SUM(NumCompaniesWorked).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "SUM(NumCompaniesWorked)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.6635514018691588,
+      "question": "How does SUM(NumCompaniesWorked) vary by Department?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=1.551): SUM(NumCompaniesWorked) grouped by Department.",
+      "view_labels": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        185.0,
+        2627.0,
+        1147.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(PercentSalaryHike) vary by Department?",
+    "explanation": "Attribution: for overall data, a single category in Department accounts for a large share of total SUM(PercentSalaryHike).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "SUM(PercentSalaryHike)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.6572591466141873,
+      "question": "How does SUM(PercentSalaryHike) vary by Department?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=2.070): SUM(PercentSalaryHike) grouped by Department.",
+      "view_labels": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        930.0,
+        14695.0,
+        6733.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Age) vary by Department?",
+    "explanation": "Attribution: for overall data, a single category in Department accounts for a large share of total SUM(Age).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "SUM(Age)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.6558458307233133,
+      "question": "How does SUM(Age) vary by Department?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=1.586): SUM(Age) grouped by Department.",
+      "view_labels": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        2382.0,
+        35598.0,
+        16298.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by Department?",
+    "explanation": "Attribution: for overall data, a single category in Department accounts for a large share of total SUM(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "SUM(EmployeeCount)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.6537414965986394,
+      "question": "How does SUM(EmployeeCount) vary by Department?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): SUM(EmployeeCount) grouped by Department.",
+      "view_labels": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        63.0,
+        961.0,
+        446.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(EmployeeCount) vary by Department?",
+    "explanation": "Attribution: for overall data, a single category in Department accounts for a large share of total COUNT(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "COUNT(EmployeeCount)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.6537414965986394,
+      "question": "How does COUNT(EmployeeCount) vary by Department?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): COUNT(EmployeeCount) grouped by Department.",
+      "view_labels": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        63.0,
+        961.0,
+        446.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(MonthlyIncome) vary by Department?",
+    "explanation": "Attribution: for overall data, a single category in Department accounts for a large share of total COUNT(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "COUNT(MonthlyIncome)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.6537414965986394,
+      "question": "How does COUNT(MonthlyIncome) vary by Department?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=42.619): COUNT(MonthlyIncome) grouped by Department.",
+      "view_labels": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        63.0,
+        961.0,
+        446.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(Age) vary by Department?",
+    "explanation": "Attribution: for overall data, a single category in Department accounts for a large share of total COUNT(Age).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "COUNT(Age)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.6537414965986394,
+      "question": "How does COUNT(Age) vary by Department?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=1.586): COUNT(Age) grouped by Department.",
+      "view_labels": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        63.0,
+        961.0,
+        446.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(NumCompaniesWorked) vary by Department?",
+    "explanation": "Attribution: for overall data, a single category in Department accounts for a large share of total COUNT(NumCompaniesWorked).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "COUNT(NumCompaniesWorked)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.6537414965986394,
+      "question": "How does COUNT(NumCompaniesWorked) vary by Department?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=1.551): COUNT(NumCompaniesWorked) grouped by Department.",
+      "view_labels": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        63.0,
+        961.0,
+        446.0
+      ]
+    }
+  },
+  {
+    "question": "How does MAX(Age) vary by Attrition?",
+    "explanation": "Attribution: for DailyRate=350, a single category in Attrition accounts for a large share of total MAX(Age).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MAX(Age)",
+      "subspace": [
+        [
+          "DailyRate",
+          350
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.6373626373626373,
+      "question": "How does MAX(Age) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=43.063): MAX(Age) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        58.0,
+        33.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by Department?",
+    "explanation": "Attribution: for overall data, a single category in Department accounts for a large share of total SUM(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Department",
+      "measure": "SUM(MonthlyIncome)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.6314561021094726,
+      "question": "How does SUM(MonthlyIncome) vary by Department?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=42.619): SUM(MonthlyIncome) grouped by Department.",
+      "view_labels": [
+        "Human Resources",
+        "Research & Development",
+        "Sales"
+      ],
+      "view_values": [
+        419234.0,
+        6036284.0,
+        3103791.0
+      ]
+    }
+  },
+  {
+    "question": "How does MIN(Age) vary by Attrition?",
+    "explanation": "Attribution: for HourlyRate=59, a single category in Attrition accounts for a large share of total MIN(Age).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MIN(Age)",
+      "subspace": [
+        [
+          "HourlyRate",
+          59
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.6140350877192983,
+      "question": "How does MIN(Age) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=43.063): MIN(Age) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        22.0,
+        35.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(PercentSalaryHike) vary by BusinessTravel?",
+    "explanation": "Distribution difference: the distribution of BusinessTravel changes notably when filtering by DailyRate=967 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(PercentSalaryHike)",
+      "subspace": [
+        [
+          "DailyRate",
+          967
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.6029035895143847,
+      "question": "How does SUM(PercentSalaryHike) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=3.571): SUM(PercentSalaryHike) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently"
+      ],
+      "view_values": [
+        23.0,
+        14.0
+      ],
+      "view_labels_baseline": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values_baseline": [
+        2341.0,
+        4199.0,
+        15818.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by Gender?",
+    "explanation": "Attribution: for overall data, a single category in Gender accounts for a large share of total SUM(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Gender",
+      "measure": "SUM(EmployeeCount)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.6,
+      "question": "How does SUM(EmployeeCount) vary by Gender?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): SUM(EmployeeCount) grouped by Gender.",
+      "view_labels": [
+        "Female",
+        "Male"
+      ],
+      "view_values": [
+        588.0,
+        882.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(EmployeeCount) vary by Gender?",
+    "explanation": "Attribution: for overall data, a single category in Gender accounts for a large share of total COUNT(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Gender",
+      "measure": "COUNT(EmployeeCount)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.6,
+      "question": "How does COUNT(EmployeeCount) vary by Gender?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): COUNT(EmployeeCount) grouped by Gender.",
+      "view_labels": [
+        "Female",
+        "Male"
+      ],
+      "view_values": [
+        588.0,
+        882.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by Gender?",
+    "explanation": "Attribution: for overall data, a single category in Gender accounts for a large share of total SUM(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Gender",
+      "measure": "SUM(MonthlyIncome)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5887044764428057,
+      "question": "How does SUM(MonthlyIncome) vary by Gender?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=2.903): SUM(MonthlyIncome) grouped by Gender.",
+      "view_labels": [
+        "Female",
+        "Male"
+      ],
+      "view_values": [
+        3931701.0,
+        5627608.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Age) vary by Attrition?",
+    "explanation": "Attribution: for DistanceFromHome=22, a single category in Attrition accounts for a large share of total MEAN(Age).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(Age)",
+      "subspace": [
+        [
+          "DistanceFromHome",
+          22
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5858021240916713,
+      "question": "How does MEAN(Age) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=43.063): MEAN(Age) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        40.30769230769231,
+        28.5
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Age) vary by Attrition?",
+    "explanation": "Attribution: for HourlyRate=99, a single category in Attrition accounts for a large share of total MEAN(Age).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(Age)",
+      "subspace": [
+        [
+          "HourlyRate",
+          99
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5852968897266729,
+      "question": "How does MEAN(Age) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=43.063): MEAN(Age) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        38.8125,
+        27.5
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(PercentSalaryHike) vary by BusinessTravel?",
+    "explanation": "Attribution: for DailyRate=827, a single category in BusinessTravel accounts for a large share of total MEAN(PercentSalaryHike).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "MEAN(PercentSalaryHike)",
+      "subspace": [
+        [
+          "DailyRate",
+          827
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5737704918032787,
+      "question": "How does MEAN(PercentSalaryHike) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=3.571): MEAN(PercentSalaryHike) grouped by BusinessTravel.",
+      "view_labels": [
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        17.5,
+        13.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(Age) vary by Attrition?",
+    "explanation": "Attribution: for overall data, a single category in Attrition accounts for a large share of total MEAN(Age).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(Age)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5277764715012617,
+      "question": "How does MEAN(Age) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=43.063): MEAN(Age) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        37.561232765612324,
+        33.607594936708864
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(MonthlyIncome) vary by Gender?",
+    "explanation": "Attribution: for overall data, a single category in Gender accounts for a large share of total MEAN(MonthlyIncome).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Gender",
+      "measure": "MEAN(MonthlyIncome)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5117110526756701,
+      "question": "How does MEAN(MonthlyIncome) vary by Gender?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=2.903): MEAN(MonthlyIncome) grouped by Gender.",
+      "view_labels": [
+        "Female",
+        "Male"
+      ],
+      "view_values": [
+        6686.566326530612,
+        6380.507936507936
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by Attrition?",
+    "explanation": "Attribution: for overall data, a single category in Attrition accounts for a large share of total MEAN(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(EmployeeCount)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5,
+      "question": "How does MEAN(EmployeeCount) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MEAN(EmployeeCount) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by Attrition?",
+    "explanation": "Attribution: for YearsWithCurrManager=6, a single category in Attrition accounts for a large share of total MEAN(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(EmployeeCount)",
+      "subspace": [
+        [
+          "YearsWithCurrManager",
+          6
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5,
+      "question": "How does MEAN(EmployeeCount) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MEAN(EmployeeCount) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by Attrition?",
+    "explanation": "Attribution: for StandardHours=80, a single category in Attrition accounts for a large share of total MEAN(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(EmployeeCount)",
+      "subspace": [
+        [
+          "StandardHours",
+          80
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5,
+      "question": "How does MEAN(EmployeeCount) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MEAN(EmployeeCount) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "question": "How does MAX(EmployeeCount) vary by Attrition?",
+    "explanation": "Attribution: for overall data, a single category in Attrition accounts for a large share of total MAX(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MAX(EmployeeCount)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5,
+      "question": "How does MAX(EmployeeCount) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MAX(EmployeeCount) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "question": "How does MAX(EmployeeCount) vary by Attrition?",
+    "explanation": "Attribution: for RelationshipSatisfaction=4, a single category in Attrition accounts for a large share of total MAX(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MAX(EmployeeCount)",
+      "subspace": [
+        [
+          "RelationshipSatisfaction",
+          4
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5,
+      "question": "How does MAX(EmployeeCount) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MAX(EmployeeCount) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "question": "How does MIN(EmployeeCount) vary by Attrition?",
+    "explanation": "Attribution: for overall data, a single category in Attrition accounts for a large share of total MIN(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MIN(EmployeeCount)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5,
+      "question": "How does MIN(EmployeeCount) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MIN(EmployeeCount) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "question": "How does MIN(EmployeeCount) vary by Attrition?",
+    "explanation": "Attribution: for YearsInCurrentRole=13, a single category in Attrition accounts for a large share of total MIN(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MIN(EmployeeCount)",
+      "subspace": [
+        [
+          "YearsInCurrentRole",
+          13
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5,
+      "question": "How does MIN(EmployeeCount) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MIN(EmployeeCount) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "question": "How does MIN(EmployeeCount) vary by Attrition?",
+    "explanation": "Attribution: for Over18=True, a single category in Attrition accounts for a large share of total MIN(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MIN(EmployeeCount)",
+      "subspace": [
+        [
+          "Over18",
+          true
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5,
+      "question": "How does MIN(EmployeeCount) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MIN(EmployeeCount) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by Gender?",
+    "explanation": "Attribution: for overall data, a single category in Gender accounts for a large share of total MEAN(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Gender",
+      "measure": "MEAN(EmployeeCount)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5,
+      "question": "How does MEAN(EmployeeCount) vary by Gender?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MEAN(EmployeeCount) grouped by Gender.",
+      "view_labels": [
+        "Female",
+        "Male"
+      ],
+      "view_values": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "question": "How does MAX(EmployeeCount) vary by Gender?",
+    "explanation": "Attribution: for overall data, a single category in Gender accounts for a large share of total MAX(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Gender",
+      "measure": "MAX(EmployeeCount)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5,
+      "question": "How does MAX(EmployeeCount) vary by Gender?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MAX(EmployeeCount) grouped by Gender.",
+      "view_labels": [
+        "Female",
+        "Male"
+      ],
+      "view_values": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "question": "How does MIN(EmployeeCount) vary by Gender?",
+    "explanation": "Attribution: for overall data, a single category in Gender accounts for a large share of total MIN(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Gender",
+      "measure": "MIN(EmployeeCount)",
+      "subspace": [],
+      "pattern": "Attribution",
+      "score": 0.5,
+      "question": "How does MIN(EmployeeCount) vary by Gender?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MIN(EmployeeCount) grouped by Gender.",
+      "view_labels": [
+        "Female",
+        "Male"
+      ],
+      "view_values": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by BusinessTravel?",
+    "explanation": "Attribution: for YearsAtCompany=24, a single category in BusinessTravel accounts for a large share of total MEAN(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "MEAN(EmployeeCount)",
+      "subspace": [
+        [
+          "YearsAtCompany",
+          24
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5,
+      "question": "How does MEAN(EmployeeCount) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MEAN(EmployeeCount) grouped by BusinessTravel.",
+      "view_labels": [
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by BusinessTravel?",
+    "explanation": "Attribution: for YearsInCurrentRole=13, a single category in BusinessTravel accounts for a large share of total MEAN(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "MEAN(EmployeeCount)",
+      "subspace": [
+        [
+          "YearsInCurrentRole",
+          13
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5,
+      "question": "How does MEAN(EmployeeCount) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MEAN(EmployeeCount) grouped by BusinessTravel.",
+      "view_labels": [
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "question": "How does MAX(EmployeeCount) vary by BusinessTravel?",
+    "explanation": "Attribution: for DailyRate=335, a single category in BusinessTravel accounts for a large share of total MAX(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "MAX(EmployeeCount)",
+      "subspace": [
+        [
+          "DailyRate",
+          335
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5,
+      "question": "How does MAX(EmployeeCount) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MAX(EmployeeCount) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "question": "How does MAX(EmployeeCount) vary by BusinessTravel?",
+    "explanation": "Attribution: for YearsAtCompany=16, a single category in BusinessTravel accounts for a large share of total MAX(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "MAX(EmployeeCount)",
+      "subspace": [
+        [
+          "YearsAtCompany",
+          16
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5,
+      "question": "How does MAX(EmployeeCount) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MAX(EmployeeCount) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "question": "How does MIN(EmployeeCount) vary by BusinessTravel?",
+    "explanation": "Attribution: for DailyRate=287, a single category in BusinessTravel accounts for a large share of total MIN(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "MIN(EmployeeCount)",
+      "subspace": [
+        [
+          "DailyRate",
+          287
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5,
+      "question": "How does MIN(EmployeeCount) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MIN(EmployeeCount) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "question": "How does MIN(EmployeeCount) vary by BusinessTravel?",
+    "explanation": "Attribution: for DistanceFromHome=27, a single category in BusinessTravel accounts for a large share of total MIN(EmployeeCount).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "MIN(EmployeeCount)",
+      "subspace": [
+        [
+          "DistanceFromHome",
+          27
+        ]
+      ],
+      "pattern": "Attribution",
+      "score": 0.5,
+      "question": "How does MIN(EmployeeCount) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MIN(EmployeeCount) grouped by BusinessTravel.",
+      "view_labels": [
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "question": "How does MAX(DistanceFromHome) vary by Attrition?",
+    "explanation": "Distribution difference: the distribution of Attrition changes notably when filtering by YearsAtCompany=20 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MAX(DistanceFromHome)",
+      "subspace": [
+        [
+          "YearsAtCompany",
+          20
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.40033636873739836,
+      "question": "How does MAX(DistanceFromHome) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=9.226): MAX(DistanceFromHome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        29.0,
+        1.0
+      ],
+      "view_labels_baseline": [
+        "False",
+        "True"
+      ],
+      "view_values_baseline": [
+        29.0,
+        29.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(PercentSalaryHike) vary by BusinessTravel?",
+    "explanation": "Distribution difference: the distribution of BusinessTravel changes notably when filtering by YearsAtCompany=22 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "MEAN(PercentSalaryHike)",
+      "subspace": [
+        [
+          "YearsAtCompany",
+          22
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.36836508380637856,
+      "question": "How does MEAN(PercentSalaryHike) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=3.571): MEAN(PercentSalaryHike) grouped by BusinessTravel.",
+      "view_labels": [
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        15.0,
+        13.166666666666666
+      ],
+      "view_labels_baseline": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values_baseline": [
+        15.606666666666667,
+        15.15884476534296,
+        15.165867689357622
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by BusinessTravel?",
+    "explanation": "Distribution difference: the distribution of BusinessTravel changes notably when filtering by MonthlyRate=15318 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "MEAN(EmployeeCount)",
+      "subspace": [
+        [
+          "MonthlyRate",
+          15318
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.3637363395632863,
+      "question": "How does MEAN(EmployeeCount) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MEAN(EmployeeCount) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Frequently"
+      ],
+      "view_values": [
+        1.0,
+        1.0
+      ],
+      "view_labels_baseline": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values_baseline": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "question": "How does MAX(EmployeeCount) vary by BusinessTravel?",
+    "explanation": "Distribution difference: the distribution of BusinessTravel changes notably when filtering by TotalWorkingYears=24 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "MAX(EmployeeCount)",
+      "subspace": [
+        [
+          "TotalWorkingYears",
+          24
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.3637363395632863,
+      "question": "How does MAX(EmployeeCount) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MAX(EmployeeCount) grouped by BusinessTravel.",
+      "view_labels": [
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        1.0,
+        1.0
+      ],
+      "view_labels_baseline": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values_baseline": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "question": "How does MIN(DistanceFromHome) vary by Attrition?",
+    "explanation": "Distribution difference: the distribution of Attrition changes notably when filtering by Age=42 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MIN(DistanceFromHome)",
+      "subspace": [
+        [
+          "Age",
+          42
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.34438370785356004,
+      "question": "How does MIN(DistanceFromHome) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=9.226): MIN(DistanceFromHome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        1.0,
+        12.0
+      ],
+      "view_labels_baseline": [
+        "False",
+        "True"
+      ],
+      "view_values_baseline": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by BusinessTravel?",
+    "explanation": "Distribution difference: the distribution of BusinessTravel changes notably when filtering by YearsAtCompany=33 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "BusinessTravel",
+      "measure": "SUM(EmployeeCount)",
+      "subspace": [
+        [
+          "YearsAtCompany",
+          33
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.3389084036320305,
+      "question": "How does SUM(EmployeeCount) vary by BusinessTravel?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): SUM(EmployeeCount) grouped by BusinessTravel.",
+      "view_labels": [
+        "Non-Travel",
+        "Travel_Rarely"
+      ],
+      "view_values": [
+        2.0,
+        3.0
+      ],
+      "view_labels_baseline": [
+        "Non-Travel",
+        "Travel_Frequently",
+        "Travel_Rarely"
+      ],
+      "view_values_baseline": [
+        150.0,
+        277.0,
+        1043.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(DistanceFromHome) vary by Attrition?",
+    "explanation": "Distribution difference: the distribution of Attrition changes notably when filtering by HourlyRate=91 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(DistanceFromHome)",
+      "subspace": [
+        [
+          "HourlyRate",
+          91
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.31644302354846515,
+      "question": "How does MEAN(DistanceFromHome) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=9.226): MEAN(DistanceFromHome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        13.1875,
+        2.0
+      ],
+      "view_labels_baseline": [
+        "False",
+        "True"
+      ],
+      "view_values_baseline": [
+        8.915652879156529,
+        10.632911392405063
+      ]
+    }
+  },
+  {
+    "question": "How does MAX(MonthlyIncome) vary by Attrition?",
+    "explanation": "Distribution difference: the distribution of Attrition changes notably when filtering by HourlyRate=92 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MAX(MonthlyIncome)",
+      "subspace": [
+        [
+          "HourlyRate",
+          92
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.29003568662410756,
+      "question": "How does MAX(MonthlyIncome) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=57.768): MAX(MonthlyIncome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        19943.0,
+        2909.0
+      ],
+      "view_labels_baseline": [
+        "False",
+        "True"
+      ],
+      "view_values_baseline": [
+        19999.0,
+        19859.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(DistanceFromHome) vary by Attrition?",
+    "explanation": "Distribution difference: the distribution of Attrition changes notably when filtering by MonthlyIncome=3407 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "COUNT(DistanceFromHome)",
+      "subspace": [
+        [
+          "MonthlyIncome",
+          3407
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.25921107732233334,
+      "question": "How does COUNT(DistanceFromHome) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=9.226): COUNT(DistanceFromHome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        1.0,
+        1.0
+      ],
+      "view_labels_baseline": [
+        "False",
+        "True"
+      ],
+      "view_values_baseline": [
+        1233.0,
+        237.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(EmployeeCount) vary by Attrition?",
+    "explanation": "Distribution difference: the distribution of Attrition changes notably when filtering by MonthlyIncome=2436 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "COUNT(EmployeeCount)",
+      "subspace": [
+        [
+          "MonthlyIncome",
+          2436
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.25921107732233334,
+      "question": "How does COUNT(EmployeeCount) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): COUNT(EmployeeCount) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        1.0,
+        1.0
+      ],
+      "view_labels_baseline": [
+        "False",
+        "True"
+      ],
+      "view_values_baseline": [
+        1233.0,
+        237.0
+      ]
+    }
+  },
+  {
+    "question": "How does MIN(MonthlyIncome) vary by Attrition?",
+    "explanation": "Distribution difference: the distribution of Attrition changes notably when filtering by YearsAtCompany=20 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MIN(MonthlyIncome)",
+      "subspace": [
+        [
+          "YearsAtCompany",
+          20
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.25905701639962275,
+      "question": "How does MIN(MonthlyIncome) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=57.768): MIN(MonthlyIncome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        2133.0,
+        10482.0
+      ],
+      "view_labels_baseline": [
+        "False",
+        "True"
+      ],
+      "view_values_baseline": [
+        1051.0,
+        1009.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by Attrition?",
+    "explanation": "Distribution difference: the distribution of Attrition changes notably when filtering by Age=21 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(EmployeeCount)",
+      "subspace": [
+        [
+          "Age",
+          21
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.23294058504205364,
+      "question": "How does SUM(EmployeeCount) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): SUM(EmployeeCount) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        7.0,
+        6.0
+      ],
+      "view_labels_baseline": [
+        "False",
+        "True"
+      ],
+      "view_values_baseline": [
+        1233.0,
+        237.0
+      ]
+    }
+  },
+  {
+    "question": "How does COUNT(Age) vary by Attrition?",
+    "explanation": "Distribution difference: the distribution of Attrition changes notably when filtering by TotalWorkingYears=0 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "COUNT(Age)",
+      "subspace": [
+        [
+          "TotalWorkingYears",
+          0
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.22813571119142134,
+      "question": "How does COUNT(Age) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=43.063): COUNT(Age) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        6.0,
+        5.0
+      ],
+      "view_labels_baseline": [
+        "False",
+        "True"
+      ],
+      "view_values_baseline": [
+        1233.0,
+        237.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by Attrition?",
+    "explanation": "Distribution difference: the distribution of Attrition changes notably when filtering by DistanceFromHome=13 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(MonthlyIncome)",
+      "subspace": [
+        [
+          "DistanceFromHome",
+          13
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.22287724659587907,
+      "question": "How does SUM(MonthlyIncome) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=57.768): SUM(MonthlyIncome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        66481.0,
+        42016.0
+      ],
+      "view_labels_baseline": [
+        "False",
+        "True"
+      ],
+      "view_values_baseline": [
+        8424768.0,
+        1134541.0
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(Age) vary by Attrition?",
+    "explanation": "Distribution difference: the distribution of Attrition changes notably when filtering by MonthlyRate=12355 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(Age)",
+      "subspace": [
+        [
+          "MonthlyRate",
+          12355
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.22078214838253138,
+      "question": "How does SUM(Age) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=43.063): SUM(Age) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        38.0,
+        28.0
+      ],
+      "view_labels_baseline": [
+        "False",
+        "True"
+      ],
+      "view_values_baseline": [
+        46313.0,
+        7965.0
+      ]
+    }
+  },
+  {
+    "question": "How does MEAN(MonthlyIncome) vary by Attrition?",
+    "explanation": "Distribution difference: the distribution of Attrition changes notably when filtering by YearsInCurrentRole=5 (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "MEAN(MonthlyIncome)",
+      "subspace": [
+        [
+          "YearsInCurrentRole",
+          5
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.21389264416099935,
+      "question": "How does MEAN(MonthlyIncome) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=57.768): MEAN(MonthlyIncome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        5289.942857142857,
+        12936.0
+      ],
+      "view_labels_baseline": [
+        "False",
+        "True"
+      ],
+      "view_values_baseline": [
+        6832.739659367397,
+        4787.0928270042195
+      ]
+    }
+  },
+  {
+    "question": "How does SUM(DistanceFromHome) vary by Attrition?",
+    "explanation": "Distribution difference: the distribution of Attrition changes notably when filtering by JobRole=Research Director (compared to overall data).",
+    "plot_path": null,
+    "insight": {
+      "breakdown": "Attrition",
+      "measure": "SUM(DistanceFromHome)",
+      "subspace": [
+        [
+          "JobRole",
+          "Research Director"
+        ]
+      ],
+      "pattern": "Distribution Difference",
+      "score": 0.204824906589444,
+      "question": "How does SUM(DistanceFromHome) vary by Attrition?",
+      "reason": "Statistics-based analysis (Kruskal-Wallis score=9.226): SUM(DistanceFromHome) grouped by Attrition.",
+      "view_labels": [
+        "False",
+        "True"
+      ],
+      "view_values": [
+        661.0,
+        14.0
+      ],
+      "view_labels_baseline": [
+        "False",
+        "True"
+      ],
+      "view_values_baseline": [
+        10993.0,
+        2520.0
+      ]
+    }
+  }
+]

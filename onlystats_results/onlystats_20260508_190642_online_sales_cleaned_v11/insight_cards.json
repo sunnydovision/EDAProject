@@ -1,0 +1,362 @@
+[
+  {
+    "question": "How does SUM(Total Revenue) vary by Date?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=105.577): SUM(Total Revenue) grouped by Date.",
+    "breakdown": "Date",
+    "measure": "SUM(Total Revenue)"
+  },
+  {
+    "question": "How does MEAN(Total Revenue) vary by Date?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=105.577): MEAN(Total Revenue) grouped by Date.",
+    "breakdown": "Date",
+    "measure": "MEAN(Total Revenue)"
+  },
+  {
+    "question": "How does COUNT(Total Revenue) vary by Date?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=105.577): COUNT(Total Revenue) grouped by Date.",
+    "breakdown": "Date",
+    "measure": "COUNT(Total Revenue)"
+  },
+  {
+    "question": "How does MAX(Total Revenue) vary by Date?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=105.577): MAX(Total Revenue) grouped by Date.",
+    "breakdown": "Date",
+    "measure": "MAX(Total Revenue)"
+  },
+  {
+    "question": "How does MIN(Total Revenue) vary by Date?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=105.577): MIN(Total Revenue) grouped by Date.",
+    "breakdown": "Date",
+    "measure": "MIN(Total Revenue)"
+  },
+  {
+    "question": "How does SUM(Units Sold) vary by Date?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=103.717): SUM(Units Sold) grouped by Date.",
+    "breakdown": "Date",
+    "measure": "SUM(Units Sold)"
+  },
+  {
+    "question": "How does MEAN(Units Sold) vary by Date?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=103.717): MEAN(Units Sold) grouped by Date.",
+    "breakdown": "Date",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "How does COUNT(Units Sold) vary by Date?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=103.717): COUNT(Units Sold) grouped by Date.",
+    "breakdown": "Date",
+    "measure": "COUNT(Units Sold)"
+  },
+  {
+    "question": "How does MAX(Units Sold) vary by Date?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=103.717): MAX(Units Sold) grouped by Date.",
+    "breakdown": "Date",
+    "measure": "MAX(Units Sold)"
+  },
+  {
+    "question": "How does MIN(Units Sold) vary by Date?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=103.717): MIN(Units Sold) grouped by Date.",
+    "breakdown": "Date",
+    "measure": "MIN(Units Sold)"
+  },
+  {
+    "question": "How does SUM(Unit Price) vary by Date?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=103.007): SUM(Unit Price) grouped by Date.",
+    "breakdown": "Date",
+    "measure": "SUM(Unit Price)"
+  },
+  {
+    "question": "How does MEAN(Unit Price) vary by Date?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=103.007): MEAN(Unit Price) grouped by Date.",
+    "breakdown": "Date",
+    "measure": "MEAN(Unit Price)"
+  },
+  {
+    "question": "How does COUNT(Unit Price) vary by Date?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=103.007): COUNT(Unit Price) grouped by Date.",
+    "breakdown": "Date",
+    "measure": "COUNT(Unit Price)"
+  },
+  {
+    "question": "How does MAX(Unit Price) vary by Date?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=103.007): MAX(Unit Price) grouped by Date.",
+    "breakdown": "Date",
+    "measure": "MAX(Unit Price)"
+  },
+  {
+    "question": "How does MIN(Unit Price) vary by Date?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=103.007): MIN(Unit Price) grouped by Date.",
+    "breakdown": "Date",
+    "measure": "MIN(Unit Price)"
+  },
+  {
+    "question": "How does SUM(Total Revenue) vary by Product Category?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=162.111): SUM(Total Revenue) grouped by Product Category.",
+    "breakdown": "Product Category",
+    "measure": "SUM(Total Revenue)"
+  },
+  {
+    "question": "How does MEAN(Total Revenue) vary by Product Category?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=162.111): MEAN(Total Revenue) grouped by Product Category.",
+    "breakdown": "Product Category",
+    "measure": "MEAN(Total Revenue)"
+  },
+  {
+    "question": "How does COUNT(Total Revenue) vary by Product Category?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=162.111): COUNT(Total Revenue) grouped by Product Category.",
+    "breakdown": "Product Category",
+    "measure": "COUNT(Total Revenue)"
+  },
+  {
+    "question": "How does MAX(Total Revenue) vary by Product Category?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=162.111): MAX(Total Revenue) grouped by Product Category.",
+    "breakdown": "Product Category",
+    "measure": "MAX(Total Revenue)"
+  },
+  {
+    "question": "How does MIN(Total Revenue) vary by Product Category?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=162.111): MIN(Total Revenue) grouped by Product Category.",
+    "breakdown": "Product Category",
+    "measure": "MIN(Total Revenue)"
+  },
+  {
+    "question": "How does SUM(Unit Price) vary by Product Category?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=159.940): SUM(Unit Price) grouped by Product Category.",
+    "breakdown": "Product Category",
+    "measure": "SUM(Unit Price)"
+  },
+  {
+    "question": "How does MEAN(Unit Price) vary by Product Category?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=159.940): MEAN(Unit Price) grouped by Product Category.",
+    "breakdown": "Product Category",
+    "measure": "MEAN(Unit Price)"
+  },
+  {
+    "question": "How does COUNT(Unit Price) vary by Product Category?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=159.940): COUNT(Unit Price) grouped by Product Category.",
+    "breakdown": "Product Category",
+    "measure": "COUNT(Unit Price)"
+  },
+  {
+    "question": "How does MAX(Unit Price) vary by Product Category?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=159.940): MAX(Unit Price) grouped by Product Category.",
+    "breakdown": "Product Category",
+    "measure": "MAX(Unit Price)"
+  },
+  {
+    "question": "How does MIN(Unit Price) vary by Product Category?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=159.940): MIN(Unit Price) grouped by Product Category.",
+    "breakdown": "Product Category",
+    "measure": "MIN(Unit Price)"
+  },
+  {
+    "question": "How does SUM(Units Sold) vary by Product Category?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=118.338): SUM(Units Sold) grouped by Product Category.",
+    "breakdown": "Product Category",
+    "measure": "SUM(Units Sold)"
+  },
+  {
+    "question": "How does MEAN(Units Sold) vary by Product Category?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=118.338): MEAN(Units Sold) grouped by Product Category.",
+    "breakdown": "Product Category",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "How does COUNT(Units Sold) vary by Product Category?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=118.338): COUNT(Units Sold) grouped by Product Category.",
+    "breakdown": "Product Category",
+    "measure": "COUNT(Units Sold)"
+  },
+  {
+    "question": "How does MAX(Units Sold) vary by Product Category?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=118.338): MAX(Units Sold) grouped by Product Category.",
+    "breakdown": "Product Category",
+    "measure": "MAX(Units Sold)"
+  },
+  {
+    "question": "How does MIN(Units Sold) vary by Product Category?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=118.338): MIN(Units Sold) grouped by Product Category.",
+    "breakdown": "Product Category",
+    "measure": "MIN(Units Sold)"
+  },
+  {
+    "question": "How does SUM(Units Sold) vary by Region?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=65.372): SUM(Units Sold) grouped by Region.",
+    "breakdown": "Region",
+    "measure": "SUM(Units Sold)"
+  },
+  {
+    "question": "How does MEAN(Units Sold) vary by Region?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=65.372): MEAN(Units Sold) grouped by Region.",
+    "breakdown": "Region",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "How does COUNT(Units Sold) vary by Region?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=65.372): COUNT(Units Sold) grouped by Region.",
+    "breakdown": "Region",
+    "measure": "COUNT(Units Sold)"
+  },
+  {
+    "question": "How does MAX(Units Sold) vary by Region?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=65.372): MAX(Units Sold) grouped by Region.",
+    "breakdown": "Region",
+    "measure": "MAX(Units Sold)"
+  },
+  {
+    "question": "How does MIN(Units Sold) vary by Region?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=65.372): MIN(Units Sold) grouped by Region.",
+    "breakdown": "Region",
+    "measure": "MIN(Units Sold)"
+  },
+  {
+    "question": "How does SUM(Total Revenue) vary by Region?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=7.545): SUM(Total Revenue) grouped by Region.",
+    "breakdown": "Region",
+    "measure": "SUM(Total Revenue)"
+  },
+  {
+    "question": "How does MEAN(Total Revenue) vary by Region?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=7.545): MEAN(Total Revenue) grouped by Region.",
+    "breakdown": "Region",
+    "measure": "MEAN(Total Revenue)"
+  },
+  {
+    "question": "How does COUNT(Total Revenue) vary by Region?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=7.545): COUNT(Total Revenue) grouped by Region.",
+    "breakdown": "Region",
+    "measure": "COUNT(Total Revenue)"
+  },
+  {
+    "question": "How does MAX(Total Revenue) vary by Region?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=7.545): MAX(Total Revenue) grouped by Region.",
+    "breakdown": "Region",
+    "measure": "MAX(Total Revenue)"
+  },
+  {
+    "question": "How does MIN(Total Revenue) vary by Region?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=7.545): MIN(Total Revenue) grouped by Region.",
+    "breakdown": "Region",
+    "measure": "MIN(Total Revenue)"
+  },
+  {
+    "question": "How does SUM(Unit Price) vary by Region?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=2.534): SUM(Unit Price) grouped by Region.",
+    "breakdown": "Region",
+    "measure": "SUM(Unit Price)"
+  },
+  {
+    "question": "How does MEAN(Unit Price) vary by Region?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=2.534): MEAN(Unit Price) grouped by Region.",
+    "breakdown": "Region",
+    "measure": "MEAN(Unit Price)"
+  },
+  {
+    "question": "How does COUNT(Unit Price) vary by Region?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=2.534): COUNT(Unit Price) grouped by Region.",
+    "breakdown": "Region",
+    "measure": "COUNT(Unit Price)"
+  },
+  {
+    "question": "How does MAX(Unit Price) vary by Region?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=2.534): MAX(Unit Price) grouped by Region.",
+    "breakdown": "Region",
+    "measure": "MAX(Unit Price)"
+  },
+  {
+    "question": "How does MIN(Unit Price) vary by Region?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=2.534): MIN(Unit Price) grouped by Region.",
+    "breakdown": "Region",
+    "measure": "MIN(Unit Price)"
+  },
+  {
+    "question": "How does SUM(Units Sold) vary by Payment Method?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=87.791): SUM(Units Sold) grouped by Payment Method.",
+    "breakdown": "Payment Method",
+    "measure": "SUM(Units Sold)"
+  },
+  {
+    "question": "How does MEAN(Units Sold) vary by Payment Method?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=87.791): MEAN(Units Sold) grouped by Payment Method.",
+    "breakdown": "Payment Method",
+    "measure": "MEAN(Units Sold)"
+  },
+  {
+    "question": "How does COUNT(Units Sold) vary by Payment Method?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=87.791): COUNT(Units Sold) grouped by Payment Method.",
+    "breakdown": "Payment Method",
+    "measure": "COUNT(Units Sold)"
+  },
+  {
+    "question": "How does MAX(Units Sold) vary by Payment Method?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=87.791): MAX(Units Sold) grouped by Payment Method.",
+    "breakdown": "Payment Method",
+    "measure": "MAX(Units Sold)"
+  },
+  {
+    "question": "How does MIN(Units Sold) vary by Payment Method?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=87.791): MIN(Units Sold) grouped by Payment Method.",
+    "breakdown": "Payment Method",
+    "measure": "MIN(Units Sold)"
+  },
+  {
+    "question": "How does SUM(Unit Price) vary by Payment Method?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=7.736): SUM(Unit Price) grouped by Payment Method.",
+    "breakdown": "Payment Method",
+    "measure": "SUM(Unit Price)"
+  },
+  {
+    "question": "How does MEAN(Unit Price) vary by Payment Method?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=7.736): MEAN(Unit Price) grouped by Payment Method.",
+    "breakdown": "Payment Method",
+    "measure": "MEAN(Unit Price)"
+  },
+  {
+    "question": "How does COUNT(Unit Price) vary by Payment Method?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=7.736): COUNT(Unit Price) grouped by Payment Method.",
+    "breakdown": "Payment Method",
+    "measure": "COUNT(Unit Price)"
+  },
+  {
+    "question": "How does MAX(Unit Price) vary by Payment Method?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=7.736): MAX(Unit Price) grouped by Payment Method.",
+    "breakdown": "Payment Method",
+    "measure": "MAX(Unit Price)"
+  },
+  {
+    "question": "How does MIN(Unit Price) vary by Payment Method?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=7.736): MIN(Unit Price) grouped by Payment Method.",
+    "breakdown": "Payment Method",
+    "measure": "MIN(Unit Price)"
+  },
+  {
+    "question": "How does SUM(Total Revenue) vary by Payment Method?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=4.141): SUM(Total Revenue) grouped by Payment Method.",
+    "breakdown": "Payment Method",
+    "measure": "SUM(Total Revenue)"
+  },
+  {
+    "question": "How does MEAN(Total Revenue) vary by Payment Method?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=4.141): MEAN(Total Revenue) grouped by Payment Method.",
+    "breakdown": "Payment Method",
+    "measure": "MEAN(Total Revenue)"
+  },
+  {
+    "question": "How does COUNT(Total Revenue) vary by Payment Method?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=4.141): COUNT(Total Revenue) grouped by Payment Method.",
+    "breakdown": "Payment Method",
+    "measure": "COUNT(Total Revenue)"
+  },
+  {
+    "question": "How does MAX(Total Revenue) vary by Payment Method?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=4.141): MAX(Total Revenue) grouped by Payment Method.",
+    "breakdown": "Payment Method",
+    "measure": "MAX(Total Revenue)"
+  },
+  {
+    "question": "How does MIN(Total Revenue) vary by Payment Method?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=4.141): MIN(Total Revenue) grouped by Payment Method.",
+    "breakdown": "Payment Method",
+    "measure": "MIN(Total Revenue)"
+  }
+]

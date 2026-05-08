@@ -1,31 +1,31 @@
 Group,Metric,ONLYSTATS,QUIS,Winner,Description
-Core & Efficiency,0. Total insights,72,106,N/A,Total insight cards generated
+Core & Efficiency,0. Total insights,114,106,N/A,Total insight cards generated
 Core & Efficiency,1. Faithfulness,100.0%,100.0%,Tie,Correctness - đúng dữ liệu
-Core & Efficiency,2. Statistical Significance (Overall),58.6%,35.9%,ONLYSTATS,Validity - pattern-averaged (fair comparison)
-Core & Efficiency,2a. Significance — TREND,66.7% (3),N/A,ONLYSTATS,Validity - TREND pattern
-Core & Efficiency,2a. Significance — OUTSTANDING_VALUE,52.0% (25),34.4% (32),ONLYSTATS,Validity - OUTSTANDING_VALUE pattern
-Core & Efficiency,2a. Significance — ATTRIBUTION,60.0% (20),53.3% (30),ONLYSTATS,Validity - ATTRIBUTION pattern
-Core & Efficiency,2a. Significance — DISTRIBUTION_DIFFERENCE,55.6% (18),56.0% (25),QUIS,Validity - DISTRIBUTION_DIFFERENCE pattern
-Core & Efficiency,3. Insight Novelty,30.6%,47.2%,QUIS,Usefulness - khác baseline
-Core & Efficiency,4a. Diversity — Semantic,0.433,0.489,QUIS,Semantic diversity (breakdown|measure|pattern|subspace)
-Core & Efficiency,4b. Diversity — Subspace Entropy,1.659,1.596,ONLYSTATS,Entropy of subspace filter columns used
-Core & Efficiency,4c. Diversity — Value,0.463,0.440,ONLYSTATS,"Unique (column, value) pairs in subspace / total"
+Core & Efficiency,2. Statistical Significance (Overall),62.8%,35.9%,ONLYSTATS,Validity - pattern-averaged (fair comparison)
+Core & Efficiency,2a. Significance — TREND,57.1% (7),N/A,ONLYSTATS,Validity - TREND pattern
+Core & Efficiency,2a. Significance — OUTSTANDING_VALUE,44.2% (43),34.4% (32),ONLYSTATS,Validity - OUTSTANDING_VALUE pattern
+Core & Efficiency,2a. Significance — ATTRIBUTION,50.0% (34),53.3% (30),QUIS,Validity - ATTRIBUTION pattern
+Core & Efficiency,2a. Significance — DISTRIBUTION_DIFFERENCE,100.0% (10),56.0% (25),ONLYSTATS,Validity - DISTRIBUTION_DIFFERENCE pattern
+Core & Efficiency,3. Insight Novelty,31.6%,44.3%,QUIS,Usefulness - khác baseline
+Core & Efficiency,4a. Diversity — Semantic,0.475,0.489,QUIS,Semantic diversity (breakdown|measure|pattern|subspace)
+Core & Efficiency,4b. Diversity — Subspace Entropy,1.567,1.596,QUIS,Entropy of subspace filter columns used
+Core & Efficiency,4c. Diversity — Value,0.360,0.440,QUIS,"Unique (column, value) pairs in subspace / total"
 Core & Efficiency,4d. Diversity — Dedup Rate,0,0,Tie,Duplicate rate — lower is better
-Subspace Deep-dive,7. Subspace Rate,67/72 (93.1%),84/106 (79.2%),ONLYSTATS,Insights with subspace filter / total
+Subspace Deep-dive,7. Subspace Rate,75/114 (65.8%),84/106 (79.2%),QUIS,Insights with subspace filter / total
 Subspace Deep-dive,7a. Subspace Faithfulness,100.0%,100.0%,Tie,Faithfulness restricted to subspace insights
-Subspace Deep-dive,7b. Subspace Significance,45.0%,44.4%,ONLYSTATS,Significance restricted to subspace insights
-Subspace Deep-dive,7c. Subspace Novelty,37.3%,41.7%,QUIS,Novelty restricted to subspace insights
-Subspace Deep-dive,7d.1. Diversity — Semantic (Subspace),0.430,0.464,QUIS,Semantic diversity restricted to subspace insights
-Subspace Deep-dive,7d.2. Diversity — Subspace Entropy (Subspace),1.659,1.596,ONLYSTATS,Entropy of subspace filter columns used (subspace insights)
-Subspace Deep-dive,7d.3. Diversity — Value (Subspace),0.463,0.440,ONLYSTATS,"Unique (column, value) pairs in subspace / total (subspace insights)"
+Subspace Deep-dive,7b. Subspace Significance,90.0%,44.4%,ONLYSTATS,Significance restricted to subspace insights
+Subspace Deep-dive,7c. Subspace Novelty,45.3%,65.5%,QUIS,Novelty restricted to subspace insights
+Subspace Deep-dive,7d.1. Diversity — Semantic (Subspace),0.424,0.464,QUIS,Semantic diversity restricted to subspace insights
+Subspace Deep-dive,7d.2. Diversity — Subspace Entropy (Subspace),1.567,1.596,QUIS,Entropy of subspace filter columns used (subspace insights)
+Subspace Deep-dive,7d.3. Diversity — Value (Subspace),0.360,0.440,QUIS,"Unique (column, value) pairs in subspace / total (subspace insights)"
 Subspace Deep-dive,7d.4. Diversity — Dedup Rate (Subspace),0,0,Tie,Duplicate rate restricted to subspace insights - lower is better
-Subspace Deep-dive,8. Score Uplift from Subspace,"Δ=-0.386, x=0.511","Δ=-0.137, x=0.742",QUIS,Δ = mean(score|subspace) - mean(score|no-subspace)
-Subspace Deep-dive,9. Simpson's Paradox Rate (SPR),31.3% (1/21 sig),32.1% (1/27 sig),QUIS,Rate of statistically significant pattern reversals (p<0.05) — true Simpson's Paradox cases
-Intent Layer Quality,"10. Total (B,M) pairs evaluated",24/24,24/26,N/A,Total unique breakdown-measure pairs (categorical breakdowns only for NMI/Interestingness)
-Intent Layer Quality,10a. BM — NMI mean,0.228,0.179,ONLYSTATS,Mean NMI over categorical-B pairs
-Intent Layer Quality,10b. BM — Interestingness,0.314,0.244,ONLYSTATS,Mean Coverage×EffectSize over categorical-B pairs
+Subspace Deep-dive,8. Score Uplift from Subspace,"Δ=0.102, x=1.232","Δ=-0.137, x=0.742",ONLYSTATS,Δ = mean(score|subspace) - mean(score|no-subspace)
+Subspace Deep-dive,9. Simpson's Paradox Rate (SPR),40.0% (0/30 sig),32.1% (1/27 sig),ONLYSTATS,Rate of statistically significant pattern reversals (p<0.05) — true Simpson's Paradox cases
+Intent Layer Quality,"10. Total (B,M) pairs evaluated",40/40,24/26,N/A,Total unique breakdown-measure pairs (categorical breakdowns only for NMI/Interestingness)
+Intent Layer Quality,10a. BM — NMI mean,0.241,0.179,ONLYSTATS,Mean NMI over categorical-B pairs
+Intent Layer Quality,10b. BM — Interestingness,0.325,0.244,ONLYSTATS,Mean Coverage×EffectSize over categorical-B pairs
 Intent Layer Quality,10c. BM — Actionability,1.000,0.923,ONLYSTATS,% pairs with categorical breakdown
-Intent Layer Quality,10d. BM — Diversity,0.333,0.245,ONLYSTATS,"Unique (B,M) pairs / total insights"
+Intent Layer Quality,10d. BM — Diversity,0.351,0.245,ONLYSTATS,"Unique (B,M) pairs / total insights"
 Intent Layer Quality,11a. Question Semantic Diversity,0,0.518,QUIS,1 - mean cosine sim of question embeddings (within-system)
 Intent Layer Quality,11b. Question Specificity,0.00 ± 0.00,9.99 ± 2.21,QUIS,Avg word count per question (mean ± std) — higher = more specific
 Intent Layer Quality,11c. Question–Insight Alignment,0,0.543,QUIS,"Mean cosine(Embed(question), Embed(insight)) — semantic faithfulness"

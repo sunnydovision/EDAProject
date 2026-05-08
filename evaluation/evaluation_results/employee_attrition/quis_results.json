@@ -2052,7 +2052,7 @@
       "question_novelty": 1.0,
       "novel_count": 133,
       "total_count": 133,
-      "avg_max_similarity": 0.4532465636730194,
+      "avg_max_similarity": 0.5054290294647217,
       "tau": 0.85,
       "compared_against": "ONLYSTATS"
     }
@@ -2073,10 +2073,10 @@
     "model": "gpt-5.4"
   },
   "insight_novelty": {
-    "novelty": 0.9022556390977443,
-    "novel_count": 120,
+    "novelty": 0.8721804511278195,
+    "novel_count": 116,
     "total_count": 133,
-    "avg_max_similarity": 0.7315792441368103,
+    "avg_max_similarity": 0.7367888689041138,
     "tau": 0.85,
     "compared_against": "ONLYSTATS"
   },
@@ -2302,10 +2302,10 @@
       }
     },
     "novelty": {
-      "novelty": 0.9568965517241379,
-      "novel_count": 111,
+      "novelty": 0.9741379310344828,
+      "novel_count": 113,
       "total_count": 116,
-      "avg_max_similarity": 0.7118247747421265,
+      "avg_max_similarity": 0.7018393278121948,
       "tau": 0.85
     },
     "diversity": {

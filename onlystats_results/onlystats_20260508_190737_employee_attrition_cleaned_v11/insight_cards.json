@@ -1,0 +1,1922 @@
+[
+  {
+    "question": "How does SUM(EmployeeCount) vary by Attrition?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): SUM(EmployeeCount) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "SUM(EmployeeCount)"
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by Attrition?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MEAN(EmployeeCount) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "MEAN(EmployeeCount)"
+  },
+  {
+    "question": "How does COUNT(EmployeeCount) vary by Attrition?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): COUNT(EmployeeCount) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "COUNT(EmployeeCount)"
+  },
+  {
+    "question": "How does MAX(EmployeeCount) vary by Attrition?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MAX(EmployeeCount) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "MAX(EmployeeCount)"
+  },
+  {
+    "question": "How does MIN(EmployeeCount) vary by Attrition?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MIN(EmployeeCount) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "MIN(EmployeeCount)"
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by Attrition?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=57.768): SUM(MonthlyIncome) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "SUM(MonthlyIncome)"
+  },
+  {
+    "question": "How does MEAN(MonthlyIncome) vary by Attrition?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=57.768): MEAN(MonthlyIncome) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does COUNT(MonthlyIncome) vary by Attrition?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=57.768): COUNT(MonthlyIncome) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "COUNT(MonthlyIncome)"
+  },
+  {
+    "question": "How does MAX(MonthlyIncome) vary by Attrition?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=57.768): MAX(MonthlyIncome) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "MAX(MonthlyIncome)"
+  },
+  {
+    "question": "How does MIN(MonthlyIncome) vary by Attrition?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=57.768): MIN(MonthlyIncome) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "MIN(MonthlyIncome)"
+  },
+  {
+    "question": "How does SUM(Age) vary by Attrition?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=43.063): SUM(Age) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "SUM(Age)"
+  },
+  {
+    "question": "How does MEAN(Age) vary by Attrition?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=43.063): MEAN(Age) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "MEAN(Age)"
+  },
+  {
+    "question": "How does COUNT(Age) vary by Attrition?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=43.063): COUNT(Age) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "COUNT(Age)"
+  },
+  {
+    "question": "How does MAX(Age) vary by Attrition?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=43.063): MAX(Age) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "MAX(Age)"
+  },
+  {
+    "question": "How does MIN(Age) vary by Attrition?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=43.063): MIN(Age) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "MIN(Age)"
+  },
+  {
+    "question": "How does SUM(DistanceFromHome) vary by Attrition?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=9.226): SUM(DistanceFromHome) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "SUM(DistanceFromHome)"
+  },
+  {
+    "question": "How does MEAN(DistanceFromHome) vary by Attrition?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=9.226): MEAN(DistanceFromHome) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "MEAN(DistanceFromHome)"
+  },
+  {
+    "question": "How does COUNT(DistanceFromHome) vary by Attrition?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=9.226): COUNT(DistanceFromHome) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "COUNT(DistanceFromHome)"
+  },
+  {
+    "question": "How does MAX(DistanceFromHome) vary by Attrition?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=9.226): MAX(DistanceFromHome) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "MAX(DistanceFromHome)"
+  },
+  {
+    "question": "How does MIN(DistanceFromHome) vary by Attrition?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=9.226): MIN(DistanceFromHome) grouped by Attrition.",
+    "breakdown": "Attrition",
+    "measure": "MIN(DistanceFromHome)"
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): SUM(EmployeeCount) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "SUM(EmployeeCount)"
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MEAN(EmployeeCount) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "MEAN(EmployeeCount)"
+  },
+  {
+    "question": "How does COUNT(EmployeeCount) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): COUNT(EmployeeCount) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "COUNT(EmployeeCount)"
+  },
+  {
+    "question": "How does MAX(EmployeeCount) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MAX(EmployeeCount) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "MAX(EmployeeCount)"
+  },
+  {
+    "question": "How does MIN(EmployeeCount) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MIN(EmployeeCount) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "MIN(EmployeeCount)"
+  },
+  {
+    "question": "How does SUM(PercentSalaryHike) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=3.571): SUM(PercentSalaryHike) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "SUM(PercentSalaryHike)"
+  },
+  {
+    "question": "How does MEAN(PercentSalaryHike) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=3.571): MEAN(PercentSalaryHike) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "MEAN(PercentSalaryHike)"
+  },
+  {
+    "question": "How does COUNT(PercentSalaryHike) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=3.571): COUNT(PercentSalaryHike) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "COUNT(PercentSalaryHike)"
+  },
+  {
+    "question": "How does MAX(PercentSalaryHike) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=3.571): MAX(PercentSalaryHike) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "MAX(PercentSalaryHike)"
+  },
+  {
+    "question": "How does MIN(PercentSalaryHike) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=3.571): MIN(PercentSalaryHike) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "MIN(PercentSalaryHike)"
+  },
+  {
+    "question": "How does SUM(NumCompaniesWorked) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=2.308): SUM(NumCompaniesWorked) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "SUM(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MEAN(NumCompaniesWorked) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=2.308): MEAN(NumCompaniesWorked) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "MEAN(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does COUNT(NumCompaniesWorked) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=2.308): COUNT(NumCompaniesWorked) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "COUNT(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MAX(NumCompaniesWorked) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=2.308): MAX(NumCompaniesWorked) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "MAX(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MIN(NumCompaniesWorked) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=2.308): MIN(NumCompaniesWorked) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "MIN(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1.264): SUM(MonthlyIncome) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "SUM(MonthlyIncome)"
+  },
+  {
+    "question": "How does MEAN(MonthlyIncome) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1.264): MEAN(MonthlyIncome) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does COUNT(MonthlyIncome) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1.264): COUNT(MonthlyIncome) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "COUNT(MonthlyIncome)"
+  },
+  {
+    "question": "How does MAX(MonthlyIncome) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1.264): MAX(MonthlyIncome) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "MAX(MonthlyIncome)"
+  },
+  {
+    "question": "How does MIN(MonthlyIncome) vary by BusinessTravel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1.264): MIN(MonthlyIncome) grouped by BusinessTravel.",
+    "breakdown": "BusinessTravel",
+    "measure": "MIN(MonthlyIncome)"
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by Department?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): SUM(EmployeeCount) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "SUM(EmployeeCount)"
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by Department?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MEAN(EmployeeCount) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "MEAN(EmployeeCount)"
+  },
+  {
+    "question": "How does COUNT(EmployeeCount) vary by Department?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): COUNT(EmployeeCount) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "COUNT(EmployeeCount)"
+  },
+  {
+    "question": "How does MAX(EmployeeCount) vary by Department?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MAX(EmployeeCount) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "MAX(EmployeeCount)"
+  },
+  {
+    "question": "How does MIN(EmployeeCount) vary by Department?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MIN(EmployeeCount) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "MIN(EmployeeCount)"
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by Department?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=42.619): SUM(MonthlyIncome) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "SUM(MonthlyIncome)"
+  },
+  {
+    "question": "How does MEAN(MonthlyIncome) vary by Department?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=42.619): MEAN(MonthlyIncome) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does COUNT(MonthlyIncome) vary by Department?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=42.619): COUNT(MonthlyIncome) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "COUNT(MonthlyIncome)"
+  },
+  {
+    "question": "How does MAX(MonthlyIncome) vary by Department?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=42.619): MAX(MonthlyIncome) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "MAX(MonthlyIncome)"
+  },
+  {
+    "question": "How does MIN(MonthlyIncome) vary by Department?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=42.619): MIN(MonthlyIncome) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "MIN(MonthlyIncome)"
+  },
+  {
+    "question": "How does SUM(PercentSalaryHike) vary by Department?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=2.070): SUM(PercentSalaryHike) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "SUM(PercentSalaryHike)"
+  },
+  {
+    "question": "How does MEAN(PercentSalaryHike) vary by Department?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=2.070): MEAN(PercentSalaryHike) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "MEAN(PercentSalaryHike)"
+  },
+  {
+    "question": "How does SUM(Age) vary by Department?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1.586): SUM(Age) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "SUM(Age)"
+  },
+  {
+    "question": "How does MEAN(Age) vary by Department?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1.586): MEAN(Age) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "MEAN(Age)"
+  },
+  {
+    "question": "How does COUNT(Age) vary by Department?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1.586): COUNT(Age) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "COUNT(Age)"
+  },
+  {
+    "question": "How does MAX(Age) vary by Department?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1.586): MAX(Age) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "MAX(Age)"
+  },
+  {
+    "question": "How does MIN(Age) vary by Department?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1.586): MIN(Age) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "MIN(Age)"
+  },
+  {
+    "question": "How does SUM(NumCompaniesWorked) vary by Department?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1.551): SUM(NumCompaniesWorked) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "SUM(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MEAN(NumCompaniesWorked) vary by Department?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1.551): MEAN(NumCompaniesWorked) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "MEAN(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does COUNT(NumCompaniesWorked) vary by Department?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1.551): COUNT(NumCompaniesWorked) grouped by Department.",
+    "breakdown": "Department",
+    "measure": "COUNT(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does SUM(Age) vary by Education?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=86.397): SUM(Age) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "SUM(Age)"
+  },
+  {
+    "question": "How does MEAN(Age) vary by Education?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=86.397): MEAN(Age) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "MEAN(Age)"
+  },
+  {
+    "question": "How does COUNT(Age) vary by Education?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=86.397): COUNT(Age) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "COUNT(Age)"
+  },
+  {
+    "question": "How does MAX(Age) vary by Education?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=86.397): MAX(Age) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "MAX(Age)"
+  },
+  {
+    "question": "How does MIN(Age) vary by Education?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=86.397): MIN(Age) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "MIN(Age)"
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by Education?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): SUM(EmployeeCount) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "SUM(EmployeeCount)"
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by Education?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MEAN(EmployeeCount) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "MEAN(EmployeeCount)"
+  },
+  {
+    "question": "How does COUNT(EmployeeCount) vary by Education?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): COUNT(EmployeeCount) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "COUNT(EmployeeCount)"
+  },
+  {
+    "question": "How does MAX(EmployeeCount) vary by Education?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MAX(EmployeeCount) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "MAX(EmployeeCount)"
+  },
+  {
+    "question": "How does MIN(EmployeeCount) vary by Education?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MIN(EmployeeCount) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "MIN(EmployeeCount)"
+  },
+  {
+    "question": "How does SUM(NumCompaniesWorked) vary by Education?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=34.678): SUM(NumCompaniesWorked) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "SUM(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MEAN(NumCompaniesWorked) vary by Education?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=34.678): MEAN(NumCompaniesWorked) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "MEAN(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does COUNT(NumCompaniesWorked) vary by Education?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=34.678): COUNT(NumCompaniesWorked) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "COUNT(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MAX(NumCompaniesWorked) vary by Education?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=34.678): MAX(NumCompaniesWorked) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "MAX(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MIN(NumCompaniesWorked) vary by Education?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=34.678): MIN(NumCompaniesWorked) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "MIN(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by Education?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=27.490): SUM(MonthlyIncome) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "SUM(MonthlyIncome)"
+  },
+  {
+    "question": "How does MEAN(MonthlyIncome) vary by Education?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=27.490): MEAN(MonthlyIncome) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does COUNT(MonthlyIncome) vary by Education?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=27.490): COUNT(MonthlyIncome) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "COUNT(MonthlyIncome)"
+  },
+  {
+    "question": "How does MAX(MonthlyIncome) vary by Education?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=27.490): MAX(MonthlyIncome) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "MAX(MonthlyIncome)"
+  },
+  {
+    "question": "How does MIN(MonthlyIncome) vary by Education?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=27.490): MIN(MonthlyIncome) grouped by Education.",
+    "breakdown": "Education",
+    "measure": "MIN(MonthlyIncome)"
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by EducationField?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): SUM(EmployeeCount) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "SUM(EmployeeCount)"
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by EducationField?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MEAN(EmployeeCount) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(EmployeeCount)"
+  },
+  {
+    "question": "How does COUNT(EmployeeCount) vary by EducationField?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): COUNT(EmployeeCount) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "COUNT(EmployeeCount)"
+  },
+  {
+    "question": "How does MAX(EmployeeCount) vary by EducationField?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MAX(EmployeeCount) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "MAX(EmployeeCount)"
+  },
+  {
+    "question": "How does MIN(EmployeeCount) vary by EducationField?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MIN(EmployeeCount) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "MIN(EmployeeCount)"
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by EducationField?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=24.792): SUM(MonthlyIncome) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "SUM(MonthlyIncome)"
+  },
+  {
+    "question": "How does MEAN(MonthlyIncome) vary by EducationField?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=24.792): MEAN(MonthlyIncome) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does COUNT(MonthlyIncome) vary by EducationField?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=24.792): COUNT(MonthlyIncome) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "COUNT(MonthlyIncome)"
+  },
+  {
+    "question": "How does MAX(MonthlyIncome) vary by EducationField?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=24.792): MAX(MonthlyIncome) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "MAX(MonthlyIncome)"
+  },
+  {
+    "question": "How does MIN(MonthlyIncome) vary by EducationField?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=24.792): MIN(MonthlyIncome) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "MIN(MonthlyIncome)"
+  },
+  {
+    "question": "How does SUM(DailyRate) vary by EducationField?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=10.492): SUM(DailyRate) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "SUM(DailyRate)"
+  },
+  {
+    "question": "How does MEAN(DailyRate) vary by EducationField?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=10.492): MEAN(DailyRate) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(DailyRate)"
+  },
+  {
+    "question": "How does COUNT(DailyRate) vary by EducationField?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=10.492): COUNT(DailyRate) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "COUNT(DailyRate)"
+  },
+  {
+    "question": "How does MAX(DailyRate) vary by EducationField?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=10.492): MAX(DailyRate) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "MAX(DailyRate)"
+  },
+  {
+    "question": "How does MIN(DailyRate) vary by EducationField?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=10.492): MIN(DailyRate) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "MIN(DailyRate)"
+  },
+  {
+    "question": "How does SUM(DistanceFromHome) vary by EducationField?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=6.593): SUM(DistanceFromHome) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "SUM(DistanceFromHome)"
+  },
+  {
+    "question": "How does MEAN(DistanceFromHome) vary by EducationField?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=6.593): MEAN(DistanceFromHome) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "MEAN(DistanceFromHome)"
+  },
+  {
+    "question": "How does COUNT(DistanceFromHome) vary by EducationField?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=6.593): COUNT(DistanceFromHome) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "COUNT(DistanceFromHome)"
+  },
+  {
+    "question": "How does MAX(DistanceFromHome) vary by EducationField?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=6.593): MAX(DistanceFromHome) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "MAX(DistanceFromHome)"
+  },
+  {
+    "question": "How does MIN(DistanceFromHome) vary by EducationField?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=6.593): MIN(DistanceFromHome) grouped by EducationField.",
+    "breakdown": "EducationField",
+    "measure": "MIN(DistanceFromHome)"
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): SUM(EmployeeCount) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "SUM(EmployeeCount)"
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MEAN(EmployeeCount) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "MEAN(EmployeeCount)"
+  },
+  {
+    "question": "How does COUNT(EmployeeCount) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): COUNT(EmployeeCount) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "COUNT(EmployeeCount)"
+  },
+  {
+    "question": "How does MAX(EmployeeCount) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MAX(EmployeeCount) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "MAX(EmployeeCount)"
+  },
+  {
+    "question": "How does MIN(EmployeeCount) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MIN(EmployeeCount) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "MIN(EmployeeCount)"
+  },
+  {
+    "question": "How does SUM(HourlyRate) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=4.981): SUM(HourlyRate) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "SUM(HourlyRate)"
+  },
+  {
+    "question": "How does MEAN(HourlyRate) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=4.981): MEAN(HourlyRate) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "MEAN(HourlyRate)"
+  },
+  {
+    "question": "How does COUNT(HourlyRate) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=4.981): COUNT(HourlyRate) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "COUNT(HourlyRate)"
+  },
+  {
+    "question": "How does MAX(HourlyRate) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=4.981): MAX(HourlyRate) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "MAX(HourlyRate)"
+  },
+  {
+    "question": "How does MIN(HourlyRate) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=4.981): MIN(HourlyRate) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "MIN(HourlyRate)"
+  },
+  {
+    "question": "How does SUM(NumCompaniesWorked) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=4.126): SUM(NumCompaniesWorked) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "SUM(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MEAN(NumCompaniesWorked) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=4.126): MEAN(NumCompaniesWorked) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "MEAN(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does COUNT(NumCompaniesWorked) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=4.126): COUNT(NumCompaniesWorked) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "COUNT(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MAX(NumCompaniesWorked) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=4.126): MAX(NumCompaniesWorked) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "MAX(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MIN(NumCompaniesWorked) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=4.126): MIN(NumCompaniesWorked) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "MIN(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does SUM(MonthlyRate) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=3.921): SUM(MonthlyRate) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "SUM(MonthlyRate)"
+  },
+  {
+    "question": "How does MEAN(MonthlyRate) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=3.921): MEAN(MonthlyRate) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "MEAN(MonthlyRate)"
+  },
+  {
+    "question": "How does COUNT(MonthlyRate) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=3.921): COUNT(MonthlyRate) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "COUNT(MonthlyRate)"
+  },
+  {
+    "question": "How does MAX(MonthlyRate) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=3.921): MAX(MonthlyRate) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "MAX(MonthlyRate)"
+  },
+  {
+    "question": "How does MIN(MonthlyRate) vary by EnvironmentSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=3.921): MIN(MonthlyRate) grouped by EnvironmentSatisfaction.",
+    "breakdown": "EnvironmentSatisfaction",
+    "measure": "MIN(MonthlyRate)"
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by Gender?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): SUM(EmployeeCount) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "SUM(EmployeeCount)"
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by Gender?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MEAN(EmployeeCount) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "MEAN(EmployeeCount)"
+  },
+  {
+    "question": "How does COUNT(EmployeeCount) vary by Gender?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): COUNT(EmployeeCount) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "COUNT(EmployeeCount)"
+  },
+  {
+    "question": "How does MAX(EmployeeCount) vary by Gender?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MAX(EmployeeCount) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "MAX(EmployeeCount)"
+  },
+  {
+    "question": "How does MIN(EmployeeCount) vary by Gender?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MIN(EmployeeCount) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "MIN(EmployeeCount)"
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by Gender?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=2.903): SUM(MonthlyIncome) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "SUM(MonthlyIncome)"
+  },
+  {
+    "question": "How does MEAN(MonthlyIncome) vary by Gender?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=2.903): MEAN(MonthlyIncome) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does COUNT(MonthlyIncome) vary by Gender?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=2.903): COUNT(MonthlyIncome) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "COUNT(MonthlyIncome)"
+  },
+  {
+    "question": "How does MAX(MonthlyIncome) vary by Gender?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=2.903): MAX(MonthlyIncome) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "MAX(MonthlyIncome)"
+  },
+  {
+    "question": "How does MIN(MonthlyIncome) vary by Gender?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=2.903): MIN(MonthlyIncome) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "MIN(MonthlyIncome)"
+  },
+  {
+    "question": "How does SUM(MonthlyRate) vary by Gender?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=2.573): SUM(MonthlyRate) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "SUM(MonthlyRate)"
+  },
+  {
+    "question": "How does MEAN(MonthlyRate) vary by Gender?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=2.573): MEAN(MonthlyRate) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "MEAN(MonthlyRate)"
+  },
+  {
+    "question": "How does COUNT(MonthlyRate) vary by Gender?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=2.573): COUNT(MonthlyRate) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "COUNT(MonthlyRate)"
+  },
+  {
+    "question": "How does MAX(MonthlyRate) vary by Gender?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=2.573): MAX(MonthlyRate) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "MAX(MonthlyRate)"
+  },
+  {
+    "question": "How does MIN(MonthlyRate) vary by Gender?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=2.573): MIN(MonthlyRate) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "MIN(MonthlyRate)"
+  },
+  {
+    "question": "How does SUM(NumCompaniesWorked) vary by Gender?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=2.475): SUM(NumCompaniesWorked) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "SUM(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MEAN(NumCompaniesWorked) vary by Gender?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=2.475): MEAN(NumCompaniesWorked) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "MEAN(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does COUNT(NumCompaniesWorked) vary by Gender?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=2.475): COUNT(NumCompaniesWorked) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "COUNT(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MAX(NumCompaniesWorked) vary by Gender?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=2.475): MAX(NumCompaniesWorked) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "MAX(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MIN(NumCompaniesWorked) vary by Gender?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=2.475): MIN(NumCompaniesWorked) grouped by Gender.",
+    "breakdown": "Gender",
+    "measure": "MIN(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does SUM(DailyRate) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=4.253): SUM(DailyRate) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "SUM(DailyRate)"
+  },
+  {
+    "question": "How does MEAN(DailyRate) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=4.253): MEAN(DailyRate) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "MEAN(DailyRate)"
+  },
+  {
+    "question": "How does COUNT(DailyRate) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=4.253): COUNT(DailyRate) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "COUNT(DailyRate)"
+  },
+  {
+    "question": "How does MAX(DailyRate) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=4.253): MAX(DailyRate) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "MAX(DailyRate)"
+  },
+  {
+    "question": "How does MIN(DailyRate) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=4.253): MIN(DailyRate) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "MIN(DailyRate)"
+  },
+  {
+    "question": "How does COUNT(PercentSalaryHike) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=3.887): COUNT(PercentSalaryHike) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "COUNT(PercentSalaryHike)"
+  },
+  {
+    "question": "How does SUM(Age) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=3.243): SUM(Age) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "SUM(Age)"
+  },
+  {
+    "question": "How does COUNT(Age) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=3.243): COUNT(Age) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "COUNT(Age)"
+  },
+  {
+    "question": "How does MAX(Age) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=3.243): MAX(Age) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "MAX(Age)"
+  },
+  {
+    "question": "How does MIN(Age) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=3.243): MIN(Age) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "MIN(Age)"
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): SUM(EmployeeCount) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "SUM(EmployeeCount)"
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MEAN(EmployeeCount) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "MEAN(EmployeeCount)"
+  },
+  {
+    "question": "How does COUNT(EmployeeCount) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): COUNT(EmployeeCount) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "COUNT(EmployeeCount)"
+  },
+  {
+    "question": "How does MAX(EmployeeCount) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MAX(EmployeeCount) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "MAX(EmployeeCount)"
+  },
+  {
+    "question": "How does MIN(EmployeeCount) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MIN(EmployeeCount) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "MIN(EmployeeCount)"
+  },
+  {
+    "question": "How does SUM(PercentSalaryHike) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=3.887): SUM(PercentSalaryHike) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "SUM(PercentSalaryHike)"
+  },
+  {
+    "question": "How does MEAN(PercentSalaryHike) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=3.887): MEAN(PercentSalaryHike) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "MEAN(PercentSalaryHike)"
+  },
+  {
+    "question": "How does MAX(PercentSalaryHike) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=3.887): MAX(PercentSalaryHike) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "MAX(PercentSalaryHike)"
+  },
+  {
+    "question": "How does MIN(PercentSalaryHike) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=3.887): MIN(PercentSalaryHike) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "MIN(PercentSalaryHike)"
+  },
+  {
+    "question": "How does SUM(HourlyRate) vary by JobInvolvement?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=3.362): SUM(HourlyRate) grouped by JobInvolvement.",
+    "breakdown": "JobInvolvement",
+    "measure": "SUM(HourlyRate)"
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by JobLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): SUM(EmployeeCount) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "SUM(EmployeeCount)"
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by JobLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MEAN(EmployeeCount) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(EmployeeCount)"
+  },
+  {
+    "question": "How does COUNT(EmployeeCount) vary by JobLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): COUNT(EmployeeCount) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "COUNT(EmployeeCount)"
+  },
+  {
+    "question": "How does MAX(EmployeeCount) vary by JobLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MAX(EmployeeCount) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "MAX(EmployeeCount)"
+  },
+  {
+    "question": "How does MIN(EmployeeCount) vary by JobLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MIN(EmployeeCount) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "MIN(EmployeeCount)"
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by JobLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1245.176): SUM(MonthlyIncome) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "SUM(MonthlyIncome)"
+  },
+  {
+    "question": "How does MEAN(MonthlyIncome) vary by JobLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1245.176): MEAN(MonthlyIncome) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does COUNT(MonthlyIncome) vary by JobLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1245.176): COUNT(MonthlyIncome) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "COUNT(MonthlyIncome)"
+  },
+  {
+    "question": "How does MAX(MonthlyIncome) vary by JobLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1245.176): MAX(MonthlyIncome) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "MAX(MonthlyIncome)"
+  },
+  {
+    "question": "How does MIN(MonthlyIncome) vary by JobLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1245.176): MIN(MonthlyIncome) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "MIN(MonthlyIncome)"
+  },
+  {
+    "question": "How does SUM(Age) vary by JobLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=388.072): SUM(Age) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "SUM(Age)"
+  },
+  {
+    "question": "How does MEAN(Age) vary by JobLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=388.072): MEAN(Age) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(Age)"
+  },
+  {
+    "question": "How does COUNT(Age) vary by JobLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=388.072): COUNT(Age) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "COUNT(Age)"
+  },
+  {
+    "question": "How does MAX(Age) vary by JobLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=388.072): MAX(Age) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "MAX(Age)"
+  },
+  {
+    "question": "How does MIN(Age) vary by JobLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=388.072): MIN(Age) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "MIN(Age)"
+  },
+  {
+    "question": "How does SUM(NumCompaniesWorked) vary by JobLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=48.226): SUM(NumCompaniesWorked) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "SUM(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MEAN(NumCompaniesWorked) vary by JobLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=48.226): MEAN(NumCompaniesWorked) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "MEAN(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does COUNT(NumCompaniesWorked) vary by JobLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=48.226): COUNT(NumCompaniesWorked) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "COUNT(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MAX(NumCompaniesWorked) vary by JobLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=48.226): MAX(NumCompaniesWorked) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "MAX(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MIN(NumCompaniesWorked) vary by JobLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=48.226): MIN(NumCompaniesWorked) grouped by JobLevel.",
+    "breakdown": "JobLevel",
+    "measure": "MIN(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by JobRole?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): SUM(EmployeeCount) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "SUM(EmployeeCount)"
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by JobRole?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MEAN(EmployeeCount) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(EmployeeCount)"
+  },
+  {
+    "question": "How does COUNT(EmployeeCount) vary by JobRole?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): COUNT(EmployeeCount) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "COUNT(EmployeeCount)"
+  },
+  {
+    "question": "How does MAX(EmployeeCount) vary by JobRole?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MAX(EmployeeCount) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "MAX(EmployeeCount)"
+  },
+  {
+    "question": "How does MIN(EmployeeCount) vary by JobRole?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MIN(EmployeeCount) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "MIN(EmployeeCount)"
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by JobRole?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1073.410): SUM(MonthlyIncome) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "SUM(MonthlyIncome)"
+  },
+  {
+    "question": "How does MEAN(MonthlyIncome) vary by JobRole?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1073.410): MEAN(MonthlyIncome) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does COUNT(MonthlyIncome) vary by JobRole?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1073.410): COUNT(MonthlyIncome) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "COUNT(MonthlyIncome)"
+  },
+  {
+    "question": "How does MAX(MonthlyIncome) vary by JobRole?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1073.410): MAX(MonthlyIncome) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "MAX(MonthlyIncome)"
+  },
+  {
+    "question": "How does MIN(MonthlyIncome) vary by JobRole?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1073.410): MIN(MonthlyIncome) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "MIN(MonthlyIncome)"
+  },
+  {
+    "question": "How does SUM(Age) vary by JobRole?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=271.477): SUM(Age) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "SUM(Age)"
+  },
+  {
+    "question": "How does MEAN(Age) vary by JobRole?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=271.477): MEAN(Age) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(Age)"
+  },
+  {
+    "question": "How does COUNT(Age) vary by JobRole?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=271.477): COUNT(Age) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "COUNT(Age)"
+  },
+  {
+    "question": "How does MAX(Age) vary by JobRole?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=271.477): MAX(Age) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "MAX(Age)"
+  },
+  {
+    "question": "How does MIN(Age) vary by JobRole?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=271.477): MIN(Age) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "MIN(Age)"
+  },
+  {
+    "question": "How does SUM(NumCompaniesWorked) vary by JobRole?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=42.746): SUM(NumCompaniesWorked) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "SUM(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MEAN(NumCompaniesWorked) vary by JobRole?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=42.746): MEAN(NumCompaniesWorked) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "MEAN(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does COUNT(NumCompaniesWorked) vary by JobRole?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=42.746): COUNT(NumCompaniesWorked) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "COUNT(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MAX(NumCompaniesWorked) vary by JobRole?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=42.746): MAX(NumCompaniesWorked) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "MAX(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MIN(NumCompaniesWorked) vary by JobRole?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=42.746): MIN(NumCompaniesWorked) grouped by JobRole.",
+    "breakdown": "JobRole",
+    "measure": "MIN(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): SUM(EmployeeCount) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "SUM(EmployeeCount)"
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MEAN(EmployeeCount) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "MEAN(EmployeeCount)"
+  },
+  {
+    "question": "How does COUNT(EmployeeCount) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): COUNT(EmployeeCount) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "COUNT(EmployeeCount)"
+  },
+  {
+    "question": "How does MAX(EmployeeCount) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MAX(EmployeeCount) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "MAX(EmployeeCount)"
+  },
+  {
+    "question": "How does MIN(EmployeeCount) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MIN(EmployeeCount) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "MIN(EmployeeCount)"
+  },
+  {
+    "question": "How does SUM(HourlyRate) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=8.324): SUM(HourlyRate) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "SUM(HourlyRate)"
+  },
+  {
+    "question": "How does MEAN(HourlyRate) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=8.324): MEAN(HourlyRate) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "MEAN(HourlyRate)"
+  },
+  {
+    "question": "How does COUNT(HourlyRate) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=8.324): COUNT(HourlyRate) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "COUNT(HourlyRate)"
+  },
+  {
+    "question": "How does MAX(HourlyRate) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=8.324): MAX(HourlyRate) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "MAX(HourlyRate)"
+  },
+  {
+    "question": "How does MIN(HourlyRate) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=8.324): MIN(HourlyRate) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "MIN(HourlyRate)"
+  },
+  {
+    "question": "How does SUM(DailyRate) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=5.329): SUM(DailyRate) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "SUM(DailyRate)"
+  },
+  {
+    "question": "How does MEAN(DailyRate) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=5.329): MEAN(DailyRate) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "MEAN(DailyRate)"
+  },
+  {
+    "question": "How does COUNT(DailyRate) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=5.329): COUNT(DailyRate) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "COUNT(DailyRate)"
+  },
+  {
+    "question": "How does MAX(DailyRate) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=5.329): MAX(DailyRate) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "MAX(DailyRate)"
+  },
+  {
+    "question": "How does MIN(DailyRate) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=5.329): MIN(DailyRate) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "MIN(DailyRate)"
+  },
+  {
+    "question": "How does SUM(NumCompaniesWorked) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=3.925): SUM(NumCompaniesWorked) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "SUM(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MEAN(NumCompaniesWorked) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=3.925): MEAN(NumCompaniesWorked) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "MEAN(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does COUNT(NumCompaniesWorked) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=3.925): COUNT(NumCompaniesWorked) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "COUNT(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MAX(NumCompaniesWorked) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=3.925): MAX(NumCompaniesWorked) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "MAX(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MIN(NumCompaniesWorked) vary by JobSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=3.925): MIN(NumCompaniesWorked) grouped by JobSatisfaction.",
+    "breakdown": "JobSatisfaction",
+    "measure": "MIN(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does SUM(Age) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=18.863): SUM(Age) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "SUM(Age)"
+  },
+  {
+    "question": "How does MEAN(Age) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=18.863): MEAN(Age) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "MEAN(Age)"
+  },
+  {
+    "question": "How does COUNT(Age) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=18.863): COUNT(Age) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "COUNT(Age)"
+  },
+  {
+    "question": "How does MAX(Age) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=18.863): MAX(Age) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "MAX(Age)"
+  },
+  {
+    "question": "How does MIN(Age) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=18.863): MIN(Age) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "MIN(Age)"
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): SUM(EmployeeCount) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "SUM(EmployeeCount)"
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MEAN(EmployeeCount) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "MEAN(EmployeeCount)"
+  },
+  {
+    "question": "How does COUNT(EmployeeCount) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): COUNT(EmployeeCount) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "COUNT(EmployeeCount)"
+  },
+  {
+    "question": "How does MAX(EmployeeCount) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MAX(EmployeeCount) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "MAX(EmployeeCount)"
+  },
+  {
+    "question": "How does MIN(EmployeeCount) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MIN(EmployeeCount) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "MIN(EmployeeCount)"
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=12.247): SUM(MonthlyIncome) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "SUM(MonthlyIncome)"
+  },
+  {
+    "question": "How does MEAN(MonthlyIncome) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=12.247): MEAN(MonthlyIncome) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does COUNT(MonthlyIncome) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=12.247): COUNT(MonthlyIncome) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "COUNT(MonthlyIncome)"
+  },
+  {
+    "question": "How does MAX(MonthlyIncome) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=12.247): MAX(MonthlyIncome) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "MAX(MonthlyIncome)"
+  },
+  {
+    "question": "How does MIN(MonthlyIncome) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=12.247): MIN(MonthlyIncome) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "MIN(MonthlyIncome)"
+  },
+  {
+    "question": "How does SUM(DailyRate) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=8.632): SUM(DailyRate) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "SUM(DailyRate)"
+  },
+  {
+    "question": "How does MEAN(DailyRate) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=8.632): MEAN(DailyRate) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "MEAN(DailyRate)"
+  },
+  {
+    "question": "How does COUNT(DailyRate) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=8.632): COUNT(DailyRate) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "COUNT(DailyRate)"
+  },
+  {
+    "question": "How does MAX(DailyRate) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=8.632): MAX(DailyRate) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "MAX(DailyRate)"
+  },
+  {
+    "question": "How does MIN(DailyRate) vary by MaritalStatus?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=8.632): MIN(DailyRate) grouped by MaritalStatus.",
+    "breakdown": "MaritalStatus",
+    "measure": "MIN(DailyRate)"
+  },
+  {
+    "question": "How does SUM(DistanceFromHome) vary by OverTime?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1.972): SUM(DistanceFromHome) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "SUM(DistanceFromHome)"
+  },
+  {
+    "question": "How does MEAN(DistanceFromHome) vary by OverTime?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1.972): MEAN(DistanceFromHome) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "MEAN(DistanceFromHome)"
+  },
+  {
+    "question": "How does COUNT(DistanceFromHome) vary by OverTime?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1.972): COUNT(DistanceFromHome) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "COUNT(DistanceFromHome)"
+  },
+  {
+    "question": "How does MAX(DistanceFromHome) vary by OverTime?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1.972): MAX(DistanceFromHome) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "MAX(DistanceFromHome)"
+  },
+  {
+    "question": "How does MIN(DistanceFromHome) vary by OverTime?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1.972): MIN(DistanceFromHome) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "MIN(DistanceFromHome)"
+  },
+  {
+    "question": "How does SUM(Age) vary by OverTime?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1.074): SUM(Age) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "SUM(Age)"
+  },
+  {
+    "question": "How does MEAN(Age) vary by OverTime?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1.074): MEAN(Age) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "MEAN(Age)"
+  },
+  {
+    "question": "How does COUNT(Age) vary by OverTime?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1.074): COUNT(Age) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "COUNT(Age)"
+  },
+  {
+    "question": "How does MAX(Age) vary by OverTime?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1.074): MAX(Age) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "MAX(Age)"
+  },
+  {
+    "question": "How does MIN(Age) vary by OverTime?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1.074): MIN(Age) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "MIN(Age)"
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by OverTime?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): SUM(EmployeeCount) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "SUM(EmployeeCount)"
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by OverTime?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MEAN(EmployeeCount) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "MEAN(EmployeeCount)"
+  },
+  {
+    "question": "How does COUNT(EmployeeCount) vary by OverTime?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): COUNT(EmployeeCount) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "COUNT(EmployeeCount)"
+  },
+  {
+    "question": "How does MAX(EmployeeCount) vary by OverTime?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MAX(EmployeeCount) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "MAX(EmployeeCount)"
+  },
+  {
+    "question": "How does MIN(EmployeeCount) vary by OverTime?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MIN(EmployeeCount) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "MIN(EmployeeCount)"
+  },
+  {
+    "question": "How does SUM(MonthlyRate) vary by OverTime?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=0.653): SUM(MonthlyRate) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "SUM(MonthlyRate)"
+  },
+  {
+    "question": "How does MEAN(MonthlyRate) vary by OverTime?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=0.653): MEAN(MonthlyRate) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "MEAN(MonthlyRate)"
+  },
+  {
+    "question": "How does COUNT(MonthlyRate) vary by OverTime?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=0.653): COUNT(MonthlyRate) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "COUNT(MonthlyRate)"
+  },
+  {
+    "question": "How does MAX(MonthlyRate) vary by OverTime?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=0.653): MAX(MonthlyRate) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "MAX(MonthlyRate)"
+  },
+  {
+    "question": "How does MIN(MonthlyRate) vary by OverTime?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=0.653): MIN(MonthlyRate) grouped by OverTime.",
+    "breakdown": "OverTime",
+    "measure": "MIN(MonthlyRate)"
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): SUM(EmployeeCount) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "SUM(EmployeeCount)"
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MEAN(EmployeeCount) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "MEAN(EmployeeCount)"
+  },
+  {
+    "question": "How does COUNT(EmployeeCount) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): COUNT(EmployeeCount) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "COUNT(EmployeeCount)"
+  },
+  {
+    "question": "How does MAX(EmployeeCount) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MAX(EmployeeCount) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "MAX(EmployeeCount)"
+  },
+  {
+    "question": "How does MIN(EmployeeCount) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MIN(EmployeeCount) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "MIN(EmployeeCount)"
+  },
+  {
+    "question": "How does SUM(PercentSalaryHike) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=580.308): SUM(PercentSalaryHike) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "SUM(PercentSalaryHike)"
+  },
+  {
+    "question": "How does MEAN(PercentSalaryHike) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=580.308): MEAN(PercentSalaryHike) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "MEAN(PercentSalaryHike)"
+  },
+  {
+    "question": "How does COUNT(PercentSalaryHike) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=580.308): COUNT(PercentSalaryHike) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "COUNT(PercentSalaryHike)"
+  },
+  {
+    "question": "How does MAX(PercentSalaryHike) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=580.308): MAX(PercentSalaryHike) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "MAX(PercentSalaryHike)"
+  },
+  {
+    "question": "How does MIN(PercentSalaryHike) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=580.308): MIN(PercentSalaryHike) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "MIN(PercentSalaryHike)"
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1.071): SUM(MonthlyIncome) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "SUM(MonthlyIncome)"
+  },
+  {
+    "question": "How does MEAN(MonthlyIncome) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1.071): MEAN(MonthlyIncome) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does COUNT(MonthlyIncome) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1.071): COUNT(MonthlyIncome) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "COUNT(MonthlyIncome)"
+  },
+  {
+    "question": "How does MAX(MonthlyIncome) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1.071): MAX(MonthlyIncome) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "MAX(MonthlyIncome)"
+  },
+  {
+    "question": "How does MIN(MonthlyIncome) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=1.071): MIN(MonthlyIncome) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "MIN(MonthlyIncome)"
+  },
+  {
+    "question": "How does SUM(DistanceFromHome) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=0.188): SUM(DistanceFromHome) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "SUM(DistanceFromHome)"
+  },
+  {
+    "question": "How does MEAN(DistanceFromHome) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=0.188): MEAN(DistanceFromHome) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "MEAN(DistanceFromHome)"
+  },
+  {
+    "question": "How does COUNT(DistanceFromHome) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=0.188): COUNT(DistanceFromHome) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "COUNT(DistanceFromHome)"
+  },
+  {
+    "question": "How does MAX(DistanceFromHome) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=0.188): MAX(DistanceFromHome) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "MAX(DistanceFromHome)"
+  },
+  {
+    "question": "How does MIN(DistanceFromHome) vary by PerformanceRating?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=0.188): MIN(DistanceFromHome) grouped by PerformanceRating.",
+    "breakdown": "PerformanceRating",
+    "measure": "MIN(DistanceFromHome)"
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): SUM(EmployeeCount) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "SUM(EmployeeCount)"
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MEAN(EmployeeCount) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "MEAN(EmployeeCount)"
+  },
+  {
+    "question": "How does COUNT(EmployeeCount) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): COUNT(EmployeeCount) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "COUNT(EmployeeCount)"
+  },
+  {
+    "question": "How does MAX(EmployeeCount) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MAX(EmployeeCount) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "MAX(EmployeeCount)"
+  },
+  {
+    "question": "How does MIN(EmployeeCount) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MIN(EmployeeCount) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "MIN(EmployeeCount)"
+  },
+  {
+    "question": "How does SUM(NumCompaniesWorked) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=6.642): SUM(NumCompaniesWorked) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "SUM(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MEAN(NumCompaniesWorked) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=6.642): MEAN(NumCompaniesWorked) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "MEAN(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does COUNT(NumCompaniesWorked) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=6.642): COUNT(NumCompaniesWorked) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "COUNT(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MAX(NumCompaniesWorked) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=6.642): MAX(NumCompaniesWorked) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "MAX(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does MIN(NumCompaniesWorked) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=6.642): MIN(NumCompaniesWorked) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "MIN(NumCompaniesWorked)"
+  },
+  {
+    "question": "How does SUM(PercentSalaryHike) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=4.263): SUM(PercentSalaryHike) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "SUM(PercentSalaryHike)"
+  },
+  {
+    "question": "How does MEAN(PercentSalaryHike) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=4.263): MEAN(PercentSalaryHike) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "MEAN(PercentSalaryHike)"
+  },
+  {
+    "question": "How does SUM(HourlyRate) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=3.722): SUM(HourlyRate) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "SUM(HourlyRate)"
+  },
+  {
+    "question": "How does MEAN(HourlyRate) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=3.722): MEAN(HourlyRate) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "MEAN(HourlyRate)"
+  },
+  {
+    "question": "How does COUNT(HourlyRate) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=3.722): COUNT(HourlyRate) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "COUNT(HourlyRate)"
+  },
+  {
+    "question": "How does MAX(HourlyRate) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=3.722): MAX(HourlyRate) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "MAX(HourlyRate)"
+  },
+  {
+    "question": "How does MIN(HourlyRate) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=3.722): MIN(HourlyRate) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "MIN(HourlyRate)"
+  },
+  {
+    "question": "How does SUM(MonthlyRate) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=3.511): SUM(MonthlyRate) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "SUM(MonthlyRate)"
+  },
+  {
+    "question": "How does MEAN(MonthlyRate) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=3.511): MEAN(MonthlyRate) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "MEAN(MonthlyRate)"
+  },
+  {
+    "question": "How does COUNT(MonthlyRate) vary by RelationshipSatisfaction?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=3.511): COUNT(MonthlyRate) grouped by RelationshipSatisfaction.",
+    "breakdown": "RelationshipSatisfaction",
+    "measure": "COUNT(MonthlyRate)"
+  },
+  {
+    "question": "How does SUM(Age) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=17.041): SUM(Age) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "SUM(Age)"
+  },
+  {
+    "question": "How does MEAN(Age) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=17.041): MEAN(Age) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "MEAN(Age)"
+  },
+  {
+    "question": "How does COUNT(Age) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=17.041): COUNT(Age) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "COUNT(Age)"
+  },
+  {
+    "question": "How does MAX(Age) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=17.041): MAX(Age) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "MAX(Age)"
+  },
+  {
+    "question": "How does MIN(Age) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=17.041): MIN(Age) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "MIN(Age)"
+  },
+  {
+    "question": "How does SUM(EmployeeCount) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): SUM(EmployeeCount) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "SUM(EmployeeCount)"
+  },
+  {
+    "question": "How does MEAN(EmployeeCount) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MEAN(EmployeeCount) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "MEAN(EmployeeCount)"
+  },
+  {
+    "question": "How does COUNT(EmployeeCount) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): COUNT(EmployeeCount) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "COUNT(EmployeeCount)"
+  },
+  {
+    "question": "How does MAX(EmployeeCount) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MAX(EmployeeCount) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "MAX(EmployeeCount)"
+  },
+  {
+    "question": "How does MIN(EmployeeCount) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=nan): MIN(EmployeeCount) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "MIN(EmployeeCount)"
+  },
+  {
+    "question": "How does SUM(MonthlyIncome) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=11.484): SUM(MonthlyIncome) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "SUM(MonthlyIncome)"
+  },
+  {
+    "question": "How does MEAN(MonthlyIncome) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=11.484): MEAN(MonthlyIncome) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "MEAN(MonthlyIncome)"
+  },
+  {
+    "question": "How does COUNT(MonthlyIncome) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=11.484): COUNT(MonthlyIncome) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "COUNT(MonthlyIncome)"
+  },
+  {
+    "question": "How does MAX(MonthlyIncome) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=11.484): MAX(MonthlyIncome) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "MAX(MonthlyIncome)"
+  },
+  {
+    "question": "How does MIN(MonthlyIncome) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=11.484): MIN(MonthlyIncome) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "MIN(MonthlyIncome)"
+  },
+  {
+    "question": "How does SUM(DistanceFromHome) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=8.127): SUM(DistanceFromHome) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "SUM(DistanceFromHome)"
+  },
+  {
+    "question": "How does MEAN(DistanceFromHome) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=8.127): MEAN(DistanceFromHome) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "MEAN(DistanceFromHome)"
+  },
+  {
+    "question": "How does COUNT(DistanceFromHome) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=8.127): COUNT(DistanceFromHome) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "COUNT(DistanceFromHome)"
+  },
+  {
+    "question": "How does MAX(DistanceFromHome) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=8.127): MAX(DistanceFromHome) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "MAX(DistanceFromHome)"
+  },
+  {
+    "question": "How does MIN(DistanceFromHome) vary by StockOptionLevel?",
+    "reason": "Statistics-based analysis (Kruskal-Wallis score=8.127): MIN(DistanceFromHome) grouped by StockOptionLevel.",
+    "breakdown": "StockOptionLevel",
+    "measure": "MIN(DistanceFromHome)"
+  }
+]

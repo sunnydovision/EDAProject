@@ -1,35 +1,35 @@
 Group,Metric,QUIS,Baseline,ONLYSTATS,Winner,Description
-Core & Efficiency,0. Total insights,99,75,85,N/A,Total insight cards generated
+Core & Efficiency,0. Total insights,99,75,113,N/A,Total insight cards generated
 Core & Efficiency,1. Faithfulness,100.0%,100.0%,100.0%,Tie,Correctness - đúng dữ liệu
-Core & Efficiency,2. Statistical Significance (Overall),83.4%,73.2%,76.2%,QUIS,Validity - pattern-averaged (fair comparison)
-Core & Efficiency,2a. Significance — TREND,100.0% (2),100.0% (16),100.0% (10),Tie,Validity - TREND pattern
-Core & Efficiency,2a. Significance — OUTSTANDING_VALUE,40.0% (30),92.9% (14),41.7% (24),Baseline,Validity - OUTSTANDING_VALUE pattern
-Core & Efficiency,2a. Significance — ATTRIBUTION,96.0% (25),N/A,100.0% (24),ONLYSTATS,Validity - ATTRIBUTION pattern
-Core & Efficiency,2a. Significance — DISTRIBUTION_DIFFERENCE,97.4% (39),100.0% (4),63.0% (27),Baseline,Validity - DISTRIBUTION_DIFFERENCE pattern
+Core & Efficiency,2. Statistical Significance (Overall),83.4%,73.2%,80.7%,QUIS,Validity - pattern-averaged (fair comparison)
+Core & Efficiency,2a. Significance — TREND,100.0% (2),100.0% (16),100.0% (19),Tie,Validity - TREND pattern
+Core & Efficiency,2a. Significance — OUTSTANDING_VALUE,40.0% (30),92.9% (14),39.5% (38),Baseline,Validity - OUTSTANDING_VALUE pattern
+Core & Efficiency,2a. Significance — ATTRIBUTION,96.0% (25),N/A,100.0% (32),ONLYSTATS,Validity - ATTRIBUTION pattern
+Core & Efficiency,2a. Significance — DISTRIBUTION_DIFFERENCE,97.4% (39),100.0% (4),83.3% (24),Baseline,Validity - DISTRIBUTION_DIFFERENCE pattern
 Core & Efficiency,2b. Pattern Coverage,4/4 (100%),3/4 (75%),4/4 (100%),Tie,Patterns with ≥1 structurally valid insight / 4 total patterns
 Core & Efficiency,2b1. Uncovered Patterns,—,ATTRIBUTION,—,N/A,Patterns with 0 valid insights (breakdown type mismatch)
-Core & Efficiency,3. Insight Novelty,79.8%,80.0%,72.9%,Baseline,Usefulness - khác baseline (from pairwise comparison results)
-Core & Efficiency,4a. Diversity — Semantic,0.479,0.388,0.439,QUIS,Semantic diversity (breakdown|measure|pattern|subspace)
-Core & Efficiency,4b. Diversity — Subspace Entropy,2.259,1.373,2.027,QUIS,Entropy of subspace filter columns used
-Core & Efficiency,4c. Diversity — Value,0.872,0.312,0.866,QUIS,"Unique (column, value) pairs in subspace / total"
+Core & Efficiency,3. Insight Novelty,70.7%,80.0%,61.9%,Baseline,Usefulness - khác baseline (from pairwise comparison results)
+Core & Efficiency,4a. Diversity — Semantic,0.479,0.388,0.473,QUIS,Semantic diversity (breakdown|measure|pattern|subspace)
+Core & Efficiency,4b. Diversity — Subspace Entropy,2.259,1.373,1.752,QUIS,Entropy of subspace filter columns used
+Core & Efficiency,4c. Diversity — Value,0.872,0.312,0.786,QUIS,"Unique (column, value) pairs in subspace / total"
 Core & Efficiency,4d. Diversity — Dedup Rate,0,0,0,Tie,Duplicate rate — lower is better
-Subspace Deep-dive,7. Subspace Rate,86/99 (86.9%),32/75 (42.7%),67/85 (78.8%),QUIS,Insights with subspace filter / total
+Subspace Deep-dive,7. Subspace Rate,86/99 (86.9%),32/75 (42.7%),70/113 (61.9%),QUIS,Insights with subspace filter / total
 Subspace Deep-dive,7a. Subspace Faithfulness,100.0%,100.0%,100.0%,Tie,Faithfulness restricted to subspace insights
-Subspace Deep-dive,7b. Subspace Significance,44.0%,75.0%,50.0%,Baseline,Significance restricted to subspace insights
-Subspace Deep-dive,8. Score Uplift from Subspace,"Δ=-0.043, x=0.885","Δ=-0.135, x=0.796","Δ=-0.126, x=0.726",QUIS,Δ = mean(score|subspace) - mean(score|no-subspace)
-Subspace Deep-dive,9. Simpson's Paradox Rate (SPR),27.9% (0/24 sig),25.0% (0/8 sig),37.3% (0/25 sig),ONLYSTATS,Rate of statistically significant pattern reversals (p<0.05) — true Simpson's Paradox cases
-Intent Layer Quality,"10. Total (B,M) pairs evaluated",26/26,11/24,31/31,N/A,Total unique breakdown-measure pairs (categorical breakdowns only for NMI/Interestingness)
-Intent Layer Quality,10a. BM — NMI mean,0.094,0.331,0.217,Baseline,Mean NMI over categorical-B pairs
-Intent Layer Quality,10b. BM — Interestingness,0.077,0.090,0.068,Baseline,Mean Coverage×EffectSize over categorical-B pairs
+Subspace Deep-dive,7b. Subspace Significance,44.0%,75.0%,39.1%,Baseline,Significance restricted to subspace insights
+Subspace Deep-dive,8. Score Uplift from Subspace,"Δ=-0.043, x=0.885","Δ=-0.135, x=0.796","Δ=-0.122, x=0.715",QUIS,Δ = mean(score|subspace) - mean(score|no-subspace)
+Subspace Deep-dive,9. Simpson's Paradox Rate (SPR),27.9% (0/24 sig),25.0% (0/8 sig),42.9% (0/30 sig),ONLYSTATS,Rate of statistically significant pattern reversals (p<0.05) — true Simpson's Paradox cases
+Intent Layer Quality,"10. Total (B,M) pairs evaluated",26/26,11/24,45/45,N/A,Total unique breakdown-measure pairs (categorical breakdowns only for NMI/Interestingness)
+Intent Layer Quality,10a. BM — NMI mean,0.094,0.331,0.229,Baseline,Mean NMI over categorical-B pairs
+Intent Layer Quality,10b. BM — Interestingness,0.077,0.090,0.072,Baseline,Mean Coverage×EffectSize over categorical-B pairs
 Intent Layer Quality,10c. BM — Actionability,1.000,0.458,1.000,Tie,% pairs with categorical breakdown
-Intent Layer Quality,10d. BM — Diversity,0.263,0.320,0.365,ONLYSTATS,"Unique (B,M) pairs / total insights"
+Intent Layer Quality,10d. BM — Diversity,0.263,0.320,0.398,ONLYSTATS,"Unique (B,M) pairs / total insights"
 Intent Layer Quality,11a. Question Semantic Diversity,0.493,0.548,N/A,Baseline,1 - mean cosine sim of question embeddings (within-system); N/A for ONLYSTATS (template)
 Intent Layer Quality,11b. Question Specificity,9.15 ± 1.40,12.75 ± 5.03,N/A,Baseline,Avg word count per question (mean ± std) — higher = more specific; N/A for ONLYSTATS (template)
 Intent Layer Quality,11c. Question–Insight Alignment,0.583,0.579,N/A,Tie,"Mean cosine(Embed(question), Embed(insight)) — control metric; N/A for ONLYSTATS (template)"
-Intent Layer Quality,11d. Question Novelty (cross-system),84.8%,100.0%,N/A,Baseline,% of questions with cross-system max cosine sim < 0.85 (from pairwise comparison results)
+Intent Layer Quality,11d. Question Novelty (cross-system),89.9%,100.0%,N/A,Baseline,% of questions with cross-system max cosine sim < 0.85 (from pairwise comparison results)
 Intent Layer Quality,11e. Reason–Insight Coherence,0.553,0.527,N/A,QUIS,"Mean cosine(Embed(reason), Embed(insight)) — reason grounding"
-Intent Layer Quality,12. Structural Validity Rate,99.0% (98/99),45.3% (34/75),83.5% (71/85),QUIS,% insights with breakdown type valid for their pattern — measures QuGen structural understanding
-Intent Layer Quality,12a. SVR — OUTSTANDING_VALUE,30/30,14/14,24/24,Tie,Structural validity for OUTSTANDING_VALUE pattern
-Intent Layer Quality,12a. SVR — TREND,2/2,16/33,10/10,Tie,Structural validity for TREND pattern
-Intent Layer Quality,12a. SVR — ATTRIBUTION,27/27,0/13,20/24,QUIS,Structural validity for ATTRIBUTION pattern
-Intent Layer Quality,12a. SVR — DISTRIBUTION_DIFFERENCE,39/40,4/15,17/27,QUIS,Structural validity for DISTRIBUTION_DIFFERENCE pattern
+Intent Layer Quality,12. Structural Validity Rate,99.0% (98/99),45.3% (34/75),96.5% (109/113),QUIS,% insights with breakdown type valid for their pattern — measures QuGen structural understanding
+Intent Layer Quality,12a. SVR — OUTSTANDING_VALUE,30/30,14/14,38/38,Tie,Structural validity for OUTSTANDING_VALUE pattern
+Intent Layer Quality,12a. SVR — TREND,2/2,16/33,19/19,Tie,Structural validity for TREND pattern
+Intent Layer Quality,12a. SVR — ATTRIBUTION,27/27,0/13,32/32,Tie,Structural validity for ATTRIBUTION pattern
+Intent Layer Quality,12a. SVR — DISTRIBUTION_DIFFERENCE,39/40,4/15,20/24,QUIS,Structural validity for DISTRIBUTION_DIFFERENCE pattern
