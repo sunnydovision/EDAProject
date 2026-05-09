@@ -16,8 +16,7 @@
 
 % Author information removed for double-blind review.
 \author{\IEEEauthorblockN{Anonymous Authors}
-\IEEEauthorblockA{Anonymous Institution\thanks{Code and evaluation scripts: \protect\url{https://github.com/sunnydovision/EDAProject}}}
-}
+\IEEEauthorblockA{Anonymous Institution}}
 
 \maketitle
 
@@ -49,6 +48,15 @@ Our contributions are:
 \item We prove that ISGEN's beam search, guided by QUGEN's insight cards, achieves better subspace coverage (QUIS's 84.4\% vs Baselines' 37.4\%) and quality (Score Uplift $x$=1.067, SPR 30.1\%).
 \item We show that structural validity is a prerequisite for meaningful subspace discovery: the LLM Baseline, with only 40.0\% SVR, produces zero significant paradoxes across all datasets, while QUIS produces significant paradoxes in two out of three.
 \end{itemize}
+
+Figure~\ref{fig:framework} provides an overview of our study framework, showing the three AutoEDA systems we evaluate (QUIS, ONLYSTATS, and LLM Agentic Baseline) and our evaluation framework with 9 metrics organized into five groups.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\columnwidth]{model_comparison.png}
+\caption{Overview of the study: three evaluated AutoEDA systems (QUIS, ONLYSTATS, LLM Agentic Baseline) and our evaluation framework with 9 metrics.}
+\label{fig:framework}
+\end{figure}
 
 \section{Related Work}
 
@@ -275,7 +283,6 @@ R-I Coherence & \textbf{0.553} & 0.527 & N/A \\
 \end{center}
 \end{table}
 }
-\vspace{-4pt}
 
 Table~\ref{tab:adidas_results} shows that QUIS leads on SVR (99.0\% vs 45.3\%) and Subspace Rate (86.9\%), while ONLYSTATS accomplishes the highest raw SPR (42.9\%). On Adidas all systems produce zero statistically significant paradoxes, proving that patterns on this dataset do not meet the strict dual-significance threshold.
 
@@ -305,7 +312,6 @@ R-I Coherence & 0.468 & \textbf{0.519} & N/A \\
 \end{center}
 \end{table}
 }
-\vspace{-4pt}
 
 Table~\ref{tab:employee_results} shows that QUIS achieves the strongest Score Uplift ($x$=1.574) and is the only system with significant paradoxes (SPR 30.2\%, 1 significant). ONLYSTATS achieves 21.3\% SPR with zero significant paradoxes, showing that exhaustive enumeration does not guarantee subspace quality on datasets with many weak global patterns.
 
@@ -335,7 +341,6 @@ R-I Coherence & \textbf{0.557} & 0.497 & N/A \\
 \end{center}
 \end{table}
 }
-\vspace{-4pt}
 
 Table~\ref{tab:online_results} shows that ONLYSTATS achieves the highest Statistical Significance (62.8\%) and Score Uplift ($x$=1.232), while the Baseline achieves the highest raw Score Uplift ($x$=1.048) due to its smaller insight set concentrating on globally stronger patterns. QUIS leads on Subspace Rate (79.2\%). All three systems achieve raw SPR (31--40\%); QUIS produces one significant paradox, while ONLYSTATS and Baseline find none.
 
