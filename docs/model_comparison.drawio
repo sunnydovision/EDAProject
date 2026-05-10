@@ -55,7 +55,7 @@
             <mxPoint x="250" y="150" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="LRyuDUmodgKhaVRyc3-c-164" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1;fontSize=14;strokeWidth=1;" value="ONLYSTATS" vertex="1">
+        <mxCell id="LRyuDUmodgKhaVRyc3-c-164" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1;fontSize=14;strokeWidth=1;" value="ONLYSTATS (ablation)" vertex="1">
           <mxGeometry height="480" width="260" x="310" y="40" as="geometry" />
         </mxCell>
         <mxCell id="LRyuDUmodgKhaVRyc3-c-165" parent="LRyuDUmodgKhaVRyc3-c-164" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Input: CSV" vertex="1">
@@ -115,7 +115,7 @@
         <mxCell id="LRyuDUmodgKhaVRyc3-c-178" parent="LRyuDUmodgKhaVRyc3-c-176" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Data Frame" vertex="1">
           <mxGeometry height="40" width="160" x="40" y="100" as="geometry" />
         </mxCell>
-        <mxCell id="LRyuDUmodgKhaVRyc3-c-179" parent="LRyuDUmodgKhaVRyc3-c-176" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Basic Stats&lt;br&gt;- Profiling (1)&lt;br&gt;- Quality (2)&lt;br&gt;- Statistic Agent (3)" vertex="1">
+        <mxCell id="LRyuDUmodgKhaVRyc3-c-179" parent="LRyuDUmodgKhaVRyc3-c-176" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Basic Stats&lt;br&gt;- Profiling Agent (1)&lt;br&gt;- Quality Agent (2)&lt;br&gt;- Statistic Agent (3)" vertex="1">
           <mxGeometry height="60" width="200" x="20" y="160" as="geometry" />
         </mxCell>
         <mxCell id="LRyuDUmodgKhaVRyc3-c-180" parent="LRyuDUmodgKhaVRyc3-c-176" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Discovery of Analytical Directions&lt;br&gt;- Pattern Discovery Agent (4)" vertex="1">
@@ -168,7 +168,7 @@
             <mxPoint x="9" y="-9" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="LRyuDUmodgKhaVRyc3-c-190" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#b0e3e6;strokeColor=#0e8088;fontStyle=1;fontSize=18;strokeWidth=1;" value="Evaluation Framework (Our Contribution)" vertex="1">
+        <mxCell id="LRyuDUmodgKhaVRyc3-c-190" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#b0e3e6;strokeColor=#0e8088;fontStyle=1;fontSize=18;strokeWidth=1;" value="Evaluation Framework" vertex="1">
           <mxGeometry height="220" width="820" x="20" y="560" as="geometry">
             <mxRectangle height="40" width="370" x="60" y="580" as="alternateBounds" />
           </mxGeometry>
