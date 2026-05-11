@@ -46,8 +46,8 @@ Our contributions are:
 
 \begin{itemize}
 \item We introduce a reproducible automatic diagnostic framework with 9 metrics covering correctness, structural validity, statistical quality, subspace exploration, and question-insight alignment---enabling systematic comparison of AutoEDA systems without human raters.
-\item Framework validation across three datasets reveals that structured intermediate representations substantially improve structural validity (94.0\% vs 40.0\%) and support broader subspace discovery (84.4\% vs 37.4\%).
-\item Framework diagnostics establish that structural validity is a prerequisite for meaningful subspace analysis: systems with invalid breakdowns produce zero significant paradoxes, while structured approaches discover them in two of three datasets.
+\item We demonstrate through cross-dataset validation that structured intermediate representations substantially improve structural validity (94.0\% vs 40.0\%) and enable broader, higher-quality subspace exploration (84.4\% vs 37.4\% Subspace Rate, $x$=1.067 Score Uplift, with significant paradoxes discovered in 2 of 3 datasets).
+\item Framework diagnostics establish that structural validity is a prerequisite for meaningful subspace analysis: systems with invalid breakdowns cannot produce statistically significant paradoxes.
 \end{itemize}
 
 Figure~\ref{fig:framework} provides an overview of our study framework, showing the three AutoEDA systems we evaluate (QUIS-Style Structured Pipeline, ONLYSTATS, and LLM Agentic Baseline) and our evaluation framework with 9 metrics organized into five groups.
@@ -194,7 +194,7 @@ where $R_i$ is the reason text for insight $i$. This metric is not applicable to
 
 \section{Experimental Setup}
 
-We use three datasets summarized in Table~\ref{tab:datasets}: Adidas US Sales (Chaudhari, 2022) \cite{adidas}, IBM Employee Attrition (Subhash, 2017) \cite{ibm}, and Online Sales (Verma, 2024) \cite{online}. We use OpenAI's \texttt{gpt-5.4} for QUIS and the LLM Baseline. The original paper used Llama-3-70B-instruct; our model may not produce exact numbers but does not affect comparability since all systems share the same evaluation framework. We set \texttt{beam\_width = 100}, matching the original paper's configuration. For text similarity metrics, we use \texttt{all-MiniLM-L6-v2} from Sentence-BERT (Reimers and Gurevych, 2019) \cite{sbert}.
+We use three datasets summarized in Table~\ref{tab:datasets}: Adidas US Sales (Chaudhari, 2022) \cite{adidas}, IBM Employee Attrition (Subhash, 2017) \cite{ibm}, and Online Sales (Verma, 2024) \cite{online}. We use OpenAI's \texttt{gpt-5.4} for the QUIS-Style Pipeline and the LLM Baseline. The original paper used Llama-3-70B-instruct; our model may not produce exact numbers but does not affect comparability since all systems share the same evaluation framework. We set \texttt{beam\_width = 100}, matching the original paper's configuration. For text similarity metrics, we use \texttt{all-MiniLM-L6-v2} from Sentence-BERT (Reimers and Gurevych, 2019) \cite{sbert}.
 
 \section{Results}
 
@@ -257,7 +257,7 @@ Control & 9. R-I Coherence & \textbf{0.526} & 0.514 & N/A & \textbf{QUIS} \\
 \renewcommand{\arraystretch}{0.9}
 \setlength{\belowcaptionskip}{-10pt}
 \begin{table}[!ht]
-\caption{Results on Adidas US Sales (QUIS=99, Base=75, ONLY=113)}
+\caption{Results on Adidas US Sales (QUIS-Style=99, Base=75, ONLY=113)}
 \begin{center}
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{|l|c|c|c|}
@@ -288,7 +288,7 @@ Table~\ref{tab:adidas_results} shows that the structured pipeline leads on SVR (
 \renewcommand{\arraystretch}{0.9}
 \setlength{\belowcaptionskip}{-10pt}
 \begin{table}[!ht]
-\caption{Results on IBM Employee Attrition (QUIS=133, Base=81, ONLY=125)}
+\caption{Results on IBM Employee Attrition (QUIS-Style=133, Base=81, ONLY=125)}
 \begin{center}
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{|l|c|c|c|}
@@ -317,7 +317,7 @@ Table~\ref{tab:employee_results} shows that the structured pipeline achieves the
 \renewcommand{\arraystretch}{0.9}
 \setlength{\belowcaptionskip}{-10pt}
 \begin{table}[!ht]
-\caption{Results on Online Sales (QUIS=106, Base=61, ONLY=114)}
+\caption{Results on Online Sales (QUIS-Style=106, Base=61, ONLY=114)}
 \begin{center}
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{|l|c|c|c|}
