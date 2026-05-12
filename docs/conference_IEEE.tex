@@ -24,7 +24,7 @@
 \maketitle
 
 \begin{abstract}
-Human evaluation remains the dominant way to assess automated exploratory data analysis (AutoEDA) systems, but it is expensive, subjective, and difficult to reproduce. We introduce a reproducible automatic diagnostic framework for evaluating AutoEDA without human raters. The framework uses 9 metrics covering correctness, structural validity, statistical quality, subspace exploration, and question-insight alignment. We apply it to three representative pipelines: a QUIS-style structured question-guided system, ONLYSTATS as a statistics-based ablation, and a free-form agentic LLM pipeline. Across Adidas US Sales, IBM Employee Attrition, and Online Sales, the framework shows that structured intermediate representations reduce column-type errors and support broader subspace exploration. The QUIS-style pipeline achieves 94.0\% average structural validity, compared with 40.0\% for the agentic LLM, and discovers more subspace insights on average (84.4\% vs. 37.4\%). It also attains the highest Score Uplift ($x$=1.067) and discovers significant paradoxes in 2 of 3 datasets. Overall, the case study shows that schema-aware, question-guided representations improve the reliability of AutoEDA outputs and the breadth of subgroup discovery. More broadly, the paper contributes a reusable diagnostic framework for reproducible comparison of AutoEDA systems.
+Human evaluation remains the dominant way to assess automated exploratory data analysis (AutoEDA) systems, but it is expensive, subjective, and difficult to reproduce. We introduce a reproducible automatic diagnostic framework that exposes structural and statistical failures in AutoEDA systems—failures invisible to human evaluation, which focuses on output fluency rather than structural rigor. The framework uses 9 metrics covering correctness, structural validity, statistical quality, subspace exploration, and question-insight alignment. We apply it to three representative pipelines: a QUIS-style structured question-guided system, ONLYSTATS as a statistics-based ablation, and a free-form agentic LLM pipeline. Across Adidas US Sales, IBM Employee Attrition, and Online Sales, the framework shows that structured intermediate representations reduce column-type errors and support broader subspace exploration. The QUIS-style pipeline achieves 94.0\% average structural validity, compared with 40.0\% for the agentic LLM, and discovers more subspace insights on average (84.4\% vs. 37.4\%). It also attains the highest Score Uplift ($x$=1.067) and discovers significant paradoxes in 2 of 3 datasets. Overall, the case study shows that schema-aware, question-guided representations improve the reliability of AutoEDA outputs and the breadth of subgroup discovery. More broadly, the paper contributes a reusable diagnostic framework for reproducible comparison of AutoEDA systems.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -45,7 +45,7 @@ The answer is consistent across our case study. The framework surfaces large, re
 Our contributions are:
 
 \begin{itemize}
-\item We introduce a reproducible automatic diagnostic framework with 9 metrics covering correctness, structural validity, statistical quality, subspace exploration, and question-insight alignment, and validate it through three purposefully designed systems (structured question-guided, statistics-based ablation, and free-form agentic LLM)---enabling systematic comparison of AutoEDA architectures without human raters.
+\item We introduce a reproducible automatic diagnostic framework with 9 metrics covering correctness, structural validity, statistical quality, subspace exploration, and question-insight alignment, and validate it through three purposefully designed systems (structured question-guided, statistics-based ablation, and free-form agentic LLM)---enabling systematic measurement of structural and statistical properties that human evaluation often overlooks, while providing reproducible comparison of AutoEDA architectures.
 \item We show through cross-dataset validation that the framework reliably differentiates AutoEDA architectures without human raters, surfacing a 54-point structural-validity gap and a 47-point Subspace Rate gap between structured and free-form designs (94.0\% vs 40.0\% SVR; 84.4\% vs 37.4\% Subspace Rate; $x$=1.067 Score Uplift; significant paradoxes detected in 2 of 3 datasets).
 \item Framework diagnostics establish that structural validity is a prerequisite for meaningful subspace analysis: systems with invalid breakdowns cannot produce statistically significant paradoxes.
 \end{itemize}
@@ -247,6 +247,9 @@ Control & 9. R-I Coherence & \textbf{0.526} & 0.514 & N/A & \textbf{QUIS-style} 
 \hline
 \end{tabular}
 \label{tab:avg_results}
+\end{center}
+\begin{center}
+\scriptsize{\textit{Note: The 'Winner' column illustrates metric discrimination, not system recommendation.}}
 \end{center}
 \end{table*}
 }
