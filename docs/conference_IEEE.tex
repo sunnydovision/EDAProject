@@ -40,17 +40,17 @@ We introduce a reproducible automatic diagnostic framework for evaluating AutoED
 
 We apply the framework across three datasets (Adidas US Sales, IBM Employee Attrition, and Online Sales) to answer two questions: Can automatic diagnostics support meaningful comparison of AutoEDA systems without human raters? And what do they reveal about the design principles underlying structured versus free-form approaches?
 
-The answer is consistent across our case study. Structured intermediate representations improve structural validity and support broader subspace exploration. The QUIS-style pipeline achieves much higher structural validity than the free-form agentic LLM and more consistently discovers informative subgroup patterns. We do not claim that automatic metrics replace human evaluation in all settings; instead, they provide a reproducible diagnostic layer for studying failure modes and system differences.
+The answer is consistent across our case study. The framework surfaces large, repeatable gaps in structural validity and subspace exploration between structured and free-form designs, showing that automatic diagnostics can meaningfully separate AutoEDA architectures without human raters. We do not claim that automatic metrics replace human evaluation in all settings; instead, they provide a reproducible diagnostic layer for studying failure modes and system differences.
 
 Our contributions are:
 
 \begin{itemize}
 \item We introduce a reproducible automatic diagnostic framework with 9 metrics covering correctness, structural validity, statistical quality, subspace exploration, and question-insight alignment, and validate it through three purposefully designed systems (structured question-guided, statistics-based ablation, and free-form agentic LLM)---enabling systematic comparison of AutoEDA architectures without human raters.
-\item We demonstrate through cross-dataset validation that structured intermediate representations substantially improve structural validity (94.0\% vs 40.0\%) and enable broader, higher-quality subspace exploration (84.4\% vs 37.4\% Subspace Rate, $x$=1.067 Score Uplift, with significant paradoxes discovered in 2 of 3 datasets).
+\item We show through cross-dataset validation that the framework reliably differentiates AutoEDA architectures without human raters, surfacing a 54-point structural-validity gap and a 47-point Subspace Rate gap between structured and free-form designs (94.0\% vs 40.0\% SVR; 84.4\% vs 37.4\% Subspace Rate; $x$=1.067 Score Uplift; significant paradoxes detected in 2 of 3 datasets).
 \item Framework diagnostics establish that structural validity is a prerequisite for meaningful subspace analysis: systems with invalid breakdowns cannot produce statistically significant paradoxes.
 \end{itemize}
 
-Figure~\ref{fig:framework} provides an overview of our study framework, showing the three AutoEDA systems we evaluate (QUIS-Style Structured Pipeline, ONLYSTATS, and Free-Form Agentic LLM) and our evaluation framework with 9 metrics organized into five groups.
+Figure~\ref{fig:framework} provides an overview of our study framework, showing the three AutoEDA systems we evaluate (Structured Question-Guided Pipeline, ONLYSTATS, and Free-Form Agentic LLM) and our evaluation framework with 9 metrics organized into five groups.
 
 \begin{figure}[htbp]
 \centering
@@ -183,7 +183,7 @@ The formula is:
 
 where $Q_i$ is the question text, $T_i$ is the insight text, and $\text{emb}(\cdot)$ uses Sentence-BERT embeddings \cite{sbert}.
 
-\textit{Reason-Insight Coherence} measures how close the reason field is to the final insight. This metric is only applicable to the QUIS-style pipeline and LLM baseline because ONLYSTATS uses template-based questions without reason fields.
+\textit{Reason-Insight Coherence} measures how close the reason field is to the final insight. This metric is only applicable to the structured pipeline and the agentic LLM because ONLYSTATS uses template-based questions without reason fields.
 
 The formula is:
 \begin{equation}
@@ -380,7 +380,7 @@ Q-I Alignment is similar across the structured pipeline (0.540) and agentic LLM 
 
 \subsection{Key Findings}
 
-Framework diagnostics reveal three systematic differences. First, programmatic constraints are necessary for structural validity: structured approaches achieve over 90\% SVR while prompt-based reasoning achieves only 40\%, showing that LLMs cannot reliably follow structural constraints through prompting. The constraint itself matters, not the generation method---ONLYSTATS achieves high SVR through statistical filtering, not LLM reasoning. This has direct implications: AutoEDA systems should enforce validity programmatically, not through prompt engineering. Second, semantic grounding improves exploration: the 21.8-point gap between the structured pipeline and ONLYSTATS shows that LLM-generated questions focus search more effectively than exhaustive enumeration. This suggests that effective exploration requires both validity and semantic grounding. Third, structural validity enables meaningful subspace analysis: the agentic LLM's zero significant paradoxes confirm that invalid breakdowns cannot be meaningfully conditioned.
+Framework diagnostics surface three systematic differences that the metrics make visible. First, the SVR metric exposes a 54-point gap between programmatic and prompt-based constraints (90\%+ vs 40\%), and the same metric isolates the constraint itself as the determining factor---not the generation method---since ONLYSTATS reaches comparable SVR via statistical filtering rather than LLM reasoning. Second, the Subspace Rate and Score Uplift metrics isolate a 21.8-point exploration gap between the structured pipeline and ONLYSTATS, which share the same search module, attributing the gap to question generation rather than to search. Third, SPR exposes the downstream impact of invalid breakdowns: the agentic LLM's zero significant paradoxes show how the metric makes the loss of subspace-analysis capability visible when structural validity is absent.
 
 \subsection{Limitations}
 
