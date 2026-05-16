@@ -24,7 +24,7 @@
 \maketitle
 
 \begin{abstract}
-Human evaluation remains the dominant way to assess automated exploratory data analysis (AutoEDA) systems, but it is expensive, subjective, and difficult to reproduce. We introduce a reproducible automatic diagnostic framework that exposes structural and statistical failures in AutoEDA systems—failures invisible to human evaluation, which focuses on output fluency rather than structural rigor. The framework uses 9 metrics covering correctness, structural validity, statistical quality, subspace exploration, and question-insight alignment. We apply it to three representative pipelines: a QUIS-style structured question-guided system, ONLYSTATS as a statistics-based ablation, and a free-form agentic LLM pipeline. Across Adidas US Sales, IBM Employee Attrition, and Online Sales, the framework shows that structured intermediate representations reduce column-type errors and support broader subspace exploration. The QUIS-style pipeline achieves 94.0\% average structural validity, compared with 40.0\% for the agentic LLM, and discovers more subspace insights on average (84.4\% vs. 37.4\%). It also attains the highest Score Uplift ($x$=1.067) and discovers significant paradoxes in 2 of 3 datasets. Overall, the case study shows that schema-aware, question-guided representations improve the reliability of AutoEDA outputs and the breadth of subgroup discovery. More broadly, the paper contributes a reusable diagnostic framework for reproducible comparison of AutoEDA systems.
+Human evaluation remains the dominant way to assess automated exploratory data analysis (AutoEDA) systems, but it is expensive, subjective, and difficult to reproduce. We introduce a reproducible automatic diagnostic framework that exposes structural and statistical failures in AutoEDA systems—failures invisible to human evaluation, which focuses on output fluency rather than structural rigor. The framework uses 9 metrics covering correctness, structural validity, statistical quality, subspace exploration, and question-insight alignment. We apply it to three representative pipelines: a QUIS-style structured question-guided system, ONLYSTATS as a statistics-based ablation, and a free-form agentic LLM pipeline. Across Adidas US Sales, IBM Employee Attrition, and Online Sales, the framework shows that structured intermediate representations reduce column-type errors and support broader subspace exploration. The QUIS-style pipeline achieves 94.0\% average structural validity, compared with 40.0\% for the agentic LLM, and discovers more subspace insights on average (84.4\% vs. 37.4\%). It also attains the highest Subspace Score ($x$=1.067), while the agentic LLM achieves the highest Uplift Win Rate (66.7\%, subspace beats global in 2 of 3 datasets). The QUIS-style pipeline discovers significant paradoxes in 2 of 3 datasets. Overall, the case study shows that schema-aware, question-guided representations improve the reliability of AutoEDA outputs and the breadth of subgroup discovery. More broadly, the paper contributes a reusable diagnostic framework for reproducible comparison of AutoEDA systems.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -46,7 +46,7 @@ Our contributions are:
 
 \begin{itemize}
 \item We introduce a reproducible automatic diagnostic framework with 9 metrics covering correctness, structural validity, statistical quality, subspace exploration, and question-insight alignment, and validate it through three purposefully designed systems (structured question-guided, statistics-based ablation, and free-form agentic LLM) -- enabling systematic measurement of structural and statistical properties that human evaluation often overlooks, while providing reproducible comparison of AutoEDA architectures.
-\item We show through cross-dataset validation that the framework reliably differentiates AutoEDA architectures without human raters, surfacing a 54-point structural-validity gap and a 47-point Subspace Rate gap between structured and free-form designs (94.0\% vs 40.0\% SVR; 84.4\% vs 37.4\% Subspace Rate; $x$=1.067 Score Uplift; significant paradoxes detected in 2 of 3 datasets).
+\item We show through cross-dataset validation that the framework reliably differentiates AutoEDA architectures without human raters, surfacing a 54-point structural-validity gap and a 47-point Subspace Rate gap between structured and free-form designs (94.0\% vs 40.0\% SVR; 84.4\% vs 37.4\% Subspace Rate; mean Subspace Score $x$=1.067; Uplift Win Rate 66.7\% for agentic LLM; significant paradoxes detected in 2 of 3 datasets).
 \item Framework diagnostics establish that structural validity is a prerequisite for meaningful subspace analysis: systems with invalid breakdowns cannot produce statistically significant paradoxes.
 \end{itemize}
 
@@ -71,7 +71,7 @@ More recent works introduce LLMs into EDA. InsightPilot~\cite{insightpilot} uses
 
 \subsection{Subgroup Analysis and Pattern Quality}
 
-Recent works do not only explore global statistics but also study conditional insights. Subgroup discovery~\cite{bach} formalizes finding data subsets behavior using measures like weighted relative accuracy -- which we adapt as Score Uplift to measure how much stronger subspace patterns are compared to global ones.
+Recent works do not only explore global statistics but also study conditional insights. Subgroup discovery~\cite{bach} formalizes finding data subsets behavior using measures like weighted relative accuracy. We adapt this concept through two complementary metrics: Subspace Score measures the mean strength of subspace patterns, while Score Uplift ($\Delta$) quantifies whether subspace patterns are stronger than global ones.
 
 Simpson's Paradox~\cite{simpson} brings up cases where a global association reverses direction within subgroups. Teng and Lin~\cite{teng} propose a kernel-based tree algorithm to detect and explain these in observational data. No prior work combines subgroup significance testing with paradox detection in a single EDA evaluation framework.
 \subsection{Research Gap}
@@ -153,15 +153,17 @@ The formula is:
 
 where $S_i$ is the set of subspace filters for insight $i$. Each filter is a (column, value) pair that restricts the data to a subset.
 
-\textit{Score Uplift from Subspace} measures whether subspace insights have stronger patterns than global insights. We define two related quantities. The absolute mean score of subspace insights is:
+\textit{Subspace Score ($x$)} measures the mean pattern strength of subspace insights, where higher values indicate stronger patterns:
 \begin{equation}
 x = \frac{1}{|I_S|}\sum_{i \in I_S} \text{score}(i)
 \end{equation}
-and the uplift delta relative to global insights is:
+where $I_S = \{i \in I : |S_i| > 0\}$ and $\text{score}(i)$ is the effect size (Kendall's $\tau$ for TREND, Cramér's V for ATTRIBUTION, KS statistic for DISTRIBUTION\_DIFFERENCE, z/(z+1) for OUTSTANDING\_VALUE).
+
+\textit{Score Uplift ($\Delta$)} compares subspace versus global pattern strength, where positive values indicate subspace insights are stronger:
 \begin{equation}
 \Delta = \frac{1}{|I_S|}\sum_{i \in I_S} \text{score}(i) - \frac{1}{|I_G|}\sum_{i \in I_G} \text{score}(i)
 \end{equation}
-where $I_S = \{i \in I : |S_i| > 0\}$, $I_G = \{i \in I : |S_i| = 0\}$, and $\text{score}(i)$ is the pattern strength (Kendall's $\tau$ for TREND, effect size otherwise). We report $x$ in all tables since $|I_G|$ can be zero for some systems; $\Delta$ is reported per-dataset in supplementary results.
+where $I_G = \{i \in I : |S_i| = 0\}$. We report $x$ in aggregated results and \textit{Uplift Win Rate} (percentage of datasets where $\Delta > 0$) because averaging $\Delta$ is not meaningful when baselines differ. Per-dataset $\Delta$ values are in Tables~\ref{tab:adidas_results}--\ref{tab:online_results}.
 
 \textit{Simpson's Paradox Rate (SPR)} detects statistically significant pattern reversals between global and subspace insights \cite{simpson}. A reversal occurs when the pattern direction changes -- for example, a positive trend globally becomes negative in a subspace. We use pattern-specific tests (Mann-Kendall for TREND, Chi-square contingency table for ATTRIBUTION, KS test for DISTRIBUTION\_DIFFERENCE) and require both global and subspace patterns to be statistically significant (p < 0.05).
 
@@ -170,7 +172,7 @@ The formula is:
 \text{SPR} = \frac{|\{i \in I_S : \text{is\_paradox}(i) \land \text{is\_significant}(i)\}|}{|I_S|}
 \end{equation}
 
-where $\text{is\_paradox}(i)$ detects pattern reversal and $\text{is\_significant}(i)$ requires p < 0.05 for both global and subspace patterns. Note that SPR is computed over subspace insights only ($I_S$), so a system with fewer subspace insights has fewer opportunities to produce paradoxes; Subspace Rate should be read alongside SPR.
+where $\text{is\_paradox}(i)$ detects pattern reversal and $\text{is\_significant}(i)$ requires p < 0.05 for both global and subspace patterns. We report raw reversal rates per-dataset but prioritize significant paradoxes in aggregated comparison. Note that SPR is computed over subspace insights only ($I_S$), so Subspace Rate should be read alongside SPR.
 
 \subsubsection{Group 5: Alignment and Coherence}
 
@@ -240,8 +242,9 @@ Validity & 2. SVR (Overall) & \textbf{94.0\%} & 40.0\% & 91.2\% & \textbf{QUIS-s
 Coverage & 3. Pattern Coverage & 3--4/4 & 2--3/4 & 3--4/4 & ONLYSTATS \\
 Statistics & 4. Statistical Significance & 46.4\% & 57.6\% & \textbf{58.0\%} & \textbf{ONLYSTATS} \\
 Exploration (Qty) & 5. Subspace Rate & \textbf{84.4\%} & 37.4\% & 62.6\% & \textbf{QUIS-style} \\
-Exploration (Qual) & 6. Score Uplift ($x$) & \textbf{1.067} & 0.974 & 0.818 & \textbf{QUIS-style} \\
-Exploration (Qual) & 7. Simpson's Paradox Rate & 30.1\% & 18.9\% (0 sig) & \textbf{34.7\%} (0 sig) & \textbf{ONLYSTATS} \\
+Exploration (Qual) & 6a. Subspace Score ($x$) & \textbf{1.067} & 0.974 & 0.818 & \textbf{QUIS-style} \\
+Exploration (Qual) & 6b. Uplift Win Rate & 33.3\% (1/3) & \textbf{66.7\%} (2/3) & 33.3\% (1/3) & \textbf{Agentic LLM} \\
+Exploration (Qual) & 7. Simpson's Paradox Rate & \textbf{30.1\%} (\textbf{2 sig}) & 18.9\% (0 sig) & 34.7\% (0 sig) & \textbf{QUIS-style} \\
 Control & 8. Q-I Alignment & 0.540 & \textbf{0.569} & N/A & \textbf{Agentic LLM} \\
 Control & 9. R-I Coherence & \textbf{0.526} & 0.514 & N/A & \textbf{QUIS-style} \\
 \hline
@@ -274,7 +277,8 @@ SVR - TREND & \textbf{100\%} & 48.5\% & \textbf{100\%} \\
 Pattern Coverage & \textbf{4/4} & 3/4 & \textbf{4/4} \\
 Statistical Significance & \textbf{83.4\%} & 73.2\% & 80.7\% \\
 Subspace Rate & \textbf{86.9\%} & 42.7\% & 61.9\% \\
-Score Uplift ($x$) & 0.885 & 0.796 & 0.715 \\
+Subspace Score ($x$) & 0.885 & 0.796 & 0.715 \\
+Score Uplift ($\Delta$) & -0.043 & -0.135 & -0.122 \\
 SPR & 27.9\% (0 sig) & 25.0\% (0 sig) & \textbf{42.9\%} (0 sig) \\
 Q-I Alignment & \textbf{0.583} & 0.579 & N/A \\
 R-I Coherence & \textbf{0.553} & 0.527 & N/A \\
@@ -285,7 +289,7 @@ R-I Coherence & \textbf{0.553} & 0.527 & N/A \\
 \end{table}
 }
 
-Table~\ref{tab:adidas_results} shows that the structured pipeline leads on SVR (99.0\% vs 45.3\%) and Subspace Rate (86.9\%), while ONLYSTATS accomplishes the highest raw SPR (42.9\%). On Adidas all systems produce zero statistically significant paradoxes, proving that patterns on this dataset do not meet the strict dual-significance threshold.
+Table~\ref{tab:adidas_results} shows that the structured pipeline leads on SVR (99.0\% vs 45.3\%) and Subspace Rate (86.9\%), while ONLYSTATS accomplishes the highest raw SPR (42.9\%). All three systems show negative Score Uplift ($\Delta$ < 0), indicating that global patterns are stronger than subspace patterns on this temporal dataset. On Adidas all systems produce zero statistically significant paradoxes, proving that patterns on this dataset do not meet the strict dual-significance threshold.
 
 {
 \renewcommand{\arraystretch}{0.9}
@@ -303,7 +307,8 @@ SVR (Overall) & 96.2\% & 37.0\% & \textbf{100.0\%} \\
 Pattern Coverage & 3/4 & 3/4 & 3/4 \\
 Statistical Significance & 20.0\% & \textbf{55.8\%} & 30.6\% \\
 Subspace Rate & \textbf{87.2\%} & 33.3\% & 60.0\% \\
-Score Uplift ($x$) & \textbf{1.574} & 1.079 & 0.506 \\
+Subspace Score ($x$) & \textbf{1.574} & 1.079 & 0.506 \\
+Score Uplift ($\Delta$) & +0.083 & +0.046 & -0.184 \\
 SPR & \textbf{30.2\%} (1 sig) & 0.0\% (0 sig) & 21.3\% (0 sig) \\
 Q-I Alignment & 0.493 & \textbf{0.588} & N/A \\
 R-I Coherence & 0.468 & \textbf{0.519} & N/A \\
@@ -314,7 +319,7 @@ R-I Coherence & 0.468 & \textbf{0.519} & N/A \\
 \end{table}
 }
 
-Table~\ref{tab:employee_results} shows that the structured pipeline achieves the strongest Score Uplift ($x$=1.574) and is the only system with significant paradoxes (SPR 30.2\%, 1 significant). ONLYSTATS achieves 21.3\% SPR with zero significant paradoxes, showing that exhaustive enumeration does not guarantee subspace quality on datasets with many weak global patterns.
+Table~\ref{tab:employee_results} shows that the structured pipeline achieves the strongest Subspace Score ($x$=1.574) and positive Score Uplift ($\Delta$=+0.083), indicating that subspace insights are stronger than global insights. It is also the only system with significant paradoxes (SPR 30.2\%, 1 significant). The agentic LLM also achieves positive uplift ($\Delta$=+0.046), while ONLYSTATS shows negative uplift ($\Delta$=-0.184). This demonstrates that exhaustive enumeration does not guarantee subspace quality on datasets with many weak global patterns.
 
 {
 \renewcommand{\arraystretch}{0.9}
@@ -332,7 +337,8 @@ SVR (Overall) & 86.8\% & 37.7\% & 77.2\% \\
 Pattern Coverage & 3/4 & 2/4 & \textbf{4/4} \\
 Statistical Significance & 35.9\% & 43.8\% & \textbf{62.8\%} \\
 Subspace Rate & 79.2\% & 36.1\% & 65.8\% \\
-Score Uplift ($x$) & 0.742 & \textbf{1.048} & 1.232 \\
+Subspace Score ($x$) & 0.742 & \textbf{1.048} & \textbf{1.232} \\
+Score Uplift ($\Delta$) & -0.137 & +0.025 & +0.102 \\
 SPR & 32.1\% (1 sig) & 31.8\% (0 sig) & \textbf{40.0\%} (0 sig) \\
 Q-I Alignment & \textbf{0.543} & 0.539 & N/A \\
 R-I Coherence & \textbf{0.557} & 0.497 & N/A \\
@@ -343,7 +349,7 @@ R-I Coherence & \textbf{0.557} & 0.497 & N/A \\
 \end{table}
 }
 
-Table~\ref{tab:online_results} shows that ONLYSTATS achieves the highest Statistical Significance (62.8\%) and Score Uplift ($x$=1.232), while the agentic LLM achieves the highest raw Score Uplift ($x$=1.048) due to its smaller insight set concentrating on globally stronger patterns. The structured pipeline leads on Subspace Rate (79.2\%). All three systems achieve raw SPR (31--40\%); the structured pipeline produces one significant paradox, while ONLYSTATS and the agentic LLM find none.
+Table~\ref{tab:online_results} shows that ONLYSTATS achieves the highest Statistical Significance (62.8\%) and Subspace Score ($x$=1.232), while the agentic LLM achieves $x$=1.048 due to its smaller insight set concentrating on globally stronger patterns. Both ONLYSTATS ($\Delta$=+0.102) and the agentic LLM ($\Delta$=+0.025) show positive Score Uplift, while the structured pipeline shows negative uplift ($\Delta$=-0.137). The structured pipeline leads on Subspace Rate (79.2\%). All three systems achieve raw SPR (31--40\%); the structured pipeline produces one significant paradox, while ONLYSTATS and the agentic LLM find none.
 
 \subsection{Cross-Dataset Analysis}
 
@@ -369,7 +375,9 @@ Subspace Rate reveals where structured approaches show the most advantage. The s
 
 Since the structured pipeline and ONLYSTATS share the same search module, the 21.8-point average gap between them isolates the contribution of semantically grounded questions over exhaustive enumeration. LLM-generated questions appear to focus the search on interpretable subspaces, while statistical selection produces many valid pairs where global patterns are too weak for subspace search to improve. The 47.0-point gap versus the agentic LLM reflects compounding effects: invalid breakdowns cannot be explored in subspaces at all. ONLYSTATS reaches its highest subspace rate on Online Sales (65.8\%) because exhaustive enumeration produces many valid (B,\,M) pairs on this small 9-column dataset, giving the search more entry points.
 
-Score Uplift is positive on average for all systems (structured: 1.067, agentic LLM: 0.974, ONLYSTATS: 0.818), measured as the mean pattern strength of subspace insights ($x$). The structured pipeline shows the strongest uplift on Employee Attrition ($x$=1.574) and leads on average across all datasets. On Online Sales, ONLYSTATS achieves the highest Score Uplift ($x$=1.232), while the agentic LLM achieves $x$=1.048 due to its smaller insight set concentrating on globally stronger patterns. SPR follows a similar trend: ONLYSTATS achieves the highest average (34.7\%) but with moderate variance across datasets (21.3\%--42.9\%), while the structured pipeline achieves 30.1\% with more consistency (27.9\%--32.1\%). The agentic LLM finds no significant paradoxes across any dataset, confirming that structurally invalid insights cannot produce meaningful subspace patterns.
+Subspace Score ($x$) and Score Uplift ($\Delta$) reveal different quality dimensions. The structured pipeline achieves the highest mean subspace score (1.067 average, peak 1.574 on Employee), but the agentic LLM achieves the highest Uplift Win Rate (66.7\%: positive $\Delta$ on Employee and Online), compared with 33.3\% for both the structured pipeline and ONLYSTATS (each positive on only one dataset). This indicates that while the structured pipeline produces stronger subspace patterns in absolute terms, the agentic LLM's subspace insights more consistently outperform its global baseline. On Adidas, all systems show negative uplift, suggesting particularly strong global patterns on this temporal dataset.
+
+SPR reveals a distinction between raw reversal rates and significant paradoxes. While ONLYSTATS achieves the highest raw SPR (34.7\% average) compared to the structured pipeline (30.1\%), the structured pipeline is the only system to discover statistically significant paradoxes (2 of 3 datasets: Employee and Online). Both ONLYSTATS and the agentic LLM find zero significant paradoxes, confirming that raw reversal rates do not guarantee statistical significance and that structurally invalid insights cannot produce meaningful subspace patterns.
 
 \subsubsection{Statistical Significance}
 
@@ -383,7 +391,7 @@ Q-I Alignment is similar across the structured pipeline (0.540) and agentic LLM 
 
 \subsection{Key Findings}
 
-Framework diagnostics surface three systematic differences that the metrics make visible. First, the SVR metric exposes a 54-point gap between programmatic and prompt-based constraints (90\%+ vs 40\%), and the same metric isolates the constraint itself as the determining factor -- not the generation method -- since ONLYSTATS reaches comparable SVR via statistical filtering rather than LLM reasoning. Second, the Subspace Rate and Score Uplift metrics isolate a 21.8-point exploration gap between the structured pipeline and ONLYSTATS, which share the same search module, attributing the gap to question generation rather than to search. Third, SPR exposes the downstream impact of invalid breakdowns: the agentic LLM's zero significant paradoxes show how the metric makes the loss of subspace-analysis capability visible when structural validity is absent.
+Framework diagnostics surface three systematic differences that the metrics make visible. First, the SVR metric exposes a 54-point gap between programmatic and prompt-based constraints (90\%+ vs 40\%), and the same metric isolates the constraint itself as the determining factor -- not the generation method -- since ONLYSTATS reaches comparable SVR via statistical filtering rather than LLM reasoning. Second, the Subspace Rate and Subspace Score metrics isolate a 21.8-point exploration gap between the structured pipeline and ONLYSTATS, which share the same search module, attributing the gap to question generation rather than to search. The Uplift Win Rate metric reveals that the agentic LLM's subspace insights more consistently outperform its global baseline (66.7\% win rate), though the structured pipeline achieves higher absolute subspace scores. Third, SPR exposes the downstream impact of invalid breakdowns: the agentic LLM's zero significant paradoxes show how the metric makes the loss of subspace-analysis capability visible when structural validity is absent.
 
 \subsection{Limitations}
 
