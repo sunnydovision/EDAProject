@@ -24,7 +24,7 @@
 \maketitle
 
 \begin{abstract}
-Human evaluation remains the dominant way to assess automated exploratory data analysis (AutoEDA) systems, but it is expensive, subjective, and difficult to reproduce. We introduce a reproducible automatic diagnostic framework that exposes structural and statistical failures in AutoEDA systems—failures invisible to human evaluation, which focuses on output fluency rather than structural rigor. The framework uses 9 metrics covering correctness, structural validity, statistical quality, subspace exploration, and question-insight alignment. We apply it to three representative pipelines: a QUIS-style structured question-guided system, ONLYSTATS as a statistics-based ablation, and a free-form agentic LLM pipeline. Across Adidas US Sales, IBM Employee Attrition, and Online Sales, the framework shows that structured intermediate representations reduce column-type errors and support broader subspace exploration. The QUIS-style pipeline achieves 94.0\% average structural validity, compared with 40.0\% for the agentic LLM, and discovers more subspace insights on average (84.4\% vs. 37.4\%). It also attains the highest Subspace Score ($x$=1.067), while the agentic LLM achieves the highest Uplift Win Rate (66.7\%, subspace beats global in 2 of 3 datasets). The QUIS-style pipeline discovers significant paradoxes in 2 of 3 datasets. Overall, the case study shows that schema-aware, question-guided representations improve the reliability of AutoEDA outputs and the breadth of subgroup discovery. More broadly, the paper contributes a reusable diagnostic framework for reproducible comparison of AutoEDA systems.
+Human evaluation remains the dominant way to assess automated exploratory data analysis (AutoEDA) systems, but it is expensive, subjective, and difficult to reproduce. We introduce a reproducible automatic diagnostic framework that surfaces structural and statistical failures in AutoEDA systems---failure modes often under-emphasized when reviewers prioritize fluent prose over breakdown validity and statistical form. The framework uses 9 metrics covering correctness, structural validity, statistical quality, subspace exploration, and question-insight alignment. We apply it to three representative pipelines: a QUIS-style structured question-guided system, ONLYSTATS as a statistics-based ablation, and a free-form agentic LLM pipeline. Across Adidas US Sales, IBM Employee Attrition, and Online Sales, structured intermediate representations are associated with fewer column-type errors and broader subspace coverage in our benchmark runs. The QUIS-style pipeline achieves 94.0\% average structural validity, compared with 40.0\% for the agentic LLM, and discovers more subspace insights on average (84.4\% vs. 37.4\%). It also attains the highest Subspace Score ($x$=1.067), while the agentic LLM achieves the highest Uplift Win Rate (66.7\%, subspace beats global in 2 of 3 datasets). The QUIS-style pipeline discovers significant paradoxes in 2 of 3 datasets. Overall, across our benchmarks, schema-aware question guidance tracks higher measured structural validity and subgroup coverage than free-form prompting in these runs. More broadly, the paper contributes a reusable diagnostic framework for reproducible comparison of AutoEDA systems.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -34,9 +34,9 @@ Exploratory Data Analysis, Automated EDA, Question Generation, Evaluation Metric
 \section{Introduction}
 Automated exploratory data analysis (AutoEDA) systems are increasingly used to surface patterns, anomalies, and candidate hypotheses from unfamiliar datasets. As these systems become more capable, evaluating them becomes harder. Many papers still rely on human ratings or user studies, but such evaluations are expensive, subjective, and difficult to reproduce.
 
-This challenge is especially visible in LLM-based AutoEDA pipelines. These systems can generate plausible insights even when the underlying analysis is structurally flawed, for example by using an invalid breakdown column, mismatching a pattern type to the data semantics, or missing informative subspaces. Human judgments alone do not reliably expose such failures, which motivates automatic diagnostic metrics that assess not only fluency, but also structural and statistical quality.
+This challenge is especially visible in LLM-based AutoEDA pipelines. These systems can generate plausible insights even when the underlying analysis is structurally flawed, for example by using an invalid breakdown column, mismatching a pattern type to the data semantics, or missing informative subspaces. Human judgments alone often gloss over such failures, which motivates automatic diagnostic metrics that assess not only fluency, but also structural and statistical quality.
 
-We introduce a reproducible automatic diagnostic framework for evaluating AutoEDA systems. It uses 9 metrics spanning correctness, structural validity, statistical quality, subspace exploration, and question-insight alignment. We validate the framework by applying it to three representative pipelines: a QUIS-style structured question-guided system, ONLYSTATS as a statistics-based ablation, and a free-form agentic LLM pipeline. This setup demonstrates how the framework reveals systematic differences in structural validity, exploration breadth, and subspace quality.
+We introduce a reproducible automatic diagnostic framework for evaluating AutoEDA systems. It uses 9 metrics spanning correctness, structural validity, statistical quality, subspace exploration, and question-insight alignment. We illustrate diagnostic utility by applying the framework to three representative pipelines: a QUIS-style structured question-guided system, ONLYSTATS as a statistics-based ablation, and a free-form agentic LLM pipeline. This setup illustrates how these diagnostics discriminate the pipelines along structural validity, exploration breadth, and subspace-linked scores.
 
 We apply the framework across three datasets (Adidas US Sales, IBM Employee Attrition, and Online Sales) to answer two questions: Can automatic diagnostics support meaningful comparison of AutoEDA systems without human raters? And what do they reveal about the design principles underlying structured versus free-form approaches?
 
@@ -45,17 +45,17 @@ The answer is consistent across our case study. The framework surfaces large, re
 Our contributions are:
 
 \begin{itemize}
-\item We introduce a reproducible automatic diagnostic framework with 9 metrics covering correctness, structural validity, statistical quality, subspace exploration, and question-insight alignment, and validate it through three purposefully designed systems (structured question-guided, statistics-based ablation, and free-form agentic LLM) -- enabling systematic measurement of structural and statistical properties that human evaluation often overlooks, while providing reproducible comparison of AutoEDA architectures.
-\item We show through cross-dataset validation that the framework reliably differentiates AutoEDA architectures without human raters, surfacing a 54-point structural-validity gap and a 47-point Subspace Rate gap between structured and free-form designs (94.0\% vs 40.0\% SVR; 84.4\% vs 37.4\% Subspace Rate; mean Subspace Score $x$=1.067; Uplift Win Rate 66.7\% for agentic LLM; significant paradoxes detected in 2 of 3 datasets).
-\item Framework diagnostics establish that structural validity is a prerequisite for meaningful subspace analysis: systems with invalid breakdowns cannot produce statistically significant paradoxes.
+\item We introduce a reproducible automatic diagnostic framework with 9 metrics covering correctness, structural validity, statistical quality, subspace exploration, and question-insight alignment, and demonstrate application through three purposefully designed systems (structured question-guided, statistics-based ablation, and free-form agentic LLM), enabling systematic measurement of structural and statistical properties that fluency-centric human ratings often omit, alongside reproducible comparison of AutoEDA architectures.
+\item Through a cross-dataset case study, we show that these diagnostics track large, repeatable contrasts between architectures without human raters, surfacing a 54-point structural-validity gap and a 47-point Subspace Rate gap between structured and free-form designs (94.0\% vs 40.0\% SVR; 84.4\% vs 37.4\% Subspace Rate; mean Subspace Score $x$=1.067; Uplift Win Rate 66.7\% for agentic LLM; significant paradoxes detected in 2 of 3 datasets).
+\item In our runs, diagnostics align breakdown validity with downstream paradox detection: systems with pervasive invalid breakdowns did not yield statistically significant paradoxes under our dual-significance regime.
 \end{itemize}
 
-Figure~\ref{fig:framework} provides an overview of our study framework, showing the three AutoEDA systems we evaluate (QUIS-Style Structured Pipeline, ONLYSTATS, and Free-Form Agentic LLM) and our evaluation framework with 9 metrics organized into five groups.
+Figure~\ref{fig:framework} provides an overview of our study framework, showing the three AutoEDA systems we evaluate (QUIS-style Structured Pipeline, ONLYSTATS, and Free-Form Agentic LLM) and our evaluation pipeline with nine metrics grouped into five families.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\columnwidth]{model_comparison.png}
-\caption{Framework validation setup: our 9-metric evaluation framework applied to three AutoEDA systems with different architectural choices.}
+\caption{Framework application setup: our 9-metric evaluation pipeline applied to three AutoEDA systems with different architectural choices.}
 \label{fig:framework}
 \end{figure}
 
@@ -63,24 +63,25 @@ Figure~\ref{fig:framework} provides an overview of our study framework, showing 
 
 \subsection{Automated EDA and Insight Evaluation}
 
-Early automated EDA systems depend on statistical deviation to rank interesting findings. SEEDB~\cite{seedb} suggests visualizations by comparing target and reference distributions. QuickInsights~\cite{quickinsights} scores trends, outliers, and attributions by combined impact and significance. Zenvisage~\cite{zenvisage} allows users retrieve views matching specified visual patterns. However, these systems do not check whether insights have the correct structural form.
+Early automated EDA systems depend on statistical deviation to rank interesting findings. SEEDB~\cite{seedb} suggests visualizations by comparing target and reference distributions. QuickInsights~\cite{quickinsights} scores trends, outliers, and attributions by combined impact and significance. Zenvisage~\cite{zenvisage} allows users to retrieve views matching specified visual patterns. However, these systems do not check whether insights have the correct structural form.
 
-Visualization-focused systems evaluate quality through perceptual and organizational criteria. Voyager~\cite{voyager} ranks views using expressiveness and effectiveness rules. Voder~\cite{voder} combines natural language facts together with interactive visuals to surface findings during exploration. MetaInsight~\cite{metainsight} shapes insights into organized knowledge from data patterns. None of these check whether breakdown column types match the intended pattern.
+Visualization-focused systems evaluate quality through perceptual and organizational criteria. Voyager~\cite{voyager} ranks views using expressiveness and effectiveness rules. Voder~\cite{voder} couples natural-language descriptions of quantitative facts with interactive visuals to prioritize findings during exploratory sessions. MetaInsight~\cite{metainsight} shapes insights into organized knowledge from data patterns. None of these check whether breakdown column types match the intended pattern.
 
-More recent works introduce LLMs into EDA. InsightPilot~\cite{insightpilot} uses LLMs to suggest analysis actions, and be evaluated through user studies. QUIS~\cite{quis} generates guiding questions before insight search, but relies on human raters for evaluation -- an approach that is costly and hard to reproduce.
+Recent work incorporates LLMs into EDA. InsightPilot~\cite{insightpilot} uses LLMs to suggest analysis actions and is evaluated through user studies. QUIS~\cite{quis} generates guiding questions before insight search, but relies on human raters for evaluation -- an approach that is costly and hard to reproduce.
 
 \subsection{Subgroup Analysis and Pattern Quality}
 
-Recent works do not only explore global statistics but also study conditional insights. Subgroup discovery~\cite{bach} formalizes finding data subsets behavior using measures like weighted relative accuracy. We adapt this concept through two complementary metrics: Subspace Score measures the mean strength of subspace patterns, while Score Uplift ($\Delta$) quantifies whether subspace patterns are stronger than global ones.
+Recent methods study conditional insights alongside global aggregates. Subgroup discovery~\cite{bach} formalizes finding subsets of data whose behavior deviates systematically from the rest, often scored with measures such as weighted relative accuracy. We adapt this concept through two complementary metrics: Subspace Score measures the mean strength of subspace patterns, while Score Uplift ($\Delta$) quantifies whether subspace patterns are stronger than global ones.
 
-Simpson's Paradox~\cite{simpson} brings up cases where a global association reverses direction within subgroups. Teng and Lin~\cite{teng} propose a kernel-based tree algorithm to detect and explain these in observational data. No prior work combines subgroup significance testing with paradox detection in a single EDA evaluation framework.
+Simpson's Paradox~\cite{simpson} denotes cases where a global association reverses direction within subgroups. Teng and Lin~\cite{teng} propose a kernel-based tree algorithm to detect and explain these paradoxes in observational data.
+
 \subsection{Research Gap}
 
-No existing AutoEDA evaluation framework checks structural validity -- if the breakdown column type matches the intended pattern -- or combines subgroup significance testing with paradox detection. \textbf{Our work} addresses both gaps with a fully automatic, human-free framework of 9 metrics covering correctness, structural validity, statistical quality, subspace exploration, and question quality. Our evaluation shows that LLM baselines have high systematic structural errors and produce zero significant paradoxes, while structured approaches achieve the highest SVR and discover meaningful pattern reversals.
+To our knowledge, no AutoEDA evaluation framework checks structural validity -- whether the breakdown column type matches the intended pattern -- alongside subgroup significance testing and paradox-aware scoring in one reproducible protocol. \textbf{Our work} addresses these omissions with a reproducible diagnostic framework comprising nine automated metrics spanning correctness, structural validity, statistical quality, subspace exploration, and question quality. In our benchmarks the agentic baseline shows pervasive structural mismatch and records zero paradoxes that meet our dual-significance SPR definition, whereas structured setups achieve the strongest SVRs and the significant paradox detections under that definition.
 
 \section{System Overview}
 
-To validate our framework's diagnostic capability, we compare three representative AutoEDA approaches that differ in two design dimensions: (a) structured versus free-form reasoning, and (b) LLM-based versus statistical selection. This controlled setup lets us isolate which design choices the framework's metrics can reliably differentiate.
+To illustrate diagnostic utility, we compare three representative AutoEDA approaches that differ in two design dimensions: (a) structured versus free-form reasoning, and (b) LLM-based versus statistical selection. This controlled setup clarifies which architectural contrasts remain stable across our benchmarks once passed through these metrics.
 
 \subsection{QUIS-Style Structured Pipeline}
 
@@ -102,7 +103,7 @@ We selected 9 essential metrics from a larger list of candidates. We group them 
 
 \subsubsection{Group 1: Correctness}
 
-\textit{Faithfulness} checks whether the numbers in an insight can be recomputed exactly from the dataset. For example, an insight reports a total sales value for one region, we recompute the aggregation from the CSV file to check the precision of the insight report. This metric works as a sanity check: a system with low faithfulness is hallucinating, making all other metrics unreliable. A high score is expected for good systems and confirms that the following metrics measure real patterns.
+\textit{Faithfulness} checks whether the numbers in an insight can be recomputed exactly from the dataset. If an insight reports a regional total sales value, we recompute the aggregation from the CSV file and compare it to the reported figure. This metric works as a sanity check: persistently low faithfulness indicates unreliable numeric reporting, rendering companion metrics harder to interpret. A high score is expected for sound systems and makes it reasonable to interpret the following metrics as reflecting non-spurious structural and statistical contrasts.
 
 The formula is:
 \begin{equation}
@@ -144,7 +145,7 @@ where $p\text{-value}(i)$ is computed using the pattern-specific test for insigh
 
 \subsubsection{Group 4: Exploration Quality}
 
-\textit{Subspace Rate} measures how many insights contain at least one subspace filter. A high value means the system does not only provide global insights but also explores conditional cases, such as ``within Region = West''.
+\textit{Subspace Rate} measures how many insights contain at least one subspace filter. A high value indicates that the system not only emits global summaries but also surfaces conditional contrasts, such as ``within Region = West''.
 
 The formula is:
 \begin{equation}
@@ -176,7 +177,7 @@ where $\text{is\_paradox}(i)$ detects pattern reversal and $\text{is\_significan
 
 \subsubsection{Group 5: Alignment and Coherence}
 
-\textit{Question-Insight Alignment} measures how close the question text is to the final insight text. We compute cosine similarity using sentence embeddings. For example, related sentence pairs on general text typically score 0.5 with MiniLM embeddings. This metric ensures that if all systems align similarly with their input questions, differences elsewhere reflect insight quality rather than bias in the search process.
+\textit{Question-Insight Alignment} measures how close the question text is to the final insight text. We compute cosine similarity using sentence embeddings. For example, related sentence pairs on general-domain text typically score around 0.5 with MiniLM embeddings. This metric ensures that if all systems align similarly with their input questions, differences elsewhere reflect insight quality rather than bias in the search process.
 
 The formula is:
 \begin{equation}
@@ -200,7 +201,7 @@ We use three datasets summarized in Table~\ref{tab:datasets}: Adidas US Sales (C
 
 \section{Results}
 
-We apply our framework to compare three systems across three datasets. The framework successfully differentiates systems based on structural validity, exploration breadth, and subspace quality.
+We apply our framework to compare three systems across three datasets. The metric profiles separate the systems clearly along structural validity, exploration breadth, and subspace-related scores.
 
 \subsection{Overview}
 
@@ -289,7 +290,7 @@ R-I Coherence & \textbf{0.553} & 0.527 & N/A \\
 \end{table}
 }
 
-Table~\ref{tab:adidas_results} shows that the structured pipeline leads on SVR (99.0\% vs 45.3\%) and Subspace Rate (86.9\%), while ONLYSTATS accomplishes the highest raw SPR (42.9\%). All three systems show negative Score Uplift ($\Delta$ < 0), indicating that global patterns are stronger than subspace patterns on this temporal dataset. On Adidas all systems produce zero statistically significant paradoxes, proving that patterns on this dataset do not meet the strict dual-significance threshold.
+Table~\ref{tab:adidas_results} shows that the structured pipeline leads on SVR (99.0\% vs 45.3\%) and Subspace Rate (86.9\%), while ONLYSTATS achieves the highest raw SPR (42.9\%). All three systems show negative Score Uplift ($\Delta < 0$), indicating that global patterns are stronger than subspace patterns on this temporal dataset. On Adidas all systems yield zero statistically significant paradoxes---consistent here with no reversal passing our strict dual-significance SPR criterion.
 
 {
 \renewcommand{\arraystretch}{0.9}
@@ -319,7 +320,7 @@ R-I Coherence & 0.468 & \textbf{0.519} & N/A \\
 \end{table}
 }
 
-Table~\ref{tab:employee_results} shows that the structured pipeline achieves the strongest Subspace Score ($x$=1.574) and positive Score Uplift ($\Delta$=+0.083), indicating that subspace insights are stronger than global insights. It is also the only system with significant paradoxes (SPR 30.2\%, 1 significant). The agentic LLM also achieves positive uplift ($\Delta$=+0.046), while ONLYSTATS shows negative uplift ($\Delta$=-0.184). This demonstrates that exhaustive enumeration does not guarantee subspace quality on datasets with many weak global patterns.
+Table~\ref{tab:employee_results} shows that the structured pipeline achieves the strongest Subspace Score ($x$=1.574) and positive Score Uplift ($\Delta$=+0.083), indicating that subspace insights are stronger than global insights. It is also the only system with significant paradoxes (SPR 30.2\%, 1 significant). The agentic LLM also achieves positive uplift ($\Delta$=+0.046), while ONLYSTATS shows negative uplift ($\Delta$=-0.184). This pattern is consistent with exhaustive enumeration not sufficing for strong subspace quality when many global patterns are weak.
 
 {
 \renewcommand{\arraystretch}{0.9}
@@ -353,15 +354,15 @@ Table~\ref{tab:online_results} shows that ONLYSTATS achieves the highest Statist
 
 \subsection{Cross-Dataset Analysis}
 
-Our metrics are interconnected: structural validity enables subspace exploration, which affects subspace quality. This allows us to trace how design choices propagate through the pipeline.
+Our metrics are intertwined: breakdown validity interacts with how much subspace search can run cleanly, which in turn shapes subspace-quality readouts; we use this linkage to narrate how design choices propagate through the pipeline.
 
 \subsubsection{Faithfulness}
 
-All three systems achieve 100\% faithfulness across all datasets, establishing a baseline for comparing other quality dimensions. This confirms that differences in structural validity and exploration quality are not artifacts of numerical errors or hallucination. Schema-aware question generation, statistical selection, and free-form reasoning all maintain correctness when computing aggregations.
+All three systems achieve 100\% faithfulness across all datasets, establishing a baseline for comparing other quality dimensions. This is consistent with differences in structural validity and exploration quality not stemming from numerical errors or hallucination in these runs. Schema-aware question generation, statistical selection, and free-form reasoning all maintain correctness when computing aggregations.
 
 \subsubsection{Structural Validity Rate}
 
-SVR shows the largest and most consistent difference across datasets. The structured pipeline achieves 94.0\% average SVR, while the agentic LLM achieves only 40.0\% (gap of 54 percentage points). ONLYSTATS achieves 90.8\% by constraining its statistics-based selection to valid column types, ensuring breakdown columns match pattern requirements.
+SVR shows the largest and most consistent difference across datasets. The structured pipeline achieves 94.0\% average SVR, while the agentic LLM achieves only 40.0\% (gap of 54 percentage points). ONLYSTATS achieves 91.2\% by constraining its statistics-based selection to valid column types, helping ensure breakdown columns match pattern requirements.
 
 The agentic LLM's core problem is systematic column-type mismatch: it records 0\% ATTRIBUTION SVR on Adidas and Online Sales, and uses categorical breakdowns for TREND in 51.5\% of Adidas cases. This reveals a key limitation: prompt-based constraints do not reliably enforce structural correctness, while programmatic validation -- through either structured generation or statistical filtering -- achieves over 90\% validity across datasets.
 
@@ -373,25 +374,25 @@ All systems miss TREND on Employee Attrition and Online Sales due to limited tem
 
 Subspace Rate reveals where structured approaches show the most advantage. The structured pipeline achieves 84.4\% average subspace rate (range: 79.2\%--87.2\%), compared with 37.4\% for the agentic LLM (range: 33.3\%--42.7\%) and 62.6\% for ONLYSTATS (range: 60.0\%--65.8\%).
 
-Since the structured pipeline and ONLYSTATS share the same search module, the 21.8-point average gap between them isolates the contribution of semantically grounded questions over exhaustive enumeration. LLM-generated questions appear to focus the search on interpretable subspaces, while statistical selection produces many valid pairs where global patterns are too weak for subspace search to improve. The 47.0-point gap versus the agentic LLM reflects compounding effects: invalid breakdowns cannot be explored in subspaces at all. ONLYSTATS reaches its highest subspace rate on Online Sales (65.8\%) because exhaustive enumeration produces many valid (B,\,M) pairs on this small 9-column dataset, giving the search more entry points.
+Since the structured pipeline and ONLYSTATS share the same search module, the 21.8-point average gap between them isolates the contribution of semantically grounded questions over exhaustive enumeration. LLM-generated questions appear to focus the search on interpretable subspaces, while statistical selection produces many valid pairs where global patterns are too weak for subspace search to improve. The 47.0-point gap versus the agentic LLM reflects compounding effects: pervasive invalid breakdowns leave few admissible subspace refinements under our parsers. ONLYSTATS reaches its highest subspace rate on Online Sales (65.8\%) because exhaustive enumeration produces many valid (B,\,M) pairs on this small 9-column dataset, giving the search more entry points.
 
 Subspace Score ($x$) and Score Uplift ($\Delta$) reveal different quality dimensions. The structured pipeline achieves the highest mean subspace score (1.067 average, peak 1.574 on Employee), but the agentic LLM achieves the highest Uplift Win Rate (66.7\%: positive $\Delta$ on Employee and Online), compared with 33.3\% for both the structured pipeline and ONLYSTATS (each positive on only one dataset). This indicates that while the structured pipeline produces stronger subspace patterns in absolute terms, the agentic LLM's subspace insights more consistently outperform its global baseline. On Adidas, all systems show negative uplift, suggesting particularly strong global patterns on this temporal dataset.
 
-SPR reveals a distinction between raw reversal rates and significant paradoxes. While ONLYSTATS achieves the highest raw SPR (34.7\% average) compared to the structured pipeline (30.1\%), the structured pipeline is the only system to discover statistically significant paradoxes (2 of 3 datasets: Employee and Online). Both ONLYSTATS and the agentic LLM find zero significant paradoxes, confirming that raw reversal rates do not guarantee statistical significance and that structurally invalid insights cannot produce meaningful subspace patterns.
+SPR reveals a distinction between raw reversal rates and significant paradoxes. While ONLYSTATS achieves the highest raw SPR (34.7\% average) compared to the structured pipeline (30.1\%), the structured pipeline is the only system to discover statistically significant paradoxes (2 of 3 datasets: Employee and Online). Both ONLYSTATS and the agentic LLM find zero significant paradoxes---consistent with raw reversal counts not guaranteeing dual-significant paradoxes under our tests, and with structurally invalid breakdowns diluting actionable subspace evidence.
 
 \subsubsection{Statistical Significance}
 
-Statistical significance is dataset-dependent (structured: 46.4\%, agentic LLM: 57.6\%, ONLYSTATS: 58.0\% on average). The structured pipeline leads on Adidas (83.4\%) but is less efficient on Employee Attrition (20.0\%), where binary/categorical variables make simple aggregations easier to pass significance tests. This dependency reflects inherent difficulty: temporal datasets with continuous measures favor focused subspace search, while categorical-heavy datasets benefit from exhaustive enumeration.
+Statistical significance is dataset-dependent (structured: 46.4\%, agentic LLM: 57.6\%, ONLYSTATS: 58.0\% on average). The structured pipeline leads on Adidas (83.4\%) but shows lower Statistical Significance on Employee Attrition (20.0\%), where binary/categorical variables make simpler aggregations more likely to pass significance tests under our thresholds. These contrasts stem from differing dataset geometries: temporal datasets with continuous measures favor concentrated subspace search, while categorical-heavy tables benefit more from exhaustive enumeration.
 
 \subsubsection{Control Metrics}
 
-Q-I Alignment is similar across the structured pipeline (0.540) and agentic LLM (0.569), confirming that the search module treats both systems comparably -- differences come from input quality, not retrieval bias. R-I Coherence slightly favors the structured pipeline on average (0.526 vs 0.514), though the agentic LLM scores higher on Employee Attrition (0.519 vs 0.468). This reversal is consistent with the agentic LLM's higher statistical significance on that dataset (55.8\% vs 20.0\%): when agentic LLM insights happen to be statistically stronger, their text tends to be more specific and better aligned with the reason. Both metrics are not reported for ONLYSTATS (template-based questions only).
+Q-I Alignment is similar across the structured pipeline (0.540) and agentic LLM (0.569), consistent with comparable handling by the shared search implementation; remaining gaps therefore plausibly reflect differences in upstream inputs rather than retrieval bias alone. R-I Coherence slightly favors the structured pipeline on average (0.526 vs 0.514), though the agentic LLM scores higher on Employee Attrition (0.519 vs 0.468). This reversal is consistent with the agentic LLM's higher statistical significance on that dataset (55.8\% vs 20.0\%): when agentic LLM insights happen to be statistically stronger, their text tends to be more specific and better aligned with the reason. Neither alignment metric is reported for ONLYSTATS, which relies on templated placeholders rather than comparable question/rationale spans.
 
 \section{Discussion}
 
 \subsection{Key Findings}
 
-Framework diagnostics surface three systematic differences that the metrics make visible. First, the SVR metric exposes a 54-point gap between programmatic and prompt-based constraints (90\%+ vs 40\%), and the same metric isolates the constraint itself as the determining factor -- not the generation method -- since ONLYSTATS reaches comparable SVR via statistical filtering rather than LLM reasoning. Second, the Subspace Rate and Subspace Score metrics isolate a 21.8-point exploration gap between the structured pipeline and ONLYSTATS, which share the same search module, attributing the gap to question generation rather than to search. The Uplift Win Rate metric reveals that the agentic LLM's subspace insights more consistently outperform its global baseline (66.7\% win rate), though the structured pipeline achieves higher absolute subspace scores. Third, SPR exposes the downstream impact of invalid breakdowns: the agentic LLM's zero significant paradoxes show how the metric makes the loss of subspace-analysis capability visible when structural validity is absent.
+Framework diagnostics highlight three repeatable contrasts. First, SVR separates the programmatic safeguards from purely prompt-guided generation by about 54 percentage points (\(\approx\)91\%+ vs.\ 40\%). The comparable SVR achieved by ONLYSTATS through statistical filtering suggests that enforcing permissible column typings---rather than nuanced prompt wording alone---explains much of what the structured pipeline attains without heavy prompt tuning. Second, Subspace Rate and Subspace Score separate a 21.8-point exploration gap between the structured pipeline and ONLYSTATS, which share the same search module, implicating question generation rather than search machinery. Uplift Win Rate further shows that the agentic LLM's subspace insights outperform its global baseline on two of three datasets (66.7\%), while the structured pipeline posts higher absolute subspace scores overall. Third, SPR distinguishes raw reversal prevalence from contrasts that satisfy our joint global--subspace significance criterion; pervasive SVR deficits on the agentic path coincide here with absent significant paradox counts---consistent with semantically mismatched breakdowns obscuring reversible subspace effects.
 
 \subsection{Limitations}
 
@@ -399,7 +400,7 @@ We use \texttt{gpt-5.4} for LLM-based components; a different model may produce 
 
 \section{Conclusion}
 
-Our three-dataset case study demonstrates the framework's diagnostic value: it identifies systematic structural errors in free-form pipelines, quantifies exploration breadth and subspace quality differences, and shows that structural validity is a prerequisite for meaningful paradox analysis. While the Structured Question-Guided Pipeline performs best on key reliability and exploration dimensions in this study, this result demonstrates the framework's discriminative capability rather than advocating for a specific system design. The main outcome is a portable evaluation layer that can be applied to any AutoEDA system to support transparent, reproducible benchmarking
+Our three-dataset case study illustrates diagnostic utility: it flags systematic structural weaknesses in the free-form pipeline, quantifies exploration breadth and subspace-score contrasts, and---in these benchmarks---shows how breakdown validity aligns with whether reversal patterns clear joint significance thresholds. While the Structured Question-Guided Pipeline performs best on key reliability and exploration dimensions in this study, this split mainly highlights whether the diagnostics discriminate architectures among our candidates---not which design will universally generalize. The main outcome is a portable evaluation layer that can be applied to additional AutoEDA systems to support transparent, reproducible benchmarking.
 
 \begin{thebibliography}{00}
 \bibitem{quis} A. Manatkar, A. Akella, P. Gupta, and K. Narayanam, ``QUIS: Question-guided Insights Generation for Automated Exploratory Data Analysis,'' arXiv:2410.10270, 2024.
