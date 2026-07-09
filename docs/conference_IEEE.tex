@@ -95,7 +95,7 @@ This ablation replaces QUGEN with statistical selection: computing Kruskal-Walli
 
 This free-form pipeline uses five sequential agents (data profiling, quality analysis, statistical analysis, pattern discovery, insight extraction) without structured representations. We implemented it using \texttt{gpt-5.4}. The LLM reasons freely over pre-computed evidence. We parse outputs into (B, M, S, P) format to test whether prompt-based reasoning achieves comparable validity to programmatic constraints.
 
-\section{Evaluation Framework}
+\section{Evaluation Metrics}
 
 \subsection{Selected Metrics}
 
@@ -134,7 +134,7 @@ where $P = \{\text{TR, OV, AT, DD}\}$ are the four pattern types (TREND, OUTSTAN
 
 \subsubsection{Group 3: Statistical Quality}
 
-\textit{Statistical Significance} checks the percentage of insights that pass a statistical test at p < 0.05. We use pattern-specific tests: Mann-Kendall for trends \cite{mann}, z-test for outstanding values, Chi-square test for attribution \cite{mchugh}, and Kolmogorov-Smirnov test for distribution differences \cite{kolmogorov}. Effect sizes are measured using Kendall's $\tau$ for trends \cite{kendall}, z/(z+1) for outstanding values, Cramér's V for attribution \cite{cramer}, and KS statistic for distribution differences.
+\textit{Statistical Significance} checks the percentage of insights that pass a statistical test at $p < 0.05$. We use pattern-specific tests: Mann-Kendall for trends \cite{mann}, z-test for outstanding values, Chi-square test for attribution \cite{mchugh}, and Kolmogorov-Smirnov test for distribution differences \cite{kolmogorov}. Effect sizes are measured using Kendall's $\tau$ for trends \cite{kendall}, z/(z+1) for outstanding values, Cramér's V for attribution \cite{cramer}, and KS statistic for distribution differences.
 
 The formula is:
 \begin{equation}
@@ -166,14 +166,14 @@ where $I_S = \{i \in I : |S_i| > 0\}$ and $\text{score}(i)$ is the effect size (
 \end{equation}
 where $I_G = \{i \in I : |S_i| = 0\}$. We report $x$ in aggregated results and \textit{Uplift Win Rate} (percentage of datasets where $\Delta > 0$) because averaging $\Delta$ is not meaningful when baselines differ. Per-dataset $\Delta$ values are in Tables~\ref{tab:adidas_results}--\ref{tab:online_results}.
 
-\textit{Simpson's Paradox Rate (SPR)} detects statistically significant pattern reversals between global and subspace insights \cite{simpson}. A reversal occurs when the pattern direction changes -- for example, a positive trend globally becomes negative in a subspace. We use pattern-specific tests (Mann-Kendall for TREND, Chi-square contingency table for ATTRIBUTION, KS test for DISTRIBUTION\_DIFFERENCE) and require both global and subspace patterns to be statistically significant (p < 0.05).
+\textit{Simpson's Paradox Rate (SPR)} detects statistically significant pattern reversals between global and subspace insights \cite{simpson}. A reversal occurs when the pattern direction changes -- for example, a positive trend globally becomes negative in a subspace. We use pattern-specific tests (Mann-Kendall for TREND, Chi-square contingency table for ATTRIBUTION, KS test for DISTRIBUTION\_DIFFERENCE) and require both global and subspace patterns to be statistically significant ($p < 0.05$).
 
 The formula is:
 \begin{equation}
 \text{SPR} = \frac{|\{i \in I_S : \text{is\_paradox}(i) \land \text{is\_significant}(i)\}|}{|I_S|}
 \end{equation}
 
-where $\text{is\_paradox}(i)$ detects pattern reversal and $\text{is\_significant}(i)$ requires p < 0.05 for both global and subspace patterns. We report raw reversal rates per-dataset but prioritize significant paradoxes in aggregated comparison. Note that SPR is computed over subspace insights only ($I_S$), so Subspace Rate should be read alongside SPR.
+where $\text{is\_paradox}(i)$ detects pattern reversal and $\text{is\_significant}(i)$ requires $p < 0.05$ for both global and subspace patterns. We report raw reversal rates per-dataset but prioritize significant paradoxes in aggregated comparison. Note that SPR is computed over subspace insights only ($I_S$), so Subspace Rate should be read alongside SPR.
 
 \subsubsection{Group 5: Alignment and Coherence}
 
@@ -195,13 +195,14 @@ The formula is:
 
 where $R_i$ is the reason text for insight $i$. This metric is not applicable to ONLYSTATS.
 
-\section{Experimental Setup}
-
-We use three datasets summarized in Table~\ref{tab:datasets}: Adidas US Sales (Chaudhari, 2022) \cite{adidas}, IBM Employee Attrition (Subhash, 2017) \cite{ibm}, and Online Sales (Verma, 2024) \cite{online}. We use OpenAI's \texttt{gpt-5.4} for LLM-based components. We set \texttt{beam\_width = 100} for subspace search. Model choice may change exact values but does not affect cross-system comparability because all pipelines are evaluated with the same framework metrics. For text similarity metrics, we use \texttt{all-MiniLM-L6-v2} from Sentence-BERT (Reimers and Gurevych, 2019) \cite{sbert}.
-
 \section{Results}
+\label{sec:results}
 
 We apply our framework to compare three systems across three datasets. The metric profiles separate the systems clearly along structural validity, exploration breadth, and subspace-related scores.
+
+\subsection{Experimental Setup}
+
+We use three datasets summarized in Table~\ref{tab:datasets}: Adidas US Sales (Chaudhari, 2022) \cite{adidas}, IBM Employee Attrition (Subhash, 2017) \cite{ibm}, and Online Sales (Verma, 2024) \cite{online}. We use OpenAI's \texttt{gpt-5.4} for LLM-based components. We set \texttt{beam\_width = 100} for subspace search. Model choice may change exact values but does not affect cross-system comparability because all pipelines are evaluated with the same framework metrics. For text similarity metrics, we use \texttt{all-MiniLM-L6-v2} from Sentence-BERT (Reimers and Gurevych, 2019) \cite{sbert}.
 
 \subsection{Overview}
 
