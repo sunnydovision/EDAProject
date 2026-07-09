@@ -100,7 +100,7 @@ This ablation replaces QUGEN with statistical selection: Kruskal-Wallis scores~\
 
 \subsection{Free-Form Agentic LLM}
 
-This free-form pipeline uses five sequential agents (data profiling, quality analysis, statistical analysis, pattern discovery, insight extraction) without structured representations, implemented with \texttt{gpt-5.4}. The LLM reasons freely over pre-computed evidence. We parse outputs into (B, M, S, P) form to test whether prompt-based reasoning matches programmatic constraints on validity.
+This free-form pipeline uses five sequential agents (data profiling, quality analysis, statistical analysis, pattern discovery, insight extraction) and no native tuple interface, implemented with \texttt{gpt-5.4}. The LLM reasons over pre-computed evidence. We normalize its structured JSON outputs into (B, M, S, P) form to test validity under the same evaluation contract.
 
 \section{Evaluation Metrics}
 
@@ -184,16 +184,16 @@ where $\text{is\_paradox}(i)$ detects pattern reversal and $\text{is\_significan
 
 \subsubsection{Group 5: Alignment and Coherence}
 
-\textit{Question-Insight Alignment} measures how close the question text is to the final insight text via cosine similarity over sentence embeddings. For reference, related sentence pairs on general-domain text typically score around 0.5 with MiniLM embeddings. The metric ensures that if all systems align similarly with their input questions, differences elsewhere reflect insight quality rather than retrieval bias.
+\textit{Question-Insight Alignment} measures cosine similarity between question text and the final structured insight representation. For reference, related sentence pairs on general-domain text typically score around 0.5 with MiniLM embeddings. We use it as an auxiliary text-alignment diagnostic.
 
 The formula is:
 \begin{equation}
 \text{Q-I\_Alignment} = \frac{1}{|I|} \sum_{i \in I} \text{cosine\_sim}(\text{emb}(Q_i), \text{emb}(T_i))
 \end{equation}
 
-where $Q_i$ is the question text, $T_i$ is the insight text, and $\text{emb}(\cdot)$ uses Sentence-BERT embeddings \cite{sbert}.
+where $Q_i$ is the question text, $T_i$ is the structured insight representation, and $\text{emb}(\cdot)$ uses Sentence-BERT embeddings \cite{sbert}.
 
-\textit{Reason-Insight Coherence} measures how close the reason field is to the final insight. It applies only to the structured pipeline and the agentic LLM, since ONLYSTATS uses template-based questions without reason fields.
+\textit{Reason-Insight Coherence} measures cosine similarity between the reason field and final structured insight representation. It applies only to the structured pipeline and agentic LLM, since ONLYSTATS has no reason fields.
 
 The formula is:
 \begin{equation}
@@ -382,7 +382,7 @@ All systems miss TREND on Employee Attrition and Online Sales due to limited tem
 
 Subspace Rate is where structured approaches show the largest advantage. The structured pipeline reaches 84.4\% average (range 79.2\%--87.2\%), versus 37.4\% for the agentic LLM (range 33.3\%--42.7\%) and 62.6\% for ONLYSTATS (range 60.0\%--65.8\%).
 
-Since the structured pipeline and ONLYSTATS share the same search module, the 21.8-point average gap isolates the contribution of semantically grounded questions over exhaustive enumeration. LLM-generated questions appear to focus the search on interpretable subspaces, while statistical selection yields many valid pairs whose global patterns are too weak for subspace search to improve. The 47.0-point gap versus the agentic LLM reflects compounding effects: pervasive invalid breakdowns leave few admissible subspace refinements under our parsers. ONLYSTATS reaches its highest subspace rate on Online Sales (65.8\%) because exhaustive enumeration yields many valid (B,\,M) pairs on this small 9-column dataset, giving the search more entry points.
+Since the structured pipeline and ONLYSTATS share the same search module, the 21.8-point average gap isolates the contribution of semantically grounded questions over exhaustive enumeration. LLM-generated questions appear to focus the search on interpretable subspaces, while statistical selection yields many valid pairs whose global patterns are too weak for subspace search to improve. The 47.0-point gap versus the agentic LLM reflects compounding effects: invalid breakdowns leave fewer admissible refinements under the shared tuple contract. ONLYSTATS reaches its highest subspace rate on Online Sales (65.8\%) because exhaustive enumeration yields many valid (B,\,M) pairs on this small 9-column dataset.
 
 Subspace Score ($x$) and Score Uplift ($\Delta$) capture different quality dimensions. The structured pipeline has the highest mean subspace score (1.067 average, peak 1.574 on Employee), but the agentic LLM tops Uplift Win Rate (66.7\%: positive $\Delta$ on Employee and Online), versus 33.3\% for both the structured pipeline and ONLYSTATS (each positive on only one dataset). So while the structured pipeline produces stronger subspace patterns in absolute terms, the agentic LLM's subspace insights more consistently beat its global baseline. On Adidas, all systems show negative uplift, suggesting particularly strong global patterns on this temporal dataset.
 
@@ -392,9 +392,9 @@ SPR distinguishes raw reversal rates from significant paradoxes. ONLYSTATS has t
 
 Statistical significance is dataset-dependent (structured: 46.4\%, agentic LLM: 57.6\%, ONLYSTATS: 58.0\% on average). The structured pipeline leads on Adidas (83.4\%) but drops on Employee Attrition (20.0\%), where binary/categorical variables make simpler aggregations more likely to pass our significance thresholds. These contrasts reflect dataset geometry: temporal datasets with continuous measures favor concentrated subspace search, while categorical-heavy tables benefit more from exhaustive enumeration.
 
-\subsubsection{Control Metrics}
+\subsubsection{Text-Alignment Diagnostics}
 
-Q-I Alignment is similar for the structured pipeline (0.540) and agentic LLM (0.569), consistent with comparable handling by the shared search implementation; remaining gaps therefore likely reflect upstream input differences rather than retrieval bias alone. R-I Coherence slightly favors the structured pipeline on average (0.526 vs 0.514), though the agentic LLM scores higher on Employee Attrition (0.519 vs 0.468). This reversal is consistent with the agentic LLM's higher statistical significance on that dataset (55.8\% vs 20.0\%): when its insights are statistically stronger, their text tends to be more specific and better aligned with the reason. Neither alignment metric is reported for ONLYSTATS, which uses templated placeholders rather than comparable question/rationale spans.
+Q-I Alignment is similar for the structured pipeline (0.540) and agentic LLM (0.569), so question text is comparably close to the final structured insight representation. R-I Coherence slightly favors the structured pipeline on average (0.526 vs 0.514), though the agentic LLM scores higher on Employee Attrition (0.519 vs 0.468). Since agentic questions are derived from post-hoc outputs, we treat these scores as auxiliary alignment diagnostics, not causal controls. Neither metric is reported for ONLYSTATS, which lacks comparable question/rationale spans.
 
 \section{Discussion}
 
@@ -404,7 +404,7 @@ Framework diagnostics highlight three repeatable contrasts. First, SVR separates
 
 \subsection{Limitations}
 
-We use \texttt{gpt-5.4} for LLM-based components; a different model may shift exact numbers. Our embedding metrics depend on \texttt{all-MiniLM-L6-v2}. With only three datasets, metric differences should be read as observations rather than statistical conclusions. Still, the 54-point SVR gap and 47-point Subspace Rate gap are consistent across datasets.
+We use \texttt{gpt-5.4} for LLM-based components; a different model may shift exact numbers. Our embedding metrics depend on \texttt{all-MiniLM-L6-v2}. With only three datasets and schema-normalized agentic outputs, metric differences should be read as observations under our shared evaluation contract rather than statistical conclusions. Still, the 54-point SVR gap and 47-point Subspace Rate gap are consistent across datasets.
 
 \section{Conclusion}
 
