@@ -195,13 +195,14 @@ The formula is:
 
 where $R_i$ is the reason text for insight $i$. This metric is not applicable to ONLYSTATS.
 
-\section{Experimental Setup}
-
-We use three datasets summarized in Table~\ref{tab:datasets}: Adidas US Sales (Chaudhari, 2022) \cite{adidas}, IBM Employee Attrition (Subhash, 2017) \cite{ibm}, and Online Sales (Verma, 2024) \cite{online}. We use OpenAI's \texttt{gpt-5.4} for LLM-based components. We set \texttt{beam\_width = 100} for subspace search. Model choice may change exact values but does not affect cross-system comparability because all pipelines are evaluated with the same framework metrics. For text similarity metrics, we use \texttt{all-MiniLM-L6-v2} from Sentence-BERT (Reimers and Gurevych, 2019) \cite{sbert}.
-
 \section{Results}
+\label{sec:results}
 
 We apply our framework to compare three systems across three datasets. The metric profiles separate the systems clearly along structural validity, exploration breadth, and subspace-related scores.
+
+\subsection{Experimental Setup}
+
+We use three datasets summarized in Table~\ref{tab:datasets}: Adidas US Sales (Chaudhari, 2022) \cite{adidas}, IBM Employee Attrition (Subhash, 2017) \cite{ibm}, and Online Sales (Verma, 2024) \cite{online}. We use OpenAI's \texttt{gpt-5.4} for LLM-based components. We set \texttt{beam\_width = 100} for subspace search. Model choice may change exact values but does not affect cross-system comparability because all pipelines are evaluated with the same framework metrics. For text similarity metrics, we use \texttt{all-MiniLM-L6-v2} from Sentence-BERT (Reimers and Gurevych, 2019) \cite{sbert}.
 
 \subsection{Overview}
 
