@@ -42,8 +42,6 @@ We apply the framework across three datasets (Adidas US Sales, IBM Employee Attr
 
 The answer is consistent across our case study. The framework surfaces large, repeatable gaps in structural validity and subspace exploration between structured and free-form designs, showing that automatic diagnostics can meaningfully separate AutoEDA architectures without human raters. We do not claim that automatic metrics replace human evaluation in all settings; instead, they provide a reproducible diagnostic layer for studying failure modes and system differences.
 
-We emphasize that our novelty is not any single statistical test---individual components such as Mann-Kendall trend tests, subgroup-discovery scores, and SBERT similarity are adapted by design. Rather, the contribution is their \emph{integration} into one reproducible protocol that jointly checks structural validity, subgroup significance, and paradox-aware scoring, together with a controlled case study that isolates the effect of each architectural choice.
-
 Our contributions are:
 
 \begin{itemize}
@@ -79,7 +77,7 @@ Simpson's Paradox~\cite{simpson} denotes cases where a global association revers
 
 \subsection{Research Gap}
 
-Prior AutoEDA evaluation either relies on human raters (e.g., InsightPilot~\cite{insightpilot} and QUIS~\cite{quis}) or scores a single dimension---statistical deviation~\cite{seedb,quickinsights}, perceptual quality~\cite{voyager,voder}, or organized pattern structure~\cite{metainsight}---without validating breakdown structure or paradox-aware subgroup contrasts. To our knowledge, no AutoEDA evaluation framework checks structural validity -- whether the breakdown column type matches the intended pattern -- alongside subgroup significance testing and paradox-aware scoring in one reproducible protocol. \textbf{Our work} addresses these omissions with a reproducible diagnostic framework comprising nine automated metrics spanning correctness, structural validity, statistical quality, subspace exploration, and question quality. In our benchmarks the agentic baseline shows pervasive structural mismatch and records zero paradoxes that meet our dual-significance SPR definition, whereas structured setups achieve the strongest SVRs and the significant paradox detections under that definition.
+To our knowledge, no AutoEDA evaluation framework checks structural validity -- whether the breakdown column type matches the intended pattern -- alongside subgroup significance testing and paradox-aware scoring in one reproducible protocol. \textbf{Our work} addresses these omissions with a reproducible diagnostic framework comprising nine automated metrics spanning correctness, structural validity, statistical quality, subspace exploration, and question quality. In our benchmarks the agentic baseline shows pervasive structural mismatch and records zero paradoxes that meet our dual-significance SPR definition, whereas structured setups achieve the strongest SVRs and the significant paradox detections under that definition.
 
 \section{System Overview}
 
@@ -95,15 +93,13 @@ This ablation replaces QUGEN with statistical selection: computing Kruskal-Walli
 
 \subsection{Free-Form Agentic LLM}
 
-This free-form pipeline uses five sequential agents (data profiling, quality analysis, statistical analysis, pattern discovery, insight extraction) without structured representations. We implemented it using \texttt{gpt-5.4}. The LLM reasons freely over pre-computed evidence. We parse outputs into (B, M, S, P) format to test whether prompt-based reasoning achieves comparable validity to programmatic constraints. Because this pipeline is not designed to emit structured tuples, post-hoc parsing is a necessary step to apply the same metric protocol to all systems; consequently, some of its SVR penalties may reflect format mismatch (unparseable or structurally inconsistent outputs) rather than reasoning errors alone. The comparison remains meaningful because every system---structured or free-form---must satisfy the same (B, M, S, P) contract to be evaluated. We revisit this point in the Limitations.
+This free-form pipeline uses five sequential agents (data profiling, quality analysis, statistical analysis, pattern discovery, insight extraction) without structured representations. We implemented it using \texttt{gpt-5.4}. The LLM reasons freely over pre-computed evidence. We parse outputs into (B, M, S, P) format to test whether prompt-based reasoning achieves comparable validity to programmatic constraints.
 
-\section{Evaluation Metrics}
+\section{Evaluation Framework}
 
-\subsection{Metric Selection and Roles}
+\subsection{Selected Metrics}
 
-We selected 9 metrics from a larger candidate list so that each metric covers a distinct evaluation need rather than duplicating others: a correctness sanity check (Group 1), structural-form validation (Group 2), statistical strength (Group 3), breadth and quality of subspace exploration (Group 4), and confound controls (Group 5). Groups 1--4 are \textit{diagnostic} metrics that measure quality and exploration, whereas Group 5 (Q-I Alignment and R-I Coherence) are \textit{control} metrics: because the ISGEN search module is shared across pipelines, similar alignment scores indicate that observed gaps in SVR and Subspace Rate are unlikely to be driven by embedding-retrieval artifacts or incoherent rationales rather than genuine architectural differences.
-
-The metrics are not fully independent, and we treat them as a coherent diagnostic profile rather than orthogonal axes. In particular, SVR gates Statistical Significance (only structurally valid insights are tested), and Subspace Rate conditions both Score Uplift and Simpson's Paradox Rate, since these require valid subspaces to exist. We revisit these dependencies when interpreting cross-dataset results in Section~\ref{sec:results}. We group the metrics as follows.
+We selected 9 essential metrics from a larger list of candidates. We group them as follows.
 
 \subsubsection{Group 1: Correctness}
 
@@ -138,7 +134,7 @@ where $P = \{\text{TR, OV, AT, DD}\}$ are the four pattern types (TREND, OUTSTAN
 
 \subsubsection{Group 3: Statistical Quality}
 
-\textit{Statistical Significance} checks the percentage of insights that pass a statistical test at $p < 0.05$. We use pattern-specific tests: Mann-Kendall for trends \cite{mann}, z-test for outstanding values, Chi-square test for attribution \cite{mchugh}, and Kolmogorov-Smirnov test for distribution differences \cite{kolmogorov}. Effect sizes are measured using Kendall's $\tau$ for trends \cite{kendall}, z/(z+1) for outstanding values, Cramér's V for attribution \cite{cramer}, and KS statistic for distribution differences.
+\textit{Statistical Significance} checks the percentage of insights that pass a statistical test at p < 0.05. We use pattern-specific tests: Mann-Kendall for trends \cite{mann}, z-test for outstanding values, Chi-square test for attribution \cite{mchugh}, and Kolmogorov-Smirnov test for distribution differences \cite{kolmogorov}. Effect sizes are measured using Kendall's $\tau$ for trends \cite{kendall}, z/(z+1) for outstanding values, Cramér's V for attribution \cite{cramer}, and KS statistic for distribution differences.
 
 The formula is:
 \begin{equation}
@@ -170,14 +166,14 @@ where $I_S = \{i \in I : |S_i| > 0\}$ and $\text{score}(i)$ is the effect size (
 \end{equation}
 where $I_G = \{i \in I : |S_i| = 0\}$. We report $x$ in aggregated results and \textit{Uplift Win Rate} (percentage of datasets where $\Delta > 0$) because averaging $\Delta$ is not meaningful when baselines differ. Per-dataset $\Delta$ values are in Tables~\ref{tab:adidas_results}--\ref{tab:online_results}.
 
-\textit{Simpson's Paradox Rate (SPR)} detects statistically significant pattern reversals between global and subspace insights \cite{simpson}. A reversal occurs when the pattern direction changes -- for example, a positive trend globally becomes negative in a subspace. We use pattern-specific tests (Mann-Kendall for TREND, Chi-square contingency table for ATTRIBUTION, KS test for DISTRIBUTION\_DIFFERENCE) and require both global and subspace patterns to be statistically significant ($p < 0.05$).
+\textit{Simpson's Paradox Rate (SPR)} detects statistically significant pattern reversals between global and subspace insights \cite{simpson}. A reversal occurs when the pattern direction changes -- for example, a positive trend globally becomes negative in a subspace. We use pattern-specific tests (Mann-Kendall for TREND, Chi-square contingency table for ATTRIBUTION, KS test for DISTRIBUTION\_DIFFERENCE) and require both global and subspace patterns to be statistically significant (p < 0.05).
 
 The formula is:
 \begin{equation}
 \text{SPR} = \frac{|\{i \in I_S : \text{is\_paradox}(i) \land \text{is\_significant}(i)\}|}{|I_S|}
 \end{equation}
 
-where $\text{is\_paradox}(i)$ detects pattern reversal and $\text{is\_significant}(i)$ requires $p < 0.05$ for both global and subspace patterns. We report raw reversal rates per-dataset but prioritize significant paradoxes in aggregated comparison. Note that SPR is computed over subspace insights only ($I_S$), so Subspace Rate should be read alongside SPR.
+where $\text{is\_paradox}(i)$ detects pattern reversal and $\text{is\_significant}(i)$ requires p < 0.05 for both global and subspace patterns. We report raw reversal rates per-dataset but prioritize significant paradoxes in aggregated comparison. Note that SPR is computed over subspace insights only ($I_S$), so Subspace Rate should be read alongside SPR.
 
 \subsubsection{Group 5: Alignment and Coherence}
 
@@ -199,12 +195,11 @@ The formula is:
 
 where $R_i$ is the reason text for insight $i$. This metric is not applicable to ONLYSTATS.
 
-\section{Results}
-\label{sec:results}
-
-\subsection{Experimental Setup}
+\section{Experimental Setup}
 
 We use three datasets summarized in Table~\ref{tab:datasets}: Adidas US Sales (Chaudhari, 2022) \cite{adidas}, IBM Employee Attrition (Subhash, 2017) \cite{ibm}, and Online Sales (Verma, 2024) \cite{online}. We use OpenAI's \texttt{gpt-5.4} for LLM-based components. We set \texttt{beam\_width = 100} for subspace search. Model choice may change exact values but does not affect cross-system comparability because all pipelines are evaluated with the same framework metrics. For text similarity metrics, we use \texttt{all-MiniLM-L6-v2} from Sentence-BERT (Reimers and Gurevych, 2019) \cite{sbert}.
+
+\section{Results}
 
 We apply our framework to compare three systems across three datasets. The metric profiles separate the systems clearly along structural validity, exploration breadth, and subspace-related scores.
 
@@ -402,10 +397,6 @@ Framework diagnostics highlight three repeatable contrasts. First, SVR separates
 \subsection{Limitations}
 
 We use \texttt{gpt-5.4} for LLM-based components; a different model may produce different exact numbers. Our embedding metrics depend on \texttt{all-MiniLM-L6-v2}. With only three datasets, metric differences should be read as observations rather than statistical conclusions. Nevertheless, the 54-point SVR gap and 47-point Subspace Rate gap are consistent across datasets.
-
-This study does not validate the diagnostic scores against human raters or end-user judgments. Automatic metrics target structural and statistical failure modes that human ratings often miss---such as invalid breakdown columns and paradox reversals---but they are complementary to, rather than a replacement for, human evaluation. A natural direction for future work is to correlate framework scores with expert ratings or user-study outcomes, in the spirit of the human-rater evaluations used by QUIS~\cite{quis} and InsightPilot~\cite{insightpilot}, and to quantify what structural criteria (e.g., SVR, dual-significance SPR) add beyond those studies.
-
-Finally, the agentic baseline is potentially disadvantaged by the post-hoc parsing described in Section~III: because it is not designed to emit (B, M, S, P) tuples, part of its SVR loss may stem from format mismatch rather than flawed reasoning. A prompted structured-output variant of the agent would be a natural extension, which we leave to future work due to scope and compute constraints.
 
 \section{Conclusion}
 
