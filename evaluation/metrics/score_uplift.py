@@ -119,8 +119,8 @@ def compute_score_uplift_from_subspace(
     """
     Compute score uplift from using subspace.
 
-    Score = (1 - p_value) per insight, computed via significance.py.
-    Requires df_cleaned to evaluate p-values; returns zeros if not provided.
+    Score is the pattern-specific effect-size score computed via significance.py.
+    Requires df_cleaned to evaluate each insight; returns empty metrics if not provided.
 
     uplift_abs   = mean(score | subspace != []) - mean(score | subspace == [])
     uplift_ratio = mean(score | subspace != []) / mean(score | subspace == [])
@@ -196,4 +196,3 @@ def compute_score_uplift_from_subspace(
         "contrasting_count": contrasting_count,
         "subspace_direction_evaluated": subspace_evaluated,
     }
-

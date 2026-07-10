@@ -1,5 +1,7 @@
 # Camera-Ready Response Plan
 
+This note summarizes the reviewer comments, our author response, and the concrete edits made or planned for `docs/conference_IEEE.tex`.
+
 ## Reviewer #1
 
 ### R1.1 — Fairness of the agentic baseline
@@ -53,8 +55,8 @@ We will add this as a limitation rather than overclaiming the automatic metrics.
 
 **Author response.** We agree. The nine metrics were selected from a larger candidate pool to keep the evaluation focused on failures that matter for AutoEDA insight quality: grounded numeric correctness, structural validity, statistical strength, pattern/subspace exploration, and auxiliary text alignment. We deliberately did not foreground some available metrics, such as runtime, token cost, or several breakdown-measure association scores, because they either measure efficiency rather than insight quality or can distract from the paper's main diagnostic claims. The retained metrics are also not fully independent; for example, SVR affects which insights can be meaningfully tested, and Subspace Rate conditions uplift and SPR.
 
-**Revision plan.**
-We will add only a compact explanation in §IV. The paragraph should say that the nine metrics were chosen from the broader metric inventory as a minimal diagnostic set, while acknowledging the main dependencies among them. This should be kept short because the paper is already at the page limit.
+**Revision.**
+We added a compact explanation in §IV stating that the nine metrics were chosen from a broader candidate pool to cover the main diagnostic failure modes. We kept this to one sentence because the paper is already at the page limit; the fuller rationale remains in the metric documentation.
 
 ### R5.4 — Typographical and formatting issues
 

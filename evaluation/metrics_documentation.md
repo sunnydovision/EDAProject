@@ -1360,7 +1360,7 @@ Trong đó:
 ### Ý nghĩa
 - Alignment cao → câu hỏi và insight trong cùng card nhất quán về chủ đề
 - Alignment thấp → QuGen sinh câu hỏi không khớp với insight được trả về
-- Trong so sánh hệ thống: hai hệ thường cho Alignment gần bằng nhau (**control metric**) → Tie là bình thường và kỳ vọng
+- Trong so sánh hệ thống: hai hệ thường cho Alignment gần bằng nhau (**auxiliary text-alignment diagnostic**) → Tie là bình thường và kỳ vọng
 
 ### Output
 
@@ -1389,9 +1389,9 @@ Trong đó:
 | online_sales | 0.543 | 0.539 | N/A | Tie |
 | **AVG** | **0.540** | **0.569** | **N/A** | **Baseline** |
 
-> 💡 **Nhận xét:** QUIS và Baseline gần nhau (0.540 vs 0.569), Tie trên 2/3 dataset. ONLYSTATS **N/A** — không có câu hỏi thực. Đây là **control metric** — kết quả Tie giữa QUIS và Baseline là kỳ vọng bình thường (cả hai đều thực thi đúng insight theo câu hỏi).
+> 💡 **Nhận xét:** QUIS và Baseline gần nhau (0.540 vs 0.569), Tie trên 2/3 dataset. ONLYSTATS **N/A** — không có câu hỏi thực. Đây là **auxiliary text-alignment diagnostic** — kết quả Tie giữa QUIS và Baseline là kỳ vọng bình thường (cả hai đều thực thi đúng insight theo câu hỏi).
 >
-> 🎯 **Phù hợp với mục tiêu QuGen?** Có, **nhưng chỉ như control**. Tie giữa QUIS và Baseline (0.540 vs 0.569) chứng minh câu hỏi QuGen bám sát insight được trả về — không bị lệch. ONLYSTATS N/A by design. **Giữ như control metric**; không dùng để rank systems trong phần QuGen.
+> 🎯 **Phù hợp với mục tiêu QuGen?** Có, **nhưng chỉ như diagnostic phụ**. Tie giữa QUIS và Baseline (0.540 vs 0.569) cho thấy câu hỏi QuGen bám sát insight được trả về — không bị lệch. ONLYSTATS N/A by design. **Giữ như auxiliary diagnostic**; không dùng để rank systems trong phần QuGen.
 
 ---
 
@@ -2004,4 +2004,3 @@ Mỗi entry trong file cần có cấu trúc:
 - **df_cleaned**: dataframe đã làm sạch currency/percentage strings thành float
 - Faithfulness dùng cả hai: thử trên df_cleaned trước, fallback sang df_raw nếu cần
 - Significance dùng df_cleaned
-

@@ -237,7 +237,7 @@ def create_comparison_table_3way(
     row('Intent Layer Quality', '11c. Question–Insight Alignment',
         al_str,
         al_winner,
-        'Mean cosine(Embed(question), Embed(insight)) — control metric; N/A for ONLYSTATS (template)')
+        'Mean cosine(Embed(question), Embed(insight)) — auxiliary text-alignment diagnostic; N/A for ONLYSTATS (template)')
 
     # ── 11d. Question Novelty (cross-system) ───────────────────────────────
     # Extract from results since they were computed in pairwise comparisons
@@ -258,7 +258,7 @@ def create_comparison_table_3way(
     row('Intent Layer Quality', '11e. Reason–Insight Coherence',
         [format_metric_value(v, 'default') if v != 'N/A' else 'N/A' for v in rc_display],
         _winner3(names, [v if v != 'N/A' else 0 for v in rc]),
-        'Mean cosine(Embed(reason), Embed(insight)) — reason grounding')
+        'Mean cosine(Embed(reason), Embed(insight)) — auxiliary text-alignment diagnostic')
 
     # ── 12. Structural Validity Rate ──────────────────────────────────────
     svr_results = [
