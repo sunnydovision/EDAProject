@@ -23,15 +23,16 @@
 
 % Author information removed for double-blind review.
 \author{
-  \IEEEauthorblockN{Bich Ngoc T Do, Phu Thinh Nguyen, Tran Hung Nghiep}
-  \IEEEauthorblockA{University of Information Technology, Ho Chi Minh City, Viet Nam; Vietnam National University, Ho Chi Minh City, Viet Nam}
+  \IEEEauthorblockN{Bich Ngoc T Do, Phu Thinh Nguyen, Hung-Nghiep Tran}
+  \IEEEauthorblockA{University of Information Technology}
+  \IEEEauthorblockA{Vietnam National University, Ho Chi Minh City, Viet Nam}
   \IEEEauthorblockA{\{ngocdtb.19, thinhnp.19\}@grad.uit.edu.vn, nghiepth@uit.edu.vn}
 }
 
 \maketitle
 
 \begin{abstract}
-Human evaluation remains the dominant way to assess automated exploratory data analysis (AutoEDA) systems, but it is expensive, subjective, and hard to reproduce. We introduce a reproducible automatic diagnostic framework that surfaces structural and statistical failures in AutoEDA---failure modes often under-emphasized when reviewers prioritize fluent prose over breakdown validity and statistical form. The framework uses 9 metrics covering correctness, structural validity, statistical quality, subspace exploration, and question-insight alignment. We apply it to three representative pipelines: a QUIS-style structured question-guided system, ONLYSTATS (a statistics-based ablation), and a free-form agentic LLM. Across Adidas US Sales, IBM Employee Attrition, and Online Sales, structured intermediate representations show fewer column-type errors and broader subspace coverage in our runs. The QUIS-style pipeline reaches 94.0\% average structural validity versus 40.0\% for the agentic LLM, and discovers more subspace insights on average (84.4\% vs. 37.4\%). It also attains the highest Subspace Score ($x$=1.067), while the agentic LLM leads on Uplift Win Rate (66.7\%, subspace beats global in 2 of 3 datasets). The QUIS-style pipeline discovers significant paradoxes in 2 of 3 datasets. Overall, schema-aware question guidance tracks higher structural validity and subgroup coverage than free-form prompting in our runs. More broadly, the paper contributes a reusable diagnostic framework for reproducible comparison of AutoEDA systems.
+Human evaluation remains the dominant way to assess automated exploratory data analysis (AutoEDA) systems, but it is expensive, subjective, and hard to reproduce. We introduce a reproducible automatic diagnostic framework that surfaces structural and statistical failures in AutoEDA---failure modes often under-emphasized when reviewers prioritize fluent prose over breakdown validity and statistical form. The framework uses 9 metrics covering correctness, structural validity, statistical quality, subspace exploration, and question-insight alignment. We apply it to three representative pipelines: a QUIS-style structured question-guided system, ONLYSTATS (a statistics-based ablation), and a free-form agentic LLM. Across Adidas US Sales, IBM Employee Attrition, and Online Sales, structured intermediate representations show fewer column-type errors and broader subspace coverage in our runs. The QUIS-style pipeline reaches 94.0\% average structural validity versus 40.0\% for the agentic LLM, and discovers more subspace insights on average (84.4\% vs. 37.4\%). It also attains the highest Subspace Score ($x$=1.067), while the agentic LLM leads on Uplift Win Rate (66.7\%, subspace beats global in 2 of 3 datasets). The QUIS-style pipeline discovers significant paradoxes in 2 of 3 datasets. Overall, schema-aware question guidance tracks higher structural validity and subgroup coverage than free-form prompting in our runs. More broadly, the paper contributes a reusable diagnostic framework for reproducible comparison of AutoEDA systems. Code and data are available at \url{https://github.com/sunnydovision/EDA_Evaluation}.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -106,7 +107,9 @@ This free-form pipeline uses five sequential agents (data profiling, quality ana
 
 \subsection{Selected Metrics}
 
-We selected 9 metrics from a larger candidate pool to cover the main diagnostic failure modes in AutoEDA: numeric grounding, structural validity, statistical strength, subspace exploration, and auxiliary text alignment. We group them as follows.
+We selected 9 metrics from a larger candidate pool to cover failure modes that fluent AutoEDA narratives can hide: numeric grounding, structural validity, statistical strength, subspace exploration, and text alignment. We omit efficiency/cost from the primary framework because they measure resource trade-offs, not insight reliability, and de-emphasize breakdown-measure association scores because they can reward statistically strong but semantically weak correlations. Thus the set is diagnostic rather than exhaustive.
+
+We group them as follows.
 
 \subsubsection{Group 1: Correctness}
 
