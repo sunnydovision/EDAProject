@@ -8,6 +8,7 @@
 \usepackage{textcomp}
 \usepackage{xcolor}
 \usepackage{url}
+\usepackage[hidelinks]{hyperref}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
@@ -21,7 +22,7 @@
 
 \title{Evaluating AutoEDA Without Human Raters: A Diagnostic Framework and Case Study of Structured Question Generation}
 
-% Author information removed for double-blind review.
+% Author information.
 \author{
   \IEEEauthorblockN{Bich Ngoc Do, Phu Thinh Nguyen, Hung-Nghiep Tran}
   \IEEEauthorblockA{University of Information Technology, Ho Chi Minh City, Vietnam}
@@ -32,7 +33,7 @@
 \maketitle
 
 \begin{abstract}
-Human evaluation remains the dominant way to assess automated exploratory data analysis (AutoEDA) systems, but it is expensive, subjective, and hard to reproduce. We introduce a reproducible automatic diagnostic framework that surfaces structural and statistical failures in AutoEDA---failure modes often under-emphasized when reviewers prioritize fluent prose over breakdown validity and statistical form. The framework uses 9 metrics covering correctness, structural validity, statistical quality, subspace exploration, and question-insight alignment. We apply it to three representative pipelines: a QUIS-style structured question-guided system, ONLYSTATS (a statistics-based ablation), and a free-form agentic LLM. Across Adidas US Sales, IBM Employee Attrition, and Online Sales, structured intermediate representations show fewer column-type errors and broader subspace coverage in our runs. The QUIS-style pipeline reaches 94.0\% average structural validity versus 40.0\% for the agentic LLM, and discovers more subspace insights on average (84.4\% vs. 37.4\%). It also attains the highest Subspace Score ($x$=1.067), while the agentic LLM leads on Uplift Win Rate (66.7\%, subspace beats global in 2 of 3 datasets). The QUIS-style pipeline discovers significant paradoxes in 2 of 3 datasets. Overall, schema-aware question guidance tracks higher structural validity and subgroup coverage than free-form prompting in our runs. More broadly, the paper contributes a reusable diagnostic framework for reproducible comparison of AutoEDA systems. Code and data are available at \url{https://github.com/sunnydovision/EDA_Evaluation}.
+Human evaluation remains the dominant way to assess automated exploratory data analysis (AutoEDA) systems, but it is expensive, subjective, and hard to reproduce. We introduce a reproducible automatic diagnostic framework that surfaces structural and statistical failures in AutoEDA---failure modes often under-emphasized when reviewers prioritize fluent prose over breakdown validity and statistical form. The framework uses 9 metrics covering correctness, structural validity, statistical quality, subspace exploration, and question-insight alignment. We apply it to three representative pipelines: a QUIS-style structured question-guided system, ONLYSTATS (a statistics-based ablation), and a free-form agentic LLM. Across Adidas US Sales, IBM Employee Attrition, and Online Sales, structured intermediate representations show fewer column-type errors and broader subspace coverage in our runs. The QUIS-style pipeline reaches 94.0\% average structural validity versus 40.0\% for the agentic LLM, and discovers more subspace insights on average (84.4\% vs. 37.4\%). It also attains the highest Subspace Score ($x$=1.067), while the agentic LLM leads on Uplift Win Rate (66.7\%, subspace beats global in 2 of 3 datasets). The QUIS-style pipeline discovers significant paradoxes in 2 of 3 datasets. Overall, schema-aware question guidance tracks higher structural validity and subgroup coverage than free-form prompting in our runs. More broadly, the paper contributes a reusable diagnostic framework for reproducible comparison of AutoEDA systems. Code and data are available at \href{https://github.com/sunnydovision/EDA_Evaluation}{https://github.com/sunnydovision/EDA\_Evaluation}.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -416,6 +417,10 @@ We use \texttt{gpt-5.4} for LLM-based components; a different model may shift ex
 \section{Conclusion}
 
 Our three-dataset case study illustrates diagnostic utility: it flags systematic structural weaknesses in the free-form pipeline, quantifies exploration breadth and subspace-score contrasts, and---in these benchmarks---shows how breakdown validity aligns with whether reversal patterns clear joint significance thresholds. While the Structured Question-Guided Pipeline performs best on key reliability and exploration dimensions here, this mainly shows that the diagnostics discriminate architectures among our candidates---not which design will universally generalize. The main outcome is a portable evaluation layer applicable to additional AutoEDA systems for transparent, reproducible benchmarking.
+
+\section*{Acknowledgment}
+
+This research was funded by University of Information Technology, Vietnam National University Ho Chi Minh City under grant number CS4-2026-80120.
 
 \begin{thebibliography}{00}
 \bibitem{quis} A. Manatkar, A. Akella, P. Gupta, and K. Narayanam, ``QUIS: Question-guided Insights Generation for Automated Exploratory Data Analysis,'' arXiv:2410.10270, 2024.
