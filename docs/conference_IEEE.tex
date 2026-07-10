@@ -272,11 +272,12 @@ Alignment & 9. R-I Coherence & \textbf{0.526} & 0.514 & N/A & \textbf{QUIS-style
 \subsection{Detailed Results by Dataset}
 
 {
-\renewcommand{\arraystretch}{0.9}
-\setlength{\belowcaptionskip}{-10pt}
+\renewcommand{\arraystretch}{0.88}
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{-4pt}
 \begin{table}[!ht]
 \caption{Results on Adidas US Sales (QUIS-Style=99, Agentic=75, ONLY=113)}
-\begin{center}
+\centering
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{|l|c|c|c|}
 \hline
@@ -297,18 +298,19 @@ R-I Coherence & \textbf{0.553} & 0.527 & N/A \\
 \hline
 \end{tabular}}
 \label{tab:adidas_results}
-\end{center}
+\vspace{-3pt}
 \end{table}
 }
 
 Table~\ref{tab:adidas_results} shows the structured pipeline leading on SVR (99.0\% vs 45.3\%) and Subspace Rate (86.9\%), while ONLYSTATS posts the highest raw SPR (42.9\%). All three systems show negative Score Uplift ($\Delta < 0$), indicating global patterns are stronger than subspace patterns on this temporal dataset. On Adidas all systems yield zero significant paradoxes---no reversal passes our strict dual-significance SPR criterion.
 
 {
-\renewcommand{\arraystretch}{0.9}
-\setlength{\belowcaptionskip}{-10pt}
+\renewcommand{\arraystretch}{0.88}
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{-4pt}
 \begin{table}[!ht]
 \caption{Results on IBM Employee Attrition (QUIS-Style=133, Agentic=81, ONLY=125)}
-\begin{center}
+\centering
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{|l|c|c|c|}
 \hline
@@ -327,18 +329,19 @@ R-I Coherence & 0.468 & \textbf{0.519} & N/A \\
 \hline
 \end{tabular}}
 \label{tab:employee_results}
-\end{center}
+\vspace{-3pt}
 \end{table}
 }
 
 Table~\ref{tab:employee_results} shows the structured pipeline with the strongest Subspace Score ($x$=1.574) and positive Score Uplift ($\Delta$=+0.083), indicating subspace insights are stronger than global ones. It is also the only system with significant paradoxes (SPR 30.2\%, 1 significant). The agentic LLM is also positive ($\Delta$=+0.046), while ONLYSTATS is negative ($\Delta$=-0.184). This suggests exhaustive enumeration alone is not enough for strong subspace quality when many global patterns are weak.
 
 {
-\renewcommand{\arraystretch}{0.9}
-\setlength{\belowcaptionskip}{-10pt}
+\renewcommand{\arraystretch}{0.88}
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{-4pt}
 \begin{table}[!ht]
 \caption{Results on Online Sales (QUIS-Style=106, Agentic=61, ONLY=114)}
-\begin{center}
+\centering
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{|l|c|c|c|}
 \hline
@@ -357,7 +360,7 @@ R-I Coherence & \textbf{0.557} & 0.497 & N/A \\
 \hline
 \end{tabular}}
 \label{tab:online_results}
-\end{center}
+\vspace{-3pt}
 \end{table}
 }
 
