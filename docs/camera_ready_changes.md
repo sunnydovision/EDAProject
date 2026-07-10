@@ -1,7 +1,5 @@
 # Camera-Ready Response Plan
 
-This note summarizes the reviewer comments, our author response, and the concrete edits made or planned for `docs/conference_IEEE.tex`.
-
 ## Reviewer #1
 
 ### R1.1 — Fairness of the agentic baseline
