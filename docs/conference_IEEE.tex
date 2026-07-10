@@ -240,11 +240,12 @@ Online Sales & 240 & 9 & Small, categorical, numerical \\
 Table~\ref{tab:avg_results} summarizes average results across the three datasets; per-dataset details are in Tables~\ref{tab:adidas_results}--\ref{tab:online_results}.
 
 {
-\renewcommand{\arraystretch}{0.9}
-\setlength{\belowcaptionskip}{-2pt}
+\renewcommand{\arraystretch}{0.88}
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{-4pt}
 \begin{table*}[htbp]
 \caption{Average Evaluation Results Across Three Datasets}
-\begin{center}
+\centering
 \begin{tabular}{|l|l|c|c|c|c|}
 \hline
 \textbf{Group} & \textbf{Metric} & \textbf{QUIS-style} & \textbf{Agentic LLM} & \textbf{ONLYSTATS} & \textbf{Winner} \\
@@ -262,10 +263,10 @@ Alignment & 9. R-I Coherence & \textbf{0.526} & 0.514 & N/A & \textbf{QUIS-style
 \hline
 \end{tabular}
 \label{tab:avg_results}
-\end{center}
-\begin{center}
-\scriptsize{\textit{Note: The 'Winner' column illustrates metric discrimination, not system recommendation.}}
-\end{center}
+\vspace{2pt}
+
+{\scriptsize\textit{Note: The 'Winner' column illustrates metric discrimination, not system recommendation.}}
+\vspace{-6pt}
 \end{table*}
 }
 
@@ -410,7 +411,7 @@ Framework diagnostics highlight three repeatable contrasts. First, SVR separates
 
 \subsection{Limitations}
 
-We use \texttt{gpt-5.4} for LLM-based components and \texttt{all-MiniLM-L6-v2} for embedding metrics; other models may shift exact values. With only three datasets and schema-normalized agentic outputs, metric differences are observations under our shared evaluation contract rather than statistical conclusions, though the 54-point SVR and 47-point Subspace Rate gaps are consistent across datasets.
+We use \texttt{gpt-5.4} for LLM-based components; a different model may shift exact numbers. Our embedding metrics depend on \texttt{all-MiniLM-L6-v2}. With only three datasets and schema-normalized agentic outputs, metric differences should be read as observations under our shared evaluation contract rather than statistical conclusions. Still, the 54-point SVR gap and 47-point Subspace Rate gap are consistent across datasets.
 
 \section{Conclusion}
 
