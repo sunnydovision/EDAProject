@@ -106,7 +106,7 @@ This free-form pipeline uses five sequential agents (data profiling, quality ana
 
 \subsection{Selected Metrics}
 
-We selected 9 essential metrics from a larger list of candidates. We group them as follows.
+We selected 9 metrics from a larger candidate pool to cover the main diagnostic failure modes in AutoEDA: numeric grounding, structural validity, statistical strength, subspace exploration, and auxiliary text alignment. We group them as follows.
 
 \subsubsection{Group 1: Correctness}
 
@@ -254,8 +254,8 @@ Exploration (Qty) & 5. Subspace Rate & \textbf{84.4\%} & 37.4\% & 62.6\% & \text
 Exploration (Qual) & 6a. Subspace Score ($x$) & \textbf{1.067} & 0.974 & 0.818 & \textbf{QUIS-style} \\
 Exploration (Qual) & 6b. Uplift Win Rate & 33.3\% (1/3) & \textbf{66.7\%} (2/3) & 33.3\% (1/3) & \textbf{Agentic LLM} \\
 Exploration (Qual) & 7. Simpson's Paradox Rate & \textbf{30.1\%} (\textbf{2 sig}) & 18.9\% (0 sig) & 34.7\% (0 sig) & \textbf{QUIS-style} \\
-Control & 8. Q-I Alignment & 0.540 & \textbf{0.569} & N/A & \textbf{Agentic LLM} \\
-Control & 9. R-I Coherence & \textbf{0.526} & 0.514 & N/A & \textbf{QUIS-style} \\
+Alignment & 8. Q-I Alignment & 0.540 & \textbf{0.569} & N/A & \textbf{Agentic LLM} \\
+Alignment & 9. R-I Coherence & \textbf{0.526} & 0.514 & N/A & \textbf{QUIS-style} \\
 \hline
 \end{tabular}
 \label{tab:avg_results}
